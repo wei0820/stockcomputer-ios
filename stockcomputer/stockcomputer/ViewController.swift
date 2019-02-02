@@ -57,8 +57,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 print("Ad wasn't ready")
             }
             performSegue(withIdentifier: "DayTrade", sender: nil)
-        }else{
+        }else if(name == ""){
             performSegue(withIdentifier: "TradeDetail", sender: nil)
+        }else if (name == ""){
+            performSegue(withIdentifier: "Financing", sender: nil)
+
+        }else{
+            performSegue(withIdentifier: "Margin", sender: nil)
+
         }
         
     }
