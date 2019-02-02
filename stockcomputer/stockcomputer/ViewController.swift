@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,GADBannerViewDelegate {
-    var itemName = ["現股獲利計算","融資獲利計算","融券獲利計算"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算"]
     var adBannerView: GADBannerView?
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,6 +23,37 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         cell.textLabel?.text = itemName[indexPath.row]
         
         return cell
+    }
+    
+    
+    // 點選 cell 後執行的動作
+    private func tableView(tableView: UITableView,
+                   didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //拿到storyBoard
+        let storyBoard = UIStoryboard(name: "DayTrade", bundle: nil)
+        //拿到ViewController
+        let nextPage = storyBoard.instantiateViewController(withIdentifier: "DayTradeController") as! DayTradeViewController
+        //傳值
+//        nextPage.id = joinUsDataArray[indexPath.row].id
+//        nextPage.titleOfNavi.title = joinUsDataArray[indexPath.row].title
+        //跳轉
+        self.navigationController?.pushViewController(nextPage, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        
+        tableView.deselectRow(
+            at: indexPath, animated: true)
+        
+        let name = itemName[indexPath.row]
+        print(name)
+        if (name == "現股當沖獲利計算"){
+            performSegue(withIdentifier: "DayTrade", sender: nil)
+        }else{
+            performSegue(withIdentifier: "TradeDetail", sender: nil)
+        }
+        
     }
     
 
