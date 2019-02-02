@@ -11,11 +11,15 @@ import UIKit
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var itemName = ["現股獲利計算","融資獲利計算","融券獲利計算"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return itemName.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return itemName.count
+        let cellIdentifier = "Cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,for:indexPath)
+        cell.textLabel?.text = itemName[indexPath.row]
+        
+        return cell
     }
     
 
