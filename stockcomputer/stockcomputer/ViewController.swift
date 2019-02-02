@@ -12,6 +12,7 @@ import GoogleMobileAds
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,GADBannerViewDelegate {
     var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算"]
     var adBannerView: GADBannerView?
+    var interstitial: GADInterstitial!
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemName.count
@@ -49,6 +50,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         let name = itemName[indexPath.row]
         print(name)
         if (name == "現股當沖獲利計算"){
+            
+            if interstitial.isReady {
+                interstitial.present(fromRootViewController: self)
+            } else {
+                print("Ad wasn't ready")
+            }
             performSegue(withIdentifier: "DayTrade", sender: nil)
         }else{
             performSegue(withIdentifier: "TradeDetail", sender: nil)
@@ -60,6 +67,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
+        setAdBanner()
+        setInterstitial()
+   
+        
+    }
+    func setAdBanner(){
         let id = "ca-app-pub-7019441527375550/2358814075"
         adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         adBannerView!.adUnitID = id
@@ -67,7 +80,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         adBannerView!.rootViewController = self
         
         adBannerView!.load(GADRequest())
+    }
+    func setInterstitial(){
         
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7019441527375550/6541068838")
+        let request = GADRequest()
+        interstitial.load(request)
     }
     
     // Called when an ad request loaded an ad.

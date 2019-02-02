@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="709.60000000000002" y="-261.31934032983509"/>
         </scene>
-        <!--View Controller-->
+        <!--Day Trade View Controller-->
         <scene sceneID="ko4-cT-zs5">
             <objects>
-                <viewController id="kfq-22-Ojo" sceneMemberID="viewController">
+                <viewController id="kfq-22-Ojo" customClass="DayTradeViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vhd-op-D5J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
