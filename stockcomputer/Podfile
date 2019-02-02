@@ -7,5 +7,6 @@ target 'stockcomputer' do
 
   # Pods for stockcomputer
   pod 'Firebase'
-
+pod 'Firebase/Core'
+pod 'Firebase/AdMob'
 end
