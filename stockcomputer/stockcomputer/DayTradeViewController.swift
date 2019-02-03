@@ -10,9 +10,10 @@ import UIKit
 import GoogleMobileAds
 
 class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerViewDelegate, UIPickerViewDataSource{
-
+    @IBOutlet weak var label_profit: UILabel!
+    
     @IBAction func button_calculation(_ sender: UIButton) {
-        print(pirceout)
+        label_profit.text = String(pirceout)
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
