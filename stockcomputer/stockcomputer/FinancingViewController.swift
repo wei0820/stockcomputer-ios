@@ -1,5 +1,5 @@
 //
-//  TradeDetailViewController.swift
+//  FinancingViewController.swift
 //  stockcomputer
 //
 //  Created by  JackPan on 2019/2/2.
@@ -9,12 +9,13 @@
 import UIKit
 import GoogleMobileAds
 
-class TradeDetailViewController: UIViewController  ,GADBannerViewDelegate {
+class FinancingViewController: UIViewController  ,GADBannerViewDelegate {
     var adBannerView: GADBannerView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
         setAdBanner()
         
     }
@@ -89,6 +90,7 @@ class TradeDetailViewController: UIViewController  ,GADBannerViewDelegate {
                                 multiplier: 1,
                                 constant: 0)
             ])
-}
-
+    }
+    
+    
 }
