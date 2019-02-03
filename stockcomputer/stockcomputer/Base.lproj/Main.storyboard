@@ -222,7 +222,11 @@
                         <viewLayoutGuide key="safeArea" id="Rgy-v2-ApJ"/>
                     </view>
                     <connections>
+                        <outlet property="buy_num" destination="q23-6h-sC1" id="685-T0-kIK"/>
+                        <outlet property="buy_price" destination="l6O-ql-iig" id="LdH-TO-n3K"/>
                         <outlet property="label_profit" destination="ruf-dY-maD" id="wwi-bS-gdC"/>
+                        <outlet property="sell_num" destination="ffr-F7-ecx" id="cC5-Ql-nQ4"/>
+                        <outlet property="sell_price" destination="Fgr-Dp-DyO" id="eQW-2y-ypO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vN9-Nk-Hut" userLabel="First Responder" sceneMemberID="firstResponder"/>

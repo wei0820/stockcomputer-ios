@@ -10,10 +10,23 @@ import UIKit
 import GoogleMobileAds
 
 class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerViewDelegate, UIPickerViewDataSource{
+    @IBOutlet weak var buy_price: UITextField!
+    @IBOutlet weak var sell_price: UITextField!
+    @IBOutlet weak var buy_num: UITextField!
+    
     @IBOutlet weak var label_profit: UILabel!
+    @IBOutlet weak var sell_num: UITextField!
+    
+    @IBOutlet weak var sell_buy: UITextField!
     
     @IBAction func button_calculation(_ sender: UIButton) {
-        label_profit.text = String(pirceout)
+//        label_profit.text = String(pirceout)
+//        print(buy_price.text)
+//        print(sell_price.text)
+        
+        closeKeyboard()
+
+        
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -37,9 +50,26 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         setAdBanner()
+        setKeyKeyboardType()
     
 
     }
+    func setKeyKeyboardType(){
+        buy_price.keyboardType = UIKeyboardType.phonePad
+        sell_price.keyboardType = UIKeyboardType.phonePad
+        buy_num.keyboardType = UIKeyboardType.phonePad
+        sell_num.keyboardType = UIKeyboardType.phonePad
+
+        
+    }
+    func closeKeyboard(){
+        self.buy_price.resignFirstResponder()
+        self.sell_price.resignFirstResponder()
+        
+        self.buy_num.resignFirstResponder()
+        self.sell_num.resignFirstResponder()
+    }
+    
     
     func setAdBanner(){
         let id = "ca-app-pub-7019441527375550/2358814075"
