@@ -69,6 +69,12 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
         self.buy_num.resignFirstResponder()
         self.sell_num.resignFirstResponder()
     }
+    func clearText(){
+        buy_price.text = ""
+        sell_price.text = ""
+        buy_num.text = ""
+        sell_num.text = ""
+    }
     
     
     func setAdBanner(){
