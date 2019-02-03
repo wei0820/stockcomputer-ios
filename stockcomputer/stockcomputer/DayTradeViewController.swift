@@ -19,12 +19,16 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
     
     @IBOutlet weak var sell_buy: UITextField!
     
+    @IBOutlet weak var total_sell_price: UILabel!
+    @IBOutlet weak var total_buy_price: UILabel!
     @IBAction func button_calculation(_ sender: UIButton) {
 //        label_profit.text = String(pirceout)
 //        print(buy_price.text)
 //        print(sell_price.text)
         
         closeKeyboard()
+//        print( total())
+        total()
 
         
     }
@@ -47,6 +51,12 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
     var info = [ "沒折扣", "95折","9折","85折","8折", "75折", "7折", "65折","6折", "55折", "5折","45折","4折","35折","3折", "28折","5折","2折","15折","1折","0.5折" ,"免手續費"]
     var price = [1,0.95,0.9,0.85,0.8,0.75,0.7,0.65,0.6,0.55,0.5,0.45,0.4,0.35,0.3,0.28,0.25,0.2,0.15,0.1,0.05,0]
     var pirceout = 1.0
+    var total_buy = 0.0
+    var total_sell = 0.0
+    
+    let handlingFee = 0.001425
+    let tax = 0.0015
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setAdBanner()
@@ -74,6 +84,14 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
         sell_price.text = ""
         buy_num.text = ""
         sell_num.text = ""
+    }
+    func total(){
+        var total = 0.0
+        total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)!
+        total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)!
+        total_buy_price.text  = String(total_buy + (total_buy * handlingFee * pirceout))
+        total_sell_price.text = String(total_sell + (total_sell * handlingFee * pirceout * tax))
+        
     }
     
     
