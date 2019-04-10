@@ -10,6 +10,10 @@ import UIKit
 import GoogleMobileAds
 
 class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerViewDelegate, UIPickerViewDataSource{
+
+    @IBOutlet weak var title_label: UILabel!
+    
+    @IBOutlet weak var message_labe: UILabel!
     @IBOutlet weak var buy_price: UITextField!
     @IBOutlet weak var sell_price: UITextField!
     @IBOutlet weak var buy_num: UITextField!
@@ -28,10 +32,17 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
         
         closeKeyboard()
 //        print( total())
+        
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
         total()
 
         
     }
+    @IBOutlet weak var percentage_label: UILabel!
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -46,22 +57,24 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
         var selectedValue = pickerView.selectedRow(inComponent: 0)
         pirceout = price[selectedValue]
     }
-    
+    var interstitial: GADInterstitial!
+
     var adBannerView: GADBannerView?
-    var info = [ "沒折扣", "95折","9折","85折","8折", "75折", "7折", "65折","6折", "55折", "5折","45折","4折","35折","3折", "28折","5折","2折","15折","1折","0.5折" ,"免手續費"]
+    var info = [ "沒折扣", "95折","9折","85折","8折", "75折", "7折", "65折","6折", "55折", "5折","45折","4折","35折","3折", "28折","2折","15折","1折","0.5折" ,"免手續費"]
     var price = [1,0.95,0.9,0.85,0.8,0.75,0.7,0.65,0.6,0.55,0.5,0.45,0.4,0.35,0.3,0.28,0.25,0.2,0.15,0.1,0.05,0]
     var pirceout = 1.0
     var total_buy = 0.0
     var total_sell = 0.0
     
     let handlingFee = 0.001425
-    let tax = 0.0015
-
+    var tax = 0.0015
+    var type = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        setAdBanner()
-        setKeyKeyboardType()
     
+        setAdBanner()
+        setInterstitial()
+        setKeyKeyboardType()
 
     }
     func setKeyKeyboardType(){
@@ -87,10 +100,38 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
     }
     func total(){
         var total = 0.0
+        var total_buy = 0.0
+        var total_sell = 0.0
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)!
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)!
-        total_buy_price.text  = String(total_buy + (total_buy * handlingFee * pirceout))
-        total_sell_price.text = String(total_sell + (total_sell * handlingFee * pirceout * tax))
+        total_buy_price.textColor = UIColor.red
+        total_sell_price.textColor = UIColor.green
+        if((total_buy * handlingFee * pirceout)<=20){
+            total_buy_price.text  = String(total_buy + 20)
+            total_buy = (total_buy + 20)
+
+        }else{
+            total_buy_price.text  = String(total_buy + (total_buy * handlingFee * pirceout))
+            total_buy = (total_buy + (total_buy * handlingFee * pirceout))
+
+        }
+        if( (total_sell * handlingFee * pirceout )<=20){
+            total_sell_price.text = String(total_sell - 20 - ((total_sell * tax)))
+            total_sell = (total_sell - 20 - ((total_sell * tax)))
+
+        }else{
+            total_sell_price.text = String(total_sell - (total_sell * handlingFee * pirceout)-(total_sell * tax))
+            total_sell = (total_sell - (total_sell * handlingFee * pirceout)-(total_sell * tax))
+        }
+        
+        total = total_sell - total_buy
+        label_profit.textColor = UIColor.white
+        label_profit.backgroundColor = UIColor.red
+        label_profit.text = String(total)
+        percentage_label.textColor = UIColor.white
+        percentage_label.backgroundColor = UIColor.red
+        percentage_label.text = String(format: "%.2f",((total/total_buy) * 100 )) + "%"
+
         
     }
     
@@ -165,6 +206,12 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
                                 multiplier: 1,
                                 constant: 0)
             ])
+    }
+    func setInterstitial(){
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7019441527375550/6541068838")
+        let request = GADRequest()
+        interstitial.load(request)
     }
     
 }

@@ -10,7 +10,8 @@ import UIKit
 import GoogleMobileAds
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,GADBannerViewDelegate{
-    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算"]
+//    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算"]
 
     
     var adBannerView: GADBannerView?
@@ -51,16 +52,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         let name = itemName[indexPath.row]
         print(name)
+        
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
         if (name == itemName[0]){
-            
-            if interstitial.isReady {
-                interstitial.present(fromRootViewController: self)
-            } else {
-                print("Ad wasn't ready")
-            }
             performSegue(withIdentifier: "DayTrade", sender: nil)
+
         }else if(name ==  itemName[1]){
             performSegue(withIdentifier: "TradeDetail", sender: nil)
+
         }else if (name ==  itemName[2]){
             performSegue(withIdentifier: "Financing", sender: nil)
 
@@ -70,7 +73,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
         
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destVc:DayTradeViewController = segue.destination as! DayTradeViewController
+//        destVc.type = segue.identifier!
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
