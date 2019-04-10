@@ -74,10 +74,10 @@ class TradeDetailViewController:UIViewController ,GADBannerViewDelegate ,UIPicke
         
     }
     func setKeyKeyboardType(){
-        buy_price.keyboardType = UIKeyboardType.phonePad
-        sell_price.keyboardType = UIKeyboardType.phonePad
-        buy_num.keyboardType = UIKeyboardType.phonePad
-        sell_num.keyboardType = UIKeyboardType.phonePad
+        buy_price.keyboardType = UIKeyboardType.decimalPad
+        sell_price.keyboardType = UIKeyboardType.decimalPad
+        buy_num.keyboardType = UIKeyboardType.decimalPad
+        sell_num.keyboardType = UIKeyboardType.decimalPad
         
         
     }
