@@ -19,14 +19,20 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
         // Do any additional setup after loading the view.
         setAdBanner()
         setKeyKeyboardType()
-        mInterestRate.text = "5.5"
+        if let name = UserDefaults.standard.object(forKey: "interestRate") as? String {
+            
+            mInterestRate.placeholder = name
+            mInterestRate.text = ""
+        }
+
         
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         mInterestRate.resignFirstResponder()
         mInterestRate.resignFirstResponder()  //if desired
-        print(mInterestRate.text as Any)
+        UserDefaults.standard.set(mInterestRate.text, forKey:"interestRate")
+
         return true
     }
     func setAdBanner(){
