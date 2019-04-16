@@ -19,10 +19,14 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
         // Do any additional setup after loading the view.
         setAdBanner()
         setKeyKeyboardType()
+        mInterestRate.text = "5.5"
         
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         mInterestRate.resignFirstResponder()
+        mInterestRate.resignFirstResponder()  //if desired
+        print(mInterestRate.text as Any)
         return true
     }
     func setAdBanner(){
@@ -113,4 +117,6 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+ 
+
 }
