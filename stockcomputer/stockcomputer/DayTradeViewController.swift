@@ -105,12 +105,11 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
         var total = 0.0
         var total_buy = 0.0
         var total_sell = 0.0
-        if(buy_price.text?.count==0&&buy_num.text?.count==0){
+        if(buy_price.text?.count==0||buy_num.text?.count==0||sell_price.text?.count==0||sell_num.text?.count==0){
+            setDilog()
             return
         }
-        if(sell_price.text?.count==0&&sell_num.text?.count==0){
-            return
-        }
+     
         
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)!
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)!
@@ -223,5 +222,11 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
         let request = GADRequest()
         interstitial.load(request)
     }
-    
+    func setDilog(){
+        let controller = UIAlertController(title: "錯誤!", message: "忘了輸入數值", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        controller.addAction(okAction)
+        present(controller, animated: true, completion: nil)
+        
+    }
 }
