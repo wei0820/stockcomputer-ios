@@ -9,17 +9,22 @@
 import UIKit
 import GoogleMobileAds
 
-class FinancingViewController: UIViewController  ,GADBannerViewDelegate {
+class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextFieldDelegate{
     var adBannerView: GADBannerView?
 
+    @IBOutlet weak var mInterestRate: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setAdBanner()
+        setKeyKeyboardType()
         
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        mInterestRate.resignFirstResponder()
+        return true
+    }
     func setAdBanner(){
         let id = "ca-app-pub-7019441527375550/2358814075"
         adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
@@ -42,7 +47,6 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         addBannerViewToView(bannerView)
         
-        print(bannerView.adUnitID)
     }
     
     // Called when an ad request failed.
@@ -92,5 +96,21 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate {
             ])
     }
     
+    func setKeyKeyboardType(){
+        mInterestRate.keyboardType = UIKeyboardType.numbersAndPunctuation
+        mInterestRate.returnKeyType = .done
+
+        
+        
+    }
+    func closeKeyboard(){
+        self.mInterestRate.resignFirstResponder()
     
+    }
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.view.endEditing(true)
+//    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
