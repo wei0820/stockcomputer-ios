@@ -75,10 +75,10 @@ class MarginController: UIViewController  ,GADBannerViewDelegate , UIPickerViewD
         // 設置 UITextField 的 tag 以利後續使用
         date.tag = 200
         
-        // 設置 UITextField 其他資訊並放入畫面中
-        date.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-        date.textAlignment = .center
-        date.center = CGPoint(x: fullScreenSize.width * 0.5, y: fullScreenSize.height * 0.75)
+//        // 設置 UITextField 其他資訊並放入畫面中
+//        date.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+//        date.textAlignment = .center
+//        date.center = CGPoint(x: fullScreenSize.width * 0.5, y: fullScreenSize.height * 0.75)
         self.view.addSubview(date)
         
         
@@ -181,14 +181,14 @@ class MarginController: UIViewController  ,GADBannerViewDelegate , UIPickerViewD
         return meals[row]
     }
     
-    // UIPickerView 改變選擇後執行的動作
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // 依據元件的 tag 取得 UITextField
-        let myTextField = self.view?.viewWithTag(100) as? UITextField
-        
-        // 將 UITextField 的值更新為陣列 meals 的第 row 項資料
-        myTextField?.text = meals[row]
-    }
+//    // UIPickerView 改變選擇後執行的動作
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        // 依據元件的 tag 取得 UITextField
+//        let myTextField = self.view?.viewWithTag(100) as? UITextField
+//
+//        // 將 UITextField 的值更新為陣列 meals 的第 row 項資料
+//        myTextField?.text = meals[row]
+//    }
     
     // UIDatePicker 改變選擇時執行的動作
     @objc func datePickerChanged(datePicker:UIDatePicker) {
@@ -197,6 +197,7 @@ class MarginController: UIViewController  ,GADBannerViewDelegate , UIPickerViewD
         
         // 將 UITextField 的值更新為新的日期
         myTextField?.text = formatter.string(from: datePicker.date)
+        print( formatter.string(from: datePicker.date))
     }
     
     // 按空白處會隱藏編輯狀態
