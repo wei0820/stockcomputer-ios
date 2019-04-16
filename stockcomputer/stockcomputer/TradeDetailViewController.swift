@@ -30,11 +30,11 @@ class TradeDetailViewController:UIViewController ,GADBannerViewDelegate ,UIPicke
         closeKeyboard()
         //        print( total())
         
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-        }
+//        if interstitial.isReady {
+//            interstitial.present(fromRootViewController: self)
+//        } else {
+//            print("Ad wasn't ready")
+//        }
         total()
         
         
@@ -69,7 +69,7 @@ class TradeDetailViewController:UIViewController ,GADBannerViewDelegate ,UIPicke
         super.viewDidLoad()
         
         setAdBanner()
-        setInterstitial()
+//        setInterstitial()
         setKeyKeyboardType()
         
     }
@@ -98,6 +98,12 @@ class TradeDetailViewController:UIViewController ,GADBannerViewDelegate ,UIPicke
         var total = 0.0
         var total_buy = 0.0
         var total_sell = 0.0
+        if(buy_price.text?.count==0&&buy_num.text?.count==0){
+            return
+        }
+        if(sell_price.text?.count==0&&sell_num.text?.count==0){
+            return
+        }
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)!
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)!
         total_buy_price.textColor = UIColor.red

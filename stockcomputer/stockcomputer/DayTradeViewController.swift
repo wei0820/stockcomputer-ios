@@ -33,11 +33,11 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
         closeKeyboard()
 //        print( total())
         
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-        }
+//        if interstitial.isReady {
+//            interstitial.present(fromRootViewController: self)
+//        } else {
+//            print("Ad wasn't ready")
+//        }
         total()
 
         
@@ -69,12 +69,15 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
     let handlingFee = 0.001425
     var tax = 0.0015
     var type = ""
+    var formatter: DateFormatter! = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
         setAdBanner()
-        setInterstitial()
+//        setInterstitial()
         setKeyKeyboardType()
+    
 
     }
     func setKeyKeyboardType(){
@@ -82,7 +85,7 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
         sell_price.keyboardType = UIKeyboardType.decimalPad
         buy_num.keyboardType = UIKeyboardType.decimalPad
         sell_num.keyboardType = UIKeyboardType.decimalPad
-
+        
         
     }
     func closeKeyboard(){
@@ -102,6 +105,13 @@ class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerV
         var total = 0.0
         var total_buy = 0.0
         var total_sell = 0.0
+        if(buy_price.text?.count==0&&buy_num.text?.count==0){
+            return
+        }
+        if(sell_price.text?.count==0&&sell_num.text?.count==0){
+            return
+        }
+        
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)!
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)!
         total_buy_price.textColor = UIColor.red

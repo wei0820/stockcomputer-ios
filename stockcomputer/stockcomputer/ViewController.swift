@@ -51,13 +51,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             at: indexPath, animated: true)
         
         let name = itemName[indexPath.row]
-        print(name)
-        
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-        }
+//        print(name)
+//
+//        if interstitial.isReady {
+//            interstitial.present(fromRootViewController: self)
+//        } else {
+//            print("Ad wasn't ready")
+//        }
         if (name == itemName[0]){
             performSegue(withIdentifier: "DayTrade", sender: nil)
 
@@ -82,7 +82,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         super.viewDidLoad()
         print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         setAdBanner()
-        setInterstitial()
+//        setInterstitial()
         
     }
     func setAdBanner(){
