@@ -324,7 +324,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVN-57-bmF">
-                                        <rect key="frame" x="0.0" y="-99" width="375" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="融資獲利計算" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUl-Y7-sv6">
@@ -572,12 +572,14 @@
                         <viewLayoutGuide key="safeArea" id="Bct-WF-1p8"/>
                     </view>
                     <connections>
+                        <outlet property="mEndDate" destination="Od6-no-2M0" id="zve-5R-d0t"/>
                         <outlet property="mInterestRate" destination="qlT-yU-gHT" id="fjQ-3k-Mxy"/>
+                        <outlet property="mStatr" destination="LRD-wW-hLL" id="Pca-mg-XgH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFc-2Z-3j9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="549.60000000000002" y="1140.1799100449775"/>
+            <point key="canvasLocation" x="590" y="1113"/>
         </scene>
         <!--Trade Detail View Controller-->
         <scene sceneID="iD0-UU-EKH">

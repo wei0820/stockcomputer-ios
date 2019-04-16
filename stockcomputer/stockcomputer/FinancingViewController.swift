@@ -11,8 +11,11 @@ import GoogleMobileAds
 
 class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextFieldDelegate{
     var adBannerView: GADBannerView?
+    var formatter: DateFormatter! = nil
+    let datePicker = UIDatePicker()
 
     @IBOutlet weak var mInterestRate: UITextField!
+    @IBOutlet weak var mStatr: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,10 +27,13 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
             mInterestRate.placeholder = name
             mInterestRate.text = ""
         }
-
+        showDatePicker(v: mStatr,tag: 0)
+        showDatePicker(v: mEndDate,tag: 1)
+     
         
     }
-    
+    @IBOutlet weak var mEndDate: UITextField!
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         mInterestRate.resignFirstResponder()
         mInterestRate.resignFirstResponder()  //if desired
@@ -124,5 +130,54 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
         view.endEditing(true)
     }
  
+
+    func showDatePicker(v :UITextField,tag :Int){
+        //Formate Date
+        datePicker.datePickerMode = .date
+        datePicker.locale = Locale(identifier: "zh_TW")
+
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        if(tag==0){
+             let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneStartdatePicker));
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+            
+            toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+            
+            v.inputAccessoryView = toolbar
+            v.inputView = datePicker
+        }else{
+             let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneEnddatePicker));
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+            
+            toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+            
+            v.inputAccessoryView = toolbar
+            v.inputView = datePicker
+        }
+       
+        
+    }
+    @objc func doneStartdatePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy 年 MM 月 dd 日"
+        mStatr.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    @objc func doneEnddatePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy 年 MM 月 dd 日"
+        mEndDate.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
 
 }

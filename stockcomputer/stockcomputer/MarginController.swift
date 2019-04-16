@@ -19,34 +19,6 @@ class MarginController: UIViewController  ,GADBannerViewDelegate , UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         setAdBanner()
-        var myTextField = UITextField(frame: CGRect(x: 0, y: 0, width: fullScreenSize.width, height: 40))
-//
-//        // 建立 UIPickerView
-//        let myPickerView = UIPickerView()
-//
-//        // 設定 UIPickerView 的 delegate 及 dataSource
-//        myPickerView.delegate = self as! UIPickerViewDelegate
-//        myPickerView.dataSource = self as! UIPickerViewDataSource
-//
-//        // 將 UITextField 原先鍵盤的視圖更換成 UIPickerView
-//        myTextField.inputView = myPickerView
-//
-//        // 設置 UITextField 預設的內容
-//        myTextField.text = meals[0]
-//
-//        // 設置 UITextField 的 tag 以利後續使用
-//        myTextField.tag = 100
-//
-//        // 設置 UITextField 其他資訊並放入畫面中
-//        myTextField.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-//        myTextField.textAlignment = .center
-//        myTextField.center = CGPoint(x: fullScreenSize.width * 0.5, y: fullScreenSize.height * 0.15)
-//        self.view.addSubview(myTextField)
-//
-        
-//        // 建立另一個 UITextField
-//        myTextField = UITextField(frame: CGRect(x: 0, y: 0, width: fullScreenSize.width, height: 40))
-        
         // 初始化 formatter 並設置日期顯示的格式
         formatter = DateFormatter()
         formatter.dateFormat = "yyyy 年 MM 月 dd 日"
@@ -71,14 +43,9 @@ class MarginController: UIViewController  ,GADBannerViewDelegate , UIPickerViewD
         
         // 設置 UITextField 預設的內容
         date.text = formatter.string(from: myDatePicker.date)
-        
+    
         // 設置 UITextField 的 tag 以利後續使用
         date.tag = 200
-        
-//        // 設置 UITextField 其他資訊並放入畫面中
-//        date.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-//        date.textAlignment = .center
-//        date.center = CGPoint(x: fullScreenSize.width * 0.5, y: fullScreenSize.height * 0.75)
         self.view.addSubview(date)
         
         
@@ -180,15 +147,7 @@ class MarginController: UIViewController  ,GADBannerViewDelegate , UIPickerViewD
         // 設置為陣列 meals 的第 row 項資料
         return meals[row]
     }
-    
-//    // UIPickerView 改變選擇後執行的動作
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        // 依據元件的 tag 取得 UITextField
-//        let myTextField = self.view?.viewWithTag(100) as? UITextField
-//
-//        // 將 UITextField 的值更新為陣列 meals 的第 row 項資料
-//        myTextField?.text = meals[row]
-//    }
+
     
     // UIDatePicker 改變選擇時執行的動作
     @objc func datePickerChanged(datePicker:UIDatePicker) {
