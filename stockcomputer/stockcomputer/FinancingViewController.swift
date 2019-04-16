@@ -144,7 +144,7 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
             
-            toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+            toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
             
             v.inputAccessoryView = toolbar
             v.inputView = datePicker
@@ -153,7 +153,7 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
             
-            toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+            toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
             
             v.inputAccessoryView = toolbar
             v.inputView = datePicker
