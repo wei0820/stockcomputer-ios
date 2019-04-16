@@ -10,8 +10,8 @@ import UIKit
 import GoogleMobileAds
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,GADBannerViewDelegate{
-//    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算"]
-    var itemName = ["現股當沖獲利計算","現股獲利計算"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算"]
+//    var itemName = ["現股當沖獲利計算","現股獲利計算"]
 
     
     var adBannerView: GADBannerView?
