@@ -13,6 +13,9 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
     var adBannerView: GADBannerView?
     var formatter: DateFormatter! = nil
     let datePicker = UIDatePicker()
+    var start : Date!
+    var end : Date!
+    
 
     @IBOutlet weak var mInterestRate: UITextField!
     @IBOutlet weak var mStatr: UITextField!
@@ -38,7 +41,8 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
         mInterestRate.resignFirstResponder()
         mInterestRate.resignFirstResponder()  //if desired
         UserDefaults.standard.set(mInterestRate.text, forKey:"interestRate")
-
+        
+        
         return true
     }
     func setAdBanner(){
@@ -119,6 +123,7 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
         
         
     }
+    
     func closeKeyboard(){
         self.mInterestRate.resignFirstResponder()
     
@@ -165,19 +170,31 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy 年 MM 月 dd 日"
-        mStatr.text = formatter.string(from: datePicker.date)
+        mStatr.text = formatter.string(from: datePicker.date )
+        start = datePicker.date
         self.view.endEditing(true)
     }
     @objc func doneEnddatePicker(){
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy 年 MM 月 dd 日"
-        mEndDate.text = formatter.string(from: datePicker.date)
+        mEndDate.text = formatter.string(from: datePicker.date )
+        end =  datePicker.date
         self.view.endEditing(true)
+        
+        print(dateDifference(end,  from: start))
+
     }
     
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
     }
-
+  
+    //MARK: 計算天數差
+     func dateDifference(_ dateA:Date, from dateB:Date) -> Int {
+        let interval = dateA.timeIntervalSince(dateB)
+     
+        return lround(interval/86400)
+        
+    }
 }
