@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,GADBannerViewDelegate{
-    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算","港股報價試算","港股獲利試算"]
 //    var itemName = ["現股當沖獲利計算","現股獲利計算"]
 
     
@@ -67,8 +67,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }else if (name ==  itemName[2]){
             performSegue(withIdentifier: "Financing", sender: nil)
 
-        }else{
+        }else if(name ==  itemName[3]){
             performSegue(withIdentifier: "Margin", sender: nil)
+
+        }else if(name == itemName[4]) {
+            performSegue(withIdentifier: "hongkongstock", sender: nil)
+
+        }else{
+            performSegue(withIdentifier: "hongkong", sender: nil)
 
         }
         

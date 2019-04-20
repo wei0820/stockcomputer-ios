@@ -16,7 +16,8 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
     var start : Date!
     var end : Date!
     
-
+    @IBOutlet weak var day: UILabel!
+    
     @IBOutlet weak var mInterestRate: UITextField!
     @IBOutlet weak var mStatr: UITextField!
     override func viewDidLoad() {
@@ -33,7 +34,6 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
         showDatePicker(v: mStatr,tag: 0)
         showDatePicker(v: mEndDate,tag: 1)
      
-        
     }
     @IBOutlet weak var mEndDate: UITextField!
 
@@ -183,6 +183,8 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
         self.view.endEditing(true)
         
         print(dateDifference(end,  from: start))
+        day.text = String(dateDifference(end,  from: start)) + "天"
+        day.textColor = UIColor.black
 
     }
     

@@ -16,6 +16,8 @@
 		B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */; };
 		B77B6F662205D53300A674D6 /* MarginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F652205D53300A674D6 /* MarginController.swift */; };
 		B77B6F682205D55100A674D6 /* FinancingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F672205D55100A674D6 /* FinancingViewController.swift */; };
+		B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A4612269998E00CF6005 /* HongKongController.swift */; };
+		B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */; };
 		FBEB0E1426AB3060EA6C8327 /* Pods_stockcomputer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82019D6419C5A80F898DC873 /* Pods_stockcomputer.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeDetailViewController.swift; sourceTree = "<group>"; };
 		B77B6F652205D53300A674D6 /* MarginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginController.swift; sourceTree = "<group>"; };
 		B77B6F672205D55100A674D6 /* FinancingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancingViewController.swift; sourceTree = "<group>"; };
+		B7E0A4612269998E00CF6005 /* HongKongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongController.swift; sourceTree = "<group>"; };
+		B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongStockController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 				B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */,
 				B77B6F652205D53300A674D6 /* MarginController.swift */,
 				B77B6F672205D55100A674D6 /* FinancingViewController.swift */,
+				B7E0A4612269998E00CF6005 /* HongKongController.swift */,
+				B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -222,8 +228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */,
 				B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */,
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
+				B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */,
 				B77B6F662205D53300A674D6 /* MarginController.swift in Sources */,
 				B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */,
 				B77B6F682205D55100A674D6 /* FinancingViewController.swift in Sources */,
