@@ -119,18 +119,13 @@ class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextF
     func setKeyKeyboardType(){
         mInterestRate.keyboardType = UIKeyboardType.numbersAndPunctuation
         mInterestRate.returnKeyType = .done
-
-        
-        
     }
     
     func closeKeyboard(){
         self.mInterestRate.resignFirstResponder()
     
     }
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.view.endEditing(true)
-//    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }

@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,GADBannerViewDelegate{
-    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算","港股複委託試算","港股複委託試算"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算","港股複委託購入試算","港股複委託獲利試算"]
 //    var itemName = ["現股當沖獲利計算","現股獲利計算"]
 
     
