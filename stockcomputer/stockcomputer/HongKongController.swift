@@ -50,24 +50,52 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     }
     @IBOutlet weak var tf_5: UITextField!
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        TF1_1.resignFirstResponder()
-        UserDefaults.standard.set(TF1_1.placeholder, forKey:"TF_1")
-        TF_2.resignFirstResponder()
-        UserDefaults.standard.set(TF_2.placeholder, forKey:"TF_2")
-        TF_3.resignFirstResponder()
-        UserDefaults.standard.set(TF_3.placeholder, forKey:"TF_3")
-        TF_4.resignFirstResponder()
-        UserDefaults.standard.set(TF_4.placeholder, forKey:"TF_4")
-        tf_5.resignFirstResponder()
-        UserDefaults.standard.set(tf_5.placeholder, forKey:"tf_5")
+        switch textField {
+        case TF1_1 :
+            TF1_1.resignFirstResponder()
+
+            UserDefaults.standard.set(TF1_1.text, forKey:"TF_1")
+
+            break
+        case TF_2 :
+            TF_2.resignFirstResponder()
+
+            UserDefaults.standard.set(TF_2.text, forKey:"TF_2")
+
+            break
+        case TF_3 :
+            TF_3.resignFirstResponder()
+
+            UserDefaults.standard.set(TF_3.text, forKey:"TF_3")
+
+            break
+        case TF_4 :
+            TF_4.resignFirstResponder()
+
+            UserDefaults.standard.set(TF_4.text, forKey:"TF_4")
+
+            break
+        case tf_5 :
+            tf_5.resignFirstResponder()
+
+            UserDefaults.standard.set(tf_5.text, forKey:"tf_5")
+
+            break
+            
+        default:
+            textField.resignFirstResponder()
+
+        }
         
         return true
     }
+    
     func setTF_1(){
         
-        if let name = UserDefaults.standard.object(forKey: "TF_1") as? String {
+        if let TF_1 = UserDefaults.standard.object(forKey: "TF_1") as? String {
             
-            TF1_1.placeholder = name
+            TF1_1.placeholder = TF_1
+            TF1_1.text = ""
         }else{
             TF1_1.placeholder = "0.25"
 
@@ -76,9 +104,11 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     }
     func setTF_2(){
         
-        if let name = UserDefaults.standard.object(forKey: "TF_2") as? String {
+        if let TF_22 = UserDefaults.standard.object(forKey: "TF_2") as? String {
             
-            TF_2.placeholder = name
+            TF_2.placeholder = TF_22
+            TF_2.text = ""
+
         }else{
             TF_2.placeholder = "0.0027"
             
@@ -87,9 +117,11 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     }
     func setTF_3(){
         
-        if let name = UserDefaults.standard.object(forKey: "TF_3") as? String {
+        if let TF_33 = UserDefaults.standard.object(forKey: "TF_3") as? String {
             
-            TF_3.placeholder = name
+            TF_3.placeholder = TF_33
+            TF_3.text = ""
+
         }else{
             TF_3.placeholder = "0.1"
             
@@ -98,9 +130,11 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     }
     func setTF_4(){
         
-        if let name = UserDefaults.standard.object(forKey: "TF_4") as? String {
+        if let TF_44 = UserDefaults.standard.object(forKey: "TF_4") as? String {
             
-            TF_4.placeholder = name
+            TF_4.placeholder = TF_44
+            TF_4.text = ""
+
         }else{
             TF_4.placeholder = "0.005"
             
@@ -109,9 +143,11 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     }
     func setTF_5(){
         
-        if let name = UserDefaults.standard.object(forKey: "tf_5") as? String {
+        if let tf_55 = UserDefaults.standard.object(forKey: "tf_5") as? String {
             
-            tf_5.placeholder = name
+            tf_5.placeholder = tf_55
+            tf_5.text = ""
+
         }else{
             tf_5.placeholder = "4"
             
