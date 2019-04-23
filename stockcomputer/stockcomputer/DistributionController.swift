@@ -13,8 +13,13 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
     @IBOutlet weak var nowprice: UILabel!
     @IBAction func clear_btn(_ sender: Any) {
         price.text = ""
+        price.placeholder = ""
+
         money.text = ""
+        money.placeholder = ""
         son.text = ""
+        son.placeholder = ""
+
         nowprice.text = ""
     }
     @IBOutlet weak var clear: UIButton!
@@ -23,11 +28,11 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
             if(money.text?.count != 0 && son.text?.count == 0){
                 cal_1()
                 
-            }else if (son.text?.count != 0){
-                
+            }else if (son.text?.count != 0 && money.text?.count == 0 ){
+                 cal_2()
             }
             else if (money.text?.count != 0 && son.text?.count != 0){
-                
+                cal_3()
             }
         }
         
@@ -49,18 +54,25 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
         //除息前股價＝ 現金股利  + 除權息後新股價
         price_double = Double (price.text!)! - Double(money.text!)!
         nowprice.text = String(price_double)
+        son.placeholder = "0.0"
         
         
         
     }
     func cal_2(){
         //除權後股價＝ 除權前股價 ／（1＋股票股利 ÷ 10)
+        price_double = Double (price.text!)! / (1 + Double(son.text!)! / 10)
+        nowprice.text = String(format: "%.2f", price_double)
+        money.placeholder = "0.0"
+
         
 
     }
     func cal_3(){
         //除權除息後股價＝( 除權前股價 息 - 現金股利)／（1＋股票股利 ÷ 10)
-        
+        price_double = ( Double (price.text!)! - Double(money.text!)!) / (1 + (Double(son.text!)! / 10))
+        nowprice.text = String(format: "%.2f", price_double)
+
     }
     
     func setAdBanner(){
