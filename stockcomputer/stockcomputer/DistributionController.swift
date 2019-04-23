@@ -18,7 +18,19 @@ class DistributionController: UIViewController ,GADBannerViewDelegate {
 
         // Do any additional setup after loading the view.
     }
-    
+    func cal_1(){
+        //除息前股價＝ 現金股利  + 除權息後新股價
+        
+    }
+    func cal_2(){
+        //除權後股價＝ 除權前股價 ／（1＋股票股利 ÷ 10)
+        
+
+    }
+    func cal_3(){
+        //除權除息後股價＝( 除權前股價 息 - 現金股利)／（1＋股票股利 ÷ 10)
+        
+    }
     
     func setAdBanner(){
         let id = "ca-app-pub-7019441527375550/2358814075"
