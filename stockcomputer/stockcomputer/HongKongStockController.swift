@@ -20,7 +20,7 @@ class HongKongStockController: UIViewController  , GADBannerViewDelegate{
     }
     
     func setAdBanner(){
-        let id = "ca-app-pub-7019441527375550/2358814075"
+        let id = "ca-app-pub-7019441527375550/9487446087"
         adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         adBannerView!.adUnitID = id
         adBannerView!.delegate = self

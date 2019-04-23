@@ -13,14 +13,38 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     @IBOutlet weak var buy_price: UITextField!
     var total = 0.0
     var handlingfee = 0.0
+    var handlingfeeprice = 0
+    var TransactionTax = 0.0
+    var StampDuty = 0.0
+    var DeliveryFee = 0.0
+    var tw = 0
+
+
+
+    
     @IBAction func cal_btn(_ sender: Any) {
         
-        if(buy_price.text?.count != 0 || buy_num.text?.count != 0){
+        if(buy_price.text?.count != 0 &&  buy_num.text?.count != 0){
             total = Double(buy_price.text!)! * Double(buy_num.text!)!
             handlingfee = Double(TF1_1.placeholder!)! * 0.01
-            print(handlingfee)
+            handlingfeeprice = lround( total * handlingfee)
+            TransactionTax = total * Double(TF_2.placeholder!)! * 0.01
+            StampDuty = total * Double(TF_3.placeholder!)! * 0.01
+            DeliveryFee = total * Double(TF_4.placeholder!)! * 0.01
+            if(total * handlingfee<=100){
+                handlingfeeprice = 100
+                lb_1.text = "手續費:" + String(handlingfeeprice)
 
-            lb_1.text = "手續費:" + String( total * handlingfee )
+            }else{
+                lb_1.text = "手續費:" + String(handlingfeeprice  )
+
+            }
+            
+            lb2.text = "交易稅"  + String(TransactionTax )
+            lb3.text = "印花稅" + String(StampDuty )
+            lb4.text = "交割費" + String(DeliveryFee )
+
+            
             
         }
     }
@@ -155,7 +179,7 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
         
     }
     func setAdBanner(){
-        let id = "ca-app-pub-7019441527375550/2358814075"
+        let id = "ca-app-pub-7019441527375550/9487446087"
         adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         adBannerView!.adUnitID = id
         adBannerView!.delegate = self
@@ -226,6 +250,12 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     }
     */
     func setKeyKeyboardType(){
+        
+        buy_num.keyboardType = UIKeyboardType.decimalPad
+        buy_num.returnKeyType = .done
+        
+        buy_price.keyboardType = UIKeyboardType.decimalPad
+        buy_price.returnKeyType = .done
         TF1_1.keyboardType = UIKeyboardType.numbersAndPunctuation
         TF1_1.returnKeyType = .done
 

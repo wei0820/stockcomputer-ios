@@ -462,21 +462,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="交易稅:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cv7-0A-wgY">
-                                                <rect key="frame" x="38" y="578" width="57" height="21"/>
+                                                <rect key="frame" x="38" y="578" width="319" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="印花稅:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiR-R6-xlD">
-                                                <rect key="frame" x="38" y="625" width="57" height="21"/>
+                                                <rect key="frame" x="38" y="625" width="321" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="交割稅:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoS-B9-7Ak">
-                                                <rect key="frame" x="38" y="669" width="57" height="21"/>
+                                                <rect key="frame" x="38" y="669" width="319" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -552,6 +552,7 @@
                         <outlet property="TF_4" destination="NdY-t4-wCt" id="GTa-cT-hQR"/>
                         <outlet property="buy_num" destination="yH0-hY-UCK" id="7s1-2K-yV7"/>
                         <outlet property="buy_price" destination="I0Y-HI-Kwl" id="mIc-xB-5WN"/>
+                        <outlet property="lb2" destination="cv7-0A-wgY" id="hz3-gs-AkI"/>
                         <outlet property="lb3" destination="uiR-R6-xlD" id="1TZ-Ik-0WO"/>
                         <outlet property="lb4" destination="HoS-B9-7Ak" id="kXG-rn-G21"/>
                         <outlet property="lb_1" destination="ydA-of-pnI" id="gRH-8l-k9c"/>
