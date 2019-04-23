@@ -17,20 +17,53 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     var TransactionTax = 0.0
     var StampDuty = 0.0
     var DeliveryFee = 0.0
-    var tw = 0
+    var tw = 0.0
+    var total_price_int = 0
 
-
+    @IBOutlet weak var total_price: UILabel!
+    
 
     
     @IBAction func cal_btn(_ sender: Any) {
         
         if(buy_price.text?.count != 0 &&  buy_num.text?.count != 0){
             total = Double(buy_price.text!)! * Double(buy_num.text!)!
-            handlingfee = Double(TF1_1.placeholder!)! * 0.01
+            if(TF1_1.text?.count != 0 ){
+                handlingfee = Double(TF1_1.text!)! * 0.01
+
+            }else{
+                handlingfee = Double(TF1_1.placeholder!)! * 0.01
+
+            }
             handlingfeeprice = lround( total * handlingfee)
-            TransactionTax = total * Double(TF_2.placeholder!)! * 0.01
-            StampDuty = total * Double(TF_3.placeholder!)! * 0.01
-            DeliveryFee = total * Double(TF_4.placeholder!)! * 0.01
+            if(TF_2.text?.count != 0 ){
+                TransactionTax = total * Double(TF_2.text!)! * 0.01
+
+            }else{
+                TransactionTax = total * Double(TF_2.placeholder!)! * 0.01
+
+            }
+            if(TF_3.text?.count != 0 ){
+                StampDuty = total * Double(TF_3.text!)! * 0.01
+
+            }else{
+                StampDuty = total * Double(TF_3.placeholder!)! * 0.01
+
+            }
+            if(TF_4.text?.count != 0 ){
+                DeliveryFee = total * Double(TF_4.text!)! * 0.01
+
+            }else{
+                DeliveryFee = total * Double(TF_4.placeholder!)! * 0.01
+
+            }
+            if(tf_5.text?.count != 0){
+                tw =  Double (tf_5.text!)!
+            }else {
+                tw =  Double (tf_5.placeholder!)!
+
+            }
+            
             if(total * handlingfee<=100){
                 handlingfeeprice = 100
                 lb_1.text = "手續費:" + String(handlingfeeprice)
@@ -40,11 +73,12 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
 
             }
             
-            lb2.text = "交易稅"  + String(TransactionTax )
-            lb3.text = "印花稅" + String(StampDuty )
-            lb4.text = "交割費" + String(DeliveryFee )
-
-            
+            lb2.text = "交易稅:"  + String(TransactionTax )
+            lb3.text = "印花稅:" + String(StampDuty )
+            lb4.text = "交割費:" + String(DeliveryFee )
+            total_price.text = "總價:" + String( lround (total ) + handlingfeeprice + lround(TransactionTax) + lround(StampDuty) + lround( DeliveryFee ))
+            total_price_int = lround (total ) + handlingfeeprice + lround(TransactionTax) + lround(StampDuty) + lround( DeliveryFee )
+            tw_lb.text = "台幣約:" + String(total_price_int * lround(tw))
             
         }
     }
@@ -58,6 +92,7 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     @IBOutlet weak var lb4: UILabel!
     @IBOutlet weak var lb_1: UILabel!
     @IBOutlet weak var lb3: UILabel!
+    @IBOutlet weak var tw_lb: UILabel!
     @IBOutlet weak var lb2: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +140,13 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
             UserDefaults.standard.set(tf_5.text, forKey:"tf_5")
 
             break
-            
+        case buy_price :
+            buy_price.resignFirstResponder()
+
+            break
+        case buy_num :
+            buy_num.resignFirstResponder()
+            break
         default:
             textField.resignFirstResponder()
 
@@ -251,10 +292,10 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     */
     func setKeyKeyboardType(){
         
-        buy_num.keyboardType = UIKeyboardType.decimalPad
+        buy_num.keyboardType = UIKeyboardType.numbersAndPunctuation
         buy_num.returnKeyType = .done
         
-        buy_price.keyboardType = UIKeyboardType.decimalPad
+        buy_price.keyboardType = UIKeyboardType.numbersAndPunctuation
         buy_price.returnKeyType = .done
         TF1_1.keyboardType = UIKeyboardType.numbersAndPunctuation
         TF1_1.returnKeyType = .done
@@ -272,6 +313,8 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     }
     
     func closeKeyboard(){
+        self.buy_price.resignFirstResponder()
+        self.buy_num.resignFirstResponder()
         self.TF1_1.resignFirstResponder()
         self.TF_2.resignFirstResponder()
         self.TF_3.resignFirstResponder()
