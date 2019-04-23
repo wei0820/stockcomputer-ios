@@ -9,17 +9,48 @@
 import UIKit
 import GoogleMobileAds
 
-class DistributionController: UIViewController ,GADBannerViewDelegate {
+class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFieldDelegate {
+    @IBOutlet weak var nowprice: UILabel!
+    @IBAction func clear_btn(_ sender: Any) {
+        price.text = ""
+        money.text = ""
+        son.text = ""
+        nowprice.text = ""
+    }
+    @IBOutlet weak var clear: UIButton!
+    @IBAction func cal(_ sender: Any) {
+        if(price.text?.count != 0){
+            if(money.text?.count != 0 && son.text?.count == 0){
+                cal_1()
+                
+            }else if (son.text?.count != 0){
+                
+            }
+            else if (money.text?.count != 0 && son.text?.count != 0){
+                
+            }
+        }
+        
+    }
     var adBannerView: GADBannerView?
 
+    @IBOutlet weak var price: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         setAdBanner()
+        setKeyKeyboardType()
 
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var son: UITextField!
+    @IBOutlet weak var money: UITextField!
+    var price_double = 0.0
     func cal_1(){
         //除息前股價＝ 現金股利  + 除權息後新股價
+        price_double = Double (price.text!)! - Double(money.text!)!
+        nowprice.text = String(price_double)
+        
+        
         
     }
     func cal_2(){
@@ -112,5 +143,20 @@ class DistributionController: UIViewController ,GADBannerViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    func setKeyKeyboardType(){
+        
+        price.keyboardType = UIKeyboardType.numbersAndPunctuation
+        price.returnKeyType = .done
+        
+        money.keyboardType = UIKeyboardType.numbersAndPunctuation
+        money.returnKeyType = .done
+        son.keyboardType = UIKeyboardType.numbersAndPunctuation
+        son.returnKeyType = .done
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
 
+        return true
+    }
 }

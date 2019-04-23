@@ -345,6 +345,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="acF-Zl-rht" id="Zhg-oV-bXs"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95H-cl-wDz">
                                 <rect key="frame" x="214" y="173" width="97" height="30"/>
@@ -352,6 +355,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="acF-Zl-rht" id="YTc-X1-Fa1"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNj-md-P0x">
                                 <rect key="frame" x="214" y="248" width="97" height="30"/>
@@ -359,16 +365,25 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="acF-Zl-rht" id="gHg-aY-g7g"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HB3-1L-4Il">
                                 <rect key="frame" x="96" y="353" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="試算"/>
+                                <connections>
+                                    <action selector="cal:" destination="acF-Zl-rht" eventType="touchUpInside" id="lEr-ml-L8w"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7R-pc-kco">
                                 <rect key="frame" x="247" y="353" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="清除"/>
+                                <connections>
+                                    <action selector="clear_btn:" destination="acF-Zl-rht" eventType="touchUpInside" id="Rn7-3D-iC5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnq-m3-I7a">
                                 <rect key="frame" x="333" y="118" width="18" height="21"/>
@@ -415,6 +430,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="1Fa-Ah-4ui"/>
                     </view>
+                    <connections>
+                        <outlet property="money" destination="95H-cl-wDz" id="sSc-pL-dth"/>
+                        <outlet property="nowprice" destination="EVx-iF-ev7" id="Qyl-OM-TnC"/>
+                        <outlet property="price" destination="zPE-aO-j2a" id="TfI-Rm-CM4"/>
+                        <outlet property="son" destination="YNj-md-P0x" id="s7S-pb-COu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcU-LJ-zj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
