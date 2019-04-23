@@ -14,12 +14,10 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
     @IBAction func clear_btn(_ sender: Any) {
         price.text = ""
         price.placeholder = ""
-
         money.text = ""
         money.placeholder = ""
         son.text = ""
         son.placeholder = ""
-
         nowprice.text = ""
     }
     @IBOutlet weak var clear: UIButton!
@@ -96,9 +94,7 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
     // Called when an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         addBannerViewToView(bannerView)
-        
-        print(bannerView.adUnitID)
-    }
+            }
     
     // Called when an ad request failed.
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {

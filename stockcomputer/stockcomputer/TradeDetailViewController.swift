@@ -144,7 +144,6 @@ class TradeDetailViewController:UIViewController ,GADBannerViewDelegate ,UIPicke
         adBannerView!.adUnitID = id
         adBannerView!.delegate = self
         adBannerView!.rootViewController = self
-        
         adBannerView!.load(GADRequest())
     }
     /*
