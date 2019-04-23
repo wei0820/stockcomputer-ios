@@ -60,6 +60,7 @@
                         <segue destination="nJi-N6-8h6" kind="show" identifier="Margin" id="hcT-CX-oKM"/>
                         <segue destination="N38-0L-QVR" kind="show" identifier="hongkongstock" id="O02-3f-ktg"/>
                         <segue destination="qrd-3j-tBX" kind="show" identifier="hongkong" id="joA-a6-iEq"/>
+                        <segue destination="acF-Zl-rht" kind="show" identifier="distribution" id="Gmf-pI-7C9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -308,6 +309,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwa-1w-lVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-522.39999999999998" y="-416.0419790104948"/>
+        </scene>
+        <!--Distribution Controller-->
+        <scene sceneID="Jfa-7B-HWw">
+            <objects>
+                <viewController id="acF-Zl-rht" customClass="DistributionController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bnx-E3-394">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1Fa-Ah-4ui"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcU-LJ-zj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1046" y="278"/>
         </scene>
         <!--Hong Kong Controller-->
         <scene sceneID="JdM-7p-L0f">
@@ -576,7 +592,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSW-b1-tK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242.40000000000001" y="353.9730134932534"/>
+            <point key="canvasLocation" x="-1047" y="1218"/>
         </scene>
         <!--Margin Controller-->
         <scene sceneID="jVG-nY-n94">
