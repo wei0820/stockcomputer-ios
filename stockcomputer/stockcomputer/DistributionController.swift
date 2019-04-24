@@ -54,8 +54,6 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
         nowprice.text = String(price_double)
         son.placeholder = "0.0"
         
-        
-        
     }
     func cal_2(){
         //除權後股價＝ 除權前股價 ／（1＋股票股利 ÷ 10)
