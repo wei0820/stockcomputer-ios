@@ -27,7 +27,8 @@ class FBLoginViewController: UIViewController , FBSDKLoginButtonDelegate {
         
         //        第一次登入後可取得使用者token，後續即可直接登入
         if (FBSDKAccessToken.current()) != nil{
-            //            fetchProfile()
+                        fetchProfile()
+            
         }
         // Do any additional setup after loading the view.
     }
@@ -72,8 +73,14 @@ class FBLoginViewController: UIViewController , FBSDKLoginButtonDelegate {
                         let data = picture["data"] as? NSDictionary,
                         let url = data["url"] as? String {
                         print(url) //臉書大頭貼的url, 再放入imageView內秀出來
+                        
+                   
                     }
                 }
+              
+                let next = self.storyboard?.instantiateViewController(withIdentifier: "home")
+                
+                self.present(next!, animated: true, completion: nil)
             }
         })
     }
