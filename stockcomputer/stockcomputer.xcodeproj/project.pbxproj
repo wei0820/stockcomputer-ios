@@ -20,6 +20,7 @@
 		B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */; };
 		B7E8C174226F015500792815 /* DistributionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C173226F015500792815 /* DistributionController.swift */; };
 		B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */; };
+		B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C1772270197900792815 /* FBLoginViewController.swift */; };
 		FBEB0E1426AB3060EA6C8327 /* Pods_stockcomputer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82019D6419C5A80F898DC873 /* Pods_stockcomputer.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongStockController.swift; sourceTree = "<group>"; };
 		B7E8C173226F015500792815 /* DistributionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionController.swift; sourceTree = "<group>"; };
 		B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyLaunchScreen.storyboard; sourceTree = "<group>"; };
+		B7E8C1772270197900792815 /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */,
 				B7E8C173226F015500792815 /* DistributionController.swift */,
 				B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */,
+				B7E8C1772270197900792815 /* FBLoginViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */,
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
 				B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */,
+				B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */,
 				B77B6F662205D53300A674D6 /* MarginController.swift in Sources */,
 				B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */,
 				B77B6F682205D55100A674D6 /* FinancingViewController.swift in Sources */,
