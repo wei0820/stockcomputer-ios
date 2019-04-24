@@ -19,6 +19,7 @@
 		B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A4612269998E00CF6005 /* HongKongController.swift */; };
 		B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */; };
 		B7E8C174226F015500792815 /* DistributionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C173226F015500792815 /* DistributionController.swift */; };
+		B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */; };
 		FBEB0E1426AB3060EA6C8327 /* Pods_stockcomputer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82019D6419C5A80F898DC873 /* Pods_stockcomputer.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		B7E0A4612269998E00CF6005 /* HongKongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongController.swift; sourceTree = "<group>"; };
 		B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongStockController.swift; sourceTree = "<group>"; };
 		B7E8C173226F015500792815 /* DistributionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionController.swift; sourceTree = "<group>"; };
+		B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyLaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				B7E0A4612269998E00CF6005 /* HongKongController.swift */,
 				B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */,
 				B7E8C173226F015500792815 /* DistributionController.swift */,
+				B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74F530B220556350034DC5D /* LaunchScreen.storyboard in Resources */,
+				B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */,
 				B74F5308220556350034DC5D /* Assets.xcassets in Resources */,
 				B74F5306220556340034DC5D /* Main.storyboard in Resources */,
 			);
