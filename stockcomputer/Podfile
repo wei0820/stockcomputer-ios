@@ -9,4 +9,4 @@ target 'stockcomputer' do
   pod 'Firebase'
 pod 'Firebase/Core'
 pod 'Firebase/AdMob'
-end
+pod 'FacebookLogin'end
