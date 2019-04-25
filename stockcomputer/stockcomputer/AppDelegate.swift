@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import FBSDKCoreKit
-
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         GADMobileAds.configure(withApplicationID: "ca-app-pub-7019441527375550~3755656221")
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
+        FirebaseApp.configure()
         return true
     }
 

@@ -8,6 +8,9 @@
 
 import UIKit
 import FBSDKLoginKit
+import Firebase
+
+
 class FBLoginViewController: UIViewController , FBSDKLoginButtonDelegate {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         fetchProfile()
@@ -76,7 +79,20 @@ class FBLoginViewController: UIViewController , FBSDKLoginButtonDelegate {
                         
                    
                     }
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                    
+                    Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                        if let error = error {
+                            // ...
+                            return
+                        }
+                        // User is signed in
+                        // ...
+                    }
+                    
+
                 }
+                
               
                 let next = self.storyboard?.instantiateViewController(withIdentifier: "home")
                 
