@@ -8,13 +8,14 @@
 
 import UIKit
 import GoogleMobileAds
-
+import Firebase
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,GADBannerViewDelegate{
 //    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算","港股複委託購入試算","港股複委託獲利試算"]
 //    var itemName = ["現股當沖獲利計算","現股獲利計算"]
     var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算"]
 
-    
+    var ref: DatabaseReference!
+
     var adBannerView: GADBannerView?
     var interstitial: GADInterstitial!
 
@@ -94,7 +95,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         setAdBanner()
 //        setInterstitial()
-        
+//        ref = Database.database().reference()
+//        self.ref.child("users").child("11111").setValue(["username": "1111"])
+//
+//        let url = URL(string: "https://drive.google.com/open?id=1-gCzQU9bTdRf98kRyIl-EtfkwtrvmkIU")
+//        if UIApplication.shared.canOpenURL(url!) {
+//            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+//            //If you want handle the completion block than
+//            UIApplication.shared.open(url!, options: [:], completionHandler: { (success) in
+//                print("Open url : \(success)")
+//            })
+//        }
+      
     }
     func setAdBanner(){
         let id = "ca-app-pub-7019441527375550/2358814075"
