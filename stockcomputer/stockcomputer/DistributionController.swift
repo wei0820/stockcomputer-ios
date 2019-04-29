@@ -12,8 +12,10 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
-
+import SwiftSoup
 class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFieldDelegate  ,UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
+    var url = "https://tw.stock.yahoo.com/d/i/fgbuy_tse_w.html"
+
     @IBOutlet weak var nowprice: UILabel!
     @IBAction func clear_btn(_ sender: Any) {
 //        price.text = ""
@@ -97,18 +99,16 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
         setKeyKeyboardType()
 
         // Do any additional setup after loading the view.
-        
-        
-        
-        if let user = Auth.auth().currentUser {
-            uid = user.uid
+//
+//
+//
+//        if let user = Auth.auth().currentUser {
+//            uid = user.uid
+//        }
+ 
         }
-        
-        var ref: DatabaseReference!
-        
-       
-        
-    }
+
+    
     @IBOutlet weak var son: UITextField!
     @IBOutlet weak var money: UITextField!
     var price_double = 0.0
@@ -283,35 +283,7 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
                                 
                             })
                         }
-//                        let uploadImageUrl = data?.downloadURL()?.absoluteString
-                        // 存放在database
-             
-                        // 連結取得方式就是：data?.downloadURL()?.absoluteString。
-                        
-//                        if let uploadImageUrl = data?.downloadURL()?.absoluteString {
-//
-////                            // 我們可以 print 出來看看這個連結事不是我們剛剛所上傳的照片。
-////                            print("Photo Url: \(uploadImageUrl)")
-////
-////
-////                            // 存放在database
-////                            let databaseRef = Database.database().reference(withPath: "ID/\(self.uid)/Profile/Photo")
-////
-////                            databaseRef.setValue(uploadImageUrl, withCompletionBlock: { (error, dataRef) in
-////
-////                                if error != nil {
-////
-////                                    print("Database Error: \(error!.localizedDescription)")
-////                                }
-////                                else {
-////
-////                                    print("圖片已儲存")
-////                                }
-////
-////                            })
-//
-//
-//                        }
+
                     })
                 }
             }
@@ -320,3 +292,4 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
     }
 }
 }
+
