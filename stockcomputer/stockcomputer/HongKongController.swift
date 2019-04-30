@@ -10,6 +10,7 @@ import UIKit
 import GoogleMobileAds
 
 class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextFieldDelegate , GADRewardBasedVideoAdDelegate {
+    @IBOutlet weak var low: UITextField!
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
                             didRewardUserWith reward: GADAdReward) {
         print("Reward received with currency: \(reward.type), amount \(reward.amount).")
@@ -53,7 +54,7 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     var DeliveryFee = 0.0
     var tw = 0.0
     var total_price_int = 0
-
+    var lowint = 0
     @IBOutlet weak var total_price: UILabel!
     
 
@@ -62,6 +63,12 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
         
         if(buy_price.text?.count != 0 &&  buy_num.text?.count != 0){
             total = Double(buy_price.text!)! * Double(buy_num.text!)!
+            if(low.text?.count != 0){
+                lowint = Int(low.text!)!
+            }else{
+                lowint = Int(low.placeholder!)!
+
+            }
             if(TF1_1.text?.count != 0 ){
                 handlingfee = Double(TF1_1.text!)! * 0.01
 
@@ -98,14 +105,21 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
 
             }
             
-            if(total * handlingfee<=100){
-                handlingfeeprice = 100
-                lb_1.text = "手續費:" + String(handlingfeeprice)
-
-            }else{
+            if(lowint == 0){
                 lb_1.text = "手續費:" + String(handlingfeeprice  )
 
+            }else{
+                if(total * handlingfee <= Double(lowint)){
+                    handlingfeeprice = lowint
+                    lb_1.text = "手續費:" + String(handlingfeeprice)
+                    
+                }else{
+                    lb_1.text = "手續費:" + String(handlingfeeprice  )
+                    
+                }
             }
+          
+            
             
             lb2.text = "交易稅:"  + String(TransactionTax )
             lb3.text = "印花稅:" + String(StampDuty )
@@ -140,6 +154,7 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
         setTF_3()
         setTF_4()
         setTF_5()
+        setlow()
         setKeyKeyboardType()
 
         GADRewardBasedVideoAd.sharedInstance().delegate = self
@@ -186,6 +201,11 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
             break
         case buy_num :
             buy_num.resignFirstResponder()
+            break
+        case low :
+            low.resignFirstResponder()
+            
+            UserDefaults.standard.set(low.text, forKey:"low")
             break
         default:
             textField.resignFirstResponder()
@@ -255,6 +275,20 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
 
         }else{
             tf_5.placeholder = "4"
+            
+        }
+        
+    }
+    
+    func setlow(){
+        
+        if let loww = UserDefaults.standard.object(forKey: "low") as? String {
+            
+            low.placeholder = loww
+            low.text = ""
+            
+        }else{
+            low.placeholder = "100"
             
         }
         
@@ -349,6 +383,9 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
         
         tf_5.keyboardType = UIKeyboardType.numbersAndPunctuation
         tf_5.returnKeyType = .done
+        
+        low.keyboardType = UIKeyboardType.numbersAndPunctuation
+        low.returnKeyType = .done
         
     }
     
