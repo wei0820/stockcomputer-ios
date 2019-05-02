@@ -189,7 +189,6 @@ class StockPriceViewController: UIViewController ,GADBannerViewDelegate {
     }
     func getAll(){
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?StockNo=B1YM%26",textName: self.min1,textprice: self.min2,textchg: self.min3,textNow: self.min4)
-        
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?StockNo=SOX&c=0",textName: self.vl2_1,textprice: self.vl2_2,textchg: self.vl2_3,textNow: self.vl2_4)
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=NAS", textName: vl3_1, textprice: vl3_2, textchg: vl3_3, textNow: vl3_4)
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=SP5", textName: vl4_1, textprice: vl4_2, textchg: vl4_3, textNow: vl4_4)
