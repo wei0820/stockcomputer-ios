@@ -1470,6 +1470,18 @@
                         <outlet property="vl2_2" destination="TUz-lN-zom" id="kSN-Nj-Eno"/>
                         <outlet property="vl2_3" destination="hph-sH-tyu" id="IT9-N9-Gp9"/>
                         <outlet property="vl2_4" destination="LZc-qO-jFV" id="jhV-JW-D2h"/>
+                        <outlet property="vl3_1" destination="Jib-ig-UEW" id="AqM-XY-KEV"/>
+                        <outlet property="vl3_2" destination="ONb-Pm-x3S" id="jQ3-DW-u2i"/>
+                        <outlet property="vl3_3" destination="LoZ-AH-IGL" id="cBa-zV-hHS"/>
+                        <outlet property="vl3_4" destination="nT3-f3-py5" id="fPl-DE-peC"/>
+                        <outlet property="vl4_1" destination="zfx-8B-CPw" id="ExX-cQ-52J"/>
+                        <outlet property="vl4_2" destination="eC5-s5-ara" id="YMy-Wo-2yz"/>
+                        <outlet property="vl4_3" destination="8vP-u1-rG0" id="bd9-zY-gGC"/>
+                        <outlet property="vl4_4" destination="P6o-yr-dDZ" id="W8z-t3-6ij"/>
+                        <outlet property="vl5_1" destination="D3o-H5-Hk8" id="ogx-fQ-btE"/>
+                        <outlet property="vl5_2" destination="50a-cC-whM" id="R66-sj-igL"/>
+                        <outlet property="vl5_3" destination="njc-NW-1YK" id="H8J-uT-pqI"/>
+                        <outlet property="vl5_4" destination="H5t-Qv-k1w" id="emh-Fb-jpK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FR3-Eg-yQg" userLabel="First Responder" sceneMemberID="firstResponder"/>

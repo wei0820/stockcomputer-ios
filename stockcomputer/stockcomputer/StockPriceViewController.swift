@@ -15,6 +15,18 @@ class StockPriceViewController: UIViewController ,GADBannerViewDelegate {
     var adBannerView: GADBannerView?
     var timer: Timer?
 
+    @IBOutlet weak var vl5_4: UILabel!
+    @IBOutlet weak var vl5_3: UILabel!
+    @IBOutlet weak var vl5_2: UILabel!
+    @IBOutlet weak var vl5_1: UILabel!
+    @IBOutlet weak var vl4_4: UILabel!
+    @IBOutlet weak var vl4_3: UILabel!
+    @IBOutlet weak var vl4_2: UILabel!
+    @IBOutlet weak var vl4_1: UILabel!
+    @IBOutlet weak var vl3_4: UILabel!
+    @IBOutlet weak var vl3_3: UILabel!
+    @IBOutlet weak var vl3_2: UILabel!
+    @IBOutlet weak var vl3_1: UILabel!
     @IBOutlet weak var vl2_4: UILabel!
     @IBOutlet weak var vl2_3: UILabel!
     @IBOutlet weak var vl2_2: UILabel!
@@ -178,6 +190,9 @@ class StockPriceViewController: UIViewController ,GADBannerViewDelegate {
     func getAll(){
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?StockNo=B1YM%26",textName: self.min1,textprice: self.min2,textchg: self.min3,textNow: self.min4)
         
-                getStockPrice(url: "https://www.wantgoo.com/global/stockindex?StockNo=SOX&c=0",textName: self.vl2_1,textprice: self.vl2_2,textchg: self.vl2_3,textNow: self.vl2_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?StockNo=SOX&c=0",textName: self.vl2_1,textprice: self.vl2_2,textchg: self.vl2_3,textNow: self.vl2_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=NAS", textName: vl3_1, textprice: vl3_2, textchg: vl3_3, textNow: vl3_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=SP5", textName: vl4_1, textprice: vl4_2, textchg: vl4_3, textNow: vl4_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=VIX", textName: vl5_1, textprice: vl5_2, textchg: vl5_3, textNow: vl5_4)
     }
 }
