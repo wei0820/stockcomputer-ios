@@ -8,8 +8,10 @@
 
 import UIKit
 import GoogleMobileAds
-
+import Kanna
+import Alamofire
 class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextFieldDelegate , GADRewardBasedVideoAdDelegate {
+    @IBOutlet weak var nowhk: UILabel!
     @IBOutlet weak var low: UITextField!
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
                             didRewardUserWith reward: GADAdReward) {
@@ -98,13 +100,13 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
                 DeliveryFee = total * Double(TF_4.placeholder!)! * 0.01
 
             }
-            if(tf_5.text?.count != 0){
-                tw =  Double (tf_5.text!)!
-            }else {
-                tw =  Double (tf_5.placeholder!)!
-
-            }
-            
+//            if(tf_5.text?.count != 0){
+//                tw =  Double (tf_5.text!)!
+//            }else {
+//                tw =  Double (tf_5.placeholder!)!
+//
+//            }
+//
             if(lowint == 0){
                 lb_1.text = "手續費:" + String(handlingfeeprice  )
 
@@ -153,9 +155,10 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
         setTF_2()
         setTF_3()
         setTF_4()
-        setTF_5()
+//        setTF_5()
         setlow()
         setKeyKeyboardType()
+        test()
 
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
@@ -189,12 +192,12 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
             UserDefaults.standard.set(TF_4.text, forKey:"TF_4")
 
             break
-        case tf_5 :
-            tf_5.resignFirstResponder()
-
-            UserDefaults.standard.set(tf_5.text, forKey:"tf_5")
-
-            break
+//        case tf_5 :
+//            tf_5.resignFirstResponder()
+//
+//            UserDefaults.standard.set(tf_5.text, forKey:"tf_5")
+//
+//            break
         case buy_price :
             buy_price.resignFirstResponder()
 
@@ -266,19 +269,19 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
         }
         
     }
-    func setTF_5(){
-        
-        if let tf_55 = UserDefaults.standard.object(forKey: "tf_5") as? String {
-            
-            tf_5.placeholder = tf_55
-            tf_5.text = ""
-
-        }else{
-            tf_5.placeholder = "4"
-            
-        }
-        
-    }
+//    func setTF_5(){
+//
+//        if let tf_55 = UserDefaults.standard.object(forKey: "tf_5") as? String {
+//
+//            tf_5.placeholder = tf_55
+//            tf_5.text = ""
+//
+//        }else{
+//            tf_5.placeholder = "4"
+//
+//        }
+//
+//    }
     
     func setlow(){
         
@@ -381,8 +384,8 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
         TF_4.keyboardType = UIKeyboardType.numbersAndPunctuation
         TF_4.returnKeyType = .done
         
-        tf_5.keyboardType = UIKeyboardType.numbersAndPunctuation
-        tf_5.returnKeyType = .done
+//        tf_5.keyboardType = UIKeyboardType.numbersAndPunctuation
+//        tf_5.returnKeyType = .done
         
         low.keyboardType = UIKeyboardType.numbersAndPunctuation
         low.returnKeyType = .done
@@ -404,5 +407,22 @@ class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextField
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-
+    func test(){
+        Alamofire.request("http://rate.bot.com.tw/xrt?Lang=zh-TW").responseString { response in
+            if let html = response.result.value {
+                self.parseTaiwanBankHTML(url: html)
+            }
+        }
+        
+    }
+    func parseTaiwanBankHTML(url: String) {
+        
+        if let doc = try? Kanna.HTML(html: url, encoding: String.Encoding.utf8) {
+            for rate in doc.xpath("/html/body/div[1]/main/div[3]/table/tbody/tr[2]/td[3]") {
+             tw = Double(rate.text!)!
+                nowhk.text = String("目前港幣匯率:" + String(tw))
+                
+            }
+        }
+    }
 }

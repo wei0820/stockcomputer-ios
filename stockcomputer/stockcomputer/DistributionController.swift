@@ -13,6 +13,8 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 import SwiftSoup
+import Kanna
+import Alamofire
 class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFieldDelegate  ,UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
     var url = "https://tw.stock.yahoo.com/d/i/fgbuy_tse_w.html"
 
@@ -97,7 +99,7 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
         super.viewDidLoad()
         setAdBanner()
         setKeyKeyboardType()
-
+        test()
         // Do any additional setup after loading the view.
 //
 //
@@ -291,5 +293,39 @@ class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFi
         
     }
 }
+    
+    func test(){
+        Alamofire.request("https://www.wantgoo.com/global/stockindex?StockNo=VIX&c=0").responseString { response in
+            if let html = response.result.value {
+                self.parseTaiwanBankHTML(url: html)
+            }
+        }
+    
 }
+    func parseTaiwanBankHTML(url: String) {
+//        print ("url", url)
+      ////tbody[class='tb-stock tb-link']|//tbody|//tr|//td
+        ////*[@id='fm']/div[4]/div[8]/div[1]/div/div/table/tbody/tr[2]
+        if let doc = try? Kanna.HTML(html: url, encoding: String.Encoding.utf8) {
+            for rate in doc.xpath("//*[@id='topBasic']/div[2]/div[1]/span[1]") {
+                
+                print ("台灣銀行 泰銖賣匯", rate.text!)
+                
+            }
+            for rate in doc.xpath("//*[@id='topBasic']/div[2]/div[1]/span[3]") {
+                
+                print ("台灣銀行 泰銖賣匯", rate.text!)
+                
+            }
 
+            for rate in doc.xpath("//*[@id='topBasic']/div[2]/div[1]/span[2]") {
+                
+                print ("台灣銀行 泰銖賣匯", rate.text!)
+
+            }
+
+}
+    }
+    
+  
+}

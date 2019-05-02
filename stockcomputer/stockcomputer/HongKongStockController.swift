@@ -8,7 +8,8 @@
 
 import UIKit
 import GoogleMobileAds
-
+import Kanna
+import Alamofire
 class HongKongStockController: UIViewController  , GADBannerViewDelegate{
     var adBannerView: GADBannerView?
 
@@ -88,5 +89,5 @@ class HongKongStockController: UIViewController  , GADBannerViewDelegate{
                                 constant: 0)
             ])
     }
-    
+
 }
