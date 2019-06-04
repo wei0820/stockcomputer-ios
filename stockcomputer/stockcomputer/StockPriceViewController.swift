@@ -10,11 +10,36 @@ import UIKit
 import GoogleMobileAds
 import Kanna
 import Alamofire
+import JGProgressHUD
 
 class StockPriceViewController: UIViewController ,GADBannerViewDelegate {
     var adBannerView: GADBannerView?
     var timer: Timer?
-
+    var hud :JGProgressHUD?
+    @IBAction func now(_ sender: Any) {
+        getAll()
+    }
+    @IBOutlet weak var vl9_4: UILabel!
+    @IBOutlet weak var vl9_1: UILabel!
+    @IBOutlet weak var vl9_2: UILabel!
+    @IBOutlet weak var vl9_3: UILabel!
+    @IBOutlet weak var vl7_4: UILabel!
+    @IBOutlet weak var vl7_3: UILabel!
+    @IBOutlet weak var vl7_2: UILabel!
+    @IBOutlet weak var vl7_1: UILabel!
+    @IBOutlet weak var vl6_1: UILabel!
+    @IBOutlet weak var vl6_4: UILabel!
+    @IBOutlet weak var vl8_2: UILabel!
+    @IBOutlet weak var vl10_1: UILabel!
+    @IBOutlet weak var vl10_3: UILabel!
+    
+    @IBOutlet weak var vl10_4: UILabel!
+    @IBOutlet weak var vl10_2: UILabel!
+    @IBOutlet weak var vl8_4: UILabel!
+    @IBOutlet weak var vl8_3: UILabel!
+    @IBOutlet weak var vl8_1: UILabel!
+    @IBOutlet weak var vl6_3: UILabel!
+    @IBOutlet weak var vl6_2: UILabel!
     @IBOutlet weak var vl5_4: UILabel!
     @IBOutlet weak var vl5_3: UILabel!
     @IBOutlet weak var vl5_2: UILabel!
@@ -34,10 +59,14 @@ class StockPriceViewController: UIViewController ,GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setAdBanner()
+        hud = JGProgressHUD(style: .dark)
+        hud?.textLabel.text = "Loading"
+        hud?.show(in: self.view)
         getAll()
         
+        
 //
-//        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(StockPriceViewController.test), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(StockPriceViewController.getAll), userInfo: nil, repeats: true)
         
         
         // Do any additional setup after loading the view.
@@ -187,11 +216,19 @@ class StockPriceViewController: UIViewController ,GADBannerViewDelegate {
             
         }
     }
-    func getAll(){
+    @objc func getAll(){
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?StockNo=B1YM%26",textName: self.min1,textprice: self.min2,textchg: self.min3,textNow: self.min4)
-        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?StockNo=SOX&c=0",textName: self.vl2_1,textprice: self.vl2_2,textchg: self.vl2_3,textNow: self.vl2_4)
-        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=NAS", textName: vl3_1, textprice: vl3_2, textchg: vl3_3, textNow: vl3_4)
-        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=SP5", textName: vl4_1, textprice: vl4_2, textchg: vl4_3, textNow: vl4_4)
-        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=VIX", textName: vl5_1, textprice: vl5_2, textchg: vl5_3, textNow: vl5_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=DJI",textName: self.vl2_1,textprice: self.vl2_2,textchg: self.vl2_3,textNow: self.vl2_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=SOX", textName: vl3_1, textprice: vl3_2, textchg: vl3_3, textNow: vl3_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=NAS", textName: vl4_1, textprice: vl4_2, textchg: vl4_3, textNow: vl4_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=SP5", textName: vl5_1, textprice: vl5_2, textchg: vl5_3, textNow: vl5_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=VIX", textName: vl6_1, textprice: vl6_2, textchg: vl6_3, textNow: vl6_4)
+        getStockPrice(url: "https://www.wantgoo.com/option/futures/quotes?StockNo=WSPM%26", textName: vl7_1, textprice: vl7_2, textchg: vl7_3, textNow: vl7_4)
+        getStockPrice(url:"https://www.wantgoo.com/global/stockindex?stockno=S2TWZ1", textName: vl8_1, textprice: vl8_2, textchg: vl8_3, textNow: vl8_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=USDTWD", textName: vl9_1, textprice: vl9_2, textchg: vl9_3, textNow: vl9_4)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=GOLD", textName: vl10_4, textprice: vl10_2, textchg: vl10_3, textNow: vl10_1)
+        hud?.dismiss(afterDelay: 3.0)
+
+        
     }
 }

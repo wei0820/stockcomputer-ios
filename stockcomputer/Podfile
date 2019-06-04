@@ -7,7 +7,16 @@ target 'stockcomputer' do
 
   # Pods for stockcomputer
   pod 'Firebase'
+pod 'JGProgressHUD'
 
+pod 'GoogleMobileAdsMediationFacebook'
 pod 'Firebase/Core'
 pod 'Firebase/AdMob'
+pod 'Firebase/Auth'
+pod 'Alamofire', '~> 4.0.0-beta.4'
+pod 'Firebase/Database'
+pod 'Firebase/Storage'
+pod 'SwiftSoup'
+pod 'VpadnSDK'
+pod 'Kanna', '~> 4.0.0'
 pod 'FacebookLogin'end
