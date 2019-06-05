@@ -71,7 +71,7 @@ class StockPriceViewController: UIViewController ,GADBannerViewDelegate {
         hud?.textLabel.text = "Loading"
         hud?.show(in: self.view)
         getAll()
-        getStock(url: "https://www.wantgoo.com/stock/twstock/threeall")
+      
         
 //
         self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(StockPriceViewController.getAll), userInfo: nil, repeats: true)
@@ -180,30 +180,7 @@ class StockPriceViewController: UIViewController ,GADBannerViewDelegate {
         }
         
     }
-    @objc func getStock(url : String){
-        Alamofire.request(url).responseString { response in
-            if let html = response.result.value {
-                self.parseHTML(url: html)
-            }
-        }
-        
-    }
-    
-    func parseHTML(url: String ) {
-        ////tbody[class='tb-stock tb-link']|//tbody|//tr|//td
-        ////*[@id='fm']/div[4]/div[8]/div[1]/div/div/table/tbody/tr[2]
-        if let doc = try? Kanna.HTML(html: url, encoding: String.Encoding.utf8) {
 
-            for rate in doc.xpath("//*[@id='container']/div[6]/table[1]/thead/tr[1]/th[2]") {
-
-                
-            }
-            
-            
-          
-            
-        }
-    }
     func parseTaiwanBankHTML(url: String,textName : UILabel,textprice : UILabel ,textchg : UILabel,textNow :UILabel ) {
         //        print ("url", url)
         ////tbody[class='tb-stock tb-link']|//tbody|//tr|//td
