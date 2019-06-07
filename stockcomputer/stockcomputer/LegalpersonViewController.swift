@@ -14,7 +14,9 @@ import JGProgressHUD
 class LegalpersonViewController: UIViewController,GADBannerViewDelegate {
     var adBannerView: GADBannerView?
     var hud :JGProgressHUD?
-
+    @IBOutlet weak var label_buy: UILabel!
+    @IBOutlet weak var label_sell: UILabel!
+    
     @IBOutlet weak var label_1: UILabel!
     @IBOutlet weak var label_2: UILabel!
     @IBOutlet weak var label_3: UILabel!
@@ -45,6 +47,20 @@ class LegalpersonViewController: UIViewController,GADBannerViewDelegate {
     @IBOutlet weak var label5_2: UILabel!
     @IBOutlet weak var label5_3: UILabel!
     @IBOutlet weak var label5: UILabel!
+    var buy :Double  = 0.0
+    var buy_1 :Double = 0.0
+    var buy_2 :Double = 0.0
+    var buy_3 :Double = 0.0
+    var buy_4 :Double = 0.0
+    var buy_5 :Double = 0.0
+
+    var sell :Double = 0.0
+    var sell_1 :Double = 0.0
+    var sell_2 :Double = 0.0
+    var sell_3 :Double = 0.0
+    var sell_4 :Double = 0.0
+    var sell_5 :Double = 0.0
+
     /*
     // MARK: - Navigation
 
@@ -176,125 +192,161 @@ class LegalpersonViewController: UIViewController,GADBannerViewDelegate {
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[1]/td[2]") {
                 label_2.textColor = UIColor.red
                 label_2.text = rate.text! + "(億)"
+                buy_1 = Double(rate.text!)!
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[1]/td[3]") {
                 label_3.textColor = UIColor.green
                 label_3.text = rate.text! + "(億)"
+                sell_1 = Double(rate.text!)!
+
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[1]/td[4]") {
                 if(rate.text!.hasPrefix("-")){
                     
                     label_4.textColor = UIColor.green
-                    
+                    label_4.text = rate.text! + "(億)"
+
                     
                 }else{
                     label_4.textColor = UIColor.red
-                    
+                    label_4.text = "+" + rate.text! + "(億)"
+
                     
                 }
-                label_4.text = rate.text! + "(億)"
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[2]/td[2]") {
                 label2_1.textColor = UIColor.red
                 label2_1.text = rate.text! + "(億)"
+                buy_2 = Double(rate.text!)!
+
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[2]/td[3]") {
                 label2_2.textColor = UIColor.green
                 label2_2.text = rate.text! + "(億)"
+                sell_2 = Double(rate.text!)!
+
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[2]/td[4]") {
                 if(rate.text!.hasPrefix("-")){
                     
                     label2_3.textColor = UIColor.green
-                    
+                    label2_3.text = rate.text! + "(億)"
+
                     
                 }else{
                     label2_3.textColor = UIColor.red
-                    
+                    label2_3.text = "+" + rate.text! + "(億)"
+
                     
                 }
-                label2_3.text = rate.text! + "(億)"
             }
             
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[3]/td[2]") {
                 label3_1.textColor = UIColor.red
                 label3_1.text = rate.text! + "(億)"
+                buy_3 = Double(rate.text!)!
+
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[3]/td[3]") {
                 label3_2.textColor = UIColor.green
                 label3_2.text = rate.text! + "(億)"
+                sell_3 = Double(rate.text!)!
+
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[3]/td[4]") {
                 if(rate.text!.hasPrefix("-")){
                     
                     label3_3.textColor = UIColor.green
-                    
+                    label3_3.text = rate.text! + "(億)"
+
                     
                 }else{
                     label3_3.textColor = UIColor.red
-                    
+                    label3_3.text = "+" + rate.text! + "(億)"
+
                     
                 }
-                label3_3.text = rate.text! + "(億)"
             }
             
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[4]/td[2]") {
                 label4_1.textColor = UIColor.red
                 label4_1.text = rate.text! + "(億)"
+                buy_4 = Double(rate.text!)!
+                
+
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[4]/td[3]") {
                 label4_2.textColor = UIColor.green
                 label4_2.text = rate.text! + "(億)"
+                sell_4 = Double(rate.text!)!
+
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[4]/td[4]") {
                 if(rate.text!.hasPrefix("-")){
                     
                     label4_3.textColor = UIColor.green
-                    
+                    label4_3.text = rate.text! + "(億)"
+
                     
                 }else{
                     label4_3.textColor = UIColor.red
-                    
+                    label4_3.text = "+" + rate.text! + "(億)"
+
                     
                 }
-                label4_3.text = rate.text! + "(億)"
             }
             
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[5]/td[2]") {
                 label5_1.textColor = UIColor.red
                 label5_1.text = rate.text! + "(億)"
+                buy_5 = Double(rate.text!)!
+
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[5]/td[3]") {
                 label5_2.textColor = UIColor.green
                 label5_2.text = rate.text! + "(億)"
+                sell_5 = Double(rate.text!)!
+
             }
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[5]/td[4]") {
                 if(rate.text!.hasPrefix("-")){
                     
                     label5_3.textColor = UIColor.green
-                    
+                    label5_3.text = rate.text! + "(億)"
+
                     
                 }else{
                     label5_3.textColor = UIColor.red
-                    
+                    label5_3.text = "+" + rate.text! + "(億)"
+
                     
                 }
-                label5_3.text = rate.text! + "(億)"
             }
             
             for rate in doc.xpath("//*[@id='sideCol']/div/table[1]/tbody/tr[6]/td[2]") {
                 if(rate.text!.hasPrefix("-")){
                     
                     label5.textColor = UIColor.green
-                    
+                    label5.text = rate.text! + "(億)"
+
                     
                 }else{
                     label5.textColor = UIColor.red
-                    
+                    label5.text = "+" +  rate.text! + "(億)"
+
                     
                 }
-                label5.text = rate.text! + "(億)"
             }
+            buy = buy_1 + buy_2 + buy_3 + buy_4 + buy_5
+            sell = sell_1 + sell_2 + sell_3 + sell_4 + sell_5
+            
+            label_buy.text = String(Double(round(1000*buy)/1000)) + "(億)"
+            label_buy.textColor = UIColor.red
+
+            label_sell.text = String(Double(round(1000*sell)/1000)) + "(億)"
+            label_sell.textColor = UIColor.green
+
+
             hud?.dismiss()
             
             
@@ -302,3 +354,4 @@ class LegalpersonViewController: UIViewController,GADBannerViewDelegate {
         }
     }
 }
+
