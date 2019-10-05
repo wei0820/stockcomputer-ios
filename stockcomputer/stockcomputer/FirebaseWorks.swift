@@ -20,7 +20,7 @@ class FirebaseWorks{
     
     func signInFireBaseWithFB(completion: @escaping (_ result: Result) -> ()){
         
-        let fbAccessToken = FBSDKAccessToken.current()
+        let fbAccessToken = AccessToken.current
         guard let fbAccessTokenString = fbAccessToken?.tokenString else { return }
         
         let fbCredentials = FacebookAuthProvider.credential(withAccessToken: fbAccessTokenString)

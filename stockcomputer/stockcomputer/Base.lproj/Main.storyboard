@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyw-T5-M3K">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -109,8 +108,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAG-75-aV1">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAG-75-aV1">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="當沖獲利計算" id="4Wt-Hp-N8F">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="gRi-L8-7To"/>
@@ -211,11 +211,13 @@
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l6O-ql-iig">
                                 <rect key="frame" x="17" y="128" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fgr-Dp-DyO">
                                 <rect key="frame" x="237" y="128" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -336,30 +338,36 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QzW-ka-TUs">
                                 <rect key="frame" x="-62.5" y="83.5" width="500" height="500"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-Fv-wTz" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="0.0" y="548" width="375" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-Fv-wTz">
+                                <rect key="frame" x="180" y="542" width="54" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="3Qo-9N-cSU"/>
+                                    <constraint firstAttribute="width" constant="94" id="ru3-Mu-uRk"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="icons8-facebook-150"/>
+                                <connections>
+                                    <action selector="fblogin_:" destination="Gyw-T5-M3K" eventType="touchUpInside" id="Jhm-hw-pVb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QzW-ka-TUs" firstAttribute="centerX" secondItem="Zf5-0u-FoM" secondAttribute="centerX" id="11H-cn-41z"/>
-                            <constraint firstItem="pQb-Fv-wTz" firstAttribute="leading" secondItem="HwV-3o-nmM" secondAttribute="leading" id="1uI-E9-glZ"/>
-                            <constraint firstItem="QzW-ka-TUs" firstAttribute="centerY" secondItem="Zf5-0u-FoM" secondAttribute="centerY" id="3pl-kd-hbb"/>
-                            <constraint firstItem="pQb-Fv-wTz" firstAttribute="trailing" secondItem="HwV-3o-nmM" secondAttribute="trailing" id="CNW-5g-hfw"/>
-                            <constraint firstItem="QzW-ka-TUs" firstAttribute="centerY" secondItem="Zf5-0u-FoM" secondAttribute="centerY" id="Vqh-m7-Fau"/>
-                            <constraint firstItem="HwV-3o-nmM" firstAttribute="bottom" secondItem="pQb-Fv-wTz" secondAttribute="bottom" constant="89" id="bKE-PG-g0n"/>
+                            <constraint firstItem="HwV-3o-nmM" firstAttribute="trailing" secondItem="pQb-Fv-wTz" secondAttribute="trailing" constant="160" id="FlX-F1-vnQ"/>
+                            <constraint firstItem="QzW-ka-TUs" firstAttribute="centerX" secondItem="Zf5-0u-FoM" secondAttribute="centerX" id="Wys-Ze-tui"/>
+                            <constraint firstItem="HwV-3o-nmM" firstAttribute="bottom" secondItem="pQb-Fv-wTz" secondAttribute="bottom" constant="90" id="X50-do-OwR"/>
+                            <constraint firstItem="pQb-Fv-wTz" firstAttribute="top" secondItem="HwV-3o-nmM" secondAttribute="top" constant="551" id="exP-u0-iiX"/>
+                            <constraint firstItem="pQb-Fv-wTz" firstAttribute="leading" secondItem="HwV-3o-nmM" secondAttribute="leading" constant="160" id="glH-GP-TD0"/>
+                            <constraint firstItem="QzW-ka-TUs" firstAttribute="centerY" secondItem="Zf5-0u-FoM" secondAttribute="centerY" id="wc8-rW-aeU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HwV-3o-nmM"/>
                     </view>
                     <connections>
-                        <outlet property="fblogin" destination="pQb-Fv-wTz" id="aS1-tT-Fzp"/>
                         <segue destination="iq4-b8-TZg" kind="show" identifier="home" id="Hhv-SS-L9y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEo-Si-afL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1759.2" y="-593.25337331334333"/>
+            <point key="canvasLocation" x="-1760.8" y="-594.15292353823088"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L8H-G8-Fih">
@@ -2069,6 +2077,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-facebook-150" width="150" height="150"/>
         <image name="logo" width="500" height="500"/>
     </resources>
 </document>

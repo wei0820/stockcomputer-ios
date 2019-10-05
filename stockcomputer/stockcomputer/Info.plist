@@ -76,5 +76,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+
+    <key>CFBundleURLTypes</key> <array> <dict> <key>CFBundleURLSchemes</key> <array> <string>fb383959162037550</string> </array> </dict> </array> <key>FacebookAppID</key> <string>383959162037550</string> <key>FacebookDisplayName</key> <string>股票獲利計算器</string>
+
+    <key>LSApplicationQueriesSchemes</key> <array> <string>fbapi</string> <string>fb-messenger-share-api</string> <string>fbauth2</string> <string>fbshareextension</string> </array>
+    
+    <key>GADIsAdManagerApp</key>
+    <true/>
+    <key>GADApplicationIdentifier</key>
+    <string>ca-app-pub-7019441527375550~3755656221</string>
 </dict>
 </plist>
