@@ -93,10 +93,14 @@ class FBLoginViewController: UIViewController , FBSDKLoginButtonDelegate {
 
                 }
                 
-              
-                let next = self.storyboard?.instantiateViewController(withIdentifier: "home")
-                
-                self.present(next!, animated: true, completion: nil)
+//
+//                let next = self.storyboard?.instantiateViewController(withIdentifier: "home")
+//
+//                self.present(next!, animated: true, completion: nil)
+                let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+                       let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
+                       let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+                       appDelegate.window?.rootViewController = HomeVc
             }
         })
     }
