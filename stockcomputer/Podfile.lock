@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - CVCalendar (1.6.2)
   - FacebookCore (0.5.0):
     - Bolts (~> 1.9)
     - FBSDKCoreKit (~> 4.37)
@@ -67,6 +68,8 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FSCalendar (2.8.0)
+  - GCCalendar (2.4.1)
   - Google-Mobile-Ads-SDK (7.38.0)
   - GoogleAppMeasurement (5.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
@@ -109,6 +112,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0.0-beta.4)
+  - CVCalendar (~> 1.6.2)
   - FacebookLogin
   - Firebase
   - Firebase/AdMob
@@ -116,6 +120,8 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - FSCalendar
+  - GCCalendar
   - GoogleMobileAdsMediationFacebook
   - JGProgressHUD
   - Kanna (~> 4.0.0)
@@ -126,6 +132,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Bolts
+    - CVCalendar
     - FacebookCore
     - FacebookLogin
     - FBAudienceNetwork
@@ -139,6 +146,8 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - FirebaseStorage
+    - FSCalendar
+    - GCCalendar
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleMobileAdsMediationFacebook
@@ -154,6 +163,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CVCalendar: 515092247b9c5059855643c2a2220f259bd5417f
   FacebookCore: 74288d0add931d361b1596beae787ab72c438249
   FacebookLogin: ebcf34714a1cb9f0759d9f071cfb01ed500996cf
   FBAudienceNetwork: 95efd4f20dc44f97254dbd3dfe5a4d19164092a8
@@ -167,6 +177,8 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 23acb0c53cd4d4070a427b60100b2e4aaa97c45d
   FirebaseInstanceID: 97ea7a5dca9afd72c79bfcdddb7a44aa1cbb42a1
   FirebaseStorage: 29075f874c2b3cf61e5221a62c4ceefc809e5412
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  GCCalendar: b9d584a3e437f9af5b0ab23030e7ed46affc3b23
   Google-Mobile-Ads-SDK: fec4a72b71a81302d3fd75454df3417c03c50ed5
   GoogleAppMeasurement: 621f3bc6211d5ba548debe01fafad30cf5ab6859
   GoogleMobileAdsMediationFacebook: adda2f478cd9c17edd9c5a5518272458ea024564
@@ -179,6 +191,6 @@ SPEC CHECKSUMS:
   SwiftSoup: 92f5b348c131aed8af04f4326db1579ab19fa08c
   VpadnSDK: efc1fbc44b1005387309405f628a5276e6817c55
 
-PODFILE CHECKSUM: 3e350ce1c341305ec53b547db6dec0434e34559c
+PODFILE CHECKSUM: 93c314863c6f0690df28e497b8dc8cfe6489b2dc
 
 COCOAPODS: 1.5.3
