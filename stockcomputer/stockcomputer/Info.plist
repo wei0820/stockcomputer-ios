@@ -56,17 +56,17 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>需要你授權</string>
 	<key>NSCameraUsageDescription</key>
-	<string>This app requires access to the camera.</string>
+	<string>是否允許$(PRODUCT_NAME)使用你的相機？</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>This app does not require access to the microphone.</string>
+	<string>$(PRODUCT_NAME)不需要使用麥克風.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>存照片</string>
+	<string>需要獲取個人照片進行編輯是否允許$(PRODUCT_NAME)獲取相冊權限？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app requires access to the photo library.</string>
+	<string>需要獲取個人照片進行編輯是否允許$(PRODUCT_NAME)獲取相冊權限？</string>
 	<key>Privacy – Camera Usage Description</key>
-	<string>$(PRODUCT_NAME) camera use</string>
+	<string>是否允許$(PRODUCT_NAME)使用你的相機？</string>
 	<key>Privacy – Photo Library Usage Description</key>
-	<string>$(PRODUCT_NAME) photo use</string>
+	<string>需要獲取個人照片進行編輯是否允許$(PRODUCT_NAME)獲取相冊權限？</string>
 	<key>UILaunchStoryboardName</key>
 	<string>MyLaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

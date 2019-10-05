@@ -9225,22 +9225,6 @@
 			};
 			name = Debug;
 		};
-		1728083E8627EFBF2103DB427F47169B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36C091A79D333B08089C45A4E6290805 /* JGProgressHUD.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/JGProgressHUD";
-				INFOPLIST_FILE = "Target Support Files/JGProgressHUD/ResourceBundle-JGProgressHUD-JGProgressHUD-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = JGProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		1AE2A22E6928F9819F8752D3871DCAC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6AD5D82913E074594A38F43C27703115 /* FirebaseStorage.xcconfig */;
@@ -10322,6 +10306,23 @@
 			};
 			name = Release;
 		};
+		985BBDB3D6059F1FEAA4CCD368E2086F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36C091A79D333B08089C45A4E6290805 /* JGProgressHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/JGProgressHUD";
+				IBSC_MODULE = JGProgressHUD;
+				INFOPLIST_FILE = "Target Support Files/JGProgressHUD/ResourceBundle-JGProgressHUD-JGProgressHUD-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = JGProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		998FAC5670CB9B20A00B386B5CD90279 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 43F1751F5392BEB5C25E1255D59205C2 /* FirebaseCoreDiagnostics.xcconfig */;
@@ -10914,22 +10915,6 @@
 			};
 			name = Debug;
 		};
-		E512E366932B4E2998F570CD025405AB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36C091A79D333B08089C45A4E6290805 /* JGProgressHUD.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/JGProgressHUD";
-				INFOPLIST_FILE = "Target Support Files/JGProgressHUD/ResourceBundle-JGProgressHUD-JGProgressHUD-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = JGProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		E81C30CD63389F82C0B47B27758AE6A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C0616790FD50E37E3C9940FC335C40CA /* FacebookShare.xcconfig */;
@@ -11208,6 +11193,23 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F97C413B8CB13B038D59F45835A490CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36C091A79D333B08089C45A4E6290805 /* JGProgressHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/JGProgressHUD";
+				IBSC_MODULE = JGProgressHUD;
+				INFOPLIST_FILE = "Target Support Files/JGProgressHUD/ResourceBundle-JGProgressHUD-JGProgressHUD-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = JGProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -11594,8 +11596,8 @@
 		F6D7FA642E7116008BF2E06AC1CAF851 /* Build configuration list for PBXNativeTarget "JGProgressHUD-JGProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E512E366932B4E2998F570CD025405AB /* Debug */,
-				1728083E8627EFBF2103DB427F47169B /* Release */,
+				F97C413B8CB13B038D59F45835A490CE /* Debug */,
+				985BBDB3D6059F1FEAA4CCD368E2086F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

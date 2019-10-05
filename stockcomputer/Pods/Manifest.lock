@@ -151,7 +151,7 @@ DEPENDENCIES:
   - VpadnSDK
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - CVCalendar
     - FacebookCore
@@ -223,4 +223,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 23adccebf2786766d1fabcf4100b4300d46f112c
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.1
