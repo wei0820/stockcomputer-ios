@@ -129,7 +129,6 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - SwiftSoup (2.2.1)
   - VpadnSDK (4.9.3)
 
 DEPENDENCIES:
@@ -149,7 +148,6 @@ DEPENDENCIES:
   - GoogleMobileAdsMediationFacebook
   - JGProgressHUD
   - Kanna (~> 4.0.0)
-  - SwiftSoup
   - VpadnSDK
 
 SPEC REPOS:
@@ -186,7 +184,6 @@ SPEC REPOS:
     - Kanna
     - leveldb-library
     - nanopb
-    - SwiftSoup
     - VpadnSDK
 
 SPEC CHECKSUMS:
@@ -222,9 +219,8 @@ SPEC CHECKSUMS:
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  SwiftSoup: a91d3c96ecb6f8f13005552ef60f9075aae4a7f3
   VpadnSDK: af98910008b16b2bae43204b7013fa064ba80b01
 
-PODFILE CHECKSUM: 68ed3fb3d67747b84671f1455d7018b4e0ba1c2e
+PODFILE CHECKSUM: 23adccebf2786766d1fabcf4100b4300d46f112c
 
 COCOAPODS: 1.7.5

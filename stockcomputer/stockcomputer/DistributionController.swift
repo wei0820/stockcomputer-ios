@@ -12,7 +12,6 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
-import SwiftSoup
 import Kanna
 import Alamofire
 class DistributionController: MUIViewController ,GADBannerViewDelegate  ,UITextFieldDelegate  ,UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
