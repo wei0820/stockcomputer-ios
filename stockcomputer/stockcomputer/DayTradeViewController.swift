@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class DayTradeViewController: UIViewController ,GADBannerViewDelegate ,UIPickerViewDelegate, UIPickerViewDataSource{
+class DayTradeViewController: MUIViewController ,GADBannerViewDelegate ,UIPickerViewDelegate, UIPickerViewDataSource{
 
     @IBOutlet weak var title_label: UILabel!
     

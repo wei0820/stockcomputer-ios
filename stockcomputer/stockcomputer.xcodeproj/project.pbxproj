@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8EF0005B23482E42002ED120 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF0005A23482E42002ED120 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */; };
+		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
 		B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7415F01227A91040077AF72 /* StockPriceViewController.swift */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
 		B74F5303220556340034DC5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5302220556340034DC5D /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		07B3F75B59E48434D47C1FDD /* Pods-stockcomputer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.release.xcconfig"; path = "Pods/Target Support Files/Pods-stockcomputer/Pods-stockcomputer.release.xcconfig"; sourceTree = "<group>"; };
 		82019D6419C5A80F898DC873 /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF0005A23482E42002ED120 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = VponAdapter_iOS_b1ffc56_v1.1.4.a; path = ../../../Downloads/VponAdapter_iOS_b1ffc56_v1.1.4.a; sourceTree = "<group>"; };
+		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
 		A0B769C3DBFF9DEDD3963E6A /* Pods-stockcomputer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stockcomputer/Pods-stockcomputer.debug.xcconfig"; sourceTree = "<group>"; };
 		B7415F01227A91040077AF72 /* StockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceViewController.swift; sourceTree = "<group>"; };
 		B74F52FD220556330034DC5D /* stockcomputer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stockcomputer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 				B7415F01227A91040077AF72 /* StockPriceViewController.swift */,
 				B769047722A663DE00E1B53F /* EveryDayController.swift */,
 				B769047922A7AF6200E1B53F /* LegalpersonViewController.swift */,
+				8EF0005C23482F7D002ED120 /* MUIViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */,
 				B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */,
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
+				8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */,
 				B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */,
 				B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */,
 				B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */,

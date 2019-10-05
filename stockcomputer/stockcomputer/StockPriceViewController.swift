@@ -12,7 +12,7 @@ import Kanna
 import Alamofire
 import JGProgressHUD
 
-class StockPriceViewController: UIViewController ,GADBannerViewDelegate {
+class StockPriceViewController: MUIViewController ,GADBannerViewDelegate {
     var adBannerView: GADBannerView?
     var timer: Timer?
     var hud :JGProgressHUD?

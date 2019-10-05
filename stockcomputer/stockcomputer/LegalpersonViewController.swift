@@ -11,7 +11,7 @@ import GoogleMobileAds
 import Kanna
 import Alamofire
 import JGProgressHUD
-class LegalpersonViewController: UIViewController,GADBannerViewDelegate {
+class LegalpersonViewController: MUIViewController,GADBannerViewDelegate {
     var adBannerView: GADBannerView?
     var hud :JGProgressHUD?
     @IBOutlet weak var label_buy: UILabel!

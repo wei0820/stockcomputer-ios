@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import Firebase
 
 
-class FBLoginViewController: UIViewController , FBSDKLoginButtonDelegate {
+class FBLoginViewController: MUIViewController , FBSDKLoginButtonDelegate {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         fetchProfile()
 

@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class FinancingViewController: UIViewController  ,GADBannerViewDelegate ,UITextFieldDelegate{
+class FinancingViewController: MUIViewController  ,GADBannerViewDelegate ,UITextFieldDelegate{
     var adBannerView: GADBannerView?
     var formatter: DateFormatter! = nil
     let datePicker = UIDatePicker()

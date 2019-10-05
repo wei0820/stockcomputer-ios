@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 import Kanna
 import Alamofire
-class HongKongStockController: UIViewController  , GADBannerViewDelegate{
+class HongKongStockController: MUIViewController  , GADBannerViewDelegate{
     var adBannerView: GADBannerView?
 
     override func viewDidLoad() {

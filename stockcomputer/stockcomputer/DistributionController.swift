@@ -15,7 +15,7 @@ import FirebaseStorage
 import SwiftSoup
 import Kanna
 import Alamofire
-class DistributionController: UIViewController ,GADBannerViewDelegate  ,UITextFieldDelegate  ,UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
+class DistributionController: MUIViewController ,GADBannerViewDelegate  ,UITextFieldDelegate  ,UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
     var url = "https://tw.stock.yahoo.com/d/i/fgbuy_tse_w.html"
 
     @IBOutlet weak var nowprice: UILabel!

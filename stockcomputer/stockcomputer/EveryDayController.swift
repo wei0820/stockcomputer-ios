@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import FSCalendar
-class EveryDayController: UIViewController ,GADBannerViewDelegate, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
+class EveryDayController: MUIViewController ,GADBannerViewDelegate, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"

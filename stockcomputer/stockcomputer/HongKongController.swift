@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 import Kanna
 import Alamofire
-class HongKongController: UIViewController , GADBannerViewDelegate  ,UITextFieldDelegate , GADRewardBasedVideoAdDelegate {
+class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFieldDelegate , GADRewardBasedVideoAdDelegate {
     @IBOutlet weak var nowhk: UILabel!
     @IBOutlet weak var low: UITextField!
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,

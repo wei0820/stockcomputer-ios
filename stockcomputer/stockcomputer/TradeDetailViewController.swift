@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class TradeDetailViewController:UIViewController ,GADBannerViewDelegate ,UIPickerViewDelegate, UIPickerViewDataSource {
+class TradeDetailViewController:MUIViewController ,GADBannerViewDelegate ,UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var buy_price: UITextField!
     @IBOutlet weak var sell_price: UITextField!

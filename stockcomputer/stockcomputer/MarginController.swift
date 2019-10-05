@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class MarginController: UIViewController  ,GADBannerViewDelegate , UIPickerViewDelegate, UIPickerViewDataSource {
+class MarginController: MUIViewController  ,GADBannerViewDelegate , UIPickerViewDelegate, UIPickerViewDataSource {
     var adBannerView: GADBannerView?
     let fullScreenSize = UIScreen.main.bounds.size
     let meals = ["早餐","午餐","晚餐","宵夜"]
