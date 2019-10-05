@@ -55,6 +55,8 @@
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>需要你授權</string>
+	<key>NSCameraUsageDescription</key>
+	<string>需要你授權</string>
 	<key>Privacy – Camera Usage Description</key>
 	<string>$(PRODUCT_NAME) camera use</string>
 	<key>Privacy – Photo Library Usage Description</key>

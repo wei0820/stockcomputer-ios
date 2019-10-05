@@ -216,7 +216,7 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
         let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
         appDelegate.window?.rootViewController = HomeVc
-
+        
     }
 }
 
