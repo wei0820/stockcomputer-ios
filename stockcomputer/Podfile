@@ -8,6 +8,10 @@ target 'stockcomputer' do
   # Pods for stockcomputer
   pod 'Firebase'
 pod 'JGProgressHUD'
+pod 'CVCalendar', '~> 1.6.2'
+pod 'GCCalendar'
+    pod 'FSCalendar'
+
 
 pod 'GoogleMobileAdsMediationFacebook'
 pod 'Firebase/Core'
