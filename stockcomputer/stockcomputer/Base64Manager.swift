@@ -13,9 +13,8 @@ class Base64Manager{
         
         return url.base64Decoded()!
     }
-    static func base64Decoded(s:base64EncodedString ) -> String{
-        s.base64Decoded() // It will return: heroes
-
+    static func base64Decoded(base64EncodedString: String) -> String{
+          base64EncodedString.base64Decoded()! // It will return: heroes\
     }
     
 }
