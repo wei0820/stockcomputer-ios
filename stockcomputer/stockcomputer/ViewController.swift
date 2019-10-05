@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMobileAds
 import Firebase
+import FacebookCore
+import FacebookLogin
 class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegate,GADBannerViewDelegate{
 //    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算","港股複委託購入試算","港股複委託獲利試算"]
 //    var itemName = ["現股當沖獲利計算","現股獲利計算"]
@@ -102,6 +104,8 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
         super.viewDidLoad()
         print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         setAdBanner()
+        setRightButton(s: "登出")
+        
 //        setInterstitial()
 //        ref = Database.database().reference()
 //        self.ref.child("users").child("11111").setValue(["username": "1111"])
@@ -186,7 +190,33 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
             ])
     }
     
+    func setRightButton(s: String){
+           // 導覽列右邊按鈕
+                 let rightButton = UIBarButtonItem(
+                                          title:s,
+                                          style:.plain,
+                                          target:self,
+                                          action:#selector(ViewController.setting))
+                                        // 加到導覽列中
+                                        self.navigationItem.rightBarButtonItem = rightButton
+    
+       
 
+       
+           
 
+         
+           
+       }
+    @objc func setting() {
+        let loginManager = LoginManager()
+        loginManager.logOut()
+        
+        let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+        let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+        appDelegate.window?.rootViewController = HomeVc
+
+    }
 }
 
