@@ -10,6 +10,9 @@
 		2A8D350EA7F30FC3A00D206F /* Pods_stockcomputer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9EC763219750A8CB4568D7 /* Pods_stockcomputer.framework */; };
 		8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122A23489A3B00795029 /* Base64Manager.swift */; };
 		8E87122D23489E7000795029 /* CamerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122C23489E7000795029 /* CamerManager.swift */; };
+		8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122E234ADCE000795029 /* MemberCenterViewController.swift */; };
+		8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E871230234AFF1000795029 /* StoreKit.framework */; };
+		8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
 		B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */; };
 		B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7415F01227A91040077AF72 /* StockPriceViewController.swift */; };
@@ -38,6 +41,9 @@
 		5E9EC763219750A8CB4568D7 /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E87122A23489A3B00795029 /* Base64Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Manager.swift; sourceTree = "<group>"; };
 		8E87122C23489E7000795029 /* CamerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerManager.swift; sourceTree = "<group>"; };
+		8E87122E234ADCE000795029 /* MemberCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCenterViewController.swift; sourceTree = "<group>"; };
+		8E871230234AFF1000795029 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
 		B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VponAdapter_iOS_b1ffc56_v1.1.4.a; sourceTree = "<group>"; };
 		B7415F01227A91040077AF72 /* StockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */,
 				B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */,
 				2A8D350EA7F30FC3A00D206F /* Pods_stockcomputer.framework in Frameworks */,
 			);
@@ -89,6 +96,7 @@
 		800E96CB366DE4F2D1B2957F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E871230234AFF1000795029 /* StoreKit.framework */,
 				5E9EC763219750A8CB4568D7 /* Pods_stockcomputer.framework */,
 			);
 			name = Frameworks;
@@ -139,6 +147,8 @@
 				8EF0005C23482F7D002ED120 /* MUIViewController.swift */,
 				8E87122A23489A3B00795029 /* Base64Manager.swift */,
 				8E87122C23489E7000795029 /* CamerManager.swift */,
+				8E87122E234ADCE000795029 /* MemberCenterViewController.swift */,
+				8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -276,7 +286,9 @@
 				B74F5301220556340034DC5D /* AppDelegate.swift in Sources */,
 				B7E8C174226F015500792815 /* DistributionController.swift in Sources */,
 				8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */,
+				8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */,
 				B769047A22A7AF6200E1B53F /* LegalpersonViewController.swift in Sources */,
+				8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

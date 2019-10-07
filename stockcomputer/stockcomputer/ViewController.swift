@@ -108,7 +108,7 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
             setRightButton(s: "訪客")
             
         }else{
-            setRightButton(s: "登出")
+            setRightButton(s: "會員中心")
             
         }
         
@@ -217,11 +217,11 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
             return
             
         }
-        let loginManager = LoginManager()
-        loginManager.logOut()
+//        let loginManager = LoginManager()
+//        loginManager.logOut()
         
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-        let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
+        let HomeVc = stroyboard.instantiateViewController(withIdentifier: "member")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
         appDelegate.window?.rootViewController = HomeVc
         
