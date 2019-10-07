@@ -207,13 +207,6 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
         // 加到導覽列中
         self.navigationItem.rightBarButtonItem = rightButton
         
-        
-        
-        
-        
-        
-        
-        
     }
     @objc func setting() {
         if((userDefaults.value(forKey: "isAnonymous")) != nil){
