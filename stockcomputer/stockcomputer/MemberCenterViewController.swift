@@ -38,6 +38,21 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions as! [SKPaymentTransaction] {
+            switch transaction.transactionState {
+            case SKPaymentTransactionState.purchased:
+                print("Transaction completed successfully.")
+                SKPaymentQueue.default().finishTransaction(transaction)
+
+
+            case SKPaymentTransactionState.failed:
+                print("Transaction Failed");
+                SKPaymentQueue.default().finishTransaction(transaction)
+
+            default:
+                print(transaction.transactionState.rawValue)
+            }
+        }
     }
     override func viewWillDisappear(_ animated: Bool) {
         // 移除觀查者
@@ -95,6 +110,9 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
                                                     withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
         self.productIDs.append("Member_Point_1000")
         requestProductInfo()
+        
+        SKPaymentQueue.default().add(self)
+
         // Do any additional setup after loading the view.
     }
     func requestProductInfo() {
@@ -223,6 +241,34 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         
     }
     @IBAction func shop(_ sender: Any) {
+    let controller = UIAlertController(title: " 商品列表", message: "請點選商品進行購買", preferredStyle: .actionSheet)
+        productsArray.forEach { (SKProduct) in
+            print(SKProduct.localizedTitle)
+            let action = UIAlertAction(title: SKProduct.localizedTitle, style: .default) { (action) in
+                    if (SKProduct.localizedTitle == "會員點數1000點"){
+               if SKPaymentQueue.canMakePayments() {
+                                         // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
+                                         SKPaymentQueue.default().add(self)
+                                         
+                                         // 取得內購產品
+                                         let payment = SKPayment(product: self.productsArray[0])
+                                         
+                                         // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
+                SKPaymentQueue.default().add(payment)}
+                    }else{
+                        
+                    }
+            
+
+          
+                }
+            controller.addAction(action)
+
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                           controller.addAction(cancelAction)
+                           present(controller, animated: true, completion: nil)
+        }
+        
     }
     @IBAction func watch(_ sender: Any) {
         
@@ -244,6 +290,5 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         controller.addAction(cancelAction)
         present(controller, animated: true, completion: nil)
     }
-    @IBOutlet weak var watchVideo: NSLayoutConstraint!
     
 }
