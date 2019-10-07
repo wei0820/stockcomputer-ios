@@ -37,6 +37,15 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         }
     }
     
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        print("復原購買失敗...")
+        print(error.localizedDescription)
+        setUIAlert(title: "復原購買失敗...", message:error.localizedDescription)
+    }
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        setUIAlert(title: "復原購買成功...", message: "復原購買成功")
+
+    }
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions as! [SKPaymentTransaction] {
             switch transaction.transactionState {
@@ -289,6 +298,13 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         controller.addAction(cancelAction)
         present(controller, animated: true, completion: nil)
+    }
+    
+    func setUIAlert(title :String ,message :String){
+    let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+             controller.addAction(okAction)
+             present(controller, animated: true, completion: nil)
     }
     
 }
