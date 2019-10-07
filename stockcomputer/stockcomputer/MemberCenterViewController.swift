@@ -257,19 +257,15 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         productsArray.forEach { (SKProduct) in
             print(SKProduct.localizedTitle)
             let action = UIAlertAction(title: SKProduct.localizedTitle, style: .default) { (action) in
-                if (SKProduct.localizedTitle == "會員點數500點"){
-                    if SKPaymentQueue.canMakePayments() {
-                        // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
-                        SKPaymentQueue.default().add(self)
-                        
-                        // 取得內購產品
-                        let payment = SKPayment(product: self.productsArray[0])
-                        
-                        // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
-                        SKPaymentQueue.default().add(payment)}
-                }else{
-                    
-                }
+                 if SKPaymentQueue.canMakePayments() {
+                                    // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
+                                    SKPaymentQueue.default().add(self)
+                    let index = controller.actions.index(of: action)
+                                        // 取得內購產品
+                    let payment = SKPayment(product: self.productsArray[index!])
+                                    
+                                    // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
+                                    SKPaymentQueue.default().add(payment)}
                 
                 
 
