@@ -243,7 +243,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
             print( Auth.auth().currentUser?.photoURL)
             mid.text = "會員ID:" + (Auth.auth().currentUser?.uid)!
             mName.text = "會員姓名:" + (Auth.auth().currentUser?.displayName)!
-            mPoint.text = "會員點數:" + "00"
+            mPoint.text = "會員點數:" + "0"
             
             DispatchQueue.global(qos: .userInitiated).async {
                 let imageData:NSData = NSData(contentsOf: (Auth.auth().currentUser?.photoURL)!)!

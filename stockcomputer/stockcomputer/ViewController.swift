@@ -14,7 +14,9 @@ import FacebookLogin
 class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegate,GADBannerViewDelegate{
     //    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算","港股複委託購入試算","港股複委託獲利試算"]
     //    var itemName = ["現股當沖獲利計算","現股獲利計算"]
-    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","選擇權賣賣試算"]
+//    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","選擇權賣賣試算"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超"]
+
     let userDefaults = UserDefaults.standard
     var ref: DatabaseReference!
     
@@ -81,10 +83,11 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
             //
         }else if (name == itemName[5]){
             performSegue(withIdentifier: "Legalperson", sender: nil)
-        }else if (name == itemName[6]){
-            performSegue(withIdentifier: "Option", sender: nil)
-
         }
+//        }else if (name == itemName[6]){
+//            performSegue(withIdentifier: "Option", sender: nil)
+//
+//        }
         
         //        }else if (name ==  itemName[2]){
         //            performSegue(withIdentifier: "Financing", sender: nil)
