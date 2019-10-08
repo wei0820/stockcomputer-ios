@@ -609,14 +609,64 @@
                     <view key="view" contentMode="scaleToFill" id="S9j-7n-ptZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買進價位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM0-Nf-pzH">
+                                <rect key="frame" x="16" y="83" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3oQ-7p-n0b"/>
+                                    <constraint firstAttribute="width" constant="70" id="dnP-Fc-2DD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOI-qX-iYR">
+                                <rect key="frame" x="16" y="125" width="97" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="GN0-1N-Gsi"/>
+                                    <constraint firstAttribute="height" constant="34" id="dZj-xd-Kmr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lxu-sY-XlJ">
+                                <rect key="frame" x="262" y="125" width="97" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="A7q-XJ-CPE"/>
+                                    <constraint firstAttribute="height" constant="34" id="qLh-7n-gmX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買進口數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCi-Tx-PgU">
+                                <rect key="frame" x="262" y="83" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Uot-pN-Qso"/>
+                                    <constraint firstAttribute="height" constant="21" id="wvh-uB-ELV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="inO-B3-b67" firstAttribute="trailing" secondItem="Lxu-sY-XlJ" secondAttribute="trailing" constant="16" id="6HX-AL-a49"/>
+                            <constraint firstItem="hOI-qX-iYR" firstAttribute="leading" secondItem="inO-B3-b67" secondAttribute="leading" constant="16" id="8NQ-KT-2bb"/>
+                            <constraint firstItem="Lxu-sY-XlJ" firstAttribute="top" secondItem="BCi-Tx-PgU" secondAttribute="bottom" constant="21" id="9Ms-O5-ZaU"/>
+                            <constraint firstItem="QM0-Nf-pzH" firstAttribute="top" secondItem="inO-B3-b67" secondAttribute="top" constant="27" id="QmY-Iu-735"/>
+                            <constraint firstItem="hOI-qX-iYR" firstAttribute="top" secondItem="QM0-Nf-pzH" secondAttribute="bottom" constant="21" id="Vuc-DO-Jjc"/>
+                            <constraint firstItem="inO-B3-b67" firstAttribute="trailing" secondItem="BCi-Tx-PgU" secondAttribute="trailing" constant="43" id="YOK-0Z-2I7"/>
+                            <constraint firstItem="BCi-Tx-PgU" firstAttribute="top" secondItem="inO-B3-b67" secondAttribute="top" constant="27" id="aOE-BR-52I"/>
+                            <constraint firstItem="QM0-Nf-pzH" firstAttribute="leading" secondItem="inO-B3-b67" secondAttribute="leading" constant="16" id="hA7-Yt-0jz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="inO-B3-b67"/>
                     </view>
                     <navigationItem key="navigationItem" id="MeQ-dY-eRf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zS-10-W7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-943" y="-471"/>
+            <point key="canvasLocation" x="-943.20000000000005" y="-471.8140929535233"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L8H-G8-Fih">
