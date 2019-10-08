@@ -68,6 +68,7 @@
                         <segue destination="R8A-dl-cya" kind="show" identifier="stockprice" id="8ak-pq-3Pt"/>
                         <segue destination="yLq-Tv-VNe" kind="show" identifier="everyday" id="nK7-AN-49B"/>
                         <segue destination="QlN-S2-28g" kind="show" identifier="Legalperson" id="Qd8-b2-IeU"/>
+                        <segue destination="mgy-mZ-t6u" kind="show" identifier="Option" id="ZXh-yM-2yg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -600,6 +601,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEo-Si-afL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1760.8695652173915" y="-594.29347826086962"/>
+        </scene>
+        <!--Option View Controller-->
+        <scene sceneID="YRa-Ce-d2c">
+            <objects>
+                <viewController id="mgy-mZ-t6u" customClass="OptionViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S9j-7n-ptZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="inO-B3-b67"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MeQ-dY-eRf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4zS-10-W7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-943" y="-471"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L8H-G8-Fih">

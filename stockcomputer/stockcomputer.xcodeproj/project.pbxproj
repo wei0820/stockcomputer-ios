@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A8D350EA7F30FC3A00D206F /* Pods_stockcomputer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9EC763219750A8CB4568D7 /* Pods_stockcomputer.framework */; };
+		8E10DDAD234C331C006A46F2 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDAC234C331C006A46F2 /* OptionViewController.swift */; };
+		8E10DDAF234C3402006A46F2 /* MGoogleADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */; };
 		8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122A23489A3B00795029 /* Base64Manager.swift */; };
 		8E87122D23489E7000795029 /* CamerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122C23489E7000795029 /* CamerManager.swift */; };
 		8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122E234ADCE000795029 /* MemberCenterViewController.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		25DCA65FB77FD48E9ABB2478 /* Pods-stockcomputer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.release.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.release.xcconfig"; sourceTree = "<group>"; };
 		5E9EC763219750A8CB4568D7 /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E10DDAC234C331C006A46F2 /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
+		8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGoogleADViewController.swift; sourceTree = "<group>"; };
 		8E87122A23489A3B00795029 /* Base64Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Manager.swift; sourceTree = "<group>"; };
 		8E87122C23489E7000795029 /* CamerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerManager.swift; sourceTree = "<group>"; };
 		8E87122E234ADCE000795029 /* MemberCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCenterViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				8E87122C23489E7000795029 /* CamerManager.swift */,
 				8E87122E234ADCE000795029 /* MemberCenterViewController.swift */,
 				8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */,
+				8E10DDAC234C331C006A46F2 /* OptionViewController.swift */,
+				8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -271,11 +277,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */,
+				8E10DDAD234C331C006A46F2 /* OptionViewController.swift in Sources */,
 				B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */,
 				B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */,
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
 				8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */,
 				8E87122D23489E7000795029 /* CamerManager.swift in Sources */,
+				8E10DDAF234C3402006A46F2 /* MGoogleADViewController.swift in Sources */,
 				B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */,
 				B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */,
 				B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */,
