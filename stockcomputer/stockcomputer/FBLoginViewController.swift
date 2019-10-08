@@ -78,31 +78,40 @@ class FBLoginViewController: UIViewController{
      }
      */
     func fetchProfile(){
-        print("attempt to fetch profile......")
-        if let accessToken = AccessToken.current {
+        if ((userDefaults.value(forKey: "userID")) != nil){
             let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-            let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-            appDelegate.window?.rootViewController = HomeVc
-            // User is logged in, use 'accessToken' here.
-            let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+                       let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
+                       let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+                       appDelegate.window?.rootViewController = HomeVc
             
-            Auth.auth().signIn(with: credential) { (authResult, error) in
-                if let error = error {
+        }else{
+            print("attempt to fetch profile......")
+            if let accessToken = AccessToken.current {
+                let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+                let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+                appDelegate.window?.rootViewController = HomeVc
+                // User is logged in, use 'accessToken' here.
+                let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+                
+                Auth.auth().signIn(with: credential) { (authResult, error) in
+                    if let error = error {
+                        
+                        // ...
+                        return
+                    }
+                    // User is signed in
+                    print("==============")
                     
-                    // ...
-                    return
+                    print(accessToken.tokenString)
+                    
+                    print( Auth.auth().currentUser?.displayName)
+                    print( Auth.auth().currentUser?.photoURL)
+                    print("==============")
+                    
                 }
-                // User is signed in
-                print("==============")
-                
-                print(accessToken.tokenString)
-                
-                print( Auth.auth().currentUser?.displayName)
-                print( Auth.auth().currentUser?.photoURL)
-                print("==============")
-                
             }
         }
+
     }
 }

@@ -21,6 +21,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
             // Fallback on earlier versions
         }
         setAdBanner()
+        self.title = "選擇權試算"
         
     }
       func setAdBanner(){
