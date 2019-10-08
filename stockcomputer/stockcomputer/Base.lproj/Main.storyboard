@@ -540,6 +540,8 @@
                         <outlet property="mPoint" destination="c9Z-cN-Ykh" id="uWf-yf-PhW"/>
                         <outlet property="mid" destination="lJV-sG-923" id="Owz-xh-SfV"/>
                         <outlet property="photoimg" destination="a4U-Wz-VNT" id="ZoU-Dq-NTG"/>
+                        <outlet property="rewardbtn" destination="twq-LI-Bcn" id="A3Y-OB-lFo"/>
+                        <outlet property="shopbtn" destination="afa-dp-oRW" id="y9L-yr-AqO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zW-gZ-DS2" userLabel="First Responder" sceneMemberID="firstResponder"/>

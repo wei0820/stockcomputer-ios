@@ -16,7 +16,10 @@ class FBLoginViewController: UIViewController{
     @IBAction func guestLogin(_ sender: Any) {
         
         Auth.auth().signInAnonymously() { (authResult, error) in
-            if let error = error {// ...
+            if let error = error {//
+                print("error")
+
+                print(error.localizedDescription)
                 return
             }
             // ...

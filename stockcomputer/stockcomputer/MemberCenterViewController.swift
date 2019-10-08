@@ -15,6 +15,8 @@ import StoreKit
 
 class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADRewardBasedVideoAdDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
+    @IBOutlet weak var rewardbtn: UIButton!
+    @IBOutlet weak var shopbtn: UIButton!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
     var selectedProductIndex: Int! // 點擊到的購買項目
     var isProgress: Bool = false // 是否有交易正在進行中
@@ -113,6 +115,9 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     override func viewDidLoad() {
         super.viewDidLoad()
         setAdBanner()
+        shopbtn.isHidden = true
+        rewardbtn.isHidden = true
+
         get()
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
