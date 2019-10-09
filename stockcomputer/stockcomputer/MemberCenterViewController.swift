@@ -120,7 +120,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     override func viewDidLoad() {
         super.viewDidLoad()
         setAdBanner()
-        shopbtn.isHidden = false
+        shopbtn.isHidden = true
         rewardbtn.isHidden = true
 
         get()

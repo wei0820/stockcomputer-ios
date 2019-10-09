@@ -19,6 +19,7 @@ pod 'Alamofire', '~> 4.0.0-beta.4'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'VpadnSDK'
+pod 'Toaster'
 pod 'Kanna', '~> 4.0.0'
 pod 'Mapbox-iOS-SDK', '~> 5.4'
 

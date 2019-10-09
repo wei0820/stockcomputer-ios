@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33E255829F976DB5F7F4E7A1 /* Pods_stockcomputer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A9DC93D984EA1E2751FA22 /* Pods_stockcomputer.framework */; };
+		516F200C7628548301135FE5 /* Pods_stockcomputer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F7F5D64FDA98E5388A9186 /* Pods_stockcomputer.framework */; };
 		8E10DDAD234C331C006A46F2 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDAC234C331C006A46F2 /* OptionViewController.swift */; };
 		8E10DDAF234C3402006A46F2 /* MGoogleADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */; };
 		8E10DDB1234C5FE3006A46F2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */; };
@@ -41,9 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12A9DC93D984EA1E2751FA22 /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		385C7BB63B3F88703BF462DE /* Pods-stockcomputer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.debug.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.debug.xcconfig"; sourceTree = "<group>"; };
-		6E592FF0B5A20C2E13886338 /* Pods-stockcomputer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.release.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.release.xcconfig"; sourceTree = "<group>"; };
+		15E119DE9B70591B4B1AC2BE /* Pods-stockcomputer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.release.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.release.xcconfig"; sourceTree = "<group>"; };
 		8E10DDAC234C331C006A46F2 /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGoogleADViewController.swift; sourceTree = "<group>"; };
 		8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +52,7 @@
 		8E871230234AFF1000795029 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
+		A2F7F5D64FDA98E5388A9186 /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VponAdapter_iOS_b1ffc56_v1.1.4.a; sourceTree = "<group>"; };
 		B7415F01227A91040077AF72 /* StockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceViewController.swift; sourceTree = "<group>"; };
 		B74F52FD220556330034DC5D /* stockcomputer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stockcomputer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +75,7 @@
 		B7E8C1772270197900792815 /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		B7E8C1792271AB9C00792815 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7E8C17B2271B65E00792815 /* FirebaseWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorks.swift; sourceTree = "<group>"; };
+		B84DDED97FC58C814A5C80FB /* Pods-stockcomputer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.debug.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 			files = (
 				8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */,
 				B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */,
-				33E255829F976DB5F7F4E7A1 /* Pods_stockcomputer.framework in Frameworks */,
+				516F200C7628548301135FE5 /* Pods_stockcomputer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +95,8 @@
 		35086B5ED06380A2DD1A4C73 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				385C7BB63B3F88703BF462DE /* Pods-stockcomputer.debug.xcconfig */,
-				6E592FF0B5A20C2E13886338 /* Pods-stockcomputer.release.xcconfig */,
+				B84DDED97FC58C814A5C80FB /* Pods-stockcomputer.debug.xcconfig */,
+				15E119DE9B70591B4B1AC2BE /* Pods-stockcomputer.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				8E871230234AFF1000795029 /* StoreKit.framework */,
-				12A9DC93D984EA1E2751FA22 /* Pods_stockcomputer.framework */,
+				A2F7F5D64FDA98E5388A9186 /* Pods_stockcomputer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,11 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B74F530F220556350034DC5D /* Build configuration list for PBXNativeTarget "stockcomputer" */;
 			buildPhases = (
-				675C284AB2B795DA6C4956CD /* [CP] Check Pods Manifest.lock */,
+				96BCD25614E582E0E76DD666 /* [CP] Check Pods Manifest.lock */,
 				B74F52F9220556330034DC5D /* Sources */,
 				B74F52FA220556330034DC5D /* Frameworks */,
 				B74F52FB220556330034DC5D /* Resources */,
-				4DA6BFCF3531A8F33D65C423 /* [CP] Embed Pods Frameworks */,
+				59FF40CAF15E640037BBB05C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,7 +236,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4DA6BFCF3531A8F33D65C423 /* [CP] Embed Pods Frameworks */ = {
+		59FF40CAF15E640037BBB05C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,7 +253,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-stockcomputer/Pods-stockcomputer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		675C284AB2B795DA6C4956CD /* [CP] Check Pods Manifest.lock */ = {
+		96BCD25614E582E0E76DD666 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -436,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -448,11 +448,11 @@
 		};
 		B74F5310220556350034DC5D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 385C7BB63B3F88703BF462DE /* Pods-stockcomputer.debug.xcconfig */;
+			baseConfigurationReference = B84DDED97FC58C814A5C80FB /* Pods-stockcomputer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -465,7 +465,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 3.1;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -475,11 +475,11 @@
 		};
 		B74F5311220556350034DC5D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E592FF0B5A20C2E13886338 /* Pods-stockcomputer.release.xcconfig */;
+			baseConfigurationReference = 15E119DE9B70591B4B1AC2BE /* Pods-stockcomputer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -492,7 +492,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 3.1;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

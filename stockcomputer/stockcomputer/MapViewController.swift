@@ -83,7 +83,7 @@ class MapViewController: UIViewController,MGLMapViewDelegate{
         }
         @objc func setting() {
             
-            setData()
+//            setData()
             
         }
     func setData(){
@@ -104,12 +104,8 @@ class MapViewController: UIViewController,MGLMapViewDelegate{
            let name = controller.textFields?[0].text
            let phone = controller.textFields?[1].text
             let add = controller.textFields?[2].text
+                    
             MapManager.AddressToLatLon(s: add!)
-            let controller = UIAlertController(title: "訊息", message:"", preferredStyle: .alert)
-                       let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                       controller.addAction(okAction)
-            self.present(controller, animated: true, completion: nil)
-
         }
         controller.addAction(okAction)
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
