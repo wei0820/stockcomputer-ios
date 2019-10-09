@@ -30,6 +30,7 @@ class MapViewController: UIViewController,MGLMapViewDelegate{
              // Allow the map view to display the user's location
              mapview.showsUserLocation = true
         // Do any additional setup after loading the view.
+        setRightButton(s: "加入")
     }
      func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
            mapView.setCenter((mapView.userLocation?.coordinate)!, animated: false)
@@ -82,21 +83,37 @@ class MapViewController: UIViewController,MGLMapViewDelegate{
         }
         @objc func setting() {
             
-            if((userDefaults.value(forKey: "isAnonymous")) != nil){
-                let controller = UIAlertController(title: "訪客身份", message: "請先登入在使用！", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                controller.addAction(okAction)
-                present(controller, animated: true, completion: nil)
-                return
-                
-            }
-    //        let loginManager = LoginManager()
-    //        loginManager.logOut()
-            
-            let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-            let HomeVc = stroyboard.instantiateViewController(withIdentifier: "member")
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-            appDelegate.window?.rootViewController = HomeVc
+            setData()
             
         }
+    func setData(){
+        let controller = UIAlertController(title: "加入", message: "請輸入您要推薦的營業員資料", preferredStyle: .alert)
+        controller.addTextField { (textField) in
+            textField.placeholder = "姓名"
+            textField.keyboardType = UIKeyboardType.default
+        }
+        controller.addTextField { (textField) in
+           textField.placeholder = "電話"
+           textField.keyboardType = UIKeyboardType.phonePad
+        }
+        controller.addTextField { (textField) in
+           textField.placeholder = "地址"
+           textField.keyboardType = UIKeyboardType.default
+        }
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+           let name = controller.textFields?[0].text
+           let phone = controller.textFields?[1].text
+            let add = controller.textFields?[2].text
+            MapManager.AddressToLatLon(s: add!)
+            let controller = UIAlertController(title: "訊息", message:MapManager.getLatLon(), preferredStyle: .alert)
+                       let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                       controller.addAction(okAction)
+            self.present(controller, animated: true, completion: nil)
+
+        }
+        controller.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
 }
