@@ -9,6 +9,7 @@
 import UIKit
 import Mapbox
 class MapViewController: UIViewController,MGLMapViewDelegate{
+    let userDefaults = UserDefaults.standard
     @IBAction func nowlocation(_ sender: Any) {
         mapview.setCenter((mapview.userLocation?.coordinate)!, animated: false)
                var lat  : Double = mapview.userLocation?.coordinate.latitude ?? 0.0
@@ -67,5 +68,35 @@ class MapViewController: UIViewController,MGLMapViewDelegate{
         // Pass the selected object to the new view controller.
     }
     */
-
+     func setRightButton(s: String){
+            // 導覽列右邊按鈕
+            
+            let rightButton = UIBarButtonItem(
+                title:s,
+                style:.plain,
+                target:self,
+                action:#selector(ViewController.setting))
+            // 加到導覽列中
+            self.navigationItem.rightBarButtonItem = rightButton
+            
+        }
+        @objc func setting() {
+            
+            if((userDefaults.value(forKey: "isAnonymous")) != nil){
+                let controller = UIAlertController(title: "訪客身份", message: "請先登入在使用！", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                controller.addAction(okAction)
+                present(controller, animated: true, completion: nil)
+                return
+                
+            }
+    //        let loginManager = LoginManager()
+    //        loginManager.logOut()
+            
+            let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+            let HomeVc = stroyboard.instantiateViewController(withIdentifier: "member")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+            appDelegate.window?.rootViewController = HomeVc
+            
+        }
 }

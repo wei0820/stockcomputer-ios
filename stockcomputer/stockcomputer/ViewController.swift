@@ -217,10 +217,7 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
     }
     @objc func setting() {
         if((userDefaults.value(forKey: "isAnonymous")) != nil){
-            let controller = UIAlertController(title: "訪客身份", message: "請先登入在使用！", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            controller.addAction(okAction)
-            present(controller, animated: true, completion: nil)
+            setAlert()
             return
             
         }
@@ -232,6 +229,20 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
         appDelegate.window?.rootViewController = HomeVc
         
+    }
+    
+    func setAlert(){
+        let controller = UIAlertController(title: "訪客身份", message: "請先登入或註冊在使用", preferredStyle: .actionSheet)
+        let names = ["去登入", "去註冊"]
+        for name in names {
+           let action = UIAlertAction(title: name, style: .default) { (action) in
+              print(action.title)
+           }
+           controller.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
     }
 }
 
