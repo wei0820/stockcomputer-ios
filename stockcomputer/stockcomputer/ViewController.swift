@@ -235,8 +235,21 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
         let controller = UIAlertController(title: "訪客身份", message: "請先登入或註冊在使用", preferredStyle: .actionSheet)
         let names = ["去登入", "去註冊"]
         for name in names {
+            let user = Auth.auth().currentUser
+
+            user?.delete { error in
+              if let error = error {
+                // An error happened.
+              } else {
+                // Account deleted.
+              }
+            }
            let action = UIAlertAction(title: name, style: .default) { (action) in
-              print(action.title)
+               let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+               let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
+               let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+               appDelegate.window?.rootViewController = HomeVc
+          
            }
            controller.addAction(action)
         }
