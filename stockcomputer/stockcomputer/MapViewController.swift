@@ -105,7 +105,7 @@ class MapViewController: UIViewController,MGLMapViewDelegate{
            let phone = controller.textFields?[1].text
             let add = controller.textFields?[2].text
             MapManager.AddressToLatLon(s: add!)
-            let controller = UIAlertController(title: "訊息", message:MapManager.getLatLon(), preferredStyle: .alert)
+            let controller = UIAlertController(title: "訊息", message:"", preferredStyle: .alert)
                        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                        controller.addAction(okAction)
             self.present(controller, animated: true, completion: nil)
