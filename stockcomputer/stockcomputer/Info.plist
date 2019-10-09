@@ -23,16 +23,16 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb383959162037550</string>
+				<string>fb2032928387009597</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
-	<string>383959162037550</string>
+	<string>2032928387009597</string>
 	<key>FacebookDisplayName</key>
-	<string>股票獲利計算器</string>
+	<string>股票獲利計算機-ios</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-7019441527375550~3755656221</string>
 	<key>GADIsAdManagerApp</key>
@@ -48,6 +48,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoiamFja3BhbiIsImEiOiJjazFhMHpzZWsweHkwM2hvMWI2c3Y1aXplIn0.5qKlfQ6BnTR0pxY-3qsMtw</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -57,6 +59,12 @@
 	<string>需要你授權</string>
 	<key>NSCameraUsageDescription</key>
 	<string>是否允許$(PRODUCT_NAME)使用你的相機？</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Will you allow this app to always know your location?</string>
+	<key>NSLocationUsageDescription</key>
+	<string>需要獲取個人位置是否允許$(PRODUCT_NAME)獲取位置權限？</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Do you allow this app to know your current location?</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>$(PRODUCT_NAME)不需要使用麥克風.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

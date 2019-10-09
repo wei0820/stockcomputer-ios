@@ -20,6 +20,8 @@ pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'VpadnSDK'
 pod 'Kanna', '~> 4.0.0'
+pod 'Mapbox-iOS-SDK', '~> 5.4'
+
 
 pod 'FacebookLogin'
 pod 'FacebookCore'

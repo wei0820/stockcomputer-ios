@@ -124,6 +124,7 @@ PODS:
   - JGProgressHUD (2.0.4)
   - Kanna (4.0.3)
   - leveldb-library (1.22)
+  - Mapbox-iOS-SDK (5.4.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -148,10 +149,11 @@ DEPENDENCIES:
   - GoogleMobileAdsMediationFacebook
   - JGProgressHUD
   - Kanna (~> 4.0.0)
+  - Mapbox-iOS-SDK (~> 5.4)
   - VpadnSDK
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - CVCalendar
     - FacebookCore
@@ -183,6 +185,7 @@ SPEC REPOS:
     - JGProgressHUD
     - Kanna
     - leveldb-library
+    - Mapbox-iOS-SDK
     - nanopb
     - VpadnSDK
 
@@ -218,9 +221,10 @@ SPEC CHECKSUMS:
   JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  Mapbox-iOS-SDK: 2b58f752d94e57e95b8e54f3b52569199f6efdba
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   VpadnSDK: af98910008b16b2bae43204b7013fa064ba80b01
 
-PODFILE CHECKSUM: 23adccebf2786766d1fabcf4100b4300d46f112c
+PODFILE CHECKSUM: 5765f2c36c17c668da868bd55a43b4035f423704
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.7.5
