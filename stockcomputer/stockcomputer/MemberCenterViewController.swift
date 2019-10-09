@@ -54,11 +54,16 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
             case SKPaymentTransactionState.purchased:
                 print("Transaction completed successfully.")
                 SKPaymentQueue.default().finishTransaction(transaction)
-                
+                setUIAlert(title: "謝謝乾爹", message: "謝謝乾爹")
+
                 
             case SKPaymentTransactionState.failed:
                 print("Transaction Failed");
+                print(transaction.error?.localizedDescription);
+
                 SKPaymentQueue.default().finishTransaction(transaction)
+                setUIAlert(title: "Transaction Failed", message: transaction.error!.localizedDescription)
+
                 
             default:
                 print(transaction.transactionState.rawValue)
@@ -115,7 +120,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     override func viewDidLoad() {
         super.viewDidLoad()
         setAdBanner()
-        shopbtn.isHidden = true
+        shopbtn.isHidden = false
         rewardbtn.isHidden = true
 
         get()
@@ -125,6 +130,8 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         self.productIDs.append("Member_Point_1000")
         self.productIDs.append("MenberPoint_1000")
         self.productIDs.append("remove_ad")
+        self.productIDs.append("richman"
+        )
 
         requestProductInfo()
         
