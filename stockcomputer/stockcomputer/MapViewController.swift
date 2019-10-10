@@ -22,7 +22,8 @@ class MapViewController: UIViewController,MGLMapViewDelegate{
     @IBOutlet var mapview: MGLMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapview.setCenter(CLLocationCoordinate2DMake(mapview.latitude, mapview.longitude), animated: false)
+        
+        mapview.setCenter(CLLocationCoordinate2DMake(25.034815, 121.564392), animated: false)
              mapview.zoomLevel = 15
         mapview.styleURL = MGLStyle.streetsStyleURL
         mapview.delegate = self
