@@ -43,6 +43,9 @@ PODS:
   - Firebase/Database (6.10.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 6.1.1)
+  - Firebase/InAppMessagingDisplay (6.10.0):
+    - Firebase/CoreOnly
+    - FirebaseInAppMessagingDisplay (~> 0.15.5)
   - Firebase/Storage (6.10.0):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 3.4.1)
@@ -55,6 +58,7 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3.901)
+  - FirebaseAnalyticsInterop (1.4.0)
   - FirebaseAuth (6.3.0):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.2)
@@ -78,6 +82,14 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.0)
     - leveldb-library (~> 1.22)
+  - FirebaseInAppMessaging (0.15.5):
+    - FirebaseAnalyticsInterop (~> 1.3)
+    - FirebaseCore (~> 6.2)
+    - FirebaseInstanceID (~> 4.0)
+    - GoogleDataTransportCCTSupport (~> 1.0)
+  - FirebaseInAppMessagingDisplay (0.15.5):
+    - FirebaseCore (~> 6.2)
+    - FirebaseInAppMessaging (>= 0.15.0)
   - FirebaseInstanceID (4.2.5):
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
@@ -145,6 +157,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/InAppMessagingDisplay
   - Firebase/Storage
   - FSCalendar
   - GCCalendar
@@ -168,12 +181,15 @@ SPEC REPOS:
     - FBSDKShareKit
     - Firebase
     - FirebaseAnalytics
+    - FirebaseAnalyticsInterop
     - FirebaseAuth
     - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
     - FirebaseDatabase
+    - FirebaseInAppMessaging
+    - FirebaseInAppMessagingDisplay
     - FirebaseInstanceID
     - FirebaseStorage
     - FSCalendar
@@ -205,12 +221,15 @@ SPEC CHECKSUMS:
   FBSDKShareKit: abc29e1bb4f9f59f679adf1ae191006d68455f96
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
   FirebaseAnalytics: 0e3ecff2c5d86070f7d4325e21f1edabfbd558dc
+  FirebaseAnalyticsInterop: d48b6ab67bcf016a05e55b71fc39c61c0cb6b7f3
   FirebaseAuth: c66e990f79d1d3429165391f6cd70ace6143c25e
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: 064c2dd92a8ca5974bbdcb080df9921e46bd34cd
   FirebaseCoreDiagnostics: af29e43048607588c050889d19204f4d7b758c9f
   FirebaseCoreDiagnosticsInterop: 6829da2b8d1fc795ff1bd99df751d3788035d2cb
   FirebaseDatabase: 524802f7694268c79d34aeac3d67997593e1a0c9
+  FirebaseInAppMessaging: acbfa8c5582b11ccc0366511d29ef1d288f302fc
+  FirebaseInAppMessagingDisplay: 60a65c8277f17675a8a5b92e9a97cd914b45d4ff
   FirebaseInstanceID: 550df9be1f99f751d8fcde3ac342a1e21a0e6c42
   FirebaseStorage: b7c6d00997bc21d4465453bdcc5cc65513110fed
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
@@ -230,6 +249,6 @@ SPEC CHECKSUMS:
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   VpadnSDK: af98910008b16b2bae43204b7013fa064ba80b01
 
-PODFILE CHECKSUM: c58fbba1c47f2f3e75ff1ab5503bf1147d8f649a
+PODFILE CHECKSUM: b84f8a5131cd6a3977601292fa199f1436a00b7b
 
 COCOAPODS: 1.8.1

@@ -22,8 +22,7 @@ pod 'VpadnSDK'
 pod 'Toaster'
 pod 'Kanna', '~> 4.0.0'
 pod 'Mapbox-iOS-SDK', '~> 5.4'
-
-
+pod 'Firebase/InAppMessagingDisplay'
 pod 'FacebookLogin'
 pod 'FacebookCore'
 pod 'FacebookShare'

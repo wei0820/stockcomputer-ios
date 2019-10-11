@@ -111,7 +111,7 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
         super.viewDidLoad()
         print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         setAdBanner()
-        if((userDefaults.value(forKey: "isAnonymous")) != nil){
+        if((userDefaults.value(forKey: "userID")) != nil){
             setRightButton(s: "訪客")
             
         }else{
@@ -216,7 +216,8 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
         
     }
     @objc func setting() {
-        if((userDefaults.value(forKey: "isAnonymous")) != nil){
+        var isAnonymous = userDefaults.value(forKey: "userID")
+        if((isAnonymous) != nil){
             setAlert()
             return
             
@@ -232,8 +233,8 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
     }
     
     func setAlert(){
-        let controller = UIAlertController(title: "訪客身份", message: "請先登入或註冊在使用", preferredStyle: .actionSheet)
-        let names = ["去登入", "去註冊"]
+        let controller = UIAlertController(title: "訪客身份", message: "請先登入再使用", preferredStyle: .actionSheet)
+        let names = ["去登入"]
         for name in names {
             let user = Auth.auth().currentUser
 
@@ -244,6 +245,8 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
                 // Account deleted.
               }
             }
+            self.userDefaults.set(nil, forKey: "userID")
+
            let action = UIAlertAction(title: name, style: .default) { (action) in
                let stroyboard = UIStoryboard(name: "Main", bundle: nil);
                let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
