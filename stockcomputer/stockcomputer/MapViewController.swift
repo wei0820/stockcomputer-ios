@@ -39,7 +39,10 @@ class MapViewController: UIViewController,MGLMapViewDelegate{
         // Animate the camera movement over 5 seconds.
         mapView.setCamera(camera, withDuration: 5, animationTimingFunction: CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
     }
-    
+    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+    // Always allow callouts to popup when annotations are tapped.
+    return true
+    }
     /*
      // MARK: - Navigation
      
