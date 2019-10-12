@@ -46,6 +46,9 @@ PODS:
   - Firebase/InAppMessagingDisplay (6.10.0):
     - Firebase/CoreOnly
     - FirebaseInAppMessagingDisplay (~> 0.15.5)
+  - Firebase/Messaging (6.10.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.1.6)
   - Firebase/Storage (6.10.0):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 3.4.1)
@@ -94,6 +97,15 @@ PODS:
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/UserDefaults (~> 6.0)
+  - FirebaseMessaging (4.1.6):
+    - FirebaseAnalyticsInterop (~> 1.3)
+    - FirebaseCore (~> 6.2)
+    - FirebaseInstanceID (~> 4.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.2)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Reachability (~> 6.2)
+    - GoogleUtilities/UserDefaults (~> 6.2)
+    - Protobuf (>= 3.9.2, ~> 3.9)
   - FirebaseStorage (3.4.1):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.0)
@@ -143,6 +155,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - Protobuf (3.10.0)
   - Toaster (2.2.0)
   - VpadnSDK (4.9.3)
 
@@ -158,6 +171,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/InAppMessagingDisplay
+  - Firebase/Messaging
   - Firebase/Storage
   - FSCalendar
   - GCCalendar
@@ -191,6 +205,7 @@ SPEC REPOS:
     - FirebaseInAppMessaging
     - FirebaseInAppMessagingDisplay
     - FirebaseInstanceID
+    - FirebaseMessaging
     - FirebaseStorage
     - FSCalendar
     - GCCalendar
@@ -206,6 +221,7 @@ SPEC REPOS:
     - leveldb-library
     - Mapbox-iOS-SDK
     - nanopb
+    - Protobuf
     - Toaster
     - VpadnSDK
 
@@ -231,6 +247,7 @@ SPEC CHECKSUMS:
   FirebaseInAppMessaging: acbfa8c5582b11ccc0366511d29ef1d288f302fc
   FirebaseInAppMessagingDisplay: 60a65c8277f17675a8a5b92e9a97cd914b45d4ff
   FirebaseInstanceID: 550df9be1f99f751d8fcde3ac342a1e21a0e6c42
+  FirebaseMessaging: 35edef69a6af9b34e9e44624089f054be3c09089
   FirebaseStorage: b7c6d00997bc21d4465453bdcc5cc65513110fed
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   GCCalendar: 88978ad35e25e26725dcb9372fc3b091362d78eb
@@ -246,9 +263,10 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   Mapbox-iOS-SDK: 2b58f752d94e57e95b8e54f3b52569199f6efdba
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   VpadnSDK: af98910008b16b2bae43204b7013fa064ba80b01
 
-PODFILE CHECKSUM: b84f8a5131cd6a3977601292fa199f1436a00b7b
+PODFILE CHECKSUM: 389e542079b2534155f4756619466200cc167d10
 
 COCOAPODS: 1.8.1

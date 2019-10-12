@@ -18,6 +18,7 @@
 		8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E871230234AFF1000795029 /* StoreKit.framework */; };
 		8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
+		B72FB7E12352039400701A1C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B72FB7E02352039300701A1C /* GoogleService-Info.plist */; };
 		B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */; };
 		B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7415F01227A91040077AF72 /* StockPriceViewController.swift */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
@@ -36,7 +37,6 @@
 		B7E8C174226F015500792815 /* DistributionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C173226F015500792815 /* DistributionController.swift */; };
 		B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */; };
 		B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C1772270197900792815 /* FBLoginViewController.swift */; };
-		B7E8C17A2271AB9C00792815 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7E8C1792271AB9C00792815 /* GoogleService-Info.plist */; };
 		B7E8C17C2271B65E00792815 /* FirebaseWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C17B2271B65E00792815 /* FirebaseWorks.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +53,8 @@
 		8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
 		A2F7F5D64FDA98E5388A9186 /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B72FB7E02352039300701A1C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
 		B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VponAdapter_iOS_b1ffc56_v1.1.4.a; sourceTree = "<group>"; };
 		B7415F01227A91040077AF72 /* StockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceViewController.swift; sourceTree = "<group>"; };
 		B74F52FD220556330034DC5D /* stockcomputer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stockcomputer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +75,6 @@
 		B7E8C173226F015500792815 /* DistributionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionController.swift; sourceTree = "<group>"; };
 		B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyLaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7E8C1772270197900792815 /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
-		B7E8C1792271AB9C00792815 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7E8C17B2271B65E00792815 /* FirebaseWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorks.swift; sourceTree = "<group>"; };
 		B84DDED97FC58C814A5C80FB /* Pods-stockcomputer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.debug.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,8 +132,9 @@
 		B74F52FF220556330034DC5D /* stockcomputer */ = {
 			isa = PBXGroup;
 			children = (
+				B72FB7E2235203A800701A1C /* stockcomputer.entitlements */,
 				B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */,
-				B7E8C1792271AB9C00792815 /* GoogleService-Info.plist */,
+				B72FB7E02352039300701A1C /* GoogleService-Info.plist */,
 				B74F5300220556340034DC5D /* AppDelegate.swift */,
 				B74F5302220556340034DC5D /* ViewController.swift */,
 				B74F53122205AB280034DC5D /* DayTradeViewController.swift */,
@@ -228,7 +230,7 @@
 			files = (
 				B74F530B220556350034DC5D /* LaunchScreen.storyboard in Resources */,
 				B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */,
-				B7E8C17A2271AB9C00792815 /* GoogleService-Info.plist in Resources */,
+				B72FB7E12352039400701A1C /* GoogleService-Info.plist in Resources */,
 				B74F5308220556350034DC5D /* Assets.xcassets in Resources */,
 				B74F5306220556340034DC5D /* Main.storyboard in Resources */,
 			);
@@ -469,6 +471,7 @@
 			baseConfigurationReference = B84DDED97FC58C814A5C80FB /* Pods-stockcomputer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
@@ -496,6 +499,7 @@
 			baseConfigurationReference = 15E119DE9B70591B4B1AC2BE /* Pods-stockcomputer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;

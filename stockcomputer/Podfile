@@ -26,4 +26,5 @@ pod 'Firebase/InAppMessagingDisplay'
 pod 'FacebookLogin'
 pod 'FacebookCore'
 pod 'FacebookShare'
+pod 'Firebase/Messaging'
 end
