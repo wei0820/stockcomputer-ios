@@ -12,6 +12,7 @@ import GoogleMobileAds
 
 class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var adBannerView: GADBannerView?
+    let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         
@@ -21,8 +22,12 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
             // Fallback on earlier versions
         }
         setAdBanner()
-        self.title = "選擇權試算"
-        
+
+        if(checkRemoveAd()){
+            adBannerView?.isHidden = true
+        }else{
+            adBannerView?.isHidden = false
+        }
     }
       func setAdBanner(){
           let id = "ca-app-pub-7019441527375550/9487446087"
@@ -94,6 +99,10 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
               ])
       }
       
+    func checkRemoveAd() ->Bool {
+    var removeAd = userDefaults.value(forKey: "removeAd")
+        return (removeAd != nil)
+    }
     
     
 }
