@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
-class TradeDetailViewController:MUIViewController ,GADBannerViewDelegate ,UIPickerViewDelegate, UIPickerViewDataSource {
+class TradeDetailViewController:MGoogleADViewController ,UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var buy_price: UITextField!
     @IBOutlet weak var sell_price: UITextField!
@@ -53,9 +52,6 @@ class TradeDetailViewController:MUIViewController ,GADBannerViewDelegate ,UIPick
         var selectedValue = pickerView.selectedRow(inComponent: 0)
         pirceout = price[selectedValue]
     }
-    var interstitial: GADInterstitial!
-    
-    var adBannerView: GADBannerView?
     var info = [ "沒折扣", "95折","9折","85折","8折", "75折", "7折", "65折","6折", "55折", "5折","45折","4折","35折","3折", "28折","2折","15折","1折","0.5折" ,"免手續費"]
     var price = [1,0.95,0.9,0.85,0.8,0.75,0.7,0.65,0.6,0.55,0.5,0.45,0.4,0.35,0.3,0.28,0.25,0.2,0.15,0.1,0.05,0]
     var pirceout = 1.0
@@ -67,9 +63,6 @@ class TradeDetailViewController:MUIViewController ,GADBannerViewDelegate ,UIPick
     var type = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setAdBanner()
-//        setInterstitial()
         setKeyKeyboardType()
         
     }
@@ -137,83 +130,6 @@ class TradeDetailViewController:MUIViewController ,GADBannerViewDelegate ,UIPick
         
     }
     
-    
-    func setAdBanner(){
-        let id = "ca-app-pub-7019441527375550/2358814075"
-        adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        adBannerView!.adUnitID = id
-        adBannerView!.delegate = self
-        adBannerView!.rootViewController = self
-        adBannerView!.load(GADRequest())
-    }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    // Called when an ad request loaded an ad.
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        addBannerViewToView(bannerView)
-        
-        print(bannerView.adUnitID)
-    }
-    
-    // Called when an ad request failed.
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        print((error.localizedDescription))
-    }
-    
-    // Called just before presenting the user a full screen view, such as a browser, in response to
-    // clicking on an ad.
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print(#function)
-    }
-    
-    // Called just before dismissing a full screen view.
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print(#function)
-    }
-    
-    // Called just after dismissing a full screen view.
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print(#function)
-    }
-    
-    // Called just before the application will background or terminate because the user clicked on an
-    // ad that will launch another application (such as the App Store).
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print(#function)
-    }
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: bottomLayoutGuide,
-                                attribute: .top,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: view,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
-            ])
-    }
-    func setInterstitial(){
-        
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7019441527375550/6541068838")
-        let request = GADRequest()
-        interstitial.load(request)
-    }
     
     func setDilog(){
         let controller = UIAlertController(title: "錯誤!", message: "忘了輸入數值", preferredStyle: .alert)
