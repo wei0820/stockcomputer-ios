@@ -11,7 +11,7 @@ import GoogleMobileAds
 import Firebase
 import FacebookCore
 import FacebookLogin
-class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegate,GADBannerViewDelegate{
+class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
     //    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算","港股複委託購入試算","港股複委託獲利試算"]
     //    var itemName = ["現股當沖獲利計算","現股獲利計算"]
 //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","選擇權賣賣試算"]
@@ -21,8 +21,6 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
     let userDefaults = UserDefaults.standard
     var ref: DatabaseReference!
     
-    var adBannerView: GADBannerView?
-    var interstitial: GADInterstitial!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemName.count
@@ -132,75 +130,6 @@ class ViewController: MUIViewController,UITableViewDataSource,UITableViewDelegat
         //            })
         //        }
         
-    }
-    func setAdBanner(){
-        let id = "ca-app-pub-7019441527375550/2358814075"
-        adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        adBannerView!.adUnitID = id
-        adBannerView!.delegate = self
-        adBannerView!.rootViewController = self
-        
-        adBannerView!.load(GADRequest())
-    }
-    func setInterstitial(){
-        
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7019441527375550/6541068838")
-        let request = GADRequest()
-        interstitial.load(request)
-    }
-    
-    // Called when an ad request loaded an ad.
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        addBannerViewToView(bannerView)
-        
-        print(bannerView.adUnitID)
-    }
-    
-    // Called when an ad request failed.
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        print((error.localizedDescription))
-    }
-    
-    // Called just before presenting the user a full screen view, such as a browser, in response to
-    // clicking on an ad.
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print(#function)
-    }
-    
-    // Called just before dismissing a full screen view.
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print(#function)
-    }
-    
-    // Called just after dismissing a full screen view.
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print(#function)
-    }
-    
-    // Called just before the application will background or terminate because the user clicked on an
-    // ad that will launch another application (such as the App Store).
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print(#function)
-    }
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: bottomLayoutGuide,
-                                attribute: .top,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: view,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
-        ])
     }
     
     func setRightButton(s: String){
