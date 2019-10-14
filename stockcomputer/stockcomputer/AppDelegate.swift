@@ -179,5 +179,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         print("Received data message: \(remoteMessage.appData)")
       }
       // [END ios_10_data_message]
+    
 }
 

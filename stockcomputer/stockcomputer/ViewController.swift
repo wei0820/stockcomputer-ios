@@ -189,5 +189,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         controller.addAction(cancelAction)
         present(controller, animated: true, completion: nil)
     }
+
 }
 

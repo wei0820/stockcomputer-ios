@@ -104,5 +104,9 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         return (removeAd != nil)
     }
     
+    override func setReAd(){
+        
+    }
+
     
 }
