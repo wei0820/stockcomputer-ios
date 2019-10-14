@@ -21,6 +21,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     var selectedProductIndex: Int! // 點擊到的購買項目
     var isProgress: Bool = false // 是否有交易正在進行中
     var delegate: IAPurchaseViewControllerDelegate!
+    var itemArray : [String] = String()
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count != 0 {
             print("invalidProductIdentifiers： \(response.invalidProductIdentifiers.description)")
@@ -55,15 +56,15 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
                 print("Transaction completed successfully.")
                 SKPaymentQueue.default().finishTransaction(transaction)
                 setUIAlert(title: "謝謝乾爹", message: "謝謝乾爹")
-
+                
                 
             case SKPaymentTransactionState.failed:
                 print("Transaction Failed");
                 print(transaction.error?.localizedDescription);
-
+                
                 SKPaymentQueue.default().finishTransaction(transaction)
                 setUIAlert(title: "Transaction Failed", message: transaction.error!.localizedDescription)
-
+                
                 
             default:
                 print(transaction.transactionState.rawValue)
@@ -122,7 +123,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         setAdBanner()
         shopbtn.isHidden = true
         rewardbtn.isHidden = true
-
+        
         get()
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
@@ -132,7 +133,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         self.productIDs.append("remove_ad")
         self.productIDs.append("richman"
         )
-
+        
         requestProductInfo()
         
         SKPaymentQueue.default().add(self)
@@ -267,28 +268,27 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     @IBAction func shop(_ sender: Any) {
         let controller = UIAlertController(title: " 商品列表", message: "請點選商品進行購買", preferredStyle: .actionSheet)
         productsArray.forEach { (SKProduct) in
-            print(SKProduct.localizedTitle)
             let action = UIAlertAction(title: SKProduct.localizedTitle, style: .default) { (action) in
-                 if SKPaymentQueue.canMakePayments() {
-                                    // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
-                                    SKPaymentQueue.default().add(self)
+                if SKPaymentQueue.canMakePayments() {
+                    // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
+                    SKPaymentQueue.default().add(self)
                     let index = controller.actions.index(of: action)
-                                        // 取得內購產品
+                    // 取得內購產品
                     let payment = SKPayment(product: self.productsArray[index!])
-                                    
-                                    // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
-                                    SKPaymentQueue.default().add(payment)}
+                    
+                    // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
+                    SKPaymentQueue.default().add(payment)}
                 
                 
-
+                
             }
-           controller.addAction(action)
-
+            controller.addAction(action)
+            
         }
-                   
-                   let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                   controller.addAction(cancelAction)
-                   present(controller, animated: true, completion: nil)
+        
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
         
     }
     @IBAction func watch(_ sender: Any) {
