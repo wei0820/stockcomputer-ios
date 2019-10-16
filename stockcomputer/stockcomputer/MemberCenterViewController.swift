@@ -21,7 +21,6 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     var selectedProductIndex: Int! // 點擊到的購買項目
     var isProgress: Bool = false // 是否有交易正在進行中
     var delegate: IAPurchaseViewControllerDelegate!
-    var itemArray : [String] = String()
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count != 0 {
             print("invalidProductIdentifiers： \(response.invalidProductIdentifiers.description)")

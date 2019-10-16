@@ -18,7 +18,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
 //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超"]
     var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","推薦營業員"]
 
-    let userDefaults = UserDefaults.standard
     var ref: DatabaseReference!
     
     
@@ -104,6 +103,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         //        let destVc:DayTradeViewController = segue.destination as! DayTradeViewController
         //        destVc.type = segue.identifier!
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
