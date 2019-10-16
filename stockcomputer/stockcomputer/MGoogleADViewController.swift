@@ -35,7 +35,6 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
           adBannerView!.adUnitID = id
           adBannerView!.delegate = self
           adBannerView!.rootViewController = self
-          
           adBannerView!.load(GADRequest())
       }
       /*
@@ -107,6 +106,4 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     override func setReAd(){
         
     }
-
-    
 }
