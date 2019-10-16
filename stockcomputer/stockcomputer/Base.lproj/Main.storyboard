@@ -498,6 +498,16 @@
                                     <action selector="restart:" destination="fee-Li-V0a" eventType="touchUpInside" id="UMa-Qu-dwg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfD-i1-a5K">
+                                <rect key="frame" x="67" y="448" width="240" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="RuO-So-98O"/>
+                                    <constraint firstAttribute="height" constant="21" id="SQO-Bl-CGr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -505,6 +515,7 @@
                             <constraint firstItem="Lbs-L3-ngf" firstAttribute="trailing" secondItem="a4U-Wz-VNT" secondAttribute="trailing" constant="68" id="77N-TB-ey5"/>
                             <constraint firstItem="LEy-uD-sXZ" firstAttribute="leading" secondItem="c9Z-cN-Ykh" secondAttribute="trailing" constant="6" id="8A4-ns-uOm"/>
                             <constraint firstItem="iO9-hh-Cit" firstAttribute="leading" secondItem="Lbs-L3-ngf" secondAttribute="leading" constant="9" id="9Iq-gT-p6k"/>
+                            <constraint firstItem="WfD-i1-a5K" firstAttribute="leading" secondItem="Lbs-L3-ngf" secondAttribute="leading" constant="67" id="BtO-Re-6Ch"/>
                             <constraint firstItem="c9Z-cN-Ykh" firstAttribute="leading" secondItem="Lbs-L3-ngf" secondAttribute="leading" constant="67" id="Dju-SW-reQ"/>
                             <constraint firstItem="twq-LI-Bcn" firstAttribute="leading" secondItem="afa-dp-oRW" secondAttribute="trailing" constant="30" id="J5Y-VR-1uh"/>
                             <constraint firstItem="lJV-sG-923" firstAttribute="leading" secondItem="cim-uL-hz4" secondAttribute="leading" id="Jmb-7m-3Iq"/>
@@ -513,6 +524,7 @@
                             <constraint firstItem="a4U-Wz-VNT" firstAttribute="leading" secondItem="Lbs-L3-ngf" secondAttribute="leading" constant="67" id="RdN-fr-n10"/>
                             <constraint firstItem="iO9-hh-Cit" firstAttribute="top" secondItem="Lbs-L3-ngf" secondAttribute="top" constant="20" id="Rq8-oJ-Ffr"/>
                             <constraint firstItem="a4U-Wz-VNT" firstAttribute="top" secondItem="ylu-7c-bfG" secondAttribute="topMargin" constant="20" id="SSS-PX-bvu"/>
+                            <constraint firstItem="WfD-i1-a5K" firstAttribute="top" secondItem="c9Z-cN-Ykh" secondAttribute="bottom" constant="28" id="TYb-aL-HjO"/>
                             <constraint firstItem="afa-dp-oRW" firstAttribute="centerX" secondItem="c9Z-cN-Ykh" secondAttribute="centerX" id="cC9-pA-tOB"/>
                             <constraint firstItem="cim-uL-hz4" firstAttribute="leading" secondItem="Lbs-L3-ngf" secondAttribute="leading" constant="67" id="d2y-Lq-GzS"/>
                             <constraint firstItem="xQs-qU-mEe" firstAttribute="top" secondItem="Lbs-L3-ngf" secondAttribute="top" constant="501" id="eBg-4y-d1h"/>
@@ -525,6 +537,7 @@
                         <viewLayoutGuide key="safeArea" id="Lbs-L3-ngf"/>
                     </view>
                     <connections>
+                        <outlet property="lasttime" destination="WfD-i1-a5K" id="TTi-u0-6sJ"/>
                         <outlet property="mName" destination="cim-uL-hz4" id="iZH-YY-43K"/>
                         <outlet property="mPoint" destination="c9Z-cN-Ykh" id="uWf-yf-PhW"/>
                         <outlet property="mid" destination="lJV-sG-923" id="Owz-xh-SfV"/>
