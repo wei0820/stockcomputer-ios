@@ -167,7 +167,11 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         
         adBannerView!.load(GADRequest())
     }
+    @IBAction func restart(_ sender: Any) {
+        SKPaymentQueue.default().restoreCompletedTransactions()
+       }
     /*
+   
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
