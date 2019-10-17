@@ -97,7 +97,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                                   constant: 0)
               ])
       }
-      
+    
     func checkRemoveAd() ->Bool {
     var removeAd = userDefaults.value(forKey: "removeAd")
         return (removeAd != nil)
