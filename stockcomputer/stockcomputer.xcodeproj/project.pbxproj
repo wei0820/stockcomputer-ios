@@ -13,6 +13,7 @@
 		8E10DDB1234C5FE3006A46F2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */; };
 		8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB2234C6AC8006A46F2 /* MapManager.swift */; };
 		8E10DDB52356B8A2006A46F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E10DDB42356B8A1006A46F2 /* GoogleService-Info.plist */; };
+		8E10DDB723586E32006A46F2 /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB623586E32006A46F2 /* CalculationManager.swift */; };
 		8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122A23489A3B00795029 /* Base64Manager.swift */; };
 		8E87122D23489E7000795029 /* CamerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122C23489E7000795029 /* CamerManager.swift */; };
 		8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122E234ADCE000795029 /* MemberCenterViewController.swift */; };
@@ -47,6 +48,7 @@
 		8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8E10DDB2234C6AC8006A46F2 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		8E10DDB42356B8A1006A46F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8E10DDB623586E32006A46F2 /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 		8E87122A23489A3B00795029 /* Base64Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Manager.swift; sourceTree = "<group>"; };
 		8E87122C23489E7000795029 /* CamerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerManager.swift; sourceTree = "<group>"; };
 		8E87122E234ADCE000795029 /* MemberCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCenterViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */,
 				8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */,
 				8E10DDB2234C6AC8006A46F2 /* MapManager.swift */,
+				8E10DDB623586E32006A46F2 /* CalculationManager.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */,
 				8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */,
 				B769047A22A7AF6200E1B53F /* LegalpersonViewController.swift in Sources */,
+				8E10DDB723586E32006A46F2 /* CalculationManager.swift in Sources */,
 				8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */,
 				8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */,
 			);
