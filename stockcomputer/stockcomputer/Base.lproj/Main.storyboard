@@ -2871,10 +2871,10 @@
             </objects>
             <point key="canvasLocation" x="2634.4000000000001" y="611.24437781109452"/>
         </scene>
-        <!--View Controller-->
+        <!--Stock Number View Controller-->
         <scene sceneID="jkF-gP-nE4">
             <objects>
-                <viewController id="WhA-FN-yok" sceneMemberID="viewController">
+                <viewController id="WhA-FN-yok" customClass="StockNumberViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8vd-tY-KfW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
