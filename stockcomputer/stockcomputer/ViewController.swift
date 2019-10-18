@@ -116,7 +116,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             setRightButton(s: "會員中心")
             
         }
-        
+     CalculationManager.getPrice(s: "2404")
         //        setInterstitial()
         //        ref = Database.database().reference()
         //        self.ref.child("users").child("11111").setValue(["username": "1111"])
