@@ -12,6 +12,7 @@ class StockNumberViewController: MGoogleADViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "資券成數查詢"
 
         // Do any additional setup after loading the view.
     }
