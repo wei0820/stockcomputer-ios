@@ -70,6 +70,7 @@
                         <segue destination="QlN-S2-28g" kind="show" identifier="Legalperson" id="Qd8-b2-IeU"/>
                         <segue destination="mgy-mZ-t6u" kind="show" identifier="Option" id="ZXh-yM-2yg"/>
                         <segue destination="OzU-QJ-mzC" kind="show" identifier="map" id="koA-Tc-BuM"/>
+                        <segue destination="WhA-FN-yok" kind="show" identifier="number" id="a3W-1Z-N9g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -2869,6 +2870,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXJ-di-1vB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2634.4000000000001" y="611.24437781109452"/>
+        </scene>
+        <!--Stock Number View Controller-->
+        <scene sceneID="jkF-gP-nE4">
+            <objects>
+                <viewController id="WhA-FN-yok" customClass="StockNumberViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8vd-tY-KfW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="NnF-Lw-HMb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3HV-Iw-6gB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQt-51-wBf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1862" y="1426"/>
         </scene>
     </scenes>
     <resources>
