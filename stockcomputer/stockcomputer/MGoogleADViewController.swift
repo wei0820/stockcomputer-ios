@@ -9,11 +9,10 @@
 import Foundation
 import UIKit
 import GoogleMobileAds
-
+import Toaster
 class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var adBannerView: GADBannerView?
     let userDefaults = UserDefaults.standard
-
     override func viewDidLoad() {
         
         if #available(iOS 13.0, *) {
@@ -28,6 +27,8 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         }else{
             adBannerView?.isHidden = false
         }
+        
+ 
     }
       func setAdBanner(){
           let id = "ca-app-pub-7019441527375550/9487446087"
@@ -102,6 +103,4 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var removeAd = userDefaults.value(forKey: "removeAd")
         return (removeAd != nil)
     }
-    
-
 }

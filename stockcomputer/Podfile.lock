@@ -1,5 +1,4 @@
 PODS:
-  - Airbrake-iOS (4.2.8)
   - Alamofire (4.0.1)
   - CVCalendar (1.6.2)
   - FacebookCore (0.9.0):
@@ -161,7 +160,6 @@ PODS:
   - VpadnSDK (4.9.3)
 
 DEPENDENCIES:
-  - Airbrake-iOS
   - Alamofire (~> 4.0.0-beta.4)
   - CVCalendar (~> 1.6.2)
   - FacebookCore
@@ -186,7 +184,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Airbrake-iOS
     - Alamofire
     - CVCalendar
     - FacebookCore
@@ -229,7 +226,6 @@ SPEC REPOS:
     - VpadnSDK
 
 SPEC CHECKSUMS:
-  Airbrake-iOS: e9b37ba06270c665fc8d85a3ceb6727df74b351b
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   CVCalendar: 515092247b9c5059855643c2a2220f259bd5417f
   FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
@@ -271,6 +267,6 @@ SPEC CHECKSUMS:
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   VpadnSDK: af98910008b16b2bae43204b7013fa064ba80b01
 
-PODFILE CHECKSUM: 31fcba00d4d03b2faa1adef32e6c293b7a5c1601
+PODFILE CHECKSUM: 7468ebc4f448b49a5025a4babad833eddc75f275
 
 COCOAPODS: 1.7.5
