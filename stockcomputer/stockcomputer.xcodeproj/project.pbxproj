@@ -20,6 +20,8 @@
 		8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122E234ADCE000795029 /* MemberCenterViewController.swift */; };
 		8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E871230234AFF1000795029 /* StoreKit.framework */; };
 		8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */; };
+		8EA996BA2362ED740077BA3C /* NowStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA996B92362ED740077BA3C /* NowStockPriceViewController.swift */; };
+		8EA996BC2362EE420077BA3C /* SmartStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA996BB2362EE420077BA3C /* SmartStockViewController.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
 		B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */; };
 		B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7415F01227A91040077AF72 /* StockPriceViewController.swift */; };
@@ -56,6 +58,8 @@
 		8E87122E234ADCE000795029 /* MemberCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCenterViewController.swift; sourceTree = "<group>"; };
 		8E871230234AFF1000795029 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8EA996B92362ED740077BA3C /* NowStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowStockPriceViewController.swift; sourceTree = "<group>"; };
+		8EA996BB2362EE420077BA3C /* SmartStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartStockViewController.swift; sourceTree = "<group>"; };
 		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
 		A2F7F5D64FDA98E5388A9186 /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				8E10DDB2234C6AC8006A46F2 /* MapManager.swift */,
 				8E10DDB623586E32006A46F2 /* CalculationManager.swift */,
 				8E10DDB82359A955006A46F2 /* StockNumberViewController.swift */,
+				8EA996B92362ED740077BA3C /* NowStockPriceViewController.swift */,
+				8EA996BB2362EE420077BA3C /* SmartStockViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -310,11 +316,13 @@
 			files = (
 				B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */,
 				8E10DDAD234C331C006A46F2 /* OptionViewController.swift in Sources */,
+				8EA996BA2362ED740077BA3C /* NowStockPriceViewController.swift in Sources */,
 				B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */,
 				B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */,
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
 				8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */,
 				8E87122D23489E7000795029 /* CamerManager.swift in Sources */,
+				8EA996BC2362EE420077BA3C /* SmartStockViewController.swift in Sources */,
 				8E10DDB92359A955006A46F2 /* StockNumberViewController.swift in Sources */,
 				8E10DDAF234C3402006A46F2 /* MGoogleADViewController.swift in Sources */,
 				B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */,
