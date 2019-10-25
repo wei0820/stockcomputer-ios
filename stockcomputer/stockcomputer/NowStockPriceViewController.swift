@@ -36,7 +36,7 @@ class NowStockPriceViewController: MGoogleADViewController {
         Alamofire.request("https://www.wantgoo.com").responseString { response in
             if let html = response.result.value {
                 if let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8) {
-                    for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[1]/td[2]") {
+                    for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[1]/td[3]") {
                         print("========")
                         print(rate.text)
 
