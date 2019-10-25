@@ -12,6 +12,7 @@ class NowStockPriceViewController: MGoogleADViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "即時選股"
 
         // Do any additional setup after loading the view.
     }

@@ -12,6 +12,7 @@ class SmartStockViewController: MGoogleADViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "智慧選股"
 
         // Do any additional setup after loading the view.
     }

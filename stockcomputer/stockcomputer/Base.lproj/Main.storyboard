@@ -71,11 +71,13 @@
                         <segue destination="mgy-mZ-t6u" kind="show" identifier="Option" id="ZXh-yM-2yg"/>
                         <segue destination="OzU-QJ-mzC" kind="show" identifier="map" id="koA-Tc-BuM"/>
                         <segue destination="WhA-FN-yok" kind="show" identifier="number" id="a3W-1Z-N9g"/>
+                        <segue destination="FjU-5t-k8k" kind="show" identifier="now" id="twc-Cg-uiZ"/>
+                        <segue destination="y1Y-ms-38r" kind="show" identifier="smart" id="w4e-lE-GrA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="815.94202898550736" y="-222.55434782608697"/>
+            <point key="canvasLocation" x="92" y="2425"/>
         </scene>
         <!--Day Trade View Controller-->
         <scene sceneID="ko4-cT-zs5">
@@ -3182,15 +3184,32 @@
             <objects>
                 <viewController id="FjU-5t-k8k" customClass="NowStockPriceViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xNO-W2-wjC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="K48-9H-qnO"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8ol-50-abF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Jv-Qj-8GN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1886" y="2386"/>
+        </scene>
+        <!--Smart Stock View Controller-->
+        <scene sceneID="icM-Kx-Eoh">
+            <objects>
+                <viewController id="y1Y-ms-38r" customClass="SmartStockViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MTC-fo-pSF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="OsV-87-8Dg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IUT-Xz-NE7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CRT-kl-bhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1006" y="2883"/>
         </scene>
     </scenes>
     <resources>
