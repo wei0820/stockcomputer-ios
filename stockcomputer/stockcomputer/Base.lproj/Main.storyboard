@@ -3186,7 +3186,28 @@
                     <view key="view" contentMode="scaleToFill" id="xNO-W2-wjC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtO-oz-RHR">
+                                <rect key="frame" x="0.0" y="56" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="AUb-k5-Wu6"/>
+                                    <constraint firstAttribute="width" constant="375" id="kXH-M1-yJj"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="3bB-T5-wtQ"/>
+                                    <tabBarItem title="Item" id="YOL-vS-H1n"/>
+                                    <tabBarItem title="Item" id="Eb1-0w-bS0"/>
+                                    <tabBarItem systemItem="more" id="v9h-0c-5lv"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CtO-oz-RHR" firstAttribute="trailing" secondItem="K48-9H-qnO" secondAttribute="trailing" id="Kmk-yQ-YQe"/>
+                            <constraint firstItem="CtO-oz-RHR" firstAttribute="top" secondItem="K48-9H-qnO" secondAttribute="top" id="R4p-wE-qdr"/>
+                            <constraint firstItem="CtO-oz-RHR" firstAttribute="leading" secondItem="K48-9H-qnO" secondAttribute="leading" id="bKX-Bk-cOd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K48-9H-qnO"/>
                     </view>
                     <navigationItem key="navigationItem" id="8ol-50-abF"/>
@@ -3202,7 +3223,28 @@
                     <view key="view" contentMode="scaleToFill" id="MTC-fo-pSF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqj-28-Age">
+                                <rect key="frame" x="0.0" y="56" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="8sH-5W-sbk"/>
+                                    <constraint firstAttribute="width" constant="375" id="n71-KQ-CM2"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="rVx-tC-IlX"/>
+                                    <tabBarItem title="Item" id="hSa-sm-B4K"/>
+                                    <tabBarItem title="Item" id="oJR-Lt-K1b"/>
+                                    <tabBarItem systemItem="more" id="0ze-Nm-IfA"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jqj-28-Age" firstAttribute="top" secondItem="OsV-87-8Dg" secondAttribute="top" id="9Rv-nx-2d9"/>
+                            <constraint firstItem="jqj-28-Age" firstAttribute="leading" secondItem="OsV-87-8Dg" secondAttribute="leading" id="lod-tc-LSc"/>
+                            <constraint firstItem="jqj-28-Age" firstAttribute="trailing" secondItem="OsV-87-8Dg" secondAttribute="trailing" id="qRB-f5-shB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OsV-87-8Dg"/>
                     </view>
                     <navigationItem key="navigationItem" id="IUT-Xz-NE7"/>
