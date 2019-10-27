@@ -21,7 +21,6 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     var selectedProductIndex: Int! // 點擊到的購買項目
     var isProgress: Bool = false // 是否有交易正在進行中
     var delegate: IAPurchaseViewControllerDelegate!
-    var itemArray : [String] = String()
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count != 0 {
             print("invalidProductIdentifiers： \(response.invalidProductIdentifiers.description)")
@@ -76,6 +75,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         SKPaymentQueue.default().remove(self)
     }
     
+    @IBOutlet weak var lasttime: UILabel!
     @IBAction func back(_ sender: Any) {
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
         let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
@@ -128,11 +128,10 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
                                                     withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
-        self.productIDs.append("Member_Point_1000")
-        self.productIDs.append("MenberPoint_1000")
+//        self.productIDs.append("Member_Point_1000")
+//        self.productIDs.append("MenberPoint_1000")
         self.productIDs.append("remove_ad")
-        self.productIDs.append("richman"
-        )
+        self.productIDs.append("richman")
         
         requestProductInfo()
         
@@ -168,7 +167,11 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         
         adBannerView!.load(GADRequest())
     }
+    @IBAction func restart(_ sender: Any) {
+        SKPaymentQueue.default().restoreCompletedTransactions()
+       }
     /*
+   
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -249,10 +252,14 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
             print(Auth.auth().currentUser?.uid)
             print( Auth.auth().currentUser?.displayName)
             print( Auth.auth().currentUser?.photoURL)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
+
             mid.text = "會員ID:" + (Auth.auth().currentUser?.uid)!
             mName.text = "會員姓名:" + (Auth.auth().currentUser?.displayName)!
-            mPoint.text = "會員點數:" + "0"
-            
+            mPoint.text = "會員點數:"
+            lasttime.text = "最後登入時間:" + dateString
             DispatchQueue.global(qos: .userInitiated).async {
                 let imageData:NSData = NSData(contentsOf: (Auth.auth().currentUser?.photoURL)!)!
                 
