@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyw-T5-M3K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyw-T5-M3K">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -3195,10 +3195,10 @@
                                     <constraint firstAttribute="width" constant="375" id="kXH-M1-yJj"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem systemItem="favorites" id="3bB-T5-wtQ"/>
-                                    <tabBarItem title="Item" id="YOL-vS-H1n"/>
-                                    <tabBarItem title="Item" id="Eb1-0w-bS0"/>
-                                    <tabBarItem systemItem="more" id="v9h-0c-5lv"/>
+                                    <tabBarItem title="瞬間暴漲" image="1.circle.fill" catalog="system" id="3bB-T5-wtQ"/>
+                                    <tabBarItem title="瞬間暴跌" image="2.circle" catalog="system" id="YOL-vS-H1n"/>
+                                    <tabBarItem title="瞬間大量" image="3.circle.fill" catalog="system" id="Eb1-0w-bS0"/>
+                                    <tabBarItem title="週轉率" image="4.circle" catalog="system" id="v9h-0c-5lv"/>
                                 </items>
                             </tabBar>
                         </subviews>
@@ -3255,13 +3255,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="2.circle" catalog="system" width="64" height="60"/>
+        <image name="3.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="4.circle" catalog="system" width="64" height="60"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="iconfinder_174_Back_Front_Twitter_Sets_5172563" width="64" height="64"/>
         <image name="icons8-cinema-90" width="90" height="90"/>
         <image name="icons8-facebook-150" width="150" height="150"/>
         <image name="icons8-shopping-cart-90" width="90" height="90"/>
         <image name="icons8-test-account-100" width="100" height="100"/>
-        <image name="info.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
         <image name="logo" width="500" height="500"/>
         <image name="port" width="32" height="32"/>
     </resources>
