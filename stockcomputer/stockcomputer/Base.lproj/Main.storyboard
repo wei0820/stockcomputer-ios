@@ -3572,6 +3572,9 @@
                                     <tabBarItem title="Item" id="XVb-rQ-YId"/>
                                     <tabBarItem systemItem="more" id="EzU-p8-RQa"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="iq5-NC-wTj" id="Hng-F5-Frm"/>
+                                </connections>
                             </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aR-7l-cE8">
                                 <rect key="frame" x="16" y="145" width="343" height="21"/>
@@ -3884,6 +3887,29 @@
                         <viewLayoutGuide key="safeArea" id="ymX-2I-uzD"/>
                     </view>
                     <navigationItem key="navigationItem" id="vrl-WL-Ix4"/>
+                    <connections>
+                        <outlet property="lab1" destination="Dhj-eV-fP5" id="iKY-W5-8nh"/>
+                        <outlet property="lab10" destination="Sf7-Hd-bil" id="ljh-Uw-0XT"/>
+                        <outlet property="lab11" destination="bXr-ma-az2" id="py7-yG-8mf"/>
+                        <outlet property="lab12" destination="ONc-gY-hmP" id="3Uj-sm-NA9"/>
+                        <outlet property="lab13" destination="FX6-kz-0Bb" id="X6x-mT-mz3"/>
+                        <outlet property="lab14" destination="vmv-ce-Pzu" id="yh2-zU-8SS"/>
+                        <outlet property="lab15" destination="8jd-VU-dga" id="wYT-jp-mZi"/>
+                        <outlet property="lab16" destination="2H2-PJ-vtb" id="c1x-S4-jRH"/>
+                        <outlet property="lab17" destination="I7I-uT-ti2" id="7lh-8v-LEp"/>
+                        <outlet property="lab18" destination="hz1-Bu-uct" id="Jad-O5-t2P"/>
+                        <outlet property="lab19" destination="JaB-gr-WWS" id="kDz-0Z-N3G"/>
+                        <outlet property="lab2" destination="Vdr-aP-fnB" id="04D-Ru-F2F"/>
+                        <outlet property="lab20" destination="7eo-bg-eUR" id="Rcz-2T-XSz"/>
+                        <outlet property="lab3" destination="jaR-It-pac" id="Lc4-rj-uMg"/>
+                        <outlet property="lab4" destination="EYb-FT-JpW" id="ecM-TU-Xln"/>
+                        <outlet property="lab5" destination="C7w-dy-Fba" id="EdN-Pu-zag"/>
+                        <outlet property="lab6" destination="BbN-Df-bXh" id="tbA-Tg-EtH"/>
+                        <outlet property="lab7" destination="6Bd-2v-iQU" id="qLj-Kh-Ja8"/>
+                        <outlet property="lab8" destination="VGQ-17-FZv" id="Ozc-v2-hc5"/>
+                        <outlet property="lab9" destination="YIk-9X-urJ" id="cIt-tb-QIb"/>
+                        <outlet property="time" destination="9aR-7l-cE8" id="eC0-Z0-Wex"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccb-PD-UJd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3905,11 +3931,14 @@
                                     <constraint firstAttribute="width" constant="375" id="n71-KQ-CM2"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem title="暴量長紅" image="a.square" catalog="system" id="rVx-tC-IlX"/>
-                                    <tabBarItem title="突破整理" image="b.square" catalog="system" id="hSa-sm-B4K"/>
-                                    <tabBarItem title="突破季線" image="c.square.fill" catalog="system" id="oJR-Lt-K1b"/>
-                                    <tabBarItem title="黃金交叉" image="d.square" catalog="system" id="0ze-Nm-IfA"/>
+                                    <tabBarItem tag="1" title="暴量長紅" image="a.square" catalog="system" id="rVx-tC-IlX"/>
+                                    <tabBarItem tag="2" title="突破整理" image="b.square" catalog="system" id="hSa-sm-B4K"/>
+                                    <tabBarItem tag="3" title="突破季線" image="c.square.fill" catalog="system" id="oJR-Lt-K1b"/>
+                                    <tabBarItem tag="4" title="黃金交叉" image="d.square" catalog="system" id="0ze-Nm-IfA"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="y1Y-ms-38r" id="kQS-yV-EqH"/>
+                                </connections>
                             </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHc-Lr-1gJ">
                                 <rect key="frame" x="16" y="131" width="343" height="21"/>
@@ -4222,6 +4251,29 @@
                         <viewLayoutGuide key="safeArea" id="OsV-87-8Dg"/>
                     </view>
                     <navigationItem key="navigationItem" id="IUT-Xz-NE7"/>
+                    <connections>
+                        <outlet property="lab1" destination="UtM-Er-ubY" id="Vfw-Ke-iA9"/>
+                        <outlet property="lab10" destination="7yA-iR-tht" id="dab-Ch-0AT"/>
+                        <outlet property="lab11" destination="cAT-QX-E9R" id="ETI-jg-6ly"/>
+                        <outlet property="lab12" destination="pYa-sX-PZy" id="c6W-Q5-aEW"/>
+                        <outlet property="lab13" destination="tS8-Ec-TSE" id="Q07-6k-H0J"/>
+                        <outlet property="lab14" destination="dQA-cZ-bv9" id="7Cq-S1-IBo"/>
+                        <outlet property="lab15" destination="7vh-FI-aKE" id="xjW-wI-Kan"/>
+                        <outlet property="lab16" destination="Q6e-pK-G7U" id="kzm-Oa-Q8L"/>
+                        <outlet property="lab17" destination="7ar-WZ-GWi" id="DVd-Ap-QRO"/>
+                        <outlet property="lab18" destination="mQk-yp-O4o" id="7Um-qu-yja"/>
+                        <outlet property="lab19" destination="3nD-vd-JpA" id="4CN-zG-px6"/>
+                        <outlet property="lab2" destination="qiE-bZ-Koj" id="fJ2-D9-fp0"/>
+                        <outlet property="lab20" destination="92x-ME-Nea" id="AZO-Zu-vNR"/>
+                        <outlet property="lab3" destination="81H-Bm-VEk" id="40m-jN-icr"/>
+                        <outlet property="lab4" destination="8N8-Jf-2m7" id="XFp-u6-g8N"/>
+                        <outlet property="lab5" destination="ALz-fu-Gj1" id="5at-x6-UhO"/>
+                        <outlet property="lab6" destination="vv8-BU-4cQ" id="GTH-O1-rHN"/>
+                        <outlet property="lab7" destination="hm1-5W-jIk" id="fbk-Wa-4tQ"/>
+                        <outlet property="lab8" destination="rUW-RD-rJa" id="CBO-k3-eHs"/>
+                        <outlet property="lab9" destination="AFo-MK-rdh" id="knh-4R-U5X"/>
+                        <outlet property="time" destination="vHc-Lr-1gJ" id="DDB-RS-H6t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRT-kl-bhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
