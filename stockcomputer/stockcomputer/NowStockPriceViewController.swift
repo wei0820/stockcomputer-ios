@@ -11,6 +11,8 @@ import Foundation
 import Kanna
 import Alamofire
 import Toaster
+import JGProgressHUD
+
 class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
     
     override func viewDidLoad() {
@@ -52,7 +54,12 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
     @IBOutlet weak var lb_18: UILabel!
     @IBOutlet weak var lb_19: UILabel!
     @IBOutlet weak var lb_20: UILabel!
+    var hud :JGProgressHUD?
+
     func getNow(){
+        hud = JGProgressHUD(style: .dark)
+           hud?.textLabel.text = "Loading"
+           hud?.show(in: self.view)
         print("========")
         ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
         Alamofire.request("https://www.wantgoo.com").responseString { response in
@@ -72,11 +79,12 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[1]/td[5]") {
                         self.lb_4.text = rate.text!
-                        print(rate.text!)
                         if((rate.text?.contains("▼"))!){
                             self.lb_4.textColor = UIColor.green
+                            self.lb_3.textColor = UIColor.green
                         }else{
                             self.lb_4.textColor = UIColor.red
+                            self.lb_3.textColor = UIColor.red
                             
                         }
                         
@@ -97,8 +105,10 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                         self.lb_8.text = rate.text!
                         if((rate.text?.contains("▼"))!){
                             self.lb_8.textColor = UIColor.green
+                            self.lb_7.textColor = UIColor.green
                         }else{
                             self.lb_8.textColor = UIColor.red
+                            self.lb_7.textColor = UIColor.red
                             
                         }
                         
@@ -121,8 +131,11 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                         self.lb_12.text = rate.text!
                         if((rate.text?.contains("▼"))!){
                             self.lb_12.textColor = UIColor.green
+                            self.lb_11.textColor = UIColor.green
+                            
                         }else{
                             self.lb_12.textColor = UIColor.red
+                            self.lb_11.textColor = UIColor.red
                             
                         }
                         
@@ -143,8 +156,12 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                         self.lb_16.text = rate.text!
                         if((rate.text?.contains("▼"))!){
                             self.lb_16.textColor = UIColor.green
+                            self.lb_15.textColor = UIColor.green
+
                         }else{
                             self.lb_16.textColor = UIColor.red
+                            self.lb_15.textColor = UIColor.red
+
                             
                         }
                         
@@ -165,8 +182,11 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                         self.lb_20.text = rate.text!
                         if((rate.text?.contains("▼"))!){
                             self.lb_20.textColor = UIColor.green
+                            self.lb_19.textColor = UIColor.green
+                            
                         }else{
                             self.lb_20.textColor = UIColor.red
+                            self.lb_19.textColor = UIColor.red
                             
                         }
                         
@@ -183,9 +203,13 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                 
             }
         }
-        
+        hud?.dismiss(afterDelay: 3.0)
+
     }
     func getNow2(){
+        hud = JGProgressHUD(style: .dark)
+              hud?.textLabel.text = "Loading"
+              hud?.show(in: self.view)
         print("========")
         ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
         Alamofire.request("https://www.wantgoo.com").responseString { response in
@@ -205,6 +229,14 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[1]/td[5]") {
                         self.lb_4.text = rate.text!
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_4.textColor = UIColor.green
+                            self.lb_3.textColor = UIColor.green
+                        }else{
+                            self.lb_4.textColor = UIColor.red
+                            self.lb_3.textColor = UIColor.red
+                            
+                        }
                         
                     }
                     for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[2]/td[2]") {
@@ -221,7 +253,14 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[2]/td[5]") {
                         self.lb_8.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_8.textColor = UIColor.green
+                            self.lb_7.textColor = UIColor.green
+                        }else{
+                            self.lb_8.textColor = UIColor.red
+                            self.lb_7.textColor = UIColor.red
+                            
+                        }
                     }
                     
                     
@@ -239,7 +278,15 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[3]/td[5]") {
                         self.lb_12.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_12.textColor = UIColor.green
+                            self.lb_11.textColor = UIColor.green
+                            
+                        }else{
+                            self.lb_12.textColor = UIColor.red
+                            self.lb_11.textColor = UIColor.red
+                            
+                        }
                     }
                     for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[4]/td[2]") {
                         self.lb_13.text = rate.text!
@@ -255,7 +302,16 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[4]/td[5]") {
                         self.lb_16.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                                          self.lb_16.textColor = UIColor.green
+                                          self.lb_15.textColor = UIColor.green
+
+                                      }else{
+                                          self.lb_16.textColor = UIColor.red
+                                          self.lb_15.textColor = UIColor.red
+
+                                          
+                                      }
                     }
                     for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[5]/td[2]") {
                         self.lb_17.text = rate.text!
@@ -271,7 +327,15 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[5]/td[5]") {
                         self.lb_20.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_20.textColor = UIColor.green
+                            self.lb_19.textColor = UIColor.green
+                            
+                        }else{
+                            self.lb_20.textColor = UIColor.red
+                            self.lb_19.textColor = UIColor.red
+                            
+                        }
                     }
                     for rate in doc.xpath("//*[@id='mainCol']/div[1]/div[1]/span/time") {
                         print("========")
@@ -285,9 +349,14 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                 
             }
         }
+        hud?.dismiss(afterDelay: 3.0)
+
         
     }
     func getNow3(){
+        hud = JGProgressHUD(style: .dark)
+              hud?.textLabel.text = "Loading"
+              hud?.show(in: self.view)
         print("========")
         ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
         Alamofire.request("https://www.wantgoo.com").responseString { response in
@@ -307,6 +376,14 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[1]/td[5]") {
                         self.lb_4.text = rate.text!
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_4.textColor = UIColor.green
+                            self.lb_3.textColor = UIColor.green
+                        }else{
+                            self.lb_4.textColor = UIColor.red
+                            self.lb_3.textColor = UIColor.red
+                            
+                        }
                         
                     }
                     for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[2]/td[2]") {
@@ -323,7 +400,14 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[2]/td[5]") {
                         self.lb_8.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_8.textColor = UIColor.green
+                            self.lb_7.textColor = UIColor.green
+                        }else{
+                            self.lb_8.textColor = UIColor.red
+                            self.lb_7.textColor = UIColor.red
+                            
+                        }
                     }
                     
                     
@@ -341,7 +425,15 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[3]/td[5]") {
                         self.lb_12.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_12.textColor = UIColor.green
+                            self.lb_11.textColor = UIColor.green
+                            
+                        }else{
+                            self.lb_12.textColor = UIColor.red
+                            self.lb_11.textColor = UIColor.red
+                            
+                        }
                     }
                     for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[4]/td[2]") {
                         self.lb_13.text = rate.text!
@@ -357,7 +449,16 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[4]/td[5]") {
                         self.lb_16.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                                          self.lb_16.textColor = UIColor.green
+                                          self.lb_15.textColor = UIColor.green
+
+                                      }else{
+                                          self.lb_16.textColor = UIColor.red
+                                          self.lb_15.textColor = UIColor.red
+
+                                          
+                                      }
                     }
                     for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[5]/td[2]") {
                         self.lb_17.text = rate.text!
@@ -373,7 +474,15 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[5]/td[5]") {
                         self.lb_20.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_20.textColor = UIColor.green
+                            self.lb_19.textColor = UIColor.green
+                            
+                        }else{
+                            self.lb_20.textColor = UIColor.red
+                            self.lb_19.textColor = UIColor.red
+                            
+                        }
                     }
                     for rate in doc.xpath("//*[@id='mainCol']/div[1]/div[1]/span/time") {
                         print("========")
@@ -387,9 +496,14 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                 
             }
         }
+        hud?.dismiss(afterDelay: 3.0)
+
         
     }
     func getNow4(){
+        hud = JGProgressHUD(style: .dark)
+              hud?.textLabel.text = "Loading"
+              hud?.show(in: self.view)
         print("========")
         ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
         Alamofire.request("https://www.wantgoo.com").responseString { response in
@@ -409,6 +523,14 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[1]/td[5]") {
                         self.lb_4.text = rate.text!
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_4.textColor = UIColor.green
+                            self.lb_3.textColor = UIColor.green
+                        }else{
+                            self.lb_4.textColor = UIColor.red
+                            self.lb_3.textColor = UIColor.red
+                            
+                        }
                         
                     }
                     for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[2]/td[2]") {
@@ -425,7 +547,14 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[2]/td[5]") {
                         self.lb_8.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_8.textColor = UIColor.green
+                            self.lb_7.textColor = UIColor.green
+                        }else{
+                            self.lb_8.textColor = UIColor.red
+                            self.lb_7.textColor = UIColor.red
+                            
+                        }
                     }
                     
                     
@@ -443,7 +572,15 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[3]/td[5]") {
                         self.lb_12.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_12.textColor = UIColor.green
+                            self.lb_11.textColor = UIColor.green
+                            
+                        }else{
+                            self.lb_12.textColor = UIColor.red
+                            self.lb_11.textColor = UIColor.red
+                            
+                        }
                     }
                     for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[4]/td[2]") {
                         self.lb_13.text = rate.text!
@@ -459,7 +596,16 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[4]/td[5]") {
                         self.lb_16.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                                          self.lb_16.textColor = UIColor.green
+                                          self.lb_15.textColor = UIColor.green
+
+                                      }else{
+                                          self.lb_16.textColor = UIColor.red
+                                          self.lb_15.textColor = UIColor.red
+
+                                          
+                                      }
                     }
                     for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[5]/td[2]") {
                         self.lb_17.text = rate.text!
@@ -475,7 +621,15 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[5]/td[5]") {
                         self.lb_20.text = rate.text!
-                        
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_20.textColor = UIColor.green
+                            self.lb_19.textColor = UIColor.green
+                            
+                        }else{
+                            self.lb_20.textColor = UIColor.red
+                            self.lb_19.textColor = UIColor.red
+                            
+                        }
                     }
                     for rate in doc.xpath("//*[@id='mainCol']/div[1]/div[1]/span/time") {
                         print("========")
@@ -489,6 +643,8 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                 
             }
         }
+        hud?.dismiss(afterDelay: 3.0)
+
         
     }
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -510,6 +666,7 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
             break
             
         default:
+            Toast.init(text: "").show()
             
         }
     }
