@@ -10,7 +10,8 @@ import UIKit
 import Foundation
 import Kanna
 import Alamofire
-class NowStockPriceViewController: MGoogleADViewController {
+import Toaster
+class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,6 +153,29 @@ class NowStockPriceViewController: MGoogleADViewController {
             }
         }
         
+    }
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item.tag {
+        case 1:
+            Toast.init(text: "1")
+            break
+        case 2:
+            Toast.init(text: "2")
+
+            break
+        case 3:
+            Toast.init(text: "3")
+
+            break
+        case 4:
+            Toast.init(text: "4")
+
+            break
+            
+        default:
+            Toast.init(text: "default")
+
+        }
     }
     
 }
