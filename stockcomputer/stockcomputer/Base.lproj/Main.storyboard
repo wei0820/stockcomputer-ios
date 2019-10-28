@@ -3195,11 +3195,14 @@
                                     <constraint firstAttribute="width" constant="375" id="kXH-M1-yJj"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem title="瞬間暴漲" image="1.circle.fill" catalog="system" id="3bB-T5-wtQ"/>
-                                    <tabBarItem title="瞬間暴跌" image="2.circle" catalog="system" id="YOL-vS-H1n"/>
-                                    <tabBarItem title="瞬間大量" image="3.circle.fill" catalog="system" id="Eb1-0w-bS0"/>
-                                    <tabBarItem title="週轉率" image="4.circle" catalog="system" id="v9h-0c-5lv"/>
+                                    <tabBarItem tag="1" title="瞬間暴漲" image="1.circle.fill" catalog="system" id="3bB-T5-wtQ"/>
+                                    <tabBarItem tag="2" title="瞬間暴跌" image="2.circle" catalog="system" id="YOL-vS-H1n"/>
+                                    <tabBarItem tag="3" title="瞬間大量" image="3.circle.fill" catalog="system" id="Eb1-0w-bS0"/>
+                                    <tabBarItem tag="4" title="週轉率" image="4.circle" catalog="system" id="v9h-0c-5lv"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="FjU-5t-k8k" id="kqi-z6-Ha8"/>
+                                </connections>
                             </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtH-Yf-ovc">
                                 <rect key="frame" x="16" y="136" width="343" height="21"/>
