@@ -12,13 +12,17 @@ import Kanna
 import Alamofire
 import Toaster
 import JGProgressHUD
+import GoogleMobileAds
 
-class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
+class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GADRewardBasedVideoAdDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "即時選股"
         getNow()
+        GADRewardBasedVideoAd.sharedInstance().delegate = self
+        GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
+                                                    withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
         
         // Do any additional setup after loading the view.
     }
@@ -55,11 +59,11 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
     @IBOutlet weak var lb_19: UILabel!
     @IBOutlet weak var lb_20: UILabel!
     var hud :JGProgressHUD?
-
+    
     func getNow(){
         hud = JGProgressHUD(style: .dark)
-           hud?.textLabel.text = "Loading"
-           hud?.show(in: self.view)
+        hud?.textLabel.text = "Loading"
+        hud?.show(in: self.view)
         print("========")
         ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
         Alamofire.request("https://www.wantgoo.com").responseString { response in
@@ -157,11 +161,11 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                         if((rate.text?.contains("▼"))!){
                             self.lb_16.textColor = UIColor.green
                             self.lb_15.textColor = UIColor.green
-
+                            
                         }else{
                             self.lb_16.textColor = UIColor.red
                             self.lb_15.textColor = UIColor.red
-
+                            
                             
                         }
                         
@@ -204,12 +208,12 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
             }
         }
         hud?.dismiss(afterDelay: 3.0)
-
+        
     }
     func getNow2(){
         hud = JGProgressHUD(style: .dark)
-              hud?.textLabel.text = "Loading"
-              hud?.show(in: self.view)
+        hud?.textLabel.text = "Loading"
+        hud?.show(in: self.view)
         print("========")
         ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
         Alamofire.request("https://www.wantgoo.com").responseString { response in
@@ -303,15 +307,15 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[4]/td[5]") {
                         self.lb_16.text = rate.text!
                         if((rate.text?.contains("▼"))!){
-                                          self.lb_16.textColor = UIColor.green
-                                          self.lb_15.textColor = UIColor.green
-
-                                      }else{
-                                          self.lb_16.textColor = UIColor.red
-                                          self.lb_15.textColor = UIColor.red
-
-                                          
-                                      }
+                            self.lb_16.textColor = UIColor.green
+                            self.lb_15.textColor = UIColor.green
+                            
+                        }else{
+                            self.lb_16.textColor = UIColor.red
+                            self.lb_15.textColor = UIColor.red
+                            
+                            
+                        }
                     }
                     for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[5]/td[2]") {
                         self.lb_17.text = rate.text!
@@ -350,13 +354,13 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
             }
         }
         hud?.dismiss(afterDelay: 3.0)
-
+        
         
     }
     func getNow3(){
         hud = JGProgressHUD(style: .dark)
-              hud?.textLabel.text = "Loading"
-              hud?.show(in: self.view)
+        hud?.textLabel.text = "Loading"
+        hud?.show(in: self.view)
         print("========")
         ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
         Alamofire.request("https://www.wantgoo.com").responseString { response in
@@ -450,15 +454,15 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[4]/td[5]") {
                         self.lb_16.text = rate.text!
                         if((rate.text?.contains("▼"))!){
-                                          self.lb_16.textColor = UIColor.green
-                                          self.lb_15.textColor = UIColor.green
-
-                                      }else{
-                                          self.lb_16.textColor = UIColor.red
-                                          self.lb_15.textColor = UIColor.red
-
-                                          
-                                      }
+                            self.lb_16.textColor = UIColor.green
+                            self.lb_15.textColor = UIColor.green
+                            
+                        }else{
+                            self.lb_16.textColor = UIColor.red
+                            self.lb_15.textColor = UIColor.red
+                            
+                            
+                        }
                     }
                     for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[5]/td[2]") {
                         self.lb_17.text = rate.text!
@@ -497,13 +501,13 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
             }
         }
         hud?.dismiss(afterDelay: 3.0)
-
+        
         
     }
     func getNow4(){
         hud = JGProgressHUD(style: .dark)
-              hud?.textLabel.text = "Loading"
-              hud?.show(in: self.view)
+        hud?.textLabel.text = "Loading"
+        hud?.show(in: self.view)
         print("========")
         ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
         Alamofire.request("https://www.wantgoo.com").responseString { response in
@@ -597,15 +601,15 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[4]/td[5]") {
                         self.lb_16.text = rate.text!
                         if((rate.text?.contains("▼"))!){
-                                          self.lb_16.textColor = UIColor.green
-                                          self.lb_15.textColor = UIColor.green
-
-                                      }else{
-                                          self.lb_16.textColor = UIColor.red
-                                          self.lb_15.textColor = UIColor.red
-
-                                          
-                                      }
+                            self.lb_16.textColor = UIColor.green
+                            self.lb_15.textColor = UIColor.green
+                            
+                        }else{
+                            self.lb_16.textColor = UIColor.red
+                            self.lb_15.textColor = UIColor.red
+                            
+                            
+                        }
                     }
                     for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[5]/td[2]") {
                         self.lb_17.text = rate.text!
@@ -644,24 +648,49 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
             }
         }
         hud?.dismiss(afterDelay: 3.0)
-
+        
         
     }
+    var i = 0
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 1:
-            getNow()
+            i+=1
+            if i >= 3{
+                self.setAlert()
+            }else{
+                getNow()
+
+            }
             break
         case 2:
-            getNow2()
+            i+=1
+            if i >= 3{
+                self.setAlert()
+            }else{
+                getNow2()
+
+            }
             
             break
         case 3:
-            getNow3()
+            i+=1
+            if i >= 3{
+                self.setAlert()
+            }else{
+                getNow3()
+
+            }
             
             break
         case 4:
-            getNow4()
+            i+=1
+            if i >= 3{
+                self.setAlert()
+            }else{
+                getNow4()
+
+            }
             
             break
             
@@ -670,5 +699,54 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
             
         }
     }
+    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
+                            didRewardUserWith reward: GADAdReward) {
+        print("Reward received with currency: \(reward.type), amount \(reward.amount).")
+        Toast.init(text: "重置完畢！").show()
+        i = 0;
+    }
     
+    func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
+        print("Reward based video ad is received.")
+    }
+    
+    func rewardBasedVideoAdDidOpen(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Opened reward based video ad.")
+    }
+    
+    func rewardBasedVideoAdDidStartPlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad started playing.")
+    }
+    
+    func rewardBasedVideoAdDidCompletePlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad has completed.")
+    }
+    
+    func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad is closed.")
+        GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
+                                                    withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
+    }
+    
+    func rewardBasedVideoAdWillLeaveApplication(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad will leave application.")
+    }
+    
+    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
+                            didFailToLoadWithError error: Error) {
+        print("Reward based video ad failed to load.")
+    }
+    
+    func setAlert(){
+        let controller = UIAlertController(title: "今日已達上限", message: "是否觀看影片重置?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "好的", style: .default) { (_) in
+            if GADRewardBasedVideoAd.sharedInstance().isReady == true {
+                GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
+            }
+        }
+        controller.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
 }
