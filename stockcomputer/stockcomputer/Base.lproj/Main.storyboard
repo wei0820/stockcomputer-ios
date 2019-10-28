@@ -3567,10 +3567,10 @@
                                     <constraint firstAttribute="width" constant="375" id="RW8-9r-kOY"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem systemItem="favorites" id="r6s-Nv-eGO"/>
-                                    <tabBarItem title="Item" id="Tcv-MX-fH2"/>
-                                    <tabBarItem title="Item" id="XVb-rQ-YId"/>
-                                    <tabBarItem systemItem="more" id="EzU-p8-RQa"/>
+                                    <tabBarItem tag="1" title="跌破整理" image="bolt.slash" catalog="system" id="r6s-Nv-eGO"/>
+                                    <tabBarItem tag="2" title="爆量長黑" image="bolt.slash.fill" catalog="system" id="Tcv-MX-fH2"/>
+                                    <tabBarItem tag="3" title="跌破季線" image="bolt.badge.a" catalog="system" id="XVb-rQ-YId"/>
+                                    <tabBarItem tag="4" title="死亡交叉" image="bolt.badge.a.fill" catalog="system" id="EzU-p8-RQa"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="iq5-NC-wTj" id="Hng-F5-Frm"/>
@@ -4287,6 +4287,10 @@
         <image name="4.circle" catalog="system" width="64" height="62"/>
         <image name="a.square" catalog="system" width="64" height="56"/>
         <image name="b.square" catalog="system" width="64" height="56"/>
+        <image name="bolt.badge.a" catalog="system" width="54" height="64"/>
+        <image name="bolt.badge.a.fill" catalog="system" width="54" height="64"/>
+        <image name="bolt.slash" catalog="system" width="50" height="64"/>
+        <image name="bolt.slash.fill" catalog="system" width="50" height="64"/>
         <image name="c.square.fill" catalog="system" width="64" height="56"/>
         <image name="d.square" catalog="system" width="64" height="56"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
