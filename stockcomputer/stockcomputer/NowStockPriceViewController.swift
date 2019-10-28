@@ -16,7 +16,7 @@ import GoogleMobileAds
 
 class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GADRewardBasedVideoAdDelegate{
     var i = 0
-    var j = 3
+    var j = 3000
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "即時選股"

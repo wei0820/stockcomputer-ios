@@ -15,7 +15,7 @@ import GoogleMobileAds
 
 class SmartStockViewController: MGoogleADViewController ,UITabBarDelegate,GADRewardBasedVideoAdDelegate{
     var i = 0
-    var j = 3
+    var j = 3000
     
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var lab1: UILabel!
