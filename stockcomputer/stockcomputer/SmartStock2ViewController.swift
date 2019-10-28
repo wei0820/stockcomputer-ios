@@ -21,7 +21,7 @@ class SmartStock2ViewController: MGoogleADViewController ,UITabBarDelegate,GADRe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "智慧選股-空方股"
-        getNow(s: "tabHTB4")
+        getNow(s: "tabHTB1")
         if(userDefaults.value(forKey: "look") != nil){
             i = userDefaults.value(forKey: "look") as! Int
         }else{
@@ -224,7 +224,7 @@ class SmartStock2ViewController: MGoogleADViewController ,UITabBarDelegate,GADRe
             if i >= 3{
                 self.setAlert()
             }else{
-                getNow(s: "tabHTB4")
+                getNow(s: "tabHTB1")
                 
             }
             userDefaults.set(i, forKey: "look")
