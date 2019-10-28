@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyw-T5-M3K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyw-T5-M3K">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -562,7 +562,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QzW-ka-TUs">
-                                <rect key="frame" x="-62.5" y="83.5" width="500" height="500"/>
+                                <rect key="frame" x="-312.5" y="-166.5" width="1000" height="1000"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-Fv-wTz">
                                 <rect key="frame" x="94" y="537" width="60" height="60"/>
@@ -3520,6 +3520,26 @@
                     </view>
                     <navigationItem key="navigationItem" id="8ol-50-abF"/>
                     <connections>
+                        <outlet property="lb_1" destination="JcN-CC-21s" id="Qlz-eb-m0a"/>
+                        <outlet property="lb_10" destination="1OK-ZV-yHC" id="vK1-IH-ibP"/>
+                        <outlet property="lb_11" destination="UYI-lP-Sod" id="5p6-Pq-o8j"/>
+                        <outlet property="lb_12" destination="AmS-LY-ycn" id="0P1-VO-d4f"/>
+                        <outlet property="lb_13" destination="cOL-mi-ngq" id="iYW-gq-dbF"/>
+                        <outlet property="lb_14" destination="KWC-pp-zrX" id="KlS-IB-lFU"/>
+                        <outlet property="lb_15" destination="GGd-ch-oLE" id="EEc-dc-Qy9"/>
+                        <outlet property="lb_16" destination="7kE-Z9-hs1" id="KKG-0i-gyD"/>
+                        <outlet property="lb_17" destination="f44-hs-QsI" id="Axq-rX-D3R"/>
+                        <outlet property="lb_18" destination="JeQ-ov-9b6" id="lLO-N6-nx6"/>
+                        <outlet property="lb_19" destination="6Rc-1U-Es1" id="jiH-6p-Gyh"/>
+                        <outlet property="lb_2" destination="J8e-jo-col" id="XJi-ET-gXF"/>
+                        <outlet property="lb_20" destination="saP-3A-JbQ" id="JqH-2g-QWp"/>
+                        <outlet property="lb_3" destination="6eV-wk-Ot5" id="4tq-tf-bwu"/>
+                        <outlet property="lb_4" destination="io9-PB-nef" id="erj-6H-9dG"/>
+                        <outlet property="lb_5" destination="9Ra-ic-V4r" id="Jbr-ec-gNu"/>
+                        <outlet property="lb_6" destination="eRv-g0-Aha" id="mAq-ao-37R"/>
+                        <outlet property="lb_7" destination="qgP-CA-bIz" id="I5S-EF-rjc"/>
+                        <outlet property="lb_8" destination="z07-uu-ql6" id="Qks-i7-QL7"/>
+                        <outlet property="lb_9" destination="YKe-Vb-Ydb" id="UNW-N9-Cq3"/>
                         <outlet property="time" destination="QtH-Yf-ovc" id="Gdg-GV-4Y2"/>
                     </connections>
                 </viewController>
@@ -3566,17 +3586,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="2.circle" catalog="system" width="64" height="60"/>
-        <image name="3.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="4.circle" catalog="system" width="64" height="60"/>
+        <image name="1.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="2.circle" catalog="system" width="64" height="62"/>
+        <image name="3.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="4.circle" catalog="system" width="64" height="62"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="iconfinder_174_Back_Front_Twitter_Sets_5172563" width="64" height="64"/>
         <image name="icons8-cinema-90" width="90" height="90"/>
         <image name="icons8-facebook-150" width="150" height="150"/>
         <image name="icons8-shopping-cart-90" width="90" height="90"/>
         <image name="icons8-test-account-100" width="100" height="100"/>
-        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="info.circle.fill" catalog="system" width="64" height="62"/>
         <image name="logo" width="500" height="500"/>
         <image name="port" width="32" height="32"/>
     </resources>
