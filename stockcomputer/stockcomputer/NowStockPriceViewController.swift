@@ -157,18 +157,18 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 1:
-            Toast.init(text: "1")
+            Toast.init(text: "1").show()
             break
         case 2:
-            Toast.init(text: "2")
+            Toast.init(text: "2").show()
 
             break
         case 3:
-            Toast.init(text: "3")
+            Toast.init(text: "3").show()
 
             break
         case 4:
-            Toast.init(text: "4")
+            Toast.init(text: "4").show()
 
             break
             
