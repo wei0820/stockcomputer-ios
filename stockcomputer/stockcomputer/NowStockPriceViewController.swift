@@ -72,6 +72,13 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[1]/td[5]") {
                         self.lb_4.text = rate.text!
+                        print(rate.text!)
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_4.textColor = UIColor.green
+                        }else{
+                            self.lb_4.textColor = UIColor.red
+                            
+                        }
                         
                     }
                     for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[2]/td[2]") {
@@ -88,6 +95,12 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[2]/td[5]") {
                         self.lb_8.text = rate.text!
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_8.textColor = UIColor.green
+                        }else{
+                            self.lb_8.textColor = UIColor.red
+                            
+                        }
                         
                     }
                     
@@ -106,6 +119,12 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[3]/td[5]") {
                         self.lb_12.text = rate.text!
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_12.textColor = UIColor.green
+                        }else{
+                            self.lb_12.textColor = UIColor.red
+                            
+                        }
                         
                     }
                     for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[4]/td[2]") {
@@ -122,6 +141,12 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                     }
                     for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[4]/td[5]") {
                         self.lb_16.text = rate.text!
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_16.textColor = UIColor.green
+                        }else{
+                            self.lb_16.textColor = UIColor.red
+                            
+                        }
                         
                     }
                     for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[5]/td[2]") {
@@ -137,6 +162,318 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
                         
                     }
                     for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[5]/td[5]") {
+                        self.lb_20.text = rate.text!
+                        if((rate.text?.contains("▼"))!){
+                            self.lb_20.textColor = UIColor.green
+                        }else{
+                            self.lb_20.textColor = UIColor.red
+                            
+                        }
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='mainCol']/div[1]/div[1]/span/time") {
+                        print("========")
+                        print(rate.text)
+                        self.time.text = rate.text!
+                    }
+                }
+                
+                
+                
+                
+            }
+        }
+        
+    }
+    func getNow2(){
+        print("========")
+        ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
+        Alamofire.request("https://www.wantgoo.com").responseString { response in
+            if let html = response.result.value {
+                if let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8) {
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[1]/td[2]") {
+                        self.lb_1.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[1]/td[3]") {
+                        self.lb_2.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[1]/td[4]") {
+                        self.lb_3.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[1]/td[5]") {
+                        self.lb_4.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[2]/td[2]") {
+                        self.lb_5.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[2]/td[3]") {
+                        self.lb_6.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[2]/td[4]") {
+                        self.lb_7.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[2]/td[5]") {
+                        self.lb_8.text = rate.text!
+                        
+                    }
+                    
+                    
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[3]/td[2]") {
+                        self.lb_9.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[3]/td[3]") {
+                        self.lb_10.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[3]/td[4]") {
+                        self.lb_11.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[3]/td[5]") {
+                        self.lb_12.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[4]/td[2]") {
+                        self.lb_13.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[4]/td[3]") {
+                        self.lb_14.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[4]/td[4]") {
+                        self.lb_15.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[4]/td[5]") {
+                        self.lb_16.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[5]/td[2]") {
+                        self.lb_17.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[5]/td[3]") {
+                        self.lb_18.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[5]/td[4]") {
+                        self.lb_19.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT2']/table/tbody/tr[5]/td[5]") {
+                        self.lb_20.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='mainCol']/div[1]/div[1]/span/time") {
+                        print("========")
+                        print(rate.text)
+                        self.time.text = rate.text!
+                    }
+                }
+                
+                
+                
+                
+            }
+        }
+        
+    }
+    func getNow3(){
+        print("========")
+        ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
+        Alamofire.request("https://www.wantgoo.com").responseString { response in
+            if let html = response.result.value {
+                if let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8) {
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[1]/td[2]") {
+                        self.lb_1.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[1]/td[3]") {
+                        self.lb_2.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[1]/td[4]") {
+                        self.lb_3.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[1]/td[5]") {
+                        self.lb_4.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[2]/td[2]") {
+                        self.lb_5.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[2]/td[3]") {
+                        self.lb_6.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[2]/td[4]") {
+                        self.lb_7.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[2]/td[5]") {
+                        self.lb_8.text = rate.text!
+                        
+                    }
+                    
+                    
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[3]/td[2]") {
+                        self.lb_9.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[3]/td[3]") {
+                        self.lb_10.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[3]/td[4]") {
+                        self.lb_11.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[3]/td[5]") {
+                        self.lb_12.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[4]/td[2]") {
+                        self.lb_13.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[4]/td[3]") {
+                        self.lb_14.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[4]/td[4]") {
+                        self.lb_15.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[4]/td[5]") {
+                        self.lb_16.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[5]/td[2]") {
+                        self.lb_17.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[5]/td[3]") {
+                        self.lb_18.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[5]/td[4]") {
+                        self.lb_19.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT3']/table/tbody/tr[5]/td[5]") {
+                        self.lb_20.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='mainCol']/div[1]/div[1]/span/time") {
+                        print("========")
+                        print(rate.text)
+                        self.time.text = rate.text!
+                    }
+                }
+                
+                
+                
+                
+            }
+        }
+        
+    }
+    func getNow4(){
+        print("========")
+        ////*[@id="tabRT1"]/table/tbody/tr[1]/td[2]
+        Alamofire.request("https://www.wantgoo.com").responseString { response in
+            if let html = response.result.value {
+                if let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8) {
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[1]/td[2]") {
+                        self.lb_1.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[1]/td[3]") {
+                        self.lb_2.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[1]/td[4]") {
+                        self.lb_3.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[1]/td[5]") {
+                        self.lb_4.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[2]/td[2]") {
+                        self.lb_5.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[2]/td[3]") {
+                        self.lb_6.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[2]/td[4]") {
+                        self.lb_7.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[2]/td[5]") {
+                        self.lb_8.text = rate.text!
+                        
+                    }
+                    
+                    
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[3]/td[2]") {
+                        self.lb_9.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[3]/td[3]") {
+                        self.lb_10.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[3]/td[4]") {
+                        self.lb_11.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[3]/td[5]") {
+                        self.lb_12.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[4]/td[2]") {
+                        self.lb_13.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[4]/td[3]") {
+                        self.lb_14.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[4]/td[4]") {
+                        self.lb_15.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[4]/td[5]") {
+                        self.lb_16.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[5]/td[2]") {
+                        self.lb_17.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[5]/td[3]") {
+                        self.lb_18.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[5]/td[4]") {
+                        self.lb_19.text = rate.text!
+                        
+                    }
+                    for rate in doc.xpath("//*[@id='tabRT4']/table/tbody/tr[5]/td[5]") {
                         self.lb_20.text = rate.text!
                         
                     }
@@ -157,24 +494,23 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate{
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 1:
-            Toast.init(text: "1").show()
+            getNow()
             break
         case 2:
-            Toast.init(text: "2").show()
-
+            getNow2()
+            
             break
         case 3:
-            Toast.init(text: "3").show()
-
+            getNow3()
+            
             break
         case 4:
-            Toast.init(text: "4").show()
-
+            getNow4()
+            
             break
             
         default:
-            Toast.init(text: "default")
-
+            
         }
     }
     
