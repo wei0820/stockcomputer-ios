@@ -15,10 +15,15 @@ import JGProgressHUD
 import GoogleMobileAds
 
 class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GADRewardBasedVideoAdDelegate{
-    
+    var i = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "即時選股"
+        if(userDefaults.value(forKey: "look") != nil){
+            i = userDefaults.value(forKey: "look") as! Int
+        }else{
+            i = 0
+        }
         getNow()
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
@@ -651,7 +656,6 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GAD
         
         
     }
-    var i = 0
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 1:
@@ -662,6 +666,7 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GAD
                 getNow()
 
             }
+            userDefaults.set(i, forKey: "look")
             break
         case 2:
             i+=1
@@ -671,7 +676,8 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GAD
                 getNow2()
 
             }
-            
+            userDefaults.set(i, forKey: "look")
+
             break
         case 3:
             i+=1
@@ -681,7 +687,8 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GAD
                 getNow3()
 
             }
-            
+            userDefaults.set(i, forKey: "look")
+
             break
         case 4:
             i+=1
@@ -691,7 +698,8 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GAD
                 getNow4()
 
             }
-            
+            userDefaults.set(i, forKey: "look")
+
             break
             
         default:
@@ -702,8 +710,10 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GAD
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
                             didRewardUserWith reward: GADAdReward) {
         print("Reward received with currency: \(reward.type), amount \(reward.amount).")
-        Toast.init(text: "重置完畢！").show()
+        Toast.init(text: "重置完畢！請重新點選").show()
         i = 0;
+        userDefaults.set(i, forKey: "look")
+
     }
     
     func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
