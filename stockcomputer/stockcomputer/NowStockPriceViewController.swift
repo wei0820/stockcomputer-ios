@@ -31,7 +31,26 @@ class NowStockPriceViewController: MGoogleADViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBOutlet weak var no1: UILabel!
+    @IBOutlet weak var lb_1: UILabel!
+    @IBOutlet weak var lb_2: UILabel!
+    @IBOutlet weak var lb_3: UILabel!
+    @IBOutlet weak var lb_4: UILabel!
+    @IBOutlet weak var lb_5: UILabel!
+    @IBOutlet weak var lb_6: UILabel!
+    @IBOutlet weak var lb_7: UILabel!
+    @IBOutlet weak var lb_8: UILabel!
+    @IBOutlet weak var lb_9: UILabel!
+    @IBOutlet weak var lb_10: UILabel!
+    @IBOutlet weak var lb_11: UILabel!
+    @IBOutlet weak var lb_12: UILabel!
+    @IBOutlet weak var lb_13: UILabel!
+    @IBOutlet weak var lb_14: UILabel!
+    @IBOutlet weak var lb_15: UILabel!
+    @IBOutlet weak var lb_16: UILabel!
+    @IBOutlet weak var lb_17: UILabel!
+    @IBOutlet weak var lb_18: UILabel!
+    @IBOutlet weak var lb_19: UILabel!
+    @IBOutlet weak var lb_20: UILabel!
     func getNow(){
         print("========")
         //
@@ -41,7 +60,7 @@ class NowStockPriceViewController: MGoogleADViewController {
                     for rate in doc.xpath("//*[@id='tabRT1']/table/tbody/tr[1]/td[3]") {
                         print("========")
                         print(rate.text)
-                        self.no1.text = rate.text!
+//                        self.no1.text = rate.text!
 
                     }
                     
