@@ -15,6 +15,7 @@ import GoogleMobileAds
 
 class SmartStock2ViewController: MGoogleADViewController ,UITabBarDelegate,GADRewardBasedVideoAdDelegate{
     var i = 0
+    var j = 3
     
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var lab1: UILabel!
@@ -221,7 +222,7 @@ class SmartStock2ViewController: MGoogleADViewController ,UITabBarDelegate,GADRe
         switch item.tag {
         case 1:
             i+=1
-            if i >= 3{
+            if i >= j{
                 self.setAlert()
             }else{
                 getNow(s: "tabHTB1")
@@ -232,7 +233,7 @@ class SmartStock2ViewController: MGoogleADViewController ,UITabBarDelegate,GADRe
             break
         case 2:
             i+=1
-            if i >= 3{
+            if i >= j{
                 self.setAlert()
             }else{
                 getNow(s: "tabHTB2")
@@ -242,7 +243,7 @@ class SmartStock2ViewController: MGoogleADViewController ,UITabBarDelegate,GADRe
             break
         case 3:
             i+=1
-            if i >= 3{
+            if i >= j{
                 self.setAlert()
             }else{
                 getNow(s: "tabHTB3")
@@ -253,7 +254,7 @@ class SmartStock2ViewController: MGoogleADViewController ,UITabBarDelegate,GADRe
             break
         case 4:
             i+=1
-            if i >= 3{
+            if i >= j{
                 self.setAlert()
             }else{
                 getNow(s: "tabHTB4")

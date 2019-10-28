@@ -16,6 +16,7 @@ import GoogleMobileAds
 
 class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GADRewardBasedVideoAdDelegate{
     var i = 0
+    var j = 3
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "即時選股"
@@ -660,7 +661,7 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GAD
         switch item.tag {
         case 1:
             i+=1
-            if i >= 3{
+            if i >= j{
                 self.setAlert()
             }else{
                 getNow()
@@ -670,7 +671,7 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GAD
             break
         case 2:
             i+=1
-            if i >= 3{
+            if i >= j{
                 self.setAlert()
             }else{
                 getNow2()
@@ -681,7 +682,7 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GAD
             break
         case 3:
             i+=1
-            if i >= 3{
+            if i >= j{
                 self.setAlert()
             }else{
                 getNow3()
@@ -692,7 +693,7 @@ class NowStockPriceViewController: MGoogleADViewController ,UITabBarDelegate,GAD
             break
         case 4:
             i+=1
-            if i >= 3{
+            if i >= j{
                 self.setAlert()
             }else{
                 getNow4()
