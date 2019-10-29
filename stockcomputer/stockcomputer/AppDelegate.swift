@@ -50,9 +50,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
          application.registerForRemoteNotifications()
         
 
+//        .none
+//        .shake
+//        .screenshot
+//        .twoFingersSwipeLeft
+//        .rightEdgePan
+//        .floatingButton
+        Instabug.start(withToken: "30dabcbd12350ce99d5037e8fb70858f", invocationEvents: [.shake, .screenshot,.twoFingersSwipeLeft,.rightEdgePan,.floatingButton])
+        Instabug.setLocale(.chineseTaiwan)
+        Instabug.welcomeMessageMode = IBGWelcomeMessageMode.live // For live users
+        Instabug.welcomeMessageMode = IBGWelcomeMessageMode.disabled // Disable welcome message
+        Instabug.showWelcomeMessage(with: IBGWelcomeMessageMode.live) // For live users
 
-        Instabug.start(withToken: "30dabcbd12350ce99d5037e8fb70858f", invocationEvents: [.shake, .screenshot])
         
+
         return true
     }
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
