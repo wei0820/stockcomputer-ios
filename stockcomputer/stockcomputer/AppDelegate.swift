@@ -12,6 +12,8 @@ import Firebase
 import FacebookCore
 import VpadnSDKAdKit
 import UserNotifications
+import Instabug
+
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -49,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
 
 
-        
+        Instabug.start(withToken: "30dabcbd12350ce99d5037e8fb70858f", invocationEvents: [.shake, .screenshot])
         
         return true
     }
