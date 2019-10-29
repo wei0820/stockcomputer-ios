@@ -133,9 +133,10 @@ class StockPriceViewController: MGoogleADViewController  {
             }
             
             
-            for rate in doc.xpath("//*[@id='topBasic']/div[1]/h3") {
-                
+            for rate in doc.xpath("//*[@id='container']/div[4]/h1") {
+                print(rate.text!)
                 textName.text = rate.text!
+                
                 
             }
             for rate in doc.xpath("//*[@id='topBasic']/div[2]/div[1]/span[1]") {
