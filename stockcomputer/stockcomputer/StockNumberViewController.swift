@@ -33,7 +33,12 @@ class StockNumberViewController: MGoogleADViewController, UITextFieldDelegate {
         search.delegate = self
         
         
+        
         // Do any additional setup after loading the view.
+    }
+    @IBAction func startSearch(_ sender: Any) {
+        SearchNumber(s: search.text!)
+        
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -53,15 +58,46 @@ class StockNumberViewController: MGoogleADViewController, UITextFieldDelegate {
             Alamofire.request("https://www.sinotrade.com.tw/Stock/Stock_3_8_6?code="+s).responseString { response in
                 if let html = response.result.value {
                     if let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8) {
-                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[5]") {
-                            Toast(text:s+","+String( Double(100 - Int(rate.text!)!) * 0.01)).show()
+                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[1]") {
+                            self.lab1.text = rate.text!
                             
                         }
+                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[2]") {
+                            self.lab2.text = rate.text!
+                            
+                        }
+                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[3]") {
+                            self.lab3.text = rate.text!
+                            
+                        }
+                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[4]") {
+                            self.lab4.text = rate.text!
+                            
+                        }
+                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[5]") {
+                            self.lab5.text = String(Double(rate.text!)!) + "%"
+                            
+                        }
+                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[6]") {
+                            self.lab6.text = String(Double(rate.text!)!) + "%"
+                        
+                            
+                        }
+                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[7]") {
+                            self.lab7.text = rate.text!
+                            
+                        }
+                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[8]") {
+                            self.lab8.text = rate.text!
+                            
+                        }
+                        
+                        
                     }                         }
             }
-        
-        hud?.dismiss(afterDelay: 3.0)
-
+            
+            hud?.dismiss(afterDelay: 3.0)
+            
         }
         
     }
