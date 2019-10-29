@@ -38,6 +38,7 @@ class StockNumberViewController: MGoogleADViewController, UITextFieldDelegate {
     }
     @IBAction func startSearch(_ sender: Any) {
         SearchNumber(s: search.text!)
+        search.resignFirstResponder()
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
