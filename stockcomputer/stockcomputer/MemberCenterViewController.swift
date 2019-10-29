@@ -130,7 +130,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
                                                     withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
 //        self.productIDs.append("Member_Point_1000")
 //        self.productIDs.append("MenberPoint_1000")
-        self.productIDs.append("remove_ad")
+        self.productIDs.append("richman_month")
         self.productIDs.append("richman")
         
         requestProductInfo()
@@ -147,6 +147,8 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
             
             productRequest.delegate = self
             productRequest.start() // 開始請求內購產品
+            shopbtn.isHidden = false
+
         } else {
             print("取不到任何內購的商品...")
         }
