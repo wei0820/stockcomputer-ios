@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyw-T5-M3K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyw-T5-M3K">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -563,7 +563,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QzW-ka-TUs">
-                                <rect key="frame" x="-312.5" y="-166.5" width="1000" height="1000"/>
+                                <rect key="frame" x="-62.5" y="83.5" width="500" height="500"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-Fv-wTz">
                                 <rect key="frame" x="94" y="537" width="60" height="60"/>
@@ -2892,14 +2892,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mPi-Jk-Rm8">
-                                <rect key="frame" x="243" y="68" width="97" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入代號" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mPi-Jk-Rm8">
+                                <rect key="frame" x="189" y="68" width="151" height="34"/>
+                                <accessibility key="accessibilityConfiguration" hint="輸入代號">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="l1Z-fg-Ahx"/>
-                                    <constraint firstAttribute="width" constant="97" id="ytO-l9-x5t"/>
+                                    <constraint firstAttribute="width" constant="151" id="ytO-l9-x5t"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clu-xB-1aI">
                                 <rect key="frame" x="16" y="116" width="324" height="30"/>
@@ -4281,14 +4284,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1.circle.fill" catalog="system" width="64" height="62"/>
-        <image name="2.circle" catalog="system" width="64" height="62"/>
-        <image name="3.circle.fill" catalog="system" width="64" height="62"/>
-        <image name="4.circle" catalog="system" width="64" height="62"/>
+        <image name="1.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="2.circle" catalog="system" width="64" height="60"/>
+        <image name="3.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="4.circle" catalog="system" width="64" height="60"/>
         <image name="a.square" catalog="system" width="64" height="56"/>
         <image name="b.square" catalog="system" width="64" height="56"/>
-        <image name="bolt.badge.a" catalog="system" width="54" height="64"/>
-        <image name="bolt.badge.a.fill" catalog="system" width="54" height="64"/>
+        <image name="bolt.badge.a" catalog="system" width="56" height="64"/>
+        <image name="bolt.badge.a.fill" catalog="system" width="56" height="64"/>
         <image name="bolt.slash" catalog="system" width="50" height="64"/>
         <image name="bolt.slash.fill" catalog="system" width="50" height="64"/>
         <image name="c.square.fill" catalog="system" width="64" height="56"/>
@@ -4299,7 +4302,7 @@
         <image name="icons8-facebook-150" width="150" height="150"/>
         <image name="icons8-shopping-cart-90" width="90" height="90"/>
         <image name="icons8-test-account-100" width="100" height="100"/>
-        <image name="info.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
         <image name="logo" width="500" height="500"/>
         <image name="port" width="32" height="32"/>
     </resources>
