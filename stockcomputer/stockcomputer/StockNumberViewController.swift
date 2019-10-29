@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StockNumberViewController: MGoogleADViewController {
+class StockNumberViewController: MGoogleADViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,9 @@ class StockNumberViewController: MGoogleADViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           self.view.endEditing(true)
+       }
 
     /*
     // MARK: - Navigation
