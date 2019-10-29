@@ -14,10 +14,10 @@ import FacebookLogin
 class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
     //    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算","港股複委託購入試算","港股複委託獲利試算"]
     //    var itemName = ["現股當沖獲利計算","現股獲利計算"]
-//    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","選擇權賣賣試算"]
-//    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超"]
-//    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","推薦營業員","資券成數查詢","即時選股","智慧選股-多方","智慧選股-空方"]
-  var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","即時選股","智慧選股-多方","智慧選股-空方"]
+    //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","選擇權賣賣試算"]
+    //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超"]
+    //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","推薦營業員","資券成數查詢","即時選股","智慧選股-多方","智慧選股-空方"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","即時選股","智慧選股-多方","智慧選股-空方","資券成數查詢"]
     var ref: DatabaseReference!
     
     
@@ -81,13 +81,15 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             //
         }else if (name == itemName[5]){
             performSegue(withIdentifier: "Legalperson", sender: nil)
-        
+            
         }else if(name == itemName[6]){
             performSegue(withIdentifier: "now", sender: nil)
         }else if(name == itemName[7]){
             performSegue(withIdentifier: "smart", sender: nil)
         }else if(name == itemName[8]){
             performSegue(withIdentifier: "smart2", sender: nil)
+        }else if(name == itemName[9]){
+            performSegue(withIdentifier: "number", sender: nil)
         }
         
         //        }else if (name ==  itemName[2]){
@@ -100,13 +102,13 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         //            performSegue(withIdentifier: "hongkong", sender: nil)
         //
         //        }
-//        else if (name == itemName[6]){
-//            performSegue(withIdentifier: "map", sender: nil)
-//
-//        }else if(name == itemName[7]){
-//            performSegue(withIdentifier: "number", sender: nil)
-//        }
-//
+        //        else if (name == itemName[6]){
+        //            performSegue(withIdentifier: "map", sender: nil)
+        //
+        //        }else if(name == itemName[7]){
+        //            performSegue(withIdentifier: "number", sender: nil)
+        //        }
+        //
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //        let destVc:DayTradeViewController = segue.destination as! DayTradeViewController
@@ -125,7 +127,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             setRightButton(s: "會員中心")
             
         }
-//     CalculationManager.getPrice(s: "2404")
+        //     CalculationManager.getPrice(s: "2404")
         //        setInterstitial()
         //        ref = Database.database().reference()
         //        self.ref.child("users").child("11111").setValue(["username": "1111"])
@@ -160,8 +162,8 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             return
             
         }
-//        let loginManager = LoginManager()
-//        loginManager.logOut()
+        //        let loginManager = LoginManager()
+        //        loginManager.logOut()
         
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
         let HomeVc = stroyboard.instantiateViewController(withIdentifier: "member")
@@ -175,29 +177,29 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         let names = ["去登入"]
         for name in names {
             let user = Auth.auth().currentUser
-
+            
             user?.delete { error in
-              if let error = error {
-                // An error happened.
-              } else {
-                // Account deleted.
-              }
+                if let error = error {
+                    // An error happened.
+                } else {
+                    // Account deleted.
+                }
             }
             self.userDefaults.set(nil, forKey: "userID")
-
-           let action = UIAlertAction(title: name, style: .default) { (action) in
-               let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-               let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
-               let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-               appDelegate.window?.rootViewController = HomeVc
-          
-           }
-           controller.addAction(action)
+            
+            let action = UIAlertAction(title: name, style: .default) { (action) in
+                let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+                let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+                appDelegate.window?.rootViewController = HomeVc
+                
+            }
+            controller.addAction(action)
         }
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         controller.addAction(cancelAction)
         present(controller, animated: true, completion: nil)
     }
-
+    
 }
 
