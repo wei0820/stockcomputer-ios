@@ -27,5 +27,6 @@ pod 'FacebookLogin'
 pod 'FacebookCore'
 pod 'FacebookShare'
 pod 'Firebase/Messaging'
+pod 'Instabug'
 
 end

@@ -146,6 +146,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.3.1):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.2)
+  - Instabug (8.7.2)
   - JGProgressHUD (2.0.4)
   - Kanna (4.0.3)
   - leveldb-library (1.22)
@@ -176,6 +177,7 @@ DEPENDENCIES:
   - FSCalendar
   - GCCalendar
   - GoogleMobileAdsMediationFacebook
+  - Instabug
   - JGProgressHUD
   - Kanna (~> 4.0.0)
   - Mapbox-iOS-SDK (~> 5.4)
@@ -216,6 +218,7 @@ SPEC REPOS:
     - GoogleMobileAdsMediationFacebook
     - GoogleUtilities
     - GTMSessionFetcher
+    - Instabug
     - JGProgressHUD
     - Kanna
     - leveldb-library
@@ -258,6 +261,7 @@ SPEC CHECKSUMS:
   GoogleMobileAdsMediationFacebook: c0d608802a1a9574301b9cd92f4722a563056c6b
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
+  Instabug: 5c4aaa2e0e5a26ea64b2b97f8694794f9a9dfd2a
   JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
@@ -267,6 +271,6 @@ SPEC CHECKSUMS:
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   VpadnSDK: af98910008b16b2bae43204b7013fa064ba80b01
 
-PODFILE CHECKSUM: 7468ebc4f448b49a5025a4babad833eddc75f275
+PODFILE CHECKSUM: 5d4462be139f0ad4a2576021fe0820f5afefd261
 
 COCOAPODS: 1.7.5
