@@ -489,7 +489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -502,7 +502,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 3.9;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -517,7 +517,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -530,7 +530,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 3.9;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
