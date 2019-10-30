@@ -23,7 +23,7 @@ class MapManager{
                 lat =  coordinates.latitude
                 lon =  coordinates.longitude
                 Toast(text:  String(coordinates.latitude)+","+String( coordinates.longitude)).show()
-
+                
                 
             }
             
@@ -31,5 +31,5 @@ class MapManager{
             
         )    }
     
-
+    
 }

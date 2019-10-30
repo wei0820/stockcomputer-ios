@@ -69,9 +69,9 @@ class StockPriceViewController: MGoogleADViewController  {
         hud?.textLabel.text = "Loading"
         hud?.show(in: self.view)
         getAll()
-      
         
-//
+        
+        //
         self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(StockPriceViewController.getAll), userInfo: nil, repeats: true)
         
         
@@ -90,15 +90,15 @@ class StockPriceViewController: MGoogleADViewController  {
     @IBOutlet weak var min4: UILabel!
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-   
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     //
     @objc func getStockPrice(url : String,textName : UILabel,textprice : UILabel ,textchg : UILabel,textNow :UILabel){
         Alamofire.request(url).responseString { response in
@@ -108,7 +108,7 @@ class StockPriceViewController: MGoogleADViewController  {
         }
         
     }
-
+    
     func parseTaiwanBankHTML(url: String,textName : UILabel,textprice : UILabel ,textchg : UILabel,textNow :UILabel ) {
         //        print ("url", url)
         ////tbody[class='tb-stock tb-link']|//tbody|//tr|//td
@@ -143,11 +143,11 @@ class StockPriceViewController: MGoogleADViewController  {
                 
                 textprice.text = "成交:" + rate.text!
             }
-      
+            
             for rate in doc.xpath("//*[@id='topBasic']/div[2]/div[1]/span[2]") {
                 
                 textNow.text = "幅度:" + rate.text!
-
+                
                 
             }
             
@@ -167,10 +167,10 @@ class StockPriceViewController: MGoogleADViewController  {
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=GOLD", textName: vl10_4, textprice: vl10_1, textchg: vl10_2, textNow: vl10_3)
         
         
-                getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=OIL", textName: oil4, textprice: oil1, textchg: oil2, textNow: oil3)
-                getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=US10-YR", textName: yr4, textprice: yr_1, textchg: yr2, textNow: yr3)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=OIL", textName: oil4, textprice: oil1, textchg: oil2, textNow: oil3)
+        getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=US10-YR", textName: yr4, textprice: yr_1, textchg: yr2, textNow: yr3)
         hud?.dismiss(afterDelay: 3.0)
-
+        
         
     }
 }
