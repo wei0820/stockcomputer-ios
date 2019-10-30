@@ -218,6 +218,7 @@ class SmartStock2ViewController: MGoogleADViewController ,UITabBarDelegate,GADRe
         
     }
     
+    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 1:
