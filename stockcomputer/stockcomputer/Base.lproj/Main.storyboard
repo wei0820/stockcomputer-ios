@@ -74,11 +74,12 @@
                         <segue destination="FjU-5t-k8k" kind="show" identifier="now" id="twc-Cg-uiZ"/>
                         <segue destination="y1Y-ms-38r" kind="show" identifier="smart" id="w4e-lE-GrA"/>
                         <segue destination="iq5-NC-wTj" kind="show" identifier="smart2" id="aXO-ab-FUl"/>
+                        <segue destination="VaI-80-AFJ" kind="show" identifier="bigbuy" id="n91-JL-GOo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="92" y="2425"/>
+            <point key="canvasLocation" x="-2899" y="3159"/>
         </scene>
         <!--Day Trade View Controller-->
         <scene sceneID="ko4-cT-zs5">
@@ -2873,6 +2874,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXJ-di-1vB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2634.4000000000001" y="611.24437781109452"/>
+        </scene>
+        <!--Big Buy View Controller-->
+        <scene sceneID="RNe-If-oZn">
+            <objects>
+                <viewController id="VaI-80-AFJ" customClass="BigBuyViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ld-ge-zPn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tiO-hD-Fwy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LdB-P0-GXv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zlz-LF-qPB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2686" y="1668"/>
         </scene>
         <!--Stock Number View Controller-->
         <scene sceneID="jkF-gP-nE4">

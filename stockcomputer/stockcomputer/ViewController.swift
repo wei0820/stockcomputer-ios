@@ -11,6 +11,7 @@ import GoogleMobileAds
 import Firebase
 import FacebookCore
 import FacebookLogin
+import Instabug
 class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
     //    var itemName = ["現股當沖獲利計算","現股獲利計算","融資獲利計算","融券獲利計算","港股複委託購入試算","港股複委託獲利試算"]
     //    var itemName = ["現股當沖獲利計算","現股獲利計算"]
@@ -55,6 +56,8 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             at: indexPath, animated: true)
         
         let name = itemName[indexPath.row]
+        Instabug.logUserEvent(withName: name)
+
         //        print(name)
         //
         //        if interstitial.isReady {
@@ -140,7 +143,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         //                print("Open url : \(success)")
         //            })
         //        }
-        
+        Instabug.identifyUser(withEmail: (Auth.auth().currentUser?.email)!, name: Auth.auth().currentUser?.displayName)
     }
     
     func setRightButton(s: String){
@@ -153,7 +156,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             action:#selector(ViewController.setting))
         // 加到導覽列中
         self.navigationItem.rightBarButtonItem = rightButton
-        
     }
     @objc func setting() {
         var isAnonymous = userDefaults.value(forKey: "userID")
