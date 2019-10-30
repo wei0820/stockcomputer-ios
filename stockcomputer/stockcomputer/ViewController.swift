@@ -68,10 +68,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             
         }else if (name == itemName[4]){
             performSegue(withIdentifier: "stockprice", sender: nil)
-            
-            //        }else if(name == itemName[5]){
-            //            performSegue(withIdentifier: "everyday", sender: nil)
-            //
         }else if (name == itemName[5]){
             performSegue(withIdentifier: "Legalperson", sender: nil)
             
@@ -87,18 +83,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             performSegue(withIdentifier: "qalist", sender: nil)
         }
         
-        //        }else if (name ==  itemName[2]){
-        //            performSegue(withIdentifier: "Financing", sender: nil)
-        //
-        //        }else if(name ==  itemName[3]){
-        //            performSegue(withIdentifier: "Margin", sender: nil)
-        //
-        //        }else{
-        //            performSegue(withIdentifier: "hongkong", sender: nil)
-        //
-        //        }
-        //        else if (name == itemName[6]){
-        //            performSegue(withIdentifier: "map", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //        let destVc:DayTradeViewController = segue.destination as! DayTradeViewController
