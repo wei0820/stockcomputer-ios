@@ -58,11 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 //        .floatingButton
         Instabug.start(withToken: "30dabcbd12350ce99d5037e8fb70858f", invocationEvents: [.shake, .screenshot,.twoFingersSwipeLeft,.rightEdgePan,.floatingButton])
         Instabug.setLocale(.chineseTaiwan)
-        Instabug.welcomeMessageMode = IBGWelcomeMessageMode.live // For live users
-        Instabug.welcomeMessageMode = IBGWelcomeMessageMode.disabled // Disable welcome message
-        Instabug.showWelcomeMessage(with: IBGWelcomeMessageMode.live) // For live users
+//        Instabug.welcomeMessageMode = IBGWelcomeMessageMode.live // For live users
+//        Instabug.welcomeMessageMode = IBGWelcomeMessageMode.disabled // Disable welcome message
+//        Instabug.showWelcomeMessage(with: IBGWelcomeMessageMode.live) // For live users
 
-        
+        Replies.enabled = true
 
         return true
     }

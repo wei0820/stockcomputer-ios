@@ -12,9 +12,12 @@ import FacebookLogin
 import FacebookCore
 import Firebase
 import StoreKit
+import JGProgressHUD
 
 class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADRewardBasedVideoAdDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
+    var hud :JGProgressHUD?
+
     @IBOutlet weak var rewardbtn: UIButton!
     @IBOutlet weak var shopbtn: UIButton!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
@@ -37,6 +40,8 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         else {
             print("There are no products.")
         }
+        hud?.dismiss(afterDelay: 3.0)
+
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
@@ -120,8 +125,9 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
         setAdBanner()
-        shopbtn.isHidden = true
+        shopbtn.isHidden = false
         rewardbtn.isHidden = true
         
         get()
@@ -130,7 +136,6 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
                                                     withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
 //        self.productIDs.append("Member_Point_1000")
 //        self.productIDs.append("MenberPoint_1000")
-        self.productIDs.append("richman_month")
         self.productIDs.append("richman")
         
         requestProductInfo()
@@ -140,6 +145,9 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         // Do any additional setup after loading the view.
     }
     func requestProductInfo() {
+        hud = JGProgressHUD(style: .dark)
+                hud?.textLabel.text = "Loading"
+                hud?.show(in: self.view)
         if SKPaymentQueue.canMakePayments() {
             // 取得所有在 iTunes Connect 所建立的內購項目
             let productIdentifiers: Set<String> = NSSet(array: self.productIDs) as! Set<String>
@@ -147,7 +155,6 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
             
             productRequest.delegate = self
             productRequest.start() // 開始請求內購產品
-            shopbtn.isHidden = false
 
         } else {
             print("取不到任何內購的商品...")
