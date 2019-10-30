@@ -163,7 +163,7 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
 
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
-                                                    withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
+                                                    withAdUnitID: "ca-app-pub-7019441527375550/4519858733")
 
     }
     @IBOutlet weak var tf_5: UITextField!

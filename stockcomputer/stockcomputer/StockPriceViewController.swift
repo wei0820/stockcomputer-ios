@@ -110,9 +110,6 @@ class StockPriceViewController: MGoogleADViewController  {
     }
     
     func parseTaiwanBankHTML(url: String,textName : UILabel,textprice : UILabel ,textchg : UILabel,textNow :UILabel ) {
-        //        print ("url", url)
-        ////tbody[class='tb-stock tb-link']|//tbody|//tr|//td
-        ////*[@id='fm']/div[4]/div[8]/div[1]/div/div/table/tbody/tr[2]
         if let doc = try? Kanna.HTML(html: url, encoding: String.Encoding.utf8) {
             
             for rate in doc.xpath("//*[@id='topBasic']/div[2]/div[1]/span[3]") {
@@ -165,8 +162,6 @@ class StockPriceViewController: MGoogleADViewController  {
         getStockPrice(url:"https://www.wantgoo.com/global/stockindex?stockno=S2TWZ1", textName: vl8_1, textprice: vl8_2, textchg: vl8_3, textNow: vl8_4)
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=USDTWD", textName: vl9_1, textprice: vl9_2, textchg: vl9_3, textNow: vl9_4)
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=GOLD", textName: vl10_4, textprice: vl10_1, textchg: vl10_2, textNow: vl10_3)
-        
-        
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=OIL", textName: oil4, textprice: oil1, textchg: oil2, textNow: oil3)
         getStockPrice(url: "https://www.wantgoo.com/global/stockindex?stockno=US10-YR", textName: yr4, textprice: yr_1, textchg: yr2, textNow: yr3)
         hud?.dismiss(afterDelay: 3.0)
