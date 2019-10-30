@@ -63,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
         Replies.enabled = true
 
+
         return true
     }
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
