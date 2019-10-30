@@ -22,18 +22,11 @@ class TradeDetailViewController:MGoogleADViewController ,UIPickerViewDelegate, U
     @IBOutlet weak var percentage_label: UILabel!
 
     @IBAction func button_calculation(_ sender: UIButton) {
-        //        label_profit.text = String(pirceout)
-        //        print(buy_price.text)
-        //        print(sell_price.text)
+ 
         
         closeKeyboard()
-        //        print( total())
         
-//        if interstitial.isReady {
-//            interstitial.present(fromRootViewController: self)
-//        } else {
-//            print("Ad wasn't ready")
-//        }
+
         total()
         
         
