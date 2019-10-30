@@ -55,14 +55,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         
         let name = itemName[indexPath.row]
         Instabug.logUserEvent(withName: name)
-
-        //        print(name)
-        //
-        //        if interstitial.isReady {
-        //            interstitial.present(fromRootViewController: self)
-        //        } else {
-        //            print("Ad wasn't ready")
-        //        }
         if (name == itemName[0]){
             performSegue(withIdentifier: "DayTrade", sender: nil)
             
