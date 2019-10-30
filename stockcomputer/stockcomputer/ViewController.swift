@@ -99,11 +99,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         //        }
         //        else if (name == itemName[6]){
         //            performSegue(withIdentifier: "map", sender: nil)
-        //
-        //        }else if(name == itemName[7]){
-        //            performSegue(withIdentifier: "number", sender: nil)
-        //        }
-        //
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //        let destVc:DayTradeViewController = segue.destination as! DayTradeViewController
