@@ -193,7 +193,6 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         addBannerViewToView(bannerView)
         
-        print(bannerView.adUnitID)
     }
     
     // Called when an ad request failed.
@@ -243,7 +242,6 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         ])
     }
     @IBAction func about(_ sender: Any) {
-        
         let controller = UIAlertController(title: "會員點數", message: "用於一些需要的地方！", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         controller.addAction(okAction)
@@ -258,13 +256,9 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     func get(){
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
-            print(Auth.auth().currentUser?.uid)
-            print( Auth.auth().currentUser?.displayName)
-            print( Auth.auth().currentUser?.photoURL)
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
-
             mid.text = "會員ID:" + (Auth.auth().currentUser?.uid)!
             mName.text = "會員姓名:" + (Auth.auth().currentUser?.displayName)!
             mPoint.text = "會員點數:"
