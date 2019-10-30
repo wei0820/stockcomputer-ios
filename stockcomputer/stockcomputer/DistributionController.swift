@@ -47,16 +47,7 @@ class DistributionController: MGoogleADViewController ,UITextFieldDelegate  ,UII
     @IBOutlet weak var price: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setAdBanner()
         setKeyKeyboardType()
-//        test()
-        // Do any additional setup after loading the view.
-//
-//
-//
-//        if let user = Auth.auth().currentUser {
-//            uid = user.uid
-//        }
  
         }
 
@@ -64,6 +55,7 @@ class DistributionController: MGoogleADViewController ,UITextFieldDelegate  ,UII
     @IBOutlet weak var son: UITextField!
     @IBOutlet weak var money: UITextField!
     var price_double = 0.0
+    
     func cal_1(){
         //除息前股價＝ 現金股利  + 除權息後新股價
         price_double = Double (price.text!)! - Double(money.text!)!
@@ -175,9 +167,7 @@ class DistributionController: MGoogleADViewController ,UITextFieldDelegate  ,UII
     
 }
     func parseTaiwanBankHTML(url: String) {
-//        print ("url", url)
-      ////tbody[class='tb-stock tb-link']|//tbody|//tr|//td
-        ////*[@id='fm']/div[4]/div[8]/div[1]/div/div/table/tbody/tr[2]
+
         if let doc = try? Kanna.HTML(html: url, encoding: String.Encoding.utf8) {
             for rate in doc.xpath("//*[@id='topBasic']/div[2]/div[1]/span[1]") {
                 

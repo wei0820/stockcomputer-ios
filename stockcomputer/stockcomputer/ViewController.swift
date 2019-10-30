@@ -135,9 +135,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             return
             
         }
-        //        let loginManager = LoginManager()
-        //        loginManager.logOut()
-        
+  
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
         let HomeVc = stroyboard.instantiateViewController(withIdentifier: "member")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
