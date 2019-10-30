@@ -38,7 +38,7 @@ class SmartStockViewController: MGoogleADViewController ,UITabBarDelegate,GADRew
         }
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
-                                                    withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
+                                                    withAdUnitID: "ca-app-pub-7019441527375550/4519858733")
         // Do any additional setup after loading the view.
     }
     
@@ -295,7 +295,7 @@ class SmartStockViewController: MGoogleADViewController ,UITabBarDelegate,GADRew
     func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
         print("Reward based video ad is closed.")
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
-                                                    withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
+                                                    withAdUnitID: "ca-app-pub-7019441527375550/4519858733")
     }
     
     func rewardBasedVideoAdWillLeaveApplication(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {

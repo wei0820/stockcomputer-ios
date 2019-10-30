@@ -16,7 +16,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
     //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","選擇權賣賣試算"]
     //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超"]
     //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","推薦營業員","資券成數查詢","即時選股","智慧選股-多方","智慧選股-空方"]
-    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","即時選股","智慧選股-多方","智慧選股-空方","資券成數查詢","1111"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","即時股價","三大法人買賣超","即時選股","智慧選股-多方","智慧選股-空方","資券成數查詢"]
     var ref: DatabaseReference!
     
     
@@ -79,8 +79,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             performSegue(withIdentifier: "smart2", sender: nil)
         }else if(name == itemName[9]){
             performSegue(withIdentifier: "number", sender: nil)
-        }else if(name == itemName[10]){
-            performSegue(withIdentifier: "qalist", sender: nil)
         }
         
     }
