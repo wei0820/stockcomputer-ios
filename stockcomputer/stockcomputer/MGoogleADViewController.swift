@@ -38,6 +38,8 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
           adBannerView!.rootViewController = self
           adBannerView!.load(GADRequest())
       }
+        
+    
       /*
        // MARK: - Navigation
        

@@ -8,6 +8,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--List View Controller-->
+        <scene sceneID="sWo-yc-lVE">
+            <objects>
+                <viewController id="ugK-Rw-KJm" customClass="QAListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QdG-WV-avO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0mR-Ef-hJ2">
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0mR-Ef-hJ2" firstAttribute="bottom" secondItem="xRm-6j-z2t" secondAttribute="bottom" id="Qad-xU-doU"/>
+                            <constraint firstItem="0mR-Ef-hJ2" firstAttribute="leading" secondItem="xRm-6j-z2t" secondAttribute="leading" id="Zqr-oS-Khl"/>
+                            <constraint firstItem="0mR-Ef-hJ2" firstAttribute="top" secondItem="xRm-6j-z2t" secondAttribute="top" id="m3B-Gj-ATZ"/>
+                            <constraint firstItem="0mR-Ef-hJ2" firstAttribute="centerX" secondItem="QdG-WV-avO" secondAttribute="centerX" id="yLP-OZ-rPY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xRm-6j-z2t"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Oth-4r-7be"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMX-Ae-KmQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4034" y="2799"/>
+        </scene>
         <!--股票獲利計算機-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -75,6 +103,7 @@
                         <segue destination="y1Y-ms-38r" kind="show" identifier="smart" id="w4e-lE-GrA"/>
                         <segue destination="iq5-NC-wTj" kind="show" identifier="smart2" id="aXO-ab-FUl"/>
                         <segue destination="VaI-80-AFJ" kind="show" identifier="bigbuy" id="n91-JL-GOo"/>
+                        <segue destination="ugK-Rw-KJm" kind="show" identifier="qalist" id="5vF-dJ-QiM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -4264,6 +4293,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRT-kl-bhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1007.2" y="2882.608695652174"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bP3-h7-a54">
+            <objects>
+                <viewController id="rLy-NF-HVe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MGB-Hc-LVL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Wpn-kS-vW6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iB3-BR-XrA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1215" y="2085"/>
         </scene>
     </scenes>
     <resources>

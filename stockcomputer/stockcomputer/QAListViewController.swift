@@ -1,5 +1,5 @@
 //
-//  BigBuyViewController.swift
+//  QAListViewController.swift
 //  stockcomputer
 //
 //  Created by oneplay on 2019/10/30.
@@ -8,17 +8,14 @@
 
 import UIKit
 
-class BigBuyViewController: MGoogleADViewController {
+class QAListViewController: MGoogleADViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
     }
     
-    
-
 
     /*
     // MARK: - Navigation
