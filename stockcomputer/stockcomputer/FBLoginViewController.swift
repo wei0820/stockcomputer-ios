@@ -106,7 +106,7 @@ class FBLoginViewController: UIViewController{
                     print(accessToken.tokenString)
                     
                     print( Auth.auth().currentUser?.displayName)
-                    print( Auth.auth().currentUser?.photoURL)
+                    Auth.auth().currentUser?.email
                     print("==============")
                     
                 }
