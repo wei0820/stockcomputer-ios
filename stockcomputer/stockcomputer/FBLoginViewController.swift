@@ -100,14 +100,7 @@ class FBLoginViewController: UIViewController{
                         // ...
                         return
                     }
-                    // User is signed in
-                    print("==============")
-                    
-                    print(accessToken.tokenString)
-                    
-                    print( Auth.auth().currentUser?.displayName)
-                    print( Auth.auth().currentUser?.photoURL)
-                    print("==============")
+               
                     
                 }
             }
