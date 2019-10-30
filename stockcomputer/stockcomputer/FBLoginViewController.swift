@@ -22,7 +22,6 @@ class FBLoginViewController: UIViewController{
                 print(error.localizedDescription)
                 return
             }
-            // ...
             guard let user = authResult?.user else { return }
             let isAnonymous = user.isAnonymous  // true
             let uid = user.uid
@@ -85,7 +84,6 @@ class FBLoginViewController: UIViewController{
                        appDelegate.window?.rootViewController = HomeVc
             
         }else{
-            print("attempt to fetch profile......")
             if let accessToken = AccessToken.current {
                 let stroyboard = UIStoryboard(name: "Main", bundle: nil);
                 let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
@@ -93,7 +91,7 @@ class FBLoginViewController: UIViewController{
                 appDelegate.window?.rootViewController = HomeVc
                 // User is logged in, use 'accessToken' here.
                 let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-                
+            
                 Auth.auth().signIn(with: credential) { (authResult, error) in
                     if let error = error {
                         
