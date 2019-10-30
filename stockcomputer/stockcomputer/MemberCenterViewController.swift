@@ -242,7 +242,6 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         ])
     }
     @IBAction func about(_ sender: Any) {
-        
         let controller = UIAlertController(title: "會員點數", message: "用於一些需要的地方！", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         controller.addAction(okAction)
