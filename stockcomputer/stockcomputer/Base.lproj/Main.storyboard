@@ -3204,19 +3204,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HsM-Ne-4kZ" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="68" width="343" height="349"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HsM-Ne-4kZ" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="68" width="343" height="238"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="BKw-ww-Hz0"/>
-                                    <constraint firstAttribute="height" constant="349" id="w11-Ca-9uf"/>
+                                    <constraint firstAttribute="height" constant="238" id="w11-Ca-9uf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OY1-Ll-e4Z" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="339" width="343" height="252"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="252" id="tsy-dV-kxH"/>
+                                    <constraint firstAttribute="width" constant="343" id="xSj-j7-HSY"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="OY1-Ll-e4Z" firstAttribute="top" secondItem="HsM-Ne-4kZ" secondAttribute="bottom" constant="33" id="BYF-7h-qJm"/>
+                            <constraint firstItem="OY1-Ll-e4Z" firstAttribute="leading" secondItem="qeG-ns-qry" secondAttribute="leading" constant="16" id="CZG-Vi-YS9"/>
                             <constraint firstItem="HsM-Ne-4kZ" firstAttribute="trailing" secondItem="qeG-ns-qry" secondAttribute="trailing" constant="-16" id="OF1-jT-dlX"/>
                             <constraint firstItem="HsM-Ne-4kZ" firstAttribute="top" secondItem="qeG-ns-qry" secondAttribute="top" constant="12" id="P3G-HS-XKI"/>
+                            <constraint firstItem="qeG-ns-qry" firstAttribute="trailing" secondItem="OY1-Ll-e4Z" secondAttribute="trailing" constant="16" id="W39-5a-cRl"/>
                             <constraint firstItem="HsM-Ne-4kZ" firstAttribute="leading" secondItem="qeG-ns-qry" secondAttribute="leading" constant="16" id="q12-Ed-0dB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qeG-ns-qry"/>
@@ -3224,6 +3235,7 @@
                     <navigationItem key="navigationItem" id="m2F-5C-qoK"/>
                     <connections>
                         <outlet property="chartView" destination="HsM-Ne-4kZ" id="heY-ZF-9iR"/>
+                        <outlet property="mPieChartView" destination="OY1-Ll-e4Z" id="EhU-aJ-Dax"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAl-ft-mVx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
