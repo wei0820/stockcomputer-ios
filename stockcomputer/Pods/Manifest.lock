@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.0.1)
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
   - CVCalendar (1.6.2)
   - FacebookCore (0.9.0):
     - FBSDKCoreKit (~> 5.0)
@@ -162,6 +165,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0.0-beta.4)
+  - Charts
   - CVCalendar (~> 1.6.2)
   - FacebookCore
   - FacebookLogin
@@ -187,6 +191,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Charts
     - CVCalendar
     - FacebookCore
     - FacebookLogin
@@ -230,6 +235,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   CVCalendar: 515092247b9c5059855643c2a2220f259bd5417f
   FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
   FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
@@ -271,6 +277,6 @@ SPEC CHECKSUMS:
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   VpadnSDK: af98910008b16b2bae43204b7013fa064ba80b01
 
-PODFILE CHECKSUM: 5d4462be139f0ad4a2576021fe0820f5afefd261
+PODFILE CHECKSUM: 65686beed04da2cbda00e8245268309c56a3bc2e
 
 COCOAPODS: 1.7.5
