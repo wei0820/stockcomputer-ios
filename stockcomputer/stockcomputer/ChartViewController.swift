@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import Charts
 class ChartViewController: MGoogleADViewController {
-
+    @IBOutlet weak var chartView: BarChartView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

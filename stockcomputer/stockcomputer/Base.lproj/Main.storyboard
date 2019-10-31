@@ -104,7 +104,7 @@
                         <segue destination="iq5-NC-wTj" kind="show" identifier="smart2" id="aXO-ab-FUl"/>
                         <segue destination="VaI-80-AFJ" kind="show" identifier="bigbuy" id="n91-JL-GOo"/>
                         <segue destination="ugK-Rw-KJm" kind="show" identifier="qalist" id="5vF-dJ-QiM"/>
-                        <segue destination="cnH-rz-qdM" kind="show" identifier="chartt" id="JAd-1G-waJ"/>
+                        <segue destination="cnH-rz-qdM" kind="show" identifier="chart" id="JAd-1G-waJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -3222,6 +3222,9 @@
                         <viewLayoutGuide key="safeArea" id="qeG-ns-qry"/>
                     </view>
                     <navigationItem key="navigationItem" id="m2F-5C-qoK"/>
+                    <connections>
+                        <outlet property="chartView" destination="HsM-Ne-4kZ" id="heY-ZF-9iR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAl-ft-mVx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
