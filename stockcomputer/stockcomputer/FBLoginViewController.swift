@@ -55,14 +55,7 @@ class FBLoginViewController: UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        fblogin.permissions = ["publicProfile,email"]
-        //        fblogin.delegate = self
-        //
-        //        //        第一次登入後可取得使用者token，後續即可直接登入
-        //        if (AccessToken.current) != nil{
-        //                        fetchProfile()
-        //
-        //        }
+        
         fetchProfile()
         // Do any additional setup after loading the view.
     }
