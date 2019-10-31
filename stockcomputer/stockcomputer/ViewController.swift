@@ -112,7 +112,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         //                print("Open url : \(success)")
         //            })
         //        }
-        Instabug.identifyUser(withEmail: (Auth.auth().currentUser?.email)!, name: Auth.auth().currentUser?.displayName)
     }
     
     func setRightButton(s: String){

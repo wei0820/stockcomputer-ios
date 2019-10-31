@@ -177,7 +177,15 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         adBannerView!.load(GADRequest())
     }
     @IBAction func restart(_ sender: Any) {
-        SKPaymentQueue.default().restoreCompletedTransactions()
+        let controller = UIAlertController(title: "復原購買", message: "是否復原購買?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "是", style: .default) { (_) in
+           SKPaymentQueue.default().restoreCompletedTransactions()
+        }
+        controller.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+
        }
     /*
    
@@ -275,17 +283,17 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         }
         
     }
+    var mTitle :String = ""
     @IBAction func shop(_ sender: Any) {
-        let controller = UIAlertController(title: " 商品列表", message: "請點選商品進行購買", preferredStyle: .actionSheet)
+        let controller = UIAlertController(title: "商品列表", message: "請點選商品進行購買", preferredStyle: .actionSheet)
         productsArray.forEach { (SKProduct) in
-            let action = UIAlertAction(title: SKProduct.localizedTitle, style: .default) { (action) in
+            let action = UIAlertAction(title:"小額贊助開發者", style: .default) { (action) in
                 if SKPaymentQueue.canMakePayments() {
                     // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
                     SKPaymentQueue.default().add(self)
                     let index = controller.actions.index(of: action)
                     // 取得內購產品
                     let payment = SKPayment(product: self.productsArray[index!])
-                    
                     // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
                     SKPaymentQueue.default().add(payment)}
                 
