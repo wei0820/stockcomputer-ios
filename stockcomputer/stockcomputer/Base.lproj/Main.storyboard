@@ -104,6 +104,7 @@
                         <segue destination="iq5-NC-wTj" kind="show" identifier="smart2" id="aXO-ab-FUl"/>
                         <segue destination="VaI-80-AFJ" kind="show" identifier="bigbuy" id="n91-JL-GOo"/>
                         <segue destination="ugK-Rw-KJm" kind="show" identifier="qalist" id="5vF-dJ-QiM"/>
+                        <segue destination="cnH-rz-qdM" kind="show" identifier="chartt" id="JAd-1G-waJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -3195,20 +3196,36 @@
             </objects>
             <point key="canvasLocation" x="-1863.2" y="1425.3373313343329"/>
         </scene>
-        <!--View Controller-->
+        <!--Chart View Controller-->
         <scene sceneID="VeH-oV-JFC">
             <objects>
-                <viewController id="cnH-rz-qdM" sceneMemberID="viewController">
+                <viewController id="cnH-rz-qdM" customClass="ChartViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kRG-3i-F5S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HsM-Ne-4kZ" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="68" width="343" height="349"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="BKw-ww-Hz0"/>
+                                    <constraint firstAttribute="height" constant="349" id="w11-Ca-9uf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HsM-Ne-4kZ" firstAttribute="trailing" secondItem="qeG-ns-qry" secondAttribute="trailing" constant="-16" id="OF1-jT-dlX"/>
+                            <constraint firstItem="HsM-Ne-4kZ" firstAttribute="top" secondItem="qeG-ns-qry" secondAttribute="top" constant="12" id="P3G-HS-XKI"/>
+                            <constraint firstItem="HsM-Ne-4kZ" firstAttribute="leading" secondItem="qeG-ns-qry" secondAttribute="leading" constant="16" id="q12-Ed-0dB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qeG-ns-qry"/>
                     </view>
+                    <navigationItem key="navigationItem" id="m2F-5C-qoK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAl-ft-mVx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3374" y="2385"/>
+            <point key="canvasLocation" x="-3375.1999999999998" y="2384.257871064468"/>
         </scene>
         <!--Now Stock Price View Controller-->
         <scene sceneID="acv-fW-UPr">
