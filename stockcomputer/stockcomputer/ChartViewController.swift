@@ -9,12 +9,24 @@
 import UIKit
 import Charts
 class ChartViewController: MGoogleADViewController {
+    var months: [String]!
+    var set = Set<String>()
+    var mArray = Array<String>()
     @IBOutlet weak var chartView: BarChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setRightButton(s: "新增資料")
+        mArray.append("11111")
+        mArray.append("222222")
+        mArray.append("11111")
 
+     let result = Array(Set(mArray))
+        result.forEach { (sssss) in
+            print("11111",sssss)
+        }
+        print("11111",TimerManager.getNowTime())
+    
         // Do any additional setup after loading the view.
     }
     
@@ -43,4 +55,10 @@ class ChartViewController: MGoogleADViewController {
   
 
 }
+    
+
+    func setChart(dataPoints: [String], values: [Double]) {
+            
+    }
+    
 }
