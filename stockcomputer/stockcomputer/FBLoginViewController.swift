@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FacebookLogin
 import FacebookCore
+import Instabug
 
 class FBLoginViewController: UIViewController{
     let userDefaults = UserDefaults.standard
@@ -98,7 +99,8 @@ class FBLoginViewController: UIViewController{
                         // ...
                         return
                     }
-               
+               Instabug.identifyUser(withEmail: (Auth.auth().currentUser?.email)!, name: Auth.auth().currentUser?.displayName)
+
                     
                 }
             }
