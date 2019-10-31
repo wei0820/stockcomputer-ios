@@ -13,6 +13,7 @@ class ChartViewController: MGoogleADViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setRightButton(s: "新增資料")
 
         // Do any additional setup after loading the view.
     }
@@ -27,5 +28,19 @@ class ChartViewController: MGoogleADViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func setRightButton(s: String){
+        // 導覽列右邊按鈕
+        
+        let rightButton = UIBarButtonItem(
+            title:s,
+            style:.plain,
+            target:self,
+            action:#selector(ViewController.setting))
+        // 加到導覽列中
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    @objc func setting() {
+  
 
+}
 }
