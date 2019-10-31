@@ -29,7 +29,7 @@ class TimerManager{
 
         let dateFormat:DateFormatter = DateFormatter()
 
-        dateFormat.dateFormat = "yyyy年MM月dd日 HH:mm:ss:"
+        dateFormat.dateFormat = "MM/dd"
 
         // 將當下時間轉換成設定的時間格式
 

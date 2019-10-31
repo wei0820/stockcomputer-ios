@@ -25,7 +25,7 @@ class ChartViewController: MGoogleADViewController {
         result.forEach { (sssss) in
             print("11111",sssss)
         }
-
+        print("11111",TimerManager.getNowTime())
     
         // Do any additional setup after loading the view.
     }
