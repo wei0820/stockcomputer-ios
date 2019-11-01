@@ -92,13 +92,14 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         super.viewDidLoad()
         print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         setAdBanner()
-        if((userDefaults.value(forKey: "userID")) != nil){
-            setRightButton(s: "訪客")
-            
-        }else{
-            setRightButton(s: "會員中心")
-            
-        }
+//        if((userDefaults.value(forKey: "userID")) != nil){
+//            setRightButton(s: "訪客")
+//
+//        }else{
+//
+//        }
+        setRightButton(s: "會員中心")
+
         //     CalculationManager.getPrice(s: "2404")
         //        setInterstitial()
         //        ref = Database.database().reference()
@@ -126,13 +127,13 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         self.navigationItem.rightBarButtonItem = rightButton
     }
     @objc func setting() {
-        var isAnonymous = userDefaults.value(forKey: "userID")
-        if((isAnonymous) != nil){
-            setAlert()
-            return
-            
-        }
-  
+//        var isAnonymous = userDefaults.value(forKey: "userID")
+//        if((isAnonymous) != nil){
+//            setAlert()
+//            return
+//            
+//        }
+//  
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
         let HomeVc = stroyboard.instantiateViewController(withIdentifier: "member")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
