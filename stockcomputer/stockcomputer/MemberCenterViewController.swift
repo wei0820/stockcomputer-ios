@@ -17,7 +17,7 @@ import JGProgressHUD
 class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADRewardBasedVideoAdDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
     var hud :JGProgressHUD?
-
+    
     @IBOutlet weak var rewardbtn: UIButton!
     @IBOutlet weak var shopbtn: UIButton!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
@@ -41,7 +41,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
             print("There are no products.")
         }
         hud?.dismiss(afterDelay: 3.0)
-
+        
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
@@ -125,7 +125,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        
         setAdBanner()
         shopbtn.isHidden = false
         rewardbtn.isHidden = true
@@ -134,8 +134,8 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
                                                     withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
-//        self.productIDs.append("Member_Point_1000")
-//        self.productIDs.append("MenberPoint_1000")
+        //        self.productIDs.append("Member_Point_1000")
+        //        self.productIDs.append("MenberPoint_1000")
         self.productIDs.append("richman")
         
         requestProductInfo()
@@ -146,8 +146,8 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     }
     func requestProductInfo() {
         hud = JGProgressHUD(style: .dark)
-                hud?.textLabel.text = "Loading"
-                hud?.show(in: self.view)
+        hud?.textLabel.text = "Loading"
+        hud?.show(in: self.view)
         if SKPaymentQueue.canMakePayments() {
             // 取得所有在 iTunes Connect 所建立的內購項目
             let productIdentifiers: Set<String> = NSSet(array: self.productIDs) as! Set<String>
@@ -155,7 +155,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
             
             productRequest.delegate = self
             productRequest.start() // 開始請求內購產品
-
+            
         } else {
             print("取不到任何內購的商品...")
         }
@@ -179,16 +179,16 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     @IBAction func restart(_ sender: Any) {
         let controller = UIAlertController(title: "復原購買", message: "是否復原購買?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "是", style: .default) { (_) in
-           SKPaymentQueue.default().restoreCompletedTransactions()
+            SKPaymentQueue.default().restoreCompletedTransactions()
         }
         controller.addAction(okAction)
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         controller.addAction(cancelAction)
         present(controller, animated: true, completion: nil)
-
-       }
+        
+    }
     /*
-   
+     
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -264,21 +264,30 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     func get(){
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
-            mid.text = "會員ID:" + (Auth.auth().currentUser?.uid)!
-            mName.text = "會員姓名:" + (Auth.auth().currentUser?.displayName)!
-            mPoint.text = "會員點數:"
             lasttime.text = "最後登入時間:" + dateString
-            DispatchQueue.global(qos: .userInitiated).async {
-                let imageData:NSData = NSData(contentsOf: (Auth.auth().currentUser?.photoURL)!)!
+            if(firebaseAuth.currentUser!.isAnonymous){
+                mid.text = "會員ID:" + "遊客身份"
+                mName.text = "會員姓名:" + "遊客身份"
+                mPoint.text = "會員點數:"+"遊客身份"
+            }else{
                 
-                // When from background thread, UI needs to be updated on main_queue
-                DispatchQueue.main.async {
-                    let image = UIImage(data: imageData as Data)
-                    self.photoimg.image = image
+                
+                mid.text = "會員ID:" + (Auth.auth().currentUser?.uid)!
+                mName.text = "會員姓名:" + (Auth.auth().currentUser?.displayName)!
+                mPoint.text = "會員點數:"
+                DispatchQueue.global(qos: .userInitiated).async {
+                    let imageData:NSData = NSData(contentsOf: (Auth.auth().currentUser?.photoURL)!)!
+                    // When from background thread, UI needs to be updated on main_queue
+                    DispatchQueue.main.async {
+                        let image = UIImage(data: imageData as Data)
+                        self.photoimg.image = image
+                    }
                 }
+                
             }
         }
         
