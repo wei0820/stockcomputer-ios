@@ -17,7 +17,8 @@ import JGProgressHUD
 class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADRewardBasedVideoAdDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
     var hud :JGProgressHUD?
-    
+    let userDefaults = UserDefaults.standard
+
     @IBOutlet weak var rewardbtn: UIButton!
     @IBOutlet weak var shopbtn: UIButton!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
@@ -257,6 +258,20 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         
     }
     @IBOutlet weak var mid: UILabel!
+    
+    @IBAction func logout(_ sender: Any) {
+      userDefaults.set(nil, forKey: "userID")
+
+        
+//   123456
+//        
+                  let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+                      let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
+                      let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+                      appDelegate.window?.rootViewController = HomeVc
+    
+    }
+                  
     
     @IBOutlet weak var mName: UILabel!
     @IBOutlet weak var photoimg: UIImageView!

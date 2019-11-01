@@ -543,6 +543,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFy-98-Dlo">
+                                <rect key="frame" x="67" y="569" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7eN-9S-h7Z"/>
+                                    <constraint firstAttribute="width" constant="240" id="C6W-yj-Of8"/>
+                                </constraints>
+                                <state key="normal" title="登出"/>
+                                <connections>
+                                    <action selector="logout:" destination="fee-Li-V0a" eventType="touchUpInside" id="LQ4-gs-wEA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -554,6 +565,7 @@
                             <constraint firstItem="c9Z-cN-Ykh" firstAttribute="leading" secondItem="Lbs-L3-ngf" secondAttribute="leading" constant="67" id="Dju-SW-reQ"/>
                             <constraint firstItem="twq-LI-Bcn" firstAttribute="leading" secondItem="afa-dp-oRW" secondAttribute="trailing" constant="30" id="J5Y-VR-1uh"/>
                             <constraint firstItem="lJV-sG-923" firstAttribute="leading" secondItem="cim-uL-hz4" secondAttribute="leading" id="Jmb-7m-3Iq"/>
+                            <constraint firstItem="mFy-98-Dlo" firstAttribute="leading" secondItem="Lbs-L3-ngf" secondAttribute="leading" constant="67" id="Ls6-he-Jzp"/>
                             <constraint firstItem="twq-LI-Bcn" firstAttribute="top" secondItem="Lbs-L3-ngf" secondAttribute="top" constant="486" id="MPH-kK-dvJ"/>
                             <constraint firstItem="cim-uL-hz4" firstAttribute="top" secondItem="lJV-sG-923" secondAttribute="bottom" constant="38" id="OXX-WU-DmC"/>
                             <constraint firstItem="a4U-Wz-VNT" firstAttribute="leading" secondItem="Lbs-L3-ngf" secondAttribute="leading" constant="67" id="RdN-fr-n10"/>
@@ -564,10 +576,12 @@
                             <constraint firstItem="cim-uL-hz4" firstAttribute="leading" secondItem="Lbs-L3-ngf" secondAttribute="leading" constant="67" id="d2y-Lq-GzS"/>
                             <constraint firstItem="xQs-qU-mEe" firstAttribute="top" secondItem="Lbs-L3-ngf" secondAttribute="top" constant="501" id="eBg-4y-d1h"/>
                             <constraint firstItem="LEy-uD-sXZ" firstAttribute="centerY" secondItem="c9Z-cN-Ykh" secondAttribute="centerY" id="ftU-70-b6y"/>
+                            <constraint firstItem="mFy-98-Dlo" firstAttribute="top" secondItem="afa-dp-oRW" secondAttribute="bottom" constant="23" id="hZg-2R-Bsr"/>
                             <constraint firstItem="c9Z-cN-Ykh" firstAttribute="top" secondItem="cim-uL-hz4" secondAttribute="bottom" constant="28" id="iHz-2t-hyo"/>
                             <constraint firstItem="Lbs-L3-ngf" firstAttribute="trailing" secondItem="cim-uL-hz4" secondAttribute="trailing" constant="68" id="mLm-Gj-dwh"/>
                             <constraint firstItem="afa-dp-oRW" firstAttribute="top" secondItem="ylu-7c-bfG" secondAttribute="topMargin" constant="486" id="moK-rI-VNk"/>
                             <constraint firstItem="xQs-qU-mEe" firstAttribute="leading" secondItem="Lbs-L3-ngf" secondAttribute="leading" constant="67" id="p7e-JY-6Gq"/>
+                            <constraint firstItem="Lbs-L3-ngf" firstAttribute="trailing" secondItem="mFy-98-Dlo" secondAttribute="trailing" constant="68" id="zKW-y0-lYl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lbs-L3-ngf"/>
                     </view>
