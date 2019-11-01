@@ -18,7 +18,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
     var hud :JGProgressHUD?
     let userDefaults = UserDefaults.standard
-
+    
     @IBOutlet weak var rewardbtn: UIButton!
     @IBOutlet weak var shopbtn: UIButton!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
@@ -260,18 +260,18 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     @IBOutlet weak var mid: UILabel!
     
     @IBAction func logout(_ sender: Any) {
-      userDefaults.set(nil, forKey: "userID")
-
+        userDefaults.set(nil, forKey: "userID")
         
-//   123456
-//        
-                  let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-                      let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
-                      let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-                      appDelegate.window?.rootViewController = HomeVc
-    
+        
+        //   123456
+        //
+        let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+        let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+        appDelegate.window?.rootViewController = HomeVc
+        
     }
-                  
+    
     
     @IBOutlet weak var mName: UILabel!
     @IBOutlet weak var photoimg: UIImageView!
@@ -312,14 +312,39 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         let controller = UIAlertController(title: "商品列表", message: "請點選商品進行購買", preferredStyle: .actionSheet)
         productsArray.forEach { (SKProduct) in
             let action = UIAlertAction(title:"小額贊助開發者", style: .default) { (action) in
-                if SKPaymentQueue.canMakePayments() {
-                    // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
-                    SKPaymentQueue.default().add(self)
-                    let index = controller.actions.index(of: action)
-                    // 取得內購產品
-                    let payment = SKPayment(product: self.productsArray[index!])
-                    // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
-                    SKPaymentQueue.default().add(payment)}
+                if(Auth.auth().currentUser!.isAnonymous){
+                    let controller = UIAlertController(title: "訪客身份", message: "您是訪客身份,雖此商品為消耗商品,但能建議登入帳號再進行購買,是否能要購買", preferredStyle: .actionSheet)
+                    let names = [ "是", "否"]
+                    for name in names {
+                        let action = UIAlertAction(title: name, style: .default) { (action) in
+                            if (name == "是"){
+                                if SKPaymentQueue.canMakePayments() {
+                                    // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
+                                    SKPaymentQueue.default().add(self)
+                                    let index = controller.actions.index(of: action)
+                                    // 取得內購產品
+                                    let payment = SKPayment(product: self.productsArray[index!])
+                                    // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
+                                    SKPaymentQueue.default().add(payment)}
+                            }else{
+                                
+                            }
+                        }
+                        controller.addAction(action)
+                    }
+                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                    controller.addAction(cancelAction)
+                    self.present(controller, animated: true, completion: nil)
+                }else{
+                    if SKPaymentQueue.canMakePayments() {
+                        // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
+                        SKPaymentQueue.default().add(self)
+                        let index = controller.actions.index(of: action)
+                        // 取得內購產品
+                        let payment = SKPayment(product: self.productsArray[index!])
+                        // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
+                        SKPaymentQueue.default().add(payment)}
+                }
                 
                 
                 
