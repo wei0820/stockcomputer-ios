@@ -160,6 +160,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.10.0)
+  - Siren (5.2.3)
   - Toaster (2.2.0)
   - VpadnSDK (4.9.3)
 
@@ -185,6 +186,7 @@ DEPENDENCIES:
   - JGProgressHUD
   - Kanna (~> 4.0.0)
   - Mapbox-iOS-SDK (~> 5.4)
+  - Siren
   - Toaster
   - VpadnSDK
 
@@ -230,6 +232,7 @@ SPEC REPOS:
     - Mapbox-iOS-SDK
     - nanopb
     - Protobuf
+    - Siren
     - Toaster
     - VpadnSDK
 
@@ -274,9 +277,10 @@ SPEC CHECKSUMS:
   Mapbox-iOS-SDK: 2b58f752d94e57e95b8e54f3b52569199f6efdba
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
+  Siren: 996f37869eae1f343f8c11f17d90c9c8da90bd4c
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   VpadnSDK: af98910008b16b2bae43204b7013fa064ba80b01
 
-PODFILE CHECKSUM: 65686beed04da2cbda00e8245268309c56a3bc2e
+PODFILE CHECKSUM: f64881289f59473c6d8caa256385d45b51859f72
 
 COCOAPODS: 1.7.5
