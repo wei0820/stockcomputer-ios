@@ -13,6 +13,7 @@ import FacebookCore
 import VpadnSDKAdKit
 import UserNotifications
 import Instabug
+import Siren // Line 1
 
 @UIApplicationMain
 
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -62,8 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //        Instabug.showWelcomeMessage(with: IBGWelcomeMessageMode.live) // For live users
         
         Replies.enabled = true
+        window?.makeKeyAndVisible()
         
-        
+        complexExample()
         return true
     }
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -182,5 +185,45 @@ extension AppDelegate : MessagingDelegate {
     }
     // [END ios_10_data_message]
     
+    func annoyingRuleExample() {
+        let siren = Siren.shared
+        siren.rulesManager = RulesManager(globalRules: .annoying)
+        
+        siren.wail { results in
+            switch results {
+            case .success(let updateResults):
+                print("AlertAction ", updateResults.alertAction)
+                print("Localization ", updateResults.localization)
+                print("Model ", updateResults.model)
+                print("UpdateType ", updateResults.updateType)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    func complexExample() {
+        let siren = Siren.shared
+        siren.presentationManager = PresentationManager(alertTintColor: .brown,
+                                                        appName: "Siren's Complex Rule Example App",
+                                                        alertTitle: "Please, Update Now!",
+                                                        skipButtonTitle: "Click here to skip!",
+                                                        forceLanguageLocalization: .spanish)
+        siren.rulesManager = RulesManager(majorUpdateRules: .critical,
+                                          minorUpdateRules: .annoying,
+                                          patchUpdateRules: .default,
+                                          revisionUpdateRules: .relaxed)
+
+        siren.wail { results in
+            switch results {
+            case .success(let updateResults):
+                print("AlertAction ", updateResults.alertAction)
+                print("Localization ", updateResults.localization)
+                print("Model ", updateResults.model)
+                print("UpdateType ", updateResults.updateType)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 

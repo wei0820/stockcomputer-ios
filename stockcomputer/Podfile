@@ -29,4 +29,5 @@ pod 'FacebookShare'
 pod 'Firebase/Messaging'
 pod 'Instabug'
 pod 'Charts'
+pod 'Siren'
 end
