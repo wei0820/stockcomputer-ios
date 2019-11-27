@@ -29,7 +29,9 @@ class FuturesViewController: MGoogleADViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func mCalculationButton(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
