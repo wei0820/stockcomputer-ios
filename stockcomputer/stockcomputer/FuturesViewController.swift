@@ -12,6 +12,7 @@ class FuturesViewController: MGoogleADViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "期貨獲利計算"
 
         // Do any additional setup after loading the view.
     }

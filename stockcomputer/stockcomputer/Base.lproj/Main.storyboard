@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyw-T5-M3K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyw-T5-M3K">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -105,6 +105,7 @@
                         <segue destination="VaI-80-AFJ" kind="show" identifier="bigbuy" id="n91-JL-GOo"/>
                         <segue destination="ugK-Rw-KJm" kind="show" identifier="qalist" id="5vF-dJ-QiM"/>
                         <segue destination="cnH-rz-qdM" kind="show" identifier="chart" id="JAd-1G-waJ"/>
+                        <segue destination="rLy-NF-HVe" kind="show" identifier="futures" id="iNj-mk-Sq6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -3210,6 +3211,21 @@
             </objects>
             <point key="canvasLocation" x="-1863.2" y="1425.3373313343329"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="aLO-ql-27R">
+            <objects>
+                <viewController id="tJk-8V-HAK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cef-Mh-sL7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aNg-WE-5Fb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkT-Ph-YtM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4000" y="1932"/>
+        </scene>
         <!--Chart View Controller-->
         <scene sceneID="VeH-oV-JFC">
             <objects>
@@ -4355,20 +4371,95 @@
             </objects>
             <point key="canvasLocation" x="-1007.2" y="2882.608695652174"/>
         </scene>
-        <!--View Controller-->
+        <!--Futures View Controller-->
         <scene sceneID="bP3-h7-a54">
             <objects>
-                <viewController id="rLy-NF-HVe" sceneMemberID="viewController">
+                <viewController id="rLy-NF-HVe" customClass="FuturesViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MGB-Hc-LVL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買進價位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00j-eG-gaj">
+                                <rect key="frame" x="16" y="79" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0yf-X2-JUS"/>
+                                    <constraint firstAttribute="width" constant="70" id="5Ve-XX-rsf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="賣出價位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4b-1o-sIe">
+                                <rect key="frame" x="258" y="79" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0wo-yu-giJ"/>
+                                    <constraint firstAttribute="width" constant="70" id="6ny-cC-1jj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZRb-tX-OMR">
+                                <rect key="frame" x="16" y="117" width="97" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="1Yl-78-8oN"/>
+                                    <constraint firstAttribute="width" constant="97" id="oNZ-fA-Lea"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="anL-7o-vst">
+                                <rect key="frame" x="245" y="117" width="97" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="26g-KK-hH8"/>
+                                    <constraint firstAttribute="width" constant="97" id="Om7-qq-bex"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買進口數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdh-oA-7TK">
+                                <rect key="frame" x="16" y="172" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="TKy-tA-EGr"/>
+                                    <constraint firstAttribute="width" constant="70" id="ZZh-fv-ghb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="賣出口數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEM-gZ-aSr">
+                                <rect key="frame" x="258" y="172" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="40y-iM-pMy"/>
+                                    <constraint firstAttribute="height" constant="21" id="ZPN-JK-9g5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZRb-tX-OMR" firstAttribute="leading" secondItem="Wpn-kS-vW6" secondAttribute="leading" constant="16" id="3bV-9Q-Pzg"/>
+                            <constraint firstItem="Wpn-kS-vW6" firstAttribute="trailing" secondItem="c4b-1o-sIe" secondAttribute="trailing" constant="47" id="HqA-JW-sIG"/>
+                            <constraint firstItem="Wpn-kS-vW6" firstAttribute="trailing" secondItem="zEM-gZ-aSr" secondAttribute="trailing" constant="47" id="JWt-FL-ZIs"/>
+                            <constraint firstItem="00j-eG-gaj" firstAttribute="leading" secondItem="Wpn-kS-vW6" secondAttribute="leading" constant="16" id="Lbr-ia-cbh"/>
+                            <constraint firstItem="Wpn-kS-vW6" firstAttribute="trailing" secondItem="anL-7o-vst" secondAttribute="trailing" constant="33" id="Oz7-RS-1Ro"/>
+                            <constraint firstItem="zEM-gZ-aSr" firstAttribute="top" secondItem="anL-7o-vst" secondAttribute="bottom" constant="21" id="Taa-6T-2TX"/>
+                            <constraint firstItem="c4b-1o-sIe" firstAttribute="top" secondItem="Wpn-kS-vW6" secondAttribute="top" constant="23" id="UiF-3y-qMF"/>
+                            <constraint firstItem="00j-eG-gaj" firstAttribute="top" secondItem="Wpn-kS-vW6" secondAttribute="top" constant="23" id="Uvw-Xp-pAW"/>
+                            <constraint firstItem="ZRb-tX-OMR" firstAttribute="top" secondItem="00j-eG-gaj" secondAttribute="bottom" constant="17" id="YwG-Y0-Vsl"/>
+                            <constraint firstItem="pdh-oA-7TK" firstAttribute="top" secondItem="ZRb-tX-OMR" secondAttribute="bottom" constant="21" id="ZqY-CP-neH"/>
+                            <constraint firstItem="pdh-oA-7TK" firstAttribute="leading" secondItem="Wpn-kS-vW6" secondAttribute="leading" constant="16" id="aCa-zG-JRC"/>
+                            <constraint firstItem="anL-7o-vst" firstAttribute="top" secondItem="c4b-1o-sIe" secondAttribute="bottom" constant="17" id="qgg-IY-p4x"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Wpn-kS-vW6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="eAc-nc-GCM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iB3-BR-XrA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1215" y="2085"/>
+            <point key="canvasLocation" x="-4034" y="3643"/>
         </scene>
     </scenes>
     <resources>
