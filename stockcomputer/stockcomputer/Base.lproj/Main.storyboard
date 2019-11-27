@@ -4606,6 +4606,19 @@
                         <viewLayoutGuide key="safeArea" id="Wpn-kS-vW6"/>
                     </view>
                     <navigationItem key="navigationItem" id="eAc-nc-GCM"/>
+                    <connections>
+                        <outlet property="buynum" destination="CsT-li-bwc" id="TVI-dC-Ocx"/>
+                        <outlet property="buyprice" destination="ZRb-tX-OMR" id="dMk-hf-QLw"/>
+                        <outlet property="mHandingFree" destination="mmG-HH-rHf" id="UN9-CO-pro"/>
+                        <outlet property="mMoneylabel" destination="cN4-Q5-jig" id="tNo-7b-qCn"/>
+                        <outlet property="mProfit" destination="MGB-Hc-LVL" id="KdH-TV-bNa"/>
+                        <outlet property="mSwurch" destination="4xf-Xh-s8h" id="gim-lx-zDC"/>
+                        <outlet property="mTax" destination="fIz-Ny-cqf" id="gkP-SG-mZY"/>
+                        <outlet property="mbutton" destination="6L0-Mu-FLs" id="wmX-aB-5k9"/>
+                        <outlet property="mswitchlabel" destination="jNW-EW-AoR" id="2NS-VS-uln"/>
+                        <outlet property="sellnum" destination="pyF-6c-Nwa" id="MRN-bS-Iuy"/>
+                        <outlet property="sellprice" destination="anL-7o-vst" id="e0A-rH-4q4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iB3-BR-XrA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
