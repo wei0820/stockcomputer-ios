@@ -9,15 +9,39 @@
 import UIKit
 
 class FuturesViewController: MGoogleADViewController {
-
+    
+    @IBOutlet weak var buyprice: UITextField!
+    @IBOutlet weak var sellprice: UITextField!
+    @IBOutlet weak var buynum: UITextField!
+    @IBOutlet weak var sellnum: UITextField!
+    @IBOutlet weak var mSwurch: UISwitch!
+    
+    @IBOutlet var mProfit: UIView!
+    @IBOutlet weak var mTax: UILabel!
+    @IBOutlet weak var mHandingFree: UILabel!
+    @IBOutlet weak var mMoneylabel: UILabel!
+    @IBOutlet weak var mswitchlabel: UILabel!
+    @IBOutlet weak var mbutton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "期貨獲利計算"
+        
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func mCalculationButton(_ sender: Any){
+    if(buyprice.text?.isEmpty && buynum.text?.isEmpty
+        && sellprice.text?.isEmpty && sellnum.text.isEmpty){
+        
+    setToast(s: "請勿輸入空值")
 
+    }else{
+    
+    }
+    
+    }
+    
     /*
     // MARK: - Navigation
 
