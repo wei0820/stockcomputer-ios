@@ -25,11 +25,21 @@ class FuturesViewController: MGoogleADViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "期貨獲利計算"
+        
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func mCalculationButton(_ sender: Any) {
+    @IBAction func mCalculationButton(_ sender: Any){
+    if(buyprice.text?.isEmpty && buynum.text?.isEmpty
+        && sellprice.text?.isEmpty && sellnum.text.isEmpty){
+        
+    setToast(s: "請勿輸入空值")
+
+    }else{
+    
+    }
+    
     }
     
     /*

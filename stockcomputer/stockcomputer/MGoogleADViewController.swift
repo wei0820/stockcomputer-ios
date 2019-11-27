@@ -105,4 +105,9 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var removeAd = userDefaults.value(forKey: "removeAd")
         return (removeAd != nil)
     }
+    
+    
+    func setToast(s:String){
+        Toast.init(text: s).show()
+    }
 }
