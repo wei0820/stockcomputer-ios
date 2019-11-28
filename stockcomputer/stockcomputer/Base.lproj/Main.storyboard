@@ -4452,6 +4452,9 @@
                                     <constraint firstAttribute="width" constant="47" id="UMc-hO-tv9"/>
                                     <constraint firstAttribute="height" constant="31" id="zU9-Hw-ngT"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="switchChange:" destination="rLy-NF-HVe" eventType="valueChanged" id="wyr-BX-Gwx"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNW-EW-AoR">
                                 <rect key="frame" x="258" y="272" width="42" height="21"/>
@@ -4614,7 +4617,6 @@
                         <outlet property="buyprice" destination="ZRb-tX-OMR" id="dMk-hf-QLw"/>
                         <outlet property="mHandingFree" destination="mmG-HH-rHf" id="UN9-CO-pro"/>
                         <outlet property="mMoneylabel" destination="cN4-Q5-jig" id="tNo-7b-qCn"/>
-                        <outlet property="mProfit" destination="MGB-Hc-LVL" id="KdH-TV-bNa"/>
                         <outlet property="mSwurch" destination="4xf-Xh-s8h" id="gim-lx-zDC"/>
                         <outlet property="mTax" destination="fIz-Ny-cqf" id="gkP-SG-mZY"/>
                         <outlet property="mbutton" destination="6L0-Mu-FLs" id="wmX-aB-5k9"/>
