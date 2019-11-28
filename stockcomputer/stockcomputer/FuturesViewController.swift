@@ -16,6 +16,7 @@ class FuturesViewController: MGoogleADViewController {
     @IBOutlet weak var buynum: UITextField!
     @IBOutlet weak var sellnum: UITextField!
     @IBOutlet weak var mSwurch: UISwitch!
+    @IBOutlet weak var maintain: UILabel!
     
     @IBOutlet var mProfit: UIView!
     @IBOutlet weak var mTax: UILabel!
