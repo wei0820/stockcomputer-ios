@@ -31,9 +31,14 @@ class FuturesViewController: MGoogleADViewController {
         
      if(mSwurch.isOn){
               mswitchlabel.text = "大台"
+        maintain.text = "70,000"
+        mMoneylabel.text = "91,000"
+
               
           }else{
               mswitchlabel.text = "小台"
+            maintain.text = "17,500"
+        mMoneylabel.text = "22,750"
 
           }
 
@@ -43,9 +48,15 @@ class FuturesViewController: MGoogleADViewController {
     @IBAction func switchChange(_ sender: UISwitch) {
         if(sender.isOn){
                     mswitchlabel.text = "大台"
+            maintain.text = "70,000"
+            mMoneylabel.text = "91,000"
+
                     
                 }else{
                     mswitchlabel.text = "小台"
+                maintain.text = "17,500"
+            mMoneylabel.text = "22,750"
+
 
                 }
         
@@ -72,24 +83,4 @@ class FuturesViewController: MGoogleADViewController {
     }
     */
     
-    func test2(){
-         Alamofire.request("https://tw.stock.yahoo.com/d/i/major.html").responseString { response in
-             if let html = response.result.value {
-                 self.parseTaiwanBankHTML2(url: html)
-             }
-         }
-         
-     }
-    
-    func parseTaiwanBankHTML2(url: String) {
-        print("========Url===========")
-        if let doc = try? Kanna.HTML(html: url, encoding: String.Encoding.utf8) {
-            for rate in doc.xpath("/html/body/table[2]/tbody/tr/td/table[2]/tbody/tr[6]/td[2]") {
-                print("========")
-                print("========",rate.text)
-                mMoneylabel.text = rate.text
-
-            }
-        }
-    }
 }
