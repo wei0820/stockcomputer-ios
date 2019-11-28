@@ -427,26 +427,5 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
             }
         }
     }
-    
-    func test2(){
-         Alamofire.request("https://www.sinotrade.com.tw/Stock/Stock_3_8_6?code=2330").responseString { response in
-             if let html = response.result.value {
-                 self.parseTaiwanBankHTML2(url: html)
-             }
-         }
-         
-     }
-    
-    func parseTaiwanBankHTML2(url: String) {
-        print("========Url===========")
-        if let doc = try? Kanna.HTML(html: url, encoding: String.Encoding.utf8) {
-            for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[5]") {
-                print("========")
-                var num = Double(100 - Int(rate.text!)!) * 0.01
-                nowhk.text = "目前港幣匯率:" + String(num)
-                print("========")
 
-            }
-        }
-    }
 }
