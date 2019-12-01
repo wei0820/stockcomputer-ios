@@ -21,13 +21,13 @@
 		8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */; };
 		8EA996BA2362ED740077BA3C /* NowStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA996B92362ED740077BA3C /* NowStockPriceViewController.swift */; };
 		8EA996BC2362EE420077BA3C /* SmartStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA996BB2362EE420077BA3C /* SmartStockViewController.swift */; };
-		8EA996BE236694E70077BA3C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EA996BD236694E70077BA3C /* GoogleService-Info.plist */; };
 		8EA996C02366CFC30077BA3C /* SmartStock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA996BF2366CFC30077BA3C /* SmartStock2ViewController.swift */; };
 		8EBF797E236959C300E569C2 /* BigBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF797D236959C300E569C2 /* BigBuyViewController.swift */; };
 		8EBF7980236978F000E569C2 /* QAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF797F236978F000E569C2 /* QAListViewController.swift */; };
 		8EBF7982236AB86C00E569C2 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7981236AB86C00E569C2 /* ChartViewController.swift */; };
 		8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7983236ACE8E00E569C2 /* TimerManager.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
+		B721F3B82393B143005FDBEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B721F3B72393B143005FDBEF /* GoogleService-Info.plist */; };
 		B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */; };
 		B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7415F01227A91040077AF72 /* StockPriceViewController.swift */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
@@ -64,7 +64,6 @@
 		8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8EA996B92362ED740077BA3C /* NowStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowStockPriceViewController.swift; sourceTree = "<group>"; };
 		8EA996BB2362EE420077BA3C /* SmartStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartStockViewController.swift; sourceTree = "<group>"; };
-		8EA996BD236694E70077BA3C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8EA996BF2366CFC30077BA3C /* SmartStock2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartStock2ViewController.swift; sourceTree = "<group>"; };
 		8EBF797D236959C300E569C2 /* BigBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigBuyViewController.swift; sourceTree = "<group>"; };
 		8EBF797F236978F000E569C2 /* QAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAListViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		8EBF7983236ACE8E00E569C2 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
 		A2F7F5D64FDA98E5388A9186 /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B721F3B72393B143005FDBEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
 		B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VponAdapter_iOS_b1ffc56_v1.1.4.a; sourceTree = "<group>"; };
 		B7415F01227A91040077AF72 /* StockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		B74F52FF220556330034DC5D /* stockcomputer */ = {
 			isa = PBXGroup;
 			children = (
-				8EA996BD236694E70077BA3C /* GoogleService-Info.plist */,
+				B721F3B72393B143005FDBEF /* GoogleService-Info.plist */,
 				B72FB7E2235203A800701A1C /* stockcomputer.entitlements */,
 				B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */,
 				B74F5300220556340034DC5D /* AppDelegate.swift */,
@@ -257,7 +257,7 @@
 			files = (
 				B74F530B220556350034DC5D /* LaunchScreen.storyboard in Resources */,
 				B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */,
-				8EA996BE236694E70077BA3C /* GoogleService-Info.plist in Resources */,
+				B721F3B82393B143005FDBEF /* GoogleService-Info.plist in Resources */,
 				B74F5308220556350034DC5D /* Assets.xcassets in Resources */,
 				B74F5306220556340034DC5D /* Main.storyboard in Resources */,
 			);

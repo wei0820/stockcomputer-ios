@@ -27,7 +27,6 @@ class FuturesViewController: MGoogleADViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "期貨獲利計算"
-        test2()
         
      if(mSwurch.isOn){
               mswitchlabel.text = "大台"
