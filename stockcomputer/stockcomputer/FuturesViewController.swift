@@ -72,6 +72,10 @@ class FuturesViewController: MGoogleADViewController {
             var sellpircieInt : Int = Int(sellprice.text!)!
             var buynumInt :Int = Int(buynum.text!)!
             var sellnumInt :Int = Int(sellnum.text!)!
+            var price : Int = sellpircieInt  - buypriceInt
+            var nun = sellnumInt - buynumInt
+            var total = price * num 
+            
         
     }
     
