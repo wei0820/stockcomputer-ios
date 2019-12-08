@@ -24,6 +24,7 @@ class FuturesViewController: MGoogleADViewController {
     @IBOutlet weak var mMoneylabel: UILabel!
     @IBOutlet weak var mswitchlabel: UILabel!
     @IBOutlet weak var mbutton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "期貨獲利計算"
@@ -67,7 +68,11 @@ class FuturesViewController: MGoogleADViewController {
     setToast(s: "請勿輸入空值")
 
     }else{
-    
+            var buypriceInt :Int = Int(buyprice.text!)!
+            var sellpircieInt : Int = Int(sellprice.text!)!
+            var buynumInt :Int = Int(buynum.text!)!
+            var sellnumInt :Int = Int(sellnum.text!)!
+        
     }
     
     }
