@@ -64,17 +64,17 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
             mswitchlabel.text = "大台"
             maintain.text = "70,000"
             mMoneylabel.text = "91,000"
-
-                    
-                }else{
+            mTax.text = ""
+            mHandingFree.text = ""
+            }else{
+            
             isBig = false
-
-                mswitchlabel.text = "小台"
-                maintain.text = "17,500"
+            mswitchlabel.text = "小台"
+            maintain.text = "17,500"
             mMoneylabel.text = "22,750"
-
-
-                }
+            mTax.text = ""
+            mHandingFree.text = ""
+        }
         
     }
     @IBAction func mCalculationButton(_ sender: Any){
