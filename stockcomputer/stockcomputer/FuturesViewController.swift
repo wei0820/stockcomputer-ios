@@ -24,16 +24,16 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     @IBOutlet weak var mMoneylabel: UILabel!
     @IBOutlet weak var mswitchlabel: UILabel!
     @IBOutlet weak var mbutton: UIButton!
-    /*
-     速算法：
-     大台指數直接除250
-     小台指數直接除1000
-     選擇權成交價直接除20
-     */
+
     var isBig = true
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "期貨獲利計算"
+        
+        buyprice.keyboardType = .numberPad
+        sellprice.keyboardType = .numberPad
+        buynum.keyboardType = .numberPad
+        sellnum.keyboardType = .numberPad
         
      if(mSwurch.isOn){
         mswitchlabel.text = "大台"
@@ -84,6 +84,12 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     setToast(s: "請勿輸入空值")
 
     }else{
+            /*
+             速算法：
+             大台指數直接除250
+             小台指數直接除1000
+             選擇權成交價直接除20
+             */
             //買入價格
             var buypriceInt :Int = Int(buyprice.text!)!
             //賣出價格
@@ -100,8 +106,16 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
             var total = price * num
             if(isBig){
                 setToast(s: "大台")
+                var money = ((buypriceInt/250) * buynumInt ) +
+                    ((sellpircieInt/250)*sellnumInt)
+                mTax.text = String(money)
+                
             }else{
                 setToast(s: "小台")
+                var money = ((buypriceInt/1000) * buynumInt ) +
+                        ((sellpircieInt/1000)*sellnumInt)
+                mTax.text = String(money)
+
 
             }
         
