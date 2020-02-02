@@ -14,7 +14,9 @@ import FacebookLogin
 import Instabug
 class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
     
-    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","期貨獲利試算"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算"]
+
+
     var ref: DatabaseReference!
     
     
@@ -66,9 +68,14 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             
         }else if (name == itemName[4]){
             
+            performSegue(withIdentifier: "number", sender: nil)
+
+        }else if (name == itemName[5]){
+            
             performSegue(withIdentifier: "futures", sender: nil)
 
         }
+        
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
