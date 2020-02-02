@@ -25,6 +25,7 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     @IBOutlet weak var mswitchlabel: UILabel!
     @IBOutlet weak var mbutton: UIButton!
 
+    @IBOutlet weak var mtotal: UILabel!
     var isBig = true
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +113,10 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
                 var hand = (buynumInt + sellnumInt ) * 50
                 mHandingFree.text = String(hand)
                 
+                var total = (((sellpircieInt - buypriceInt) * 200) * sellnumInt ) - money - hand
+            mtotal.text = String(total)
+
+                
             }else{
                 setToast(s: "小台")
                 var money = ((buypriceInt/1000) * buynumInt ) +
@@ -119,6 +124,8 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
                 mTax.text = String(money)
                 var hand = (buynumInt + sellnumInt ) * 25
                 mHandingFree.text = String(hand)
+                       var total = (((sellpircieInt - buypriceInt) * 50) * sellnumInt ) - money - hand
+                mtotal.text = String(total)
 
         }
         
