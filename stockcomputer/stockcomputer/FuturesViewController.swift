@@ -86,8 +86,8 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     }else{
             /*
              速算法：
-             大台指數直接除250
-             小台指數直接除1000
+             大台指數直接除250 手續費 50
+             小台指數直接除1000  25
              選擇權成交價直接除20
              */
             //買入價格
@@ -109,15 +109,18 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
                 var money = ((buypriceInt/250) * buynumInt ) +
                     ((sellpircieInt/250)*sellnumInt)
                 mTax.text = String(money)
+                var hand = (buynumInt + sellnumInt ) * 50
+                mHandingFree.text = String(hand)
                 
             }else{
                 setToast(s: "小台")
                 var money = ((buypriceInt/1000) * buynumInt ) +
                         ((sellpircieInt/1000)*sellnumInt)
                 mTax.text = String(money)
+                var hand = (buynumInt + sellnumInt ) * 25
+                mHandingFree.text = String(hand)
 
-
-            }
+        }
         
     }
     
