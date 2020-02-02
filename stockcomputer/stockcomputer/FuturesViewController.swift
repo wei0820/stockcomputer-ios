@@ -9,7 +9,7 @@
 import UIKit
 import Kanna
 import Alamofire
-class FuturesViewController: MGoogleADViewController {
+class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     
     @IBOutlet weak var buyprice: UITextField!
     @IBOutlet weak var sellprice: UITextField!
@@ -24,36 +24,52 @@ class FuturesViewController: MGoogleADViewController {
     @IBOutlet weak var mMoneylabel: UILabel!
     @IBOutlet weak var mswitchlabel: UILabel!
     @IBOutlet weak var mbutton: UIButton!
-
+    /*
+     速算法：
+     大台指數直接除250
+     小台指數直接除1000
+     選擇權成交價直接除20
+     */
+    var isBig = true
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "期貨獲利計算"
         
      if(mSwurch.isOn){
-              mswitchlabel.text = "大台"
+        mswitchlabel.text = "大台"
         maintain.text = "70,000"
         mMoneylabel.text = "91,000"
 
               
           }else{
-              mswitchlabel.text = "小台"
-            maintain.text = "17,500"
+        mswitchlabel.text = "小台"
+        maintain.text = "17,500"
         mMoneylabel.text = "22,750"
 
           }
 
         // Do any additional setup after loading the view.
+        
+        buyprice.delegate = self
+        sellprice.delegate = self
+        buynum.delegate = self
+        sellnum.delegate = self
+        
+        
     }
     
     @IBAction func switchChange(_ sender: UISwitch) {
         if(sender.isOn){
-                    mswitchlabel.text = "大台"
+            isBig = true
+            mswitchlabel.text = "大台"
             maintain.text = "70,000"
             mMoneylabel.text = "91,000"
 
                     
                 }else{
-                    mswitchlabel.text = "小台"
+            isBig = false
+
+                mswitchlabel.text = "小台"
                 maintain.text = "17,500"
             mMoneylabel.text = "22,750"
 
@@ -68,14 +84,26 @@ class FuturesViewController: MGoogleADViewController {
     setToast(s: "請勿輸入空值")
 
     }else{
+            //買入價格
             var buypriceInt :Int = Int(buyprice.text!)!
+            //賣出價格
             var sellpircieInt : Int = Int(sellprice.text!)!
+            //買入數量
             var buynumInt :Int = Int(buynum.text!)!
+            //賣出數量
             var sellnumInt :Int = Int(sellnum.text!)!
+            // 價錢
             var price : Int = sellpircieInt  - buypriceInt
+            //數量
             var num = sellnumInt - buynumInt
+            // 總價錢
             var total = price * num
-            
+            if(isBig){
+                setToast(s: "大台")
+            }else{
+                setToast(s: "小台")
+
+            }
         
     }
     
@@ -90,5 +118,33 @@ class FuturesViewController: MGoogleADViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    //_ textField
+        // 開始進入編輯狀態
+            func textFieldDidBeginEditing(_ textField: UITextField){
+            }
+         
+            // 可能進入結束編輯狀態
+            func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+         
+                return true
+            }
+         
+            // 結束編輯狀態(意指完成輸入或離開焦點)
+            func textFieldDidEndEditing(_ textField: UITextField) {
+         
+              
+            }
+         
+            // 按下Return後會反應的事件
+            func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+                //利用此方式讓按下Return後會Toogle 鍵盤讓它消失
+                textField.resignFirstResponder()
+                return false
+            }
+         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+             self.view.endEditing(true)
+         }
     
 }
