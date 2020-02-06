@@ -15,8 +15,22 @@ class SellAndPutViewController: MGoogleADViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var buypriceLabel: UILabel!
+    @IBOutlet weak var selPriceLabel: UILabel!
+    @IBOutlet weak var handPrcie: UILabel!
+    @IBOutlet weak var buysellPrice: UILabel!
+    @IBOutlet weak var TotalPrice: UILabel!
+    @IBAction func Cal_Button(_ sender: Any) {
+    }
+    @IBOutlet weak var sellnumTF: UITextField!
+    
+    
+    @IBOutlet weak var buynumTF: UITextField!
+    
+    @IBOutlet weak var buyTF: UITextField!
     
 
+    @IBOutlet weak var sellTF: UITextField!
     /*
     // MARK: - Navigation
 

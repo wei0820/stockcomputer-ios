@@ -3403,6 +3403,9 @@
                                     <constraint firstAttribute="width" constant="343" id="tzE-BJ-cPm"/>
                                 </constraints>
                                 <state key="normal" title="計算"/>
+                                <connections>
+                                    <action selector="Cal_Button:" destination="tJk-8V-HAK" eventType="touchUpInside" id="ox2-KS-fRe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -3449,6 +3452,17 @@
                         <viewLayoutGuide key="safeArea" id="aNg-WE-5Fb"/>
                     </view>
                     <navigationItem key="navigationItem" id="mLR-ne-Vof"/>
+                    <connections>
+                        <outlet property="TotalPrice" destination="zr5-Q9-gHH" id="RCF-1I-biR"/>
+                        <outlet property="buyTF" destination="TcM-CA-DAz" id="9Vf-Xf-YHE"/>
+                        <outlet property="buynumTF" destination="V7Z-ob-odQ" id="WmU-Rj-yq1"/>
+                        <outlet property="buypriceLabel" destination="3jE-j2-LkA" id="ZSt-Mf-4JT"/>
+                        <outlet property="buysellPrice" destination="pTX-WF-HIY" id="LJJ-9e-RQz"/>
+                        <outlet property="handPrcie" destination="H9U-Jb-hjz" id="MK6-rv-1CQ"/>
+                        <outlet property="selPriceLabel" destination="a7M-ym-bnD" id="bUY-U6-iMj"/>
+                        <outlet property="sellTF" destination="2LV-jW-3hM" id="bzJ-p1-sGf"/>
+                        <outlet property="sellnumTF" destination="kPm-PC-ENR" id="4Ic-pS-20r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkT-Ph-YtM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
