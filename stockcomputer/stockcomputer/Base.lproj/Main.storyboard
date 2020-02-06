@@ -106,6 +106,7 @@
                         <segue destination="ugK-Rw-KJm" kind="show" identifier="qalist" id="5vF-dJ-QiM"/>
                         <segue destination="cnH-rz-qdM" kind="show" identifier="chart" id="JAd-1G-waJ"/>
                         <segue destination="rLy-NF-HVe" kind="show" identifier="futures" id="iNj-mk-Sq6"/>
+                        <segue destination="tJk-8V-HAK" kind="show" identifier="sellput" id="uOV-UK-ZSD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -3211,20 +3212,21 @@
             </objects>
             <point key="canvasLocation" x="-1863.2" y="1425.3373313343329"/>
         </scene>
-        <!--View Controller-->
+        <!--Sell And Put View Controller-->
         <scene sceneID="aLO-ql-27R">
             <objects>
-                <viewController id="tJk-8V-HAK" sceneMemberID="viewController">
+                <viewController id="tJk-8V-HAK" customClass="SellAndPutViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cef-Mh-sL7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="aNg-WE-5Fb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mLR-ne-Vof"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkT-Ph-YtM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4000" y="1932"/>
+            <point key="canvasLocation" x="-3118" y="4101"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="VeH-oV-JFC">
