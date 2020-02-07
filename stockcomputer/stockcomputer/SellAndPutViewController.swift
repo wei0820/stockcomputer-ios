@@ -11,7 +11,7 @@ import Toaster
 import Kanna
 import Alamofire
 import JGProgressHUD
-class SellAndPutViewController: MGoogleADViewController {
+class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
     var hud :JGProgressHUD?
     @IBOutlet weak var buypriceLabel: UILabel!
     @IBOutlet weak var selPriceLabel: UILabel!
@@ -48,8 +48,45 @@ class SellAndPutViewController: MGoogleADViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        sellTF.delegate = self
+        sellnumTF.delegate = self
+        buyTF.delegate = self
+        buynumTF.delegate = self
+        sellnumTF.keyboardType = .numberPad
+        sellTF.keyboardType = .numberPad
+        buynumTF.keyboardType = .numberPad
+        buyTF.keyboardType = .numberPad
+        
         
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    //_ textField
+        // 開始進入編輯狀態
+            func textFieldDidBeginEditing(_ textField: UITextField){
+            }
+         
+            // 可能進入結束編輯狀態
+            func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+         
+                return true
+            }
+         
+            // 結束編輯狀態(意指完成輸入或離開焦點)
+            func textFieldDidEndEditing(_ textField: UITextField) {
+         
+              
+            }
+         
+            // 按下Return後會反應的事件
+            func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+                //利用此方式讓按下Return後會Toogle 鍵盤讓它消失
+                textField.resignFirstResponder()
+                return false
+            }
+         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+             self.view.endEditing(true)
+         }
 }
