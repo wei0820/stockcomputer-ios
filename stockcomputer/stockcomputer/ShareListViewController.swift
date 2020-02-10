@@ -12,11 +12,16 @@ class ShareListViewController: MGoogleADViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "股票討論分享區" 
         // Do any additional setup after loading the view.
+        setActionButton()
 
 
-
+        
+    }
+    
+    func  setActionButton() -> Void{
+       
         let actionButton = JJFloatingActionButton()
 
         actionButton.addItem(title: "新增", image: UIImage(named: "create")?.withRenderingMode(.alwaysTemplate)) { item in
@@ -25,7 +30,7 @@ class ShareListViewController: MGoogleADViewController {
 
         }
 
-        actionButton.addItem(title: "item 2", image: UIImage(named: "create")?.withRenderingMode(.alwaysTemplate)) { item in
+        actionButton.addItem(title: "紀錄", image: UIImage(named: "menu_black")?.withRenderingMode(.alwaysTemplate)) { item in
             
             print("actionButton","item2")
 
@@ -36,7 +41,6 @@ class ShareListViewController: MGoogleADViewController {
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -26).isActive = true
         actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -56).isActive = true
-        
     }
 
 
