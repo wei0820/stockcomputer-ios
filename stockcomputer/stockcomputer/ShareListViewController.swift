@@ -37,7 +37,7 @@ class ShareListViewController: MGoogleADViewController {
           // do something
         }
         
-        actionButton.addItem(title: "點數紀錄", image: UIImage(named: "money_black")?.withRenderingMode(.alwaysTemplate)) { item in
+        actionButton.addItem(title: "會員資訊", image: UIImage(named: "money_black")?.withRenderingMode(.alwaysTemplate)) { item in
                
             self.setAlertDilog()
              // do something
@@ -65,7 +65,8 @@ class ShareListViewController: MGoogleADViewController {
     }
     */
     func setAlertDilog(){
-        let controller = UIAlertController(title: "點數紀錄", message: "目前點數為：", preferredStyle: .alert)
+        var  messageStr = "會員等級："+"\n"+"會員發文數:"+"\n"+"會員點數："
+        let controller = UIAlertController(title: "會員資訊", message:messageStr, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)
