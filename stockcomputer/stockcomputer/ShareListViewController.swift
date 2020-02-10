@@ -42,10 +42,16 @@ class ShareListViewController: MGoogleADViewController {
             self.setAlertDilog()
              // do something
            }
+        
+        actionButton.addItem(title: "規範", image: UIImage(named: "report_black")?.withRenderingMode(.alwaysTemplate)) { item in
+                     
+                  self.setAlertDilog()
+                   // do something
+                 }
 
         view.addSubview(actionButton)
-        actionButton.itemAnimationConfiguration = .circularSlideIn(withRadius: 120)
-        actionButton.buttonAnimationConfiguration = .rotation(toAngle: .pi * 3 / 3)
+        actionButton.itemAnimationConfiguration = .circularSlideIn(withRadius: 160)
+        actionButton.buttonAnimationConfiguration = .rotation(toAngle: .pi * 3 / 4)
          actionButton.buttonAnimationConfiguration.opening.duration = 0.8
           actionButton.buttonAnimationConfiguration.closing.duration = 0.6
 
