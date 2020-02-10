@@ -39,8 +39,7 @@ class ShareListViewController: MGoogleADViewController {
         
         actionButton.addItem(title: "點數紀錄", image: UIImage(named: "money_black")?.withRenderingMode(.alwaysTemplate)) { item in
                
-               print("actionButton","")
-
+            self.setAlertDilog()
              // do something
            }
 
@@ -65,5 +64,12 @@ class ShareListViewController: MGoogleADViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func setAlertDilog(){
+        let controller = UIAlertController(title: "點數紀錄", message: "目前點數為：", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        controller.addAction(okAction)
+        present(controller, animated: true, completion: nil)
+        
+    }
 
 }
