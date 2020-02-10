@@ -107,6 +107,7 @@
                         <segue destination="cnH-rz-qdM" kind="show" identifier="chart" id="JAd-1G-waJ"/>
                         <segue destination="rLy-NF-HVe" kind="show" identifier="futures" id="iNj-mk-Sq6"/>
                         <segue destination="tJk-8V-HAK" kind="show" identifier="sellput" id="uOV-UK-ZSD"/>
+                        <segue destination="dIp-SO-evE" kind="show" identifier="sharelist" id="iFF-6z-D1d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -3467,6 +3468,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkT-Ph-YtM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3119.1999999999998" y="4100.5997001499254"/>
+        </scene>
+        <!--Share List View Controller-->
+        <scene sceneID="bIG-UQ-v1p">
+            <objects>
+                <viewController id="dIp-SO-evE" customClass="ShareListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qRf-ow-PUs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RfY-s5-l5m">
+                                <rect key="frame" x="0.0" y="56" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="667" id="XC6-T0-6ZQ"/>
+                                    <constraint firstAttribute="height" constant="667" id="fGw-c8-Am6"/>
+                                    <constraint firstAttribute="width" constant="375" id="sFo-9Y-F41"/>
+                                    <constraint firstAttribute="height" constant="667" id="xAz-bp-bpe"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RfY-s5-l5m" firstAttribute="bottom" secondItem="GcP-Zv-5zI" secondAttribute="bottom" id="3Jb-EW-wth"/>
+                            <constraint firstItem="RfY-s5-l5m" firstAttribute="top" secondItem="GcP-Zv-5zI" secondAttribute="top" id="JSb-xC-S5v"/>
+                            <constraint firstItem="GcP-Zv-5zI" firstAttribute="trailing" secondItem="RfY-s5-l5m" secondAttribute="trailing" id="PWD-ZR-p9g"/>
+                            <constraint firstItem="RfY-s5-l5m" firstAttribute="leading" secondItem="GcP-Zv-5zI" secondAttribute="leading" id="gaV-FH-CBs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GcP-Zv-5zI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="g7w-Is-LCa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MQl-8n-3Xc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2414" y="3867"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="VeH-oV-JFC">
