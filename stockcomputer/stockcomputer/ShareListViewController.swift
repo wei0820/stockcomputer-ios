@@ -12,7 +12,7 @@ class ShareListViewController: MGoogleADViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "股票討論分享區" 
+        title = "股票討論分享區"
         // Do any additional setup after loading the view.
         setActionButton()
 
@@ -23,21 +23,33 @@ class ShareListViewController: MGoogleADViewController {
     func  setActionButton() -> Void{
        
         let actionButton = JJFloatingActionButton()
-
+    
         actionButton.addItem(title: "新增", image: UIImage(named: "create")?.withRenderingMode(.alwaysTemplate)) { item in
             print("actionButton","item1")
 
 
         }
 
-        actionButton.addItem(title: "紀錄", image: UIImage(named: "menu_black")?.withRenderingMode(.alwaysTemplate)) { item in
+        actionButton.addItem(title: "歷史紀錄", image: UIImage(named: "menu_black")?.withRenderingMode(.alwaysTemplate)) { item in
             
             print("actionButton","item2")
 
           // do something
         }
+        
+        actionButton.addItem(title: "點數紀錄", image: UIImage(named: "money_black")?.withRenderingMode(.alwaysTemplate)) { item in
+               
+               print("actionButton","")
+
+             // do something
+           }
 
         view.addSubview(actionButton)
+        actionButton.itemAnimationConfiguration = .circularSlideIn(withRadius: 120)
+        actionButton.buttonAnimationConfiguration = .rotation(toAngle: .pi * 3 / 3)
+         actionButton.buttonAnimationConfiguration.opening.duration = 0.8
+          actionButton.buttonAnimationConfiguration.closing.duration = 0.6
+
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -26).isActive = true
         actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -56).isActive = true
