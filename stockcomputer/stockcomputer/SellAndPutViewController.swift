@@ -56,9 +56,7 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
         sellTF.keyboardType = .numberPad
         buynumTF.keyboardType = .numberPad
         buyTF.keyboardType = .numberPad
-        
-        
-        
+         
         // Do any additional setup after loading the view.
     }
     
@@ -77,8 +75,7 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
             // 結束編輯狀態(意指完成輸入或離開焦點)
             func textFieldDidEndEditing(_ textField: UITextField) {
          
-              
-            }
+                        }
          
             // 按下Return後會反應的事件
             func textFieldShouldReturn(_ textField: UITextField) -> Bool {
