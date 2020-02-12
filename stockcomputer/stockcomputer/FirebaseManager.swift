@@ -13,7 +13,7 @@ import Firebase
 class FirebaseManager {
     static let userDefaults = UserDefaults.standard
     
-    func getMemberId () -> String{
+   static func getMemberId () -> String{
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
             if(!firebaseAuth.currentUser!.isAnonymous){
@@ -27,8 +27,8 @@ class FirebaseManager {
         return ""
     }
     
-    static  func  addFireBaseDate(userId : String ,min: String , Type:String,place : String){
-        var  id = userId
+    static  func  addFireBaseDate(min: String , Type:String,place : String){
+        var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
         }
@@ -58,7 +58,7 @@ class FirebaseManager {
     static  func SearchDatabase(){
         var minarray =  Array<String>()
         var dateArray = Array<String>()
-        var  id = FirebaseManager.userDefaults.value(forKey: "token")
+        var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
         }
@@ -84,7 +84,7 @@ class FirebaseManager {
     static  func DeleteDatabase(){
         // 刪除節點資料
         
-        var  id = FirebaseManager.userDefaults.value(forKey: "token")
+        var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
         }
