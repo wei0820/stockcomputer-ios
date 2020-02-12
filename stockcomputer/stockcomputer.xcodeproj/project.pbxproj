@@ -19,6 +19,7 @@
 		8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4E923F131CC00384D25 /* ShareListViewController.swift */; };
 		8E48E4F023F3E48800384D25 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4EF23F3E48700384D25 /* FirebaseManager.swift */; };
 		8E48E4F223F3E4E000384D25 /* UiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4F123F3E4E000384D25 /* UiManager.swift */; };
+		8E48E4F423F3E66600384D25 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4F323F3E66600384D25 /* DateManager.swift */; };
 		8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122A23489A3B00795029 /* Base64Manager.swift */; };
 		8E87122D23489E7000795029 /* CamerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122C23489E7000795029 /* CamerManager.swift */; };
 		8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122E234ADCE000795029 /* MemberCenterViewController.swift */; };
@@ -66,6 +67,7 @@
 		8E48E4E923F131CC00384D25 /* ShareListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListViewController.swift; sourceTree = "<group>"; };
 		8E48E4EF23F3E48700384D25 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8E48E4F123F3E4E000384D25 /* UiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiManager.swift; sourceTree = "<group>"; };
+		8E48E4F323F3E66600384D25 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		8E87122A23489A3B00795029 /* Base64Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Manager.swift; sourceTree = "<group>"; };
 		8E87122C23489E7000795029 /* CamerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerManager.swift; sourceTree = "<group>"; };
 		8E87122E234ADCE000795029 /* MemberCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCenterViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				8E48E4E923F131CC00384D25 /* ShareListViewController.swift */,
 				8E48E4EF23F3E48700384D25 /* FirebaseManager.swift */,
 				8E48E4F123F3E4E000384D25 /* UiManager.swift */,
+				8E48E4F323F3E66600384D25 /* DateManager.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				8E10DDAF234C3402006A46F2 /* MGoogleADViewController.swift in Sources */,
 				B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */,
 				B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */,
+				8E48E4F423F3E66600384D25 /* DateManager.swift in Sources */,
 				8EBF7980236978F000E569C2 /* QAListViewController.swift in Sources */,
 				B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */,
 				8E10DDB1234C5FE3006A46F2 /* MapViewController.swift in Sources */,

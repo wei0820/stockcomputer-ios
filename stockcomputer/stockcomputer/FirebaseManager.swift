@@ -28,7 +28,7 @@ class FirebaseManager {
                dateReview["Type"] = Type as AnyObject
                 dateReview["Place"] = place as AnyObject
             
-        dateReview["date"]  = DateManager.getDateforDate() as AnyObject
+            dateReview["date"]  = DateManager.getDateforDate() as AnyObject
            dateReview["createDate"] = DateManager.getDateString2() as AnyObject
            dateReviewReference.updateChildValues(dateReview) { (err, ref) in
                if err != nil{
