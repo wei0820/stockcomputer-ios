@@ -25,7 +25,9 @@ class ShareListViewController: MGoogleADViewController {
         let actionButton = JJFloatingActionButton()
     
         actionButton.addItem(title: "新增", image: UIImage(named: "create")?.withRenderingMode(.alwaysTemplate)) { item in
-            print("actionButton","item1")
+            if(self.checkIsMember() == false){
+                self.setMemberAlert()
+            }
 
 
         }

@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import GoogleMobileAds
 import Toaster
+import Firebase
+
 class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var adBannerView: GADBannerView?
     let userDefaults = UserDefaults.standard
@@ -106,8 +108,31 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         return (removeAd != nil)
     }
     
+    func checkIsMember() ->Bool{
+        let firebaseAuth = Auth.auth()
+        if firebaseAuth != nil {
+        if(firebaseAuth.currentUser!.isAnonymous){
+                
+                return false
+     
+            }else{
+                
+                return true
+                
+            }
+        }
+        return false
+    }
     
     func setToast(s:String){
         Toast.init(text: s).show()
+    }
+    
+    func setMemberAlert(){
+        
+            let controller = UIAlertController(title: "提示", message:"您的身份為訪客 請先登入", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+             controller.addAction(okAction)
+             present(controller, animated: true, completion: nil)
     }
 }
