@@ -116,6 +116,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         //                print("Open url : \(success)")
         //            })
         //        }
+        self.checkLoginTime()
     }
     
     func setRightButton(s: String){

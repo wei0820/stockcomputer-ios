@@ -23,98 +23,98 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
             // Fallback on earlier versions
         }
         setAdBanner()
-
+        
         if(checkRemoveAd()){
             adBannerView?.isHidden = true
         }else{
             adBannerView?.isHidden = false
         }
         
- 
-    }
-      func setAdBanner(){
-          let id = "ca-app-pub-7019441527375550/9487446087"
-          adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-          adBannerView!.adUnitID = id
-          adBannerView!.delegate = self
-          adBannerView!.rootViewController = self
-          adBannerView!.load(GADRequest())
-      }
         
+    }
+    func setAdBanner(){
+        let id = "ca-app-pub-7019441527375550/9487446087"
+        adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        adBannerView!.adUnitID = id
+        adBannerView!.delegate = self
+        adBannerView!.rootViewController = self
+        adBannerView!.load(GADRequest())
+    }
     
-      /*
-       // MARK: - Navigation
-       
-       // In a storyboard-based application, you will often want to do a little preparation before navigation
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       // Get the new view controller using segue.destination.
-       // Pass the selected object to the new view controller.
-       }
-       */
-      func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-          addBannerViewToView(bannerView)
-          
-      }
-      
-      // Called when an ad request failed.
-      func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-          print((error.localizedDescription))
-      }
-      
-      // Called just before presenting the user a full screen view, such as a browser, in response to
-      // clicking on an ad.
-      func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-          print(#function)
-      }
-      
-      // Called just before dismissing a full screen view.
-      func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-          print(#function)
-      }
-      
-      // Called just after dismissing a full screen view.
-      func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-          print(#function)
-      }
-      
-      // Called just before the application will background or terminate because the user clicked on an
-      // ad that will launch another application (such as the App Store).
-      func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-          print(#function)
-      }
-      func addBannerViewToView(_ bannerView: GADBannerView) {
-          bannerView.translatesAutoresizingMaskIntoConstraints = false
-          view.addSubview(bannerView)
-          view.addConstraints(
-              [NSLayoutConstraint(item: bannerView,
-                                  attribute: .bottom,
-                                  relatedBy: .equal,
-                                  toItem: bottomLayoutGuide,
-                                  attribute: .top,
-                                  multiplier: 1,
-                                  constant: 0),
-               NSLayoutConstraint(item: bannerView,
-                                  attribute: .centerX,
-                                  relatedBy: .equal,
-                                  toItem: view,
-                                  attribute: .centerX,
-                                  multiplier: 1,
-                                  constant: 0)
-              ])
-      }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        addBannerViewToView(bannerView)
+        
+    }
+    
+    // Called when an ad request failed.
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print((error.localizedDescription))
+    }
+    
+    // Called just before presenting the user a full screen view, such as a browser, in response to
+    // clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print(#function)
+    }
+    
+    // Called just before dismissing a full screen view.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print(#function)
+    }
+    
+    // Called just after dismissing a full screen view.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print(#function)
+    }
+    
+    // Called just before the application will background or terminate because the user clicked on an
+    // ad that will launch another application (such as the App Store).
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        print(#function)
+    }
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+        ])
+    }
     
     func checkRemoveAd() ->Bool {
-    var removeAd = userDefaults.value(forKey: "removeAd")
+        var removeAd = userDefaults.value(forKey: "removeAd")
         return (removeAd != nil)
     }
     
     func checkIsMember() ->Bool{
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
-        if(firebaseAuth.currentUser!.isAnonymous){
+            if(firebaseAuth.currentUser!.isAnonymous){
                 
                 return false
-     
+                
             }else{
                 
                 return true
@@ -130,9 +130,48 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     
     func setMemberAlert(){
         
-            let controller = UIAlertController(title: "提示", message:"您的身份為訪客 請先登入", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-             controller.addAction(okAction)
-             present(controller, animated: true, completion: nil)
+        let controller = UIAlertController(title: "提示", message:"您的身份為訪客 請先登入", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        controller.addAction(okAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
+    func checkLoginTime () {
+        let now = Date()
+        // 创建一个日期格式器
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        print("当前日期时间：\(dformatter.string(from: now))")
+        //当前时间的时间戳
+        let timeInterval:TimeInterval = now.timeIntervalSince1970
+        let timeStamp = Int(timeInterval * 1000)
+        print("当前时间的时间戳：\(timeStamp)")
+
+        if(!checkIsMember()){
+            //获取当前时间
+            if((userDefaults.value(forKey: "logintime")) != nil){
+                
+                var lastTime :Int = userDefaults.value(forKey: "logintime")! as! Int
+                print("checkLoginTime_last",lastTime)
+                print("checkLoginTime_now",timeStamp)
+                // 一天 毫秒 60 * 60 * 24 * 1000
+                if(timeStamp - lastTime > 60 * 60 * 24 * 1000){
+                    print("checkLoginTime","還沒到")
+
+                }else{
+                    print("checkLoginTime","到")
+                    userDefaults.set(timeStamp, forKey: "logintime")
+
+                }
+                
+                
+            }else{
+                print("checkLoginTime")
+                userDefaults.set(timeStamp, forKey: "logintime")
+            }
+            
+            
+        }
+        
     }
 }
