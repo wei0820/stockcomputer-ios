@@ -306,16 +306,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現股當沖獲利計算" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyz-4H-Ver">
-                                <rect key="frame" x="130" y="64" width="139" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="5xy-Tf-KVo"/>
-                                    <constraint firstAttribute="width" constant="139" id="sXk-9k-6lz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fgr-Dp-DyO">
                                 <rect key="frame" x="249" y="128" width="110" height="34"/>
                                 <constraints>
@@ -361,7 +351,6 @@
                             <constraint firstItem="q23-6h-sC1" firstAttribute="leading" secondItem="Rgy-v2-ApJ" secondAttribute="leading" constant="17" id="Fvw-A1-0z8"/>
                             <constraint firstItem="rBp-ig-oeI" firstAttribute="centerY" secondItem="Vhd-op-D5J" secondAttribute="centerY" id="Gnc-in-TtY"/>
                             <constraint firstItem="rBp-ig-oeI" firstAttribute="leading" secondItem="Rgy-v2-ApJ" secondAttribute="leading" constant="3" id="IBc-hE-Ozh"/>
-                            <constraint firstItem="Tyz-4H-Ver" firstAttribute="top" secondItem="Rgy-v2-ApJ" secondAttribute="top" constant="8" id="M39-nh-h2d"/>
                             <constraint firstItem="vav-PW-Uji" firstAttribute="leading" secondItem="Rgy-v2-ApJ" secondAttribute="leading" constant="16" id="Nca-R8-Emk"/>
                             <constraint firstItem="Rgy-v2-ApJ" firstAttribute="trailing" secondItem="Vbf-S3-CX4" secondAttribute="trailing" constant="38" id="PuC-1f-RfY"/>
                             <constraint firstItem="ruf-dY-maD" firstAttribute="top" secondItem="Rgy-v2-ApJ" secondAttribute="top" constant="424.5" id="R9Q-IK-ZuW"/>
@@ -383,18 +372,15 @@
                             <constraint firstItem="LDi-S5-FqH" firstAttribute="leading" secondItem="Rgy-v2-ApJ" secondAttribute="leading" constant="114" id="hYq-Lk-8AW"/>
                             <constraint firstItem="O1f-AF-S16" firstAttribute="leading" secondItem="Rgy-v2-ApJ" secondAttribute="leading" constant="17" id="j4i-Vh-DY9"/>
                             <constraint firstItem="tZV-Nf-wOR" firstAttribute="top" secondItem="Rgy-v2-ApJ" secondAttribute="top" constant="308" id="lay-HK-OlO"/>
-                            <constraint firstItem="Fgr-Dp-DyO" firstAttribute="top" secondItem="Tyz-4H-Ver" secondAttribute="bottom" constant="33" id="mf0-MU-dQY"/>
                             <constraint firstItem="ruf-dY-maD" firstAttribute="leading" secondItem="3cF-KR-lHi" secondAttribute="trailing" constant="109" id="o2k-xs-hP3"/>
                             <constraint firstItem="Rgy-v2-ApJ" firstAttribute="trailing" secondItem="ffr-F7-ecx" secondAttribute="trailing" constant="16" id="pU6-1w-n7P"/>
                             <constraint firstItem="h79-nO-GZV" firstAttribute="top" secondItem="Rgy-v2-ApJ" secondAttribute="top" constant="221" id="qJz-KQ-8aG"/>
-                            <constraint firstItem="Tyz-4H-Ver" firstAttribute="leading" secondItem="Rgy-v2-ApJ" secondAttribute="leading" constant="130" id="qVZ-rJ-8zn"/>
                             <constraint firstItem="ffr-F7-ecx" firstAttribute="top" secondItem="Rgy-v2-ApJ" secondAttribute="top" constant="164" id="qfO-69-W9O"/>
                             <constraint firstItem="BSY-2x-yBB" firstAttribute="top" secondItem="Rgy-v2-ApJ" secondAttribute="top" constant="37" id="qpm-RQ-RvH"/>
                             <constraint firstItem="vav-PW-Uji" firstAttribute="top" secondItem="Rgy-v2-ApJ" secondAttribute="top" constant="315" id="rj3-iB-POI"/>
                             <constraint firstItem="BSY-2x-yBB" firstAttribute="leading" secondItem="Rgy-v2-ApJ" secondAttribute="leading" constant="16" id="s8T-Ok-KI8"/>
                             <constraint firstItem="bt1-iM-nMG" firstAttribute="top" secondItem="Rgy-v2-ApJ" secondAttribute="top" constant="476" id="uyF-g2-yr3"/>
                             <constraint firstItem="l6O-ql-iig" firstAttribute="leading" secondItem="Rgy-v2-ApJ" secondAttribute="leading" constant="17" id="v3P-0S-tTQ"/>
-                            <constraint firstItem="Rgy-v2-ApJ" firstAttribute="trailing" secondItem="Tyz-4H-Ver" secondAttribute="trailing" constant="106" id="wmz-C2-l9V"/>
                             <constraint firstItem="5ME-La-dQS" firstAttribute="top" secondItem="Rgy-v2-ApJ" secondAttribute="top" constant="37" id="xWf-YB-CLb"/>
                             <constraint firstItem="Rgy-v2-ApJ" firstAttribute="trailing" secondItem="5ME-La-dQS" secondAttribute="trailing" constant="16" id="yqr-st-x8N"/>
                         </constraints>
@@ -409,7 +395,6 @@
                         <outlet property="percentage_label" destination="bt1-iM-nMG" id="CmY-JD-fHn"/>
                         <outlet property="sell_num" destination="ffr-F7-ecx" id="cC5-Ql-nQ4"/>
                         <outlet property="sell_price" destination="Fgr-Dp-DyO" id="eQW-2y-ypO"/>
-                        <outlet property="title_label" destination="Tyz-4H-Ver" id="5D7-uv-xhF"/>
                         <outlet property="total_buy_price" destination="vfL-o2-rtN" id="r6r-Mr-MZK"/>
                         <outlet property="total_sell_price" destination="Vbf-S3-CX4" id="fIc-oF-jBA"/>
                     </connections>
@@ -1193,7 +1178,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yH0-hY-UCK">
-                                                <rect key="frame" x="262" y="101" width="97" height="30"/>
+                                                <rect key="frame" x="238" y="112" width="97" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1285,13 +1270,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="買入股數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8g-ie-elI">
-                                                <rect key="frame" x="289" y="57" width="70" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="交割稅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu1-oj-RPt">
                                                 <rect key="frame" x="38" y="316" width="52" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1373,8 +1351,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 港股複委託購入試算" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka5-dv-26U">
-                                                <rect key="frame" x="102" y="8" width="161" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="買入股數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8g-ie-elI">
+                                                <rect key="frame" x="251" y="67" width="70" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -2675,7 +2653,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選取券商手續費折扣 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEo-0h-GSO">
-                                        <rect key="frame" x="114" y="277" width="161" height="35"/>
+                                        <rect key="frame" x="59" y="277" width="161" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="OqU-5A-dR2"/>
                                         </constraints>
@@ -2742,7 +2720,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpz-uL-qEd">
-                                        <rect key="frame" x="117" y="424" width="141" height="30"/>
+                                        <rect key="frame" x="117" y="424" width="31" height="30"/>
                                         <state key="normal" title="計算"/>
                                         <connections>
                                             <action selector="button_calculation:" destination="ddT-qF-bJQ" eventType="touchUpInside" id="mbd-7m-6bK"/>
@@ -2772,12 +2750,6 @@
                                             <constraint firstAttribute="width" constant="171" id="Dtx-Dd-edZ"/>
                                             <constraint firstAttribute="height" constant="29" id="q5t-TM-2L6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現股獲利計算" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqK-Gs-hHV">
-                                        <rect key="frame" x="145" y="64" width="151" height="30.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2821,7 +2793,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="XAd-Iw-Bf6" firstAttribute="top" secondItem="8D5-e2-FdL" secondAttribute="bottom" constant="14.5" id="1U2-D1-hVk"/>
-                                    <constraint firstItem="jqK-Gs-hHV" firstAttribute="leading" secondItem="sEo-0h-GSO" secondAttribute="leading" constant="31" id="3Lm-nI-LAu"/>
                                     <constraint firstItem="4e9-9c-A1i" firstAttribute="leading" secondItem="wNn-yz-ZOR" secondAttribute="leading" constant="8" id="3cZ-d1-HF8"/>
                                     <constraint firstItem="4e9-9c-A1i" firstAttribute="top" secondItem="wNn-yz-ZOR" secondAttribute="top" constant="426" id="3hH-V7-vgs"/>
                                     <constraint firstItem="9al-wX-UCj" firstAttribute="leading" secondItem="4e9-9c-A1i" secondAttribute="leading" id="4oP-Ue-Lll"/>
@@ -2840,7 +2811,6 @@
                                     <constraint firstItem="raO-Tp-d3c" firstAttribute="leading" secondItem="ZY2-PG-F0p" secondAttribute="leading" constant="-6" id="GAP-Eh-DrN"/>
                                     <constraint firstItem="QbS-1R-UCj" firstAttribute="leading" secondItem="Cn7-yh-K29" secondAttribute="leading" constant="1" id="HiU-J7-7Jd"/>
                                     <constraint firstItem="raO-Tp-d3c" firstAttribute="trailing" secondItem="1N2-Ph-mm4" secondAttribute="trailing" constant="-54.5" id="IEf-J0-2W0"/>
-                                    <constraint firstItem="jqK-Gs-hHV" firstAttribute="top" secondItem="XCN-Io-NjN" secondAttribute="bottom" id="K1O-6z-YkN"/>
                                     <constraint firstItem="8D5-e2-FdL" firstAttribute="leading" secondItem="wNn-yz-ZOR" secondAttribute="leading" constant="16" id="LUZ-gL-zTu"/>
                                     <constraint firstItem="8D5-e2-FdL" firstAttribute="leading" secondItem="b2U-TK-eUi" secondAttribute="leading" id="MFM-Gd-8V0"/>
                                     <constraint firstItem="Cn7-yh-K29" firstAttribute="bottom" secondItem="bPJ-Mu-Yng" secondAttribute="bottom" id="PzG-uN-xBZ"/>
@@ -2850,20 +2820,17 @@
                                     <constraint firstItem="BEe-7x-B6I" firstAttribute="top" secondItem="wNn-yz-ZOR" secondAttribute="top" constant="414" id="S91-FU-erW"/>
                                     <constraint firstItem="8D5-e2-FdL" firstAttribute="baseline" secondItem="raO-Tp-d3c" secondAttribute="baseline" id="SCX-CL-jwA"/>
                                     <constraint firstItem="1N2-Ph-mm4" firstAttribute="top" secondItem="ZY2-PG-F0p" secondAttribute="bottom" constant="17" id="SeX-O9-QHA"/>
-                                    <constraint firstItem="jqK-Gs-hHV" firstAttribute="trailing" secondItem="Qpz-uL-qEd" secondAttribute="trailing" constant="38" id="SiU-2J-UuS"/>
                                     <constraint firstItem="BEe-7x-B6I" firstAttribute="trailing" secondItem="wNn-yz-ZOR" secondAttribute="trailing" id="UE2-vT-dWR"/>
                                     <constraint firstItem="wNn-yz-ZOR" firstAttribute="trailing" secondItem="hQ7-rS-LMl" secondAttribute="trailing" constant="8" id="Uay-AZ-JFt"/>
                                     <constraint firstItem="b2U-TK-eUi" firstAttribute="top" secondItem="9al-wX-UCj" secondAttribute="bottom" constant="8" id="VaO-VH-7hF"/>
                                     <constraint firstItem="QbS-1R-UCj" firstAttribute="centerY" secondItem="1N2-Ph-mm4" secondAttribute="centerY" constant="-2" id="VdY-6D-CYF"/>
                                     <constraint firstItem="wNn-yz-ZOR" firstAttribute="trailing" secondItem="ZY2-PG-F0p" secondAttribute="trailing" constant="10" id="X1P-mI-re9"/>
                                     <constraint firstItem="b2U-TK-eUi" firstAttribute="top" secondItem="sEo-0h-GSO" secondAttribute="bottom" constant="59" id="XE8-iO-VY1"/>
-                                    <constraint firstItem="XAd-Iw-Bf6" firstAttribute="top" secondItem="jqK-Gs-hHV" secondAttribute="bottom" constant="33.5" id="Xoo-9p-ZPj"/>
                                     <constraint firstItem="8D5-e2-FdL" firstAttribute="top" secondItem="XCN-Io-NjN" secondAttribute="bottom" constant="29" id="Xsa-zB-FwG"/>
                                     <constraint firstItem="8D5-e2-FdL" firstAttribute="top" secondItem="wNn-yz-ZOR" secondAttribute="top" constant="37" id="ZWw-hD-vmA"/>
                                     <constraint firstItem="74n-2g-GRy" firstAttribute="top" secondItem="s8c-SX-8jJ" secondAttribute="bottom" id="aB3-om-0rT"/>
                                     <constraint firstItem="8D5-e2-FdL" firstAttribute="firstBaseline" secondItem="raO-Tp-d3c" secondAttribute="firstBaseline" id="bhV-vW-urw"/>
                                     <constraint firstItem="bPJ-Mu-Yng" firstAttribute="leading" secondItem="74n-2g-GRy" secondAttribute="leading" constant="4" id="c4J-mB-W2q"/>
-                                    <constraint firstItem="jqK-Gs-hHV" firstAttribute="leading" secondItem="wNn-yz-ZOR" secondAttribute="leading" constant="145" id="fYf-MH-cQG"/>
                                     <constraint firstItem="XAd-Iw-Bf6" firstAttribute="trailing" secondItem="Cn7-yh-K29" secondAttribute="trailing" constant="-7" id="fbP-Zc-38g"/>
                                     <constraint firstItem="veL-yz-3wm" firstAttribute="leading" secondItem="wNn-yz-ZOR" secondAttribute="leading" constant="8" id="gMx-9P-yWM"/>
                                     <constraint firstItem="Cn7-yh-K29" firstAttribute="centerX" secondItem="b2U-TK-eUi" secondAttribute="centerX" constant="3.5" id="iS8-p0-pFr"/>
