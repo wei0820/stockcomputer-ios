@@ -146,8 +146,8 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         let timeInterval:TimeInterval = now.timeIntervalSince1970
         let timeStamp = Int(timeInterval * 1000)
         print("当前时间的时间戳：\(timeStamp)")
-
-        if(!checkIsMember()){
+        
+        if(checkIsMember()){
             //获取当前时间
             if((userDefaults.value(forKey: "logintime")) != nil){
                 
@@ -157,11 +157,11 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 // 一天 毫秒 60 * 60 * 24 * 1000
                 if(timeStamp - lastTime > 60 * 60 * 24 * 1000){
                     print("checkLoginTime","還沒到")
-
+                    
                 }else{
                     print("checkLoginTime","到")
                     userDefaults.set(timeStamp, forKey: "logintime")
-
+                    
                 }
                 
                 
@@ -174,4 +174,20 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         }
         
     }
+    func getMemberDateList(){
+        
+        let firebaseAuth = Auth.auth()
+        if firebaseAuth != nil {
+            if(!firebaseAuth.currentUser!.isAnonymous){
+                
+                (Auth.auth().currentUser?.uid)!
+                (Auth.auth().currentUser?.displayName)!
+                
+                
+            }
+            
+        }
+        
+}
+
 }
