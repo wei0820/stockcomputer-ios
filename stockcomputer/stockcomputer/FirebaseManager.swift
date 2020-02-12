@@ -26,8 +26,20 @@ class FirebaseManager {
         }
         return ""
     }
-    
-    static  func  addFireBaseDate(min: String , Type:String,place : String){
+    static func getMemberName () -> String{
+         let firebaseAuth = Auth.auth()
+         if firebaseAuth != nil {
+             if(!firebaseAuth.currentUser!.isAnonymous){
+                 
+                return  (Auth.auth().currentUser?.displayName)!
+             }
+             
+             return ""
+             
+         }
+         return ""
+     }
+    static  func  addMemberDateToFirebase(){
         var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
@@ -37,11 +49,8 @@ class FirebaseManager {
         let dateReviewReference = reference.child(DateManager.getDateString2())
         // 新增節點資料
         var dateReview: [String : AnyObject] = [String : AnyObject]()
-        dateReview["Id"] = id as AnyObject
-        dateReview["Minute"] = min  as AnyObject
-        dateReview["Type"] = Type as AnyObject
-        dateReview["Place"] = place as AnyObject
-        
+        dateReview["id"] = id as AnyObject
+        dateReview["name"] = getMemberName()  as AnyObject
         dateReview["date"]  = DateManager.getDateforDate() as AnyObject
         dateReview["createDate"] = DateManager.getDateString2() as AnyObject
         dateReviewReference.updateChildValues(dateReview) { (err, ref) in
