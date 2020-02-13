@@ -58,7 +58,7 @@ class FirebaseManager {
         
     }
     
-    static  func  addMemberDateToFirebase(){
+    static  func  addMemberDateToFirebase(point :String ){
         var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
@@ -71,6 +71,7 @@ class FirebaseManager {
         dateReview["id"] = id as AnyObject
         dateReview["name"] = getMemberName()  as AnyObject
         dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
+        dateReview["point"] = point   as AnyObject
         dateReviewReference.updateChildValues(dateReview) { (err, ref) in
             if err != nil{
                 print("err： \(err!)")
@@ -94,8 +95,6 @@ class FirebaseManager {
             (snapshot) in
             // childAdded逐筆呈現
             if let dictionaryData = snapshot.value as? [String: AnyObject]{
-                print("Min",dictionaryData["Minute"])
-                print("date",dictionaryData["date"])
                 minarray.append(dictionaryData["Minute"] as! String)
                 dateArray.append(dictionaryData["date"] as! String)
                 
