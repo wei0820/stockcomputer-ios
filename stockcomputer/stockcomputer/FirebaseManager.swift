@@ -13,7 +13,7 @@ import Firebase
 class FirebaseManager {
     static let userDefaults = UserDefaults.standard
     
-   static func getMemberId () -> String{
+    static func getMemberId () -> String{
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
             if(!firebaseAuth.currentUser!.isAnonymous){
@@ -27,18 +27,51 @@ class FirebaseManager {
         return ""
     }
     static func getMemberName () -> String{
-         let firebaseAuth = Auth.auth()
-         if firebaseAuth != nil {
-             if(!firebaseAuth.currentUser!.isAnonymous){
-                 
+        let firebaseAuth = Auth.auth()
+        if firebaseAuth != nil {
+            if(!firebaseAuth.currentUser!.isAnonymous){
+                
                 return  (Auth.auth().currentUser?.displayName)!
-             }
-             
-             return ""
-             
-         }
-         return ""
-     }
+            }
+            
+            return ""
+            
+        }
+        return ""
+    }
+    static func getLastLoginTime() -> String{
+        let firebaseAuth = Auth.auth()
+        if firebaseAuth != nil {
+            if(!firebaseAuth.currentUser!.isAnonymous){
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
+                
+                return dateString
+            }
+            return ""
+            
+        }
+        return ""
+        
+        
+    }
+    
+    
+    static func getMemberPhotoUrl () ->String{
+        
+        let firebaseAuth = Auth.auth()
+            if firebaseAuth != nil {
+                if(!firebaseAuth.currentUser!.isAnonymous){
+                    return (Auth.auth().currentUser?.photoURL)!
+                }
+                return ""
+                
+            }
+            return ""
+        
+    }
     static  func  addMemberDateToFirebase(){
         var  id = self.getMemberId()
         if ( id == nil){
@@ -51,8 +84,8 @@ class FirebaseManager {
         var dateReview: [String : AnyObject] = [String : AnyObject]()
         dateReview["id"] = id as AnyObject
         dateReview["name"] = getMemberName()  as AnyObject
-        dateReview["date"]  = DateManager.getDateforDate() as AnyObject
-        dateReview["createDate"] = DateManager.getDateString2() as AnyObject
+        dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
+        dateReview["photourl"] = getMemberPhotoUrl() as AnyObject
         dateReviewReference.updateChildValues(dateReview) { (err, ref) in
             if err != nil{
                 print("err： \(err!)")
@@ -64,7 +97,7 @@ class FirebaseManager {
         
         
     }
-    static  func SearchDatabase(){
+    static  func SearchMemberDate(){
         var minarray =  Array<String>()
         var dateArray = Array<String>()
         var  id = self.getMemberId()
@@ -107,3 +140,4 @@ class FirebaseManager {
         }
     }
 }
+
