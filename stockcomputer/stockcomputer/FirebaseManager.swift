@@ -83,9 +83,8 @@ class FirebaseManager {
         
         
     }
-    static  func SearchMemberDate(){
-        var minarray =  Array<String>()
-        var dateArray = Array<String>()
+    static  func getMemberDate(){
+        
         var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
@@ -95,13 +94,12 @@ class FirebaseManager {
             (snapshot) in
             // childAdded逐筆呈現
             if let dictionaryData = snapshot.value as? [String: AnyObject]{
-                minarray.append(dictionaryData["Minute"] as! String)
-                dateArray.append(dictionaryData["date"] as! String)
-                
-                
+                var id : String = dictionaryData["id"] as! String
+                var name : String = dictionaryData["name"] as! String
+                var lastlogintime : String = dictionaryData["lastlogintime"] as! String
+                var point : String = dictionaryData["point"] as! String
             }
-            userDefaults.set(minarray, forKey: "minArray")
-            userDefaults.set(dateArray, forKey: "dateArray")
+    
             
             
         }, withCancel: nil)
