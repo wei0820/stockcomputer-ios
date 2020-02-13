@@ -58,20 +58,6 @@ class FirebaseManager {
         
     }
     
-    
-    static func getMemberPhotoUrl () ->String{
-        
-        let firebaseAuth = Auth.auth()
-            if firebaseAuth != nil {
-                if(!firebaseAuth.currentUser!.isAnonymous){
-                    return (Auth.auth().currentUser?.photoURL)!
-                }
-                return ""
-                
-            }
-            return ""
-        
-    }
     static  func  addMemberDateToFirebase(){
         var  id = self.getMemberId()
         if ( id == nil){
@@ -85,7 +71,6 @@ class FirebaseManager {
         dateReview["id"] = id as AnyObject
         dateReview["name"] = getMemberName()  as AnyObject
         dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
-        dateReview["photourl"] = getMemberPhotoUrl() as AnyObject
         dateReviewReference.updateChildValues(dateReview) { (err, ref) in
             if err != nil{
                 print("err： \(err!)")
