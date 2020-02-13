@@ -13,7 +13,7 @@ import Firebase
 class FirebaseManager {
     static let userDefaults = UserDefaults.standard
     
-   static func getMemberId () -> String{
+    static func getMemberId () -> String{
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
             if(!firebaseAuth.currentUser!.isAnonymous){
@@ -26,8 +26,39 @@ class FirebaseManager {
         }
         return ""
     }
+    static func getMemberName () -> String{
+        let firebaseAuth = Auth.auth()
+        if firebaseAuth != nil {
+            if(!firebaseAuth.currentUser!.isAnonymous){
+                
+                return  (Auth.auth().currentUser?.displayName)!
+            }
+            
+            return ""
+            
+        }
+        return ""
+    }
+    static func getLastLoginTime() -> String{
+        let firebaseAuth = Auth.auth()
+        if firebaseAuth != nil {
+            if(!firebaseAuth.currentUser!.isAnonymous){
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
+                
+                return dateString
+            }
+            return ""
+            
+        }
+        return ""
+        
+        
+    }
     
-    static  func  addFireBaseDate(min: String , Type:String,place : String){
+    static  func  addMemberDateToFirebase(point :String ){
         var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
@@ -37,13 +68,10 @@ class FirebaseManager {
         let dateReviewReference = reference.child(DateManager.getDateString2())
         // 新增節點資料
         var dateReview: [String : AnyObject] = [String : AnyObject]()
-        dateReview["Id"] = id as AnyObject
-        dateReview["Minute"] = min  as AnyObject
-        dateReview["Type"] = Type as AnyObject
-        dateReview["Place"] = place as AnyObject
-        
-        dateReview["date"]  = DateManager.getDateforDate() as AnyObject
-        dateReview["createDate"] = DateManager.getDateString2() as AnyObject
+        dateReview["id"] = id as AnyObject
+        dateReview["name"] = getMemberName()  as AnyObject
+        dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
+        dateReview["point"] = point   as AnyObject
         dateReviewReference.updateChildValues(dateReview) { (err, ref) in
             if err != nil{
                 print("err： \(err!)")
@@ -55,9 +83,8 @@ class FirebaseManager {
         
         
     }
-    static  func SearchDatabase(){
-        var minarray =  Array<String>()
-        var dateArray = Array<String>()
+    static  func getMemberDate(){
+        
         var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
@@ -67,17 +94,16 @@ class FirebaseManager {
             (snapshot) in
             // childAdded逐筆呈現
             if let dictionaryData = snapshot.value as? [String: AnyObject]{
-                print("Min",dictionaryData["Minute"])
-                print("date",dictionaryData["date"])
-                minarray.append(dictionaryData["Minute"] as! String)
-                dateArray.append(dictionaryData["date"] as! String)
-                
-                
+                var id : String = dictionaryData["id"] as! String
+                var name : String = dictionaryData["name"] as! String
+                var lastlogintime : String = dictionaryData["lastlogintime"] as! String
+                var point : String = dictionaryData["point"] as! String
+                userDefaults.set(id, forKey: "id")
+                userDefaults.set(name, forKey: "name")
+                userDefaults.set(lastlogintime, forKey: "lastlogintime")
+                userDefaults.set(point, forKey: "point")
             }
-            userDefaults.set(minarray, forKey: "minArray")
-            userDefaults.set(dateArray, forKey: "dateArray")
-            
-            
+
         }, withCancel: nil)
     }
     
@@ -97,4 +123,37 @@ class FirebaseManager {
             
         }
     }
+    
+    
+    /// get member  information
+    
+    static func getUserId() ->String{
+        if(userDefaults.value(forKey: "id") != nil){
+            return userDefaults.value(forKey: "id")! as! String
+        }
+        return ""
+    
+    }
+    static func getUserName() ->String{
+        if(userDefaults.value(forKey: "name") != nil){
+            return userDefaults.value(forKey: "name")! as! String
+        }
+        return ""
+    
+    }
+    static func getUserLlastlogintime() ->String{
+        if(userDefaults.value(forKey: "lastlogintime") != nil){
+            return userDefaults.value(forKey: "lastlogintime")! as! String
+        }
+        return ""
+    
+    }
+    static func getUserPoint() ->String{
+        if(userDefaults.value(forKey: "point") != nil){
+            return userDefaults.value(forKey: "point")! as! String
+        }
+        return ""
+    
+    }
 }
+
