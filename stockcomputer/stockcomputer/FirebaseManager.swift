@@ -98,10 +98,12 @@ class FirebaseManager {
                 var name : String = dictionaryData["name"] as! String
                 var lastlogintime : String = dictionaryData["lastlogintime"] as! String
                 var point : String = dictionaryData["point"] as! String
+                userDefaults.set(id, forKey: "id")
+                userDefaults.set(name, forKey: "name")
+                userDefaults.set(lastlogintime, forKey: "lastlogintime")
+                userDefaults.set(point, forKey: "point")
             }
-    
-            
-            
+
         }, withCancel: nil)
     }
     
@@ -120,6 +122,38 @@ class FirebaseManager {
             print("remove data success...")
             
         }
+    }
+    
+    
+    /// get member  information
+    
+    static func getUserId() ->String{
+        if(userDefaults.value(forKey: "id") != nil){
+            return userDefaults.value(forKey: "id")! as! String
+        }
+        return ""
+    
+    }
+    static func getUserName() ->String{
+        if(userDefaults.value(forKey: "name") != nil){
+            return userDefaults.value(forKey: "name")! as! String
+        }
+        return ""
+    
+    }
+    static func getUserLlastlogintime() ->String{
+        if(userDefaults.value(forKey: "lastlogintime") != nil){
+            return userDefaults.value(forKey: "lastlogintime")! as! String
+        }
+        return ""
+    
+    }
+    static func getUserPoint() ->String{
+        if(userDefaults.value(forKey: "point") != nil){
+            return userDefaults.value(forKey: "point")! as! String
+        }
+        return ""
+    
     }
 }
 
