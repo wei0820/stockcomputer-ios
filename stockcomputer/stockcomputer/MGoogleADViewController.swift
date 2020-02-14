@@ -137,6 +137,8 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     }
     
     func checkLoginTime () {
+        print("checkLoginTime_last", FirebaseManager.getLastLoginTime())
+       
         let now = Date()
         // 创建一个日期格式器
         let dformatter = DateFormatter()
@@ -186,6 +188,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 let controller = UIAlertController(title: "簽到提醒", message: message, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "是", style: .default) { (_) in
                     self.userDefaults.set(timeStamp, forKey: "logintime")
+                    
                 }
                 controller.addAction(okAction)
                 let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)

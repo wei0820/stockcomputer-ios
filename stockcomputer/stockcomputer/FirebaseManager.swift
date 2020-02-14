@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Foundation
 import Firebase
+import UIKit
 
 class FirebaseManager {
     static let userDefaults = UserDefaults.standard
@@ -39,21 +39,27 @@ class FirebaseManager {
         }
         return ""
     }
-    static func getLastLoginTime() -> String{
+    static func getLastLoginTime() -> Int{
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
             if(!firebaseAuth.currentUser!.isAnonymous){
-                
+                //yyyy年MM月dd日
+                let now = Date()
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                //当前时间的时间戳
+                let timeInterval:TimeInterval = now.timeIntervalSince1970
+                  let timeStamp = Int(timeInterval)
+                  print("当前时间的时间戳：\(timeStamp)")
                 
-                return dateString
+//                var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
+                
+                return timeStamp
             }
-            return ""
+            return 0
             
         }
-        return ""
+        return 0
         
         
     }
