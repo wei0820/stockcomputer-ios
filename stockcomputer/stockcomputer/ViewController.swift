@@ -123,8 +123,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                 if(FirebaseManager.getUserPoint() == 0){
                     FirebaseManager.addMemberDateToFirebase(point: 100)
                 }else{
-                    print("home",FirebaseManager.getUserPoint())
-                    print("home",FirebaseManager.getUserId())
                     var point : Int = FirebaseManager.getUserPoint()
                     self.checkLoginTime()
 //                    FirebaseManager.setLoginUpdateUserData()

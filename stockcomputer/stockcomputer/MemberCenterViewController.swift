@@ -384,12 +384,8 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
                         && FirebaseManager.getUserWatchTime() != 0 )
                     {
                         // 一天 毫秒 60 * 60 * 24 * 1000
-                        print("watch","1")
-
                         var watchLastTime : Int = FirebaseManager.getUserWatchTime()
                         var watchNoeTime : Int = FirebaseManager.getLastLoginTime()
-                        print("watch",watchLastTime)
-                        print("watch",watchNoeTime)
 
                         if(watchNoeTime - watchLastTime > 60 * 60 * 6){
                             self.watchAdVideo()
@@ -405,8 +401,6 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
                         }
                         
                     }else{
-                        print("watch","2")
-
                     
                         self.watchAdVideo()
                     }
