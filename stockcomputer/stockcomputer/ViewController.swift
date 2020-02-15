@@ -121,7 +121,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             FirebaseManager.getMemberDate()
             if(FirebaseManager.getUserId() != nil && FirebaseManager.getUserPoint() != nil){
                 if(FirebaseManager.getUserPoint() == 0){
-                    
                     FirebaseManager.addMemberDateToFirebase(point: 100)
                 }else{
                     print("home",FirebaseManager.getUserPoint())
