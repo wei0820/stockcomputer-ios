@@ -64,14 +64,14 @@ class FirebaseManager {
         
     }
     
-    static  func  addMemberDateToFirebase(point :String ){
+    static  func  addMemberDateToFirebase(point :Int ){
         var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
         }
         let reference: DatabaseReference! = Database.database().reference().child("MemberList").child(id as! String)
         let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
-        let dateReviewReference = reference.child(DateManager.getDateString2())
+        let dateReviewReference = reference.child(id)
         // 新增節點資料
         var dateReview: [String : AnyObject] = [String : AnyObject]()
         dateReview["id"] = id as AnyObject
@@ -102,12 +102,17 @@ class FirebaseManager {
             if let dictionaryData = snapshot.value as? [String: AnyObject]{
                 var id : String = dictionaryData["id"] as! String
                 var name : String = dictionaryData["name"] as! String
-                var lastlogintime : String = dictionaryData["lastlogintime"] as! String
-                var point : String = dictionaryData["point"] as! String
+                var lastlogintime : Int = dictionaryData["lastlogintime"] as! Int
+                var point : Int = dictionaryData["point"] as! Int
                 userDefaults.set(id, forKey: "id")
                 userDefaults.set(name, forKey: "name")
                 userDefaults.set(lastlogintime, forKey: "lastlogintime")
                 userDefaults.set(point, forKey: "point")
+                print("member",id)
+                print("member",name)
+                print("member",lastlogintime)
+                print("member",point)
+
             }
 
         }, withCancel: nil)
@@ -154,11 +159,11 @@ class FirebaseManager {
         return ""
     
     }
-    static func getUserPoint() ->String{
+    static func getUserPoint() ->Int{
         if(userDefaults.value(forKey: "point") != nil){
-            return userDefaults.value(forKey: "point")! as! String
+            return userDefaults.value(forKey: "point")! as! Int
         }
-        return ""
+        return 0
     
     }
 }

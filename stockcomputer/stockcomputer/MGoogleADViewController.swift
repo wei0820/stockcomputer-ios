@@ -116,7 +116,6 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 return false
                 
             }else{
-                
                 return true
                 
             }
@@ -138,7 +137,6 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     
     func checkLoginTime () {
         print("checkLoginTime_last", FirebaseManager.getLastLoginTime())
-       
         let now = Date()
         // 创建一个日期格式器
         let dformatter = DateFormatter()
@@ -151,9 +149,9 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         
         if(checkIsMember()){
             //获取当前时间
-            if((userDefaults.value(forKey: "logintime")) != nil){
+            if(FirebaseManager.getLastLoginTime() != nil &&  FirebaseManager.getLastLoginTime() != 0){
                 
-                var lastTime :Int = userDefaults.value(forKey: "logintime")! as! Int
+                var lastTime :Int =  FirebaseManager.getLastLoginTime()
                 print("checkLoginTime_last",lastTime)
                 print("checkLoginTime_now",timeStamp)
                 // 一天 毫秒 60 * 60 * 24 * 1000
@@ -218,6 +216,7 @@ func getMemberDateList(){
     }
     
 }
+
 func timeStanpToSring (timeStamp :Float) -> String{
     //转换为时间
     let timeInterval:TimeInterval = TimeInterval(timeStamp)
@@ -229,4 +228,5 @@ func timeStanpToSring (timeStamp :Float) -> String{
     print("对应的日期时间：\(dformatter.string(from: date))")
     return (dformatter.string(from: date))
 }
+
 
