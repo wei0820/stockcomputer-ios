@@ -281,17 +281,17 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         if firebaseAuth != nil {
             
     
-            lasttime.text = "最後登入時間:" + TimerManager.timeStampToDate(timestamp: FirebaseManager.getUserLlastlogintime())
+            lasttime.text = "上次登入時間:" + TimerManager.timeStampToDate(timestamp: FirebaseManager.getUserLlastlogintime())
             if(firebaseAuth.currentUser!.isAnonymous){
-                mid.text = "會員ID:" + "遊客身份"
-                mName.text = "會員姓名:" + "遊客身份"
-                mPoint.text = "會員點數:"+"遊客身份"
+                mid.text = "ID:" + "遊客身份"
+                mName.text = "姓名:" + "遊客身份"
+                mPoint.text = "點數:"+"遊客身份"
             }else{
                 
                 
-                mid.text = "會員ID:" + (Auth.auth().currentUser?.uid)!
-                mName.text = "會員姓名:" + (Auth.auth().currentUser?.displayName)!
-                mPoint.text = "會員點數:" + String(FirebaseManager.getUserPoint())
+                mid.text = "ID:" + (Auth.auth().currentUser?.uid)!
+                mName.text = "姓名:" + (Auth.auth().currentUser?.displayName)!
+                mPoint.text = "點數:" + String(FirebaseManager.getUserPoint())
                 DispatchQueue.global(qos: .userInitiated).async {
                     let imageData:NSData = NSData(contentsOf: (Auth.auth().currentUser?.photoURL)!)!
                     // When from background thread, UI needs to be updated on main_queue
