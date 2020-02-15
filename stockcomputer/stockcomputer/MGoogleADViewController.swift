@@ -136,7 +136,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     }
     
     func checkLoginTime () {
-        print("checkLoginTime_last", FirebaseManager.getLastLoginTime())
+        print("checkLoginTime_last", FirebaseManager.getUserLlastlogintime())
         let now = Date()
         // 创建一个日期格式器
         let dformatter = DateFormatter()
@@ -149,8 +149,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         
         if(checkIsMember()){
             //获取当前时间
-            if(FirebaseManager.getLastLoginTime() != nil &&  FirebaseManager.getLastLoginTime() != 0){
-                
+            if(FirebaseManager.getUserLlastlogintime() != nil &&  FirebaseManager.getUserLlastlogintime() != 0){
                 var lastTime :Int =  FirebaseManager.getLastLoginTime()
                 print("checkLoginTime_last",lastTime)
                 print("checkLoginTime_now",timeStamp)
@@ -158,20 +157,17 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 var now :Int = timeStamp - lastTime
                 var dayTime : Int = 86400
                 print("checkLoginTime_now",now)
-
+                
                 if( now < dayTime){
                     print("checkLoginTime","還沒到")
                     
                     
                 }else{
                     print("checkLoginTime","到")
-                    var message = "上次簽到時間:" + timeStanpToSring(timeStamp: Float(lastTime)) + "本次簽到時間:" + timeStanpToSring(timeStamp: Float(timeStamp)) + "是否簽到領取獎勵"
-                    
-                    
-                    userDefaults.set(timeStamp, forKey: "logintime")
+                    var message = "本次簽到時間:" + timeStanpToSring(timeStamp: Float(timeStamp)) + "是否簽到領取獎勵"
                     let controller = UIAlertController(title: "簽到提醒", message: message, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "是", style: .default) { (_) in
-                        self.userDefaults.set(timeStamp, forKey: "logintime")
+                        FirebaseManager.addMemberTimeAndPintToFirebase()
                     }
                     controller.addAction(okAction)
                     let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
@@ -185,8 +181,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 var message = "本次簽到時間:" + timeStanpToSring(timeStamp: Float(timeStamp)) + "是否簽到領取獎勵"
                 let controller = UIAlertController(title: "簽到提醒", message: message, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "是", style: .default) { (_) in
-                    self.userDefaults.set(timeStamp, forKey: "logintime")
-                    
+                    FirebaseManager.addMemberTimeAndPintToFirebase()
                 }
                 controller.addAction(okAction)
                 let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
@@ -194,7 +189,6 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 present(controller, animated: true, completion: nil)
                 
             }
-            print("checkLoginTime")
         }
         
         
