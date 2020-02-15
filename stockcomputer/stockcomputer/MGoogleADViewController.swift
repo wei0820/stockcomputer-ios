@@ -150,7 +150,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         if(checkIsMember()){
             //获取当前时间
             if(FirebaseManager.getUserLlastlogintime() != nil &&  FirebaseManager.getUserLlastlogintime() != 0){
-                var lastTime :Int =  FirebaseManager.getLastLoginTime()
+                var lastTime :Int =  FirebaseManager.getUserLlastlogintime()
                 print("checkLoginTime_last",lastTime)
                 print("checkLoginTime_now",timeStamp)
                 // 一天 毫秒 60 * 60 * 24 * 1000
@@ -167,7 +167,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                     var message = "本次簽到時間:" + timeStanpToSring(timeStamp: Float(timeStamp)) + "是否簽到領取獎勵"
                     let controller = UIAlertController(title: "簽到提醒", message: message, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "是", style: .default) { (_) in
-                        FirebaseManager.addMemberTimeAndPintToFirebase()
+                        FirebaseManager.addMemberTimeAndPintToFirebase(timestamp: timeStamp)
                     }
                     controller.addAction(okAction)
                     let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
@@ -181,7 +181,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 var message = "本次簽到時間:" + timeStanpToSring(timeStamp: Float(timeStamp)) + "是否簽到領取獎勵"
                 let controller = UIAlertController(title: "簽到提醒", message: message, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "是", style: .default) { (_) in
-                    FirebaseManager.addMemberTimeAndPintToFirebase()
+                    FirebaseManager.addMemberTimeAndPintToFirebase(timestamp: timeStamp)
                 }
                 controller.addAction(okAction)
                 let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)

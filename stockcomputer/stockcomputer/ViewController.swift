@@ -127,6 +127,8 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                     print("home",FirebaseManager.getUserId())
                     var point : Int = FirebaseManager.getUserPoint()
                     self.checkLoginTime()
+//                    FirebaseManager.setLoginUpdateUserData()
+                    
 
                 }
                 

@@ -168,7 +168,7 @@ class FirebaseManager {
     }
     
     
-    static  func  addMemberTimeAndPintToFirebase(){
+    static  func  addMemberTimeAndPintToFirebase(timestamp :Int){
         var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
@@ -182,8 +182,37 @@ class FirebaseManager {
         var dateReview: [String : AnyObject] = [String : AnyObject]()
         dateReview["id"] = id as AnyObject
         dateReview["name"] = getMemberName()  as AnyObject
-        dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
+        dateReview["lastlogintime"]  = timestamp  as AnyObject
         dateReview["point"] = addPoint   as AnyObject
+        dateReviewReference.updateChildValues(dateReview) { (err, ref) in
+            if err != nil{
+                print("err： \(err!)")
+                return
+            }
+            
+            print(ref.description())
+        }
+        
+        
+    }
+    
+    
+    static  func  setLoginUpdateUserData(){
+        var  id = self.getMemberId()
+        if ( id == nil){
+            id =  UiManager.getUUID()
+        }
+        let reference: DatabaseReference! = Database.database().reference().child("MemberList").child(id as! String)
+        let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
+        let dateReviewReference = reference.child(id)
+        // 新增節點資料
+        var dateReview: [String : AnyObject] = [String : AnyObject]()
+        dateReview["id"] = id as AnyObject
+        dateReview["name"] = getMemberName()  as AnyObject
+        dateReview["lastlogintime"]  =  getUserLlastlogintime() as AnyObject
+        dateReview["point"] = getUserPoint()   as AnyObject
+        dateReview["memberLv"] = "200"  as AnyObject
+
         dateReviewReference.updateChildValues(dateReview) { (err, ref) in
             if err != nil{
                 print("err： \(err!)")
