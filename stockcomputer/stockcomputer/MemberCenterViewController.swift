@@ -397,10 +397,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
                         }else{
                             
                             let controller = UIAlertController(title: "提示", message: "六小時才能領取一次唷", preferredStyle: .alert)
-                            let okAction = UIAlertAction(title: "是", style: .default) { (_) in
-                            }
-                            controller.addAction(okAction)
-                            let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
+                            let cancelAction = UIAlertAction(title: "好的", style: .cancel, handler: nil)
                             controller.addAction(cancelAction)
                             self.present(controller, animated: true, completion: nil)
                             
