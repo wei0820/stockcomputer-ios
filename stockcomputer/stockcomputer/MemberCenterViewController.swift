@@ -92,6 +92,9 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
                             didRewardUserWith reward: GADAdReward) {
         print("Reward received with currency: \(reward.type), amount \(reward.amount).")
+        var point : Int = FirebaseManager.getUserPoint()
+        var updatePoint : Int = point + Int(reward.amount)
+        FirebaseManager.addMemberWatchAdFirebase(pont: updatePoint)
     }
     
     func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
@@ -129,12 +132,18 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         
         setAdBanner()
         shopbtn.isHidden = false
-        rewardbtn.isHidden = true
+        if(checkIsMember()){
+            rewardbtn.isHidden = false
+            
+        }else{
+            rewardbtn.isHidden = true
+            
+        }
         
         get()
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
-                                                    withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
+                                                    withAdUnitID: "ca-app-pub-7019441527375550/4519858733")
         //        self.productIDs.append("Member_Point_1000")
         //        self.productIDs.append("MenberPoint_1000")
         self.productIDs.append("richman")
@@ -279,21 +288,27 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     func get(){
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
+            if(checkIsMember()){
+                lasttime.text = "上次登入時間:" + TimerManager.timeStampToDate(timestamp: FirebaseManager.getUserLlastlogintime())
+            }else{
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
+                lasttime.text = "最後登入時間:" + dateString
+            }
             
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
-            lasttime.text = "最後登入時間:" + dateString
+            
+            
             if(firebaseAuth.currentUser!.isAnonymous){
-                mid.text = "會員ID:" + "遊客身份"
-                mName.text = "會員姓名:" + "遊客身份"
-                mPoint.text = "會員點數:"+"遊客身份"
+                mid.text = "ID:" + "遊客身份"
+                mName.text = "姓名:" + "遊客身份"
+                mPoint.text = "點數:"+"遊客身份"
             }else{
                 
                 
-                mid.text = "會員ID:" + (Auth.auth().currentUser?.uid)!
-                mName.text = "會員姓名:" + (Auth.auth().currentUser?.displayName)!
-                mPoint.text = "會員點數:"
+                mid.text = "ID:" + (Auth.auth().currentUser?.uid)!
+                mName.text = "姓名:" + (Auth.auth().currentUser?.displayName)!
+                mPoint.text = "點數:" + String(FirebaseManager.getUserPoint())
                 DispatchQueue.global(qos: .userInitiated).async {
                     let imageData:NSData = NSData(contentsOf: (Auth.auth().currentUser?.photoURL)!)!
                     // When from background thread, UI needs to be updated on main_queue
@@ -364,10 +379,40 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         let names = [ "是", "否"]
         for name in names {
             let action = UIAlertAction(title: name, style: .default) { (action) in
-                if (name == "看影片集點數"){
-                    if GADRewardBasedVideoAd.sharedInstance().isReady == true {
-                        GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
+                if (name == "是"){
+                    if(FirebaseManager.getUserWatchTime() != nil
+                        && FirebaseManager.getUserWatchTime() != 0 )
+                    {
+                        // 一天 毫秒 60 * 60 * 24 * 1000
+                        print("watch","1")
+
+                        var watchLastTime : Int = FirebaseManager.getUserWatchTime()
+                        var watchNoeTime : Int = FirebaseManager.getLastLoginTime()
+                        print("watch",watchLastTime)
+                        print("watch",watchNoeTime)
+
+                        if(watchNoeTime - watchLastTime > 60 * 60 * 6){
+                            self.watchAdVideo()
+                            
+                        }else{
+                            
+                            let controller = UIAlertController(title: "提示", message: "六小時才能領取一次唷", preferredStyle: .alert)
+                            let cancelAction = UIAlertAction(title: "好的", style: .cancel, handler: nil)
+                            controller.addAction(cancelAction)
+                            self.present(controller, animated: true, completion: nil)
+                            
+                            
+                        }
+                        
+                    }else{
+                        print("watch","2")
+
+                    
+                        self.watchAdVideo()
                     }
+                    
+                    
+                    
                 }else{
                     
                 }
@@ -384,6 +429,27 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)
+    }
+    func watchAdVideo(){
+        if GADRewardBasedVideoAd.sharedInstance().isReady == true {
+            GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
+        }
+        FirebaseManager.addWatchADTimeToFirebase(watchTime: FirebaseManager.getLastLoginTime())
+        
+    }
+    func checkIsMember() ->Bool{
+        let firebaseAuth = Auth.auth()
+        if firebaseAuth != nil {
+            if(firebaseAuth.currentUser!.isAnonymous){
+                
+                return false
+                
+            }else{
+                return true
+                
+            }
+        }
+        return false
     }
     
 }
