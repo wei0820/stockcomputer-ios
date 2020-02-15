@@ -94,7 +94,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         print("Reward received with currency: \(reward.type), amount \(reward.amount).")
         var point : Int = FirebaseManager.getUserPoint()
         var updatePoint : Int = point + Int(reward.amount)
-        FirebaseManager.addMemberTimeAndPintToFirebase(timestamp: updatePoint)
+        FirebaseManager.addMemberWatchAdFirebase(pont: updatePoint)
     }
     
     func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
@@ -384,10 +384,14 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
                         && FirebaseManager.getUserWatchTime() != 0 )
                     {
                         // 一天 毫秒 60 * 60 * 24 * 1000
-                        
+                        print("watch","1")
+
                         var watchLastTime : Int = FirebaseManager.getUserWatchTime()
                         var watchNoeTime : Int = FirebaseManager.getLastLoginTime()
-                        if(watchNoeTime - watchLastTime > 60 * 60 * 6 * 1000 ){
+                        print("watch",watchLastTime)
+                        print("watch",watchNoeTime)
+
+                        if(watchNoeTime - watchLastTime > 60 * 60 * 6){
                             self.watchAdVideo()
                             
                         }else{
@@ -404,9 +408,10 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
                         }
                         
                     }else{
+                        print("watch","2")
+
+                    
                         self.watchAdVideo()
-                        
-                        
                     }
                     
                     
