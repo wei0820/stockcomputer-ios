@@ -134,7 +134,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         get()
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
-                                                    withAdUnitID: "ca-app-pub-3940256099942544/1712485313")
+                                                    withAdUnitID: "ca-app-pub-7019441527375550/4519858733")
         //        self.productIDs.append("Member_Point_1000")
         //        self.productIDs.append("MenberPoint_1000")
         self.productIDs.append("richman")
