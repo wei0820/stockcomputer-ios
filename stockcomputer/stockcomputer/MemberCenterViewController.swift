@@ -92,6 +92,9 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
                             didRewardUserWith reward: GADAdReward) {
         print("Reward received with currency: \(reward.type), amount \(reward.amount).")
+        var point : Int = FirebaseManager.getUserPoint()
+        var updatePoint : Int = point + Int(reward.amount)
+        FirebaseManager.addMemberTimeAndPintToFirebase(timestamp: updatePoint)
     }
     
     func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
@@ -129,7 +132,13 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         
         setAdBanner()
         shopbtn.isHidden = false
-        rewardbtn.isHidden = false
+        if(checkIsMember()){
+            rewardbtn.isHidden = false
+            
+        }else{
+            rewardbtn.isHidden = true
+            
+        }
         
         get()
         GADRewardBasedVideoAd.sharedInstance().delegate = self
@@ -279,9 +288,17 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     func get(){
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
+            if(checkIsMember()){
+                lasttime.text = "上次登入時間:" + TimerManager.timeStampToDate(timestamp: FirebaseManager.getUserLlastlogintime())
+            }else{
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
+                lasttime.text = "最後登入時間:" + dateString
+            }
             
-    
-            lasttime.text = "上次登入時間:" + TimerManager.timeStampToDate(timestamp: FirebaseManager.getUserLlastlogintime())
+            
+            
             if(firebaseAuth.currentUser!.isAnonymous){
                 mid.text = "ID:" + "遊客身份"
                 mName.text = "姓名:" + "遊客身份"
@@ -363,9 +380,37 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         for name in names {
             let action = UIAlertAction(title: name, style: .default) { (action) in
                 if (name == "是"){
-                    if GADRewardBasedVideoAd.sharedInstance().isReady == true {
-                        GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
+                    if(FirebaseManager.getUserWatchTime() != nil
+                        && FirebaseManager.getUserWatchTime() != 0 )
+                    {
+                        // 一天 毫秒 60 * 60 * 24 * 1000
+                        
+                        var watchLastTime : Int = FirebaseManager.getUserWatchTime()
+                        var watchNoeTime : Int = FirebaseManager.getLastLoginTime()
+                        if(watchNoeTime - watchLastTime > 60 * 60 * 6 * 1000 ){
+                            self.watchAdVideo()
+                            
+                        }else{
+                            
+                            let controller = UIAlertController(title: "提示", message: "六小時才能領取一次唷", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "是", style: .default) { (_) in
+                            }
+                            controller.addAction(okAction)
+                            let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
+                            controller.addAction(cancelAction)
+                            self.present(controller, animated: true, completion: nil)
+                            
+                            
+                        }
+                        
+                    }else{
+                        self.watchAdVideo()
+                        
+                        
                     }
+                    
+                    
+                    
                 }else{
                     
                 }
@@ -382,6 +427,27 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)
+    }
+    func watchAdVideo(){
+        if GADRewardBasedVideoAd.sharedInstance().isReady == true {
+            GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
+        }
+        FirebaseManager.addWatchADTimeToFirebase(watchTime: FirebaseManager.getLastLoginTime())
+        
+    }
+    func checkIsMember() ->Bool{
+        let firebaseAuth = Auth.auth()
+        if firebaseAuth != nil {
+            if(firebaseAuth.currentUser!.isAnonymous){
+                
+                return false
+                
+            }else{
+                return true
+                
+            }
+        }
+        return false
     }
     
 }
