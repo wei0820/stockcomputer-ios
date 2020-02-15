@@ -15,8 +15,8 @@ import Instabug
 class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
     
     var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","股票討論分享區"]
-
-
+    
+    
     var ref: DatabaseReference!
     
     
@@ -69,17 +69,17 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         }else if (name == itemName[4]){
             
             performSegue(withIdentifier: "number", sender: nil)
-
+            
         }else if (name == itemName[5]){
             
             performSegue(withIdentifier: "futures", sender: nil)
-
+            
         }else if (name == itemName[6]){
             performSegue(withIdentifier: "sellput", sender: nil)
-
+            
         }else if (name == itemName[7]){
             performSegue(withIdentifier: "sharelist", sender: nil)
-
+            
         }
         
         
@@ -95,14 +95,14 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         super.viewDidLoad()
         print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         setAdBanner()
-//        if((userDefaults.value(forKey: "userID")) != nil){
-//            setRightButton(s: "訪客")
-//
-//        }else{
-//
-//        }
+        //        if((userDefaults.value(forKey: "userID")) != nil){
+        //            setRightButton(s: "訪客")
+        //
+        //        }else{
+        //
+        //        }
         setRightButton(s: "會員中心")
-
+        
         //     CalculationManager.getPrice(s: "2404")
         //        setInterstitial()
         //        ref = Database.database().reference()
@@ -116,7 +116,27 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         //                print("Open url : \(success)")
         //            })
         //        }
-        self.checkLoginTime()
+        
+        if(self.checkIsMember()){
+            FirebaseManager.getMemberDate()
+            if(FirebaseManager.getUserId() != nil && FirebaseManager.getUserPoint() != nil){
+                if(FirebaseManager.getUserPoint() == 0){
+                    FirebaseManager.addMemberDateToFirebase(point: 100)
+                }else{
+                    print("home",FirebaseManager.getUserPoint())
+                    print("home",FirebaseManager.getUserId())
+                    var point : Int = FirebaseManager.getUserPoint()
+                    self.checkLoginTime()
+
+                }
+                
+            }else{
+                FirebaseManager.addMemberDateToFirebase(point: 100)
+            }
+            
+        }
+        
+        
     }
     
     func setRightButton(s: String){
@@ -131,13 +151,13 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         self.navigationItem.rightBarButtonItem = rightButton
     }
     @objc func setting() {
-//        var isAnonymous = userDefaults.value(forKey: "userID")
-//        if((isAnonymous) != nil){
-//            setAlert()
-//            return
-//
-//        }
-//
+        //        var isAnonymous = userDefaults.value(forKey: "userID")
+        //        if((isAnonymous) != nil){
+        //            setAlert()
+        //            return
+        //
+        //        }
+        //
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
         let HomeVc = stroyboard.instantiateViewController(withIdentifier: "member")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;

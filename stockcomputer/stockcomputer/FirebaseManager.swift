@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Foundation
 import Firebase
+import UIKit
 
 class FirebaseManager {
     static let userDefaults = UserDefaults.standard
@@ -39,33 +39,39 @@ class FirebaseManager {
         }
         return ""
     }
-    static func getLastLoginTime() -> String{
+    static func getLastLoginTime() -> Int{
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
             if(!firebaseAuth.currentUser!.isAnonymous){
-                
+                //yyyy年MM月dd日
+                let now = Date()
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                //当前时间的时间戳
+                let timeInterval:TimeInterval = now.timeIntervalSince1970
+                  let timeStamp = Int(timeInterval)
+                  print("当前时间的时间戳：\(timeStamp)")
                 
-                return dateString
+//                var dateString = dateFormatter.string(from: (Auth.auth().currentUser?.metadata.lastSignInDate)!)
+                
+                return timeStamp
             }
-            return ""
+            return 0
             
         }
-        return ""
+        return 0
         
         
     }
     
-    static  func  addMemberDateToFirebase(point :String ){
+    static  func  addMemberDateToFirebase(point :Int ){
         var  id = self.getMemberId()
         if ( id == nil){
             id =  UiManager.getUUID()
         }
         let reference: DatabaseReference! = Database.database().reference().child("MemberList").child(id as! String)
         let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
-        let dateReviewReference = reference.child(DateManager.getDateString2())
+        let dateReviewReference = reference.child(id)
         // 新增節點資料
         var dateReview: [String : AnyObject] = [String : AnyObject]()
         dateReview["id"] = id as AnyObject
@@ -96,12 +102,17 @@ class FirebaseManager {
             if let dictionaryData = snapshot.value as? [String: AnyObject]{
                 var id : String = dictionaryData["id"] as! String
                 var name : String = dictionaryData["name"] as! String
-                var lastlogintime : String = dictionaryData["lastlogintime"] as! String
-                var point : String = dictionaryData["point"] as! String
+                var lastlogintime : Int = dictionaryData["lastlogintime"] as! Int
+                var point : Int = dictionaryData["point"] as! Int
                 userDefaults.set(id, forKey: "id")
                 userDefaults.set(name, forKey: "name")
                 userDefaults.set(lastlogintime, forKey: "lastlogintime")
                 userDefaults.set(point, forKey: "point")
+                print("member",id)
+                print("member",name)
+                print("member",lastlogintime)
+                print("member",point)
+
             }
 
         }, withCancel: nil)
@@ -141,19 +152,48 @@ class FirebaseManager {
         return ""
     
     }
-    static func getUserLlastlogintime() ->String{
+    static func getUserLlastlogintime() ->Int{
         if(userDefaults.value(forKey: "lastlogintime") != nil){
-            return userDefaults.value(forKey: "lastlogintime")! as! String
+            return userDefaults.value(forKey: "lastlogintime")! as! Int
         }
-        return ""
+        return 0
     
     }
-    static func getUserPoint() ->String{
+    static func getUserPoint() ->Int{
         if(userDefaults.value(forKey: "point") != nil){
-            return userDefaults.value(forKey: "point")! as! String
+            return userDefaults.value(forKey: "point")! as! Int
         }
-        return ""
+        return 0
     
+    }
+    
+    
+    static  func  addMemberTimeAndPintToFirebase(){
+        var  id = self.getMemberId()
+        if ( id == nil){
+            id =  UiManager.getUUID()
+        }
+        let reference: DatabaseReference! = Database.database().reference().child("MemberList").child(id as! String)
+        let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
+        let dateReviewReference = reference.child(id)
+        var point :Int = getUserPoint()
+        var addPoint : Int = point + 100
+        // 新增節點資料
+        var dateReview: [String : AnyObject] = [String : AnyObject]()
+        dateReview["id"] = id as AnyObject
+        dateReview["name"] = getMemberName()  as AnyObject
+        dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
+        dateReview["point"] = addPoint   as AnyObject
+        dateReviewReference.updateChildValues(dateReview) { (err, ref) in
+            if err != nil{
+                print("err： \(err!)")
+                return
+            }
+            
+            print(ref.description())
+        }
+        
+        
     }
 }
 

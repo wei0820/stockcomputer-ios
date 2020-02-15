@@ -116,7 +116,6 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 return false
                 
             }else{
-                
                 return true
                 
             }
@@ -137,6 +136,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     }
     
     func checkLoginTime () {
+        print("checkLoginTime_last", FirebaseManager.getUserLlastlogintime())
         let now = Date()
         // 创建一个日期格式器
         let dformatter = DateFormatter()
@@ -144,50 +144,83 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         print("当前日期时间：\(dformatter.string(from: now))")
         //当前时间的时间戳
         let timeInterval:TimeInterval = now.timeIntervalSince1970
-        let timeStamp = Int(timeInterval * 1000)
+        let timeStamp = Int(timeInterval)
         print("当前时间的时间戳：\(timeStamp)")
         
         if(checkIsMember()){
             //获取当前时间
-            if((userDefaults.value(forKey: "logintime")) != nil){
-                
-                var lastTime :Int = userDefaults.value(forKey: "logintime")! as! Int
+            if(FirebaseManager.getUserLlastlogintime() != nil &&  FirebaseManager.getUserLlastlogintime() != 0){
+                var lastTime :Int =  FirebaseManager.getLastLoginTime()
                 print("checkLoginTime_last",lastTime)
                 print("checkLoginTime_now",timeStamp)
                 // 一天 毫秒 60 * 60 * 24 * 1000
-                if(timeStamp - lastTime > 60 * 60 * 24 * 1000){
+                var now :Int = timeStamp - lastTime
+                var dayTime : Int = 86400
+                print("checkLoginTime_now",now)
+                
+                if( now < dayTime){
                     print("checkLoginTime","還沒到")
+                    
                     
                 }else{
                     print("checkLoginTime","到")
-                    userDefaults.set(timeStamp, forKey: "logintime")
+                    var message = "本次簽到時間:" + timeStanpToSring(timeStamp: Float(timeStamp)) + "是否簽到領取獎勵"
+                    let controller = UIAlertController(title: "簽到提醒", message: message, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "是", style: .default) { (_) in
+                        FirebaseManager.addMemberTimeAndPintToFirebase()
+                    }
+                    controller.addAction(okAction)
+                    let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
+                    controller.addAction(cancelAction)
+                    present(controller, animated: true, completion: nil)
                     
                 }
                 
                 
             }else{
-                print("checkLoginTime")
-                userDefaults.set(timeStamp, forKey: "logintime")
+                var message = "本次簽到時間:" + timeStanpToSring(timeStamp: Float(timeStamp)) + "是否簽到領取獎勵"
+                let controller = UIAlertController(title: "簽到提醒", message: message, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "是", style: .default) { (_) in
+                    FirebaseManager.addMemberTimeAndPintToFirebase()
+                }
+                controller.addAction(okAction)
+                let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
+                controller.addAction(cancelAction)
+                present(controller, animated: true, completion: nil)
+                
             }
+        }
+        
+        
+    }
+    
+}
+func getMemberDateList(){
+    
+    let firebaseAuth = Auth.auth()
+    if firebaseAuth != nil {
+        if(!firebaseAuth.currentUser!.isAnonymous){
+            
+            (Auth.auth().currentUser?.uid)!
+            (Auth.auth().currentUser?.displayName)!
             
             
         }
         
     }
-    func getMemberDateList(){
-        
-        let firebaseAuth = Auth.auth()
-        if firebaseAuth != nil {
-            if(!firebaseAuth.currentUser!.isAnonymous){
-                
-                (Auth.auth().currentUser?.uid)!
-                (Auth.auth().currentUser?.displayName)!
-                
-                
-            }
-            
-        }
-        
+    
 }
 
+func timeStanpToSring (timeStamp :Float) -> String{
+    //转换为时间
+    let timeInterval:TimeInterval = TimeInterval(timeStamp)
+    let date = Date(timeIntervalSince1970: timeInterval)
+      
+    //格式话输出
+    let dformatter = DateFormatter()
+    dformatter.dateFormat = "yyyy年MM月dd日 HH:mm"
+    print("对应的日期时间：\(dformatter.string(from: date))")
+    return (dformatter.string(from: date))
 }
+
+
