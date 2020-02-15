@@ -52,7 +52,7 @@ class TimerManager{
 
         let dateFormat:DateFormatter = DateFormatter()
 
-        dateFormat.dateFormat = "yyyy年MM月dd日 HH:mm:ss:"
+        dateFormat.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
         var dateSting = dateFormat.string(from: date)
         
 
