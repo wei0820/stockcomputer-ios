@@ -129,7 +129,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         
         setAdBanner()
         shopbtn.isHidden = false
-        rewardbtn.isHidden = true
+        rewardbtn.isHidden = false
         
         get()
         GADRewardBasedVideoAd.sharedInstance().delegate = self
@@ -362,7 +362,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         let names = [ "是", "否"]
         for name in names {
             let action = UIAlertAction(title: name, style: .default) { (action) in
-                if (name == "看影片集點數"){
+                if (name == "是"){
                     if GADRewardBasedVideoAd.sharedInstance().isReady == true {
                         GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
                     }
