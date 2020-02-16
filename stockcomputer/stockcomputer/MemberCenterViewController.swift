@@ -95,6 +95,8 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         var point : Int = FirebaseManager.getUserPoint()
         var updatePoint : Int = point + Int(reward.amount)
         FirebaseManager.addMemberWatchAdFirebase(pont: updatePoint)
+        FirebaseManager.getMemberDate()
+
     }
     
     func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
@@ -429,6 +431,8 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
             GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
         }
         FirebaseManager.addWatchADTimeToFirebase(watchTime: FirebaseManager.getLastLoginTime())
+        FirebaseManager.getMemberDate()
+
         
     }
     func checkIsMember() ->Bool{
