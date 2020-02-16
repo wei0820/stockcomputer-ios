@@ -151,19 +151,13 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
             //获取当前时间
             if(FirebaseManager.getUserLlastlogintime() != nil &&  FirebaseManager.getUserLlastlogintime() != 0){
                 var lastTime :Int =  FirebaseManager.getUserLlastlogintime()
-                print("checkLoginTime_last",lastTime)
-                print("checkLoginTime_now",timeStamp)
                 // 一天 毫秒 60 * 60 * 24 * 1000
                 var now :Int = timeStamp - lastTime
                 var dayTime : Int = 86400
-                print("checkLoginTime_now",now)
-                
                 if( now < dayTime){
-                    print("checkLoginTime","還沒到")
                     
                     
                 }else{
-                    print("checkLoginTime","到")
                     var message = "本次簽到時間:" + timeStanpToSring(timeStamp: Float(timeStamp)) + "是否簽到領取獎勵"
                     let controller = UIAlertController(title: "簽到提醒", message: message, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "是", style: .default) { (_) in
