@@ -10,8 +10,8 @@ import Foundation
 
 public class DateManager{
     //计算当月天数
- public func countOfDaysInCurrentMonth() ->Int {
-    
+    public func countOfDaysInCurrentMonth() ->Int {
+        
         let calendar = Calendar(identifier:Calendar.Identifier.gregorian)
         let range = (calendar as NSCalendar?)?.range(of: NSCalendar.Unit.day, in: NSCalendar.Unit.month, for: Date())
         return (range?.length)!
@@ -40,10 +40,20 @@ public class DateManager{
     public static func getDateforDate() -> String {
         
         let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM/dd"
-            // 取得現在日期資訊
-            let timeString = dateFormatter.string(from: Date())
-            return timeString
+        dateFormatter.dateFormat = "MM/dd"
+        // 取得現在日期資訊
+        let timeString = dateFormatter.string(from: Date())
+        return timeString
         
     }
+        public static func distancesFrom(_ startingDate: Date, to resultDate: Date) -> Int {
+  
+        let gregorian = Calendar(identifier: Calendar.Identifier.gregorian)
+        //如果计算相差的小时数，可改为.CalendarUnitHour; day改为hour
+        let comps = (gregorian as NSCalendar).components(NSCalendar.Unit.day, from: startingDate, to: resultDate, options:.wrapComponents)
+        return comps.day!
+    }
+    
 }
+
+
