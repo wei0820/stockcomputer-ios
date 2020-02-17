@@ -127,13 +127,13 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                 }else{
                     var point : Int = FirebaseManager.getUserPoint()
                     self.checkLoginTime()
+                    FirebaseManager.getMemberDate()
 //                    FirebaseManager.setLoginUpdateUserData()
-                    
-
                 }
                 
             }else{
                 FirebaseManager.addMemberDateToFirebase(point: 100)
+                FirebaseManager.getMemberDate()
             }
             
         }
