@@ -15,7 +15,7 @@ import Instabug
 class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
     
 //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","股票討論分享區"]
-    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算"]
       
     
     var ref: DatabaseReference!
@@ -77,6 +77,8 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             
         }else if (name == itemName[6]){
             performSegue(withIdentifier: "sellput", sender: nil)
+        }else if (name == itemName[7]){
+            performSegue(withIdentifier: "Margin", sender: nil)
         }
             
 //        }else if (name == itemName[7]){
