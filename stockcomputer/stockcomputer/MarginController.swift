@@ -22,13 +22,15 @@ class MarginController: MGoogleADViewController{
     var startDateStr :Date? = nil
     var EndDateStr :Date? = nil
     @IBAction func cal_btn(_ sender: Any) {
-        if(startDateStr! == EndDateStr!){
-            setToast(s:"兩個日期請勿相同！！")
-
+        var _ : Int  =  DateManager.distancesFrom(startDateStr!, to: EndDateStr!)
+        if(!buyNum.text!.isEmpty && !sellNum.text!.isEmpty && !buyPrice.text!.isEmpty && !sellPrice.text!.isEmpty){
+            
         }else{
-            setToast(s: String(DateManager.distancesFrom(startDateStr!, to: EndDateStr!)))
-
+            
         }
+        
+
+        
         
     }
     override func viewDidLoad() {
@@ -45,7 +47,6 @@ class MarginController: MGoogleADViewController{
         sellNum.keyboardType = .decimalPad
         buyPrice.keyboardType = .decimalPad
         sellPrice.keyboardType = .decimalPad
-        
         buyNum.resignFirstResponder()
         sellNum.resignFirstResponder()
         buyPrice.resignFirstResponder()
@@ -100,17 +101,9 @@ class MarginController: MGoogleADViewController{
         self.view.addSubview(date)
         EndDate.tag = 300
         self.view.addSubview(EndDate)
-        
-        
-        
         // 增加一個觸控事件
         let tap = UITapGestureRecognizer(target: self, action: #selector(MarginController.hideKeyboard(tapG:)))
-        
         tap.cancelsTouchesInView = false
-        
-    
-
-
         // 加在最基底的 self.view 上
         self.view.addGestureRecognizer(tap)
         

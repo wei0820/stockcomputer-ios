@@ -14,9 +14,9 @@ import FacebookLogin
 import Instabug
 class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
     
-//    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","股票討論分享區"]
+    //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","股票討論分享區"]
     var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算"]
-      
+    
     
     var ref: DatabaseReference!
     
@@ -80,11 +80,11 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         }else if (name == itemName[7]){
             performSegue(withIdentifier: "Margin", sender: nil)
         }
-            
-//        }else if (name == itemName[7]){
-//            performSegue(withIdentifier: "sharelist", sender: nil)
-//
-//        }
+        
+        //        }else if (name == itemName[7]){
+        //            performSegue(withIdentifier: "sharelist", sender: nil)
+        //
+        //        }
         
         
         
@@ -106,6 +106,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         //
         //        }
         setRightButton(s: "會員中心")
+        setLeftButton(s: "簽到")
         
         //     CalculationManager.getPrice(s: "2404")
         //        setInterstitial()
@@ -121,6 +122,23 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         //            })
         //        }
         
+        
+        
+        
+    }
+    func setLeftButton(s: String){
+        // 導覽列右邊按鈕
+        
+        let rightButton = UIBarButtonItem(
+            title:s,
+            style:.plain,
+            target:self,
+            action:#selector(ViewController.checkIn))
+        // 加到導覽列中
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    @objc func checkIn() {
         if(self.checkIsMember()){
             FirebaseManager.getMemberDate()
             if(FirebaseManager.getUserId() != nil && FirebaseManager.getUserPoint() != nil){
@@ -130,7 +148,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                     var point : Int = FirebaseManager.getUserPoint()
                     self.checkLoginTime()
                     FirebaseManager.getMemberDate()
-//                    FirebaseManager.setLoginUpdateUserData()
                 }
                 
             }else{
@@ -140,28 +157,23 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             
         }
         
-        
     }
+    
+    
     
     func setRightButton(s: String){
         // 導覽列右邊按鈕
         
-        let rightButton = UIBarButtonItem(
+        let LeftButton = UIBarButtonItem(
             title:s,
             style:.plain,
             target:self,
             action:#selector(ViewController.setting))
         // 加到導覽列中
-        self.navigationItem.rightBarButtonItem = rightButton
+        self.navigationItem.leftBarButtonItem = LeftButton
     }
     @objc func setting() {
-        //        var isAnonymous = userDefaults.value(forKey: "userID")
-        //        if((isAnonymous) != nil){
-        //            setAlert()
-        //            return
-        //
-        //        }
-        //
+        
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
         let HomeVc = stroyboard.instantiateViewController(withIdentifier: "member")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
