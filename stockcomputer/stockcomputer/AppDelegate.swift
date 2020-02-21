@@ -91,10 +91,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         print(remoteMessage.appData)
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        
         let isInstabugNotification = Replies.didReceiveRemoteNotification(userInfo)
+        
     }
-    
-    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         // If you are receiving a notification message while your app is in the background,
@@ -221,7 +221,7 @@ extension AppDelegate : MessagingDelegate {
                 print("Model ", updateResults.model)
                 print("UpdateType ", updateResults.updateType)
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error.localizedDescription) 
             }
         }
     }

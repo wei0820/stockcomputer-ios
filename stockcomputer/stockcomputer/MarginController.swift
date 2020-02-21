@@ -14,6 +14,7 @@ class MarginController: MGoogleADViewController{
     var formatter: DateFormatter! = nil
     @IBOutlet weak var date: UITextField!
     
+    @IBOutlet weak var percentageTextField: UITextField!
     @IBOutlet weak var buyNum: UITextField!
     @IBOutlet weak var sellNum: UITextField!
     @IBOutlet weak var buyPrice: UITextField!
@@ -22,10 +23,42 @@ class MarginController: MGoogleADViewController{
     var startDateStr :Date? = nil
     var EndDateStr :Date? = nil
     @IBAction func cal_btn(_ sender: Any) {
-        var _ : Int  =  DateManager.distancesFrom(startDateStr!, to: EndDateStr!)
         if(!buyNum.text!.isEmpty && !sellNum.text!.isEmpty && !buyPrice.text!.isEmpty && !sellPrice.text!.isEmpty){
             
+            var sellPirceInt :Int = Int(sellPrice.text!)!
+            var buyPricepInt : Int = Int(buyPrice.text!)!
+            var sellNumInt : Int =  Int(sellNum.text!)!
+            var buyNumInt  : Int =  Int(buyNum.text!)!
+            var percentageInt : Int = Int(percentageTextField.text!)!
+            var percentageDouble : Double = Double(percentageInt)  * 0.01
+            /**
+             作空回補
+              範例：當日融券賣出10元10張，10天後融券買回12元10張，其應收付金額計算？
+              1) (星期一) 券賣10元10張， ((券賣留倉，僅須先付9成保證金)
+             應付金額：10元 *10,000股=100,000元 * 9成= 90,000元
+              2) (隔週星期三) 券買12元10張，應收金額：
+             手續費、交易稅、借券費(萬分之8 - 參考)及融券利息(年利率0.4% - 參考)等券回補時才會扣除。
+             融券的擔保品：10元 *10,000股=100,000元
+             手續費：100,000元 * 0.1425%=142元
+             交易稅：100,000元 * 0.3%=300元
+             借券費：100,000元 * 0.08%=80元
+             融券擔保品：100,000-142-300-80=99,478元
+             融券的保證金：10 * 10,000股=100,000元 * 9成=90,000元
+             利息：﹝99,478 * 0.4% * (9/365)﹞ + ﹝90,000 * 0.4%X(9/365)﹞=9.8+8.8=18元
+             回補價金：12元 * 10,000股=120,000元 + 171元 (120,000*0.1425%)=120,171元
+             應收金額：99,478元 - 120,171元 + 90,000元 + 18元=69,325元
+             */
+            // 付出的成本
+            var  dayInt: Int  =  DateManager.distancesFrom(startDateStr!, to: EndDateStr!)
+            var sellPriceInt = sellNumInt * sellPirceInt
+            
+            
+            
+            
+            
         }else{
+            
+            setToast(s: "請勿輸入空值")
             
         }
         
