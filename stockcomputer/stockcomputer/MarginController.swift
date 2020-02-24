@@ -51,6 +51,24 @@ class MarginController: MGoogleADViewController{
             // 付出的成本
             var  dayInt: Int  =  DateManager.distancesFrom(startDateStr!, to: EndDateStr!)
             var sellPriceInt = sellNumInt * sellPirceInt
+            var buyPriceInt = buyNumInt * buyPricepInt
+            // 手續費
+            var handPrice : Double = Double(sellPriceInt) * 0.001425
+            // 交易稅
+            var changePrice : Double =   Double(sellPriceInt) * 0.003
+            var borrowPrice  : Double  = Double(sellPriceInt) * 0.0008
+            //融券擔保品
+            var  guaranteePrice : Double =  Double(sellPriceInt) - handPrice - changePrice - borrowPrice
+            //融券的保證金
+            var  guaranteeMoney : Double  = Double(sellPriceInt)  * percentageDouble
+            //利息
+            var  interestPrice  :Double = ((guaranteePrice * 0.004) * Double((dayInt / 365 ))) + ((guaranteeMoney * 0.004) * Double((dayInt / 365 )))
+            
+            
+            
+                
+            
+            
             
             
             
