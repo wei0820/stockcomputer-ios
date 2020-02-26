@@ -29,6 +29,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         }else{
             adBannerView?.isHidden = false
         }
+        FirebaseManager.getMemberDate()
         
         
     }
@@ -155,7 +156,11 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 var now :Int = timeStamp - lastTime
                 var dayTime : Int = 86400
                 if( now < dayTime){
-                    
+                    let controller = UIAlertController(title: "提示", message: "本次已經簽到過 請明天之後再來簽到", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "好的", style: .default) { (_) in
+                    }
+                    controller.addAction(okAction)
+                    present(controller, animated: true, completion: nil)
                     
                 }else{
                     var message = "本次簽到時間:" + timeStanpToSring(timeStamp: Float(timeStamp)) + "是否簽到領取獎勵"
