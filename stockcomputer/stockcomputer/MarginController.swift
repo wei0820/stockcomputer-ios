@@ -13,6 +13,7 @@ class MarginController: MGoogleADViewController{
     let fullScreenSize = UIScreen.main.bounds.size
     var formatter: DateFormatter! = nil
     @IBOutlet weak var date: UITextField!
+    @IBOutlet weak var label_1: UILabel!
     
     @IBOutlet weak var percentageTextField: UITextField!
     @IBOutlet weak var buyNum: UITextField!
@@ -62,7 +63,11 @@ class MarginController: MGoogleADViewController{
             //融券的保證金
             var  guaranteeMoney : Double  = Double(sellPriceInt)  * percentageDouble
             //利息
-            var  interestPrice  :Double = ((guaranteePrice * 0.004) * Double((dayInt / 365 ))) + ((guaranteeMoney * 0.004) * Double((dayInt / 365 )))
+            var  interestPrice  : Double =  ((guaranteePrice * 0.004) * Double((dayInt / 365 ))) + ((guaranteeMoney  * 0.004) * Double((dayInt / 365 )))
+            
+            label_1.text = "利息:" + String(interestPrice)
+            
+            
             
             
             
