@@ -8,6 +8,10 @@
 
 import UIKit
 import GoogleMobileAds
+import Kanna
+import Alamofire
+import Toaster
+import JGProgressHUD
 
 class MarginController: MGoogleADViewController{
     let fullScreenSize = UIScreen.main.bounds.size
@@ -33,21 +37,13 @@ class MarginController: MGoogleADViewController{
             var percentageInt : Int = Int(percentageTextField.text!)!
             var percentageDouble : Double = Double(percentageInt)  * 0.01
             /**
-             作空回補
-              範例：當日融券賣出10元10張，10天後融券買回12元10張，其應收付金額計算？
-              1) (星期一) 券賣10元10張， ((券賣留倉，僅須先付9成保證金)
-             應付金額：10元 *10,000股=100,000元 * 9成= 90,000元
-              2) (隔週星期三) 券買12元10張，應收金額：
-             手續費、交易稅、借券費(萬分之8 - 參考)及融券利息(年利率0.4% - 參考)等券回補時才會扣除。
-             融券的擔保品：10元 *10,000股=100,000元
-             手續費：100,000元 * 0.1425%=142元
-             交易稅：100,000元 * 0.3%=300元
-             借券費：100,000元 * 0.08%=80元
-             融券擔保品：100,000-142-300-80=99,478元
-             融券的保證金：10 * 10,000股=100,000元 * 9成=90,000元
-             利息：﹝99,478 * 0.4% * (9/365)﹞ + ﹝90,000 * 0.4%X(9/365)﹞=9.8+8.8=18元
-             回補價金：12元 * 10,000股=120,000元 + 171元 (120,000*0.1425%)=120,171元
-             應收金額：99,478元 - 120,171元 + 90,000元 + 18元=69,325元
+             券賣：
+             >>9成本金(235 *1000 * 90%)=交割保證金(211,500元)
+             >>本金(235 *1000*1)-手續費(235 *1000*1*1.425‰)-證交稅(235 *1000*1*3‰)-借券費(235 *1000*1*0.8‰)=擔保品(233,772元)
+             券買：
+             >>[保證金(211,500)+擔保品(233,772)]*0.1%融券利率*24天/365=利息(29元)
+             >>本金(222.5 *1000) +手續費(222.5 * 1000 * 1張 *1.425 ‰)=回補價金(222,817元)
+             >>擔保品(233,772)-回補價金(222,817)+保證金(211,500)+利息(29)=應收金額(222,484元)
              */
             // 付出的成本
             var  dayInt: Int  =  DateManager.distancesFrom(startDateStr!, to: EndDateStr!)
@@ -65,18 +61,43 @@ class MarginController: MGoogleADViewController{
             //利息
             var  interestPrice  : Double =  ((guaranteePrice * 0.004) * Double((dayInt / 365 ))) + ((guaranteeMoney  * 0.004) * Double((dayInt / 365 )))
             
-            label_1.text = "利息:" + String(interestPrice)
+            label_1.text = "券賣成本:" + String(guaranteePrice)
             
+            print(dayInt)
+            print(sellPriceInt)
+            print(buyPriceInt)
+            print(handPrice)
+            print(changePrice)
+            print(borrowPrice)
+            print(guaranteePrice)
+            print(guaranteeMoney)
             
-            
-            
-            
-                
-            
-            
-            
-            
-            
+            print(interestPrice)
+
+            print((guaranteePrice * 0.004))
+            print((guaranteeMoney * 0.004))
+
+            print(Double((dayInt / 365 )))
+
+            /*
+             
+             
+             2
+             160000
+             150000
+            手續費 228.0
+            交易稅 480.0
+            借券費 128.0
+            融券擔保品 159164.0
+            融券的保證金  14400.0
+             0.0
+             
+             636.6560000000001
+                      57.6
+                      0.0
+             */
+   
+         
             
             
         }else{
@@ -95,6 +116,7 @@ class MarginController: MGoogleADViewController{
         // 初始化 formatter 並設置日期顯示的格式
         setDatePickerView()
         setUITextField()
+  
         
         
     }
@@ -196,4 +218,6 @@ class MarginController: MGoogleADViewController{
     @objc func hideKeyboard(tapG:UITapGestureRecognizer){
         self.view.endEditing(true)
     }
+    
+   
 }
