@@ -18,8 +18,11 @@ class MarginController: MGoogleADViewController{
     var formatter: DateFormatter! = nil
     @IBOutlet weak var date: UITextField!
     @IBOutlet weak var label_1: UILabel!
+    @IBOutlet weak var label_2: UILabel!
+    @IBOutlet weak var label_3: UILabel!
+    @IBOutlet weak var label_4: UILabel!
     
-    @IBOutlet weak var percentageTextField: UITextField!
+    @IBOutlet weak var label_5: UILabel!
     @IBOutlet weak var buyNum: UITextField!
     @IBOutlet weak var sellNum: UITextField!
     @IBOutlet weak var buyPrice: UITextField!
@@ -34,8 +37,6 @@ class MarginController: MGoogleADViewController{
             var buyPricepInt : Int = Int(buyPrice.text!)!
             var sellNumInt : Int =  Int(sellNum.text!)!
             var buyNumInt  : Int =  Int(buyNum.text!)!
-            var percentageInt : Int = Int(percentageTextField.text!)!
-            var percentageDouble : Double = Double(percentageInt)  * 0.01
             /**
              券賣：
              >>9成本金(235 *1000 * 90%)=交割保證金(211,500元)
@@ -57,11 +58,12 @@ class MarginController: MGoogleADViewController{
             //融券擔保品
             var  guaranteePrice : Double =  Double(sellPriceInt) - handPrice - changePrice - borrowPrice
             //融券的保證金
-            var  guaranteeMoney : Double  = Double(sellPriceInt)  * percentageDouble
+            var  guaranteeMoney : Double  = Double(sellPriceInt)  * 0.9
             //利息
-            var  interestPrice  : Double =  ((guaranteePrice * 0.004) * Double((dayInt / 365 ))) + ((guaranteeMoney  * 0.004) * Double((dayInt / 365 )))
+            var  interestPrice  : Double = ((guaranteePrice + guaranteeMoney)  * 0.002) * ( Double(dayInt) / 365)
             
-            label_1.text = "券賣成本:" + String(guaranteePrice)
+            
+            label_1.text = "券賣成本:" + String(interestPrice)
             
             print(dayInt)
             print(sellPriceInt)
