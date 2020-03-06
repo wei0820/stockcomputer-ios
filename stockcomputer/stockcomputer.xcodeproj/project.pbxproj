@@ -39,7 +39,6 @@
 		B77B6F662205D53300A674D6 /* MarginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F652205D53300A674D6 /* MarginController.swift */; };
 		B77B6F682205D55100A674D6 /* FinancingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F672205D55100A674D6 /* FinancingViewController.swift */; };
 		B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A4612269998E00CF6005 /* HongKongController.swift */; };
-		B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */; };
 		B7E8C174226F015500792815 /* DistributionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C173226F015500792815 /* DistributionController.swift */; };
 		B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */; };
 		B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C1772270197900792815 /* FBLoginViewController.swift */; };
@@ -84,7 +83,6 @@
 		B77B6F652205D53300A674D6 /* MarginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginController.swift; sourceTree = "<group>"; };
 		B77B6F672205D55100A674D6 /* FinancingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancingViewController.swift; sourceTree = "<group>"; };
 		B7E0A4612269998E00CF6005 /* HongKongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongController.swift; sourceTree = "<group>"; };
-		B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongStockController.swift; sourceTree = "<group>"; };
 		B7E8C173226F015500792815 /* DistributionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionController.swift; sourceTree = "<group>"; };
 		B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyLaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7E8C1772270197900792815 /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 				B77B6F652205D53300A674D6 /* MarginController.swift */,
 				B77B6F672205D55100A674D6 /* FinancingViewController.swift */,
 				B7E0A4612269998E00CF6005 /* HongKongController.swift */,
-				B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */,
 				B7E8C173226F015500792815 /* DistributionController.swift */,
 				B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */,
 				B7E8C1772270197900792815 /* FBLoginViewController.swift */,
@@ -319,7 +316,6 @@
 				8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */,
 				8E10DDB92359A955006A46F2 /* StockNumberViewController.swift in Sources */,
 				8E10DDAF234C3402006A46F2 /* MGoogleADViewController.swift in Sources */,
-				B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */,
 				8E48E4F423F3E66600384D25 /* DateManager.swift in Sources */,
 				8EBF7980236978F000E569C2 /* QAListViewController.swift in Sources */,
 				B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */,
