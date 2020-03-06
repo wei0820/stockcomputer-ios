@@ -33,6 +33,8 @@ class MarginController: MGoogleADViewController{
     var EndDateStr :Date? = nil
     @IBAction func cal_btn(_ sender: Any) {
         if(!buyNum.text!.isEmpty && !sellNum.text!.isEmpty && !buyPrice.text!.isEmpty && !sellPrice.text!.isEmpty){
+         
+            
             
             var sellPirceInt :Int = Int(sellPrice.text!)!
             var buyPricepInt : Int = Int(buyPrice.text!)!
@@ -81,32 +83,6 @@ class MarginController: MGoogleADViewController{
             }
             label_6.text = "預估收益:" + String(getMoney)
             
-
-
-        
-
-
-            /*
-             
-             
-             2
-             160000
-             150000
-            手續費 228.0
-            交易稅 480.0
-            借券費 128.0
-            融券擔保品 159164.0
-            融券的保證金  14400.0
-             0.0
-             
-             636.6560000000001
-                      57.6
-                      0.0
-             */
-   
-         
-            
-            
         }else{
             
             setToast(s: "請勿輸入空值")
@@ -120,7 +96,8 @@ class MarginController: MGoogleADViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "融券獲利計算"
-        // 初始化 formatter 並設置日期顯示的格式
+        sellNum.text = "1000"
+        buyNum.text = "1000"
         setDatePickerView()
         setUITextField()
   

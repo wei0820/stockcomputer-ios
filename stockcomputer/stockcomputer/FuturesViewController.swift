@@ -30,6 +30,8 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "期貨獲利計算"
+        sellnum.text = "1000"
+        buynum.text = "1000"
         
         buyprice.keyboardType = .numberPad
         sellprice.keyboardType = .numberPad
