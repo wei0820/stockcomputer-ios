@@ -1578,9 +1578,20 @@
                                     <action selector="cal_btn:" destination="nJi-N6-8h6" eventType="touchUpInside" id="e38-gt-dM4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29g-KT-2dS">
+                                <rect key="frame" x="16" y="480" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="f7z-Hl-ZOb"/>
+                                    <constraint firstAttribute="width" constant="343" id="gB7-ME-ovl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="29g-KT-2dS" firstAttribute="top" secondItem="w2U-IS-LJu" secondAttribute="bottom" constant="8" id="0YA-Ud-dl0"/>
                             <constraint firstItem="q8T-Rj-GA9" firstAttribute="top" secondItem="6bx-Wh-9K1" secondAttribute="bottom" constant="4" id="0rp-SB-WLn"/>
                             <constraint firstItem="0K9-zv-9vD" firstAttribute="trailing" secondItem="74P-Df-1ZH" secondAttribute="trailing" constant="16" id="1E1-f3-FS5"/>
                             <constraint firstItem="0K9-zv-9vD" firstAttribute="trailing" secondItem="ctP-6b-5Gt" secondAttribute="trailing" constant="16" id="2ab-pU-7n2"/>
@@ -1596,6 +1607,7 @@
                             <constraint firstAttribute="bottom" secondItem="FVf-Yn-T0Q" secondAttribute="bottom" constant="291" id="DBf-ph-EQk"/>
                             <constraint firstItem="ctP-6b-5Gt" firstAttribute="top" secondItem="0K9-zv-9vD" secondAttribute="top" constant="10" id="DhK-Z5-pCQ"/>
                             <constraint firstItem="0K9-zv-9vD" firstAttribute="trailing" secondItem="w2U-IS-LJu" secondAttribute="trailing" constant="16" id="DkT-ho-yR9"/>
+                            <constraint firstItem="0K9-zv-9vD" firstAttribute="trailing" secondItem="29g-KT-2dS" secondAttribute="trailing" constant="16" id="Dog-kl-fKA"/>
                             <constraint firstItem="Ml9-6q-yeK" firstAttribute="top" secondItem="ctP-6b-5Gt" secondAttribute="bottom" constant="8" id="Et0-QC-evv"/>
                             <constraint firstItem="zwc-BH-0sQ" firstAttribute="top" secondItem="Rb7-Ex-JhS" secondAttribute="bottom" constant="8" id="FZp-n8-Xy1"/>
                             <constraint firstItem="0K9-zv-9vD" firstAttribute="trailing" secondItem="heP-Jv-g4M" secondAttribute="trailing" constant="16" id="Isv-V2-vtX"/>
@@ -1612,6 +1624,7 @@
                             <constraint firstItem="H6X-2a-4nh" firstAttribute="top" secondItem="eab-hq-24t" secondAttribute="bottom" constant="8" id="TpZ-70-Maw"/>
                             <constraint firstItem="zwc-BH-0sQ" firstAttribute="leading" secondItem="0K9-zv-9vD" secondAttribute="leading" constant="21" id="X1s-xU-zdL"/>
                             <constraint firstItem="0K9-zv-9vD" firstAttribute="trailing" secondItem="FVf-Yn-T0Q" secondAttribute="trailing" constant="16" id="XR8-2Q-yWk"/>
+                            <constraint firstItem="29g-KT-2dS" firstAttribute="leading" secondItem="0K9-zv-9vD" secondAttribute="leading" constant="16" id="ahO-jw-eNk"/>
                             <constraint firstItem="0K9-zv-9vD" firstAttribute="trailing" secondItem="q8T-Rj-GA9" secondAttribute="trailing" constant="16" id="any-z9-fHm"/>
                             <constraint firstItem="d7q-6I-LFO" firstAttribute="leading" secondItem="0K9-zv-9vD" secondAttribute="leading" constant="16" id="chh-jb-6fK"/>
                             <constraint firstItem="FVf-Yn-T0Q" firstAttribute="leading" secondItem="0K9-zv-9vD" secondAttribute="leading" constant="16" id="d0X-Xa-vmj"/>
@@ -1637,6 +1650,7 @@
                         <outlet property="label_3" destination="d7q-6I-LFO" id="S5z-0h-lcG"/>
                         <outlet property="label_4" destination="74P-Df-1ZH" id="aXZ-ni-qEj"/>
                         <outlet property="label_5" destination="w2U-IS-LJu" id="Yen-r8-X63"/>
+                        <outlet property="label_6" destination="29g-KT-2dS" id="MlT-hf-mkw"/>
                         <outlet property="sellNum" destination="J3u-TK-ulR" id="nT8-cU-rfY"/>
                         <outlet property="sellPrice" destination="H6X-2a-4nh" id="Rt5-9z-sgK"/>
                     </connections>

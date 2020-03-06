@@ -22,6 +22,7 @@ class MarginController: MGoogleADViewController{
     @IBOutlet weak var label_3: UILabel!
     @IBOutlet weak var label_4: UILabel!
     
+    @IBOutlet weak var label_6: UILabel!
     @IBOutlet weak var label_5: UILabel!
     @IBOutlet weak var buyNum: UITextField!
     @IBOutlet weak var sellNum: UITextField!
@@ -32,6 +33,8 @@ class MarginController: MGoogleADViewController{
     var EndDateStr :Date? = nil
     @IBAction func cal_btn(_ sender: Any) {
         if(!buyNum.text!.isEmpty && !sellNum.text!.isEmpty && !buyPrice.text!.isEmpty && !sellPrice.text!.isEmpty){
+         
+            
             
             var sellPirceInt :Int = Int(sellPrice.text!)!
             var buyPricepInt : Int = Int(buyPrice.text!)!
@@ -56,51 +59,29 @@ class MarginController: MGoogleADViewController{
             var changePrice : Double =   Double(sellPriceInt) * 0.003
             var borrowPrice  : Double  = Double(sellPriceInt) * 0.0008
             //融券擔保品
-            var  guaranteePrice : Double =  Double(sellPriceInt) - handPrice - changePrice - borrowPrice
+            var  guaranteePrice : Int =  Int(Double(sellPriceInt) - handPrice - changePrice - borrowPrice)
             //融券的保證金
-            var  guaranteeMoney : Double  = Double(sellPriceInt)  * 0.9
+            var  guaranteeMoney : Int  = Int(Double(sellPriceInt)  * 0.9)
             //利息
-            var  interestPrice  : Double = ((guaranteePrice + guaranteeMoney)  * 0.002) * ( Double(dayInt) / 365)
+            var  interestPrice  = Int((Double(guaranteePrice + guaranteeMoney) * Double(dayInt) * 0.002) / 365)
+            var returnMoney : Int = buyPriceInt + Int(handPrice)
+            var shouldPayMoney : Int =  Int(guaranteePrice) - returnMoney + Int(interestPrice) + Int(guaranteeMoney)
+            var getMoney = shouldPayMoney - guaranteeMoney
             
             
-            label_1.text = "券賣成本:" + String(interestPrice)
-            
-            print(dayInt)
-            print(sellPriceInt)
-            print(buyPriceInt)
-            print(handPrice)
-            print(changePrice)
-            print(borrowPrice)
-            print(guaranteePrice)
-            print(guaranteeMoney)
-            
-            print(interestPrice)
+            label_1.text = "交割保證金:" + String(guaranteeMoney)
+            label_2.text = "擔保品:" + String(guaranteePrice)
+            label_3.text = "利息:" + String(interestPrice)
+            label_4.text = "回補價金:" + String(returnMoney)
+            label_5.text = "應收金額:" + String(shouldPayMoney)
+            if(getMoney>0){
+                label_6.textColor = UIColor.red
+                
+            }else{
+                label_6.textColor = UIColor.green
 
-            print((guaranteePrice * 0.004))
-            print((guaranteeMoney * 0.004))
-
-            print(Double((dayInt / 365 )))
-
-            /*
-             
-             
-             2
-             160000
-             150000
-            手續費 228.0
-            交易稅 480.0
-            借券費 128.0
-            融券擔保品 159164.0
-            融券的保證金  14400.0
-             0.0
-             
-             636.6560000000001
-                      57.6
-                      0.0
-             */
-   
-         
-            
+            }
+            label_6.text = "預估收益:" + String(getMoney)
             
         }else{
             
@@ -115,7 +96,8 @@ class MarginController: MGoogleADViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "融券獲利計算"
-        // 初始化 formatter 並設置日期顯示的格式
+        sellNum.text = "1000"
+        buyNum.text = "1000"
         setDatePickerView()
         setUITextField()
   
