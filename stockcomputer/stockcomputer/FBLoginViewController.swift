@@ -92,7 +92,9 @@ class FBLoginViewController: UIViewController{
                         // ...
                         return
                     }
-               Instabug.identifyUser(withEmail: (Auth.auth().currentUser?.email)!, name: Auth.auth().currentUser?.displayName)
+               Instabug.identifyUser(withEmail: (Auth.auth().currentUser?.email)!, name:
+                Auth.auth().currentUser?.displayName)
+                FirebaseManager.getMemberDate()
 
                     
                 }
