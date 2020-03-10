@@ -29,7 +29,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         }else{
             adBannerView?.isHidden = false
         }
-        FirebaseManager.getMemberDate()
+//        FirebaseManager.getMemberDate()
         
         
     }
