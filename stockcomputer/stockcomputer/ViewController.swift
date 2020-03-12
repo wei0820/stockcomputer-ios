@@ -12,6 +12,11 @@ import Firebase
 import FacebookCore
 import FacebookLogin
 import Instabug
+
+import Kanna
+import Alamofire
+import JGProgressHUD
+
 class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
     
     //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","股票討論分享區"]
@@ -179,7 +184,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
         appDelegate.window?.rootViewController = HomeVc
         
-    }
+    } 
     
     func setAlert(){
         let controller = UIAlertController(title: "訪客身份", message: "請先登入再使用", preferredStyle: .actionSheet)

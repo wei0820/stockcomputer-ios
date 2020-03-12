@@ -36,8 +36,8 @@ class MarginController: MGoogleADViewController{
          
             
             
-            var sellPirceInt :Int = Int(sellPrice.text!)!
-            var buyPricepInt : Int = Int(buyPrice.text!)!
+            var sellPirceInt :Double = Double(sellPrice.text!)!
+            var buyPricepInt : Double = Double(buyPrice.text!)!
             var sellNumInt : Int =  Int(sellNum.text!)!
             var buyNumInt  : Int =  Int(buyNum.text!)!
             /**
@@ -51,8 +51,8 @@ class MarginController: MGoogleADViewController{
              */
             // 付出的成本
             var  dayInt: Int  =  DateManager.distancesFrom(startDateStr!, to: EndDateStr!)
-            var sellPriceInt = sellNumInt * sellPirceInt
-            var buyPriceInt = buyNumInt * buyPricepInt
+            var sellPriceInt :Double = Double(sellNumInt) * sellPirceInt
+            var buyPriceInt :Double  = Double(buyNumInt) * buyPricepInt
             // 手續費
             var handPrice : Double = Double(sellPriceInt) * 0.001425
             // 交易稅
@@ -64,7 +64,7 @@ class MarginController: MGoogleADViewController{
             var  guaranteeMoney : Int  = Int(Double(sellPriceInt)  * 0.9)
             //利息
             var  interestPrice  = Int((Double(guaranteePrice + guaranteeMoney) * Double(dayInt) * 0.002) / 365)
-            var returnMoney : Int = buyPriceInt + Int(handPrice)
+            var returnMoney : Int = Int(buyPriceInt) + Int(handPrice)
             var shouldPayMoney : Int =  Int(guaranteePrice) - returnMoney + Int(interestPrice) + Int(guaranteeMoney)
             var getMoney = shouldPayMoney - guaranteeMoney
             
