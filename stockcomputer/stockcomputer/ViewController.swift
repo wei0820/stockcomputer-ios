@@ -12,13 +12,11 @@ import Firebase
 import FacebookCore
 import FacebookLogin
 import Instabug
-
-import Kanna
-import Alamofire
 import JGProgressHUD
 
 class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
-    
+
+    //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","股票討論分享區"]
     var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算"]
     
     
@@ -86,6 +84,8 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         }
         
         
+        
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //        let destVc:DayTradeViewController = segue.destination as! DayTradeViewController
@@ -95,12 +95,13 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         setAdBanner()
         setRightButton(s: "會員中心")
         setLeftButton(s: "簽到")
-        
+        GetStockPriceManager.get()
+   
     }
+    
     func setLeftButton(s: String){
         // 導覽列右邊按鈕
         
