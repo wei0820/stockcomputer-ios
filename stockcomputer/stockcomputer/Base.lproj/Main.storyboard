@@ -101,11 +101,56 @@
                         <segue destination="rLy-NF-HVe" kind="show" identifier="futures" id="iNj-mk-Sq6"/>
                         <segue destination="tJk-8V-HAK" kind="show" identifier="sellput" id="uOV-UK-ZSD"/>
                         <segue destination="dIp-SO-evE" kind="show" identifier="sharelist" id="iFF-6z-D1d"/>
+                        <segue destination="MFe-cx-siv" kind="show" identifier="stocklist" id="A63-pw-6AJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2899" y="3159"/>
+        </scene>
+        <!--Stock List View Controller-->
+        <scene sceneID="o3U-YZ-TwW">
+            <objects>
+                <viewController id="MFe-cx-siv" customClass="StockListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ScZ-RG-tdd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dyP-Rt-IKa">
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="lQv-Io-6hv">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lQv-Io-6hv" id="Dpw-Xm-da5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MFe-cx-siv" id="mUA-Ic-GpH"/>
+                                    <outlet property="delegate" destination="MFe-cx-siv" id="oBL-Zu-n7h"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dyP-Rt-IKa" firstAttribute="top" secondItem="jHl-Qd-o9o" secondAttribute="top" id="29d-Qp-Jxd"/>
+                            <constraint firstItem="dyP-Rt-IKa" firstAttribute="trailing" secondItem="jHl-Qd-o9o" secondAttribute="trailing" id="4zD-Qx-Erb"/>
+                            <constraint firstItem="dyP-Rt-IKa" firstAttribute="centerX" secondItem="ScZ-RG-tdd" secondAttribute="centerX" id="DlU-uM-51H"/>
+                            <constraint firstItem="dyP-Rt-IKa" firstAttribute="leading" secondItem="jHl-Qd-o9o" secondAttribute="leading" id="FgQ-kK-UeC"/>
+                            <constraint firstItem="dyP-Rt-IKa" firstAttribute="centerY" secondItem="ScZ-RG-tdd" secondAttribute="centerY" id="Gnz-Nz-2iU"/>
+                            <constraint firstItem="dyP-Rt-IKa" firstAttribute="bottom" secondItem="jHl-Qd-o9o" secondAttribute="bottom" id="orG-mk-lPa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jHl-Qd-o9o"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vsH-hk-eiC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0E1-ia-GXw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1700" y="3211.8440779610196"/>
         </scene>
         <!--Day Trade View Controller-->
         <scene sceneID="ko4-cT-zs5">

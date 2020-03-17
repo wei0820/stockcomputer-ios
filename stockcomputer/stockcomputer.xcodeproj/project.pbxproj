@@ -27,6 +27,8 @@
 		8EBF7982236AB86C00E569C2 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7981236AB86C00E569C2 /* ChartViewController.swift */; };
 		8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7983236ACE8E00E569C2 /* TimerManager.swift */; };
 		8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BB2420671300260E25 /* GetStockPriceManger.swift */; };
+		8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BD242070EA00260E25 /* StockListViewController.swift */; };
+		8ED642C224209F1600260E25 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C124209F1600260E25 /* StockData.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
 		B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
@@ -69,6 +71,8 @@
 		8EBF7981236AB86C00E569C2 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		8EBF7983236ACE8E00E569C2 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		8ED642BB2420671300260E25 /* GetStockPriceManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStockPriceManger.swift; sourceTree = "<group>"; };
+		8ED642BD242070EA00260E25 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
+		8ED642C124209F1600260E25 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
 		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
 		B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VponAdapter_iOS_b1ffc56_v1.1.4.a; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				8E48E4F123F3E4E000384D25 /* UiManager.swift */,
 				8E48E4F323F3E66600384D25 /* DateManager.swift */,
 				8ED642BB2420671300260E25 /* GetStockPriceManger.swift */,
+				8ED642BD242070EA00260E25 /* StockListViewController.swift */,
+				8ED642C124209F1600260E25 /* StockData.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
 				8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */,
 				8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */,
+				8ED642C224209F1600260E25 /* StockData.swift in Sources */,
 				8E48E4F223F3E4E000384D25 /* UiManager.swift in Sources */,
 				8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */,
 				8E87122D23489E7000795029 /* CamerManager.swift in Sources */,
@@ -329,6 +336,7 @@
 				B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */,
 				B77B6F682205D55100A674D6 /* FinancingViewController.swift in Sources */,
 				B74F5301220556340034DC5D /* AppDelegate.swift in Sources */,
+				8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */,
 				B7E8C174226F015500792815 /* DistributionController.swift in Sources */,
 				8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */,
 				8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */,
