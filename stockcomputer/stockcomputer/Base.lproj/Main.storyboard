@@ -45,7 +45,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7FX-r8-lUr">
-                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="NSs-1i-p3v" style="IBUITableViewCellStyleDefault" id="5FP-3o-YGf">
@@ -75,9 +75,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7FX-r8-lUr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Azs-H1-JLg"/>
-                            <constraint firstItem="7FX-r8-lUr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Eyi-dT-0Pg"/>
+                            <constraint firstItem="7FX-r8-lUr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-66" id="Eyi-dT-0Pg"/>
                             <constraint firstItem="7FX-r8-lUr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Hbq-KD-wI5"/>
-                            <constraint firstItem="7FX-r8-lUr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hfB-cC-iWS"/>
+                            <constraint firstItem="7FX-r8-lUr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-5" id="hfB-cC-iWS"/>
                             <constraint firstItem="7FX-r8-lUr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k3y-Aj-kgJ"/>
                             <constraint firstItem="7FX-r8-lUr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tfG-dK-gIR"/>
                         </constraints>
@@ -105,11 +105,12 @@
                         <segue destination="SIJ-s3-g8G" kind="show" identifier="foreigninvestment" id="XHS-3C-luy"/>
                         <segue destination="tkB-25-LBL" kind="show" identifier="trust" id="FQR-c6-9HL"/>
                         <segue destination="07Q-TW-l90" kind="show" identifier="employed" id="Zdq-qX-HLp"/>
+                        <segue destination="qjq-P9-lQH" kind="show" identifier="broker" id="YQm-f8-oCp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2899" y="3159"/>
+            <point key="canvasLocation" x="-2900" y="3158.7706146926539"/>
         </scene>
         <!--Stock List View Controller-->
         <scene sceneID="o3U-YZ-TwW">
@@ -3311,31 +3312,31 @@
             </objects>
             <point key="canvasLocation" x="-2959" y="4644"/>
         </scene>
-        <!--Trust View Controller-->
+        <!--Broker View Controller-->
         <scene sceneID="j1Y-Ns-R17">
             <objects>
-                <viewController id="qjq-P9-lQH" customClass="TrustViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qjq-P9-lQH" customClass="BrokerViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkf-jx-OA9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vsl-Zs-BBU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="UGs-0J-rO8"/>
                                     <constraint firstAttribute="height" constant="49" id="cHN-Lw-Z94"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem tag="1" title="投信買超排行" image="bookmark" catalog="system" id="Z6i-qQ-mnQ"/>
-                                    <tabBarItem tag="2" title=" 投信賣超排行" image="bookmark.fill" catalog="system" id="hCG-wr-KNk"/>
+                                    <tabBarItem tag="1" title="八大官股銀行買超排行" image="bookmark" catalog="system" id="Z6i-qQ-mnQ"/>
+                                    <tabBarItem tag="2" title=" 八大官股銀行賣超排行" image="bookmark.fill" catalog="system" id="hCG-wr-KNk"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="qjq-P9-lQH" id="cVA-kV-AhX"/>
                                 </connections>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ANZ-eB-GeE">
-                                <rect key="frame" x="0.0" y="76" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="467"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="Dwu-zB-SPF"/>
@@ -3375,7 +3376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6m-cs-rRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354" y="4137"/>
+            <point key="canvasLocation" x="-1807" y="5052"/>
         </scene>
         <!--Self Employed View Controller-->
         <scene sceneID="ckK-NQ-Uaf">
@@ -3393,8 +3394,8 @@
                                     <constraint firstAttribute="height" constant="49" id="JW6-6O-CkF"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem tag="1" title="投信買超排行" image="bookmark" catalog="system" id="D6J-U1-jnw"/>
-                                    <tabBarItem tag="2" title=" 投信賣超排行" image="bookmark.fill" catalog="system" id="4jw-6y-Vbr"/>
+                                    <tabBarItem tag="1" title="自營商買超排行" image="bookmark" catalog="system" id="D6J-U1-jnw"/>
+                                    <tabBarItem tag="2" title="自營商賣超排行" image="bookmark.fill" catalog="system" id="4jw-6y-Vbr"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="07Q-TW-l90" id="kfK-6O-bJJ"/>

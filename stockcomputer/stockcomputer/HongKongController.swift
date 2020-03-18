@@ -148,6 +148,7 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
     @IBOutlet weak var lb2: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "港股複委託購入試算"
         setAdBanner()
         // Do any additional setup after loading the view.
         
