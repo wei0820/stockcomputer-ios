@@ -163,6 +163,7 @@ PODS:
   - PromisesObjC (1.2.8)
   - Protobuf (3.11.4)
   - Siren (5.3.0)
+  - SwiftSoup (2.3.0)
   - Toaster (2.2.0)
   - VpadnSDK (4.9.4)
 
@@ -190,11 +191,12 @@ DEPENDENCIES:
   - Kanna (~> 4.0.0)
   - Mapbox-iOS-SDK (~> 5.4)
   - Siren
+  - SwiftSoup
   - Toaster
   - VpadnSDK
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - Charts
     - CVCalendar
@@ -239,6 +241,7 @@ SPEC REPOS:
     - PromisesObjC
     - Protobuf
     - Siren
+    - SwiftSoup
     - Toaster
     - VpadnSDK
 
@@ -287,9 +290,10 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   Siren: 9262e383365dcf41a75c2b4a42fc01c576a0363a
+  SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   VpadnSDK: 59754b55d501d9fdbf8240cba3f69098bf2abb5b
 
-PODFILE CHECKSUM: 43f71a4da812664d64a0077584dd18f4df5649c2
+PODFILE CHECKSUM: b803b732cfe9844c4d8f65e5f173c1f6f173ba44
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.7.5
