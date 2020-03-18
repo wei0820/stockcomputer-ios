@@ -32,6 +32,7 @@
 		8ED642C42420C09500260E25 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C32420C09400260E25 /* StockDetailViewController.swift */; };
 		8ED642C62421F1E700260E25 /* ForeignInvestmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C52421F1E700260E25 /* ForeignInvestmentViewController.swift */; };
 		8ED642C82422112E00260E25 /* TrustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C72422112E00260E25 /* TrustViewController.swift */; };
+		8ED642CA242216C800260E25 /* SelfEmployedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C9242216C800260E25 /* SelfEmployedViewController.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
 		B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
@@ -79,6 +80,7 @@
 		8ED642C32420C09400260E25 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		8ED642C52421F1E700260E25 /* ForeignInvestmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignInvestmentViewController.swift; sourceTree = "<group>"; };
 		8ED642C72422112E00260E25 /* TrustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustViewController.swift; sourceTree = "<group>"; };
+		8ED642C9242216C800260E25 /* SelfEmployedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfEmployedViewController.swift; sourceTree = "<group>"; };
 		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
 		B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VponAdapter_iOS_b1ffc56_v1.1.4.a; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				8ED642C32420C09400260E25 /* StockDetailViewController.swift */,
 				8ED642C52421F1E700260E25 /* ForeignInvestmentViewController.swift */,
 				8ED642C72422112E00260E25 /* TrustViewController.swift */,
+				8ED642C9242216C800260E25 /* SelfEmployedViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				8ED642C62421F1E700260E25 /* ForeignInvestmentViewController.swift in Sources */,
 				8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */,
 				B7E8C174226F015500792815 /* DistributionController.swift in Sources */,
+				8ED642CA242216C800260E25 /* SelfEmployedViewController.swift in Sources */,
 				8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */,
 				8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */,
 				8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */,

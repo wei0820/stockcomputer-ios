@@ -228,4 +228,87 @@ class GetStockPriceManager{
         }
         return array_foreigninvestment
     }
+    
+    
+    static  func getEmployed() -> Array<String> {
+        array_foreigninvestment.removeAll()
+        guard let url = URL(string: Url_c ?? "") else {
+            // an error occurred
+            return array_foreigninvestment
+        }
+        
+        do {
+            
+            // content of url
+            let html = try String.init(contentsOf: url)
+            
+            // parse it into a Document
+            document = try SwiftSoup.parse(html)
+            // parse css query
+            do {
+                
+                //empty old items
+                // firn css selector
+                let elements: Elements = try document.select("div.tb-outline.outline1>ul.stock-list>li" ?? "")
+                //transform it into a local object (Item)
+                for th in try elements.select("span.w58.name") {
+                    let n = try th.text()
+                    if(!n.isEmpty){
+                        print("jack",n)
+                        array_foreigninvestment.append(n)
+
+                    }
+
+                }
+                
+            } catch let error {
+            }
+            
+            
+        } catch let error {
+            // an error occurred
+        }
+        return array_foreigninvestment
+    }
+    
+    static  func getEmployed_2() -> Array<String> {
+        array_foreigninvestment.removeAll()
+        guard let url = URL(string: Url_c ?? "") else {
+            // an error occurred
+            return array_foreigninvestment
+        }
+        
+        do {
+            
+            // content of url
+            let html = try String.init(contentsOf: url)
+            
+            // parse it into a Document
+            document = try SwiftSoup.parse(html)
+            // parse css query
+            do {
+                
+                //empty old items
+                // firn css selector
+                let elements: Elements = try document.select("div.tb-outline.outline2>ul.stock-list>li" ?? "")
+                //transform it into a local object (Item)
+                for th in try elements.select("span.w58.name") {
+                    let n = try th.text()
+                    if(!n.isEmpty){
+                        print("jack",n)
+                        array_foreigninvestment.append(n)
+
+                    }
+
+                }
+                
+            } catch let error {
+            }
+            
+            
+        } catch let error {
+            // an error occurred
+        }
+        return array_foreigninvestment
+    }
 }
