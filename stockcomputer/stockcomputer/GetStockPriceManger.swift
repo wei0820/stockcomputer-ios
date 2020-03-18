@@ -17,6 +17,7 @@ class GetStockPriceManager{
     static var document: Document = Document.init("")
     static var array = Array<StockData>()
     static  func get() -> Array<StockData> {
+        array.removeAll()
         guard let url = URL(string: Url ?? "") else {
             // an error occurred
             return array
@@ -49,9 +50,7 @@ class GetStockPriceManager{
                     }
                     
                 }
-                
-                print("test",array.count)
-                
+                                
             } catch let error {
             }
             

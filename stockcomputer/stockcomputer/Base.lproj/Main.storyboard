@@ -166,15 +166,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNC-we-GMV">
-                                <rect key="frame" x="16" y="37" width="343" height="212"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNC-we-GMV">
+                                <rect key="frame" x="16" y="37" width="343" height="452"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="283-yZ-dsc"/>
+                                    <constraint firstAttribute="height" constant="452" id="bwH-nw-xBM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qNC-we-GMV" firstAttribute="leading" secondItem="WSq-gz-yOa" secondAttribute="leading" constant="16" id="1PY-Tu-1GQ"/>
+                            <constraint firstItem="WSq-gz-yOa" firstAttribute="trailing" secondItem="qNC-we-GMV" secondAttribute="trailing" constant="16" id="3ow-8B-x2e"/>
+                            <constraint firstItem="qNC-we-GMV" firstAttribute="top" secondItem="WSq-gz-yOa" secondAttribute="top" constant="37" id="7OA-Sk-GHS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WSq-gz-yOa"/>
                     </view>
                     <connections>
