@@ -103,6 +103,7 @@
                         <segue destination="dIp-SO-evE" kind="show" identifier="sharelist" id="iFF-6z-D1d"/>
                         <segue destination="MFe-cx-siv" kind="show" identifier="stocklist" id="A63-pw-6AJ"/>
                         <segue destination="SIJ-s3-g8G" kind="show" identifier="foreigninvestment" id="XHS-3C-luy"/>
+                        <segue destination="tkB-25-LBL" kind="show" identifier="trust" id="FQR-c6-9HL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -3242,6 +3243,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dju-LU-YnA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2463.1999999999998" y="3868.5157421289359"/>
+        </scene>
+        <!--Trust View Controller-->
+        <scene sceneID="QgQ-NA-yoV">
+            <objects>
+                <viewController id="tkB-25-LBL" customClass="TrustViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0hj-4p-YDK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bx0-Tf-Z9o">
+                                <rect key="frame" x="0.0" y="56" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="1Fz-aA-xsL"/>
+                                    <constraint firstAttribute="width" constant="375" id="25a-m5-JtL"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem tag="1" title="投信買超排行" image="bookmark" catalog="system" id="hga-JR-kH1"/>
+                                    <tabBarItem tag="2" title=" 投信賣超排行" image="bookmark.fill" catalog="system" id="Kop-b8-oIA"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="tkB-25-LBL" id="WNp-dw-8RR"/>
+                                </connections>
+                            </tabBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y13-Zc-PER">
+                                <rect key="frame" x="0.0" y="132" width="375" height="467"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="467" id="rJr-ay-eSo"/>
+                                    <constraint firstAttribute="width" constant="375" id="vCJ-a4-Shz"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="jDG-sR-4iQ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jDG-sR-4iQ" id="Ul3-f7-UdP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tkB-25-LBL" id="WKB-Ff-3Rs"/>
+                                    <outlet property="delegate" destination="tkB-25-LBL" id="BSZ-FU-AGi"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bx0-Tf-Z9o" firstAttribute="top" secondItem="Dts-n9-rT1" secondAttribute="top" id="3hy-ss-542"/>
+                            <constraint firstItem="y13-Zc-PER" firstAttribute="top" secondItem="bx0-Tf-Z9o" secondAttribute="bottom" constant="27" id="IJq-3m-wIy"/>
+                            <constraint firstItem="y13-Zc-PER" firstAttribute="leading" secondItem="Dts-n9-rT1" secondAttribute="leading" id="L1p-UD-3oh"/>
+                            <constraint firstItem="bx0-Tf-Z9o" firstAttribute="leading" secondItem="Dts-n9-rT1" secondAttribute="leading" id="ctN-XJ-PMR"/>
+                            <constraint firstItem="y13-Zc-PER" firstAttribute="trailing" secondItem="Dts-n9-rT1" secondAttribute="trailing" id="iLy-9r-psd"/>
+                            <constraint firstItem="bx0-Tf-Z9o" firstAttribute="trailing" secondItem="Dts-n9-rT1" secondAttribute="trailing" id="pvQ-FW-FCM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dts-n9-rT1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ESh-Zx-bSm"/>
+                    <connections>
+                        <outlet property="tableview" destination="y13-Zc-PER" id="G87-FF-l8e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deJ-Tc-0hP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1167" y="4005"/>
         </scene>
     </scenes>
     <resources>
