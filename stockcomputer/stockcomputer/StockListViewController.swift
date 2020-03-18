@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class StockListViewController: MGoogleADViewController , UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableview: UITableView!
     var itemName:Array<StockData> = Array()
+    var hud :JGProgressHUD?
     
     var name :String = ""
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,13 +27,14 @@ class StockListViewController: MGoogleADViewController , UITableViewDataSource, 
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(
             at: indexPath, animated: true)
-
+        
         name = itemName[indexPath.row].detail
         performSegue(withIdentifier: "stockdetail", sender: nil)
-    
+        
         print("jack",name)
     }
     
@@ -41,15 +44,20 @@ class StockListViewController: MGoogleADViewController , UITableViewDataSource, 
                 let secondCV = segue.destination as! StockDetailViewController
                 secondCV.detail =  itemName[index.row].detail
             }
-      
+            
             
         }
-    
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "盤中個股精選追蹤"
+        hud = JGProgressHUD(style: .dark)
+        hud?.textLabel.text = "Loading"
+        hud?.show(in: self.view)
         itemName = GetStockPriceManager.get()
-        
+        hud?.dismiss(afterDelay: 3.0)
+
         // Do any additional setup after loading the view.
     }
     

@@ -125,6 +125,10 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     func setToast(s:String){
         Toast.init(text: s).show()
     }
+    func dissmissView(){
+        dismiss(animated: true, completion: nil)
+
+    }
     
     func setMemberAlert(){
         

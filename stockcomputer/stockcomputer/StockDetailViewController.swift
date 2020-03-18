@@ -12,7 +12,6 @@ class StockDetailViewController: MGoogleADViewController {
     var detail : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("jack",detail)
         // Do any additional setup after loading the view.
         label_detail.text = detail
     }
@@ -28,5 +27,8 @@ class StockDetailViewController: MGoogleADViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func exit_btn(_ sender: Any) {
+        dissmissView()
+           
+       }
 }
