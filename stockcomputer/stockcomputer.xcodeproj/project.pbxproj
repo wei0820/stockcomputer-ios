@@ -29,6 +29,7 @@
 		8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BB2420671300260E25 /* GetStockPriceManger.swift */; };
 		8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BD242070EA00260E25 /* StockListViewController.swift */; };
 		8ED642C224209F1600260E25 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C124209F1600260E25 /* StockData.swift */; };
+		8ED642C42420C09500260E25 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C32420C09400260E25 /* StockDetailViewController.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
 		B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		8ED642BB2420671300260E25 /* GetStockPriceManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStockPriceManger.swift; sourceTree = "<group>"; };
 		8ED642BD242070EA00260E25 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
 		8ED642C124209F1600260E25 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
+		8ED642C32420C09400260E25 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
 		B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VponAdapter_iOS_b1ffc56_v1.1.4.a; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				8ED642BB2420671300260E25 /* GetStockPriceManger.swift */,
 				8ED642BD242070EA00260E25 /* StockListViewController.swift */,
 				8ED642C124209F1600260E25 /* StockData.swift */,
+				8ED642C32420C09400260E25 /* StockDetailViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED642C42420C09500260E25 /* StockDetailViewController.swift in Sources */,
 				B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */,
 				8E48E4F023F3E48800384D25 /* FirebaseManager.swift in Sources */,
 				8E2AB6D3238E1DA20079910F /* FuturesViewController.swift in Sources */,

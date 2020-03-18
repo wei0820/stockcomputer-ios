@@ -43,31 +43,12 @@ class GetStockPriceManager{
                     if(!th.isEmpty){
                        
                         stock.setTitle(s:  String(th.split(separator: " ")[0]))
-                        print("test", String(th.split(separator: " ")[1]))
-
+                        stock.setDetail(d: String(th.split(separator: " ")[1]))
                         array.append(stock)
                         
                     }
                     
                 }
-                //                for element in try elements.select("tr") {
-                //
-                //
-                //
-                //                    for td in try elements.select("td") {
-                //                        let td = try td.text()
-                //                        if(!td.isEmpty){
-                //                            print("test",td)
-                //
-                //
-                //                        }
-                //                    }
-                //
-                //                }
-                
-                
-                
-                
                 
                 print("test",array.count)
                 
