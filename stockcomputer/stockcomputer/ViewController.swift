@@ -16,7 +16,7 @@ import JGProgressHUD
 
 class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
 
-    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算","盤中個股精選追蹤"]
+    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算","盤中個股精選追蹤","外陸資買賣超前50名","投信買賣超前50名"]
     
     
     var ref: DatabaseReference!
@@ -82,8 +82,11 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             performSegue(withIdentifier: "Margin", sender: nil)
         }else if (name == itemName[8]){
             performSegue(withIdentifier: "stocklist", sender: nil)
+        }else if (name == itemName[9]){
+            performSegue(withIdentifier: "foreigninvestment", sender: nil)
+        }else if (name == itemName[10]){
+            performSegue(withIdentifier: "trust", sender: nil)
         }
-        
         
         
         
