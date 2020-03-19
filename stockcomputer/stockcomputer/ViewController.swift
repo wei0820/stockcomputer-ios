@@ -21,7 +21,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
     var delegate: IAPurchaseViewControllerDelegate!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
     
-    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算","盤中個股精選追蹤","外陸資買賣超前50名","投信買賣超前50名","自營商買賣超前50名","八大官股銀行買賣超","贊助開發者"]
+    var itemName = ["贊助開發者","現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算","盤中個股精選追蹤","外陸資買賣超前50名","投信買賣超前50名","自營商買賣超前50名","八大官股銀行買賣超"]
     
     
     var ref: DatabaseReference!
@@ -63,40 +63,40 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         let name = itemName[indexPath.row]
         Instabug.logUserEvent(withName: name)
         if (name == itemName[0]){
+            buy()
+        }else if (name == itemName[1]){
             performSegue(withIdentifier: "DayTrade", sender: nil)
             
-        }else if(name ==  itemName[1]){
+        }else if(name ==  itemName[2]){
             performSegue(withIdentifier: "TradeDetail", sender: nil)
             
-        }else if(name == itemName[2]) {
+        }else if(name == itemName[3]) {
             performSegue(withIdentifier: "hongkongstock", sender: nil)
-        }else if (name == itemName[3]){
-            performSegue(withIdentifier: "distribution", sender: nil)
-            
         }else if (name == itemName[4]){
-            
-            performSegue(withIdentifier: "number", sender: nil)
+            performSegue(withIdentifier: "distribution", sender: nil)
             
         }else if (name == itemName[5]){
             
-            performSegue(withIdentifier: "futures", sender: nil)
+            performSegue(withIdentifier: "number", sender: nil)
             
         }else if (name == itemName[6]){
-            performSegue(withIdentifier: "sellput", sender: nil)
+            
+            performSegue(withIdentifier: "futures", sender: nil)
+            
         }else if (name == itemName[7]){
-            performSegue(withIdentifier: "Margin", sender: nil)
+            performSegue(withIdentifier: "sellput", sender: nil)
         }else if (name == itemName[8]){
-            performSegue(withIdentifier: "stocklist", sender: nil)
+            performSegue(withIdentifier: "Margin", sender: nil)
         }else if (name == itemName[9]){
-            performSegue(withIdentifier: "foreigninvestment", sender: nil)
+            performSegue(withIdentifier: "stocklist", sender: nil)
         }else if (name == itemName[10]){
-            performSegue(withIdentifier: "trust", sender: nil)
+            performSegue(withIdentifier: "foreigninvestment", sender: nil)
         }else if (name == itemName[11]){
-            performSegue(withIdentifier: "employed", sender: nil)
+            performSegue(withIdentifier: "trust", sender: nil)
         }else if (name == itemName[12]){
-            performSegue(withIdentifier: "broker", sender: nil)
+            performSegue(withIdentifier: "employed", sender: nil)
         }else if (name == itemName[13]){
-            buy()
+            performSegue(withIdentifier: "broker", sender: nil)
         }
         
         
@@ -120,6 +120,8 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         requestProductInfo()
         
         SKPaymentQueue.default().add(self)
+        
+        GetStockPriceManager.getStock()
         
     }
     
