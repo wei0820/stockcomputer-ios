@@ -24,6 +24,7 @@
 		8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E871230234AFF1000795029 /* StoreKit.framework */; };
 		8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */; };
 		8EB01C992422197400A7E992 /* BrokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C982422197400A7E992 /* BrokerViewController.swift */; };
+		8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C9A242345F000A7E992 /* QuotesViewController.swift */; };
 		8EBF7980236978F000E569C2 /* QAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF797F236978F000E569C2 /* QAListViewController.swift */; };
 		8EBF7982236AB86C00E569C2 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7981236AB86C00E569C2 /* ChartViewController.swift */; };
 		8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7983236ACE8E00E569C2 /* TimerManager.swift */; };
@@ -73,6 +74,7 @@
 		8E871230234AFF1000795029 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8EB01C982422197400A7E992 /* BrokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokerViewController.swift; sourceTree = "<group>"; };
+		8EB01C9A242345F000A7E992 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		8EBF797F236978F000E569C2 /* QAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAListViewController.swift; sourceTree = "<group>"; };
 		8EBF7981236AB86C00E569C2 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		8EBF7983236ACE8E00E569C2 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				8ED642C72422112E00260E25 /* TrustViewController.swift */,
 				8ED642C9242216C800260E25 /* SelfEmployedViewController.swift */,
 				8EB01C982422197400A7E992 /* BrokerViewController.swift */,
+				8EB01C9A242345F000A7E992 /* QuotesViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */,
 				8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */,
 				8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */,
+				8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */,
 				8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */,
 				8EBF7982236AB86C00E569C2 /* ChartViewController.swift in Sources */,
 			);
@@ -511,7 +515,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -524,7 +528,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -539,7 +543,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -552,7 +556,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 5.1;
+				MARKETING_VERSION = 5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -400,17 +400,136 @@ class GetStockPriceManager{
                        }
                        
                    }
-                   //                for th in try elements.select("div.grid-body.p7.mb10>ul.stock-list>li>span.w100.name"){
-                   //
-                   //                    let n = try th.text()
-                   //                    if(!n.isEmpty){
-                   //                        print("jack",n)
-                   //                        array_foreigninvestment.append(n)
-                   //
-                   //                    }
-                   //
-                   //                }
                    
+               } catch let error {
+               }
+               
+               
+           } catch let error {
+               // an error occurred
+           }
+           return array_foreigninvestment
+       }
+    
+    
+    
+    static  func getStock_a() -> Array<String> {
+           array_foreigninvestment.removeAll()
+           guard let url = URL(string: "https://histock.tw/stock/three.aspx?m=mg&s=a" ?? "") else {
+               // an error occurred
+               return array_foreigninvestment
+           }
+           
+           do {
+               
+               // content of url
+               let html = try String.init(contentsOf: url)
+               
+               // parse it into a Document
+               document = try SwiftSoup.parse(html)
+               // parse css query
+               do {
+                   
+                   //empty old items
+                   // firn css selector
+                   //
+                   //div.grid-body.p7.mb10>ul.stock-list>li
+                   let elements: Elements = try document.select("ul.stock-list>li" ?? "")
+                   //transform it into a local object (Item)
+                   for th in try elements.select("span.w100.name") {
+                                  let n = try th.text()
+                                  if(!n.isEmpty){
+                                      print("jack",n)
+                                      array_foreigninvestment.append(n)
+                                      
+                                  }
+                                  
+                              }
+               } catch let error {
+               }
+               
+               
+           } catch let error {
+               // an error occurred
+           }
+           return array_foreigninvestment
+       }
+    
+    
+    static  func getStock_c() -> Array<String> {
+           array_foreigninvestment.removeAll()
+           guard let url = URL(string: "https://histock.tw/stock/three.aspx?m=mg&s=c" ?? "") else {
+               // an error occurred
+               return array_foreigninvestment
+           }
+           
+           do {
+               
+               // content of url
+               let html = try String.init(contentsOf: url)
+               
+               // parse it into a Document
+               document = try SwiftSoup.parse(html)
+               // parse css query
+               do {
+                   
+                   //empty old items
+                   // firn css selector
+                   //
+                   //div.grid-body.p7.mb10>ul.stock-list>li
+                   let elements: Elements = try document.select("ul.stock-list>li" ?? "")
+                   //transform it into a local object (Item)
+                   for th in try elements.select("span.w100.name") {
+                                  let n = try th.text()
+                                  if(!n.isEmpty){
+                                      print("jack",n)
+                                      array_foreigninvestment.append(n)
+                                      
+                                  }
+                                  
+                              }
+               } catch let error {
+               }
+               
+               
+           } catch let error {
+               // an error occurred
+           }
+           return array_foreigninvestment
+       }
+    
+    static  func getStock_bsu() -> Array<String> {
+           array_foreigninvestment.removeAll()
+           guard let url = URL(string: "https://histock.tw/stock/three.aspx?m=mg&s=bsu" ?? "") else {
+               // an error occurred
+               return array_foreigninvestment
+           }
+           
+           do {
+               
+               // content of url
+               let html = try String.init(contentsOf: url)
+               
+               // parse it into a Document
+               document = try SwiftSoup.parse(html)
+               // parse css query
+               do {
+                   
+                   //empty old items
+                   // firn css selector
+                   //
+                   //div.grid-body.p7.mb10>ul.stock-list>li
+                   let elements: Elements = try document.select("ul.stock-list>li" ?? "")
+                   //transform it into a local object (Item)
+                   for th in try elements.select("span.w100.name") {
+                                  let n = try th.text()
+                                  if(!n.isEmpty){
+                                      print("jack",n)
+                                      array_foreigninvestment.append(n)
+                                      
+                                  }
+                                  
+                              }
                } catch let error {
                }
                
