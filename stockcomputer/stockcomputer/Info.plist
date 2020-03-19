@@ -56,7 +56,7 @@
 		<true/>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>需要你授權</string>
+	<string>需要你授權,才能使用此功能</string>
 	<key>NSCameraUsageDescription</key>
 	<string>是否允許$(PRODUCT_NAME)使用你的相機？</string>
 	<key>NSLocationAlwaysUsageDescription</key>

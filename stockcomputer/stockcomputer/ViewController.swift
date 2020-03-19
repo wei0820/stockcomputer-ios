@@ -122,6 +122,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         requestProductInfo()
         
         SKPaymentQueue.default().add(self)
+//        DateManager.addToCalendarClicked()
         
         
     }
