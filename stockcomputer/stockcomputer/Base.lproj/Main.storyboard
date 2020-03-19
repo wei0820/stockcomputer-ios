@@ -106,6 +106,7 @@
                         <segue destination="tkB-25-LBL" kind="show" identifier="trust" id="FQR-c6-9HL"/>
                         <segue destination="07Q-TW-l90" kind="show" identifier="employed" id="Zdq-qX-HLp"/>
                         <segue destination="qjq-P9-lQH" kind="show" identifier="broker" id="YQm-f8-oCp"/>
+                        <segue destination="LV5-a7-OUE" kind="show" identifier="quotes" id="JjF-kq-ru5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -3444,6 +3445,73 @@
             </objects>
             <point key="canvasLocation" x="-1700" y="3991"/>
         </scene>
+        <!--Quotes View Controller-->
+        <scene sceneID="eQC-37-nCT">
+            <objects>
+                <viewController id="LV5-a7-OUE" customClass="QuotesViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GFN-dp-SXM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aw-MT-XCq">
+                                <rect key="frame" x="0.0" y="56" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="pvc-sR-4yH"/>
+                                    <constraint firstAttribute="width" constant="375" id="ycM-a0-zGm"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem tag="1" title="融資增加排行" image="star" catalog="system" id="Ary-gO-7x3"/>
+                                    <tabBarItem tag="2" title="融券增加排行" image="star.fill" catalog="system" id="Sts-UO-T0O"/>
+                                    <tabBarItem tag="3" title="借券增加排行" image="star.lefthalf.fill" catalog="system" id="uKu-9o-SGy"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="LV5-a7-OUE" id="Frl-sG-JNb"/>
+                                </connections>
+                            </tabBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cHl-kc-BsL">
+                                <rect key="frame" x="0.0" y="132" width="375" height="467"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="TK3-gr-2qL"/>
+                                    <constraint firstAttribute="height" constant="467" id="p1l-US-2YE"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="VdF-Gs-cOQ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VdF-Gs-cOQ" id="M5E-Ii-fTi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LV5-a7-OUE" id="y7q-Gg-nDb"/>
+                                    <outlet property="delegate" destination="LV5-a7-OUE" id="o42-Lh-qYO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cHl-kc-BsL" firstAttribute="top" secondItem="1aw-MT-XCq" secondAttribute="bottom" constant="27" id="2E2-iB-bhK"/>
+                            <constraint firstItem="cHl-kc-BsL" firstAttribute="leading" secondItem="mAS-y5-PAZ" secondAttribute="leading" id="2uA-Ic-tXk"/>
+                            <constraint firstItem="cHl-kc-BsL" firstAttribute="trailing" secondItem="mAS-y5-PAZ" secondAttribute="trailing" id="CO8-cl-GCd"/>
+                            <constraint firstItem="1aw-MT-XCq" firstAttribute="trailing" secondItem="mAS-y5-PAZ" secondAttribute="trailing" id="CXo-zy-xvg"/>
+                            <constraint firstItem="1aw-MT-XCq" firstAttribute="top" secondItem="mAS-y5-PAZ" secondAttribute="top" id="bwA-BW-vAb"/>
+                            <constraint firstItem="1aw-MT-XCq" firstAttribute="leading" secondItem="mAS-y5-PAZ" secondAttribute="leading" id="nQs-TS-70Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mAS-y5-PAZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TAB-bb-f0k"/>
+                    <connections>
+                        <outlet property="tableview" destination="cHl-kc-BsL" id="lRw-MC-NuM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewN-ca-KwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2959" y="5928"/>
+        </scene>
     </scenes>
     <resources>
         <image name="baseline_clear_black" width="72" height="72"/>
@@ -3458,5 +3526,8 @@
         <image name="info.circle.fill" catalog="system" width="64" height="60"/>
         <image name="logo" width="500" height="500"/>
         <image name="port" width="32" height="32"/>
+        <image name="star" catalog="system" width="64" height="58"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
+        <image name="star.lefthalf.fill" catalog="system" width="64" height="58"/>
     </resources>
 </document>
