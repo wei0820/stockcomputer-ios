@@ -32,5 +32,6 @@ pod 'Charts'
 pod 'Siren'
 pod 'JJFloatingActionButton'
 pod 'SwiftSoup'
+pod 'MarqueeLabel'
 
 end

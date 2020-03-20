@@ -181,6 +181,15 @@ class FirebaseManager {
     
     }
     
+    static func getAnnouncementSting() ->String{
+        if(userDefaults.value(forKey: "announcement") != nil){
+            return userDefaults.value(forKey: "announcement")! as! String
+        }
+        return "暫時無公告"
+    
+    }
+    
+    
     
     static  func  addMemberTimeAndPintToFirebase(timestamp :Int){
         var  id = self.getMemberId()
@@ -295,5 +304,27 @@ class FirebaseManager {
         
         
     }
+    
+    
+    static  func
+        getAnnouncement() -> Array<String>{
+        
+        
+        var string = Array<String>()
+        string.removeAll()
+        // 查詢節點資料
+        Database.database().reference().child("announcement").child("announcement" as! String).observe(.childAdded, with: {
+            (snapshot) in
+            // childAdded逐筆呈現
+            if let dictionaryData = snapshot.value as? [String: AnyObject]{
+                var announcement : String = dictionaryData["announcement"] as! String
+                userDefaults.set(announcement, forKey: "announcement")
+
+            }
+
+        }, withCancel: nil)
+        return string
+    }
+    
 }
 

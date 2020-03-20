@@ -55,7 +55,8 @@ class FBLoginViewController: UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        FirebaseManager.getAnnouncement()
+
         fetchProfile()
         // Do any additional setup after loading the view.
     }
