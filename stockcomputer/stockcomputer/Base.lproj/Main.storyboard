@@ -45,7 +45,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7FX-r8-lUr">
-                                <rect key="frame" x="0.0" y="56" width="375" height="525"/>
+                                <rect key="frame" x="0.0" y="112" width="375" height="469"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="NSs-1i-p3v" style="IBUITableViewCellStyleDefault" id="5FP-3o-YGf">
@@ -71,15 +71,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="1ke-Is-TbX"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WH-Zw-qh0" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                                <rect key="frame" x="16" y="70" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7FX-r8-lUr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Azs-H1-JLg"/>
                             <constraint firstItem="7FX-r8-lUr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-66" id="Eyi-dT-0Pg"/>
-                            <constraint firstItem="7FX-r8-lUr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Hbq-KD-wI5"/>
-                            <constraint firstItem="7FX-r8-lUr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-5" id="hfB-cC-iWS"/>
+                            <constraint firstItem="7FX-r8-lUr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="Hbq-KD-wI5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9WH-Zw-qh0" secondAttribute="trailing" constant="16" id="RPU-cx-4Ah"/>
+                            <constraint firstItem="9WH-Zw-qh0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="geV-fB-ump"/>
+                            <constraint firstItem="7FX-r8-lUr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="23" id="hfB-cC-iWS"/>
                             <constraint firstItem="7FX-r8-lUr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k3y-Aj-kgJ"/>
                             <constraint firstItem="7FX-r8-lUr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tfG-dK-gIR"/>
+                            <constraint firstItem="9WH-Zw-qh0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="z0z-e5-Amo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -87,6 +96,7 @@
                         <barButtonItem key="backBarButtonItem" title="返回" id="M0A-yK-AUY"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="marqueeLabel" destination="9WH-Zw-qh0" id="wYl-1D-T2B"/>
                         <segue destination="kfq-22-Ojo" kind="show" identifier="DayTrade" id="NwO-NB-ZAf"/>
                         <segue destination="ddT-qF-bJQ" kind="show" identifier="TradeDetail" id="Vew-9q-Mhv"/>
                         <segue destination="6Na-9M-h5t" kind="show" identifier="Financing" id="2zI-SV-z6Z"/>

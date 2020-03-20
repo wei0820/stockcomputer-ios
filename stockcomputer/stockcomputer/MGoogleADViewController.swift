@@ -28,8 +28,15 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
             adBannerView?.isHidden = true
         }else{
             adBannerView?.isHidden = false
-        }        
+        }
+        print("jack_2",  getAnnouncement())
+
+      
         
+    }
+    func getAnnouncement() -> Array<String>{
+        return FirebaseManager.getAnnouncement()
+
     }
     func setAdBanner(){
         let id = "ca-app-pub-7019441527375550/9487446087"

@@ -13,6 +13,7 @@ import FacebookCore
 import FacebookLogin
 import Instabug
 import JGProgressHUD
+import MarqueeLabel
 class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate,SKProductsRequestDelegate, SKPaymentTransactionObserver{
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
     var hud :JGProgressHUD?
@@ -26,6 +27,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
     
     var ref: DatabaseReference!
     
+    @IBOutlet weak var marqueeLabel: MarqueeLabel!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemName.count
@@ -123,8 +125,17 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         
         SKPaymentQueue.default().add(self)
 //        DateManager.addToCalendarClicked()
+        marqueeLabel.type = .continuous
+            marqueeLabel.speed = .duration(9)
+        marqueeLabel.animationCurve = .easeInOut
+       marqueeLabel.fadeLength = 10.0
+            marqueeLabel.leadingBuffer = 30.0
+            marqueeLabel.trailingBuffer = 20.0
+        var strings = [String]()
         
-        
+        strings = [FirebaseManager.getAnnouncementSting()]
+        marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
+
     }
     
     func setLeftButton(s: String){
@@ -273,7 +284,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
     }
     
     func buy(){
-        let controller = UIAlertController(title: "商品列表", message: "請點選商品進行購買", preferredStyle: .actionSheet)
+        let controller = UIAlertController(title: "自動續費商品聲明", message: "付款：用戶確認購買並付款記入ITunes帳戶\n續費： 到期前24小時,蘋果會自動為您從帳戶扣款,成功後有效期限為一個月\n取消續費 ： 若需要取消自動續費,請在到期前24小時手動在iTunes/Apple ID 設置管理關閉,關閉後不再扣款", preferredStyle: .actionSheet)
         productsArray.forEach { (SKProduct) in
             let action = UIAlertAction(title:"每月贊助開發者", style: .default) { (action) in
                 if(Auth.auth().currentUser!.isAnonymous){
