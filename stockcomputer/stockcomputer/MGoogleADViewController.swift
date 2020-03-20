@@ -29,8 +29,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         }else{
             adBannerView?.isHidden = false
         }
-        print("jack_2",  getAnnouncement())
-
+        getAnnouncement()
       
         
     }

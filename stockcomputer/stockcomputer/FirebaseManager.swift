@@ -306,7 +306,8 @@ class FirebaseManager {
     }
     
     
-    static  func getAnnouncement() -> Array<String>{
+    static  func
+        getAnnouncement() -> Array<String>{
         
         
         var string = Array<String>()
