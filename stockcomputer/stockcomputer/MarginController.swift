@@ -1,3 +1,5 @@
+
+  
 //
 //  MarginController.swift
 //  stockcomputer
@@ -5,7 +7,6 @@
 //  Created by  JackPan on 2019/2/2.
 //  Copyright © 2019 jackpan. All rights reserved.
 //
-
 import UIKit
 import GoogleMobileAds
 import Kanna
@@ -63,33 +64,6 @@ class MarginController: MGoogleADViewController{
             //融券的保證金
             var  guaranteeMoney : Int  = Int(Double(sellPriceInt)  * 0.9)
             //利息
-<<<<<<< HEAD
-            var  interestPrice  : Double =  ((guaranteePrice * 0.004) * Double((dayInt / 365 ))) + ((guaranteeMoney  * 0.004) * Double((dayInt / 365 )))
-            print(dayInt)
-            print(sellPriceInt)
-            print(buyPriceInt)
-            print(handPrice)
-            print(changePrice)
-            print(borrowPrice)
-            print(guaranteePrice)
-            print(guaranteeMoney)
-            print(interestPrice)
-            /*150000
-            145000
-            213.75
-            450.0
-            120.0
-            149216.25
-            13500.0
-            0.0*/
-
-            label_1.text = "利息:" + String(interestPrice)
-            
-            
-            
-            
-            
-=======
             var  interestPrice  = Int((Double(guaranteePrice + guaranteeMoney) * Double(dayInt) * 0.002) / 365)
             var returnMoney : Int = Int(buyPriceInt) + Int(handPrice)
             var shouldPayMoney : Int =  Int(guaranteePrice) - returnMoney + Int(interestPrice) + Int(guaranteeMoney)
@@ -103,7 +77,6 @@ class MarginController: MGoogleADViewController{
             label_5.text = "應收金額:" + String(shouldPayMoney)
             if(getMoney>0){
                 label_6.textColor = UIColor.red
->>>>>>> d58843da60972a32b95679cd9386ead5cc0ea081
                 
             }else{
                 label_6.textColor = UIColor.green
@@ -233,3 +206,4 @@ class MarginController: MGoogleADViewController{
     
    
 }
+
