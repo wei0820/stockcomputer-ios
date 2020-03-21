@@ -284,7 +284,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
     }
     
     func buy(){
-        let controller = UIAlertController(title: "自動續費商品聲明", message: "付款：用戶確認購買並付款記入ITunes帳戶\n續費： 到期前24小時,蘋果會自動為您從帳戶扣款,成功後有效期限為一個月\n取消續費 ： 若需要取消自動續費,請在到期前24小時手動在iTunes/Apple ID 設置管理關閉,關閉後不再扣款", preferredStyle: .actionSheet)
+        let controller = UIAlertController(title: "購買商品", message: "請選擇要購買的商品", preferredStyle: .actionSheet)
         productsArray.forEach { (SKProduct) in
             let action = UIAlertAction(title:"每月贊助開發者", style: .default) { (action) in
                 if(Auth.auth().currentUser!.isAnonymous){
