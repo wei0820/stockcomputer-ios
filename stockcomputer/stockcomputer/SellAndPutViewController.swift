@@ -56,6 +56,8 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
         sellTF.keyboardType = .numberPad
         buynumTF.keyboardType = .numberPad
         buyTF.keyboardType = .numberPad
+        buynumTF.text = "1000"
+        sellnumTF.text = "1000"
          
         // Do any additional setup after loading the view.
     }

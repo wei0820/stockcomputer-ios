@@ -12,14 +12,22 @@ import Firebase
 import FacebookCore
 import FacebookLogin
 import Instabug
-class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate{
+import JGProgressHUD
+import MarqueeLabel
+class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate,SKProductsRequestDelegate, SKPaymentTransactionObserver{
+    var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
+    var hud :JGProgressHUD?
+    var selectedProductIndex: Int! // 點擊到的購買項目
+    var isProgress: Bool = false // 是否有交易正在進行中
+    var delegate: IAPurchaseViewControllerDelegate!
+    var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
     
-    //    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","股票討論分享區"]
-    var itemName = ["現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算"]
+    var itemName = ["贊助開發者","現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算","盤中個股精選追蹤","外陸資買賣超前50名","投信買賣超前50名","自營商買賣超前50名","八大官股銀行買賣超","融資融券借券排行"]
     
     
     var ref: DatabaseReference!
     
+    @IBOutlet weak var marqueeLabel: MarqueeLabel!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemName.count
@@ -57,34 +65,45 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         let name = itemName[indexPath.row]
         Instabug.logUserEvent(withName: name)
         if (name == itemName[0]){
+            buy()
+        }else if (name == itemName[1]){
             performSegue(withIdentifier: "DayTrade", sender: nil)
             
-        }else if(name ==  itemName[1]){
+        }else if(name ==  itemName[2]){
             performSegue(withIdentifier: "TradeDetail", sender: nil)
             
-        }else if(name == itemName[2]) {
+        }else if(name == itemName[3]) {
             performSegue(withIdentifier: "hongkongstock", sender: nil)
-        }else if (name == itemName[3]){
-            performSegue(withIdentifier: "distribution", sender: nil)
-            
         }else if (name == itemName[4]){
-            
-            performSegue(withIdentifier: "number", sender: nil)
+            performSegue(withIdentifier: "distribution", sender: nil)
             
         }else if (name == itemName[5]){
             
-            performSegue(withIdentifier: "futures", sender: nil)
+            performSegue(withIdentifier: "number", sender: nil)
             
         }else if (name == itemName[6]){
-            performSegue(withIdentifier: "sellput", sender: nil)
+            
+            performSegue(withIdentifier: "futures", sender: nil)
+            
         }else if (name == itemName[7]){
+            performSegue(withIdentifier: "sellput", sender: nil)
+        }else if (name == itemName[8]){
             performSegue(withIdentifier: "Margin", sender: nil)
+        }else if (name == itemName[9]){
+            performSegue(withIdentifier: "stocklist", sender: nil)
+        }else if (name == itemName[10]){
+            performSegue(withIdentifier: "foreigninvestment", sender: nil)
+        }else if (name == itemName[11]){
+            performSegue(withIdentifier: "trust", sender: nil)
+        }else if (name == itemName[12]){
+            performSegue(withIdentifier: "employed", sender: nil)
+        }else if (name == itemName[13]){
+            performSegue(withIdentifier: "broker", sender: nil)
+        }else if (name == itemName[14]){
+            performSegue(withIdentifier: "quotes", sender: nil)
         }
         
-        //        }else if (name == itemName[7]){
-        //            performSegue(withIdentifier: "sharelist", sender: nil)
-        //
-        //        }
+        
         
         
         
@@ -97,35 +116,28 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         setAdBanner()
-        //        if((userDefaults.value(forKey: "userID")) != nil){
-        //            setRightButton(s: "訪客")
-        //
-        //        }else{
-        //
-        //        }
         setRightButton(s: "會員中心")
         setLeftButton(s: "簽到")
+        self.productIDs.append("sponsor_300")
         
-        //     CalculationManager.getPrice(s: "2404")
-        //        setInterstitial()
-        //        ref = Database.database().reference()
-        //        self.ref.child("users").child("11111").setValue(["username": "1111"])
-        //
-        //        let url = URL(string: "https://drive.google.com/open?id=1-gCzQU9bTdRf98kRyIl-EtfkwtrvmkIU")
-        //        if UIApplication.shared.canOpenURL(url!) {
-        //            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-        //            //If you want handle the completion block than
-        //            UIApplication.shared.open(url!, options: [:], completionHandler: { (success) in
-        //                print("Open url : \(success)")
-        //            })
-        //        }
+        requestProductInfo()
         
+        SKPaymentQueue.default().add(self)
+//        DateManager.addToCalendarClicked()
+        marqueeLabel.type = .continuous
+            marqueeLabel.speed = .duration(9)
+        marqueeLabel.animationCurve = .easeInOut
+       marqueeLabel.fadeLength = 10.0
+            marqueeLabel.leadingBuffer = 30.0
+            marqueeLabel.trailingBuffer = 20.0
+        var strings = [String]()
         
-        
-        
+        strings = [FirebaseManager.getAnnouncementSting()]
+        marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
+
     }
+    
     func setLeftButton(s: String){
         // 導覽列右邊按鈕
         
@@ -179,7 +191,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
         appDelegate.window?.rootViewController = HomeVc
         
-    }
+    } 
     
     func setAlert(){
         let controller = UIAlertController(title: "訪客身份", message: "請先登入再使用", preferredStyle: .actionSheet)
@@ -210,5 +222,129 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         present(controller, animated: true, completion: nil)
     }
     
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        if response.products.count != 0 {
+            print("invalidProductIdentifiers： \(response.invalidProductIdentifiers.description)")
+            for product in response.products {
+                self.productsArray.append(product)
+                productsArray.forEach { (SKProduct) in
+                }
+                
+                
+            }
+            
+            //               tblProducts.reloadData()
+        }
+        else {
+            print("There are no products.")
+        }
+        
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        print("復原購買失敗...")
+        print(error.localizedDescription)
+        setUIAlert(title: "復原購買失敗...", message:error.localizedDescription)
+    }
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        setUIAlert(title: "復原購買成功...", message: "復原購買成功")
+        
+    }
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions as! [SKPaymentTransaction] {
+            switch transaction.transactionState {
+            case SKPaymentTransactionState.purchased:
+                print("Transaction completed successfully.")
+                SKPaymentQueue.default().finishTransaction(transaction)
+                setUIAlert(title: "謝謝乾爹", message: "謝謝乾爹")
+                
+                
+            case SKPaymentTransactionState.failed:
+                print("Transaction Failed");
+                print(transaction.error?.localizedDescription);
+                
+                SKPaymentQueue.default().finishTransaction(transaction)
+                setUIAlert(title: "Transaction Failed", message: transaction.error!.localizedDescription)
+                
+                
+            default:
+                print(transaction.transactionState.rawValue)
+            }
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        // 移除觀查者
+        SKPaymentQueue.default().remove(self)
+    }
+    func setUIAlert(title :String ,message :String){
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        controller.addAction(okAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
+    func buy(){
+        let controller = UIAlertController(title: "自動續費商品聲明", message: "付款：用戶確認購買並付款記入ITunes帳戶\n續費： 到期前24小時,蘋果會自動為您從帳戶扣款,成功後有效期限為一個月\n取消續費 ： 若需要取消自動續費,請在到期前24小時手動在iTunes/Apple ID 設置管理關閉,關閉後不再扣款", preferredStyle: .actionSheet)
+        productsArray.forEach { (SKProduct) in
+            let action = UIAlertAction(title:"每月贊助開發者", style: .default) { (action) in
+                if(Auth.auth().currentUser!.isAnonymous){
+                    let controller = UIAlertController(title: "訪客身份", message: "您是訪客身份,雖此商品為消耗商品,但建議登入帳號再進行購買,是否能要購買", preferredStyle: .actionSheet)
+                    let names = [ "是", "否"]
+                    for name in names {
+                        let action = UIAlertAction(title: name, style: .default) { (action) in
+                            if (name == "是"){
+                                if SKPaymentQueue.canMakePayments() {
+                                    // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
+                                    SKPaymentQueue.default().add(self)
+                                    let index = controller.actions.index(of: action)
+                                    // 取得內購產品
+                                    let payment = SKPayment(product: self.productsArray[index!])
+                                    // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
+                                    SKPaymentQueue.default().add(payment)}
+                            }else{
+                                
+                            }
+                        }
+                        controller.addAction(action)
+                    }
+                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                    controller.addAction(cancelAction)
+                    self.present(controller, animated: true, completion: nil)
+                }else{
+                    if SKPaymentQueue.canMakePayments() {
+                        // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
+                        SKPaymentQueue.default().add(self)
+                        let index = controller.actions.index(of: action)
+                        // 取得內購產品
+                        let payment = SKPayment(product: self.productsArray[index!])
+                        // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
+                        SKPaymentQueue.default().add(payment)}
+                }
+                
+                
+                
+            }
+            controller.addAction(action)
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
+    func requestProductInfo() {
+    
+        if SKPaymentQueue.canMakePayments() {
+            // 取得所有在 iTunes Connect 所建立的內購項目
+            let productIdentifiers: Set<String> = NSSet(array: self.productIDs) as! Set<String>
+            let productRequest: SKProductsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
+            
+            productRequest.delegate = self
+            productRequest.start() // 開始請求內購產品
+            
+        } else {
+            print("取不到任何內購的商品...")
+        }
+    }
 }
 

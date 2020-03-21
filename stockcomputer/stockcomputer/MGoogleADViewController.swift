@@ -29,9 +29,13 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         }else{
             adBannerView?.isHidden = false
         }
-        FirebaseManager.getMemberDate()
+        getAnnouncement()
+      
         
-        
+    }
+    func getAnnouncement() -> Array<String>{
+        return FirebaseManager.getAnnouncement()
+
     }
     func setAdBanner(){
         let id = "ca-app-pub-7019441527375550/9487446087"
@@ -126,6 +130,10 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     
     func setToast(s:String){
         Toast.init(text: s).show()
+    }
+    func dissmissView(){
+        dismiss(animated: true, completion: nil)
+
     }
     
     func setMemberAlert(){

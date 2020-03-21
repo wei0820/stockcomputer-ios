@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E10DDAD234C331C006A46F2 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDAC234C331C006A46F2 /* OptionViewController.swift */; };
 		8E10DDAF234C3402006A46F2 /* MGoogleADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */; };
 		8E10DDB1234C5FE3006A46F2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */; };
 		8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB2234C6AC8006A46F2 /* MapManager.swift */; };
@@ -24,16 +23,20 @@
 		8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122E234ADCE000795029 /* MemberCenterViewController.swift */; };
 		8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E871230234AFF1000795029 /* StoreKit.framework */; };
 		8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */; };
-		8EA996BA2362ED740077BA3C /* NowStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA996B92362ED740077BA3C /* NowStockPriceViewController.swift */; };
-		8EA996BC2362EE420077BA3C /* SmartStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA996BB2362EE420077BA3C /* SmartStockViewController.swift */; };
-		8EA996C02366CFC30077BA3C /* SmartStock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA996BF2366CFC30077BA3C /* SmartStock2ViewController.swift */; };
-		8EBF797E236959C300E569C2 /* BigBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF797D236959C300E569C2 /* BigBuyViewController.swift */; };
+		8EB01C992422197400A7E992 /* BrokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C982422197400A7E992 /* BrokerViewController.swift */; };
+		8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C9A242345F000A7E992 /* QuotesViewController.swift */; };
 		8EBF7980236978F000E569C2 /* QAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF797F236978F000E569C2 /* QAListViewController.swift */; };
 		8EBF7982236AB86C00E569C2 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7981236AB86C00E569C2 /* ChartViewController.swift */; };
 		8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7983236ACE8E00E569C2 /* TimerManager.swift */; };
+		8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BB2420671300260E25 /* GetStockPriceManger.swift */; };
+		8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BD242070EA00260E25 /* StockListViewController.swift */; };
+		8ED642C224209F1600260E25 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C124209F1600260E25 /* StockData.swift */; };
+		8ED642C42420C09500260E25 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C32420C09400260E25 /* StockDetailViewController.swift */; };
+		8ED642C62421F1E700260E25 /* ForeignInvestmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C52421F1E700260E25 /* ForeignInvestmentViewController.swift */; };
+		8ED642C82422112E00260E25 /* TrustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C72422112E00260E25 /* TrustViewController.swift */; };
+		8ED642CA242216C800260E25 /* SelfEmployedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C9242216C800260E25 /* SelfEmployedViewController.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
 		B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */; };
-		B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7415F01227A91040077AF72 /* StockPriceViewController.swift */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
 		B74F5303220556340034DC5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5302220556340034DC5D /* ViewController.swift */; };
 		B74F5306220556340034DC5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74F5304220556340034DC5D /* Main.storyboard */; };
@@ -41,12 +44,10 @@
 		B74F530B220556350034DC5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74F5309220556350034DC5D /* LaunchScreen.storyboard */; };
 		B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F53122205AB280034DC5D /* DayTradeViewController.swift */; };
 		B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B769047722A663DE00E1B53F /* EveryDayController.swift */; };
-		B769047A22A7AF6200E1B53F /* LegalpersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B769047922A7AF6200E1B53F /* LegalpersonViewController.swift */; };
 		B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */; };
 		B77B6F662205D53300A674D6 /* MarginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F652205D53300A674D6 /* MarginController.swift */; };
 		B77B6F682205D55100A674D6 /* FinancingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F672205D55100A674D6 /* FinancingViewController.swift */; };
 		B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A4612269998E00CF6005 /* HongKongController.swift */; };
-		B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */; };
 		B7E8C174226F015500792815 /* DistributionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C173226F015500792815 /* DistributionController.swift */; };
 		B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */; };
 		B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C1772270197900792815 /* FBLoginViewController.swift */; };
@@ -56,7 +57,6 @@
 
 /* Begin PBXFileReference section */
 		218BFBFCBC4C699D22C47723 /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E10DDAC234C331C006A46F2 /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGoogleADViewController.swift; sourceTree = "<group>"; };
 		8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8E10DDB2234C6AC8006A46F2 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
@@ -73,17 +73,21 @@
 		8E87122E234ADCE000795029 /* MemberCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCenterViewController.swift; sourceTree = "<group>"; };
 		8E871230234AFF1000795029 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
-		8EA996B92362ED740077BA3C /* NowStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowStockPriceViewController.swift; sourceTree = "<group>"; };
-		8EA996BB2362EE420077BA3C /* SmartStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartStockViewController.swift; sourceTree = "<group>"; };
-		8EA996BF2366CFC30077BA3C /* SmartStock2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartStock2ViewController.swift; sourceTree = "<group>"; };
-		8EBF797D236959C300E569C2 /* BigBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigBuyViewController.swift; sourceTree = "<group>"; };
+		8EB01C982422197400A7E992 /* BrokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokerViewController.swift; sourceTree = "<group>"; };
+		8EB01C9A242345F000A7E992 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		8EBF797F236978F000E569C2 /* QAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAListViewController.swift; sourceTree = "<group>"; };
 		8EBF7981236AB86C00E569C2 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		8EBF7983236ACE8E00E569C2 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		8ED642BB2420671300260E25 /* GetStockPriceManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStockPriceManger.swift; sourceTree = "<group>"; };
+		8ED642BD242070EA00260E25 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
+		8ED642C124209F1600260E25 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
+		8ED642C32420C09400260E25 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
+		8ED642C52421F1E700260E25 /* ForeignInvestmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignInvestmentViewController.swift; sourceTree = "<group>"; };
+		8ED642C72422112E00260E25 /* TrustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustViewController.swift; sourceTree = "<group>"; };
+		8ED642C9242216C800260E25 /* SelfEmployedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfEmployedViewController.swift; sourceTree = "<group>"; };
 		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
 		B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VponAdapter_iOS_b1ffc56_v1.1.4.a; sourceTree = "<group>"; };
-		B7415F01227A91040077AF72 /* StockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceViewController.swift; sourceTree = "<group>"; };
 		B74F52FD220556330034DC5D /* stockcomputer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stockcomputer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74F5300220556340034DC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B74F5302220556340034DC5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,12 +97,10 @@
 		B74F530C220556350034DC5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B74F53122205AB280034DC5D /* DayTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTradeViewController.swift; sourceTree = "<group>"; };
 		B769047722A663DE00E1B53F /* EveryDayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryDayController.swift; sourceTree = "<group>"; };
-		B769047922A7AF6200E1B53F /* LegalpersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalpersonViewController.swift; sourceTree = "<group>"; };
 		B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeDetailViewController.swift; sourceTree = "<group>"; };
 		B77B6F652205D53300A674D6 /* MarginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginController.swift; sourceTree = "<group>"; };
 		B77B6F672205D55100A674D6 /* FinancingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancingViewController.swift; sourceTree = "<group>"; };
 		B7E0A4612269998E00CF6005 /* HongKongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongController.swift; sourceTree = "<group>"; };
-		B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongStockController.swift; sourceTree = "<group>"; };
 		B7E8C173226F015500792815 /* DistributionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionController.swift; sourceTree = "<group>"; };
 		B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyLaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7E8C1772270197900792815 /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
@@ -174,28 +176,20 @@
 				B77B6F652205D53300A674D6 /* MarginController.swift */,
 				B77B6F672205D55100A674D6 /* FinancingViewController.swift */,
 				B7E0A4612269998E00CF6005 /* HongKongController.swift */,
-				B7E0A463226A0C4600CF6005 /* HongKongStockController.swift */,
 				B7E8C173226F015500792815 /* DistributionController.swift */,
 				B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */,
 				B7E8C1772270197900792815 /* FBLoginViewController.swift */,
 				B7E8C17B2271B65E00792815 /* FirebaseWorks.swift */,
-				B7415F01227A91040077AF72 /* StockPriceViewController.swift */,
 				B769047722A663DE00E1B53F /* EveryDayController.swift */,
-				B769047922A7AF6200E1B53F /* LegalpersonViewController.swift */,
 				8EF0005C23482F7D002ED120 /* MUIViewController.swift */,
 				8E87122A23489A3B00795029 /* Base64Manager.swift */,
 				8E87122C23489E7000795029 /* CamerManager.swift */,
 				8E87122E234ADCE000795029 /* MemberCenterViewController.swift */,
 				8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */,
-				8E10DDAC234C331C006A46F2 /* OptionViewController.swift */,
 				8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */,
 				8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */,
 				8E10DDB2234C6AC8006A46F2 /* MapManager.swift */,
 				8E10DDB82359A955006A46F2 /* StockNumberViewController.swift */,
-				8EA996B92362ED740077BA3C /* NowStockPriceViewController.swift */,
-				8EA996BB2362EE420077BA3C /* SmartStockViewController.swift */,
-				8EA996BF2366CFC30077BA3C /* SmartStock2ViewController.swift */,
-				8EBF797D236959C300E569C2 /* BigBuyViewController.swift */,
 				8EBF797F236978F000E569C2 /* QAListViewController.swift */,
 				8EBF7981236AB86C00E569C2 /* ChartViewController.swift */,
 				8EBF7983236ACE8E00E569C2 /* TimerManager.swift */,
@@ -205,6 +199,15 @@
 				8E48E4EF23F3E48700384D25 /* FirebaseManager.swift */,
 				8E48E4F123F3E4E000384D25 /* UiManager.swift */,
 				8E48E4F323F3E66600384D25 /* DateManager.swift */,
+				8ED642BB2420671300260E25 /* GetStockPriceManger.swift */,
+				8ED642BD242070EA00260E25 /* StockListViewController.swift */,
+				8ED642C124209F1600260E25 /* StockData.swift */,
+				8ED642C32420C09400260E25 /* StockDetailViewController.swift */,
+				8ED642C52421F1E700260E25 /* ForeignInvestmentViewController.swift */,
+				8ED642C72422112E00260E25 /* TrustViewController.swift */,
+				8ED642C9242216C800260E25 /* SelfEmployedViewController.swift */,
+				8EB01C982422197400A7E992 /* BrokerViewController.swift */,
+				8EB01C9A242345F000A7E992 /* QuotesViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -326,41 +329,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED642C42420C09500260E25 /* StockDetailViewController.swift in Sources */,
 				B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */,
-				8E10DDAD234C331C006A46F2 /* OptionViewController.swift in Sources */,
 				8E48E4F023F3E48800384D25 /* FirebaseManager.swift in Sources */,
-				8EA996BA2362ED740077BA3C /* NowStockPriceViewController.swift in Sources */,
 				8E2AB6D3238E1DA20079910F /* FuturesViewController.swift in Sources */,
 				B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */,
 				B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */,
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
-				8EBF797E236959C300E569C2 /* BigBuyViewController.swift in Sources */,
 				8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */,
-				8EA996C02366CFC30077BA3C /* SmartStock2ViewController.swift in Sources */,
+				8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */,
+				8ED642C224209F1600260E25 /* StockData.swift in Sources */,
 				8E48E4F223F3E4E000384D25 /* UiManager.swift in Sources */,
 				8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */,
 				8E87122D23489E7000795029 /* CamerManager.swift in Sources */,
-				8EA996BC2362EE420077BA3C /* SmartStockViewController.swift in Sources */,
+				8EB01C992422197400A7E992 /* BrokerViewController.swift in Sources */,
 				8E48E4E823EBB2A500384D25 /* SellAndPutViewController.swift in Sources */,
 				8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */,
 				8E10DDB92359A955006A46F2 /* StockNumberViewController.swift in Sources */,
 				8E10DDAF234C3402006A46F2 /* MGoogleADViewController.swift in Sources */,
-				B7415F02227A91040077AF72 /* StockPriceViewController.swift in Sources */,
-				B7E0A464226A0C4600CF6005 /* HongKongStockController.swift in Sources */,
 				8E48E4F423F3E66600384D25 /* DateManager.swift in Sources */,
 				8EBF7980236978F000E569C2 /* QAListViewController.swift in Sources */,
 				B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */,
 				8E10DDB1234C5FE3006A46F2 /* MapViewController.swift in Sources */,
 				B7E8C17C2271B65E00792815 /* FirebaseWorks.swift in Sources */,
+				8ED642C82422112E00260E25 /* TrustViewController.swift in Sources */,
 				B77B6F662205D53300A674D6 /* MarginController.swift in Sources */,
 				B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */,
 				B77B6F682205D55100A674D6 /* FinancingViewController.swift in Sources */,
 				B74F5301220556340034DC5D /* AppDelegate.swift in Sources */,
+				8ED642C62421F1E700260E25 /* ForeignInvestmentViewController.swift in Sources */,
+				8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */,
 				B7E8C174226F015500792815 /* DistributionController.swift in Sources */,
+				8ED642CA242216C800260E25 /* SelfEmployedViewController.swift in Sources */,
 				8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */,
 				8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */,
-				B769047A22A7AF6200E1B53F /* LegalpersonViewController.swift in Sources */,
 				8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */,
+				8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */,
 				8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */,
 				8EBF7982236AB86C00E569C2 /* ChartViewController.swift in Sources */,
 			);
@@ -511,7 +515,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -524,7 +528,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 4.7;
+				MARKETING_VERSION = 5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -539,7 +543,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 38;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -552,7 +556,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 4.7;
+				MARKETING_VERSION = 5.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

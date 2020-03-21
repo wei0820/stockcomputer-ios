@@ -55,7 +55,8 @@ class FBLoginViewController: UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        FirebaseManager.getAnnouncement()
+
         fetchProfile()
         // Do any additional setup after loading the view.
     }
@@ -92,7 +93,9 @@ class FBLoginViewController: UIViewController{
                         // ...
                         return
                     }
-               Instabug.identifyUser(withEmail: (Auth.auth().currentUser?.email)!, name: Auth.auth().currentUser?.displayName)
+               Instabug.identifyUser(withEmail: (Auth.auth().currentUser?.email)!, name:
+                Auth.auth().currentUser?.displayName)
+                FirebaseManager.getMemberDate()
 
                     
                 }

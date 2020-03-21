@@ -60,6 +60,9 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "現股當沖獲利計算"
+        buy_num.text = "1000"
+        sell_num.text = "1000"
     
 
         setKeyKeyboardType()
