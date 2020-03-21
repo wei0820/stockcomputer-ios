@@ -64,7 +64,24 @@ class MarginController: MGoogleADViewController{
             var  guaranteeMoney : Double  = Double(sellPriceInt)  * percentageDouble
             //利息
             var  interestPrice  : Double =  ((guaranteePrice * 0.004) * Double((dayInt / 365 ))) + ((guaranteeMoney  * 0.004) * Double((dayInt / 365 )))
-            
+            print(dayInt)
+            print(sellPriceInt)
+            print(buyPriceInt)
+            print(handPrice)
+            print(changePrice)
+            print(borrowPrice)
+            print(guaranteePrice)
+            print(guaranteeMoney)
+            print(interestPrice)
+            /*150000
+            145000
+            213.75
+            450.0
+            120.0
+            149216.25
+            13500.0
+            0.0*/
+
             label_1.text = "利息:" + String(interestPrice)
             
             
