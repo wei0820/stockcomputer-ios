@@ -137,7 +137,8 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         
         strings = [FirebaseManager.getAnnouncementSting()]
         marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
-        
+        print("jack",FirebaseManager.getUserPoint())
+
     }
     
     func setLeftButton(s: String){
@@ -259,7 +260,8 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                 print("Transaction completed successfully.")
                 SKPaymentQueue.default().finishTransaction(transaction)
                 setUIAlert(title: "謝謝乾爹", message: "謝謝乾爹")
-                print("jack", transaction.payment.productIdentifier)
+                print("jack",transaction.payment.productIdentifier)
+                getProductIdentifier(name: transaction.payment.productIdentifier)
                 
             case SKPaymentTransactionState.failed:
                 print("Transaction Failed");
@@ -283,27 +285,37 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         case "richman":
             break
         case "MenberPoint_1000":
+            print("jack",FirebaseManager.getUserPoint())
+
+            FirebaseManager.addMemberBuyPoint(pont: 1000)
+            
             //1000
             break
     
         case "Member_Point_1000":
             // 500
-            
+            FirebaseManager.addMemberBuyPoint(pont: 500)
+
             break
             
         default:
-            <#code#>
+            break
         }
         
     }
     func setUIAlert(title :String ,message :String){
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            FirebaseManager.getMemberDate()
+        }
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)
     }
     
     func buy(){
+        print("jack",FirebaseManager.getMemberDate())
+        print("jack",FirebaseManager.getUserPoint())
+
         let controller = UIAlertController(title: "商品列表", message: "請選擇要購買的商品", preferredStyle: .actionSheet)
         productsArray.forEach { (SKProduct) in
             let action = UIAlertAction(title:SKProduct.localizedTitle, style: .default) { (action) in
