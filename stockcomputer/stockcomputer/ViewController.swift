@@ -90,16 +90,42 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         }else if (name == itemName[8]){
             performSegue(withIdentifier: "Margin", sender: nil)
         }else if (name == itemName[9]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "stocklist", sender: nil)
+            
+            
         }else if (name == itemName[10]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "foreigninvestment", sender: nil)
         }else if (name == itemName[11]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "trust", sender: nil)
         }else if (name == itemName[12]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "employed", sender: nil)
         }else if (name == itemName[13]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "broker", sender: nil)
         }else if (name == itemName[14]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "quotes", sender: nil)
         }
         
@@ -126,18 +152,19 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         requestProductInfo()
         
         SKPaymentQueue.default().add(self)
-//        DateManager.addToCalendarClicked()
+        //        DateManager.addToCalendarClicked()
         marqueeLabel.type = .continuous
-            marqueeLabel.speed = .duration(9)
+        marqueeLabel.speed = .duration(9)
         marqueeLabel.animationCurve = .easeInOut
-       marqueeLabel.fadeLength = 10.0
-            marqueeLabel.leadingBuffer = 30.0
-            marqueeLabel.trailingBuffer = 20.0
+        marqueeLabel.fadeLength = 10.0
+        marqueeLabel.leadingBuffer = 30.0
+        marqueeLabel.trailingBuffer = 20.0
         var strings = [String]()
         
         strings = [FirebaseManager.getAnnouncementSting()]
         marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
-
+        print("jack",FirebaseManager.getUserPoint())
+        
     }
     
     func setLeftButton(s: String){
@@ -259,7 +286,8 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                 print("Transaction completed successfully.")
                 SKPaymentQueue.default().finishTransaction(transaction)
                 setUIAlert(title: "謝謝乾爹", message: "謝謝乾爹")
-                
+                print("jack",transaction.payment.productIdentifier)
+                getProductIdentifier(name: transaction.payment.productIdentifier)
                 
             case SKPaymentTransactionState.failed:
                 print("Transaction Failed");
@@ -278,7 +306,38 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         // 移除觀查者
         SKPaymentQueue.default().remove(self)
     }
+    func getProductIdentifier(name : String){
+        switch name {
+        case "richman":
+            break
+        case "MenberPoint_1000":
+            print("jack",FirebaseManager.getUserPoint())
+            
+            FirebaseManager.addMemberBuyPoint(pont: 1000)
+            
+            //1000
+            break
+            
+        case "Member_Point_1000":
+            // 500
+            FirebaseManager.addMemberBuyPoint(pont: 500)
+            
+            break
+            
+        default:
+            break
+        }
+        
+    }
     func setUIAlert(title :String ,message :String){
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            FirebaseManager.getMemberDate()
+        }
+        controller.addAction(okAction)
+        present(controller, animated: true, completion: nil)
+    }
+    func setNoLoginAlert(title :String ,message :String){
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         controller.addAction(okAction)
@@ -288,9 +347,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
     func buy(){
         let controller = UIAlertController(title: "商品列表", message: "請選擇要購買的商品", preferredStyle: .actionSheet)
         productsArray.forEach { (SKProduct) in
-            print("jack",SKProduct.localizedTitle)
-            print("jack",SKProduct.price)
-
             let action = UIAlertAction(title:SKProduct.localizedTitle, style: .default) { (action) in
                 if(Auth.auth().currentUser!.isAnonymous){
                     let controller = UIAlertController(title: "訪客身份", message: "您是訪客身份,雖此商品為消耗商品,但建議登入帳號再進行購買,是否能要購買", preferredStyle: .actionSheet)
@@ -305,7 +361,11 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                                     // 取得內購產品
                                     let payment = SKPayment(product: self.productsArray[index!])
                                     // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
-                                    SKPaymentQueue.default().add(payment)}
+                                    SKPaymentQueue.default().add(payment)
+                                    self.selectedProductIndex = controller.actions.index(of: action)
+                                    
+                                    
+                                }
                             }else{
                                 
                             }
@@ -338,7 +398,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         present(controller, animated: true, completion: nil)
     }
     func requestProductInfo() {
-    
+        
         if SKPaymentQueue.canMakePayments() {
             // 取得所有在 iTunes Connect 所建立的內購項目
             let productIdentifiers: Set<String> = NSSet(array: self.productIDs) as! Set<String>
@@ -351,5 +411,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             print("取不到任何內購的商品...")
         }
     }
+    
+    
 }
 

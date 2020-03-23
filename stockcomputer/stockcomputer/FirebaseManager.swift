@@ -305,7 +305,33 @@ class FirebaseManager {
         
     }
     
-    
+    static  func  addMemberBuyPoint(pont :Int){
+        var  id = self.getMemberId()
+        if ( id == nil){
+            id =  UiManager.getUUID()
+        }
+        let reference: DatabaseReference! = Database.database().reference().child("MemberList").child(id as! String)
+        let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
+        let dateReviewReference = reference.child(id)
+        var point :Int = getUserPoint()
+        var addPoint : Int = point + pont
+        // 新增節點資料
+        var dateReview: [String : AnyObject] = [String : AnyObject]()
+        dateReview["id"] = id as AnyObject
+        dateReview["name"] = getMemberName()  as AnyObject
+        dateReview["lastlogintime"]  = getUserLlastlogintime()  as AnyObject
+        dateReview["point"] = addPoint   as AnyObject
+        dateReviewReference.updateChildValues(dateReview) { (err, ref) in
+            if err != nil{
+                print("err： \(err!)")
+                return
+            }
+            
+            print(ref.description())
+        }
+        
+        
+    }
     static  func
         getAnnouncement() -> Array<String>{
         
