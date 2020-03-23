@@ -119,7 +119,9 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         setAdBanner()
         setRightButton(s: "會員中心")
         setLeftButton(s: "簽到")
-        self.productIDs.append("sponsor_300")
+        self.productIDs.append("richman")
+        self.productIDs.append("Member_Point_1000")
+        self.productIDs.append("MenberPoint_1000")
         
         requestProductInfo()
         
@@ -284,9 +286,12 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
     }
     
     func buy(){
-        let controller = UIAlertController(title: "自動續費商品聲明", message: "付款：用戶確認購買並付款記入ITunes帳戶\n續費： 到期前24小時,蘋果會自動為您從帳戶扣款,成功後有效期限為一個月\n取消續費 ： 若需要取消自動續費,請在到期前24小時手動在iTunes/Apple ID 設置管理關閉,關閉後不再扣款", preferredStyle: .actionSheet)
+        let controller = UIAlertController(title: "商品列表", message: "請選擇要購買的商品", preferredStyle: .actionSheet)
         productsArray.forEach { (SKProduct) in
-            let action = UIAlertAction(title:"每月贊助開發者", style: .default) { (action) in
+            print("jack",SKProduct.localizedTitle)
+            print("jack",SKProduct.price)
+
+            let action = UIAlertAction(title:SKProduct.localizedTitle, style: .default) { (action) in
                 if(Auth.auth().currentUser!.isAnonymous){
                     let controller = UIAlertController(title: "訪客身份", message: "您是訪客身份,雖此商品為消耗商品,但建議登入帳號再進行購買,是否能要購買", preferredStyle: .actionSheet)
                     let names = [ "是", "否"]
