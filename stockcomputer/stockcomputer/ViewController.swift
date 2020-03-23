@@ -90,16 +90,42 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         }else if (name == itemName[8]){
             performSegue(withIdentifier: "Margin", sender: nil)
         }else if (name == itemName[9]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "stocklist", sender: nil)
+            
+            
         }else if (name == itemName[10]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "foreigninvestment", sender: nil)
         }else if (name == itemName[11]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "trust", sender: nil)
         }else if (name == itemName[12]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "employed", sender: nil)
         }else if (name == itemName[13]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "broker", sender: nil)
         }else if (name == itemName[14]){
+            if(!checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "quotes", sender: nil)
         }
         
@@ -138,7 +164,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         strings = [FirebaseManager.getAnnouncementSting()]
         marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
         print("jack",FirebaseManager.getUserPoint())
-
+        
     }
     
     func setLeftButton(s: String){
@@ -286,16 +312,16 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             break
         case "MenberPoint_1000":
             print("jack",FirebaseManager.getUserPoint())
-
+            
             FirebaseManager.addMemberBuyPoint(pont: 1000)
             
             //1000
             break
-    
+            
         case "Member_Point_1000":
             // 500
             FirebaseManager.addMemberBuyPoint(pont: 500)
-
+            
             break
             
         default:
@@ -311,11 +337,14 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)
     }
+    func setNoLoginAlert(title :String ,message :String){
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        controller.addAction(okAction)
+        present(controller, animated: true, completion: nil)
+    }
     
     func buy(){
-        print("jack",FirebaseManager.getMemberDate())
-        print("jack",FirebaseManager.getUserPoint())
-
         let controller = UIAlertController(title: "商品列表", message: "請選擇要購買的商品", preferredStyle: .actionSheet)
         productsArray.forEach { (SKProduct) in
             let action = UIAlertAction(title:SKProduct.localizedTitle, style: .default) { (action) in
