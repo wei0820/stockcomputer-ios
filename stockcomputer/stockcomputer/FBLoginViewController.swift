@@ -19,7 +19,7 @@ class FBLoginViewController: UIViewController{
         Auth.auth().signInAnonymously() { (authResult, error) in
             if let error = error {//
                 print("error")
-
+                
                 print(error.localizedDescription)
                 return
             }
@@ -56,7 +56,7 @@ class FBLoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         FirebaseManager.getAnnouncement()
-
+        
         fetchProfile()
         // Do any additional setup after loading the view.
     }
@@ -74,9 +74,9 @@ class FBLoginViewController: UIViewController{
     func fetchProfile(){
         if ((userDefaults.value(forKey: "userID")) != nil){
             let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-                       let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
-                       let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-                       appDelegate.window?.rootViewController = HomeVc
+            let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+            appDelegate.window?.rootViewController = HomeVc
             
         }else{
             if let accessToken = AccessToken.current {
@@ -86,21 +86,30 @@ class FBLoginViewController: UIViewController{
                 appDelegate.window?.rootViewController = HomeVc
                 // User is logged in, use 'accessToken' here.
                 let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-            
+                
                 Auth.auth().signIn(with: credential) { (authResult, error) in
                     if let error = error {
                         
                         // ...
                         return
                     }
-               Instabug.identifyUser(withEmail: (Auth.auth().currentUser?.email)!, name:
-                Auth.auth().currentUser?.displayName)
-                FirebaseManager.getMemberDate()
-
+                    Instabug.identifyUser(withEmail: (Auth.auth().currentUser?.email)!, name:
+                        Auth.auth().currentUser?.displayName)
+                    FirebaseManager.getMemberDate()
+                    if(FirebaseManager.getUserId() != nil && FirebaseManager.getUserPoint() != nil){
+                        if(FirebaseManager.getUserPoint() == 0){
+                            FirebaseManager.addMemberDateToFirebase(point: 100)
+                        }
+                        
+                    }else{
+                        FirebaseManager.addMemberDateToFirebase(point: 100)
+                        FirebaseManager.getMemberDate()
+                    }
                     
                 }
             }
         }
-
-    }
+    
+    
+}
 }
