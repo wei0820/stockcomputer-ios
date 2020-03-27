@@ -323,8 +323,8 @@ class FirebaseManager {
         var dateReview: [String : AnyObject] = [String : AnyObject]()
         dateReview["id"] = id as AnyObject
         dateReview["name"] = getMemberName()  as AnyObject
-        dateReview["lastlogintime"]  = getUserLlastlogintime()  as AnyObject
-        dateReview["point"] = pont   as AnyObject
+        dateReview["lastlogintime"]  = getUserLlastlogintime()  as Any as AnyObject
+        dateReview["point"] = pont   as Any as AnyObject
         dateReviewReference.updateChildValues(dateReview) { (err, ref) in
             if err != nil{
                 print("err： \(err!)")
@@ -421,11 +421,6 @@ class FirebaseManager {
             // childAdded逐筆呈現
             if let dictionaryData = snapshot.value as? [String: AnyObject]{
                 var month : String = dictionaryData["month"] as! String
-    
-                
-                print("jack",month)
-         
-
             }
             
         }, withCancel: nil)
