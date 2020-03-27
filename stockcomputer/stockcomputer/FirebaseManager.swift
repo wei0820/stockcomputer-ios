@@ -203,12 +203,12 @@ class FirebaseManager {
      }
      
     static func getVersion() ->String{
-        
-        if(userDefaults.value(forKey: "isCheckVersion") != nil){
-            return userDefaults.value(forKey: "isCheckVersion")! as! String
+
+        if(userDefaults.value(forKey: "Version") != nil){
+            return userDefaults.value(forKey: "Version")! as! String
         }
         return ""
-        
+
     }
     static func getNewVersion() ->Double{
          
