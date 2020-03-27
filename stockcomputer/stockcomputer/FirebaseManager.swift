@@ -193,14 +193,31 @@ class FirebaseManager {
         
     }
     
+    static func getIsCheckVersion() ->Int{
+         
+         if(userDefaults.value(forKey: "isCheckVersion") != nil){
+             return userDefaults.value(forKey: "isCheckVersion")! as! Int
+         }
+         return 0
+         
+     }
+     
     static func getVersion() ->String{
         
-        if(userDefaults.value(forKey: "version") != nil){
-            return userDefaults.value(forKey: "version")! as! String
+        if(userDefaults.value(forKey: "isCheckVersion") != nil){
+            return userDefaults.value(forKey: "isCheckVersion")! as! String
         }
         return ""
         
     }
+    static func getNewVersion() ->Double{
+         
+         if(userDefaults.value(forKey: "newVersion") != nil){
+             return userDefaults.value(forKey: "newVersion")! as! Double
+         }
+        return 0.0
+         
+     }
     
     
     
@@ -349,25 +366,73 @@ class FirebaseManager {
         
         
     }
-    static  func
-        getAnnouncement() -> Array<String>{
-        
-        
-        var string = Array<String>()
-        string.removeAll()
+    static  func getStockcomuperAllDate(){
         // 查詢節點資料
-        Database.database().reference().child("announcement").child("announcement" as! String).observe(.childAdded, with: {
+        Database.database().reference().child("stockcomuper").child("stockcomuper" as! String).observe(.childAdded, with: {
             (snapshot) in
             // childAdded逐筆呈現
             if let dictionaryData = snapshot.value as? [String: AnyObject]{
                 var announcement : String = dictionaryData["announcement"] as! String
+                var isCheckVersion : Int = dictionaryData["isCheckVersion"] as! Int
+                var newVersion : Double = dictionaryData["newVersion"] as! Double
                 userDefaults.set(announcement, forKey: "announcement")
+                userDefaults.set(isCheckVersion, forKey: "isCheckVersion")
+                userDefaults.set(newVersion, forKey: "newVersion")
+
                 
             }
             
         }, withCancel: nil)
-        return string
+    }
+    static  func  addMember(month :String){
+        var  id = self.getMemberId()
+        if ( id == nil){
+            id =  UiManager.getUUID()
+        }
+        let reference: DatabaseReference! = Database.database().reference().child("Profit").child(id as! String).child("04")
+        let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
+        let dateReviewReference = reference.child(month)
+        var point :Int = getUserPoint()
+        // 新增節點資料
+        var dateReview: [String : AnyObject] = [String : AnyObject]()
+        dateReview["month"] = "11111111" as AnyObject
+        dateReviewReference.updateChildValues(dateReview) { (err, ref) in
+            if err != nil{
+                print("err： \(err!)")
+                return
+            }
+            
+            print(ref.description())
+        }
+        
+        
     }
     
+    
+    static  func getMemberMonthDate(){
+        
+        var  id = self.getMemberId()
+        if ( id == nil){
+            id =  UiManager.getUUID()
+        }
+        
+        // 查詢節點資料
+        Database.database().reference().child("Profit").child(id as! String).child("04").observe(.childAdded, with: {
+            (snapshot) in
+            
+            // childAdded逐筆呈現
+            if let dictionaryData = snapshot.value as? [String: AnyObject]{
+                var month : String = dictionaryData["month"] as! String
+    
+                
+                print("jack",month)
+         
+
+            }
+            
+        }, withCancel: nil)
+        
+        
+    }
 }
 

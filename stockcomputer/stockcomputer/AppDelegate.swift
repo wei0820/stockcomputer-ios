@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
-    
+    var shouldRotate:Bool = false
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -62,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //        Instabug.welcomeMessageMode = IBGWelcomeMessageMode.live // For live users
         //        Instabug.welcomeMessageMode = IBGWelcomeMessageMode.disabled // Disable welcome message
         //        Instabug.showWelcomeMessage(with: IBGWelcomeMessageMode.live) // For live users
-        
+        Instabug.trackUserSteps = false
         Replies.enabled = true
         window?.makeKeyAndVisible()
         
@@ -223,6 +224,13 @@ extension AppDelegate : MessagingDelegate {
             case .failure(let error):
                 print(error.localizedDescription) 
             }
+        }
+    }
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if shouldRotate{
+            return .all
+        }else{
+            return .portrait
         }
     }
 }

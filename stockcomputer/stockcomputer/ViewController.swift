@@ -22,7 +22,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
     var delegate: IAPurchaseViewControllerDelegate!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
     
-    var itemName = ["贊助開發者","現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算","盤中個股精選追蹤","外陸資買賣超前50名","投信買賣超前50名","自營商買賣超前50名","八大官股銀行買賣超","融資融券借券排行"]
+    var itemName = ["贊助開發者","現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算","盤中個股精選追蹤","外陸資買賣超前50名","投信買賣超前50名","自營商買賣超前50名","八大官股銀行買賣超","融資融券借券排行","個人損益紀錄"]
     
     
     var ref: DatabaseReference!
@@ -127,7 +127,11 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                 return
             }
             performSegue(withIdentifier: "quotes", sender: nil)
+        }else if (name == itemName[15]){
+            
+            performSegue(withIdentifier: "chart", sender: nil)
         }
+        
         
         
         
@@ -266,7 +270,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                 
             }
             
-            //               tblProducts.reloadData()
         }
         else {
             print("There are no products.")
@@ -366,8 +369,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                                     let payment = SKPayment(product: self.productsArray[index!])
                                     // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
                                     SKPaymentQueue.default().add(payment)
-                                    self.selectedProductIndex = controller.actions.index(of: action)
-                                    
+ 
                                     
                                 }
                             }else{
