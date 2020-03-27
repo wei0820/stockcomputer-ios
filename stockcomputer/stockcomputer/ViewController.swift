@@ -430,9 +430,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             
             productRequest.delegate = self
             productRequest.start() // 開始請求內購產品
-            
-        } else {
-            print("取不到任何內購的商品...")
         }
     }
     
