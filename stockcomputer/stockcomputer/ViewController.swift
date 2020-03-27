@@ -168,11 +168,18 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         
         strings = [FirebaseManager.getAnnouncementSting()]
         marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
-        
         if(checkIsMember()){
             FirebaseManager.getMemberDate()
             FirebaseManager.setUserVersion()
-            
+
+            if(!FirebaseManager.getVersion().isEmpty){
+                var newVersion : Double = FirebaseManager.getNewVersion() as! Double
+                var userVersion : Double = Double(FirebaseManager.getVersion()) as! Double
+                if(userVersion < newVersion){
+                    setAlert(title: "版本過舊", message: "請您至 App Store 更新 ")
+                }
+
+            }
             
         }
         
@@ -344,6 +351,13 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
             FirebaseManager.getMemberDate()
+        }
+        controller.addAction(okAction)
+        present(controller, animated: true, completion: nil)
+    }
+    func setAlert(title :String ,message :String){
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
         }
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)

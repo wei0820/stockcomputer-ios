@@ -118,9 +118,7 @@ class FirebaseManager {
                 userDefaults.set(point, forKey: "point")
                 userDefaults.set(watchadtime, forKey: "watchadtime")
                 userDefaults.set(version, forKey: "version")
-                print("jack",point)
-                print("jack",lastlogintime)
-                print("jack",version)
+   
 
             }
             
@@ -204,8 +202,8 @@ class FirebaseManager {
      
     static func getVersion() ->String{
 
-        if(userDefaults.value(forKey: "Version") != nil){
-            return userDefaults.value(forKey: "Version")! as! String
+        if(userDefaults.value(forKey: "version") != nil){
+            return userDefaults.value(forKey: "version")! as! String
         }
         return ""
 
