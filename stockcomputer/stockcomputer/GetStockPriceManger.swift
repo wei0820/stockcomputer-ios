@@ -88,7 +88,6 @@ class GetStockPriceManager{
                 for th in try elements.select("span.w58.name") {
                     let n = try th.text()
                     if(!n.isEmpty){
-                        print("jack",n)
                         array_foreigninvestment.append(n)
                         
                     }
@@ -129,7 +128,6 @@ class GetStockPriceManager{
                 for th in try elements.select("span.w58.name") {
                     let n = try th.text()
                     if(!n.isEmpty){
-                        print("jack",n)
                         array_foreigninvestment.append(n)
                         
                     }
@@ -171,7 +169,6 @@ class GetStockPriceManager{
                 for th in try elements.select("span.w58.name") {
                     let n = try th.text()
                     if(!n.isEmpty){
-                        print("jack",n)
                         array_foreigninvestment.append(n)
                         
                     }
@@ -212,7 +209,6 @@ class GetStockPriceManager{
                 for th in try elements.select("span.w58.name") {
                     let n = try th.text()
                     if(!n.isEmpty){
-                        print("jack",n)
                         array_foreigninvestment.append(n)
                         
                     }
@@ -254,7 +250,6 @@ class GetStockPriceManager{
                 for th in try elements.select("span.w58.name") {
                     let n = try th.text()
                     if(!n.isEmpty){
-                        print("jack",n)
                         array_foreigninvestment.append(n)
                         
                     }
@@ -295,7 +290,6 @@ class GetStockPriceManager{
                 for th in try elements.select("span.w58.name") {
                     let n = try th.text()
                     if(!n.isEmpty){
-                        print("jack",n)
                         array_foreigninvestment.append(n)
                         
                     }
@@ -337,7 +331,6 @@ class GetStockPriceManager{
                 let elements: Elements = try document.select("div.mp-main-left.w788>div.grid" ?? "")
                 //transform it into a local object (Item)
                 var size = try elements.select("div.grid-body.p7.mb10>ul.stock-list>li>span.w100.name").size()
-                print("jack",size)
                 for  i in 0...29 {
                     let n = try elements.select("div.grid-body.p7.mb10>ul.stock-list>li>span.w100.name").get(i).text()
                     if(!n.isEmpty){
@@ -391,7 +384,6 @@ class GetStockPriceManager{
                    let elements: Elements = try document.select("div.mp-main-left.w788>div.grid" ?? "")
                    //transform it into a local object (Item)
                    var size = try elements.select("div.grid-body.p7.mb10>ul.stock-list>li>span.w100.name").size()
-                   print("jack",size)
                    for  i in 30...59 {
                        let n = try elements.select("div.grid-body.p7.mb10>ul.stock-list>li>span.w100.name").get(i).text()
                        if(!n.isEmpty){
@@ -439,7 +431,6 @@ class GetStockPriceManager{
                    for th in try elements.select("span.w100.name") {
                                   let n = try th.text()
                                   if(!n.isEmpty){
-                                      print("jack",n)
                                       array_foreigninvestment.append(n)
                                       
                                   }
@@ -482,7 +473,6 @@ class GetStockPriceManager{
                    for th in try elements.select("span.w100.name") {
                                   let n = try th.text()
                                   if(!n.isEmpty){
-                                      print("jack",n)
                                       array_foreigninvestment.append(n)
                                       
                                   }
@@ -524,7 +514,6 @@ class GetStockPriceManager{
                    for th in try elements.select("span.w100.name") {
                                   let n = try th.text()
                                   if(!n.isEmpty){
-                                      print("jack",n)
                                       array_foreigninvestment.append(n)
                                       
                                   }
