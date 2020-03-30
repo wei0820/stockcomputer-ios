@@ -182,6 +182,7 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             }
             
         }
+
         
         
     }

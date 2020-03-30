@@ -31,7 +31,8 @@ class ForeignInvestmentViewController: MGoogleADViewController , UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "外資買超排行"
+
+        title = GetStockPriceManager.getForeigninvestmentTitle() + "外資買超排行"
         getData()
         
         // Do any additional setup after loading the view.
@@ -71,12 +72,12 @@ class ForeignInvestmentViewController: MGoogleADViewController , UITableViewData
         switch item.tag {
         case 1:
             setToast(s: "外資買超排行")
-            title = "外資買超排行"
+            title =  GetStockPriceManager.getForeigninvestmentTitle() + "外資買超排行"
             getData()
             break
         case 2:
             setToast(s: "外資賣超排行")
-            title = "外資賣超排行"
+            title = GetStockPriceManager.getForeigninvestmentTitle() + "外資賣超排行"
             getData_2()
             
             
