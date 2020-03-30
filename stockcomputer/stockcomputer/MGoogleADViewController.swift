@@ -33,8 +33,8 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
       
         
     }
-    func getAnnouncement() -> Array<String>{
-        return FirebaseManager.getAnnouncement()
+    func getAnnouncement(){
+        FirebaseManager.getStockcomuperAllDate()
 
     }
     func setAdBanner(){

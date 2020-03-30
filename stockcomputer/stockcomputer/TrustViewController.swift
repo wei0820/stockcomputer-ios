@@ -31,7 +31,7 @@ class TrustViewController: MGoogleADViewController , UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "投信買超排行"
+        title = GetStockPriceManager.getTustTitle() + "投信買超排行"
         getData()
         
         // Do any additional setup after loading the view.
@@ -71,12 +71,12 @@ class TrustViewController: MGoogleADViewController , UITableViewDataSource
         switch item.tag {
         case 1:
             setToast(s: "投信買超排行")
-            title = "投信買超排行"
+            title = GetStockPriceManager.getTustTitle() + "投信買超排行"
             getData()
             break
         case 2:
             setToast(s: "投信賣超排行")
-            title = "投信賣超排行"
+            title =  GetStockPriceManager.getTustTitle() + "投信賣超排行"
             getData_2()
             
             

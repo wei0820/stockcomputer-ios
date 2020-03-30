@@ -90,44 +90,52 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         }else if (name == itemName[8]){
             performSegue(withIdentifier: "Margin", sender: nil)
         }else if (name == itemName[9]){
-            if(!checkIsMember()){
-                         setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
-                         return
-                     }
+            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
+                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
+                return
+            }
             performSegue(withIdentifier: "stocklist", sender: nil)
-
+            
             
         }else if (name == itemName[10]){
-            if(!checkIsMember()){
+            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
                 setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
                 return
             }
             performSegue(withIdentifier: "foreigninvestment", sender: nil)
         }else if (name == itemName[11]){
-            if(!checkIsMember()){
+            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
                 setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
                 return
             }
             performSegue(withIdentifier: "trust", sender: nil)
         }else if (name == itemName[12]){
-            if(!checkIsMember()){
+            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
                 setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
                 return
             }
             performSegue(withIdentifier: "employed", sender: nil)
         }else if (name == itemName[13]){
-            if(!checkIsMember()){
+            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
                 setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
                 return
             }
             performSegue(withIdentifier: "broker", sender: nil)
         }else if (name == itemName[14]){
-            if(!checkIsMember()){
+            print("jack",FirebaseManager.getIsCheckVersion())
+            print("jack",checkIsMember())
+
+            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
                 setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
                 return
             }
             performSegue(withIdentifier: "quotes", sender: nil)
         }
+//        //else if (name == itemName[15]){
+//
+//            performSegue(withIdentifier: "chart", sender: nil)
+//        }
+        
         
         
         
@@ -160,14 +168,22 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         
         strings = [FirebaseManager.getAnnouncementSting()]
         marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
-   
         if(checkIsMember()){
             FirebaseManager.getMemberDate()
             FirebaseManager.setUserVersion()
 
+            if(!FirebaseManager.getVersion().isEmpty){
+                var newVersion : Double = FirebaseManager.getNewVersion() as! Double
+                var userVersion : Double = Double(FirebaseManager.getVersion()) as! Double
+                if(userVersion < newVersion){
+                    setAlert(title: "版本過舊", message: "請您至 App Store 更新 ")
+                }
 
+            }
+            
         }
 
+        
         
     }
     
@@ -266,7 +282,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                 
             }
             
-            //               tblProducts.reloadData()
         }
         else {
             print("There are no products.")
@@ -341,12 +356,19 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)
     }
+    func setAlert(title :String ,message :String){
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+        }
+        controller.addAction(okAction)
+        present(controller, animated: true, completion: nil)
+    }
     func setNoLoginAlert(title :String ,message :String){
-         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-           let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-         controller.addAction(okAction)
-         present(controller, animated: true, completion: nil)
-     }
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        controller.addAction(okAction)
+        present(controller, animated: true, completion: nil)
+    }
     
     func buy(){
         let controller = UIAlertController(title: "商品列表", message: "請選擇要購買的商品", preferredStyle: .actionSheet)
@@ -366,7 +388,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
                                     let payment = SKPayment(product: self.productsArray[index!])
                                     // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
                                     SKPaymentQueue.default().add(payment)
-                                    self.selectedProductIndex = controller.actions.index(of: action)
                                     
                                     
                                 }
@@ -410,9 +431,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             
             productRequest.delegate = self
             productRequest.start() // 開始請求內購產品
-            
-        } else {
-            print("取不到任何內購的商品...")
         }
     }
     

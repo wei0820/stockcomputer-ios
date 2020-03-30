@@ -31,7 +31,7 @@ class SelfEmployedViewController: MGoogleADViewController , UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "自營商買超排行"
+        title = GetStockPriceManager.getEmployedTitle() + "自營商買超排行"
         getData()
         
         // Do any additional setup after loading the view.
@@ -71,12 +71,12 @@ class SelfEmployedViewController: MGoogleADViewController , UITableViewDataSourc
         switch item.tag {
         case 1:
             setToast(s: "自營商買超排行")
-            title = "自營商買超排行"
+            title = GetStockPriceManager.getEmployedTitle() + "自營商買超排行"
             getData()
             break
         case 2:
             setToast(s: "自營商賣超排行")
-            title = "自營商賣超排行"
+            title = GetStockPriceManager.getEmployedTitle() + "自營商賣超排行"
             getData_2()
             
             

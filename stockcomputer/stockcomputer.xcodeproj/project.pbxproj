@@ -25,8 +25,8 @@
 		8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */; };
 		8EB01C992422197400A7E992 /* BrokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C982422197400A7E992 /* BrokerViewController.swift */; };
 		8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C9A242345F000A7E992 /* QuotesViewController.swift */; };
+		8EB01C9D242C87C100A7E992 /* ProFitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */; };
 		8EBF7980236978F000E569C2 /* QAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF797F236978F000E569C2 /* QAListViewController.swift */; };
-		8EBF7982236AB86C00E569C2 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7981236AB86C00E569C2 /* ChartViewController.swift */; };
 		8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7983236ACE8E00E569C2 /* TimerManager.swift */; };
 		8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BB2420671300260E25 /* GetStockPriceManger.swift */; };
 		8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BD242070EA00260E25 /* StockListViewController.swift */; };
@@ -75,8 +75,8 @@
 		8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8EB01C982422197400A7E992 /* BrokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokerViewController.swift; sourceTree = "<group>"; };
 		8EB01C9A242345F000A7E992 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
+		8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFitViewController.swift; sourceTree = "<group>"; };
 		8EBF797F236978F000E569C2 /* QAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAListViewController.swift; sourceTree = "<group>"; };
-		8EBF7981236AB86C00E569C2 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		8EBF7983236ACE8E00E569C2 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		8ED642BB2420671300260E25 /* GetStockPriceManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStockPriceManger.swift; sourceTree = "<group>"; };
 		8ED642BD242070EA00260E25 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
@@ -191,7 +191,6 @@
 				8E10DDB2234C6AC8006A46F2 /* MapManager.swift */,
 				8E10DDB82359A955006A46F2 /* StockNumberViewController.swift */,
 				8EBF797F236978F000E569C2 /* QAListViewController.swift */,
-				8EBF7981236AB86C00E569C2 /* ChartViewController.swift */,
 				8EBF7983236ACE8E00E569C2 /* TimerManager.swift */,
 				8E2AB6D2238E1DA20079910F /* FuturesViewController.swift */,
 				8E48E4E723EBB2A500384D25 /* SellAndPutViewController.swift */,
@@ -208,6 +207,7 @@
 				8ED642C9242216C800260E25 /* SelfEmployedViewController.swift */,
 				8EB01C982422197400A7E992 /* BrokerViewController.swift */,
 				8EB01C9A242345F000A7E992 /* QuotesViewController.swift */,
+				8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -339,6 +339,7 @@
 				8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */,
 				8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */,
 				8ED642C224209F1600260E25 /* StockData.swift in Sources */,
+				8EB01C9D242C87C100A7E992 /* ProFitViewController.swift in Sources */,
 				8E48E4F223F3E4E000384D25 /* UiManager.swift in Sources */,
 				8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */,
 				8E87122D23489E7000795029 /* CamerManager.swift in Sources */,
@@ -366,7 +367,6 @@
 				8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */,
 				8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */,
 				8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */,
-				8EBF7982236AB86C00E569C2 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +515,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 46;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -528,7 +528,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 5.5;
+				MARKETING_VERSION = 5.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -543,7 +543,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 46;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -556,7 +556,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 5.5;
+				MARKETING_VERSION = 5.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
