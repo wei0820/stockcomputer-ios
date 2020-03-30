@@ -339,16 +339,6 @@ class GetStockPriceManager{
                     }
                     
                 }
-                //                for th in try elements.select("div.grid-body.p7.mb10>ul.stock-list>li>span.w100.name"){
-                //
-                //                    let n = try th.text()
-                //                    if(!n.isEmpty){
-                //                        print("jack",n)
-                //                        array_foreigninvestment.append(n)
-                //
-                //                    }
-                //
-                //                }
                 
             } catch let error {
             }
@@ -672,4 +662,42 @@ class GetStockPriceManager{
         }
         return title
     }
+    
+    
+    static  func getStock_aTitle() -> String {
+        var title  = ""
+           guard let url = URL(string: "https://histock.tw/stock/three.aspx?m=mg&s=a" ?? "") else {
+               // an error occurred
+               return title
+           }
+           
+           do {
+               
+               // content of url
+               let html = try String.init(contentsOf: url)
+               
+               // parse it into a Document
+               document = try SwiftSoup.parse(html)
+               // parse css query
+               do {
+                   
+                   //empty old items
+                   // firn css selector
+                   //
+                   //div.grid-body.p7.mb10>ul.stock-list>li
+                   let elements: Elements = try document.select("div.tb-outline.outline1>h3" ?? "")
+                   //transform it into a local object (Item)
+                   for th in try elements.select("span") {
+                                 title = try th.text()
+                                  
+                              }
+               } catch let error {
+               }
+               
+               
+           } catch let error {
+               // an error occurred
+           }
+           return title
+       }
 }
