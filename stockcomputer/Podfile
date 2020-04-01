@@ -33,5 +33,7 @@ pod 'Siren'
 pod 'JJFloatingActionButton'
 pod 'SwiftSoup'
 pod 'MarqueeLabel'
+pod 'Firebase/Crashlytics'
 
+pod 'Firebase/Analytics'
 end

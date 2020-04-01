@@ -14,6 +14,7 @@ import VpadnSDKAdKit
 import UserNotifications
 import Instabug
 import Siren // Line 1
+import FirebaseCrashlytics
 
 @UIApplicationMain
 
@@ -66,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         Instabug.trackUserSteps = false
         Replies.enabled = true
         window?.makeKeyAndVisible()
+        Crashlytics.crashlytics()
         
         complexExample()
         return true
