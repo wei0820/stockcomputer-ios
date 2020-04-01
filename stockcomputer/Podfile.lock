@@ -198,7 +198,7 @@ DEPENDENCIES:
   - VpadnSDK
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Charts
     - CVCalendar
@@ -300,4 +300,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 55e559ef1153025710603703b42b10363e830afa
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.1
