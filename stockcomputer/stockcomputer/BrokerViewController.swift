@@ -30,7 +30,7 @@ class BrokerViewController: MGoogleADViewController , UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "八大官股銀行買超排行"
+        title = GetStockPriceManager.getBrokerTitle() + "八大官股銀行買超排行"
         getData()
         
         // Do any additional setup after loading the view.
@@ -70,12 +70,12 @@ class BrokerViewController: MGoogleADViewController , UITableViewDataSource
         switch item.tag {
         case 1:
             setToast(s: "八大官股銀行買超排行")
-            title = "八大官股銀行買超排行"
+            title = GetStockPriceManager.getBrokerTitle() + "八大官股銀行買超排行"
             getData()
             break
         case 2:
             setToast(s: "八大官股銀行賣超排行")
-            title = "八大官股銀行賣超排行"
+            title =  GetStockPriceManager.getBrokerTitle() + "八大官股銀行賣超排行"
             getData_2()
             
             
