@@ -45,7 +45,10 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
             
         }
     }
-
+    @IBAction func close(_ sender: Any) {
+        dissmissView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sellTF.delegate = self

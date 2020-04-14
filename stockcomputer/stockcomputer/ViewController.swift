@@ -37,6 +37,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             
             break
         case 2:
+            setJump(type: "sellput")
             
             
             
