@@ -14,136 +14,45 @@ import FacebookLogin
 import Instabug
 import JGProgressHUD
 import MarqueeLabel
-class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewDelegate,SKProductsRequestDelegate, SKPaymentTransactionObserver{
+class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymentTransactionObserver,UITabBarDelegate{
+    
+    
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
     var hud :JGProgressHUD?
     var selectedProductIndex: Int! // 點擊到的購買項目
     var isProgress: Bool = false // 是否有交易正在進行中
     var delegate: IAPurchaseViewControllerDelegate!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
-    
     var itemName = ["贊助開發者","現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算","盤中個股精選追蹤","外陸資買賣超前50名","投信買賣超前50名","自營商買賣超前50名","八大官股銀行買賣超","融資融券借券排行"]
     
     
     var ref: DatabaseReference!
     
     @IBOutlet weak var marqueeLabel: MarqueeLabel!
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemName.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,for:indexPath)
-        cell.textLabel?.text = itemName[indexPath.row]
-        
-        return cell
-    }
-    
-    
-    // 點選 cell 後執行的動作
-    private func tableView(tableView: UITableView,
-                           didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //拿到storyBoard
-        let storyBoard = UIStoryboard(name: "DayTrade", bundle: nil)
-        //拿到ViewController
-        let nextPage = storyBoard.instantiateViewController(withIdentifier: "DayTradeController") as! DayTradeViewController
-        //傳值
-        //        nextPage.id = joinUsDataArray[indexPath.row].id
-        //        nextPage.titleOfNavi.title = joinUsDataArray[indexPath.row].title
-        //跳轉
-        self.navigationController?.pushViewController(nextPage, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        
-        tableView.deselectRow(
-            at: indexPath, animated: true)
-        
-        let name = itemName[indexPath.row]
-        Instabug.logUserEvent(withName: name)
-        if (name == itemName[0]){
-            buy()
-        }else if (name == itemName[1]){
-            performSegue(withIdentifier: "DayTrade", sender: nil)
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item.tag {
+        case 1:
+            setJump(type: "DayTrade")
+                
             
-        }else if(name ==  itemName[2]){
-            performSegue(withIdentifier: "TradeDetail", sender: nil)
-            
-        }else if(name == itemName[3]) {
-            performSegue(withIdentifier: "hongkongstock", sender: nil)
-        }else if (name == itemName[4]){
-            performSegue(withIdentifier: "distribution", sender: nil)
-            
-        }else if (name == itemName[5]){
-            
-            performSegue(withIdentifier: "number", sender: nil)
-            
-        }else if (name == itemName[6]){
-            
-            performSegue(withIdentifier: "futures", sender: nil)
-            
-        }else if (name == itemName[7]){
-            performSegue(withIdentifier: "sellput", sender: nil)
-        }else if (name == itemName[8]){
-            performSegue(withIdentifier: "Margin", sender: nil)
-        }else if (name == itemName[9]){
-            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
-                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
-                return
-            }
-            performSegue(withIdentifier: "stocklist", sender: nil)
+            break
+        case 2:
             
             
-        }else if (name == itemName[10]){
-            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
-                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
-                return
-            }
-            performSegue(withIdentifier: "foreigninvestment", sender: nil)
-        }else if (name == itemName[11]){
-            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
-                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
-                return
-            }
-            performSegue(withIdentifier: "trust", sender: nil)
-        }else if (name == itemName[12]){
-            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
-                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
-                return
-            }
-            performSegue(withIdentifier: "employed", sender: nil)
-        }else if (name == itemName[13]){
-            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
-                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
-                return
-            }
-            performSegue(withIdentifier: "broker", sender: nil)
-        }else if (name == itemName[14]){
-            if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
-                setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
-                return
-            }
-            performSegue(withIdentifier: "quotes", sender: nil)
+            
+            break
+        case 3:
+            
+            
+            
+            break
+            
+        default:
+            
+            break
+            
         }
-//        //else if (name == itemName[15]){
-//
-//            performSegue(withIdentifier: "chart", sender: nil)
-//        }
-        
-        
-        
-        
-        
-        
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        let destVc:DayTradeViewController = segue.destination as! DayTradeViewController
-        //        destVc.type = segue.identifier!
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,18 +77,18 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
         if(checkIsMember()){
             FirebaseManager.getMemberDate()
             FirebaseManager.setUserVersion()
-
+            
             if(!FirebaseManager.getVersion().isEmpty){
                 var newVersion : Double = FirebaseManager.getNewVersion() as! Double
                 var userVersion : Double = Double(FirebaseManager.getVersion()) as! Double
                 if(userVersion < newVersion){
                     setAlert(title: "版本過舊", message: "請您至 App Store 更新 ")
                 }
-
+                
             }
             
         }
-
+        
         
         
     }
