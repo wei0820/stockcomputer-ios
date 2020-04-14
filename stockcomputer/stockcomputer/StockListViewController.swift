@@ -34,7 +34,6 @@ class StockListViewController: MGoogleADViewController , UITableViewDataSource, 
         
         name = itemName[indexPath.row].detail
         performSegue(withIdentifier: "stockdetail", sender: nil)
-        print("jack",name)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

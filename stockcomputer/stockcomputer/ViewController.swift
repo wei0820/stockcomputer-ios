@@ -122,9 +122,6 @@ class ViewController: MGoogleADViewController,UITableViewDataSource,UITableViewD
             }
             performSegue(withIdentifier: "broker", sender: nil)
         }else if (name == itemName[14]){
-            print("jack",FirebaseManager.getIsCheckVersion())
-            print("jack",checkIsMember())
-
             if(FirebaseManager.getIsCheckVersion() == 1 && !checkIsMember()){
                 setNoLoginAlert(title: "提示", message: "請登入會員,在使用")
                 return

@@ -10,11 +10,10 @@ import UIKit
 import GoogleMobileAds
 import Firebase
 import FacebookCore
-import VpadnSDKAdKit
+//import VpadnSDKAdKit
 import UserNotifications
-import Instabug
-import Siren // Line 1
 import FirebaseCrashlytics
+import Instabug
 
 @UIApplicationMain
 
@@ -22,9 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
-    var shouldRotate:Bool = false
-
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
@@ -33,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         // Vpon SDK initialization
-        let config = VpadnAdConfiguration.sharedInstance()
-        config.logLevel = .default
-        config.initializeSdk()
+//        let config = VpadnAdConfiguration.sharedInstance()
+//        config.logLevel = .default
+//        config.initializeSdk()
         Messaging.messaging().delegate = self
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -52,24 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
         application.registerForRemoteNotifications()
         
-        
-        //        .none
-        //        .shake
-        //        .screenshot
-        //        .twoFingersSwipeLeft
-        //        .rightEdgePan
-        //        .floatingButton
         Instabug.start(withToken: "30dabcbd12350ce99d5037e8fb70858f", invocationEvents: [.shake, .twoFingersSwipeLeft,.rightEdgePan,.floatingButton])
         Instabug.setLocale(.chineseTaiwan)
-        //        Instabug.welcomeMessageMode = IBGWelcomeMessageMode.live // For live users
-        //        Instabug.welcomeMessageMode = IBGWelcomeMessageMode.disabled // Disable welcome message
-        //        Instabug.showWelcomeMessage(with: IBGWelcomeMessageMode.live) // For live users
         Instabug.trackUserSteps = false
-        Replies.enabled = true
-        window?.makeKeyAndVisible()
+//        window?.makeKeyAndVisible()
         Crashlytics.crashlytics()
         
-        complexExample()
         return true
     }
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -94,9 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         print(remoteMessage.appData)
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        
-        let isInstabugNotification = Replies.didReceiveRemoteNotification(userInfo)
-        
+                
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -110,9 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             print("Message ID: \(messageID)")
         }
         
-        // Print full message.
-        print(userInfo)
-        
+        // Print full message.        
         completionHandler(UIBackgroundFetchResult.newData)
     }
     // [END receive_message]
@@ -124,8 +104,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     // If swizzling is disabled then this function must be implemented so that the APNs token can be paired to
     // the FCM registration token.
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("APNs token retrieved: \(deviceToken)")
-        Replies.didRegisterForRemoteNotifications(withDeviceToken: deviceToken)
         
         // With swizzling disabled you must set the APNs token here.
         // Messaging.messaging().apnsToken = deviceToken
@@ -148,9 +126,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
         }
-        
-        // Print full message.
-        // Change this to your preferred presentation option
         completionHandler([])
     }
     
@@ -188,53 +163,7 @@ extension AppDelegate : MessagingDelegate {
     }
     // [END ios_10_data_message]
     
-    func annoyingRuleExample() {
-        let siren = Siren.shared
-        siren.rulesManager = RulesManager(globalRules: .annoying)
-        
-        siren.wail { results in
-            switch results {
-            case .success(let updateResults):
-                print("AlertAction ", updateResults.alertAction)
-                print("Localization ", updateResults.localization)
-                print("Model ", updateResults.model)
-                print("UpdateType ", updateResults.updateType)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    func complexExample() {
-        let siren = Siren.shared
-        siren.presentationManager = PresentationManager(alertTintColor: .brown,
-                                                        appName: "Siren's Complex Rule Example App",
-                                                        alertTitle: "Please, Update Now!",
-                                                        skipButtonTitle: "Click here to skip!",
-                                                        forceLanguageLocalization: .spanish)
-        siren.rulesManager = RulesManager(majorUpdateRules: .critical,
-                                          minorUpdateRules: .annoying,
-                                          patchUpdateRules: .default,
-                                          revisionUpdateRules: .relaxed)
 
-        siren.wail { results in
-            switch results {
-            case .success(let updateResults):
-                print("AlertAction ", updateResults.alertAction)
-                print("Localization ", updateResults.localization)
-                print("Model ", updateResults.model)
-                print("UpdateType ", updateResults.updateType)
-            case .failure(let error):
-                print(error.localizedDescription) 
-            }
-        }
-    }
-    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        if shouldRotate{
-            return .all
-        }else{
-            return .portrait
-        }
-    }
 
  }
 
