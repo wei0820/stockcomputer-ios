@@ -34,4 +34,6 @@ pod 'MarqueeLabel'
 pod 'Firebase/Crashlytics'
 pod 'Firebase/Performance'
 pod 'Firebase/Analytics'
+pod 'LLCycleScrollView' 
+
 end

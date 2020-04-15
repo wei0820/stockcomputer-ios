@@ -186,7 +186,12 @@ PODS:
   - JGProgressHUD (2.1)
   - JJFloatingActionButton (2.1.0)
   - Kanna (4.0.3)
+  - Kingfisher (5.13.4):
+    - Kingfisher/Core (= 5.13.4)
+  - Kingfisher/Core (5.13.4)
   - leveldb-library (1.22)
+  - LLCycleScrollView (1.6.0):
+    - Kingfisher
   - Mapbox-iOS-SDK (5.7.0):
     - MapboxMobileEvents (= 0.10.2)
   - MapboxMobileEvents (0.10.2)
@@ -226,6 +231,7 @@ DEPENDENCIES:
   - JGProgressHUD
   - JJFloatingActionButton
   - Kanna (~> 4.0.0)
+  - LLCycleScrollView
   - Mapbox-iOS-SDK (~> 5.4)
   - MarqueeLabel
   - Siren
@@ -273,7 +279,9 @@ SPEC REPOS:
     - JGProgressHUD
     - JJFloatingActionButton
     - Kanna
+    - Kingfisher
     - leveldb-library
+    - LLCycleScrollView
     - Mapbox-iOS-SDK
     - MapboxMobileEvents
     - MarqueeLabel
@@ -334,7 +342,9 @@ SPEC CHECKSUMS:
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   JJFloatingActionButton: 26805f87c7e9f68c6a91bd9f3f09c2e6b904a84f
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  LLCycleScrollView: a08f666671f9fd1a205df9defebc3c217d59abc8
   Mapbox-iOS-SDK: 1b7cb0e739247d20ef75f5f14aa6ce34e1f0660f
   MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
   MarqueeLabel: f762aa681ae201f66c1d511858b171f75d83013a
@@ -345,6 +355,6 @@ SPEC CHECKSUMS:
   SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
 
-PODFILE CHECKSUM: 0a9d805e0f7acc3a601874f3c7fdc0b500be5076
+PODFILE CHECKSUM: 6427789a003ed423d1752d3c1a67b4395f6deea3
 
 COCOAPODS: 1.7.5

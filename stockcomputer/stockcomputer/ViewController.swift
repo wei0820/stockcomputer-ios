@@ -14,9 +14,13 @@ import FacebookLogin
 import Instabug
 import JGProgressHUD
 import MarqueeLabel
+import LLCycleScrollView
 class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymentTransactionObserver,UITabBarDelegate{
     
+    @IBOutlet weak var paymeView: UIView!
+    @IBOutlet weak var bannerView: LLCycleScrollView!
     
+    @IBOutlet weak var CurrentPrice: UIView!
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
     var hud :JGProgressHUD?
     var selectedProductIndex: Int! // 點擊到的購買項目
@@ -24,6 +28,12 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     var delegate: IAPurchaseViewControllerDelegate!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
     var itemName = ["贊助開發者","現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算","盤中個股精選追蹤","外陸資買賣超前50名","投信買賣超前50名","自營商買賣超前50名","八大官股銀行買賣超","融資融券借券排行"]
+    let imagesURLStrings = [
+          "http://www.g-photography.net/file_picture/3/3587/4.jpg",
+          "http://img2.zjolcdn.com/pic/0/13/66/56/13665652_914292.jpg",
+          "http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg",
+          "http://img3.redocn.com/tupian/20150806/weimeisheyingtupian_4779232.jpg",
+      ];
     
     
     var ref: DatabaseReference!
@@ -44,7 +54,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             break
         case 3:
             
-            
+            setJump(type: "futures")
             
             break
             
@@ -90,8 +100,19 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             
         }
         
+        setBannerView()
+        setUIView()
         
-        
+    }
+    func setBannerView(){
+        self.bannerView.imagePaths = imagesURLStrings
+        self.bannerView.imageViewContentMode = .scaleToFill
+               self.bannerView.customPageControlStyle = .image
+        self.bannerView.pageControlPosition = .center
+        // 是否对url进行特殊字符处理
+              self.bannerView.isAddingPercentEncodingForURLString = true
+              
+              // 2018-02-25 新增协议
     }
     
     func setLeftButton(s: String){
@@ -340,7 +361,23 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             productRequest.start() // 開始請求內購產品
         }
     }
+    func setUIView(){
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
+        self.CurrentPrice.addGestureRecognizer(gesture)
+        
+        let payme = UITapGestureRecognizer(target: self, action:  #selector(self.paymeAction))
+        self.paymeView.addGestureRecognizer(payme)
+        
+    }
+    @objc func checkAction(sender : UITapGestureRecognizer) {
+        // Do what you want
+        setJump(type: "CurrentPrice")
+    }
     
-    
+    @objc func paymeAction(sender : UITapGestureRecognizer) {
+          // Do what you want
+        buy()
+      }
+
 }
 

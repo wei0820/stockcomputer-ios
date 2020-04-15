@@ -60,6 +60,9 @@ class StockListViewController: MGoogleADViewController , UITableViewDataSource, 
     }
     
     
+    @IBAction func closeBtn(_ sender: Any) {
+        dissmissView()
+    }
     /*
      // MARK: - Navigation
      
