@@ -3433,7 +3433,7 @@
         <!--Foreign Investment View Controller-->
         <scene sceneID="dlB-RU-DT4">
             <objects>
-                <viewController id="SIJ-s3-g8G" customClass="ForeignInvestmentViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view1" id="SIJ-s3-g8G" customClass="ForeignInvestmentViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ch-1F-DqQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3499,7 +3499,7 @@
         <!--Trust View Controller-->
         <scene sceneID="QgQ-NA-yoV">
             <objects>
-                <viewController id="tkB-25-LBL" customClass="TrustViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view2" id="tkB-25-LBL" customClass="TrustViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0hj-4p-YDK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3565,7 +3565,7 @@
         <!--Broker View Controller-->
         <scene sceneID="j1Y-Ns-R17">
             <objects>
-                <viewController id="qjq-P9-lQH" customClass="BrokerViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view4" id="qjq-P9-lQH" customClass="BrokerViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkf-jx-OA9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3631,7 +3631,7 @@
         <!--Self Employed View Controller-->
         <scene sceneID="ckK-NQ-Uaf">
             <objects>
-                <viewController id="07Q-TW-l90" customClass="SelfEmployedViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view3" id="07Q-TW-l90" customClass="SelfEmployedViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rrT-RM-hvn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3697,7 +3697,7 @@
         <!--Quotes View Controller-->
         <scene sceneID="eQC-37-nCT">
             <objects>
-                <viewController id="LV5-a7-OUE" customClass="QuotesViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view5" id="LV5-a7-OUE" customClass="QuotesViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GFN-dp-SXM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
