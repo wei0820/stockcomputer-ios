@@ -3482,16 +3482,31 @@
                                     <constraint firstAttribute="width" constant="45" id="kUt-Qc-9nL"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="baseline_clear_black"/>
+                                <connections>
+                                    <action selector="close_btn:" destination="SIJ-s3-g8G" eventType="touchUpInside" id="W4D-DU-SQZ"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0d-yQ-pTM">
+                                <rect key="frame" x="16" y="12" width="314" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="heb-E2-kOb"/>
+                                    <constraint firstAttribute="width" constant="314" id="xmx-lq-84N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="j7f-Nr-ZDa" firstAttribute="top" secondItem="V6b-Fb-sNX" secondAttribute="bottom" constant="12" id="0gs-dD-TtX"/>
                             <constraint firstItem="Jhv-F4-345" firstAttribute="top" secondItem="dPh-Xa-PAt" secondAttribute="top" id="7c4-CW-leK"/>
+                            <constraint firstItem="O0d-yQ-pTM" firstAttribute="leading" secondItem="dPh-Xa-PAt" secondAttribute="leading" constant="16" id="8fS-Jg-DhY"/>
                             <constraint firstItem="V6b-Fb-sNX" firstAttribute="top" secondItem="dPh-Xa-PAt" secondAttribute="top" constant="41" id="ASd-Gs-Ham"/>
                             <constraint firstItem="V6b-Fb-sNX" firstAttribute="trailing" secondItem="dPh-Xa-PAt" secondAttribute="trailing" id="An6-zn-2oT"/>
                             <constraint firstItem="j7f-Nr-ZDa" firstAttribute="leading" secondItem="dPh-Xa-PAt" secondAttribute="leading" id="HCR-a4-iDL"/>
                             <constraint firstItem="V6b-Fb-sNX" firstAttribute="leading" secondItem="dPh-Xa-PAt" secondAttribute="leading" id="MRZ-8d-1Gw"/>
+                            <constraint firstItem="O0d-yQ-pTM" firstAttribute="top" secondItem="dPh-Xa-PAt" secondAttribute="top" constant="12" id="N3t-Gc-Qwf"/>
                             <constraint firstItem="j7f-Nr-ZDa" firstAttribute="trailing" secondItem="dPh-Xa-PAt" secondAttribute="trailing" id="kXp-z7-ZwY"/>
                             <constraint firstItem="Jhv-F4-345" firstAttribute="trailing" secondItem="dPh-Xa-PAt" secondAttribute="trailing" id="wDa-tk-jIr"/>
                         </constraints>
@@ -3500,6 +3515,7 @@
                     <navigationItem key="navigationItem" id="9De-bU-GxJ"/>
                     <connections>
                         <outlet property="tableview" destination="j7f-Nr-ZDa" id="e3j-oN-KnF"/>
+                        <outlet property="title_" destination="O0d-yQ-pTM" id="jON-Op-7dl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dju-LU-YnA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
