@@ -290,6 +290,7 @@
                         <outlet property="CurrentPrice" destination="pdb-6i-wQb" id="qwc-AC-NWr"/>
                         <outlet property="bannerView" destination="WKO-hQ-6Qe" id="vXk-YL-RV4"/>
                         <outlet property="marqueeLabel" destination="9WH-Zw-qh0" id="wYl-1D-T2B"/>
+                        <outlet property="newsView" destination="Xhb-4i-a5q" id="vd7-zU-pcO"/>
                         <outlet property="paymeView" destination="XRS-IH-QlZ" id="oZe-HY-NrO"/>
                     </connections>
                 </viewController>
@@ -426,7 +427,7 @@
         <!--Day Trade View Controller-->
         <scene sceneID="ko4-cT-zs5">
             <objects>
-                <viewController storyboardIdentifier="DayTrade" modalPresentationStyle="fullScreen" id="kfq-22-Ojo" customClass="DayTradeViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DayTrade" id="kfq-22-Ojo" customClass="DayTradeViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vhd-op-D5J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2790,7 +2791,7 @@
         <!--Sell And Put View Controller-->
         <scene sceneID="aLO-ql-27R">
             <objects>
-                <viewController storyboardIdentifier="sellput" modalPresentationStyle="fullScreen" id="tJk-8V-HAK" customClass="SellAndPutViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sellput" id="tJk-8V-HAK" customClass="SellAndPutViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cef-Mh-sL7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3122,7 +3123,7 @@
         <!--Futures View Controller-->
         <scene sceneID="bP3-h7-a54">
             <objects>
-                <viewController storyboardIdentifier="futures" modalPresentationStyle="fullScreen" id="rLy-NF-HVe" customClass="FuturesViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="futures" id="rLy-NF-HVe" customClass="FuturesViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MGB-Hc-LVL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3763,72 +3764,92 @@
         <!--Select View Controller-->
         <scene sceneID="Oz6-Jh-MQ6">
             <objects>
-                <viewController id="01x-4p-eJS" customClass="SelectViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="news" id="01x-4p-eJS" customClass="SelectViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fx7-1c-Qqo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kB-mk-5hk">
-                                <rect key="frame" x="16" y="20" width="343" height="100"/>
+                                <rect key="frame" x="16" y="120" width="343" height="75"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="DYm-bN-8Wa"/>
+                                    <constraint firstAttribute="height" constant="75" id="DYm-bN-8Wa"/>
                                     <constraint firstAttribute="width" constant="343" id="Mkg-Dr-X2l"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="siN-aD-ipt">
-                                <rect key="frame" x="16" y="128" width="343" height="100"/>
+                                <rect key="frame" x="16" y="203" width="343" height="75"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="E5F-gF-ixz"/>
-                                    <constraint firstAttribute="height" constant="100" id="lzG-8B-33m"/>
+                                    <constraint firstAttribute="height" constant="75" id="lzG-8B-33m"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBh-3q-PQ2">
-                                <rect key="frame" x="16" y="236" width="343" height="100"/>
+                                <rect key="frame" x="16" y="286" width="343" height="75"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="X7F-o9-4DY"/>
-                                    <constraint firstAttribute="height" constant="100" id="jMP-MT-ug4"/>
+                                    <constraint firstAttribute="height" constant="75" id="jMP-MT-ug4"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkO-vN-YcV">
-                                <rect key="frame" x="16" y="344" width="343" height="100"/>
+                                <rect key="frame" x="16" y="369" width="343" height="75"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="0ke-DK-JPi"/>
+                                    <constraint firstAttribute="height" constant="75" id="0ke-DK-JPi"/>
                                     <constraint firstAttribute="width" constant="343" id="e0G-K8-ch9"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbz-Rv-a6R">
-                                <rect key="frame" x="16" y="452" width="343" height="100"/>
+                                <rect key="frame" x="16" y="452" width="343" height="75"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="AdP-Jw-BkQ"/>
-                                    <constraint firstAttribute="height" constant="100" id="OHo-bJ-42K"/>
+                                    <constraint firstAttribute="height" constant="75" id="OHo-bJ-42K"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmO-xy-HR6">
+                                <rect key="frame" x="314" y="20" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="MFP-tD-MiK"/>
+                                    <constraint firstAttribute="width" constant="45" id="zrh-xg-R4u"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="baseline_clear_black"/>
+                                <connections>
+                                    <action selector="closebtn:" destination="01x-4p-eJS" eventType="touchUpInside" id="B7R-u7-EFq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Sbz-Rv-a6R" firstAttribute="leading" secondItem="vR8-wY-Rfo" secondAttribute="leading" constant="16" id="93k-4z-Etj"/>
                             <constraint firstItem="vR8-wY-Rfo" firstAttribute="trailing" secondItem="Sbz-Rv-a6R" secondAttribute="trailing" constant="16" id="EbX-rC-7NF"/>
                             <constraint firstItem="vR8-wY-Rfo" firstAttribute="trailing" secondItem="wBh-3q-PQ2" secondAttribute="trailing" constant="16" id="GTX-WW-SQj"/>
+                            <constraint firstItem="bmO-xy-HR6" firstAttribute="top" secondItem="vR8-wY-Rfo" secondAttribute="top" constant="20" id="NiF-PT-q21"/>
                             <constraint firstItem="tkO-vN-YcV" firstAttribute="top" secondItem="wBh-3q-PQ2" secondAttribute="bottom" constant="8" id="Rbb-37-XWo"/>
                             <constraint firstItem="wBh-3q-PQ2" firstAttribute="leading" secondItem="vR8-wY-Rfo" secondAttribute="leading" constant="16" id="VVP-by-BEC"/>
                             <constraint firstItem="vR8-wY-Rfo" firstAttribute="trailing" secondItem="tkO-vN-YcV" secondAttribute="trailing" constant="16" id="an2-KP-Eig"/>
                             <constraint firstItem="2kB-mk-5hk" firstAttribute="leading" secondItem="vR8-wY-Rfo" secondAttribute="leading" constant="16" id="bP5-GV-GF3"/>
-                            <constraint firstItem="2kB-mk-5hk" firstAttribute="top" secondItem="vR8-wY-Rfo" secondAttribute="top" constant="20" id="cDv-0T-XUe"/>
+                            <constraint firstItem="2kB-mk-5hk" firstAttribute="top" secondItem="vR8-wY-Rfo" secondAttribute="top" constant="120" id="cDv-0T-XUe"/>
                             <constraint firstItem="siN-aD-ipt" firstAttribute="top" secondItem="2kB-mk-5hk" secondAttribute="bottom" constant="8" id="i0Q-3V-0lb"/>
                             <constraint firstItem="siN-aD-ipt" firstAttribute="leading" secondItem="vR8-wY-Rfo" secondAttribute="leading" constant="16" id="jzO-Nv-k2l"/>
                             <constraint firstItem="wBh-3q-PQ2" firstAttribute="top" secondItem="siN-aD-ipt" secondAttribute="bottom" constant="8" id="kkl-RR-7Ay"/>
                             <constraint firstItem="vR8-wY-Rfo" firstAttribute="trailing" secondItem="2kB-mk-5hk" secondAttribute="trailing" constant="16" id="nPt-5l-amz"/>
                             <constraint firstItem="vR8-wY-Rfo" firstAttribute="trailing" secondItem="siN-aD-ipt" secondAttribute="trailing" constant="16" id="nyu-h1-y8x"/>
                             <constraint firstItem="Sbz-Rv-a6R" firstAttribute="top" secondItem="tkO-vN-YcV" secondAttribute="bottom" constant="8" id="rid-7n-VxI"/>
+                            <constraint firstItem="vR8-wY-Rfo" firstAttribute="trailing" secondItem="bmO-xy-HR6" secondAttribute="trailing" constant="16" id="saG-7J-bwg"/>
                             <constraint firstItem="tkO-vN-YcV" firstAttribute="leading" secondItem="vR8-wY-Rfo" secondAttribute="leading" constant="16" id="zG2-rq-KoS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vR8-wY-Rfo"/>
                     </view>
+                    <connections>
+                        <outlet property="view_1" destination="2kB-mk-5hk" id="Q6G-iS-AXO"/>
+                        <outlet property="view_2" destination="siN-aD-ipt" id="MnD-GA-8Kp"/>
+                        <outlet property="view_3" destination="wBh-3q-PQ2" id="jjW-SA-CVz"/>
+                        <outlet property="view_4" destination="Fx7-1c-Qqo" id="FMe-ww-hN9"/>
+                        <outlet property="view_5" destination="Sbz-Rv-a6R" id="kif-nM-mTA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3FH-p4-ERr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

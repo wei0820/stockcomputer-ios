@@ -17,9 +17,21 @@ class SelectViewController: MGoogleADViewController{
     }
     
 
-    /*
-    // MARK: - Navigation
-
+    @IBAction func closebtn(_ sender: Any) {
+        dissmissView()
+    }
+   
+     @IBOutlet weak var view_1: UIView!
+    
+    @IBOutlet weak var view_2: UIView!
+    
+    @IBOutlet weak var view_3: UIView!
+    
+    @IBOutlet weak var view_4: UIView!
+    @IBOutlet weak var view_5: UIView!
+    
+     // MARK: - Navigation
+ /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.

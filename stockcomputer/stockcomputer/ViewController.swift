@@ -17,6 +17,7 @@ import MarqueeLabel
 import LLCycleScrollView
 class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymentTransactionObserver,UITabBarDelegate{
     
+    @IBOutlet weak var newsView: UIView!
     @IBOutlet weak var paymeView: UIView!
     @IBOutlet weak var bannerView: LLCycleScrollView!
     
@@ -371,6 +372,10 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         let payme = UITapGestureRecognizer(target: self, action:  #selector(self.paymeAction))
         self.paymeView.addGestureRecognizer(payme)
         
+        let news = UITapGestureRecognizer(target: self, action:  #selector(self.newsAction))
+        self.newsView.addGestureRecognizer(news)
+        
+        
     }
     @objc func checkAction(sender : UITapGestureRecognizer) {
         // Do what you want
@@ -381,6 +386,9 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         // Do what you want
         buy()
     }
+    @objc func newsAction(sender : UITapGestureRecognizer) {
+         setJump(type: "news")
+      }
     
 }
 
