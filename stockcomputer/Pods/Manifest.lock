@@ -12,8 +12,6 @@ PODS:
     - FacebookCore (~> 0.9.0)
     - FBSDKCoreKit (~> 5.0)
     - FBSDKShareKit (~> 5.0)
-  - FBAudienceNetwork (5.6.1):
-    - FBSDKCoreKit/Basics (>= 5.6.0)
   - FBSDKCoreKit (5.15.1):
     - FBSDKCoreKit/Basics (= 5.15.1)
     - FBSDKCoreKit/Core (= 5.15.1)
@@ -159,9 +157,6 @@ PODS:
   - GoogleDataTransportCCTSupport (1.4.0):
     - GoogleDataTransport (~> 4.0)
     - nanopb (~> 0.3.901)
-  - GoogleMobileAdsMediationFacebook (5.6.1.0):
-    - FBAudienceNetwork (= 5.6.1)
-    - Google-Mobile-Ads-SDK (>= 7.53.1)
   - GoogleToolboxForMac/Defines (2.2.2)
   - GoogleToolboxForMac/Logger (2.2.2):
     - GoogleToolboxForMac/Defines (= 2.2.2)
@@ -191,7 +186,12 @@ PODS:
   - JGProgressHUD (2.1)
   - JJFloatingActionButton (2.1.0)
   - Kanna (4.0.3)
+  - Kingfisher (5.13.4):
+    - Kingfisher/Core (= 5.13.4)
+  - Kingfisher/Core (5.13.4)
   - leveldb-library (1.22)
+  - LLCycleScrollView (1.6.0):
+    - Kingfisher
   - Mapbox-iOS-SDK (5.7.0):
     - MapboxMobileEvents (= 0.10.2)
   - MapboxMobileEvents (0.10.2)
@@ -206,7 +206,6 @@ PODS:
   - Siren (5.3.0)
   - SwiftSoup (2.3.0)
   - Toaster (2.2.0)
-  - VpadnSDK (4.9.4)
 
 DEPENDENCIES:
   - AAInfographics (from `https://github.com/AAChartModel/AAChartKit-Swift.git`)
@@ -228,17 +227,16 @@ DEPENDENCIES:
   - Firebase/Storage
   - FSCalendar
   - GCCalendar
-  - GoogleMobileAdsMediationFacebook
   - Instabug
   - JGProgressHUD
   - JJFloatingActionButton
   - Kanna (~> 4.0.0)
+  - LLCycleScrollView
   - Mapbox-iOS-SDK (~> 5.4)
   - MarqueeLabel
   - Siren
   - SwiftSoup
   - Toaster
-  - VpadnSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -247,7 +245,6 @@ SPEC REPOS:
     - FacebookCore
     - FacebookLogin
     - FacebookShare
-    - FBAudienceNetwork
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
@@ -275,7 +272,6 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
-    - GoogleMobileAdsMediationFacebook
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
@@ -283,7 +279,9 @@ SPEC REPOS:
     - JGProgressHUD
     - JJFloatingActionButton
     - Kanna
+    - Kingfisher
     - leveldb-library
+    - LLCycleScrollView
     - Mapbox-iOS-SDK
     - MapboxMobileEvents
     - MarqueeLabel
@@ -293,7 +291,6 @@ SPEC REPOS:
     - Siren
     - SwiftSoup
     - Toaster
-    - VpadnSDK
 
 EXTERNAL SOURCES:
   AAInfographics:
@@ -311,7 +308,6 @@ SPEC CHECKSUMS:
   FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
   FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
   FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
-  FBAudienceNetwork: 223ab6f31d2aed94a79a9c7ffa0fad0dee644023
   FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
   FBSDKLoginKit: f1ea8026a58b52d30c9f2e6a58ca7d813619fb83
   FBSDKShareKit: 259737eab3cc807087374553abdf588b3096ba55
@@ -339,7 +335,6 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: d0560d915abf15e692e8538ba1d58442217b6aff
   GoogleDataTransport: 47fe3b8e1673e5187dfd615656a3c5034f150d69
   GoogleDataTransportCCTSupport: 36f69887fd212db6d7ef4dd45ba44523717a434e
-  GoogleMobileAdsMediationFacebook: fa98b95804b5191cad365b034974f99825ce7f64
   GoogleToolboxForMac: 800648f8b3127618c1b59c7f97684427630c5ea3
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
@@ -347,7 +342,9 @@ SPEC CHECKSUMS:
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   JJFloatingActionButton: 26805f87c7e9f68c6a91bd9f3f09c2e6b904a84f
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  LLCycleScrollView: a08f666671f9fd1a205df9defebc3c217d59abc8
   Mapbox-iOS-SDK: 1b7cb0e739247d20ef75f5f14aa6ce34e1f0660f
   MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
   MarqueeLabel: f762aa681ae201f66c1d511858b171f75d83013a
@@ -357,8 +354,7 @@ SPEC CHECKSUMS:
   Siren: 9262e383365dcf41a75c2b4a42fc01c576a0363a
   SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
-  VpadnSDK: 59754b55d501d9fdbf8240cba3f69098bf2abb5b
 
-PODFILE CHECKSUM: 312bec7af35f97b445fba2cde60483b6e23cf679
+PODFILE CHECKSUM: 6427789a003ed423d1752d3c1a67b4395f6deea3
 
 COCOAPODS: 1.7.5

@@ -25,13 +25,18 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     @IBOutlet weak var mswitchlabel: UILabel!
     @IBOutlet weak var mbutton: UIButton!
 
+    @IBAction func closeview(_ sender: Any) {
+        dissmissView()
+    }
+    @IBOutlet weak var closebtn: UIButton!
+    @IBOutlet var close: UIView!
     @IBOutlet weak var mtotal: UILabel!
     var isBig = true
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "期貨獲利計算"
-        sellnum.text = "1000"
-        buynum.text = "1000"
+        sellnum.text = "1"
+        buynum.text = "1"
         
         buyprice.keyboardType = .numberPad
         sellprice.keyboardType = .numberPad

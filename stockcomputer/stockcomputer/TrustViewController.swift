@@ -19,7 +19,11 @@ class TrustViewController: MGoogleADViewController , UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemName.count
     }
+    @IBOutlet weak var titleName: UILabel!
     
+    @IBAction func closeView(_ sender: Any) {
+        dissmissView()
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,for:indexPath)
@@ -31,7 +35,7 @@ class TrustViewController: MGoogleADViewController , UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = GetStockPriceManager.getTustTitle() + "投信買超排行"
+        titleName.text = GetStockPriceManager.getTustTitle() + "投信買超排行"
         getData()
         
         // Do any additional setup after loading the view.
@@ -71,12 +75,12 @@ class TrustViewController: MGoogleADViewController , UITableViewDataSource
         switch item.tag {
         case 1:
             setToast(s: "投信買超排行")
-            title = GetStockPriceManager.getTustTitle() + "投信買超排行"
+             titleName.text = GetStockPriceManager.getTustTitle() + "投信買超排行"
             getData()
             break
         case 2:
             setToast(s: "投信賣超排行")
-            title =  GetStockPriceManager.getTustTitle() + "投信賣超排行"
+             titleName.text =  GetStockPriceManager.getTustTitle() + "投信賣超排行"
             getData_2()
             
             

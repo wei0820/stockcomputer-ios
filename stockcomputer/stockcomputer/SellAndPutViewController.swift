@@ -45,7 +45,10 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
             
         }
     }
-
+    @IBAction func close(_ sender: Any) {
+        dissmissView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sellTF.delegate = self
@@ -56,8 +59,8 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
         sellTF.keyboardType = .numberPad
         buynumTF.keyboardType = .numberPad
         buyTF.keyboardType = .numberPad
-        buynumTF.text = "1000"
-        sellnumTF.text = "1000"
+        buynumTF.text = "1"
+        sellnumTF.text = "1"
          
         // Do any additional setup after loading the view.
     }

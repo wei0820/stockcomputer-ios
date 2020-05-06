@@ -30,12 +30,12 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
             adBannerView?.isHidden = false
         }
         getAnnouncement()
-      
+        
         
     }
     func getAnnouncement(){
         FirebaseManager.getStockcomuperAllDate()
-
+        
     }
     func setAdBanner(){
         let id = "ca-app-pub-7019441527375550/9487446087"
@@ -133,8 +133,16 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     }
     func dissmissView(){
         dismiss(animated: true, completion: nil)
-
+        
     }
+    func setJump(type:String){
+        
+        if let controller = storyboard?.instantiateViewController(withIdentifier: type) {
+            present(controller, animated: true, completion: nil)
+        }
+        
+    }
+  
     
     func setMemberAlert(){
         
@@ -217,6 +225,7 @@ func getMemberDateList(){
     }
     
 }
+
 
 func timeStanpToSring (timeStamp :Float) -> String{
     //转换为时间

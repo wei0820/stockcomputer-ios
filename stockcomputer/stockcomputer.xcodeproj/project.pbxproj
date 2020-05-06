@@ -28,6 +28,7 @@
 		8EB01C9D242C87C100A7E992 /* ProFitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */; };
 		8EBF7980236978F000E569C2 /* QAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF797F236978F000E569C2 /* QAListViewController.swift */; };
 		8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7983236ACE8E00E569C2 /* TimerManager.swift */; };
+		8ED1CB4B244856570050B5A4 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1CB4A244856570050B5A4 /* SelectViewController.swift */; };
 		8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BB2420671300260E25 /* GetStockPriceManger.swift */; };
 		8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BD242070EA00260E25 /* StockListViewController.swift */; };
 		8ED642C224209F1600260E25 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C124209F1600260E25 /* StockData.swift */; };
@@ -36,12 +37,10 @@
 		8ED642C82422112E00260E25 /* TrustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C72422112E00260E25 /* TrustViewController.swift */; };
 		8ED642CA242216C800260E25 /* SelfEmployedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C9242216C800260E25 /* SelfEmployedViewController.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
-		B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
 		B74F5303220556340034DC5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5302220556340034DC5D /* ViewController.swift */; };
 		B74F5306220556340034DC5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74F5304220556340034DC5D /* Main.storyboard */; };
 		B74F5308220556350034DC5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74F5307220556350034DC5D /* Assets.xcassets */; };
-		B74F530B220556350034DC5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74F5309220556350034DC5D /* LaunchScreen.storyboard */; };
 		B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F53122205AB280034DC5D /* DayTradeViewController.swift */; };
 		B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B769047722A663DE00E1B53F /* EveryDayController.swift */; };
 		B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */; };
@@ -78,6 +77,7 @@
 		8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFitViewController.swift; sourceTree = "<group>"; };
 		8EBF797F236978F000E569C2 /* QAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAListViewController.swift; sourceTree = "<group>"; };
 		8EBF7983236ACE8E00E569C2 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		8ED1CB4A244856570050B5A4 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		8ED642BB2420671300260E25 /* GetStockPriceManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStockPriceManger.swift; sourceTree = "<group>"; };
 		8ED642BD242070EA00260E25 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
 		8ED642C124209F1600260E25 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
@@ -93,7 +93,6 @@
 		B74F5302220556340034DC5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B74F5305220556340034DC5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B74F5307220556350034DC5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B74F530A220556350034DC5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B74F530C220556350034DC5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B74F53122205AB280034DC5D /* DayTradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTradeViewController.swift; sourceTree = "<group>"; };
 		B769047722A663DE00E1B53F /* EveryDayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryDayController.swift; sourceTree = "<group>"; };
@@ -115,7 +114,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */,
-				B730065B2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a in Frameworks */,
 				EFD7E662DE75B39649B23F14 /* Pods_stockcomputer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,7 +168,6 @@
 				B74F53122205AB280034DC5D /* DayTradeViewController.swift */,
 				B74F5304220556340034DC5D /* Main.storyboard */,
 				B74F5307220556350034DC5D /* Assets.xcassets */,
-				B74F5309220556350034DC5D /* LaunchScreen.storyboard */,
 				B74F530C220556350034DC5D /* Info.plist */,
 				B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */,
 				B77B6F652205D53300A674D6 /* MarginController.swift */,
@@ -208,6 +205,7 @@
 				8EB01C982422197400A7E992 /* BrokerViewController.swift */,
 				8EB01C9A242345F000A7E992 /* QuotesViewController.swift */,
 				8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */,
+				8ED1CB4A244856570050B5A4 /* SelectViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -272,7 +270,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B74F530B220556350034DC5D /* LaunchScreen.storyboard in Resources */,
 				B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */,
 				8E694FD423FA2DB50072511C /* GoogleService-Info.plist in Resources */,
 				B74F5308220556350034DC5D /* Assets.xcassets in Resources */,
@@ -336,6 +333,7 @@
 				B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */,
 				B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */,
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
+				8ED1CB4B244856570050B5A4 /* SelectViewController.swift in Sources */,
 				8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */,
 				8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */,
 				8ED642C224209F1600260E25 /* StockData.swift in Sources */,
@@ -381,14 +379,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		B74F5309220556350034DC5D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B74F530A220556350034DC5D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -426,7 +416,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -515,7 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 60;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -528,7 +518,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 5.7;
+				MARKETING_VERSION = 6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -543,7 +533,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 60;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -556,7 +546,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 5.7;
+				MARKETING_VERSION = 6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

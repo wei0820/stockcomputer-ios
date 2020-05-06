@@ -19,6 +19,12 @@ class QuotesViewController: MGoogleADViewController, UITableViewDataSource
         return itemName.count
     }
     
+    @IBOutlet weak var titlename: UILabel!
+    
+    @IBAction func closeview(_ sender: Any) {
+        dissmissView()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,for:indexPath)
@@ -30,7 +36,7 @@ class QuotesViewController: MGoogleADViewController, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = GetStockPriceManager.getStock_aTitle() + "融資增加排行"
+        titlename.text = GetStockPriceManager.getStock_aTitle() + "融資增加排行"
         getData()
         
         // Do any additional setup after loading the view.
@@ -82,19 +88,19 @@ class QuotesViewController: MGoogleADViewController, UITableViewDataSource
         switch item.tag {
         case 1:
             setToast(s: "融資增加排行")
-            title = GetStockPriceManager.getStock_aTitle() + "融資增加排行"
+            titlename.text = GetStockPriceManager.getStock_aTitle() + "融資增加排行"
             getData()
             break
         case 2:
             setToast(s: "融券增加排行")
-            title = GetStockPriceManager.getStock_aTitle() + "融券增加排行"
+            titlename.text = GetStockPriceManager.getStock_aTitle() + "融券增加排行"
             getData_2()
             
             
             break
         case 3:
             setToast(s: "借券增加排行")
-            title = GetStockPriceManager.getStock_aTitle() + "借券增加排行"
+            titlename.text = GetStockPriceManager.getStock_aTitle() + "借券增加排行"
             getData_3()
             
             

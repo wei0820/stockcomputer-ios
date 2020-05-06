@@ -70,6 +70,9 @@ class TradeDetailViewController:MGoogleADViewController ,UIPickerViewDelegate, U
         
         
     }
+    @IBAction func closeView(_ sender: Any) {
+        dissmissView()
+    }
     func closeKeyboard(){
         self.buy_price.resignFirstResponder()
         self.sell_price.resignFirstResponder()

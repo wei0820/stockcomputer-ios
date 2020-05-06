@@ -14,13 +14,17 @@ import Instabug
 
 class FBLoginViewController: UIViewController{
     let userDefaults = UserDefaults.standard
+    func setJump(type:String){
+         
+         if let controller = storyboard?.instantiateViewController(withIdentifier: type) {
+                    present(controller, animated: true, completion: nil)
+                }
+         
+     }
     @IBAction func guestLogin(_ sender: Any) {
         
         Auth.auth().signInAnonymously() { (authResult, error) in
             if let error = error {//
-                print("error")
-                
-                print(error.localizedDescription)
                 return
             }
             guard let user = authResult?.user else { return }
@@ -33,6 +37,7 @@ class FBLoginViewController: UIViewController{
             let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
             let appDelegate = UIApplication.shared.delegate as! AppDelegate;
             appDelegate.window?.rootViewController = HomeVc
+//            self.setJump(type: "home")
         }
     }
     
@@ -56,9 +61,7 @@ class FBLoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         FirebaseManager.getStockcomuperAllDate()
-        
         fetchProfile()
-        // Do any additional setup after loading the view.
     }
     
     
@@ -77,6 +80,8 @@ class FBLoginViewController: UIViewController{
             let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
             let appDelegate = UIApplication.shared.delegate as! AppDelegate;
             appDelegate.window?.rootViewController = HomeVc
+//            self.setJump(type: "home")
+
             
         }else{
             if let accessToken = AccessToken.current {
@@ -84,17 +89,16 @@ class FBLoginViewController: UIViewController{
                 let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate;
                 appDelegate.window?.rootViewController = HomeVc
+//                self.setJump(type: "home")
+
                 // User is logged in, use 'accessToken' here.
                 let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
                 
                 Auth.auth().signIn(with: credential) { (authResult, error) in
                     if let error = error {
                         
-                        // ...
                         return
                     }
-                    Instabug.identifyUser(withEmail: (Auth.auth().currentUser?.email)!, name:
-                        Auth.auth().currentUser?.displayName)
                     FirebaseManager.getMemberDate()
                     if(FirebaseManager.getUserId() != nil && FirebaseManager.getUserPoint() != nil){
                         if(FirebaseManager.getUserPoint() == 0){

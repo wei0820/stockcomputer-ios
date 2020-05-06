@@ -8,7 +8,7 @@
 
 import UIKit
 class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UIPickerViewDataSource{
-
+    
     @IBOutlet weak var title_label: UILabel!
     
     @IBOutlet weak var message_labe: UILabel!
@@ -29,7 +29,7 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         closeKeyboard()
         
         total()
-
+        
         
     }
     @IBOutlet weak var percentage_label: UILabel!
@@ -57,18 +57,20 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
     var tax = 0.0015
     var type = ""
     var formatter: DateFormatter! = nil
-
+    
+    @IBAction func close(_ sender: Any) {
+        dissmissView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "現股當沖獲利計算"
         buy_num.text = "1000"
         sell_num.text = "1000"
-    
-
         setKeyKeyboardType()
-    
-
+        
+        
     }
+ 
     func setKeyKeyboardType(){
         buy_price.keyboardType = UIKeyboardType.decimalPad
         sell_price.keyboardType = UIKeyboardType.decimalPad
@@ -98,7 +100,7 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
             setDilog()
             return
         }
-     
+        
         
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)!
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)!
@@ -107,16 +109,16 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         if((total_buy * handlingFee * pirceout)<=20){
             total_buy_price.text  = String(total_buy + 20)
             total_buy = (total_buy + 20)
-
+            
         }else{
             total_buy_price.text  = String(total_buy + (total_buy * handlingFee * pirceout))
             total_buy = (total_buy + (total_buy * handlingFee * pirceout))
-
+            
         }
         if( (total_sell * handlingFee * pirceout )<=20){
             total_sell_price.text = String(total_sell - 20 - ((total_sell * tax)))
             total_sell = (total_sell - 20 - ((total_sell * tax)))
-
+            
         }else{
             total_sell_price.text = String(total_sell - (total_sell * handlingFee * pirceout)-(total_sell * tax))
             total_sell = (total_sell - (total_sell * handlingFee * pirceout)-(total_sell * tax))
@@ -129,10 +131,10 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         percentage_label.textColor = UIColor.white
         percentage_label.backgroundColor = UIColor.red
         percentage_label.text = String(format: "%.2f",((total/total_buy) * 100 )) + "%"
-
+        
         
     }
-
+    
     func setDilog(){
         let controller = UIAlertController(title: "錯誤!", message: "忘了輸入數值", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -140,4 +142,5 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         present(controller, animated: true, completion: nil)
         
     }
+    
 }
