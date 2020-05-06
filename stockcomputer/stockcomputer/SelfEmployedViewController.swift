@@ -31,7 +31,7 @@ class SelfEmployedViewController: MGoogleADViewController , UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = GetStockPriceManager.getEmployedTitle() + "自營商買超排行"
+        titlename.text = GetStockPriceManager.getEmployedTitle() + "自營商買超排行"
         getData()
         
         // Do any additional setup after loading the view.
@@ -67,16 +67,22 @@ class SelfEmployedViewController: MGoogleADViewController , UITableViewDataSourc
      // Pass the selected object to the new view controller.
      }
      */
+    @IBOutlet weak var titlename: UILabel!
+    
+    @IBAction func closeVIew(_ sender: Any) {
+        dissmissView()
+    }
+    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 1:
             setToast(s: "自營商買超排行")
-            title = GetStockPriceManager.getEmployedTitle() + "自營商買超排行"
+            titlename.text = GetStockPriceManager.getEmployedTitle() + "自營商買超排行"
             getData()
             break
         case 2:
             setToast(s: "自營商賣超排行")
-            title = GetStockPriceManager.getEmployedTitle() + "自營商賣超排行"
+            titlename.text = GetStockPriceManager.getEmployedTitle() + "自營商賣超排行"
             getData_2()
             
             
