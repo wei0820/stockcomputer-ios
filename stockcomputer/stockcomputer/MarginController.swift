@@ -204,4 +204,7 @@ class MarginController: MGoogleADViewController{
     }
     
    
+    @IBAction func closeView(_ sender: Any) {
+        dissmissView()
+    }
 }
