@@ -17,10 +17,14 @@ import MarqueeLabel
 import LLCycleScrollView
 class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymentTransactionObserver,UITabBarDelegate{
     
+    @IBOutlet weak var MarginView: UIView!
     @IBOutlet weak var newsView: UIView!
     @IBOutlet weak var paymeView: UIView!
     @IBOutlet weak var bannerView: LLCycleScrollView!
+    @IBOutlet weak var mOtherView: UIView!
     
+    @IBOutlet weak var FinancingView: UILabel!
+    @IBOutlet weak var todayView: UIView!
     @IBOutlet weak var CurrentPrice: UIView!
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
     var hud :JGProgressHUD?
@@ -376,6 +380,13 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         self.newsView.addGestureRecognizer(news)
         
         
+        let tomorrow = UITapGestureRecognizer(target: self, action:  #selector(self.tomorrowAction))
+        self.todayView.addGestureRecognizer(tomorrow)
+        
+        let margin = UITapGestureRecognizer(target: self, action:  #selector(self.marginAction))
+            self.MarginView.addGestureRecognizer(margin)
+        
+        
     }
     @objc func checkAction(sender : UITapGestureRecognizer) {
         // Do what you want
@@ -389,6 +400,12 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     @objc func newsAction(sender : UITapGestureRecognizer) {
          setJump(type: "news")
       }
+    @objc func tomorrowAction(sender : UITapGestureRecognizer) {
+       setJump(type: "tomorrow")
+    }
+    @objc func marginAction(sender : UITapGestureRecognizer) {
+        setJump(type: "margin")
+     }
     
 }
 
