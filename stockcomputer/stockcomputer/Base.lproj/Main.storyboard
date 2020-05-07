@@ -1235,7 +1235,7 @@
         <!--Distribution Controller-->
         <scene sceneID="Jfa-7B-HWw">
             <objects>
-                <viewController id="acF-Zl-rht" customClass="DistributionController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc2" id="acF-Zl-rht" customClass="DistributionController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bnx-E3-394">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1471,7 +1471,7 @@
         <!--Hong Kong Controller-->
         <scene sceneID="JdM-7p-L0f">
             <objects>
-                <viewController id="N38-0L-QVR" customClass="HongKongController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc1" id="N38-0L-QVR" customClass="HongKongController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E5z-gF-Wjk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2583,7 +2583,7 @@
         <!--Stock Number View Controller-->
         <scene sceneID="jkF-gP-nE4">
             <objects>
-                <viewController id="WhA-FN-yok" customClass="StockNumberViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc3" id="WhA-FN-yok" customClass="StockNumberViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8vd-tY-KfW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3186,6 +3186,137 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAl-ft-mVx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3375.1999999999998" y="2384.257871064468"/>
+        </scene>
+        <!--Other View Controller-->
+        <scene sceneID="Lj3-Qx-iyd">
+            <objects>
+                <viewController storyboardIdentifier="other" id="HsD-8U-3Zg" customClass="OtherViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vpW-sb-TDu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flR-5a-KnT">
+                                <rect key="frame" x="329" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Epz-Qm-ELY"/>
+                                    <constraint firstAttribute="width" constant="30" id="QAn-MI-Vp9"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="baseline_clear_black"/>
+                                <connections>
+                                    <action selector="closeview:" destination="HsD-8U-3Zg" eventType="touchUpInside" id="tMb-aY-Odl"/>
+                                </connections>
+                            </button>
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWu-Um-qcD">
+                                <rect key="frame" x="16" y="68" width="80" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="港股複委託購入試算" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKU-B8-xZQ">
+                                        <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="JXc-NI-JrF"/>
+                                            <constraint firstAttribute="height" constant="64" id="oBu-Ra-0Hs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tKU-B8-xZQ" secondAttribute="trailing" constant="8" id="8N0-MM-F63"/>
+                                    <constraint firstAttribute="bottom" secondItem="tKU-B8-xZQ" secondAttribute="bottom" constant="8" id="BBm-qD-TN9"/>
+                                    <constraint firstItem="tKU-B8-xZQ" firstAttribute="leading" secondItem="XWu-Um-qcD" secondAttribute="leading" constant="8" id="Sfa-cv-0Zd"/>
+                                    <constraint firstAttribute="width" constant="80" id="ZfS-Z4-jZP"/>
+                                    <constraint firstAttribute="height" constant="80" id="rq7-X8-pNF"/>
+                                    <constraint firstItem="tKU-B8-xZQ" firstAttribute="top" secondItem="XWu-Um-qcD" secondAttribute="top" constant="8" id="s5h-0K-to0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmO-GY-JTi">
+                                <rect key="frame" x="279" y="68" width="80" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="資券成數查詢" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuL-Wl-9bu">
+                                        <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="YfU-zX-PoJ"/>
+                                            <constraint firstAttribute="width" constant="64" id="f9h-0S-B6L"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="3aD-pG-784"/>
+                                    <constraint firstAttribute="width" constant="80" id="AZY-x1-nED"/>
+                                    <constraint firstItem="JuL-Wl-9bu" firstAttribute="leading" secondItem="CmO-GY-JTi" secondAttribute="leading" constant="8" id="SUL-sr-NT1"/>
+                                    <constraint firstItem="JuL-Wl-9bu" firstAttribute="top" secondItem="CmO-GY-JTi" secondAttribute="top" constant="8" id="c1Q-QT-CQV"/>
+                                    <constraint firstAttribute="bottom" secondItem="JuL-Wl-9bu" secondAttribute="bottom" constant="8" id="ngR-a2-dJ3"/>
+                                    <constraint firstAttribute="trailing" secondItem="JuL-Wl-9bu" secondAttribute="trailing" constant="8" id="y2u-Dg-VGG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTD-dS-GpB">
+                                <rect key="frame" x="147" y="68" width="80" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="除權除息參考價試算" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oo8-Y2-97i">
+                                        <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="dP4-gZ-Teo"/>
+                                            <constraint firstAttribute="height" constant="64" id="dZT-HM-LBM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="BMt-Zk-BA8"/>
+                                    <constraint firstAttribute="bottom" secondItem="oo8-Y2-97i" secondAttribute="bottom" constant="8" id="WVM-sB-IYP"/>
+                                    <constraint firstAttribute="width" constant="80" id="ghk-CW-7Jp"/>
+                                    <constraint firstItem="oo8-Y2-97i" firstAttribute="leading" secondItem="wTD-dS-GpB" secondAttribute="leading" constant="8" id="iaA-Cm-MeQ"/>
+                                    <constraint firstItem="oo8-Y2-97i" firstAttribute="top" secondItem="wTD-dS-GpB" secondAttribute="top" constant="8" id="rEl-aP-AqY"/>
+                                    <constraint firstAttribute="trailing" secondItem="oo8-Y2-97i" secondAttribute="trailing" constant="8" id="vLM-d5-gup"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XWu-Um-qcD" firstAttribute="leading" secondItem="qIs-9V-Kqw" secondAttribute="leading" constant="16" id="262-Mq-6gn"/>
+                            <constraint firstItem="CmO-GY-JTi" firstAttribute="top" secondItem="flR-5a-KnT" secondAttribute="bottom" constant="18" id="52K-Wc-Zma"/>
+                            <constraint firstItem="qIs-9V-Kqw" firstAttribute="trailing" secondItem="flR-5a-KnT" secondAttribute="trailing" constant="16" id="P4i-Ae-llF"/>
+                            <constraint firstItem="wTD-dS-GpB" firstAttribute="top" secondItem="qIs-9V-Kqw" secondAttribute="top" constant="68" id="awR-ra-ioF"/>
+                            <constraint firstItem="XWu-Um-qcD" firstAttribute="top" secondItem="qIs-9V-Kqw" secondAttribute="top" constant="68" id="dUy-Iz-KMY"/>
+                            <constraint firstItem="qIs-9V-Kqw" firstAttribute="trailing" secondItem="CmO-GY-JTi" secondAttribute="trailing" constant="16" id="q9S-ib-BtW"/>
+                            <constraint firstItem="flR-5a-KnT" firstAttribute="top" secondItem="qIs-9V-Kqw" secondAttribute="top" constant="20" id="s2g-Hr-g6C"/>
+                            <constraint firstItem="CmO-GY-JTi" firstAttribute="leading" secondItem="wTD-dS-GpB" secondAttribute="trailing" constant="52" id="uHa-5V-0JY"/>
+                            <constraint firstItem="wTD-dS-GpB" firstAttribute="leading" secondItem="XWu-Um-qcD" secondAttribute="trailing" constant="51" id="uTo-r9-eqf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qIs-9V-Kqw"/>
+                    </view>
+                    <connections>
+                        <outlet property="mView1" destination="XWu-Um-qcD" id="Hl3-Qh-zIp"/>
+                        <outlet property="mView2" destination="wTD-dS-GpB" id="6q5-c4-Ojk"/>
+                        <outlet property="mView3" destination="CmO-GY-JTi" id="3H2-pO-gqm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zdx-od-1Jp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2175.1999999999998" y="2383.3583208395803"/>
         </scene>
         <!--Futures View Controller-->
         <scene sceneID="bP3-h7-a54">
