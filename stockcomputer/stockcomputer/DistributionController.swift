@@ -15,7 +15,11 @@ import Kanna
 import Alamofire
 class DistributionController: MGoogleADViewController ,UITextFieldDelegate  ,UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
     var url = "https://tw.stock.yahoo.com/d/i/fgbuy_tse_w.html"
-
+    @IBOutlet weak var closeView: UIButton!
+    @IBAction func close(_ sender: Any) {
+        dissmissView()
+    }
+    
     @IBOutlet weak var nowprice: UILabel!
     @IBAction func clear_btn(_ sender: Any) {
         price.text = ""

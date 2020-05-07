@@ -23,6 +23,9 @@ class StockNumberViewController: MGoogleADViewController, UITextFieldDelegate {
     @IBOutlet weak var search: UITextField!
     var hud :JGProgressHUD?
     
+    @IBAction func closeView(_ sender: Any) {
+        dissmissView()
+    }
     @IBOutlet weak var lab10: UILabel!
     @IBOutlet weak var lab9: UILabel!
     @IBOutlet weak var lab8: UILabel!

@@ -140,7 +140,14 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
     @IBOutlet weak var TF_3: UITextField!
     @IBOutlet weak var TF_4: UITextField!
     var adBannerView: GADBannerView?
+    @IBAction func closeviw(_ sender: Any) {
+        
+    dismiss(animated: true, completion: nil)
 
+    
+    }
+    
+    
     @IBOutlet weak var lb4: UILabel!
     @IBOutlet weak var lb_1: UILabel!
     @IBOutlet weak var lb3: UILabel!

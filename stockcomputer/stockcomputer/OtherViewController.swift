@@ -9,7 +9,7 @@
 import UIKit
 
 class OtherViewController: MGoogleADViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUIView()
@@ -41,11 +41,14 @@ class OtherViewController: MGoogleADViewController {
               
         let view3 = UITapGestureRecognizer(target: self, action:  #selector(self.view3Action))
               self.mView3.addGestureRecognizer(view3)
-              
+
+              let v4 = UITapGestureRecognizer(target: self, action:  #selector(self.view4Action))
+                    self.view4.addGestureRecognizer(v4)
         
 
         
     }
+    @IBOutlet weak var view4: UIView!
     @objc func view1Action(sender : UITapGestureRecognizer) {
           // Do what you want
           setJump(type: "vc1")
@@ -58,5 +61,12 @@ class OtherViewController: MGoogleADViewController {
           // Do what you want
           setJump(type: "vc3")
       }
+    
+    @objc func view4Action(sender : UITapGestureRecognizer) {
+          // Do what you want
+          setJump(type: "ssf")
+      }
 
+    
+   
 }
