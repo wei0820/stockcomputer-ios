@@ -23,6 +23,8 @@
 		8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122E234ADCE000795029 /* MemberCenterViewController.swift */; };
 		8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E871230234AFF1000795029 /* StoreKit.framework */; };
 		8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */; };
+		8E898F1E2462BDEC0072E3AA /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E898F1D2462BDEC0072E3AA /* OtherViewController.swift */; };
+		8E898F202463E37A0072E3AA /* SSFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E898F1F2463E37A0072E3AA /* SSFViewController.swift */; };
 		8EB01C992422197400A7E992 /* BrokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C982422197400A7E992 /* BrokerViewController.swift */; };
 		8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C9A242345F000A7E992 /* QuotesViewController.swift */; };
 		8EB01C9D242C87C100A7E992 /* ProFitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */; };
@@ -72,6 +74,8 @@
 		8E87122E234ADCE000795029 /* MemberCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCenterViewController.swift; sourceTree = "<group>"; };
 		8E871230234AFF1000795029 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8E898F1D2462BDEC0072E3AA /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		8E898F1F2463E37A0072E3AA /* SSFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSFViewController.swift; sourceTree = "<group>"; };
 		8EB01C982422197400A7E992 /* BrokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokerViewController.swift; sourceTree = "<group>"; };
 		8EB01C9A242345F000A7E992 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFitViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				8EB01C9A242345F000A7E992 /* QuotesViewController.swift */,
 				8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */,
 				8ED1CB4A244856570050B5A4 /* SelectViewController.swift */,
+				8E898F1D2462BDEC0072E3AA /* OtherViewController.swift */,
+				8E898F1F2463E37A0072E3AA /* SSFViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				8E10DDAF234C3402006A46F2 /* MGoogleADViewController.swift in Sources */,
 				8E48E4F423F3E66600384D25 /* DateManager.swift in Sources */,
 				8EBF7980236978F000E569C2 /* QAListViewController.swift in Sources */,
+				8E898F202463E37A0072E3AA /* SSFViewController.swift in Sources */,
 				B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */,
 				8E10DDB1234C5FE3006A46F2 /* MapViewController.swift in Sources */,
 				B7E8C17C2271B65E00792815 /* FirebaseWorks.swift in Sources */,
@@ -355,6 +362,7 @@
 				B77B6F662205D53300A674D6 /* MarginController.swift in Sources */,
 				B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */,
 				B77B6F682205D55100A674D6 /* FinancingViewController.swift in Sources */,
+				8E898F1E2462BDEC0072E3AA /* OtherViewController.swift in Sources */,
 				B74F5301220556340034DC5D /* AppDelegate.swift in Sources */,
 				8ED642C62421F1E700260E25 /* ForeignInvestmentViewController.swift in Sources */,
 				8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */,

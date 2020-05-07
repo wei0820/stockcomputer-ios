@@ -32,7 +32,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     var isProgress: Bool = false // 是否有交易正在進行中
     var delegate: IAPurchaseViewControllerDelegate!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
-    var itemName = ["贊助開發者","現股當沖獲利計算","現股獲利計算","港股複委託購入試算","除權除息參考價試算","資券成數查詢","期貨獲利試算","選擇權獲利計算","融券獲利試算","盤中個股精選追蹤","外陸資買賣超前50名","投信買賣超前50名","自營商買賣超前50名","八大官股銀行買賣超","融資融券借券排行"]
+    var itemName = ["港股複委託購入試算","除權除息參考價試算","資券成數查詢"]
     let imagesURLStrings = [
         "http://www.g-photography.net/file_picture/3/3587/4.jpg",
         "http://img2.zjolcdn.com/pic/0/13/66/56/13665652_914292.jpg",
@@ -369,6 +369,9 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             productRequest.start() // 開始請求內購產品
         }
     }
+    
+    
+    
     func setUIView(){
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
         self.CurrentPrice.addGestureRecognizer(gesture)
@@ -385,7 +388,8 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         
         let margin = UITapGestureRecognizer(target: self, action:  #selector(self.marginAction))
             self.MarginView.addGestureRecognizer(margin)
-        
+        let other = UITapGestureRecognizer(target: self, action:  #selector(self.otherAction))
+                 self.mOtherView.addGestureRecognizer(other)
         
     }
     @objc func checkAction(sender : UITapGestureRecognizer) {
@@ -406,6 +410,10 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     @objc func marginAction(sender : UITapGestureRecognizer) {
         setJump(type: "margin")
      }
+    
+    @objc func otherAction(sender : UITapGestureRecognizer) {
+           setJump(type: "other")
+        }
     
 }
 
