@@ -9,17 +9,22 @@
 import UIKit
 import SwiftSoup
 import JGProgressHUD
+import GoogleMobileAds
 
 class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
     var document: Document = Document.init("")
     var array = Array<String>()
+    var interstitial: GADInterstitial!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         input.keyboardType = UIKeyboardType.numbersAndPunctuation
         input.returnKeyType = .done
         input.borderStyle = .roundedRect
         input.delegate = self
-
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7019441527375550/5957417692")
+        let request = GADRequest()
+          interstitial.load(request)
 
         
         // Do any additional setup after loading the view.
@@ -48,6 +53,9 @@ class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
         hud?.dismiss(afterDelay: 3.0)
 
         }
+        if interstitial.isReady {
+           interstitial.present(fromRootViewController: self)
+         }
 
     }
     @IBOutlet weak var input: UITextField!
