@@ -9,14 +9,23 @@
 import UIKit
 import SwiftSoup
 import JGProgressHUD
+import GoogleMobileAds
 
-class SSFViewController: MGoogleADViewController {
+class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
     var document: Document = Document.init("")
     var array = Array<String>()
+    var interstitial: GADInterstitial!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         input.keyboardType = UIKeyboardType.numbersAndPunctuation
         input.returnKeyType = .done
+        input.borderStyle = .roundedRect
+        input.delegate = self
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7019441527375550/5957417692")
+        let request = GADRequest()
+          interstitial.load(request)
+
         
         // Do any additional setup after loading the view.
     }
@@ -24,6 +33,7 @@ class SSFViewController: MGoogleADViewController {
         dissmissView()
     }
     @IBAction func inputbtn(_ sender: Any) {
+        input.resignFirstResponder()
         if(input.text!.isEmpty){
             setToast(s: "請輸入代號")
         }else{
@@ -44,6 +54,9 @@ class SSFViewController: MGoogleADViewController {
         hud?.dismiss(afterDelay: 3.0)
 
         }
+        if interstitial.isReady {
+           interstitial.present(fromRootViewController: self)
+         }
 
     }
     @IBOutlet weak var input: UITextField!
@@ -170,5 +183,29 @@ class SSFViewController: MGoogleADViewController {
         // Pass the selected object to the new view controller.
     }
     */
+         // 開始進入編輯狀態
+        func textFieldDidBeginEditing(_ textField: UITextField){
+        }
+     
+        // 可能進入結束編輯狀態
+        func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+     
+            return true
+        }
+     
+        // 結束編輯狀態(意指完成輸入或離開焦點)
+        func textFieldDidEndEditing(_ textField: UITextField) {
+     
+                    }
+     
+        // 按下Return後會反應的事件
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            //利用此方式讓按下Return後會Toogle 鍵盤讓它消失
+            textField.resignFirstResponder()
+            return false
+        }
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         self.view.endEditing(true)
+     }
 
 }
