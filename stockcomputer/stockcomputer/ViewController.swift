@@ -32,13 +32,6 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     var isProgress: Bool = false // 是否有交易正在進行中
     var delegate: IAPurchaseViewControllerDelegate!
     var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
-    var itemName = ["港股複委託購入試算","除權除息參考價試算","資券成數查詢"]
-    let imagesURLStrings = [
-        "http://www.g-photography.net/file_picture/3/3587/4.jpg",
-        "http://img2.zjolcdn.com/pic/0/13/66/56/13665652_914292.jpg",
-        "http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg",
-        "http://img3.redocn.com/tupian/20150806/weimeisheyingtupian_4779232.jpg",
-    ];
     
     
     var ref: DatabaseReference!
@@ -72,6 +65,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setAdBanner()
         setRightButton(s: "會員中心")
         setLeftButton(s: "簽到")
@@ -110,7 +104,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         
     }
     func setBannerView(){
-        self.bannerView.imagePaths = imagesURLStrings
+        self.bannerView.imagePaths = FirebaseManager.getPageArray()
         self.bannerView.imageViewContentMode = .scaleToFill
         self.bannerView.customPageControlStyle = .image
         self.bannerView.pageControlPosition = .center

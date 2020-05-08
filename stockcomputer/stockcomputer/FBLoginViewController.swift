@@ -62,6 +62,7 @@ class FBLoginViewController: UIViewController{
         super.viewDidLoad()
         FirebaseManager.getStockcomuperAllDate()
         fetchProfile()
+        FirebaseManager.getBannerDate()
     }
     
     

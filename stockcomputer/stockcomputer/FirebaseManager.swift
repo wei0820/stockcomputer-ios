@@ -365,7 +365,6 @@ class FirebaseManager {
         
     }
     static  func getStockcomuperAllDate(){
-        // 查詢節點資料
         Database.database().reference().child("stockcomuper").child("stockcomuper" as! String).observe(.childAdded, with: {
             (snapshot) in
             // childAdded逐筆呈現
@@ -426,6 +425,47 @@ class FirebaseManager {
         }, withCancel: nil)
         
         
+    }
+    
+    static  func getBannerDate(){
+        var array = Array<String>()
+        array.removeAll()
+        Database.database().reference().child("banner").child("banner" as! String).observe(.childAdded, with: {
+            (snapshot) in
+            // childAdded逐筆呈現
+            if let dictionaryData = snapshot.value as? [String: AnyObject]{
+                var page1 : String = dictionaryData["page1"] as! String
+                var page2 : String = dictionaryData["page2"] as! String
+                var page3 : String = dictionaryData["page3"] as! String
+                var page4 : String = dictionaryData["page4"] as! String
+                var page5 : String = dictionaryData["page5"] as! String
+                array.append(page1)
+                array.append(page2)
+                array.append(page3)
+                array.append(page4)
+                array.append(page5)
+                userDefaults.set(array, forKey: "page")
+//                userDefaults.set(announcement, forKey: "announcement")
+//                userDefaults.set(isCheckVersion, forKey: "isCheckVersion")
+//                userDefaults.set(newVersion, forKey: "newVersion")
+
+                
+            }
+            
+        }, withCancel: nil)
+    }
+    
+    static func getPageArray() ->Array<String>{
+
+        if(userDefaults.value(forKey: "page") != nil){
+            return userDefaults.array(forKey: "page")! as! [String]
+        }
+        return [
+            "http://www.g-photography.net/file_picture/3/3587/4.jpg",
+            "http://img2.zjolcdn.com/pic/0/13/66/56/13665652_914292.jpg",
+            "http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg",
+        ]
+
     }
 }
 

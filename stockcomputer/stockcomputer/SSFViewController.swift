@@ -33,6 +33,7 @@ class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
         dissmissView()
     }
     @IBAction func inputbtn(_ sender: Any) {
+        input.resignFirstResponder()
         if(input.text!.isEmpty){
             setToast(s: "請輸入代號")
         }else{
@@ -182,11 +183,29 @@ class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        // 結束編輯 把鍵盤隱藏起來
-        self.view.endEditing(true)
-
-        return true
-    }
+         // 開始進入編輯狀態
+        func textFieldDidBeginEditing(_ textField: UITextField){
+        }
+     
+        // 可能進入結束編輯狀態
+        func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+     
+            return true
+        }
+     
+        // 結束編輯狀態(意指完成輸入或離開焦點)
+        func textFieldDidEndEditing(_ textField: UITextField) {
+     
+                    }
+     
+        // 按下Return後會反應的事件
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            //利用此方式讓按下Return後會Toogle 鍵盤讓它消失
+            textField.resignFirstResponder()
+            return false
+        }
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         self.view.endEditing(true)
+     }
 
 }
