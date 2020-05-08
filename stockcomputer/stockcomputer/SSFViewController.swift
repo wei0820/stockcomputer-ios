@@ -10,13 +10,17 @@ import UIKit
 import SwiftSoup
 import JGProgressHUD
 
-class SSFViewController: MGoogleADViewController {
+class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
     var document: Document = Document.init("")
     var array = Array<String>()
     override func viewDidLoad() {
         super.viewDidLoad()
         input.keyboardType = UIKeyboardType.numbersAndPunctuation
         input.returnKeyType = .done
+        input.borderStyle = .roundedRect
+        input.delegate = self
+
+
         
         // Do any additional setup after loading the view.
     }
@@ -170,5 +174,11 @@ class SSFViewController: MGoogleADViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // 結束編輯 把鍵盤隱藏起來
+        self.view.endEditing(true)
+
+        return true
+    }
 
 }
