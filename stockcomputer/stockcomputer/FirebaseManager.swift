@@ -265,7 +265,22 @@ class FirebaseManager {
             dateReview["version"] = app_version  as AnyObject
             
         }else{
-            dateReview["version"] = getVersion()  as AnyObject
+            let dictionary = Bundle.main.infoDictionary!
+            let app_version = dictionary["CFBundleShortVersionString"] as! String
+            var userDouble :Double  = Double(getVersion()) as! Double
+            let newDouble  :Double  = Double(app_version)  as! Double
+      
+
+            if(userDouble < newDouble){
+
+                dateReview["version"] = app_version  as AnyObject
+
+            }else{
+
+                dateReview["version"] = getVersion()  as AnyObject
+
+            }
+            
             
         }
         dateReviewReference.updateChildValues(dateReview) { (err, ref) in

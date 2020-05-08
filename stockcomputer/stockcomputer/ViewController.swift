@@ -91,6 +91,9 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             if(!FirebaseManager.getVersion().isEmpty){
                 var newVersion : Double = FirebaseManager.getNewVersion() as! Double
                 var userVersion : Double = Double(FirebaseManager.getVersion()) as! Double
+                print("Jack",newVersion)
+                print("Jack",userVersion)
+
                 if(userVersion < newVersion){
                     setAlert(title: "版本過舊", message: "請您至 App Store 更新 ")
                 }
