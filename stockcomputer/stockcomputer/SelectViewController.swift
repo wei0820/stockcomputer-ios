@@ -57,6 +57,10 @@ class SelectViewController: MGoogleADViewController{
         self.view_5.addGestureRecognizer(view5)
         
         
+        let three = UITapGestureRecognizer(target: self, action:  #selector(self.setThree))
+        self.threeVIew.addGestureRecognizer(three)
+        
+        
         
     }
     @objc func setview1(sender : UITapGestureRecognizer) {
@@ -79,4 +83,9 @@ class SelectViewController: MGoogleADViewController{
         // Do what you want
         setJump(type: "view5")
     }
+    
+    @objc func setThree(sender : UITapGestureRecognizer) {
+          // Do what you want
+          setJump(type: "three")
+      }
 }

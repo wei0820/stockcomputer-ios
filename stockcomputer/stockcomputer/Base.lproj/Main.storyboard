@@ -4677,20 +4677,34 @@
             </objects>
             <point key="canvasLocation" x="-4740" y="4210.3448275862074"/>
         </scene>
-        <!--View Controller-->
+        <!--Three View Controller-->
         <scene sceneID="8tJ-aY-UdC">
             <objects>
-                <viewController id="AeI-4a-YwK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="three" id="AeI-4a-YwK" customClass="ThreeViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UcT-2I-sEe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkD-F5-KZ4">
+                                <rect key="frame" x="329" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5TA-c4-qht"/>
+                                    <constraint firstAttribute="width" constant="30" id="sX2-b0-Vyd"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="baseline_clear_black"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qkD-F5-KZ4" firstAttribute="top" secondItem="Ydz-Kh-HBR" secondAttribute="top" constant="20" id="c3N-Ph-soc"/>
+                            <constraint firstItem="Ydz-Kh-HBR" firstAttribute="trailing" secondItem="qkD-F5-KZ4" secondAttribute="trailing" constant="16" id="lxX-8u-aEG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ydz-Kh-HBR"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKb-1W-7Ph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3908" y="4291"/>
+            <point key="canvasLocation" x="-5593" y="4245"/>
         </scene>
     </scenes>
     <resources>
