@@ -24,6 +24,7 @@ class SelectViewController: MGoogleADViewController{
     
     @IBOutlet weak var view_1: UIView!
     
+    @IBOutlet weak var threeVIew: UIView!
     @IBOutlet weak var view_2: UIView!
     
     @IBOutlet weak var view_3: UIView!

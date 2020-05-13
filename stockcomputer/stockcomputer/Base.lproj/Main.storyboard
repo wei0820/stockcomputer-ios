@@ -4665,16 +4665,32 @@
                         <viewLayoutGuide key="safeArea" id="vR8-wY-Rfo"/>
                     </view>
                     <connections>
+                        <outlet property="threeVIew" destination="fXb-y6-c7A" id="hcb-My-Zfy"/>
                         <outlet property="view_1" destination="2kB-mk-5hk" id="Q6G-iS-AXO"/>
                         <outlet property="view_2" destination="siN-aD-ipt" id="MnD-GA-8Kp"/>
                         <outlet property="view_3" destination="wBh-3q-PQ2" id="jjW-SA-CVz"/>
-                        <outlet property="view_4" destination="Fx7-1c-Qqo" id="FMe-ww-hN9"/>
+                        <outlet property="view_4" destination="tkO-vN-YcV" id="1gW-Wj-TPd"/>
                         <outlet property="view_5" destination="Sbz-Rv-a6R" id="kif-nM-mTA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3FH-p4-ERr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4740" y="4210.3448275862074"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8tJ-aY-UdC">
+            <objects>
+                <viewController id="AeI-4a-YwK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UcT-2I-sEe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ydz-Kh-HBR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKb-1W-7Ph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3908" y="4291"/>
         </scene>
     </scenes>
     <resources>
