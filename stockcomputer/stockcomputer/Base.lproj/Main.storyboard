@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="49" id="6AF-6u-RPA"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem tag="1" title="現股當沖試算" image="pencil" catalog="system" id="eGr-N4-H68"/>
+                                    <tabBarItem tag="1" title="當沖獲利試算" image="pencil" catalog="system" id="eGr-N4-H68"/>
                                     <tabBarItem tag="2" title="選擇權試算" image="pencil.circle" catalog="system" id="Hkp-Ks-Rqr"/>
                                     <tabBarItem tag="3" title="期貨獲利試算" image="pencil.circle.fill" catalog="system" id="kWB-s4-FK8"/>
                                     <tabBarItem tag="4" title="個股期試算" image="pencil.slash" catalog="system" selectedImage="pencil.slash" id="7Q5-Ax-gAB"/>
@@ -70,7 +70,7 @@
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="xh4-93-Y5e">
                                 <rect key="frame" x="16" y="99" width="80" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現股獲利試算" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-ai-jT9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隔日沖試算" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-ai-jT9">
                                         <rect key="frame" x="8" y="8" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="FUB-Bo-Dz5"/>
@@ -2511,7 +2511,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現股隔日沖試算" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mU-aL-r7N">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隔日沖獲利試算" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mU-aL-r7N">
                                         <rect key="frame" x="127" y="18" width="122" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="122" id="G9A-C6-A6W"/>
