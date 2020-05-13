@@ -730,20 +730,56 @@ class GetStockPriceManager{
                    //
                    //div.grid-body.p7.mb10>ul.stock-list>li
                    let elements: Elements = try document.select("div.grid-body.p5>table.gvTB>tbody" ?? "")
-//                    for  i in 0...1 {
-//
-//
-//
-//                        }
-//                let n = try elements.select("tr").get(1).text()
                 let n = try elements.select("tr").get(1)
                 for th in try n.select("td") {
                                              title = try th.text()
                     array_three.append(title)
+                    
+                }
+                
+                 
+               } catch let error {
+               }
+               
+               
+           } catch let error {
+               // an error occurred
+           }
+        return array_three
+       }
+    
+    
+    static  func getOpenPosition() -> Array<String> {
+        var title  = ""
+        array_three.removeAll()
+           guard let url = URL(string: "https://histock.tw/stock/three.aspx" ?? "") else {
+            
+            return array_three
+               // an error occurred
+           }
+           
+           do {
+               
+               // content of url
+               let html = try String.init(contentsOf: url)
+               
+               // parse it into a Document
+               document = try SwiftSoup.parse(html)
+               // parse css query
+               do {
+                   
+                   //empty old items
+                   // firn css selector
+                   //
+                   //div.grid-body.p7.mb10>ul.stock-list>li
+                   let elements: Elements = try document.select("div.grid-item.ml10>div.grid-body.p5>table.gvTB>tbody" ?? "")
+                let n = try elements.select("tr").get(1)
+                for th in try n.select("td") {
+                                             title = try th.text()
                     print("Jack",title)
-
-                                              
-                                          }
+                    array_three.append(title)
+                    
+                }
                 
                  
                } catch let error {

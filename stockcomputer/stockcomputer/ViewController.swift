@@ -88,7 +88,6 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         marqueeLabel.leadingBuffer = 30.0
         marqueeLabel.trailingBuffer = 20.0
         var strings = [String]()
-        GetStockPriceManager.getThree()
         strings = [FirebaseManager.getAnnouncementSting()]
         marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
         if(checkIsMember()){
