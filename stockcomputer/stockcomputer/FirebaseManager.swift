@@ -460,10 +460,6 @@ class FirebaseManager {
                 array.append(page4)
                 array.append(page5)
                 userDefaults.set(array, forKey: "page")
-//                userDefaults.set(announcement, forKey: "announcement")
-//                userDefaults.set(isCheckVersion, forKey: "isCheckVersion")
-//                userDefaults.set(newVersion, forKey: "newVersion")
-
                 
             }
             
