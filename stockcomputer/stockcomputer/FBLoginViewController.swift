@@ -37,7 +37,6 @@ class FBLoginViewController: UIViewController{
             let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
             let appDelegate = UIApplication.shared.delegate as! AppDelegate;
             appDelegate.window?.rootViewController = HomeVc
-//            self.setJump(type: "home")
         }
     }
     
@@ -81,7 +80,6 @@ class FBLoginViewController: UIViewController{
             let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
             let appDelegate = UIApplication.shared.delegate as! AppDelegate;
             appDelegate.window?.rootViewController = HomeVc
-//            self.setJump(type: "home")
 
             
         }else{
@@ -90,7 +88,6 @@ class FBLoginViewController: UIViewController{
                 let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate;
                 appDelegate.window?.rootViewController = HomeVc
-//                self.setJump(type: "home")
 
                 // User is logged in, use 'accessToken' here.
                 let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)

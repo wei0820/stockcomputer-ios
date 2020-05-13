@@ -55,6 +55,9 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             setJump(type: "futures")
             
             break
+        case 4:
+            setJump(type: "ssfcal")
+            break
             
         default:
             
@@ -67,6 +70,10 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         super.viewDidLoad()
         
         setAdBanner()
+        
+        
+        setBannerView()
+        setUIView()
         setRightButton(s: "會員中心")
         setLeftButton(s: "簽到")
         self.productIDs.append("richman")
@@ -81,7 +88,6 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         marqueeLabel.leadingBuffer = 30.0
         marqueeLabel.trailingBuffer = 20.0
         var strings = [String]()
-        
         strings = [FirebaseManager.getAnnouncementSting()]
         marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
         if(checkIsMember()){
@@ -91,9 +97,6 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             if(!FirebaseManager.getVersion().isEmpty){
                 var newVersion : Double = FirebaseManager.getNewVersion() as! Double
                 var userVersion : Double = Double(FirebaseManager.getVersion()) as! Double
-                print("Jack",newVersion)
-                print("Jack",userVersion)
-
                 if(userVersion < newVersion){
                     setAlert(title: "版本過舊", message: "請您至 App Store 更新 ")
                 }
@@ -102,8 +105,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             
         }
         
-        setBannerView()
-        setUIView()
+    
         
     }
     func setBannerView(){
