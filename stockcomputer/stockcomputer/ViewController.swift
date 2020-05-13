@@ -56,7 +56,8 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             
             break
         case 4:
-            setJump(type: "ssfcal")
+//            setJump(type: "ssfcal")
+            setToast(s: "下個版本推出")
             break
             
         default:
