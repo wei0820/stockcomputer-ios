@@ -775,10 +775,8 @@ class GetStockPriceManager{
                    let elements: Elements = try document.select("div.grid-item.ml10>div.grid-body.p5>table.gvTB>tbody" ?? "")
                 let n = try elements.select("tr").get(1)
                 for th in try n.select("td") {
-                                             title = try th.text()
-                    print("Jack",title)
+                    title = try th.text()
                     array_three.append(title)
-                    
                 }
                 
                  
