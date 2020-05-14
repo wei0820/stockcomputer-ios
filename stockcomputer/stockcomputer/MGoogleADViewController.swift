@@ -11,7 +11,7 @@ import UIKit
 import GoogleMobileAds
 import Toaster
 import Firebase
-
+import Instabug
 class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var adBannerView: GADBannerView?
     let userDefaults = UserDefaults.standard
@@ -31,8 +31,13 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         }
         getAnnouncement()
         
+    
+             
+        
         
     }
+
+
     func getAnnouncement(){
         FirebaseManager.getStockcomuperAllDate()
         
@@ -225,6 +230,7 @@ func getMemberDateList(){
     }
     
 }
+
 
 
 func timeStanpToSring (timeStamp :Float) -> String{

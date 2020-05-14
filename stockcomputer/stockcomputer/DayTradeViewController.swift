@@ -67,9 +67,14 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         buy_num.text = "1000"
         sell_num.text = "1000"
         setKeyKeyboardType()
-        
-        
-    }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
+          self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
+          
+      }
+      
+      @objc func dismissKeyBoard() {
+          self.view.endEditing(true)
+      }
  
     func setKeyKeyboardType(){
         buy_price.keyboardType = UIKeyboardType.decimalPad
@@ -142,5 +147,6 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         present(controller, animated: true, completion: nil)
         
     }
+   
     
 }
