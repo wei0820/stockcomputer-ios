@@ -37,6 +37,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     var ref: DatabaseReference!
     
     @IBOutlet weak var marqueeLabel: MarqueeLabel!
+    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 1:
@@ -47,8 +48,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         case 2:
             setJump(type: "sellput")
             
-            
-            
+        
             break
         case 3:
             
@@ -56,7 +56,6 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             
             break
         case 4:
-//            setJump(type: "ssfcal")
             setToast(s: "下個版本推出")
             break
             
