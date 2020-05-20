@@ -11,6 +11,7 @@
 		8E10DDB1234C5FE3006A46F2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */; };
 		8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB2234C6AC8006A46F2 /* MapManager.swift */; };
 		8E10DDB92359A955006A46F2 /* StockNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB82359A955006A46F2 /* StockNumberViewController.swift */; };
+		8E2765632474C6810024573B /* Financing ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2765622474C6810024573B /* Financing ViewController.swift */; };
 		8E2AB6D3238E1DA20079910F /* FuturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AB6D2238E1DA20079910F /* FuturesViewController.swift */; };
 		8E48E4E823EBB2A500384D25 /* SellAndPutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4E723EBB2A500384D25 /* SellAndPutViewController.swift */; };
 		8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4E923F131CC00384D25 /* ShareListViewController.swift */; };
@@ -49,7 +50,6 @@
 		B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B769047722A663DE00E1B53F /* EveryDayController.swift */; };
 		B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */; };
 		B77B6F662205D53300A674D6 /* MarginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F652205D53300A674D6 /* MarginController.swift */; };
-		B77B6F682205D55100A674D6 /* FinancingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F672205D55100A674D6 /* FinancingViewController.swift */; };
 		B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A4612269998E00CF6005 /* HongKongController.swift */; };
 		B7E8C174226F015500792815 /* DistributionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C173226F015500792815 /* DistributionController.swift */; };
 		B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */; };
@@ -64,6 +64,7 @@
 		8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8E10DDB2234C6AC8006A46F2 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		8E10DDB82359A955006A46F2 /* StockNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockNumberViewController.swift; sourceTree = "<group>"; };
+		8E2765622474C6810024573B /* Financing ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Financing ViewController.swift"; sourceTree = "<group>"; };
 		8E2AB6D2238E1DA20079910F /* FuturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuturesViewController.swift; sourceTree = "<group>"; };
 		8E48E4E723EBB2A500384D25 /* SellAndPutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellAndPutViewController.swift; sourceTree = "<group>"; };
 		8E48E4E923F131CC00384D25 /* ShareListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +107,6 @@
 		B769047722A663DE00E1B53F /* EveryDayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryDayController.swift; sourceTree = "<group>"; };
 		B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeDetailViewController.swift; sourceTree = "<group>"; };
 		B77B6F652205D53300A674D6 /* MarginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginController.swift; sourceTree = "<group>"; };
-		B77B6F672205D55100A674D6 /* FinancingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancingViewController.swift; sourceTree = "<group>"; };
 		B7E0A4612269998E00CF6005 /* HongKongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongController.swift; sourceTree = "<group>"; };
 		B7E8C173226F015500792815 /* DistributionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionController.swift; sourceTree = "<group>"; };
 		B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyLaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -179,7 +179,6 @@
 				B74F530C220556350034DC5D /* Info.plist */,
 				B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */,
 				B77B6F652205D53300A674D6 /* MarginController.swift */,
-				B77B6F672205D55100A674D6 /* FinancingViewController.swift */,
 				B7E0A4612269998E00CF6005 /* HongKongController.swift */,
 				B7E8C173226F015500792815 /* DistributionController.swift */,
 				B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */,
@@ -218,6 +217,7 @@
 				8E898F1F2463E37A0072E3AA /* SSFViewController.swift */,
 				8EEE3E982469357100B1493E /* SSFCalculateViewController.swift */,
 				8EEE3E9A246BDCFB00B1493E /* ThreeViewController.swift */,
+				8E2765622474C6810024573B /* Financing ViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -369,7 +369,6 @@
 				8ED642C82422112E00260E25 /* TrustViewController.swift in Sources */,
 				B77B6F662205D53300A674D6 /* MarginController.swift in Sources */,
 				B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */,
-				B77B6F682205D55100A674D6 /* FinancingViewController.swift in Sources */,
 				8E898F1E2462BDEC0072E3AA /* OtherViewController.swift in Sources */,
 				B74F5301220556340034DC5D /* AppDelegate.swift in Sources */,
 				8ED642C62421F1E700260E25 /* ForeignInvestmentViewController.swift in Sources */,
@@ -379,6 +378,7 @@
 				8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */,
 				8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */,
 				8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */,
+				8E2765632474C6810024573B /* Financing ViewController.swift in Sources */,
 				8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */,
 				8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */,
 			);

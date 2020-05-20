@@ -17,13 +17,13 @@ import MarqueeLabel
 import LLCycleScrollView
 class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymentTransactionObserver,UITabBarDelegate{
     
+    @IBOutlet weak var FinancingView: UIView!
     @IBOutlet weak var MarginView: UIView!
     @IBOutlet weak var newsView: UIView!
     @IBOutlet weak var paymeView: UIView!
     @IBOutlet weak var bannerView: LLCycleScrollView!
     @IBOutlet weak var mOtherView: UIView!
     
-    @IBOutlet weak var FinancingView: UILabel!
     @IBOutlet weak var todayView: UIView!
     @IBOutlet weak var CurrentPrice: UIView!
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
@@ -390,6 +390,9 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         let other = UITapGestureRecognizer(target: self, action:  #selector(self.otherAction))
                  self.mOtherView.addGestureRecognizer(other)
         
+        let financing = UITapGestureRecognizer(target: self, action:  #selector(self.financingAction))
+        self.FinancingView.addGestureRecognizer(financing)
+        
     }
     @objc func checkAction(sender : UITapGestureRecognizer) {
         // Do what you want
@@ -413,6 +416,10 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     @objc func otherAction(sender : UITapGestureRecognizer) {
            setJump(type: "other")
         }
+    
+    @objc func financingAction(sender : UITapGestureRecognizer) {
+             setJump(type: "financing")
+          }
     
 }
 
