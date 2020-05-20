@@ -28,6 +28,8 @@ class Financing_ViewController: MGoogleADViewController {
             setToast(s: "請輸入數值")
             
         }else{
+            var  dayInt: Int  =  DateManager.distancesFrom(startDateStr!, to: EndDateStr!)
+
             var buyMoneyDoube :Double = Double(buyMoney.text!)!
             var sellMoneyDouble : Double = Double(sellMoney.text!)!
             var sellNumInt : Int =  Int(sellNum.text!)!
@@ -39,6 +41,24 @@ class Financing_ViewController: MGoogleADViewController {
             var handPrice : Double = buyMoneyDoube * Double(buyNumInt) * 0.001425
             var buyMoneyInt :Int = Int( buyMoneyDoube * Double(buyNumInt))  - Int(loanMoneyInt) + Int(handPrice)
             print("Jack",buyMoneyInt)
+            // 賣出
+            var sellMoneyD :Double = sellMoneyDouble * Double(sellNumInt)
+            var sellHandPrice : Double = sellMoneyD * 0.001425
+            var changePrice : Double =   Double(sellMoneyD) * 0.003
+            var interest : Double = (loanMoneyInt * 0.0645 * (Double(dayInt)/365))
+            var allMoney : Double = sellMoneyD - sellHandPrice - interest  - loanMoneyInt
+            var money  :Int = Int(allMoney) - buyMoneyInt
+            
+            label_1.text = "融資金:" + String(Int(loanMoneyInt))
+            label_2.text = "應付金額:" + String(buyMoneyInt)
+            label_3.text = "賣出金額:" + String(Int(sellMoneyD))
+            label_6.text = "交易稅:" +   String(Int(changePrice))
+            label_4.text = "利息:" + String(Int(interest)) + "(共" + String(dayInt) + "天)"
+            label_5.text = "損益:" + String(money)
+         
+
+            
+
 //
             
         }
