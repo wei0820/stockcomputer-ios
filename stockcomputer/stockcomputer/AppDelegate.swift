@@ -10,7 +10,6 @@ import UIKit
 import GoogleMobileAds
 import Firebase
 import FacebookCore
-//import VpadnSDKAdKit
 import UserNotifications
 import FirebaseCrashlytics
 import Instabug
@@ -18,7 +17,7 @@ import Instabug
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate{
-    
+
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -54,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 //        window?.makeKeyAndVisible()
         Crashlytics.crashlytics()
         
+
         return true
     }
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
