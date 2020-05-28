@@ -12,6 +12,7 @@
 		8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB2234C6AC8006A46F2 /* MapManager.swift */; };
 		8E10DDB92359A955006A46F2 /* StockNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB82359A955006A46F2 /* StockNumberViewController.swift */; };
 		8E2765632474C6810024573B /* Financing ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2765622474C6810024573B /* Financing ViewController.swift */; };
+		8E276565247D18E20024573B /* IAPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E276564247D18E20024573B /* IAPViewController.swift */; };
 		8E2AB6D3238E1DA20079910F /* FuturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AB6D2238E1DA20079910F /* FuturesViewController.swift */; };
 		8E48E4E823EBB2A500384D25 /* SellAndPutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4E723EBB2A500384D25 /* SellAndPutViewController.swift */; };
 		8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4E923F131CC00384D25 /* ShareListViewController.swift */; };
@@ -65,6 +66,7 @@
 		8E10DDB2234C6AC8006A46F2 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		8E10DDB82359A955006A46F2 /* StockNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockNumberViewController.swift; sourceTree = "<group>"; };
 		8E2765622474C6810024573B /* Financing ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Financing ViewController.swift"; sourceTree = "<group>"; };
+		8E276564247D18E20024573B /* IAPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViewController.swift; sourceTree = "<group>"; };
 		8E2AB6D2238E1DA20079910F /* FuturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuturesViewController.swift; sourceTree = "<group>"; };
 		8E48E4E723EBB2A500384D25 /* SellAndPutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellAndPutViewController.swift; sourceTree = "<group>"; };
 		8E48E4E923F131CC00384D25 /* ShareListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				8EEE3E982469357100B1493E /* SSFCalculateViewController.swift */,
 				8EEE3E9A246BDCFB00B1493E /* ThreeViewController.swift */,
 				8E2765622474C6810024573B /* Financing ViewController.swift */,
+				8E276564247D18E20024573B /* IAPViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				8EEE3E9B246BDCFC00B1493E /* ThreeViewController.swift in Sources */,
 				B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */,
 				B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */,
+				8E276565247D18E20024573B /* IAPViewController.swift in Sources */,
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
 				8ED1CB4B244856570050B5A4 /* SelectViewController.swift in Sources */,
 				8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */,
@@ -521,7 +525,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 65;
+				CURRENT_PROJECT_VERSION = 66;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -534,7 +538,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 6.5;
+				MARKETING_VERSION = 6.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -549,7 +553,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 65;
+				CURRENT_PROJECT_VERSION = 66;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -562,7 +566,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 6.5;
+				MARKETING_VERSION = 6.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

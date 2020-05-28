@@ -57,6 +57,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
             break
         case 4:
             setToast(s: "下個版本推出")
+
             break
             
         default:
@@ -69,7 +70,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setAdBanner()
+//        setAdBanner()
         
         
         setBannerView()
@@ -77,6 +78,9 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         setRightButton(s: "會員中心")
         setLeftButton(s: "簽到")
         self.productIDs.append("richman")
+        self.productIDs.append("remove_ad_month")
+
+        
         requestProductInfo()
         
         SKPaymentQueue.default().add(self)
@@ -401,7 +405,9 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     
     @objc func paymeAction(sender : UITapGestureRecognizer) {
         // Do what you want
-        buy()
+//        buy()
+        setJump(type: "iap")
+
     }
     @objc func newsAction(sender : UITapGestureRecognizer) {
          setJump(type: "news")
