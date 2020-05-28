@@ -31,6 +31,7 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
 
     }
     var hud :JGProgressHUD?
+    let defaults = UserDefaults.standard
 
     var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
     var selectedProductIndex: Int! // 點擊到的購買項目
@@ -43,6 +44,7 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         let controller = UIAlertController(title: "復原購買", message: "是否復原購買?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "是", style: .default) { (_) in
             SKPaymentQueue.default().restoreCompletedTransactions()
+            
         }
         controller.addAction(okAction)
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
@@ -112,19 +114,32 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         setUIAlert(title: "復原購買失敗...", message:error.localizedDescription)
     }
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        print("Jack",queue.transactions.description)
+        
+
         setUIAlert(title: "復原購買成功...", message: "復原購買成功")
         
     }
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions as! [SKPaymentTransaction] {
             switch transaction.transactionState {
+        
             case SKPaymentTransactionState.purchased:
+                
                 print("Transaction completed successfully.")
                 SKPaymentQueue.default().finishTransaction(transaction)
-                setUIAlert(title: "謝謝乾爹", message: "謝謝乾爹")
-                print("jack",transaction.payment.productIdentifier)
-//                getProductIdentifier(name: transaction.payment.productIdentifier)
+                
+                
+            
+                if(transaction.payment.productIdentifier == "richman"){
+                              setUIAlert(title: "贊助", message: "謝謝乾爹")
+
+                          }else{
+                               setUIAlert(title: "訂閱", message: "謝謝乾爹")
+                    //removeAd
+                    defaults.set(true, forKey: "removeAd")
+
+                          }
+                
                 
             case SKPaymentTransactionState.failed:
                 print("Transaction Failed");
@@ -132,10 +147,17 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
                 
                 SKPaymentQueue.default().finishTransaction(transaction)
                 setUIAlert(title: "Transaction Failed", message: transaction.error!.localizedDescription)
+            case SKPaymentTransactionState.restored:
+                SKPaymentQueue.default().finishTransaction(transaction)
+                setUIAlert(title: "成功...", message: "復原購買成功")
+                print("jack",transaction.payment.productIdentifier)
+                defaults.set(true, forKey: "removeAd")
+
                 
-                
+
             default:
                 print(transaction.transactionState.rawValue)
+                
             }
         }
         
@@ -238,6 +260,8 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         dismiss(animated: true, completion: nil)
 
     }
+    
+ 
     
     }
 

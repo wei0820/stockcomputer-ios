@@ -25,6 +25,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         setAdBanner()
         
         if(checkRemoveAd()){
+            
             adBannerView?.isHidden = true
         }else{
             adBannerView?.isHidden = false
@@ -115,7 +116,10 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     
     func checkRemoveAd() ->Bool {
         var removeAd = userDefaults.value(forKey: "removeAd")
+        print("Jack",removeAd)
+
         return (removeAd != nil)
+        
     }
     
     func checkIsMember() ->Bool{

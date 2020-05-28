@@ -54,9 +54,12 @@ class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
         hud?.dismiss(afterDelay: 3.0)
 
         }
-        if interstitial.isReady {
-           interstitial.present(fromRootViewController: self)
-         }
+        if(!checkRemoveAd()){
+            if interstitial.isReady {
+                     interstitial.present(fromRootViewController: self)
+                   }
+        }
+      
 
     }
     @IBOutlet weak var input: UITextField!

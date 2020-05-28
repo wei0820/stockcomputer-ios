@@ -13,6 +13,8 @@ import Alamofire
 class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFieldDelegate , GADRewardBasedVideoAdDelegate {
     @IBOutlet weak var nowhk: UILabel!
     @IBOutlet weak var low: UITextField!
+    let userDefaults = UserDefaults.standard
+
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
                             didRewardUserWith reward: GADAdReward) {
         print("Reward received with currency: \(reward.type), amount \(reward.amount).")
@@ -129,9 +131,12 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
             total_price.text = "總價:" + String( lround (total ) + handlingfeeprice + lround(TransactionTax) + lround(StampDuty) + lround( DeliveryFee ))
             total_price_int = lround (total ) + handlingfeeprice + lround(TransactionTax) + lround(StampDuty) + lround( DeliveryFee )
             tw_lb.text = "台幣約:" + String(total_price_int * lround(tw))
-            if GADRewardBasedVideoAd.sharedInstance().isReady == true {
-                GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
+            if(!checkRemoveAd()){
+                if GADRewardBasedVideoAd.sharedInstance().isReady == true {
+                           GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
+                       }
             }
+       
         }
     }
     @IBOutlet weak var buy_num: UITextField!
@@ -156,7 +161,10 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "港股複委託購入試算"
-        setAdBanner()
+        if(!checkRemoveAd()){
+            setAdBanner()
+
+        }
         // Do any additional setup after loading the view.
         
         setTF_1()
@@ -429,11 +437,19 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
         
         if let doc = try? Kanna.HTML(html: url, encoding: String.Encoding.utf8) {
             for rate in doc.xpath("/html/body/div[1]/main/div[3]/table/tbody/tr[2]/td[3]") {
+                print("Jack",Double(rate.text!)!)
              tw = Double(rate.text!)!
                 nowhk.text = String("目前港幣匯率:" + String(tw))
                 
             }
         }
+    }
+    func checkRemoveAd() ->Bool {
+        var removeAd = userDefaults.value(forKey: "removeAd")
+        print("Jack",removeAd)
+
+        return (removeAd != nil)
+        
     }
 
 }

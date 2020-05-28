@@ -70,7 +70,7 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setAdBanner()
+//        setAdBanner()
         
         
         setBannerView()
