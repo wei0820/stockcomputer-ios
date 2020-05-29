@@ -10,11 +10,13 @@ import UIKit
 import GoogleMobileAds
 import Kanna
 import Alamofire
+import SwiftyStoreKit
+import SwiftyStoreKit
 class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFieldDelegate , GADRewardBasedVideoAdDelegate {
     @IBOutlet weak var nowhk: UILabel!
     @IBOutlet weak var low: UITextField!
     let userDefaults = UserDefaults.standard
-
+    
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
                             didRewardUserWith reward: GADAdReward) {
         print("Reward received with currency: \(reward.type), amount \(reward.amount).")
@@ -56,12 +58,12 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
     var TransactionTax = 0.0
     var StampDuty = 0.0
     var DeliveryFee = 0.0
-    var tw = 0.0
+    var tw = 3.9
     var total_price_int = 0
     var lowint = 0
     @IBOutlet weak var total_price: UILabel!
     
-
+    
     
     @IBAction func cal_btn(_ sender: Any) {
         
@@ -71,47 +73,47 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
                 lowint = Int(low.text!)!
             }else{
                 lowint = Int(low.placeholder!)!
-
+                
             }
             if(TF1_1.text?.count != 0 ){
                 handlingfee = Double(TF1_1.text!)! * 0.01
-
+                
             }else{
                 handlingfee = Double(TF1_1.placeholder!)! * 0.01
-
+                
             }
             handlingfeeprice = lround( total * handlingfee)
             if(TF_2.text?.count != 0 ){
                 TransactionTax = total * Double(TF_2.text!)! * 0.01
-
+                
             }else{
                 TransactionTax = total * Double(TF_2.placeholder!)! * 0.01
-
+                
             }
             if(TF_3.text?.count != 0 ){
                 StampDuty = total * Double(TF_3.text!)! * 0.01
-
+                
             }else{
                 StampDuty = total * Double(TF_3.placeholder!)! * 0.01
-
+                
             }
             if(TF_4.text?.count != 0 ){
                 DeliveryFee = total * Double(TF_4.text!)! * 0.01
-
+                
             }else{
                 DeliveryFee = total * Double(TF_4.placeholder!)! * 0.01
-
+                
             }
-//            if(tf_5.text?.count != 0){
-//                tw =  Double (tf_5.text!)!
-//            }else {
-//                tw =  Double (tf_5.placeholder!)!
-//
-//            }
-//
+            //            if(tf_5.text?.count != 0){
+            //                tw =  Double (tf_5.text!)!
+            //            }else {
+            //                tw =  Double (tf_5.placeholder!)!
+            //
+            //            }
+            //
             if(lowint == 0){
                 lb_1.text = "手續費:" + String(handlingfeeprice  )
-
+                
             }else{
                 if(total * handlingfee <= Double(lowint)){
                     handlingfeeprice = lowint
@@ -122,7 +124,7 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
                     
                 }
             }
-          
+            
             
             
             lb2.text = "交易稅:"  + String(TransactionTax )
@@ -131,12 +133,41 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
             total_price.text = "總價:" + String( lround (total ) + handlingfeeprice + lround(TransactionTax) + lround(StampDuty) + lround( DeliveryFee ))
             total_price_int = lround (total ) + handlingfeeprice + lround(TransactionTax) + lround(StampDuty) + lround( DeliveryFee )
             tw_lb.text = "台幣約:" + String(total_price_int * lround(tw))
-            if(!checkRemoveAd()){
-                if GADRewardBasedVideoAd.sharedInstance().isReady == true {
-                           GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
-                       }
+            
+            
+            let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "05c23e4de2a14cad935a56b657dd0698")
+            SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
+                switch result {
+                case .success(let receipt):
+                    let productIds = Set([ "remove_ad_month",
+                                           "remove_six_month",
+                                           "remove_ad_year"])
+                    let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
+                    switch purchaseResult {
+                    case .purchased(let expiryDate, let items):
+                        print("jack","\(productIds) 有效期限  \(expiryDate)\n\(items)\n")
+                        
+                        
+                    case .expired(let expiryDate, let items):
+                        print("jack","\(productIds) 已經過期 \(expiryDate)\n\(items)\n")
+                        if GADRewardBasedVideoAd.sharedInstance().isReady == true {
+                            GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
+                        }
+                        
+                        
+                    case .notPurchased:
+                        print("jack","沒有購買 \(productIds)")
+                        if GADRewardBasedVideoAd.sharedInstance().isReady == true {
+                            GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
+                        }
+                        
+                        
+                    }
+                case .error(let error):
+                    print("jack","Receipt verification failed: \(error)")
+                }
             }
-       
+            
         }
     }
     @IBOutlet weak var buy_num: UITextField!
@@ -147,9 +178,9 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
     var adBannerView: GADBannerView?
     @IBAction func closeviw(_ sender: Any) {
         
-    dismiss(animated: true, completion: nil)
-
-    
+        dismiss(animated: true, completion: nil)
+        
+        
     }
     
     
@@ -161,9 +192,37 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "港股複委託購入試算"
-        if(!checkRemoveAd()){
-            setAdBanner()
-
+        
+        
+        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "05c23e4de2a14cad935a56b657dd0698")
+        SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
+            switch result {
+            case .success(let receipt):
+                let productIds = Set([ "remove_ad_month",
+                                       "remove_six_month",
+                                       "remove_ad_year"])
+                let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
+                switch purchaseResult {
+                case .purchased(let expiryDate, let items):
+                    print("jack","\(productIds) 有效期限  \(expiryDate)\n\(items)\n")
+                    
+                    
+                case .expired(let expiryDate, let items):
+                    print("jack","\(productIds) 已經過期 \(expiryDate)\n\(items)\n")
+                    self.setAdBanner()
+                    
+                    
+                    
+                case .notPurchased:
+                    print("jack","沒有購買 \(productIds)")
+                    self.setAdBanner()
+                    
+                    
+                    
+                }
+            case .error(let error):
+                print("jack","Receipt verification failed: \(error)")
+            }
         }
         // Do any additional setup after loading the view.
         
@@ -171,53 +230,54 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
         setTF_2()
         setTF_3()
         setTF_4()
-//        setTF_5()
+        //        setTF_5()
         setlow()
         setKeyKeyboardType()
         test()
-//        test2()
+        //        test2()
+        nowhk.text = "目前港幣匯率:3.9"
 
         GADRewardBasedVideoAd.sharedInstance().delegate = self
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
                                                     withAdUnitID: "ca-app-pub-7019441527375550/4519858733")
-
+        
     }
     @IBOutlet weak var tf_5: UITextField!
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case TF1_1 :
             TF1_1.resignFirstResponder()
-
+            
             UserDefaults.standard.set(TF1_1.text, forKey:"TF_1")
-
+            
             break
         case TF_2 :
             TF_2.resignFirstResponder()
-
+            
             UserDefaults.standard.set(TF_2.text, forKey:"TF_2")
-
+            
             break
         case TF_3 :
             TF_3.resignFirstResponder()
-
+            
             UserDefaults.standard.set(TF_3.text, forKey:"TF_3")
-
+            
             break
         case TF_4 :
             TF_4.resignFirstResponder()
-
+            
             UserDefaults.standard.set(TF_4.text, forKey:"TF_4")
-
+            
             break
-//        case tf_5 :
-//            tf_5.resignFirstResponder()
-//
-//            UserDefaults.standard.set(tf_5.text, forKey:"tf_5")
-//
-//            break
+            //        case tf_5 :
+            //            tf_5.resignFirstResponder()
+            //
+            //            UserDefaults.standard.set(tf_5.text, forKey:"tf_5")
+            //
+        //            break
         case buy_price :
             buy_price.resignFirstResponder()
-
+            
             break
         case buy_num :
             buy_num.resignFirstResponder()
@@ -229,7 +289,7 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
             break
         default:
             textField.resignFirstResponder()
-
+            
         }
         
         return true
@@ -243,9 +303,9 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
             TF1_1.text = ""
         }else{
             TF1_1.placeholder = "0.25"
-
+            
         }
-
+        
     }
     func setTF_2(){
         
@@ -253,7 +313,7 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
             
             TF_2.placeholder = TF_22
             TF_2.text = ""
-
+            
         }else{
             TF_2.placeholder = "0.0027"
             
@@ -266,7 +326,7 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
             
             TF_3.placeholder = TF_33
             TF_3.text = ""
-
+            
         }else{
             TF_3.placeholder = "0.1"
             
@@ -279,26 +339,14 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
             
             TF_4.placeholder = TF_44
             TF_4.text = ""
-
+            
         }else{
             TF_4.placeholder = "0.005"
             
         }
         
     }
-//    func setTF_5(){
-//
-//        if let tf_55 = UserDefaults.standard.object(forKey: "tf_5") as? String {
-//
-//            tf_5.placeholder = tf_55
-//            tf_5.text = ""
-//
-//        }else{
-//            tf_5.placeholder = "4"
-//
-//        }
-//
-//    }
+    
     
     func setlow(){
         
@@ -372,18 +420,18 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
                                 attribute: .centerX,
                                 multiplier: 1,
                                 constant: 0)
-            ])
+        ])
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     func setKeyKeyboardType(){
         
         buy_num.keyboardType = UIKeyboardType.numbersAndPunctuation
@@ -393,7 +441,7 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
         buy_price.returnKeyType = .done
         TF1_1.keyboardType = UIKeyboardType.numbersAndPunctuation
         TF1_1.returnKeyType = .done
-
+        
         TF_2.keyboardType = UIKeyboardType.numbersAndPunctuation
         TF_2.returnKeyType = .done
         TF_3.keyboardType = UIKeyboardType.numbersAndPunctuation
@@ -401,8 +449,8 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
         TF_4.keyboardType = UIKeyboardType.numbersAndPunctuation
         TF_4.returnKeyType = .done
         
-//        tf_5.keyboardType = UIKeyboardType.numbersAndPunctuation
-//        tf_5.returnKeyType = .done
+        //        tf_5.keyboardType = UIKeyboardType.numbersAndPunctuation
+        //        tf_5.returnKeyType = .done
         
         low.keyboardType = UIKeyboardType.numbersAndPunctuation
         low.returnKeyType = .done
@@ -417,7 +465,7 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
         self.TF_3.resignFirstResponder()
         self.TF_4.resignFirstResponder()
         self.tf_5.resignFirstResponder()
-
+        
         
     }
     
@@ -438,18 +486,11 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
         if let doc = try? Kanna.HTML(html: url, encoding: String.Encoding.utf8) {
             for rate in doc.xpath("/html/body/div[1]/main/div[3]/table/tbody/tr[2]/td[3]") {
                 print("Jack",Double(rate.text!)!)
-             tw = Double(rate.text!)!
-                nowhk.text = String("目前港幣匯率:" + String(tw))
+                nowhk.text = "目前港幣匯率:3.9"
                 
             }
         }
     }
-    func checkRemoveAd() ->Bool {
-        var removeAd = userDefaults.value(forKey: "removeAd")
-        print("Jack",removeAd)
-
-        return (removeAd != nil)
-        
-    }
-
+    
+    
 }

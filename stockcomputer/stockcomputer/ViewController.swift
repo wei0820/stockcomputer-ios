@@ -15,7 +15,8 @@ import Instabug
 import JGProgressHUD
 import MarqueeLabel
 import LLCycleScrollView
-class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymentTransactionObserver,UITabBarDelegate{
+//SKProductsRequestDelegate,SKPaymentTransactionObserver
+class ViewController: MGoogleADViewController,UITabBarDelegate{
     
     @IBOutlet weak var FinancingView: UIView!
     @IBOutlet weak var MarginView: UIView!
@@ -26,12 +27,12 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
     
     @IBOutlet weak var todayView: UIView!
     @IBOutlet weak var CurrentPrice: UIView!
-    var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
-    var hud :JGProgressHUD?
-    var selectedProductIndex: Int! // 點擊到的購買項目
-    var isProgress: Bool = false // 是否有交易正在進行中
-    var delegate: IAPurchaseViewControllerDelegate!
-    var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
+//    var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
+//    var hud :JGProgressHUD?
+//    var selectedProductIndex: Int! // 點擊到的購買項目
+//    var isProgress: Bool = false // 是否有交易正在進行中
+//    var delegate: IAPurchaseViewControllerDelegate!
+//    var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
     
     
     var ref: DatabaseReference!
@@ -77,13 +78,13 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         setUIView()
         setRightButton(s: "會員中心")
         setLeftButton(s: "簽到")
-        self.productIDs.append("richman")
-        self.productIDs.append("remove_ad_month")
-
-        
-        requestProductInfo()
-        
-        SKPaymentQueue.default().add(self)
+//        self.productIDs.append("richman")
+//        self.productIDs.append("remove_ad_month")
+//
+//
+//        requestProductInfo()
+//
+//        SKPaymentQueue.default().add(self)
         //        DateManager.addToCalendarClicked()
         marqueeLabel.type = .continuous
         marqueeLabel.speed = .duration(9)
@@ -210,59 +211,59 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         present(controller, animated: true, completion: nil)
     }
     
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        if response.products.count != 0 {
-            print("invalidProductIdentifiers： \(response.invalidProductIdentifiers.description)")
-            for product in response.products {
-                self.productsArray.append(product)
-                productsArray.forEach { (SKProduct) in
-                }
-                
-                
-            }
-            
-        }
-        else {
-            print("There are no products.")
-        }
-        
-    }
+//    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+//        if response.products.count != 0 {
+//            print("invalidProductIdentifiers： \(response.invalidProductIdentifiers.description)")
+//            for product in response.products {
+//                self.productsArray.append(product)
+//                productsArray.forEach { (SKProduct) in
+//                }
+//
+//
+//            }
+//
+//        }
+//        else {
+//            print("There are no products.")
+//        }
+//
+//    }
     
-    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-        print("復原購買失敗...")
-        print(error.localizedDescription)
-        setUIAlert(title: "復原購買失敗...", message:error.localizedDescription)
-    }
-    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        setUIAlert(title: "復原購買成功...", message: "復原購買成功")
-        
-    }
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for transaction in transactions as! [SKPaymentTransaction] {
-            switch transaction.transactionState {
-            case SKPaymentTransactionState.purchased:
-                print("Transaction completed successfully.")
-                SKPaymentQueue.default().finishTransaction(transaction)
-                setUIAlert(title: "謝謝乾爹", message: "謝謝乾爹")
-                print("jack",transaction.payment.productIdentifier)
-                getProductIdentifier(name: transaction.payment.productIdentifier)
-                
-            case SKPaymentTransactionState.failed:
-                print("Transaction Failed");
-                print(transaction.error?.localizedDescription);
-                
-                SKPaymentQueue.default().finishTransaction(transaction)
-                setUIAlert(title: "Transaction Failed", message: transaction.error!.localizedDescription)
-                
-                
-            default:
-                print(transaction.transactionState.rawValue)
-            }
-        }
-    }
+//    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+//        print("復原購買失敗...")
+//        print(error.localizedDescription)
+//        setUIAlert(title: "復原購買失敗...", message:error.localizedDescription)
+//    }
+//    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+//        setUIAlert(title: "復原購買成功...", message: "復原購買成功")
+//
+//    }
+//    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+//        for transaction in transactions as! [SKPaymentTransaction] {
+//            switch transaction.transactionState {
+//            case SKPaymentTransactionState.purchased:
+//                print("Transaction completed successfully.")
+//                SKPaymentQueue.default().finishTransaction(transaction)
+//                setUIAlert(title: "謝謝乾爹", message: "謝謝乾爹")
+//                print("jack",transaction.payment.productIdentifier)
+//                getProductIdentifier(name: transaction.payment.productIdentifier)
+//
+//            case SKPaymentTransactionState.failed:
+//                print("Transaction Failed");
+//                print(transaction.error?.localizedDescription);
+//
+//                SKPaymentQueue.default().finishTransaction(transaction)
+//                setUIAlert(title: "Transaction Failed", message: transaction.error!.localizedDescription)
+//
+//
+//            default:
+//                print(transaction.transactionState.rawValue)
+//            }
+//        }
+//    }
     override func viewWillDisappear(_ animated: Bool) {
         // 移除觀查者
-        SKPaymentQueue.default().remove(self)
+//        SKPaymentQueue.default().remove(self)
     }
     func getProductIdentifier(name : String){
         switch name {
@@ -309,71 +310,71 @@ class ViewController: MGoogleADViewController,SKProductsRequestDelegate,SKPaymen
         present(controller, animated: true, completion: nil)
     }
     
-    func buy(){
-        let controller = UIAlertController(title: "商品列表", message: "請選擇要購買的商品", preferredStyle: .actionSheet)
-        productsArray.forEach { (SKProduct) in
-            let action = UIAlertAction(title:SKProduct.localizedTitle, style: .default) { (action) in
-                if(Auth.auth().currentUser!.isAnonymous){
-                    let controller = UIAlertController(title: "訪客身份", message: "您是訪客身份,雖此商品為消耗商品,但建議登入帳號再進行購買,是否能要購買", preferredStyle: .actionSheet)
-                    let names = [ "是", "否"]
-                    for name in names {
-                        let action = UIAlertAction(title: name, style: .default) { (action) in
-                            if (name == "是"){
-                                if SKPaymentQueue.canMakePayments() {
-                                    // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
-                                    SKPaymentQueue.default().add(self)
-                                    let index = controller.actions.index(of: action)
-                                    // 取得內購產品
-                                    let payment = SKPayment(product: self.productsArray[index!])
-                                    // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
-                                    SKPaymentQueue.default().add(payment)
-                                    
-                                    
-                                }
-                            }else{
-                                
-                            }
-                        }
-                        controller.addAction(action)
-                    }
-                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                    controller.addAction(cancelAction)
-                    self.present(controller, animated: true, completion: nil)
-                }else{
-                    if SKPaymentQueue.canMakePayments() {
-                        // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
-                        SKPaymentQueue.default().add(self)
-                        let index = controller.actions.index(of: action)
-                        // 取得內購產品
-                        let payment = SKPayment(product: self.productsArray[index!])
-                        // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
-                        SKPaymentQueue.default().add(payment)}
-                }
-                
-                
-                
-            }
-            controller.addAction(action)
-            
-        }
-        
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        controller.addAction(cancelAction)
-        present(controller, animated: true, completion: nil)
-    }
-    func requestProductInfo() {
-        
-        if SKPaymentQueue.canMakePayments() {
-            // 取得所有在 iTunes Connect 所建立的內購項目
-            let productIdentifiers: Set<String> = NSSet(array: self.productIDs) as! Set<String>
-            let productRequest: SKProductsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
-            
-            productRequest.delegate = self
-            productRequest.start() // 開始請求內購產品
-        }
-    }
-    
-    
+//    func buy(){
+//        let controller = UIAlertController(title: "商品列表", message: "請選擇要購買的商品", preferredStyle: .actionSheet)
+//        productsArray.forEach { (SKProduct) in
+//            let action = UIAlertAction(title:SKProduct.localizedTitle, style: .default) { (action) in
+//                if(Auth.auth().currentUser!.isAnonymous){
+//                    let controller = UIAlertController(title: "訪客身份", message: "您是訪客身份,雖此商品為消耗商品,但建議登入帳號再進行購買,是否能要購買", preferredStyle: .actionSheet)
+//                    let names = [ "是", "否"]
+//                    for name in names {
+//                        let action = UIAlertAction(title: name, style: .default) { (action) in
+//                            if (name == "是"){
+//                                if SKPaymentQueue.canMakePayments() {
+//                                    // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
+//                                    SKPaymentQueue.default().add(self)
+//                                    let index = controller.actions.index(of: action)
+//                                    // 取得內購產品
+//                                    let payment = SKPayment(product: self.productsArray[index!])
+//                                    // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
+//                                    SKPaymentQueue.default().add(payment)
+//
+//
+//                                }
+//                            }else{
+//
+//                            }
+//                        }
+//                        controller.addAction(action)
+//                    }
+//                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+//                    controller.addAction(cancelAction)
+//                    self.present(controller, animated: true, completion: nil)
+//                }else{
+//                    if SKPaymentQueue.canMakePayments() {
+//                        // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
+//                        SKPaymentQueue.default().add(self)
+//                        let index = controller.actions.index(of: action)
+//                        // 取得內購產品
+//                        let payment = SKPayment(product: self.productsArray[index!])
+//                        // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
+//                        SKPaymentQueue.default().add(payment)}
+//                }
+//
+//
+//
+//            }
+//            controller.addAction(action)
+//
+//        }
+//
+//        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+//        controller.addAction(cancelAction)
+//        present(controller, animated: true, completion: nil)
+//    }
+//    func requestProductInfo() {
+//
+//        if SKPaymentQueue.canMakePayments() {
+//            // 取得所有在 iTunes Connect 所建立的內購項目
+//            let productIdentifiers: Set<String> = NSSet(array: self.productIDs) as! Set<String>
+//            let productRequest: SKProductsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
+//
+//            productRequest.delegate = self
+//            productRequest.start() // 開始請求內購產品
+//        }
+//    }
+//
+//
     
     func setUIView(){
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))

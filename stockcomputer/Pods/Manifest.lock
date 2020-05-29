@@ -205,6 +205,7 @@ PODS:
   - Protobuf (3.11.4)
   - Siren (5.3.0)
   - SwiftSoup (2.3.0)
+  - SwiftyStoreKit (0.15.0)
   - Toaster (2.2.0)
 
 DEPENDENCIES:
@@ -236,6 +237,7 @@ DEPENDENCIES:
   - MarqueeLabel
   - Siren
   - SwiftSoup
+  - SwiftyStoreKit
   - Toaster
 
 SPEC REPOS:
@@ -290,6 +292,7 @@ SPEC REPOS:
     - Protobuf
     - Siren
     - SwiftSoup
+    - SwiftyStoreKit
     - Toaster
 
 EXTERNAL SOURCES:
@@ -353,8 +356,9 @@ SPEC CHECKSUMS:
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   Siren: 9262e383365dcf41a75c2b4a42fc01c576a0363a
   SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
+  SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
 
-PODFILE CHECKSUM: bd33fcc7fb35068370b36e20c07fde095480db9a
+PODFILE CHECKSUM: b05b9b02caf64fd0c56ebf5e4d31b6887cba5c2b
 
 COCOAPODS: 1.7.5

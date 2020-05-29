@@ -10,7 +10,7 @@ import UIKit
 import SwiftSoup
 import JGProgressHUD
 import GoogleMobileAds
-
+import SwiftyStoreKit
 class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
     var document: Document = Document.init("")
     var array = Array<String>()
@@ -54,11 +54,43 @@ class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
         hud?.dismiss(afterDelay: 3.0)
 
         }
-        if(!checkRemoveAd()){
-            if interstitial.isReady {
-                     interstitial.present(fromRootViewController: self)
-                   }
+        
+        
+        
+        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "05c23e4de2a14cad935a56b657dd0698")
+        SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
+            switch result {
+            case .success(let receipt):
+                let productIds = Set([ "remove_ad_month",
+                                       "remove_six_month",
+                                       "remove_ad_year"])
+                let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
+                switch purchaseResult {
+                case .purchased(let expiryDate, let items):
+                    print("jack","\(productIds) 有效期限  \(expiryDate)\n\(items)\n")
+                  
+
+                case .expired(let expiryDate, let items):
+                    print("jack","\(productIds) 已經過期 \(expiryDate)\n\(items)\n")
+                           if self.interstitial.isReady {
+                                     self.interstitial.present(fromRootViewController: self)
+                                            }
+
+
+                case .notPurchased:
+                    print("jack","沒有購買 \(productIds)")
+                    if self.interstitial.isReady {
+                        self.interstitial.present(fromRootViewController: self)
+                               }
+
+                    
+
+                }
+            case .error(let error):
+                print("jack","Receipt verification failed: \(error)")
+            }
         }
+      
       
 
     }
