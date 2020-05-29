@@ -12,11 +12,13 @@ import GoogleMobileAds
 import Toaster
 import Firebase
 import Instabug
+import SwiftyStoreKit
 class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var adBannerView: GADBannerView?
     let userDefaults = UserDefaults.standard
+    var productIDs: [String] = [String]()
     override func viewDidLoad() {
-        
+       
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
@@ -32,13 +34,75 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         }
         getAnnouncement()
         
+        check()
+
+
+
     
-             
+        
         
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        check()
+        print("jack","viewWillAppear")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        print("jack","viewDidAppear")
+        check()
 
 
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print("jack","viewWillDisappear")
+        check()
+
+
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        print("jack","viewDidDisappear")
+        check()
+
+
+    }
+    func check(){
+
+        
+        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "05c23e4de2a14cad935a56b657dd0698")
+        SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
+            switch result {
+            case .success(let receipt):
+                let productIds = Set([ "remove_ad_month",
+                                       "remove_six_month",
+                                       "remove_ad_year"])
+                let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
+                switch purchaseResult {
+                case .purchased(let expiryDate, let items):
+                    print("jack","\(productIds) 有效期限  \(expiryDate)\n\(items)\n")
+                    self.adBannerView?.isHidden = true
+                    self.userDefaults.set(false, forKey: "removeAd")
+
+                case .expired(let expiryDate, let items):
+                    print("jack","\(productIds) 已經過期 \(expiryDate)\n\(items)\n")
+                    self.adBannerView?.isHidden = false
+                    self.userDefaults.set(true, forKey: "removeAd")
+
+
+                case .notPurchased:
+                    print("jack","沒有購買 \(productIds)")
+                    self.adBannerView?.isHidden = false
+                    self.userDefaults.set(true, forKey: "removeAd")
+
+                    
+
+                }
+            case .error(let error):
+                print("jack","Receipt verification failed: \(error)")
+            }
+        }
+    }
+
+    
     func getAnnouncement(){
         FirebaseManager.getStockcomuperAllDate()
         
@@ -116,8 +180,6 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     
     func checkRemoveAd() ->Bool {
         var removeAd = userDefaults.value(forKey: "removeAd")
-        print("Jack",removeAd)
-
         return (removeAd != nil)
         
     }
@@ -151,7 +213,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         }
         
     }
-  
+    
     
     func setMemberAlert(){
         
@@ -236,7 +298,6 @@ func getMemberDateList(){
 }
 
 
-
 func timeStanpToSring (timeStamp :Float) -> String{
     //转换为时间
     let timeInterval:TimeInterval = TimeInterval(timeStamp)
@@ -248,5 +309,12 @@ func timeStanpToSring (timeStamp :Float) -> String{
     print("对应的日期时间：\(dformatter.string(from: date))")
     return (dformatter.string(from: date))
 }
+
+
+
+
+
+
+
 
 

@@ -35,4 +35,6 @@ pod 'Firebase/Crashlytics'
 pod 'Firebase/Performance'
 pod 'Firebase/Analytics'
 pod 'LLCycleScrollView' 
+pod 'SwiftyStoreKit'
+
 end

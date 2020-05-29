@@ -3706,7 +3706,7 @@
         <!--View Controller-->
         <scene sceneID="Siu-CD-DOH">
             <objects>
-                <viewController storyboardIdentifier="iap" id="oIf-qe-ORW" customClass="IAPViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="iap" modalPresentationStyle="fullScreen" id="oIf-qe-ORW" customClass="IAPViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mcd-P1-DW6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3927,6 +3927,7 @@
                         <viewLayoutGuide key="safeArea" id="UUb-Ad-CUi"/>
                     </view>
                     <connections>
+                        <outlet property="datelabel" destination="mJj-Y8-KGF" id="fPj-Tm-bZi"/>
                         <outlet property="view1" destination="0LA-nc-dzJ" id="rWd-qB-Tam"/>
                         <outlet property="view2" destination="9ea-T4-hTg" id="RZU-3n-oYC"/>
                         <outlet property="view3" destination="gLH-kw-b7E" id="Nv5-wr-r2E"/>
