@@ -169,9 +169,7 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
                 }
                 
             }
-            else {
-                print("There are no products.")
-            }
+          
             
         }
         
