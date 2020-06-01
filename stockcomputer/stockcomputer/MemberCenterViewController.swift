@@ -133,7 +133,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         super.viewDidLoad()
         
         setAdBanner()
-        shopbtn.isHidden = false
+        shopbtn.isHidden = true
         if(checkIsMember()){
             rewardbtn.isHidden = false
             
