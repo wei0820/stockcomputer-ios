@@ -958,18 +958,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QzW-ka-TUs">
                                 <rect key="frame" x="-62.5" y="83.5" width="500" height="500"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-Fv-wTz">
-                                <rect key="frame" x="16" y="463" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-Fv-wTz">
+                                <rect key="frame" x="92" y="521" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="2sy-Gx-Q5O"/>
+                                    <constraint firstAttribute="height" constant="64" id="V1B-EA-YHG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="14"/>
+                                <state key="normal" image="apple"/>
                                 <connections>
                                     <action selector="fblogin_:" destination="Gyw-T5-M3K" eventType="touchUpInside" id="Jhm-hw-pVb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-rK-uCh">
-                                <rect key="frame" x="157" y="523" width="60" height="60"/>
+                                <rect key="frame" x="197" y="523" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="gjr-9Y-md5"/>
-                                    <constraint firstAttribute="width" constant="60" id="pFv-UO-ftv"/>
+                                    <constraint firstAttribute="height" constant="60" id="XKK-Wa-fyc"/>
+                                    <constraint firstAttribute="width" constant="60" id="sdH-nU-ZNK"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="icons8-test-account-100"/>
                                 <connections>
@@ -979,10 +984,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2WO-rK-uCh" firstAttribute="top" secondItem="HwV-3o-nmM" secondAttribute="top" constant="523" id="1Z9-y8-0pZ"/>
-                            <constraint firstItem="2WO-rK-uCh" firstAttribute="leading" secondItem="pQb-Fv-wTz" secondAttribute="trailing" constant="81" id="9CN-Tm-FLs"/>
+                            <constraint firstItem="pQb-Fv-wTz" firstAttribute="top" secondItem="HwV-3o-nmM" secondAttribute="top" constant="521" id="A7X-nx-cbc"/>
                             <constraint firstItem="QzW-ka-TUs" firstAttribute="centerX" secondItem="Zf5-0u-FoM" secondAttribute="centerX" id="Dq5-3v-nCF"/>
-                            <constraint firstItem="2WO-rK-uCh" firstAttribute="centerX" secondItem="QzW-ka-TUs" secondAttribute="centerX" id="WGd-pN-WoT"/>
+                            <constraint firstItem="2WO-rK-uCh" firstAttribute="top" secondItem="HwV-3o-nmM" secondAttribute="top" constant="523" id="Nsh-Yi-gCA"/>
+                            <constraint firstItem="pQb-Fv-wTz" firstAttribute="leading" secondItem="HwV-3o-nmM" secondAttribute="leading" constant="92" id="VkD-uI-65g"/>
+                            <constraint firstItem="2WO-rK-uCh" firstAttribute="leading" secondItem="pQb-Fv-wTz" secondAttribute="trailing" constant="41" id="hOc-5J-GKG"/>
                             <constraint firstItem="QzW-ka-TUs" firstAttribute="centerY" secondItem="Zf5-0u-FoM" secondAttribute="centerY" id="hgD-ah-3Yy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HwV-3o-nmM"/>
@@ -5444,6 +5450,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="apple" width="64" height="64"/>
         <image name="baseline_clear_black" width="72" height="72"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>

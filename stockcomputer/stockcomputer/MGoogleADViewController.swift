@@ -13,6 +13,7 @@ import Toaster
 import Firebase
 import Instabug
 import SwiftyStoreKit
+import AuthenticationServices
 class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var adBannerView: GADBannerView?
     let userDefaults = UserDefaults.standard
@@ -44,9 +45,20 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         
     }
     override func viewWillAppear(_ animated: Bool) {
+       observeAppleIDSessionChanges()
+
         check()
     }
-
+    private func observeAppleIDSessionChanges() {
+        if #available(iOS 13.0, *) {
+            NotificationCenter.default.addObserver(forName: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil, queue: nil) { (notification: Notification) in
+                // Sign user in or out
+                print("Jack","Sign user in or out...")
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+    }
     func check(){
 
         
