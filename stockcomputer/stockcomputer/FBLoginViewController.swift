@@ -151,7 +151,6 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
             case .notFound:
                 // 無此用戶
                 print("Jack","無此用戶")
-
                 break;
             default:
                 break
@@ -167,9 +166,7 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
             appDelegate.window?.rootViewController = HomeVc
             let id : String = userDefaults.value(forKey: "userID") as! String
             self.checkCredentialState(withUserID: id)
-            
         }
-    
     
 }
     private func randomNonceString(length: Int = 32) -> String {
