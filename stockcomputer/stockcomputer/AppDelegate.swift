@@ -9,29 +9,19 @@
 import UIKit
 import GoogleMobileAds
 import Firebase
-import FacebookCore
 import UserNotifications
 import FirebaseCrashlytics
 import Instabug
 import SwiftyStoreKit
 @UIApplicationMain
-
 class AppDelegate: UIResponder, UIApplicationDelegate{
-
+    
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-        
-        // Vpon SDK initialization
-//        let config = VpadnAdConfiguration.sharedInstance()
-//        config.logLevel = .default
-//        config.initializeSdk()
-        Messaging.messaging().delegate = self
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
@@ -50,49 +40,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         Instabug.start(withToken: "30dabcbd12350ce99d5037e8fb70858f", invocationEvents: [.shake, .twoFingersSwipeLeft,.rightEdgePan,.floatingButton])
         Instabug.setLocale(.chineseTaiwan)
         Instabug.trackUserSteps = false
-//        window?.makeKeyAndVisible()
         Crashlytics.crashlytics()
+        setupIAP()
+
         
-        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-            for purchase in purchases {
-                switch purchase.transaction.transactionState {
-                case .purchased, .restored:
-                    if purchase.needsFinishTransaction {
-                        // Deliver content from server, then:
-                        SwiftyStoreKit.finishTransaction(purchase.transaction)
-                    }
-                    // Unlock content
-                case .failed, .purchasing, .deferred:
-                    break // do nothing
-                }
-            }
-        }
         return true
     }
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return ApplicationDelegate.shared.application(
-            application,
-            open: url,
-            sourceApplication: sourceApplication,
-            annotation: annotation
-        )
-    }
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication,
-                     open url: URL,
-                     options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
-        return ApplicationDelegate.shared.application(application, open: url, options: options)
-    }
     
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        AppEvents.activateApp()
-    }
-    func applicationReceivedRemoteMessage(_ remoteMessage: MessagingRemoteMessage) {
-        print(remoteMessage.appData)
-    }
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-                
-    }
+    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         // If you are receiving a notification message while your app is in the background,
@@ -151,32 +106,40 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             print("Message ID: \(messageID)")
         }
         
-        // Print full message.
         completionHandler()
     }
 }
-// [END ios_10_message_handling]
 
-extension AppDelegate : MessagingDelegate {
-    // [START refresh_token]
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
+    func setupIAP() {
+
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    let downloads = purchase.transaction.downloads
+                    if !downloads.isEmpty {
+                        SwiftyStoreKit.start(downloads)
+                    } else if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                @unknown default:
+                    break // do nothing
+                }
+            }
+        }
         
-        let dataDict:[String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
-    }
-    // [END refresh_token]
-    // [START ios_10_data_message]
-    // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
-    // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
-    }
-    // [END ios_10_data_message]
-    
+        SwiftyStoreKit.updatedDownloadsHandler = { downloads in
 
-
- }
+            // contentURL is not nil if downloadState == .finished
+            let contentURLs = downloads.compactMap { $0.contentURL }
+            if contentURLs.count == downloads.count {
+                SwiftyStoreKit.finishTransaction(downloads[0].transaction)
+            }
+        }
+    }
+ 
 

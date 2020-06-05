@@ -16,18 +16,10 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
             print("invalidProductIdentifiers： \(response.invalidProductIdentifiers.description)")
             for product in response.products {
                 self.productsArray.append(product)
-                productsArray.forEach { (SKProduct) in
-                }
-                
-                
             }
-            
-            //               tblProducts.reloadData()
+                    
         }
-        else {
-            print("There are no products.")
-        }
-        hud?.dismiss(afterDelay: 3.0)
+        hud?.dismiss(afterDelay: 2.0)
         
     }
     var hud :JGProgressHUD?
@@ -77,6 +69,11 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+               overrideUserInterfaceStyle = .light
+           } else {
+               // Fallback on earlier versions
+           }
         self.productIDs.append("remove_ad_month")
         self.productIDs.append("remove_six_month")
         self.productIDs.append("remove_ad_year")
@@ -107,8 +104,6 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         }
     }
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-        print("復原購買失敗...")
-        print(error.localizedDescription)
         setUIAlert(title: "復原購買失敗...", message:error.localizedDescription)
     }
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
@@ -138,15 +133,10 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
                 
                 
             case SKPaymentTransactionState.failed:
-                print("Transaction Failed");
-                print(transaction.error?.localizedDescription);
-                
                 SKPaymentQueue.default().finishTransaction(transaction)
-                setUIAlert(title: "Transaction Failed", message: transaction.error!.localizedDescription)
             case SKPaymentTransactionState.restored:
                 SKPaymentQueue.default().finishTransaction(transaction)
                 setUIAlert(title: "成功...", message: "復原購買成功")
-                print("Jack",transaction.payment.productIdentifier)
                 defaults.set(true, forKey: "removeAd")
                 
                 
@@ -159,7 +149,6 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         
         func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
             if response.products.count != 0 {
-                print("invalidProductIdentifiers： \(response.invalidProductIdentifiers.description)")
                 for product in response.products {
                     self.productsArray.append(product)
                     productsArray.forEach { (SKProduct) in
@@ -267,16 +256,13 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
                 let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
                 switch purchaseResult {
                 case .purchased(let expiryDate, let items):
-                    print("jack","\(productIds) 有效期限  \(expiryDate)\n\(items)\n")
                     self.datelabel.text =  "有效期限:\(expiryDate)\n\(items)"
 
                 case .expired(let expiryDate, let items):
-                    print("jack","\(productIds) 已經過期 \(expiryDate)")
                     self.datelabel.text =  "已經過期: \(expiryDate)"
 
 
                 case .notPurchased:
-                    print("jack","沒有購買 \(productIds)")
                     self.datelabel.text =  "沒有訂閱"
 
 

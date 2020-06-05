@@ -9,8 +9,6 @@
 import UIKit
 import GoogleMobileAds
 import Firebase
-import FacebookCore
-import FacebookLogin
 import Instabug
 import JGProgressHUD
 import MarqueeLabel
@@ -64,8 +62,8 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         super.viewDidLoad()
         setBannerView()
         setUIView()
-        setRightButton(s: "會員中心")
-        setLeftButton(s: "簽到")
+//        setRightButton(s: "會員中心")
+//        setLeftButton(s: "簽到")
         marqueeLabel.type = .continuous
         marqueeLabel.speed = .duration(9)
         marqueeLabel.animationCurve = .easeInOut

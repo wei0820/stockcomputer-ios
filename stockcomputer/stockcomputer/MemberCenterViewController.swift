@@ -8,8 +8,6 @@
 
 import UIKit
 import GoogleMobileAds
-import FacebookLogin
-import FacebookCore
 import Firebase
 import StoreKit
 import JGProgressHUD
