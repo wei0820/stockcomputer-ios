@@ -230,11 +230,9 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
         setTF_2()
         setTF_3()
         setTF_4()
-        //        setTF_5()
         setlow()
         setKeyKeyboardType()
         test()
-        //        test2()
         nowhk.text = "目前港幣匯率:3.9"
 
         GADRewardBasedVideoAd.sharedInstance().delegate = self

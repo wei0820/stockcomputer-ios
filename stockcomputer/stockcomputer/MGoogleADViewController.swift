@@ -13,6 +13,7 @@ import Toaster
 import Firebase
 import Instabug
 import SwiftyStoreKit
+import AuthenticationServices
 class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var adBannerView: GADBannerView?
     let userDefaults = UserDefaults.standard
@@ -25,45 +26,21 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
             // Fallback on earlier versions
         }
         setAdBanner()
-        
-        if(checkRemoveAd()){
-            
-            adBannerView?.isHidden = true
-        }else{
-            adBannerView?.isHidden = false
-        }
         getAnnouncement()
-        
-        check()
-
-
-
-    
-        
-        
-        
+                
     }
     override func viewWillAppear(_ animated: Bool) {
         check()
-        print("jack","viewWillAppear")
     }
-    override func viewDidAppear(_ animated: Bool) {
-        print("jack","viewDidAppear")
-        check()
-
-
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        print("jack","viewWillDisappear")
-        check()
-
-
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        print("jack","viewDidDisappear")
-        check()
-
-
+    private func observeAppleIDSessionChanges() {
+        if #available(iOS 13.0, *) {
+            NotificationCenter.default.addObserver(forName: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil, queue: nil) { (notification: Notification) in
+                // Sign user in or out
+                print("Jack","Sign user in or out...")
+            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
     func check(){
 
@@ -78,22 +55,11 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
                 switch purchaseResult {
                 case .purchased(let expiryDate, let items):
-                    print("jack","\(productIds) 有效期限  \(expiryDate)\n\(items)\n")
                     self.adBannerView?.isHidden = true
-                    self.userDefaults.set(false, forKey: "removeAd")
-
                 case .expired(let expiryDate, let items):
-                    print("jack","\(productIds) 已經過期 \(expiryDate)\n\(items)\n")
                     self.adBannerView?.isHidden = false
-                    self.userDefaults.set(true, forKey: "removeAd")
-
-
                 case .notPurchased:
-                    print("jack","沒有購買 \(productIds)")
                     self.adBannerView?.isHidden = false
-                    self.userDefaults.set(true, forKey: "removeAd")
-
-                    
 
                 }
             case .error(let error):
