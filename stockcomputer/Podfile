@@ -37,4 +37,6 @@ pod 'FBSDKLoginKit/Swift'
 pod 'FBSDKShareKit/Swift'
 pod 'GoogleSignIn'
 pod 'Firebase/Messaging'
+pod 'Firebase/InAppMessaging'
+
 end
