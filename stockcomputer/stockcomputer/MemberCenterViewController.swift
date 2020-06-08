@@ -8,79 +8,18 @@
 
 import UIKit
 import GoogleMobileAds
-import FacebookLogin
-import FacebookCore
 import Firebase
 import StoreKit
 import JGProgressHUD
 
-class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADRewardBasedVideoAdDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    var productIDs: [String] = [String]() // 產品ID(Consumable_Product、Not_Consumable_Product)
+class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADRewardBasedVideoAdDelegate{
     var hud :JGProgressHUD?
     let userDefaults = UserDefaults.standard
     
     @IBOutlet weak var rewardbtn: UIButton!
     @IBOutlet weak var shopbtn: UIButton!
-    var productsArray: [SKProduct] = [SKProduct]() //  存放 server 回應的產品項目
-    var selectedProductIndex: Int! // 點擊到的購買項目
-    var isProgress: Bool = false // 是否有交易正在進行中
-    var delegate: IAPurchaseViewControllerDelegate!
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        if response.products.count != 0 {
-            print("invalidProductIdentifiers： \(response.invalidProductIdentifiers.description)")
-            for product in response.products {
-                self.productsArray.append(product)
-                productsArray.forEach { (SKProduct) in
-                }
-                
-                
-            }
-            
-            //               tblProducts.reloadData()
-        }
-        else {
-            print("There are no products.")
-        }
-        hud?.dismiss(afterDelay: 3.0)
-        
-    }
-    
-    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-        print("復原購買失敗...")
-        print(error.localizedDescription)
-        setUIAlert(title: "復原購買失敗...", message:error.localizedDescription)
-    }
-    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        setUIAlert(title: "復原購買成功...", message: "復原購買成功")
-        
-    }
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for transaction in transactions as! [SKPaymentTransaction] {
-            switch transaction.transactionState {
-            case SKPaymentTransactionState.purchased:
-                print("Transaction completed successfully.")
-                SKPaymentQueue.default().finishTransaction(transaction)
-                setUIAlert(title: "謝謝乾爹", message: "謝謝乾爹")
-                
-                
-            case SKPaymentTransactionState.failed:
-                print("Transaction Failed");
-                print(transaction.error?.localizedDescription);
-                
-                SKPaymentQueue.default().finishTransaction(transaction)
-                setUIAlert(title: "Transaction Failed", message: transaction.error!.localizedDescription)
-                
-                
-            default:
-                print(transaction.transactionState.rawValue)
-            }
-        }
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        // 移除觀查者
-        SKPaymentQueue.default().remove(self)
-    }
-    
+
+
     @IBOutlet weak var lasttime: UILabel!
     @IBAction func back(_ sender: Any) {
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
@@ -133,7 +72,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         super.viewDidLoad()
         
         setAdBanner()
-        shopbtn.isHidden = false
+        shopbtn.isHidden = true
         if(checkIsMember()){
             rewardbtn.isHidden = false
             
@@ -147,31 +86,12 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
         GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
                                                     withAdUnitID: "ca-app-pub-7019441527375550/4519858733")
         //        self.productIDs.append("Member_Point_1000")
-        //        self.productIDs.append("MenberPoint_1000")
-        self.productIDs.append("richman")
+        //        self.productIDs.append("MenberPoint_1000"
         
-        requestProductInfo()
-        
-        SKPaymentQueue.default().add(self)
         
         // Do any additional setup after loading the view.
     }
-    func requestProductInfo() {
-        hud = JGProgressHUD(style: .dark)
-        hud?.textLabel.text = "Loading"
-        hud?.show(in: self.view)
-        if SKPaymentQueue.canMakePayments() {
-            // 取得所有在 iTunes Connect 所建立的內購項目
-            let productIdentifiers: Set<String> = NSSet(array: self.productIDs) as! Set<String>
-            let productRequest: SKProductsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
-            
-            productRequest.delegate = self
-            productRequest.start() // 開始請求內購產品
-            
-        } else {
-            print("取不到任何內購的商品...")
-        }
-    }
+
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -326,53 +246,7 @@ class MemberCenterViewController: MUIViewController ,GADBannerViewDelegate ,GADR
     }
     var mTitle :String = ""
     @IBAction func shop(_ sender: Any) {
-        let controller = UIAlertController(title: "商品列表", message: "請點選商品進行購買", preferredStyle: .actionSheet)
-        productsArray.forEach { (SKProduct) in
-            let action = UIAlertAction(title:"小額贊助開發者", style: .default) { (action) in
-                if(Auth.auth().currentUser!.isAnonymous){
-                    let controller = UIAlertController(title: "訪客身份", message: "您是訪客身份,雖此商品為消耗商品,但能建議登入帳號再進行購買,是否能要購買", preferredStyle: .actionSheet)
-                    let names = [ "是", "否"]
-                    for name in names {
-                        let action = UIAlertAction(title: name, style: .default) { (action) in
-                            if (name == "是"){
-                                if SKPaymentQueue.canMakePayments() {
-                                    // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
-                                    SKPaymentQueue.default().add(self)
-                                    let index = controller.actions.index(of: action)
-                                    // 取得內購產品
-                                    let payment = SKPayment(product: self.productsArray[index!])
-                                    // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
-                                    SKPaymentQueue.default().add(payment)}
-                            }else{
-                                
-                            }
-                        }
-                        controller.addAction(action)
-                    }
-                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                    controller.addAction(cancelAction)
-                    self.present(controller, animated: true, completion: nil)
-                }else{
-                    if SKPaymentQueue.canMakePayments() {
-                        // 設定交易流程觀察者，會在背景一直檢查交易的狀態，成功與否會透過 protocol 得知
-                        SKPaymentQueue.default().add(self)
-                        let index = controller.actions.index(of: action)
-                        // 取得內購產品
-                        let payment = SKPayment(product: self.productsArray[index!])
-                        // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
-                        SKPaymentQueue.default().add(payment)}
-                }
-                
-                
-                
-            }
-            controller.addAction(action)
-            
-        }
-        
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        controller.addAction(cancelAction)
-        present(controller, animated: true, completion: nil)
+
         
     }
     @IBAction func watch(_ sender: Any) {

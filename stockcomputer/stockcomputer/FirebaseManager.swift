@@ -478,5 +478,12 @@ class FirebaseManager {
         ]
 
     }
+    // 設定 事件
+    static func setAnalytics(title:String){
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemName: title,
+        ])
+    }
 }
 
