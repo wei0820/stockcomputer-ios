@@ -3956,6 +3956,10 @@
                     </view>
                     <connections>
                         <outlet property="datelabel" destination="mJj-Y8-KGF" id="fPj-Tm-bZi"/>
+                        <outlet property="label_1" destination="wqn-L1-fjP" id="qz6-6n-bvH"/>
+                        <outlet property="label_2" destination="kcG-Hv-I5m" id="umq-ZE-Jx0"/>
+                        <outlet property="label_3" destination="FWc-I2-pnj" id="f51-QX-JgG"/>
+                        <outlet property="label_4" destination="6V4-7N-Azj" id="yNd-hT-OGG"/>
                         <outlet property="view1" destination="0LA-nc-dzJ" id="rWd-qB-Tam"/>
                         <outlet property="view2" destination="9ea-T4-hTg" id="RZU-3n-oYC"/>
                         <outlet property="view3" destination="gLH-kw-b7E" id="Nv5-wr-r2E"/>

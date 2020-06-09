@@ -160,7 +160,7 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
                     
                     
                 }
-                
+              
             }
           
             
@@ -192,6 +192,7 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         
         let isrich = UITapGestureRecognizer(target: self, action:  #selector(self.isrich))
         self.view4.addGestureRecognizer(isrich)
+
         
         
     }
@@ -248,6 +249,10 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         
     }
 
+    @IBOutlet weak var label_4: UILabel!
+    @IBOutlet weak var label_3: UILabel!
+    @IBOutlet weak var label_2: UILabel!
+    @IBOutlet weak var label_1: UILabel!
     
 }
 

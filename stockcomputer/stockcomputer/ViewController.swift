@@ -62,7 +62,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         super.viewDidLoad()
         setBannerView()
         setUIView()
-        FirebaseManager.setAnalytics(title: "首頁")
+//        FirebaseManager.setAnalytics(title: "首頁")
 //        setRightButton(s: "會員中心")
 //        setLeftButton(s: "簽到")
         marqueeLabel.type = .continuous

@@ -24,10 +24,15 @@ class Financing_ViewController: MGoogleADViewController {
     }
     @IBAction func cal(_ sender: Any) {
         
-        if(buyMoney.text!.isEmpty && sellMoney.text!.isEmpty && loanMOney.text!.isEmpty){
+        if(buyMoney.text!.isEmpty && sellMoney.text!.isEmpty){
             setToast(s: "請輸入數值")
             
         }else{
+            if(loanMOney.text!.isEmpty){
+                setToast(s: "請輸入融資成數")
+                return
+
+            }
             var  dayInt: Int  =  DateManager.distancesFrom(startDateStr!, to: EndDateStr!)
 
             var buyMoneyDoube :Double = Double(buyMoney.text!)!
@@ -37,10 +42,10 @@ class Financing_ViewController: MGoogleADViewController {
             var loandMoneyDoule : Double =  0.1 * Double(loanMOney.text!)!
             // 買入 應付金額
             // 融資金
+          
             var loanMoneyInt :Double = buyMoneyDoube * Double(sellNumInt) * loandMoneyDoule
             var handPrice : Double = buyMoneyDoube * Double(buyNumInt) * 0.001425
             var buyMoneyInt :Int = Int( buyMoneyDoube * Double(buyNumInt))  - Int(loanMoneyInt) + Int(handPrice)
-            print("Jack",buyMoneyInt)
             // 賣出
             var sellMoneyD :Double = sellMoneyDouble * Double(sellNumInt)
             var sellHandPrice : Double = sellMoneyD * 0.001425
@@ -56,10 +61,6 @@ class Financing_ViewController: MGoogleADViewController {
             label_4.text = "利息:" + String(Int(interest)) + "(共" + String(dayInt) + "天)"
             label_5.text = "損益:" + String(money)
          
-
-            
-
-//
             
         }
         
