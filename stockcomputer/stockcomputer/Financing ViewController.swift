@@ -19,6 +19,8 @@ class Financing_ViewController: MGoogleADViewController {
         buyNum.text = "1000"
         setDatePickerView()
         setUITextField()
+        setScreenName(screenName: "融資獲利試算", screenClassName: "Financing_ViewController")
+
 
         // Do any additional setup after loading the view.
     }

@@ -61,7 +61,8 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
         buyTF.keyboardType = .numberPad
         buynumTF.text = "1"
         sellnumTF.text = "1"
-         
+        setScreenName(screenName: "選擇權獲利計算", screenClassName: "SellAndPutViewController")
+
         // Do any additional setup after loading the view.
     }
     

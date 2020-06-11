@@ -10,6 +10,7 @@ import UIKit
 import StoreKit
 import JGProgressHUD
 import SwiftyStoreKit
+import Firebase
 class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentTransactionObserver{
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count != 0 {
@@ -84,7 +85,8 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         SKPaymentQueue.default().add(self)
         
         setUIView()
-        
+        Firebase.Analytics.setScreenName("贊助", screenClass: "IAPViewController")
+
         // Do any additional setup after loading the view.
     }
     override func viewWillDisappear(_ animated: Bool) {

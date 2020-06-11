@@ -34,7 +34,8 @@ class ForeignInvestmentViewController: MGoogleADViewController , UITableViewData
 
         title_.text = GetStockPriceManager.getForeigninvestmentTitle() + "外資買超排行"
         getData()
-        
+        setScreenName(screenName: "外資買超排行", screenClassName: "ForeignInvestmentViewController")
+
         // Do any additional setup after loading the view.
     }
     func getData(){
@@ -78,12 +79,15 @@ class ForeignInvestmentViewController: MGoogleADViewController , UITableViewData
             setToast(s: "外資買超排行")
              title_.text =  GetStockPriceManager.getForeigninvestmentTitle() + "外資買超排行"
             getData()
+            setScreenName(screenName: "外資買超排行", screenClassName: "ForeignInvestmentViewController")
+
             break
         case 2:
             setToast(s: "外資賣超排行")
              title_.text = GetStockPriceManager.getForeigninvestmentTitle() + "外資賣超排行"
             getData_2()
-            
+            setScreenName(screenName: "外資賣超排行", screenClassName: "ForeignInvestmentViewController")
+
             break
         default:
             

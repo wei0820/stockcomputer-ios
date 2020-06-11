@@ -12,6 +12,7 @@ import Kanna
 import Alamofire
 import SwiftyStoreKit
 import SwiftyStoreKit
+import Firebase
 class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFieldDelegate , GADRewardBasedVideoAdDelegate {
     @IBOutlet weak var nowhk: UILabel!
     @IBOutlet weak var low: UITextField!
@@ -192,9 +193,7 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "港股複委託購入試算"
-        setScreenName(screenName: "港股複委託購入試算", screenClassName: "HongKongController")
-
-        
+        Firebase.Analytics.setScreenName("港股複委託購入試算", screenClass: "HongKongController")
         let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "05c23e4de2a14cad935a56b657dd0698")
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
             switch result {

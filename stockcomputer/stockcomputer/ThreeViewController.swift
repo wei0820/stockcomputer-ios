@@ -19,6 +19,7 @@ class ThreeViewController: MGoogleADViewController {
         setThreeDate()
         setFuturesLabel()
 
+        setScreenName(screenName: "三大法人買賣超", screenClassName: "ThreeViewController")
 
         // Do any additional setup after loading the view.
     }

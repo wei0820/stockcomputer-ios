@@ -34,7 +34,8 @@ class StockNumberViewController: MGoogleADViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.title = "資券成數查詢"
         search.delegate = self
-        
+        setScreenName(screenName: "資券成數查詢", screenClassName: "StockNumberViewController")
+
         
         
         // Do any additional setup after loading the view.

@@ -36,6 +36,8 @@ class TrustViewController: MGoogleADViewController , UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         titleName.text = GetStockPriceManager.getTustTitle() + "投信買超排行"
+        setScreenName(screenName: "投信買超排行", screenClassName: "TrustViewController")
+
         getData()
         
         // Do any additional setup after loading the view.
@@ -76,11 +78,15 @@ class TrustViewController: MGoogleADViewController , UITableViewDataSource
         case 1:
             setToast(s: "投信買超排行")
              titleName.text = GetStockPriceManager.getTustTitle() + "投信買超排行"
+            setScreenName(screenName: "投信買超排行", screenClassName: "TrustViewController")
+
             getData()
             break
         case 2:
             setToast(s: "投信賣超排行")
              titleName.text =  GetStockPriceManager.getTustTitle() + "投信賣超排行"
+            setScreenName(screenName: "投信賣超排行", screenClassName: "TrustViewController")
+
             getData_2()
             
             
