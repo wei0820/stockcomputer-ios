@@ -57,7 +57,7 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
                  "4折","35折",
                  "3折", "28折",
                  "2折","15折",
-                 "1折","0.5折" ,"0.5折" ,"0.4折" ,"0.3折" ,"0.2折","0.1折" ,"免手續費"]
+                 "1折","0.5折" ,"0.4折" ,"0.3折" ,"0.2折","0.1折" ,"免手續費"]
     var price = [1,0.95,
                  0.9,0.85,
                  0.8,0.75,
@@ -68,6 +68,7 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
                  0.3,0.28,0.25,
                  0.2,0.15,
                  0.1,0.05,0.04,0.03,0.02,0.01,0]
+    
     var pirceout = 1.0
     var total_buy = 0.0
     var total_sell = 0.0
