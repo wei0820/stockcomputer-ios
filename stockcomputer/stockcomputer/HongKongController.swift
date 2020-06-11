@@ -192,7 +192,8 @@ class HongKongController: MUIViewController , GADBannerViewDelegate  ,UITextFiel
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "港股複委託購入試算"
-        
+        setScreenName(screenName: "港股複委託購入試算", screenClassName: "HongKongController")
+
         
         let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "05c23e4de2a14cad935a56b657dd0698")
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in

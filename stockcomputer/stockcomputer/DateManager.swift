@@ -104,6 +104,15 @@ public class DateManager{
                        }
                    })
     }
+    public static func setDate() -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        // 取得現在日期資訊
+        let timeString = dateFormatter.string(from: Date())
+        return timeString
+        
+    }
     
 }
 

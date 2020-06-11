@@ -123,11 +123,8 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
                 
             case SKPaymentTransactionState.purchased:
                 setUIAlert(title: "購買成功", message: "感謝購買")
-
                 SKPaymentQueue.default().finishTransaction(transaction)
-
             case SKPaymentTransactionState.failed:
-                
                      if let error = transaction.error as? SKError {
                          switch error.code {
                          case .paymentCancelled:
@@ -204,7 +201,7 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
             let payment = SKPayment(product: self.productsArray[0])
             // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
             SKPaymentQueue.default().add(payment)
-            
+
             
         }
         

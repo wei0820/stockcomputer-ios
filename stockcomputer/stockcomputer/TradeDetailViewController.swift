@@ -57,6 +57,7 @@ class TradeDetailViewController:MGoogleADViewController ,UIPickerViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "現股獲利計算"
+        setScreenName(screenName: "現股獲利計算", screenClassName: "TradeDetailViewController")
         buy_num.text = "1000"
         sell_num.text = "1000"
         setKeyKeyboardType()
