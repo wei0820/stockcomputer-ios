@@ -13,7 +13,8 @@ class SelectViewController: MGoogleADViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setUIView()
-        
+        setScreenName(screenName: "盤後籌碼", screenClassName: "SelectViewController")
+
         // Do any additional setup after loading the view.
     }
     

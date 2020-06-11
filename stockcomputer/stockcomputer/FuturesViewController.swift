@@ -35,6 +35,8 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "期貨獲利計算"
+        setScreenName(screenName: "期貨獲利計算", screenClassName: "FuturesViewController")
+
         sellnum.text = "1"
         buynum.text = "1"
         

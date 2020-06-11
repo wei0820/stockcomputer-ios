@@ -32,6 +32,10 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     override func viewWillAppear(_ animated: Bool) {
         check()
     }
+    func setScreenName(screenName :String ,screenClassName :String){
+        Firebase.Analytics.setScreenName(screenName, screenClass: screenClassName)
+
+    }
     private func observeAppleIDSessionChanges() {
         if #available(iOS 13.0, *) {
             NotificationCenter.default.addObserver(forName: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil, queue: nil) { (notification: Notification) in

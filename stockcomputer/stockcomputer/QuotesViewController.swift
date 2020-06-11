@@ -38,6 +38,8 @@ class QuotesViewController: MGoogleADViewController, UITableViewDataSource
         super.viewDidLoad()
         titlename.text = GetStockPriceManager.getStock_aTitle() + "融資增加排行"
         getData()
+        setScreenName(screenName: "融資增加排行", screenClassName: "QuotesViewController")
+
         
         // Do any additional setup after loading the view.
     }
@@ -90,17 +92,22 @@ class QuotesViewController: MGoogleADViewController, UITableViewDataSource
             setToast(s: "融資增加排行")
             titlename.text = GetStockPriceManager.getStock_aTitle() + "融資增加排行"
             getData()
+            setScreenName(screenName: "融資增加排行", screenClassName: "QuotesViewController")
+
             break
         case 2:
             setToast(s: "融券增加排行")
             titlename.text = GetStockPriceManager.getStock_aTitle() + "融券增加排行"
             getData_2()
             
-            
+            setScreenName(screenName: "融券增加排行", screenClassName: "QuotesViewController")
+
             break
         case 3:
             setToast(s: "借券增加排行")
             titlename.text = GetStockPriceManager.getStock_aTitle() + "借券增加排行"
+            setScreenName(screenName: "借券增加排行", screenClassName: "QuotesViewController")
+
             getData_3()
             
             

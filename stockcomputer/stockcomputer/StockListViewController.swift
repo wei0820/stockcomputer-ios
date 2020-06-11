@@ -31,9 +31,10 @@ class StockListViewController: MGoogleADViewController , UITableViewDataSource, 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(
             at: indexPath, animated: true)
-        
         name = itemName[indexPath.row].detail
         performSegue(withIdentifier: "stockdetail", sender: nil)
+        setScreenName(screenName: itemName[indexPath.row].getTitle(), screenClassName: "StockListViewController")
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,6 +42,7 @@ class StockListViewController: MGoogleADViewController , UITableViewDataSource, 
             if let index = tableview.indexPathForSelectedRow{
                 let secondCV = segue.destination as! StockDetailViewController
                 secondCV.detail =  itemName[index.row].detail
+                
             }
             
             
@@ -55,6 +57,7 @@ class StockListViewController: MGoogleADViewController , UITableViewDataSource, 
         hud?.show(in: self.view)
         itemName = GetStockPriceManager.get()
         hud?.dismiss(afterDelay: 3.0)
+        setScreenName(screenName: "盤中個股精選追蹤", screenClassName: "StockListViewController")
 
         // Do any additional setup after loading the view.
     }

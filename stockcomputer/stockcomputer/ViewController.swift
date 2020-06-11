@@ -33,22 +33,33 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         switch item.tag {
         case 1:
             setJump(type: "DayTrade")
-            
-            
+              Firebase.Analytics.logEvent("選擇項目", parameters: [
+                "時間": DateManager.setDate(),
+                "名稱": "當沖獲利試算"
+            ])
             break
         case 2:
             setJump(type: "sellput")
-            
+            Firebase.Analytics.logEvent("選擇項目", parameters: [
+                     "時間": DateManager.setDate(),
+                     "名稱": "選擇權試算"
+                 ])
         
             break
         case 3:
             
             setJump(type: "futures")
-            
+            Firebase.Analytics.logEvent("選擇項目", parameters: [
+                             "時間": DateManager.setDate(),
+                             "名稱": "期貨獲利試算"
+                         ])
             break
         case 4:
             setToast(s: "下個版本推出")
-
+            Firebase.Analytics.logEvent("選擇項目", parameters: [
+                                     "時間": DateManager.setDate(),
+                                     "名稱": "個股期獲利試算"
+                                 ])
             break
             
         default:
@@ -62,9 +73,10 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         super.viewDidLoad()
         setBannerView()
         setUIView()
-        FirebaseManager.setAnalytics(title: "首頁")
+//        FirebaseManager.setAnalytics(title: "首頁")
 //        setRightButton(s: "會員中心")
 //        setLeftButton(s: "簽到")
+        Firebase.Analytics.setScreenName("首頁", screenClass: "ViewController")
         marqueeLabel.type = .continuous
         marqueeLabel.speed = .duration(9)
         marqueeLabel.animationCurve = .easeInOut
@@ -195,8 +207,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         case "richman":
             break
         case "MenberPoint_1000":
-            print("jack",FirebaseManager.getUserPoint())
-            
             FirebaseManager.addMemberBuyPoint(pont: 1000)
             
             //1000
@@ -234,7 +244,8 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)
     }
-
+    @IBOutlet weak var smallstock: UIView!
+    
     func setUIView(){
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
         self.CurrentPrice.addGestureRecognizer(gesture)
@@ -256,6 +267,9 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         
         let financing = UITapGestureRecognizer(target: self, action:  #selector(self.financingAction))
         self.FinancingView.addGestureRecognizer(financing)
+        
+        let small = UITapGestureRecognizer(target: self, action:  #selector(self.smallAction))
+        self.smallstock.addGestureRecognizer(small)
         
     }
     @objc func checkAction(sender : UITapGestureRecognizer) {
@@ -287,5 +301,9 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
              setJump(type: "financing")
           }
     
+    @objc func smallAction(sender : UITapGestureRecognizer) {
+        setToast(s: "下個版本將推出")
+            
+          }
 }
 

@@ -32,6 +32,8 @@ class BrokerViewController: MGoogleADViewController , UITableViewDataSource
         super.viewDidLoad()
         titleName.text = GetStockPriceManager.getBrokerTitle() + "八大官股銀行買超排行"
         getData()
+        setScreenName(screenName: "八大官股銀行買超排行", screenClassName: "BrokerViewController")
+
         
         // Do any additional setup after loading the view.
     }
@@ -77,11 +79,15 @@ class BrokerViewController: MGoogleADViewController , UITableViewDataSource
         case 1:
             setToast(s: "八大官股銀行買超排行")
             titleName.text = GetStockPriceManager.getBrokerTitle() + "八大官股銀行買超排行"
+            setScreenName(screenName: "八大官股銀行買超排行", screenClassName: "BrokerViewController")
+
             getData()
             break
         case 2:
             setToast(s: "八大官股銀行賣超排行")
             titleName.text =  GetStockPriceManager.getBrokerTitle() + "八大官股銀行賣超排行"
+            setScreenName(screenName: "八大官股銀行賣超排行", screenClassName: "BrokerViewController")
+
             getData_2()
             
             

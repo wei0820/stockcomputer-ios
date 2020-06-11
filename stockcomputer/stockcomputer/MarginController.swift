@@ -100,7 +100,8 @@ class MarginController: MGoogleADViewController{
         buyNum.text = "1000"
         setDatePickerView()
         setUITextField()
-  
+        setScreenName(screenName: "融券獲利計算", screenClassName: "MarginController")
+
         
         
     }

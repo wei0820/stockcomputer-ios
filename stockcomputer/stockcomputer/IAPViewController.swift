@@ -10,6 +10,7 @@ import UIKit
 import StoreKit
 import JGProgressHUD
 import SwiftyStoreKit
+import Firebase
 class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentTransactionObserver{
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count != 0 {
@@ -84,7 +85,8 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         SKPaymentQueue.default().add(self)
         
         setUIView()
-        
+        Firebase.Analytics.setScreenName("贊助", screenClass: "IAPViewController")
+
         // Do any additional setup after loading the view.
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -123,11 +125,8 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
                 
             case SKPaymentTransactionState.purchased:
                 setUIAlert(title: "購買成功", message: "感謝購買")
-
                 SKPaymentQueue.default().finishTransaction(transaction)
-
             case SKPaymentTransactionState.failed:
-                
                      if let error = transaction.error as? SKError {
                          switch error.code {
                          case .paymentCancelled:
@@ -160,7 +159,7 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
                     
                     
                 }
-                
+              
             }
           
             
@@ -192,6 +191,7 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         
         let isrich = UITapGestureRecognizer(target: self, action:  #selector(self.isrich))
         self.view4.addGestureRecognizer(isrich)
+
         
         
     }
@@ -203,7 +203,7 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
             let payment = SKPayment(product: self.productsArray[0])
             // 購買消耗性、非消耗性動作將會開始在背景執行(updatedTransactions delegate 會接收到兩次)
             SKPaymentQueue.default().add(payment)
-            
+
             
         }
         
@@ -248,6 +248,10 @@ class IAPViewController: UIViewController , SKProductsRequestDelegate,SKPaymentT
         
     }
 
+    @IBOutlet weak var label_4: UILabel!
+    @IBOutlet weak var label_3: UILabel!
+    @IBOutlet weak var label_2: UILabel!
+    @IBOutlet weak var label_1: UILabel!
     
 }
 
