@@ -12,6 +12,7 @@ import Instabug
 import AuthenticationServices
 import CryptoKit
 import Security
+import Toaster
 
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
@@ -28,30 +29,34 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
     
     @IBAction func get(_ sender: Any) {
         if(phone.text != nil && !phone.text!.isEmpty){
+            if(phone.text!.count >= 11){
+                Toast.init(text:"請檢查手機號碼").show()
+                return
+            }
             
             var phonenumber : String = String(phone.text!.suffix(9))
             print("Jack",phonenumber)
             print("Jack","+886" + phonenumber)
 
-//                   PhoneAuthProvider.provider().verifyPhoneNumber(phonenumber, uiDelegate: nil) { (verificationID, error) in
-//                               if let error = error {
-//                                   print("error")
-//
-//                                   print("Jack",error.localizedDescription)
-//
-//                                   return
-//                               }
-//                               // Sign in using the verificationID and the code sent to the user
-//                               UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-//                    self.number.isHidden = false
-//                    self.sendbtn.isHidden = false
-//
-//
-//                               // ...
-//
-//                           }
-//                           Auth.auth().languageCode = "tw";
-//                           print("Jack",phone)
+                   PhoneAuthProvider.provider().verifyPhoneNumber("+886" + phonenumber, uiDelegate: nil) { (verificationID, error) in
+                               if let error = error {
+                                   print("error")
+
+                                   print("Jack",error.localizedDescription)
+
+                                   return
+                               }
+                               // Sign in using the verificationID and the code sent to the user
+                               UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+                    self.number.isHidden = false
+                    self.sendbtn.isHidden = false
+
+
+                               // ...
+
+                           }
+                           Auth.auth().languageCode = "tw";
+                           print("Jack",phone)
         }
     }
     

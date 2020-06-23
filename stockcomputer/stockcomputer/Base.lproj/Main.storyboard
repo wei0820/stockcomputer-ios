@@ -1054,9 +1054,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3d-LU-x6q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3d-LU-x6q">
                                 <rect key="frame" x="252" y="512" width="94" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8zL-gK-ljk"/>
+                                    <constraint firstAttribute="width" constant="94" id="Wcq-7O-unb"/>
+                                </constraints>
                                 <state key="normal" title="送出"/>
                                 <connections>
                                     <action selector="send:" destination="Gyw-T5-M3K" eventType="touchUpInside" id="KAG-JM-ZOL"/>
@@ -1082,8 +1085,10 @@
                             <constraint firstItem="pQb-Fv-wTz" firstAttribute="top" secondItem="QzW-ka-TUs" secondAttribute="bottom" constant="30" id="8SQ-ts-HR8"/>
                             <constraint firstItem="QzW-ka-TUs" firstAttribute="centerX" secondItem="Zf5-0u-FoM" secondAttribute="centerX" id="Dq5-3v-nCF"/>
                             <constraint firstItem="2WO-rK-uCh" firstAttribute="leading" secondItem="pQb-Fv-wTz" secondAttribute="trailing" constant="60" id="JQI-3H-oE6"/>
+                            <constraint firstItem="Y3d-LU-x6q" firstAttribute="leading" secondItem="B3s-ld-T6P" secondAttribute="trailing" constant="22" id="R5H-BQ-dgW"/>
                             <constraint firstItem="B3s-ld-T6P" firstAttribute="top" secondItem="Ity-vw-1Uo" secondAttribute="bottom" constant="21" id="RmZ-5M-MAX"/>
                             <constraint firstItem="9qo-HJ-Pbn" firstAttribute="top" secondItem="2WO-rK-uCh" secondAttribute="bottom" constant="43" id="au1-qs-alM"/>
+                            <constraint firstItem="Y3d-LU-x6q" firstAttribute="top" secondItem="9qo-HJ-Pbn" secondAttribute="bottom" constant="23" id="hB3-fA-1w0"/>
                             <constraint firstItem="QzW-ka-TUs" firstAttribute="centerY" secondItem="Zf5-0u-FoM" secondAttribute="centerY" constant="-163.5" id="hgD-ah-3Yy"/>
                             <constraint firstItem="Ity-vw-1Uo" firstAttribute="leading" secondItem="HwV-3o-nmM" secondAttribute="leading" constant="16" id="qnx-Ad-BGB"/>
                             <constraint firstItem="Ity-vw-1Uo" firstAttribute="top" secondItem="pQb-Fv-wTz" secondAttribute="bottom" constant="33" id="tPg-E1-TuX"/>
