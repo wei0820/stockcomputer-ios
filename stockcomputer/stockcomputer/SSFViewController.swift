@@ -25,6 +25,7 @@ class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-7019441527375550/5957417692")
         let request = GADRequest()
           interstitial.load(request)
+        FirebaseManager.setAnalytics(title: "股票期貨查詢")
 
         
         // Do any additional setup after loading the view.
@@ -146,16 +147,9 @@ class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
                         if(elements.size()<=0){
                             return ""
                         }
-                        for i in 1...15{
+                        for i in 1...16{
                             let n = try elements.select("span").get(i).text()
                             array.append(n)
-//                            labels.forEach { (UILabel) in
-//                                UILabel.text = n
-//                            }
-           
-
-
-
                         }
                       
                      } catch let error {
@@ -168,21 +162,22 @@ class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
                  return title
              }
     func setLabel(){
+        
         label_1.text = "股票:\t" + array[0]
-        label_2.text = "到期月份:\t" + array[1]
-        label_3.text = "開盤價:\t" + array[2]
-        label_4.text = "最高價:\t" + array[3]
-        label_5.text = "最低價:\t" + array[4]
-        label_6.text = "成交價:\t" + array[5]
-        label_7.text = "漲跌價:\t" + array[6]
-        label_8.text = "漲跌%:\t\t" + array[7]
-        label_9.text = "結算價:\t" + array[8]
-        label_10.text = "成交量:\t" + array[9]
-        label_11.text = "未平倉:\t" + array[10]
-        label_12.text = "最佳買價:\t" + array[11]
-        label_13.text = "最佳賣價:\t" + array[12]
-        label_14.text = "歷史高價:\t" + array[13]
-        label_15.text = "歷史低價:\t" + array[14]
+        label_2.text = "到期月份:\t" + array[2]
+        label_3.text = "開盤價:\t" + array[3]
+        label_4.text = "最高價:\t" + array[4]
+        label_5.text = "最低價:\t" + array[5]
+        label_6.text = "成交價:\t" + array[6]
+        label_7.text = "漲跌價:\t" + array[7]
+        label_8.text = "漲跌%:\t\t" + array[8]
+        label_9.text = "結算價:\t" + array[9]
+        label_10.text = "成交量:\t" + array[10]
+        label_11.text = "未平倉:\t" + array[11]
+        label_12.text = "最佳買價:\t" + array[12]
+        label_13.text = "最佳賣價:\t" + array[13]
+        label_14.text = "歷史高價:\t" + array[14]
+        label_15.text = "歷史低價:\t" + array[15]
 
 
       
