@@ -1011,50 +1011,98 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QzW-ka-TUs">
-                                <rect key="frame" x="-62.5" y="83.5" width="500" height="500"/>
+                                <rect key="frame" x="37.5" y="20" width="300" height="300"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-Fv-wTz">
-                                <rect key="frame" x="16" y="519" width="64" height="64"/>
+                                <rect key="frame" x="91" y="350" width="72" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="2sy-Gx-Q5O"/>
-                                    <constraint firstAttribute="height" constant="64" id="V1B-EA-YHG"/>
+                                    <constraint firstAttribute="height" constant="72" id="o9l-So-R1U"/>
+                                    <constraint firstAttribute="width" constant="72" id="sjH-9z-QwJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="14"/>
+                                <state key="normal" image="outline_stay_primary_portrait_black_36pt_2x"/>
                                 <connections>
                                     <action selector="fblogin_:" destination="Gyw-T5-M3K" eventType="touchUpInside" id="Jhm-hw-pVb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-rK-uCh">
-                                <rect key="frame" x="157" y="523" width="60" height="60"/>
+                                <rect key="frame" x="223" y="356" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="XKK-Wa-fyc"/>
-                                    <constraint firstAttribute="width" constant="60" id="sdH-nU-ZNK"/>
+                                    <constraint firstAttribute="height" constant="60" id="Ssi-a1-484"/>
+                                    <constraint firstAttribute="width" constant="60" id="UpF-LB-JfR"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="icons8-test-account-100"/>
                                 <connections>
                                     <action selector="guestLogin:" destination="Gyw-T5-M3K" eventType="touchUpInside" id="hYr-DE-cyo"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入手機號碼(只開放台灣門號)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ity-vw-1Uo">
+                                <rect key="frame" x="16" y="455" width="214" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="bnN-l4-Omf"/>
+                                    <constraint firstAttribute="width" constant="214" id="i1Y-3E-lbb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="驗證碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B3s-ld-T6P">
+                                <rect key="frame" x="16" y="510" width="214" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="nUw-7s-ENH"/>
+                                    <constraint firstAttribute="width" constant="214" id="xDY-VK-Yz6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3d-LU-x6q">
+                                <rect key="frame" x="252" y="512" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="送出"/>
+                                <connections>
+                                    <action selector="send:" destination="Gyw-T5-M3K" eventType="touchUpInside" id="KAG-JM-ZOL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qo-HJ-Pbn">
+                                <rect key="frame" x="252" y="459" width="94" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6LW-XI-aMW"/>
+                                    <constraint firstAttribute="width" constant="94" id="oGS-pl-bqj"/>
+                                </constraints>
+                                <state key="normal" title="取得驗證碼"/>
+                                <connections>
+                                    <action selector="get:" destination="Gyw-T5-M3K" eventType="touchUpInside" id="MP0-cS-S2J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pQb-Fv-wTz" firstAttribute="top" secondItem="HwV-3o-nmM" secondAttribute="top" constant="519" id="A7X-nx-cbc"/>
+                            <constraint firstItem="2WO-rK-uCh" firstAttribute="top" secondItem="QzW-ka-TUs" secondAttribute="bottom" constant="36" id="0xn-SD-9wP"/>
+                            <constraint firstItem="pQb-Fv-wTz" firstAttribute="leading" secondItem="HwV-3o-nmM" secondAttribute="leading" constant="91" id="4k5-9C-Eqb"/>
+                            <constraint firstItem="9qo-HJ-Pbn" firstAttribute="leading" secondItem="Ity-vw-1Uo" secondAttribute="trailing" constant="22" id="6hM-1s-MEU"/>
+                            <constraint firstItem="pQb-Fv-wTz" firstAttribute="top" secondItem="QzW-ka-TUs" secondAttribute="bottom" constant="30" id="8SQ-ts-HR8"/>
                             <constraint firstItem="QzW-ka-TUs" firstAttribute="centerX" secondItem="Zf5-0u-FoM" secondAttribute="centerX" id="Dq5-3v-nCF"/>
-                            <constraint firstItem="2WO-rK-uCh" firstAttribute="top" secondItem="HwV-3o-nmM" secondAttribute="top" constant="523" id="Nsh-Yi-gCA"/>
-                            <constraint firstItem="pQb-Fv-wTz" firstAttribute="leading" secondItem="HwV-3o-nmM" secondAttribute="leading" constant="16" id="VkD-uI-65g"/>
-                            <constraint firstItem="2WO-rK-uCh" firstAttribute="leading" secondItem="pQb-Fv-wTz" secondAttribute="trailing" constant="77" id="hOc-5J-GKG"/>
-                            <constraint firstItem="QzW-ka-TUs" firstAttribute="centerY" secondItem="Zf5-0u-FoM" secondAttribute="centerY" id="hgD-ah-3Yy"/>
+                            <constraint firstItem="2WO-rK-uCh" firstAttribute="leading" secondItem="pQb-Fv-wTz" secondAttribute="trailing" constant="60" id="JQI-3H-oE6"/>
+                            <constraint firstItem="B3s-ld-T6P" firstAttribute="top" secondItem="Ity-vw-1Uo" secondAttribute="bottom" constant="21" id="RmZ-5M-MAX"/>
+                            <constraint firstItem="9qo-HJ-Pbn" firstAttribute="top" secondItem="2WO-rK-uCh" secondAttribute="bottom" constant="43" id="au1-qs-alM"/>
+                            <constraint firstItem="QzW-ka-TUs" firstAttribute="centerY" secondItem="Zf5-0u-FoM" secondAttribute="centerY" constant="-163.5" id="hgD-ah-3Yy"/>
+                            <constraint firstItem="Ity-vw-1Uo" firstAttribute="leading" secondItem="HwV-3o-nmM" secondAttribute="leading" constant="16" id="qnx-Ad-BGB"/>
+                            <constraint firstItem="Ity-vw-1Uo" firstAttribute="top" secondItem="pQb-Fv-wTz" secondAttribute="bottom" constant="33" id="tPg-E1-TuX"/>
+                            <constraint firstItem="B3s-ld-T6P" firstAttribute="leading" secondItem="HwV-3o-nmM" secondAttribute="leading" constant="16" id="yLR-e8-DTN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HwV-3o-nmM"/>
                     </view>
                     <navigationItem key="navigationItem" id="eUY-jH-icr"/>
                     <connections>
+                        <outlet property="getCode" destination="9qo-HJ-Pbn" id="pNa-lq-LFn"/>
+                        <outlet property="number" destination="B3s-ld-T6P" id="END-9O-DrJ"/>
+                        <outlet property="phone" destination="Ity-vw-1Uo" id="kgI-y9-WE3"/>
+                        <outlet property="sendbtn" destination="Y3d-LU-x6q" id="RBF-ty-cDs"/>
                         <segue destination="iq4-b8-TZg" kind="show" identifier="home" id="Hhv-SS-L9y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEo-Si-afL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3778" y="-174"/>
+            <point key="canvasLocation" x="-3778.4000000000001" y="-174.06296851574214"/>
         </scene>
         <!--Option View Controller-->
         <scene sceneID="YRa-Ce-d2c">
@@ -5516,7 +5564,8 @@
         <image name="icons8-shopping-cart-90" width="90" height="90"/>
         <image name="icons8-test-account-100" width="100" height="100"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="logo" width="500" height="500"/>
+        <image name="logo" width="300" height="300"/>
+        <image name="outline_stay_primary_portrait_black_36pt_2x" width="72" height="72"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>

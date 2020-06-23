@@ -24,10 +24,9 @@ class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
         input.delegate = self
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-7019441527375550/5957417692")
         let request = GADRequest()
-          interstitial.load(request)
-        FirebaseManager.setAnalytics(title: "股票期貨查詢")
+        interstitial.load(request)
+        setScreenName(screenName: "股票期貨查詢", screenClassName: "SSFViewController")
 
-        
         // Do any additional setup after loading the view.
     }
     @IBAction func close(_ sender: Any) {
@@ -237,5 +236,7 @@ class SSFViewController: MGoogleADViewController, UITextFieldDelegate {
      override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
          self.view.endEditing(true)
      }
+    
+    
 
 }
