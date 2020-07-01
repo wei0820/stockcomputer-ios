@@ -35,8 +35,7 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
             }
             
             var phonenumber : String = String(phone.text!.suffix(9))
-            print("Jack",phonenumber)
-            print("Jack","+886" + phonenumber)
+       
 
                    PhoneAuthProvider.provider().verifyPhoneNumber("+886" + phonenumber, uiDelegate: nil) { (verificationID, error) in
                                if let error = error {
@@ -56,11 +55,34 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
 
                            }
                            Auth.auth().languageCode = "tw";
-                           print("Jack",phone)
         }
     }
     
     @IBAction func send(_ sender: Any) {
+        let verificationID :String = UserDefaults.standard.string(forKey: "authVerificationID")!
+        let verificationCode = number.text!
+        let credential = PhoneAuthProvider.provider().credential(
+                  withVerificationID: verificationID,
+                  verificationCode: verificationCode)
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+                  if let error = error {
+                    self.getError(S: error.localizedDescription)
+
+                      // ...
+                      return
+                  }
+            guard let user = authResult?.user else { return }
+            let uid = user.uid
+            
+            self.userDefaults.set(uid, forKey: "userID")
+
+            let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+            let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+            appDelegate.window?.rootViewController = HomeVc
+        }
+        
     }
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
@@ -272,4 +294,10 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
          self.view.endEditing(true)
      }
+    func getError(S :String){
+        let controller = UIAlertController(title: "發生錯誤", message: S, preferredStyle: .alert)
+                   let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                   controller.addAction(okAction)
+                   present(controller, animated: true, completion: nil)
+    }
 }
