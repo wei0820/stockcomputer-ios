@@ -73,7 +73,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         super.viewDidLoad()
         setBannerView()
         setUIView()
-//        FirebaseManager.setAnalytics(title: "首頁")
 //        setRightButton(s: "會員中心")
 //        setLeftButton(s: "簽到")
         Firebase.Analytics.setScreenName("首頁", screenClass: "ViewController")
