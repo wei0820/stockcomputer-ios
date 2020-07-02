@@ -87,8 +87,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         strings = [FirebaseManager.getAnnouncementSting()]
         marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
         if(checkIsMember()){
-            FirebaseManager.getMemberDate()
-            FirebaseManager.setUserVersion()
+            getId()
             
             if(!FirebaseManager.getVersion().isEmpty){
                 var newVersion : Double = FirebaseManager.getNewVersion() as! Double
@@ -103,6 +102,23 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         
     
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if(checkIsMember()){
+            FirebaseManager.getMemberDate()
+
+        }
+        
+    }
+    func getId(){
+        if ((userDefaults.value(forKey: "userID")) != nil){
+            let id : String = userDefaults.value(forKey: "userID") as! String
+            FirebaseManager.setPhoneMember(id:id)
+
+        
+        }else{
+
+        }
     }
     func setBannerView(){
         self.bannerView.imagePaths = FirebaseManager.getPageArray()

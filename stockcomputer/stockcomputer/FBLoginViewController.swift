@@ -12,13 +12,76 @@ import Instabug
 import AuthenticationServices
 import CryptoKit
 import Security
+import Toaster
 
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
 
-class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding{
+class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding, UITextFieldDelegate {
+    
+    @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var number: UITextField!
+    @IBOutlet weak var sendbtn: UIButton!
+    
+    @IBOutlet weak var getCode: UIButton!
+    
+    @IBAction func get(_ sender: Any) {
+        if(phone.text != nil && !phone.text!.isEmpty){
+            if(phone.text!.count >= 11){
+                Toast.init(text:"請檢查手機號碼").show()
+                return
+            }
+            
+            var phonenumber : String = String(phone.text!.suffix(9))
+       
+
+                   PhoneAuthProvider.provider().verifyPhoneNumber("+886" + phonenumber, uiDelegate: nil) { (verificationID, error) in
+                               if let error = error {
+                                   print("error")
+
+                                   print("Jack",error.localizedDescription)
+
+                                   return
+                               }
+                               // Sign in using the verificationID and the code sent to the user
+                               UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+                    self.number.isHidden = false
+                    self.sendbtn.isHidden = false
+
+
+                               // ...
+
+                           }
+                           Auth.auth().languageCode = "tw";
+        }
+    }
+    
+    @IBAction func send(_ sender: Any) {
+        let verificationID :String = UserDefaults.standard.string(forKey: "authVerificationID")!
+        let verificationCode = number.text!
+        let credential = PhoneAuthProvider.provider().credential(
+                  withVerificationID: verificationID,
+                  verificationCode: verificationCode)
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+                  if let error = error {
+                    self.getError(S: error.localizedDescription)
+
+                      // ...
+                      return
+                  }
+            guard let user = authResult?.user else { return }
+            let uid = user.uid
+            
+            self.userDefaults.set(uid, forKey: "userID")
+                
+            
+            self.fetchProfile()
+        }
+        
+    }
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
             return self.view.window!
@@ -101,30 +164,16 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
             self.userDefaults.set(uid, forKey: "userID")
             self.userDefaults.set(isAnonymous, forKey: "isAnonymous")
             
-            let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-            let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-            appDelegate.window?.rootViewController = HomeVc
+            self.fetchProfile()
+
         }
     }
     
     @IBAction func fblogin_(_ sender: Any) {
         
-        if #available(iOS 13.0, *) {
-            let nonce = randomNonceString()
-            currentNonce = nonce
-            let appleIDProvider = ASAuthorizationAppleIDProvider()
-            let request = appleIDProvider.createRequest()
-            request.requestedScopes = [.fullName, .email]
-            request.nonce = sha256(nonce)
+        phone.isHidden = false
+        getCode.isHidden = false
 
-            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-            authorizationController.delegate = self
-            authorizationController.presentationContextProvider = self
-            authorizationController.performRequests()
-        } else {
-            // Fallback on earlier versions
-        }
 
 
     }
@@ -133,8 +182,28 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
         FirebaseManager.getStockcomuperAllDate()
         FirebaseManager.getBannerDate()
         fetchProfile()
+        phone.isHidden = true
+        number.isHidden = true
+        sendbtn.isHidden = true
+        getCode.isHidden = true
+        if #available(iOS 13.0, *) {
+                overrideUserInterfaceStyle = .light
+            } else {
+                // Fallback on earlier versions
+            }
+        
+        phone.borderStyle = .roundedRect
+        phone.returnKeyType = .done
+        phone.delegate = self
+        phone.keyboardType = .numberPad
+        phone.clearButtonMode = .always  //一直显示清除按钮
+        number.borderStyle = .roundedRect
+        number.clearButtonMode = .always  //一直显示清除按钮
+        number.textContentType = .oneTimeCode
+        number.keyboardType = .numberPad
 
     }
+    
     private func checkCredentialState(withUserID userID: String) {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         appleIDProvider.getCredentialState(forUserID: userID) { (credentialState, error) in
@@ -160,12 +229,29 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
 
     func fetchProfile(){
         if ((userDefaults.value(forKey: "userID")) != nil){
+            
             let stroyboard = UIStoryboard(name: "Main", bundle: nil);
             let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
             let appDelegate = UIApplication.shared.delegate as! AppDelegate;
             appDelegate.window?.rootViewController = HomeVc
             let id : String = userDefaults.value(forKey: "userID") as! String
+
             self.checkCredentialState(withUserID: id)
+            if ((userDefaults.value(forKey: "isAnonymous")) != nil){
+                var isAnonymous : Bool = userDefaults.value(forKey: "isAnonymous") as! Bool
+
+                if(!isAnonymous){
+               
+                }else{
+         
+                }
+                
+            }
+            
+        }else{
+
+     
+
         }
     
 }
@@ -211,7 +297,20 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
 
       return hashString
     }
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+         // 結束編輯 把鍵盤隱藏起來
+         self.view.endEditing(true)
+         
+         return true
+     }
    
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         self.view.endEditing(true)
+     }
+    func getError(S :String){
+        let controller = UIAlertController(title: "發生錯誤", message: S, preferredStyle: .alert)
+                   let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                   controller.addAction(okAction)
+                   present(controller, animated: true, completion: nil)
+    }
 }
