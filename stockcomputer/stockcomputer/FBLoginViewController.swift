@@ -76,11 +76,9 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
             let uid = user.uid
             
             self.userDefaults.set(uid, forKey: "userID")
-
-            let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-            let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-            appDelegate.window?.rootViewController = HomeVc
+                
+            
+            self.fetchProfile()
         }
         
     }
@@ -166,10 +164,8 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
             self.userDefaults.set(uid, forKey: "userID")
             self.userDefaults.set(isAnonymous, forKey: "isAnonymous")
             
-            let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-            let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-            appDelegate.window?.rootViewController = HomeVc
+            self.fetchProfile()
+
         }
     }
     
@@ -233,12 +229,29 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
 
     func fetchProfile(){
         if ((userDefaults.value(forKey: "userID")) != nil){
+            
             let stroyboard = UIStoryboard(name: "Main", bundle: nil);
             let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
             let appDelegate = UIApplication.shared.delegate as! AppDelegate;
             appDelegate.window?.rootViewController = HomeVc
             let id : String = userDefaults.value(forKey: "userID") as! String
+
             self.checkCredentialState(withUserID: id)
+            if ((userDefaults.value(forKey: "isAnonymous")) != nil){
+                var isAnonymous : Bool = userDefaults.value(forKey: "isAnonymous") as! Bool
+
+                if(!isAnonymous){
+               
+                }else{
+         
+                }
+                
+            }
+            
+        }else{
+
+     
+
         }
     
 }
