@@ -14,6 +14,7 @@ import Firebase
 import Instabug
 import SwiftyStoreKit
 import AuthenticationServices
+import AudioToolbox.AudioServices
 class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var adBannerView: GADBannerView?
     let userDefaults = UserDefaults.standard
@@ -191,6 +192,10 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)
+    }
+    func setVibrate(){
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
     }
     
     func checkLoginTime () {

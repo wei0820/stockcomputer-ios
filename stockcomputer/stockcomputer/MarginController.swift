@@ -32,6 +32,7 @@ class MarginController: MGoogleADViewController{
     var startDateStr :Date? = nil
     var EndDateStr :Date? = nil
     @IBAction func cal_btn(_ sender: Any) {
+        setVibrate()
         if(!buyNum.text!.isEmpty && !sellNum.text!.isEmpty && !buyPrice.text!.isEmpty && !sellPrice.text!.isEmpty){
          
             
@@ -206,6 +207,7 @@ class MarginController: MGoogleADViewController{
     
    
     @IBAction func closeView(_ sender: Any) {
+        setVibrate()
         dissmissView()
     }
 }
