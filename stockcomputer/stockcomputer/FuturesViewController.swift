@@ -40,10 +40,10 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         sellnum.text = "1"
         buynum.text = "1"
         
-        buyprice.keyboardType = .numberPad
-        sellprice.keyboardType = .numberPad
-        buynum.keyboardType = .numberPad
-        sellnum.keyboardType = .numberPad
+        buyprice.keyboardType = UIKeyboardType.decimalPad
+        sellprice.keyboardType = UIKeyboardType.decimalPad
+        buynum.keyboardType = UIKeyboardType.decimalPad
+        sellnum.keyboardType = UIKeyboardType.decimalPad
         
      if(mSwurch.isOn){
         mswitchlabel.text = "大台"

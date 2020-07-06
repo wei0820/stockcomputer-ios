@@ -55,10 +55,10 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
         sellnumTF.delegate = self
         buyTF.delegate = self
         buynumTF.delegate = self
-        sellnumTF.keyboardType = .numberPad
-        sellTF.keyboardType = .numberPad
-        buynumTF.keyboardType = .numberPad
-        buyTF.keyboardType = .numberPad
+        sellnumTF.keyboardType = UIKeyboardType.decimalPad
+        sellTF.keyboardType = UIKeyboardType.decimalPad
+        buynumTF.keyboardType = UIKeyboardType.decimalPad
+        buyTF.keyboardType = UIKeyboardType.decimalPad
         buynumTF.text = "1"
         sellnumTF.text = "1"
         setScreenName(screenName: "選擇權獲利計算", screenClassName: "SellAndPutViewController")
