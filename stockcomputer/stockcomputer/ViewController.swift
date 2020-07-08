@@ -98,6 +98,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
             }
             
         }
+//        GetStockPriceManager.gettest()
         
     
         
@@ -320,5 +321,9 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         setToast(s: "下個版本將推出")
             
           }
+    
+    
+    
+
 }
 

@@ -23,6 +23,8 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
     @IBOutlet weak var buyTF: UITextField!
     @IBOutlet weak var sellTF: UITextField!
     @IBAction func Cal_Button(_ sender: Any) {
+        setVibrate()
+
         if(buyTF.text!.isEmpty && buynumTF.text!.isEmpty &&
             sellTF.text!.isEmpty && sellnumTF.text!.isEmpty){
             setToast(s: "請輸入完整內容")
@@ -46,6 +48,8 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
         }
     }
     @IBAction func close(_ sender: Any) {
+        setVibrate()
+
         dissmissView()
     }
     

@@ -26,6 +26,8 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     @IBOutlet weak var mbutton: UIButton!
 
     @IBAction func closeview(_ sender: Any) {
+        setVibrate()
+
         dissmissView()
     }
     @IBOutlet weak var closebtn: UIButton!
@@ -88,6 +90,8 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         
     }
     @IBAction func mCalculationButton(_ sender: Any){
+        setVibrate()
+
         if(buyprice.text!.isEmpty && buynum.text!.isEmpty
             && sellprice.text!.isEmpty && sellnum.text!.isEmpty){
         

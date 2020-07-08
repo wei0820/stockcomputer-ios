@@ -25,7 +25,8 @@ class Financing_ViewController: MGoogleADViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func cal(_ sender: Any) {
-        
+        setVibrate()
+
         if(buyMoney.text!.isEmpty && sellMoney.text!.isEmpty){
             setToast(s: "請輸入數值")
             
@@ -108,6 +109,8 @@ class Financing_ViewController: MGoogleADViewController {
     @IBOutlet weak var label_5: UILabel!
     
     @IBAction func closeview(_ sender: Any) {
+        setVibrate()
+
         dissmissView()
     }
     
