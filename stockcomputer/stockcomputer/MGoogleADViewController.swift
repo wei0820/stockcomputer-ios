@@ -61,9 +61,21 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 switch purchaseResult {
                 case .purchased(let expiryDate, let items):
                     self.adBannerView?.isHidden = true
+                    Firebase.Analytics.logEvent("訂閱項目", parameters: [
+                                             "訂閱戶": "是",
+                                             "購買商品": items.description,
+                                         ])
                 case .expired(let expiryDate, let items):
                     self.adBannerView?.isHidden = false
+                    Firebase.Analytics.logEvent("訂閱項目", parameters: [
+                                                             "訂閱戶": "否",
+                                                             "購買商品": items.description,
+                                                         ])
                 case .notPurchased:
+                    Firebase.Analytics.logEvent("訂閱項目", parameters: [
+                                                             "有無訂閱": "否",
+                                                             "購買商品": "非訂閱戶",
+                                                         ])
                     self.adBannerView?.isHidden = false
 
                 }
