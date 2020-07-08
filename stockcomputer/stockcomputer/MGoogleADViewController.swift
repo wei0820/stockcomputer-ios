@@ -28,6 +28,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         }
         setAdBanner()
         getAnnouncement()
+        check()
                 
     }
     override func viewWillAppear(_ animated: Bool) {

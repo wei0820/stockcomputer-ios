@@ -99,7 +99,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
             
         }
 //        GetStockPriceManager.gettest()
-        
+        print("Jack",checkIsMember())
     
         
     }
