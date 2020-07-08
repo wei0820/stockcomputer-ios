@@ -23,6 +23,8 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
     @IBOutlet weak var buyTF: UITextField!
     @IBOutlet weak var sellTF: UITextField!
     @IBAction func Cal_Button(_ sender: Any) {
+        setVibrate()
+
         if(buyTF.text!.isEmpty && buynumTF.text!.isEmpty &&
             sellTF.text!.isEmpty && sellnumTF.text!.isEmpty){
             setToast(s: "請輸入完整內容")
@@ -46,6 +48,8 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
         }
     }
     @IBAction func close(_ sender: Any) {
+        setVibrate()
+
         dissmissView()
     }
     
@@ -55,10 +59,10 @@ class SellAndPutViewController: MGoogleADViewController ,UITextFieldDelegate{
         sellnumTF.delegate = self
         buyTF.delegate = self
         buynumTF.delegate = self
-        sellnumTF.keyboardType = .numberPad
-        sellTF.keyboardType = .numberPad
-        buynumTF.keyboardType = .numberPad
-        buyTF.keyboardType = .numberPad
+        sellnumTF.keyboardType = UIKeyboardType.decimalPad
+        sellTF.keyboardType = UIKeyboardType.decimalPad
+        buynumTF.keyboardType = UIKeyboardType.decimalPad
+        buyTF.keyboardType = UIKeyboardType.decimalPad
         buynumTF.text = "1"
         sellnumTF.text = "1"
         setScreenName(screenName: "選擇權獲利計算", screenClassName: "SellAndPutViewController")

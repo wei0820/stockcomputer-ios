@@ -26,6 +26,8 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     @IBOutlet weak var mbutton: UIButton!
 
     @IBAction func closeview(_ sender: Any) {
+        setVibrate()
+
         dissmissView()
     }
     @IBOutlet weak var closebtn: UIButton!
@@ -40,10 +42,10 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         sellnum.text = "1"
         buynum.text = "1"
         
-        buyprice.keyboardType = .numberPad
-        sellprice.keyboardType = .numberPad
-        buynum.keyboardType = .numberPad
-        sellnum.keyboardType = .numberPad
+        buyprice.keyboardType = UIKeyboardType.decimalPad
+        sellprice.keyboardType = UIKeyboardType.decimalPad
+        buynum.keyboardType = UIKeyboardType.decimalPad
+        sellnum.keyboardType = UIKeyboardType.decimalPad
         
      if(mSwurch.isOn){
         mswitchlabel.text = "大台"
@@ -88,6 +90,8 @@ class FuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         
     }
     @IBAction func mCalculationButton(_ sender: Any){
+        setVibrate()
+
         if(buyprice.text!.isEmpty && buynum.text!.isEmpty
             && sellprice.text!.isEmpty && sellnum.text!.isEmpty){
         

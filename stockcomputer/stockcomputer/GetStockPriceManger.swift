@@ -789,4 +789,45 @@ class GetStockPriceManager{
            }
         return array_three
        }
+    
+    
+    
+    static  func gettest() {
+        
+           guard let url = URL(string: "https://histock.tw/stock/9919" ?? "") else {
+            
+            return
+               // an error occurred
+           }
+           
+           do {
+               
+               // content of url
+               let html = try String.init(contentsOf: url)
+               
+               // parse it into a Document
+               document = try SwiftSoup.parse(html)
+               // parse css query
+               do {
+                   
+                   //empty old items
+                   // firn css selector
+                   //
+                   //div.grid-body.p7.mb10>ul.stock-list>li
+                   let elements: Elements = try document.select("ul.priceinfo.mt10>li.deal" ?? "")
+             //transform it into a local object (Item)
+                             for th in try elements.select("span.clr-rd"){
+                                print("Jack",try th.text())
+                             }
+                             
+                
+                 
+               } catch let error {
+               }
+               
+               
+           } catch let error {
+               // an error occurred
+           }
+       }
 }

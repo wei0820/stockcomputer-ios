@@ -104,7 +104,10 @@ class TradeDetailViewController:MGoogleADViewController ,UIPickerViewDelegate, U
         
     }
     @IBAction func closeView(_ sender: Any) {
+        setVibrate()
+
         dissmissView()
+
     }
     func closeKeyboard(){
         self.buy_price.resignFirstResponder()
@@ -120,6 +123,8 @@ class TradeDetailViewController:MGoogleADViewController ,UIPickerViewDelegate, U
         sell_num.text = ""
     }
     func total(){
+        setVibrate()
+
         var total = 0.0
         var total_buy = 0.0
         var total_sell = 0.0
@@ -158,7 +163,6 @@ class TradeDetailViewController:MGoogleADViewController ,UIPickerViewDelegate, U
         percentage_label.textColor = UIColor.white
         percentage_label.backgroundColor = UIColor.red
         percentage_label.text = String(format: "%.2f",((total/total_buy) * 100 )) + "%"
-        
         
     }
     

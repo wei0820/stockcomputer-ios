@@ -79,6 +79,7 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
     var formatter: DateFormatter! = nil
     
     @IBAction func close(_ sender: Any) {
+        setVibrate()
         dissmissView()
     }
     override func viewDidLoad() {
@@ -119,6 +120,7 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         sell_num.text = ""
     }
     func total(){
+        setVibrate()
         var total = 0.0
         var total_buy = 0.0
         var total_sell = 0.0
