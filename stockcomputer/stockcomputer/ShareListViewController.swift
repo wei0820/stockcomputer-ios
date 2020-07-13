@@ -25,9 +25,23 @@ class ShareListViewController: MGoogleADViewController {
         let actionButton = JJFloatingActionButton()
         
         actionButton.addItem(title: "新增", image: UIImage(named: "create")?.withRenderingMode(.alwaysTemplate)) { item in
+            
             if(self.checkIsMember() == false){
-                self.setMemberAlert()
+                  let controller = UIAlertController(title: "您的身份為訪客", message:"建議正式登入避免資料消失,是否繼續操作", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "是", style: .default) { (_) in
+                    print("Jack",self.getUserID())
+
+                             }
+              controller.addAction(okAction)
+                let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
+               controller.addAction(cancelAction)
+                self.present(controller, animated: true, completion: nil)
+            }else{
+                
             }
+
+            
+            
             
             
         }
@@ -45,10 +59,16 @@ class ShareListViewController: MGoogleADViewController {
         
         actionButton.addItem(title: "會員資訊", image: UIImage(named: "money_black")?.withRenderingMode(.alwaysTemplate)) { item in
             if(self.checkIsMember() == false){
-                self.setMemberAlert()
-            }else{
-                self.setAlertDilog()
-            }
+                let controller = UIAlertController(title: "您的身份是訪客", message:"ID:『"+self.getUserID()+"』", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "是", style: .default,handler: nil)
+                controller.addAction(okAction)
+      self.present(controller, animated: true, completion: nil)
+  }else{
+       let controller = UIAlertController(title: "您的身份是會員", message:"ID:『"+self.getUserID()+"』", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "是", style: .default,handler: nil)
+                controller.addAction(okAction)
+      self.present(controller, animated: true, completion: nil)
+  }
             
             
             // do something

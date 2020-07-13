@@ -174,7 +174,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKv-GH-xqZ">
                                 <rect key="frame" x="112" y="433" width="75" height="75"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="損益紀錄" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wj5-zh-hTy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="報明牌" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wj5-zh-hTy">
                                         <rect key="frame" x="2" y="27" width="70" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="l6K-eU-gLO"/>
@@ -228,7 +228,7 @@
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="efI-v7-fis">
                                 <rect key="frame" x="280" y="99" width="80" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他試算" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw5-eb-9VE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw5-eb-9VE">
                                         <rect key="frame" x="8" y="8" width="66" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="ZfD-iK-Xfn"/>
@@ -366,6 +366,7 @@
                         <outlet property="marqueeLabel" destination="9WH-Zw-qh0" id="wYl-1D-T2B"/>
                         <outlet property="newsView" destination="Xhb-4i-a5q" id="vd7-zU-pcO"/>
                         <outlet property="paymeView" destination="XRS-IH-QlZ" id="oZe-HY-NrO"/>
+                        <outlet property="sharelist" destination="YKv-GH-xqZ" id="j3U-ue-vJD"/>
                         <outlet property="smallstock" destination="cWJ-bT-HQi" id="yKB-uo-S1t"/>
                         <outlet property="todayView" destination="xh4-93-Y5e" id="RkM-4E-8Lp"/>
                     </connections>
@@ -2747,6 +2748,21 @@
             </objects>
             <point key="canvasLocation" x="2634.4000000000001" y="611.24437781109452"/>
         </scene>
+        <!--Share List View Controller-->
+        <scene sceneID="Bid-LS-AAs">
+            <objects>
+                <viewController storyboardIdentifier="sharelsit" id="MuA-d3-16g" customClass="ShareListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LKH-jf-J8b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="yvw-R9-kT2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FoW-rg-BEN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2694" y="1698"/>
+        </scene>
         <!--Stock Number View Controller-->
         <scene sceneID="jkF-gP-nE4">
             <objects>
@@ -3320,7 +3336,7 @@
         <!--Share List View Controller-->
         <scene sceneID="bIG-UQ-v1p">
             <objects>
-                <viewController id="dIp-SO-evE" customClass="ShareListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="share" id="dIp-SO-evE" customClass="ShareListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qRf-ow-PUs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

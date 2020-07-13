@@ -612,7 +612,6 @@ class FirebaseManager {
         var dateReview: [String : AnyObject] = [String : AnyObject]()
         dateReview["id"] = id as AnyObject
         dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
-        dateReview["point"] = point   as AnyObject
         
           if(getVersion().isEmpty){
               let dictionary = Bundle.main.infoDictionary!

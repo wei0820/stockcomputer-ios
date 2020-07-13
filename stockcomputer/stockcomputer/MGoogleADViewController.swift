@@ -167,6 +167,17 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         return (removeAd != nil)
         
     }
+    func getUserID() -> String{
+        var userID = userDefaults.value(forKey: "userID")
+        if userID != nil {
+            return userID as! String
+
+        }
+        return ""
+        
+    }
+    
+    
     
     func checkIsMember() ->Bool{
         let firebaseAuth = Auth.auth()
@@ -201,10 +212,13 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     
     func setMemberAlert(){
         
-        let controller = UIAlertController(title: "提示", message:"您的身份為訪客 請先登入", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        controller.addAction(okAction)
-        present(controller, animated: true, completion: nil)
+        let controller = UIAlertController(title: "您的身份為訪客", message:"建議正式登入避免資料消失,是否繼續操作", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "是", style: .default) { (_) in
+                   }
+                   controller.addAction(okAction)
+                   let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
+                   controller.addAction(cancelAction)
+                   present(controller, animated: true, completion: nil)
     }
     func setVibrate(){
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
