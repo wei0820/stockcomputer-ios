@@ -530,6 +530,84 @@
             </objects>
             <point key="canvasLocation" x="-706.39999999999998" y="3211.8440779610196"/>
         </scene>
+        <!--Add News View Controller-->
+        <scene sceneID="F6F-Z6-B0I">
+            <objects>
+                <viewController storyboardIdentifier="addnews" modalPresentationStyle="fullScreen" id="xbG-Xr-Wrs" customClass="AddNewsViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jdp-g1-Q91">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdO-Gp-ci9">
+                                <rect key="frame" x="329" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RVl-de-Wis"/>
+                                    <constraint firstAttribute="width" constant="30" id="SFH-Kf-imY"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="baseline_clear_black"/>
+                                <connections>
+                                    <action selector="closeview:" destination="xbG-Xr-Wrs" eventType="touchUpInside" id="gdq-Hv-qzH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推薦代號:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLd-C6-hv7">
+                                <rect key="frame" x="16" y="56" width="74" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ZGb-G6-IgA"/>
+                                    <constraint firstAttribute="width" constant="74" id="c4h-O2-1RX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推薦股名:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcf-FY-4Zi">
+                                <rect key="frame" x="16" y="103" width="74" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vcI-Pe-d5J"/>
+                                    <constraint firstAttribute="width" constant="74" id="wg8-1b-Jlu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o0m-fb-1WB">
+                                <rect key="frame" x="149" y="49" width="172" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="Vea-FI-8s7"/>
+                                    <constraint firstAttribute="height" constant="34" id="bnX-Ca-fgB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pco-81-AoH">
+                                <rect key="frame" x="149" y="97" width="172" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="AZC-1N-acv"/>
+                                    <constraint firstAttribute="width" constant="172" id="fKj-Jd-opF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FLd-C6-hv7" firstAttribute="top" secondItem="K3i-Hd-KIf" secondAttribute="top" constant="56" id="9Dv-bI-Q1a"/>
+                            <constraint firstItem="FLd-C6-hv7" firstAttribute="leading" secondItem="K3i-Hd-KIf" secondAttribute="leading" constant="16" id="A2x-fC-3Rk"/>
+                            <constraint firstItem="o0m-fb-1WB" firstAttribute="leading" secondItem="FLd-C6-hv7" secondAttribute="trailing" constant="59" id="AIY-KE-tcb"/>
+                            <constraint firstItem="Pco-81-AoH" firstAttribute="top" secondItem="o0m-fb-1WB" secondAttribute="bottom" constant="14" id="D0W-Sd-20e"/>
+                            <constraint firstItem="o0m-fb-1WB" firstAttribute="top" secondItem="K3i-Hd-KIf" secondAttribute="top" constant="49" id="EyV-w2-Y4Y"/>
+                            <constraint firstItem="pcf-FY-4Zi" firstAttribute="leading" secondItem="K3i-Hd-KIf" secondAttribute="leading" constant="16" id="FwV-72-gp2"/>
+                            <constraint firstItem="pcf-FY-4Zi" firstAttribute="top" secondItem="FLd-C6-hv7" secondAttribute="bottom" constant="26" id="UJc-Qv-Vdr"/>
+                            <constraint firstItem="K3i-Hd-KIf" firstAttribute="trailing" secondItem="fdO-Gp-ci9" secondAttribute="trailing" constant="16" id="afj-sL-7o8"/>
+                            <constraint firstItem="Pco-81-AoH" firstAttribute="leading" secondItem="pcf-FY-4Zi" secondAttribute="trailing" constant="59" id="gcF-g1-79L"/>
+                            <constraint firstItem="fdO-Gp-ci9" firstAttribute="top" secondItem="K3i-Hd-KIf" secondAttribute="top" constant="20" id="kO3-Eh-ZaR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K3i-Hd-KIf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rbl-kU-V2M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856.8" y="3624.7376311844082"/>
+        </scene>
         <!--Day Trade View Controller-->
         <scene sceneID="ko4-cT-zs5">
             <objects>
