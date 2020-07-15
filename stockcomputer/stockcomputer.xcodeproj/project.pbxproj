@@ -14,6 +14,7 @@
 		8E2765632474C6810024573B /* Financing ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2765622474C6810024573B /* Financing ViewController.swift */; };
 		8E276565247D18E20024573B /* IAPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E276564247D18E20024573B /* IAPViewController.swift */; };
 		8E2AB6D3238E1DA20079910F /* FuturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AB6D2238E1DA20079910F /* FuturesViewController.swift */; };
+		8E485E9024BE9EAF005E718E /* AddNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E485E8F24BE9EAF005E718E /* AddNewsViewController.swift */; };
 		8E48E4E823EBB2A500384D25 /* SellAndPutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4E723EBB2A500384D25 /* SellAndPutViewController.swift */; };
 		8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4E923F131CC00384D25 /* ShareListViewController.swift */; };
 		8E48E4F023F3E48800384D25 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4EF23F3E48700384D25 /* FirebaseManager.swift */; };
@@ -67,6 +68,7 @@
 		8E2765622474C6810024573B /* Financing ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Financing ViewController.swift"; sourceTree = "<group>"; };
 		8E276564247D18E20024573B /* IAPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViewController.swift; sourceTree = "<group>"; };
 		8E2AB6D2238E1DA20079910F /* FuturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuturesViewController.swift; sourceTree = "<group>"; };
+		8E485E8F24BE9EAF005E718E /* AddNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewController.swift; sourceTree = "<group>"; };
 		8E48E4E723EBB2A500384D25 /* SellAndPutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellAndPutViewController.swift; sourceTree = "<group>"; };
 		8E48E4E923F131CC00384D25 /* ShareListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListViewController.swift; sourceTree = "<group>"; };
 		8E48E4EF23F3E48700384D25 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				8E2765622474C6810024573B /* Financing ViewController.swift */,
 				8E276564247D18E20024573B /* IAPViewController.swift */,
 				8EB8B6BE2484D5D500F14AEE /* IAPurchaseViewControllerDelegate.swift */,
+				8E485E8F24BE9EAF005E718E /* AddNewsViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				B7E8C17C2271B65E00792815 /* FirebaseWorks.swift in Sources */,
 				8ED642C82422112E00260E25 /* TrustViewController.swift in Sources */,
 				B77B6F662205D53300A674D6 /* MarginController.swift in Sources */,
+				8E485E9024BE9EAF005E718E /* AddNewsViewController.swift in Sources */,
 				B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */,
 				8E898F1E2462BDEC0072E3AA /* OtherViewController.swift in Sources */,
 				B74F5301220556340034DC5D /* AppDelegate.swift in Sources */,

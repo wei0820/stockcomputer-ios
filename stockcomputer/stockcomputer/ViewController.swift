@@ -99,7 +99,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
             
         }
 //        GetStockPriceManager.gettest()
-        
+        print("Jack",checkIsMember())
     
         
     }
@@ -262,6 +262,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     }
     @IBOutlet weak var smallstock: UIView!
     
+    @IBOutlet weak var sharelist: UIView!
     func setUIView(){
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
         self.CurrentPrice.addGestureRecognizer(gesture)
@@ -287,6 +288,10 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         let small = UITapGestureRecognizer(target: self, action:  #selector(self.smallAction))
         self.smallstock.addGestureRecognizer(small)
         
+        
+        let share = UITapGestureRecognizer(target: self, action:  #selector(self.shareAction))
+        self.sharelist.addGestureRecognizer(share)
+        
     }
     @objc func checkAction(sender : UITapGestureRecognizer) {
         // Do what you want
@@ -294,8 +299,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     }
     
     @objc func paymeAction(sender : UITapGestureRecognizer) {
-        // Do what you want
-//        buy()
+
         setJump(type: "iap")
 
     }
@@ -321,7 +325,10 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         setToast(s: "下個版本將推出")
             
           }
-    
+    @objc func shareAction(sender : UITapGestureRecognizer) {
+        setJump(type: "share")
+
+          }
     
     
 
