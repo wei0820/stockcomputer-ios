@@ -17,5 +17,8 @@ class AddNewsViewController: MGoogleADViewController {
     }
     
 
-
+    @IBAction func closeview(_ sender: Any) {
+        dissmissView()
+    }
+    
 }

@@ -30,6 +30,7 @@ class ShareListViewController: MGoogleADViewController {
                   let controller = UIAlertController(title: "您的身份為訪客", message:"建議正式登入避免資料消失,是否繼續操作", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "是", style: .default) { (_) in
                     print("Jack",self.getUserID())
+                    self.setJump(type: "addnews")
 
                              }
               controller.addAction(okAction)
