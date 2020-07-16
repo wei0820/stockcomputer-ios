@@ -8,8 +8,11 @@
 
 import UIKit
 import JJFloatingActionButton
+import CLImagePickerTool
+
 class ShareListViewController: MGoogleADViewController {
     
+          var imageArr = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "股票討論分享區"
@@ -41,7 +44,7 @@ class ShareListViewController: MGoogleADViewController {
                 
             }
 
-            
+        
             
             
             
@@ -49,13 +52,10 @@ class ShareListViewController: MGoogleADViewController {
         
         actionButton.addItem(title: "歷史紀錄", image: UIImage(named: "menu_black")?.withRenderingMode(.alwaysTemplate)) { item in
             
-            if(self.checkIsMember() == false){
-                self.setMemberAlert()
-            }else{
-                self.setAlertDilog()
 
-            }
+               
             // do something
+        
         }
         
         actionButton.addItem(title: "會員資訊", image: UIImage(named: "money_black")?.withRenderingMode(.alwaysTemplate)) { item in
@@ -76,7 +76,9 @@ class ShareListViewController: MGoogleADViewController {
         }
         
         actionButton.addItem(title: "規範", image: UIImage(named: "report_black")?.withRenderingMode(.alwaysTemplate)) { item in
-            
+            self.imageArr.forEach { (UIImage) in
+                print("Jack",UIImage.accessibilityIdentifier)
+            }
             // do something
         }
         

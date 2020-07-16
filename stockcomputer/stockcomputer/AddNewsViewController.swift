@@ -7,13 +7,15 @@
 //
 
 import UIKit
-
+import CLImagePickerTool
 class AddNewsViewController: MGoogleADViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // superVC 当前的控制器 MaxImagesCount最多选择的照片数量
+  
     }
     
 
