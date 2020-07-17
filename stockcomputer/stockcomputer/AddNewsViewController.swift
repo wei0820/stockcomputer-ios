@@ -11,12 +11,20 @@ import CLImagePickerTool
 import FirebaseStorage
 import FirebaseDatabase
 class AddNewsViewController: MGoogleADViewController{
-
+    @IBOutlet weak var numbetTF: UITextField!
+    
+    @IBOutlet weak var nameTF: UITextField!
+    
+    @IBOutlet weak var messageTV: UITextView!
+    
+    @IBOutlet weak var responseTv: UITextView!
+    var photoarray: Array<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         // superVC 当前的控制器 MaxImagesCount最多选择的照片数量
+        responseTv.isEditable = false
   
     }
     
@@ -76,7 +84,6 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
         // 可以自動產生一組獨一無二的 ID 號碼，方便等一下上傳圖片的命名
               let uniqueString = NSUUID().uuidString
         let useid :String = userDefaults.string(forKey: "userID") as! String
-              print("Jack",uniqueString)
 
               // 當判斷有 selectedImage 時，我們會在 if 判斷式裡將圖片上傳
               if let selectedImage = selectedImageFromPicker {
@@ -101,7 +108,10 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
                               guard let downloadUrl = url else{
                                  return
                               }
-                              print("Jack",downloadUrl)
+                            self.photoarray.append(downloadUrl.absoluteString)
+//                            self.responseTv.text = "已上傳圖片:\n" + downloadUrl.absoluteString
+//                            print("Jack",downloadUrl.absoluteString)
+
                           }
           
                       })

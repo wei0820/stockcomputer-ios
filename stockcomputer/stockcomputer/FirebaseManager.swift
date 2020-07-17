@@ -598,13 +598,8 @@ class FirebaseManager {
     }
     
     // 我要報明牌
-    static  func  setShareStock(){
-        
-        var  id = self.getMemberId()
-               if ( id == nil){
-                   id =  UiManager.getUUID()
-               }
-        var date = DateManager.getDateString2()
+    static  func  setShareStock(id:String,number:String,name:String,message:String,url:String){
+                var date = DateManager.getDateString2()
         let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child(id as! String).child(date as! String)
         let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
         let dateReviewReference = reference.child(id)
@@ -613,30 +608,6 @@ class FirebaseManager {
         dateReview["id"] = id as AnyObject
         dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
         
-          if(getVersion().isEmpty){
-              let dictionary = Bundle.main.infoDictionary!
-              let app_version = dictionary["CFBundleShortVersionString"] as! String
-              dateReview["version"] = app_version  as AnyObject
-              
-          }else{
-              let dictionary = Bundle.main.infoDictionary!
-              let app_version = dictionary["CFBundleShortVersionString"] as! String
-              var userDouble :Double  = Double(getVersion()) as! Double
-              let newDouble  :Double  = Double(app_version)  as! Double
-        
-
-              if(userDouble < newDouble){
-
-                  dateReview["version"] = app_version  as AnyObject
-
-              }else{
-
-                  dateReview["version"] = getVersion()  as AnyObject
-
-              }
-              
-              
-          }
         dateReviewReference.updateChildValues(dateReview) { (err, ref) in
             if err != nil{
                 print("err： \(err!)")
