@@ -25,6 +25,7 @@ class AddNewsViewController: MGoogleADViewController{
         // Do any additional setup after loading the view.
         // superVC 当前的控制器 MaxImagesCount最多选择的照片数量
         responseTv.isEditable = false
+    
   
     }
     
@@ -109,8 +110,13 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
                                  return
                               }
                             self.photoarray.append(downloadUrl.absoluteString)
-//                            self.responseTv.text = "已上傳圖片:\n" + downloadUrl.absoluteString
+                            if(self.photoarray.count != 0 ){
+                                self.responseTv.text = "已上傳圖片數量:" + String(self.photoarray.count)
+
+                            }
+                         
 //                            print("Jack",downloadUrl.absoluteString)
+                            
 
                           }
           
