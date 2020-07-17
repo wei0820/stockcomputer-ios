@@ -32,7 +32,6 @@ class ShareListViewController: MGoogleADViewController {
             if(self.checkIsMember() == false){
                   let controller = UIAlertController(title: "您的身份為訪客", message:"建議正式登入避免資料消失,是否繼續操作", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "是", style: .default) { (_) in
-                    print("Jack",self.getUserID())
                     self.setJump(type: "addnews")
 
                              }
@@ -76,9 +75,7 @@ class ShareListViewController: MGoogleADViewController {
         }
         
         actionButton.addItem(title: "規範", image: UIImage(named: "report_black")?.withRenderingMode(.alwaysTemplate)) { item in
-            self.imageArr.forEach { (UIImage) in
-                print("Jack",UIImage.accessibilityIdentifier)
-            }
+        
             // do something
         }
         
@@ -111,5 +108,6 @@ class ShareListViewController: MGoogleADViewController {
         present(controller, animated: true, completion: nil)
         
     }
+    
     
 }
