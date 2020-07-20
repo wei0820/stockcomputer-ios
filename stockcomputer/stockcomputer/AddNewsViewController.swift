@@ -61,6 +61,7 @@ class AddNewsViewController: MGoogleADViewController,UITextFieldDelegate{
          self.view.endEditing(true)
      }
     @IBAction func sharebtn(_ sender: Any) {
+        closeKeyBoard()
         
         let useid :String = userDefaults.string(forKey: "userID") as! String
         
@@ -87,6 +88,8 @@ class AddNewsViewController: MGoogleADViewController,UITextFieldDelegate{
                      FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2:photoarray[1], url_3: photoarray[2])
                 
             }
+            
+            setAlert()
         }
         
        
@@ -200,7 +203,16 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
         dismiss(animated: true, completion: nil)
     }
     
-    
+    func setAlert(){
+        
+        let controller = UIAlertController(title: "訊息通知", message:"您的發文已經發布！！", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "好的", style: .default) { (_) in
+        self.dissmissView()
+                   }
+                   controller.addAction(okAction)
+                
+                   present(controller, animated: true, completion: nil)
+    }
     
 }
     
