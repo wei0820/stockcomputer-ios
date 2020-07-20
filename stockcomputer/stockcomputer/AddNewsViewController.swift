@@ -10,7 +10,7 @@ import UIKit
 import CLImagePickerTool
 import FirebaseStorage
 import FirebaseDatabase
-class AddNewsViewController: MGoogleADViewController{
+class AddNewsViewController: MGoogleADViewController,UITextFieldDelegate{
     @IBOutlet weak var numbetTF: UITextField!
     
     @IBOutlet weak var nameTF: UITextField!
@@ -26,10 +26,58 @@ class AddNewsViewController: MGoogleADViewController{
         // superVC 当前的控制器 MaxImagesCount最多选择的照片数量
         responseTv.isEditable = false
     
+        numbetTF.clearButtonMode = .whileEditing
+        numbetTF.returnKeyType = .done
+        numbetTF.keyboardType = .default
+
+        nameTF.clearButtonMode = .whileEditing
+        nameTF.returnKeyType = .done
+        nameTF.keyboardType = .default
+        
+        messageTV.keyboardType = .default
+        messageTV.returnKeyType = .done
+        
+        
+        numbetTF.delegate = self
+        nameTF.delegate = self
+
+        
   
     }
     
+    func closeKeyBoard(){
+        numbetTF.resignFirstResponder()
+        nameTF.resignFirstResponder()
+        messageTV.resignFirstResponder()
+    }
+    
+    // 按下Return後會反應的事件
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            //利用此方式讓按下Return後會Toogle 鍵盤讓它消失
+            textField.resignFirstResponder()
+            return false
+        }
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         self.view.endEditing(true)
+     }
+    @IBAction func sharebtn(_ sender: Any) {
+        
+        let useid :String = userDefaults.string(forKey: "userID") as! String
+        
+        if(numbetTF.text == "" || nameTF.text == "" || messageTV.text == ""){
+            setToast(s: "請檢查是否有遺漏的！！")
 
+        }else{
+            photoarray.forEach { (url) in
+                print("Jack",url)
+            }
+        }
+        
+       
+        
+
+    }
+    
     @IBAction func closeview(_ sender: Any) {
         dissmissView()
     }
@@ -85,6 +133,14 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
         // 可以自動產生一組獨一無二的 ID 號碼，方便等一下上傳圖片的命名
               let uniqueString = NSUUID().uuidString
         let useid :String = userDefaults.string(forKey: "userID") as! String
+        
+        
+        if(self.photoarray.count >= 3 ){
+            setToast(s: "超過可以上傳圖片上限！！")
+            return
+            
+
+                              }
 
               // 當判斷有 selectedImage 時，我們會在 if 判斷式裡將圖片上傳
               if let selectedImage = selectedImageFromPicker {
@@ -127,6 +183,9 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    
 }
     
 

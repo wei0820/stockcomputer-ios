@@ -598,7 +598,7 @@ class FirebaseManager {
     }
     
     // 我要報明牌
-    static  func  setShareStock(id:String,number:String,name:String,message:String,url:String){
+    static  func  setShareStock(id:String,number:String,name:String,message:String,url:String,url_2:String,url_3:String){
                 var date = DateManager.getDateString2()
         let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child(id as! String).child(date as! String)
         let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
@@ -606,7 +606,16 @@ class FirebaseManager {
         // 新增節點資料
         var dateReview: [String : AnyObject] = [String : AnyObject]()
         dateReview["id"] = id as AnyObject
-        dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
+        dateReview["number"]  = number as AnyObject
+        dateReview["name"]  = name as AnyObject
+        dateReview["message"]  = message as AnyObject
+        dateReview["url"]  = url as AnyObject
+        dateReview["url_2"]  = url_2 as AnyObject
+        dateReview["url_3"]  = url_3 as AnyObject
+
+
+
+
         
         dateReviewReference.updateChildValues(dateReview) { (err, ref) in
             if err != nil{
