@@ -6,6 +6,7 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
+  - CLImagePickerTool (3.1.3)
   - CVCalendar (1.6.2)
   - FBSDKCoreKit (6.5.2):
     - FBSDKCoreKit/Basics (= 6.5.2)
@@ -236,6 +237,7 @@ PODS:
 DEPENDENCIES:
   - AAInfographics (from `https://github.com/AAChartModel/AAChartKit-Swift.git`)
   - Alamofire (~> 4.0.0-beta.4)
+  - CLImagePickerTool
   - CVCalendar (~> 1.6.2)
   - FBSDKCoreKit/Swift
   - FBSDKLoginKit/Swift
@@ -271,6 +273,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AppAuth
+    - CLImagePickerTool
     - CVCalendar
     - FBSDKCoreKit
     - FBSDKLoginKit
@@ -336,6 +339,7 @@ SPEC CHECKSUMS:
   AAInfographics: bbeed03caece4ee3b5e557d734967394e9bcdb11
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  CLImagePickerTool: 2ef59c6524efd493571a0ee2bc42f445b4c5b2cb
   CVCalendar: 515092247b9c5059855643c2a2220f259bd5417f
   FBSDKCoreKit: ada5c8a05188daefc9addb985c52b8a1b26da519
   FBSDKLoginKit: caa165495afa29a12324cb2307fe6e5b33783142
@@ -388,6 +392,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
 
-PODFILE CHECKSUM: d305a774da743e81a6f55d4577d86a5cffec79b5
+PODFILE CHECKSUM: cafba293860cfed0a614e4996f4f09f7b38db260
 
 COCOAPODS: 1.9.3
