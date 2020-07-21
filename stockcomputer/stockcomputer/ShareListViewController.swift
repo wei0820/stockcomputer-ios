@@ -9,18 +9,41 @@
 import UIKit
 import JJFloatingActionButton
 import CLImagePickerTool
+import FirebaseDatabase
 
-class ShareListViewController: MGoogleADViewController {
-    
+class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UITableViewDataSource{
+    @IBOutlet weak var tableview: UITableView!
+    var shareview: [ShareStockItem] = [ShareStockItem]()
           var imageArr = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "股票討論分享區"
         // Do any additional setup after loading the view.
         setActionButton()
-        FirebaseManager.getshareStockData()
+
+
         
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child("ShareStock")
+                 
+                 reference.queryOrderedByKey().observe(.value, with: { snapshot in
+                     if snapshot.childrenCount > 0 {
+                         
+                         for item in snapshot.children {
+                             let data = ShareStockItem(snapshot: item as! DataSnapshot)
+                             print("Jack",data.id)
+                             print("Jack",data.name)
+                            self.shareview.append(data)
+                             
+                         }
+                        self.tableview.reloadData()
+
+                         
+                     }
+                     
+                 })
+
     }
     
     func  setActionButton() -> Void{
@@ -108,6 +131,20 @@ class ShareListViewController: MGoogleADViewController {
         present(controller, animated: true, completion: nil)
         
     }
+    // MARK: - DataSource
+    // ---------------------------------------------------------------------
+    // 設定表格section的列數
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.shareview.count
+    }
     
+    // 表格的儲存格設定
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "Cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,for:indexPath)
+        var index = indexPath.row + 1
+        cell.textLabel?.text = "分享標的:\t" + shareview[indexPath.row].number + "\t" + shareview[indexPath.row].name
+        cell.detailTextLabel?.text =   "分享原因:\t" + shareview[indexPath.row].message
+        return cell    }
     
 }
