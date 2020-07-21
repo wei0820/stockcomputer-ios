@@ -18,7 +18,7 @@ class ShareListViewController: MGoogleADViewController {
         title = "股票討論分享區"
         // Do any additional setup after loading the view.
         setActionButton()
-        
+        FirebaseManager.getshareStockData()
         
         
     }
