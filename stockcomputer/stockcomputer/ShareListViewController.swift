@@ -20,14 +20,15 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
         title = "股票討論分享區"
         // Do any additional setup after loading the view.
         setActionButton()
-
-
+        getData()
         
     }
-    override func viewWillAppear(_ animated: Bool) {
+    func  getData(){
+        shareview.removeAll()
+
         let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child("ShareStock")
                  
-                 reference.queryOrderedByKey().observe(.value, with: { snapshot in
+        reference.queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
                      if snapshot.childrenCount > 0 {
                          
                          for item in snapshot.children {
@@ -37,14 +38,37 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
                             self.shareview.append(data)
                              
                          }
-                        self.tableview.reloadData()
+                        self.shareview.reverse()
 
+                        self.tableview.reloadData()
                          
                      }
                      
                  })
-
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        shareview.removeAll()
+//
+//      let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child("ShareStock")
+//
+//                   reference.queryOrderedByKey().observe(.value, with: { snapshot in
+//                       if snapshot.childrenCount > 0 {
+//
+//                           for item in snapshot.children {
+//                               let data = ShareStockItem(snapshot: item as! DataSnapshot)
+//                               print("Jack",data.id)
+//                               print("Jack",data.name)
+//                              self.shareview.append(data)
+//
+//                           }
+//
+//                        self.tableview.endUpdates()
+//
+//                       }
+//
+//                   })
+//
+//    }
     
     func  setActionButton() -> Void{
         
@@ -142,9 +166,11 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,for:indexPath)
-        var index = indexPath.row + 1
         cell.textLabel?.text = "分享標的:\t" + shareview[indexPath.row].number + "\t" + shareview[indexPath.row].name
         cell.detailTextLabel?.text =   "分享原因:\t" + shareview[indexPath.row].message
-        return cell    }
+        return cell
+        
+    }
+    
     
 }
