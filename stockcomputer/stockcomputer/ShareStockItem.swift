@@ -19,7 +19,10 @@ struct ShareStockItem {
     var url_3 :String
     var uuid : String
     var date : String
-
+    var like :Int
+    var unlike :Int
+    var usermessage :String
+    var key : String
     
     init(snapshot: DataSnapshot) {
         print(snapshot)
@@ -35,6 +38,11 @@ struct ShareStockItem {
         self.url_3 = snapshotValue["url_3"] as! String
         self.uuid = snapshotValue["uuid"] as! String
         self.date = snapshotValue["date"] as! String
+        self.like = snapshotValue["like"] as! Int
+        self.unlike = snapshotValue["unlike"] as! Int
+        self.usermessage = snapshotValue["usermessage"] as! String
+        self.key = snapshotValue["key"] as! String
+
 
     }
 

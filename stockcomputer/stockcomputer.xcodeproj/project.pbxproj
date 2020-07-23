@@ -35,6 +35,7 @@
 		8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7983236ACE8E00E569C2 /* TimerManager.swift */; };
 		8ED1CB4B244856570050B5A4 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1CB4A244856570050B5A4 /* SelectViewController.swift */; };
 		8ED629F224C6C6DE00908253 /* ShareStockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED629F124C6C6DE00908253 /* ShareStockItem.swift */; };
+		8ED629F724C8079300908253 /* ShareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED629F624C8079300908253 /* ShareDetailViewController.swift */; };
 		8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BB2420671300260E25 /* GetStockPriceManger.swift */; };
 		8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BD242070EA00260E25 /* StockListViewController.swift */; };
 		8ED642C224209F1600260E25 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C124209F1600260E25 /* StockData.swift */; };
@@ -90,6 +91,7 @@
 		8EBF7983236ACE8E00E569C2 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		8ED1CB4A244856570050B5A4 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		8ED629F124C6C6DE00908253 /* ShareStockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareStockItem.swift; sourceTree = "<group>"; };
+		8ED629F624C8079300908253 /* ShareDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDetailViewController.swift; sourceTree = "<group>"; };
 		8ED642BB2420671300260E25 /* GetStockPriceManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStockPriceManger.swift; sourceTree = "<group>"; };
 		8ED642BD242070EA00260E25 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
 		8ED642C124209F1600260E25 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				8EB8B6BE2484D5D500F14AEE /* IAPurchaseViewControllerDelegate.swift */,
 				8E485E8F24BE9EAF005E718E /* AddNewsViewController.swift */,
 				8ED629F124C6C6DE00908253 /* ShareStockItem.swift */,
+				8ED629F624C8079300908253 /* ShareDetailViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				8E485E9024BE9EAF005E718E /* AddNewsViewController.swift in Sources */,
 				B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */,
 				8E898F1E2462BDEC0072E3AA /* OtherViewController.swift in Sources */,
+				8ED629F724C8079300908253 /* ShareDetailViewController.swift in Sources */,
 				B74F5301220556340034DC5D /* AppDelegate.swift in Sources */,
 				8ED642C62421F1E700260E25 /* ForeignInvestmentViewController.swift in Sources */,
 				8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */,
