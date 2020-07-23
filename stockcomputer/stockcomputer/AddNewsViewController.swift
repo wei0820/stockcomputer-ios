@@ -72,21 +72,21 @@ class AddNewsViewController: MGoogleADViewController,UITextFieldDelegate{
             var name : String =  nameTF.text!
             var number :String  = numbetTF.text!
             var message : String = messageTV.text!
-            
+
             if(photoarray.count == 0){
                 setToast(s: "至少上傳一張照片")
 
             }else if(photoarray.count == 1){
-                FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2: "", url_3: "")
-                
-                
+                FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2: "", url_3: "",like: 0,unlike: 0,usermessage: "")
+
+
             }else if(photoarray.count == 2){
-                FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2:photoarray[1], url_3: "")
-                   
-                
+                FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2:photoarray[1], url_3: "",like: 0,unlike: 0,usermessage: "")
+
+
             }else if(photoarray.count == 3){
-                     FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2:photoarray[1], url_3: photoarray[2])
-                
+                     FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2:photoarray[1], url_3: photoarray[2],like: 0,unlike: 0,usermessage: "")
+
             }
             
             setAlert()

@@ -598,7 +598,7 @@ class FirebaseManager {
     }
     
     // 我要報明牌
-    static  func  setShareStock(id:String,number:String,name:String,message:String,url:String,url_2:String,url_3:String,like:String,unlike:String,usermessage:String){
+    static  func  setShareStock(id:String,number:String,name:String,message:String,url:String,url_2:String,url_3:String,like:Int,unlike:Int,usermessage:String){
         let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child("ShareStock")
         let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
         let dateReviewReference = reference.child(childRef.key!)
@@ -616,6 +616,8 @@ class FirebaseManager {
         dateReview["like"]  = like as AnyObject
         dateReview["unlike"]  = unlike as AnyObject
         dateReview["usermessage"]  = usermessage as AnyObject
+        dateReview["key"]  = childRef.key as AnyObject
+
 
 
 
@@ -644,8 +646,7 @@ class FirebaseManager {
                     
                     for item in snapshot.children {
                         let data = ShareStockItem(snapshot: item as! DataSnapshot)
-                        print("Jack",data.id)
-                        print("Jack",data.name)
+                    
 
                         
                     }
@@ -655,5 +656,27 @@ class FirebaseManager {
                 
             })
      }
+    static  func  updateToFirebase(key:String,id:String,number:String,name:String,message:String,
+                                   url :String,url_2:String,url_3:String,like:String,unlike:String,usermessage:String,date:String,uuid:String){
+
+        let post = [
+                "key":key,
+                "id" : id,
+                "number": number,
+                "name": name,
+                "date": date,
+                "message":message,
+                "url":url,
+                "url_2":url_2,
+                "url_3":url_3,
+                "uuid":uuid,
+                "like":like,
+                "unlike":unlike,
+                "usermessage":usermessage
+        ]
+    let childUpdates = ["/ShareStock/ShareStock/\(key)": post]
+    Database.database().reference().updateChildValues(childUpdates)
+//
+    }
 }
 
