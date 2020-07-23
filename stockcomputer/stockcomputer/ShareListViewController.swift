@@ -24,17 +24,15 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
         
     }
     func  getData(){
-        shareview.removeAll()
 
         let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child("ShareStock")
                  
-        reference.queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
+        reference.queryOrderedByKey().observe(.value, with: { snapshot in
                      if snapshot.childrenCount > 0 {
-                         
+                        self.shareview.removeAll()
+
                          for item in snapshot.children {
                              let data = ShareStockItem(snapshot: item as! DataSnapshot)
-                             print("Jack",data.id)
-                             print("Jack",data.name)
                             self.shareview.append(data)
                              
                          }
@@ -46,29 +44,7 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
                      
                  })
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        shareview.removeAll()
-//
-//      let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child("ShareStock")
-//
-//                   reference.queryOrderedByKey().observe(.value, with: { snapshot in
-//                       if snapshot.childrenCount > 0 {
-//
-//                           for item in snapshot.children {
-//                               let data = ShareStockItem(snapshot: item as! DataSnapshot)
-//                               print("Jack",data.id)
-//                               print("Jack",data.name)
-//                              self.shareview.append(data)
-//
-//                           }
-//
-//                        self.tableview.endUpdates()
-//
-//                       }
-//
-//                   })
-//
-//    }
+
     
     func  setActionButton() -> Void{
         
@@ -171,6 +147,34 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
         return cell
         
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          tableView.deselectRow(
+              at: indexPath, animated: true)
+        performSegue(withIdentifier: "sd", sender: nil)
+
+
+         
+      }
     
-    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "sd"{
+            if let index = tableview.indexPathForSelectedRow{
+                let secondCV = segue.destination as! ShareDetailViewController
+                secondCV.id =  shareview[index.row].id
+                secondCV.name =  shareview[index.row].name
+                secondCV.number =  shareview[index.row].number
+                secondCV.message =  shareview[index.row].message
+                secondCV.url =  shareview[index.row].url
+                secondCV.url_2 =  shareview[index.row].url_2
+                secondCV.url_3 =  shareview[index.row].url_3
+                secondCV.date =  shareview[index.row].date
+
+
+                
+            }
+            
+            
+        }
+         
+     }
 }
