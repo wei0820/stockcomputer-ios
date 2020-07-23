@@ -150,14 +150,14 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
           tableView.deselectRow(
               at: indexPath, animated: true)
-        performSegue(withIdentifier: "sd", sender: nil)
+        performSegue(withIdentifier: "sharedetail", sender: nil)
 
 
          
       }
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "sd"{
+    if segue.identifier == "sharedetail"{
             if let index = tableview.indexPathForSelectedRow{
                 let secondCV = segue.destination as! ShareDetailViewController
                 secondCV.id =  shareview[index.row].id
@@ -168,7 +168,10 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
                 secondCV.url_2 =  shareview[index.row].url_2
                 secondCV.url_3 =  shareview[index.row].url_3
                 secondCV.date =  shareview[index.row].date
+                
+                print("Jack","jump")
 
+                print("Jack",shareview[index.row].date)
 
                 
             }
