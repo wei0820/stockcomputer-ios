@@ -21,9 +21,18 @@ class ShareDetailViewController: MGoogleADViewController {
     @IBOutlet weak var share: UIButton!
     
     @IBAction func sharebtn(_ sender: Any) {
+        var shareNumber :String =  "代號" + number
+        var shareName :String = "名稱:" + name
+        var shareMessage :String = "分享原因:" + message
+        var sharePhoto =  URL(string: url)
+        var sharePhoto_2 = URL(string: url_2)
+        var sharePhoto_3 =  URL(string: url_3)
+        var downloadUrl =  "下載連結:https://apps.apple.com/tw/app/%E8%82%A1%E7%A5%A8%E7%8D%B2%E5%88%A9%E8%A8%88%E7%AE%97%E6%A9%9F/id1459476279"
+
+
         
         
-        let activityViewController = UIActivityViewController(activityItems: [name,message,URL(string: url)], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [shareNumber,shareName,shareMessage,sharePhoto,sharePhoto_2,sharePhoto_3,downloadUrl], applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
     }
     @IBAction func unlikebtn(_ sender: Any) {
@@ -55,10 +64,10 @@ class ShareDetailViewController: MGoogleADViewController {
     }
     
     func setView(){
-        numberLabel.text = number
-        nameLabel.text = name
-        messageLabel.text = message
-        dateLabel.text = date
+        numberLabel.text = "代號" + number
+        nameLabel.text = "名稱:" + name
+        messageLabel.text = "分享原因:" + message
+        dateLabel.text = "分享日期:" + date
         
         
         
