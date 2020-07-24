@@ -72,13 +72,13 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
             
         }
         
-        actionButton.addItem(title: "歷史紀錄", image: UIImage(named: "menu_black")?.withRenderingMode(.alwaysTemplate)) { item in
-            
-
-               
-            // do something
-        
-        }
+//        actionButton.addItem(title: "歷史紀錄", image: UIImage(named: "menu_black")?.withRenderingMode(.alwaysTemplate)) { item in
+//
+//
+//
+//            // do something
+//
+//        }
         
         actionButton.addItem(title: "會員資訊", image: UIImage(named: "money_black")?.withRenderingMode(.alwaysTemplate)) { item in
             if(self.checkIsMember() == false){
@@ -97,14 +97,14 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
             // do something
         }
         
-        actionButton.addItem(title: "規範", image: UIImage(named: "report_black")?.withRenderingMode(.alwaysTemplate)) { item in
+        actionButton.addItem(title: "發文規範", image: UIImage(named: "report_black")?.withRenderingMode(.alwaysTemplate)) { item in
         
             // do something
         }
         
         view.addSubview(actionButton)
-        actionButton.itemAnimationConfiguration = .circularSlideIn(withRadius: 160)
-        actionButton.buttonAnimationConfiguration = .rotation(toAngle: .pi * 3 / 4)
+        actionButton.itemAnimationConfiguration = .circularSlideIn(withRadius: 125)
+        actionButton.buttonAnimationConfiguration = .rotation(toAngle: .pi * 3 / 3)
         actionButton.buttonAnimationConfiguration.opening.duration = 0.8
         actionButton.buttonAnimationConfiguration.closing.duration = 0.6
         

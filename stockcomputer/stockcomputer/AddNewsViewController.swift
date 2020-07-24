@@ -18,6 +18,12 @@ class AddNewsViewController: MGoogleADViewController,UITextFieldDelegate{
     @IBOutlet weak var messageTV: UITextView!
     
     @IBOutlet weak var responseTv: UITextView!
+    
+    
+    @IBOutlet weak var add_btn: UIButton!
+    
+    
+    
     var photoarray: Array<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,7 @@ class AddNewsViewController: MGoogleADViewController,UITextFieldDelegate{
         
         numbetTF.delegate = self
         nameTF.delegate = self
+        add_btn.isHidden = true
 
         
   
@@ -173,7 +180,6 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
                           if error != nil {
                               
                               // 若有接收到錯誤，我們就直接印在 Console 就好，在這邊就不另外做處理。
-                              print("Jack" ,(error!.localizedDescription))
                               return
                           }
                     
@@ -187,6 +193,8 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
                             self.photoarray.append(downloadUrl.absoluteString)
                             if(self.photoarray.count != 0 ){
                                 self.responseTv.text = "已上傳圖片數量:" + String(self.photoarray.count)
+                                self.closeKeyBoard()
+                                self.add_btn.isHidden = false
 
                             }
                          

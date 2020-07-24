@@ -630,7 +630,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvq-bv-h9s">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvq-bv-h9s" userLabel="發佈文章">
                                 <rect key="frame" x="16" y="519" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="95O-wK-60u"/>
@@ -671,6 +671,7 @@
                         <viewLayoutGuide key="safeArea" id="K3i-Hd-KIf"/>
                     </view>
                     <connections>
+                        <outlet property="add_btn" destination="Bvq-bv-h9s" id="1Xm-j3-Y9h"/>
                         <outlet property="messageTV" destination="PTL-Ar-eZp" id="uNy-CR-kiF"/>
                         <outlet property="nameTF" destination="Pco-81-AoH" id="WJi-vr-Rz2"/>
                         <outlet property="numbetTF" destination="o0m-fb-1WB" id="ZhQ-ga-ecs"/>

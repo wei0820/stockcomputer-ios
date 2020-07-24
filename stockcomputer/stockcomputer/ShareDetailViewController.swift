@@ -54,7 +54,6 @@ class ShareDetailViewController: MGoogleADViewController {
         
         
         
-        
         setImage(photo: url, imgeview: imag)
         setImage(photo: url_2, imgeview: image_2)
         setImage(photo: url_3, imgeview: image_3)
@@ -73,6 +72,7 @@ class ShareDetailViewController: MGoogleADViewController {
                            imgeview.image = image
                        }
                    }
+            
         }
         
     }
