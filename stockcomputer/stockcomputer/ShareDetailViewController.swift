@@ -18,13 +18,21 @@ class ShareDetailViewController: MGoogleADViewController {
     var url_3 :String = ""
     var uuid : String = ""
     var date : String = ""
+    @IBOutlet weak var share: UIButton!
     
+    @IBAction func sharebtn(_ sender: Any) {
+        
+        
+        let activityViewController = UIActivityViewController(activityItems: [name,message,URL(string: url)], applicationActivities: nil)
+        self.present(activityViewController, animated: true, completion: nil)
+    }
     @IBAction func unlikebtn(_ sender: Any) {
     }
     
     @IBOutlet weak var unlikelabe: UILabel!
     
     @IBAction func likebtn(_ sender: Any) {
+
     }
     
     @IBOutlet weak var likelabel: UILabel!

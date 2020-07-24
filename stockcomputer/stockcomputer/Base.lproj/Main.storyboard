@@ -3697,6 +3697,17 @@
                                                     <constraint firstAttribute="height" constant="200" id="GlW-zC-hGu"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-a5-AT8">
+                                                <rect key="frame" x="16" y="15" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="0iK-v9-ihC"/>
+                                                    <constraint firstAttribute="height" constant="30" id="yAa-P6-sHm"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="share"/>
+                                                <connections>
+                                                    <action selector="sharebtn:" destination="9Wt-lH-rJK" eventType="touchUpInside" id="ty0-un-YF7"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -3708,8 +3719,10 @@
                                             <constraint firstItem="VUg-HN-3dq" firstAttribute="leading" secondItem="IMt-DE-QA9" secondAttribute="leading" constant="16" id="AQa-lP-jk5"/>
                                             <constraint firstItem="IMt-DE-QA9" firstAttribute="trailing" secondItem="6nh-Sl-xn2" secondAttribute="trailing" constant="16" id="BlD-Lt-Skf"/>
                                             <constraint firstItem="Zl4-3D-tYt" firstAttribute="top" secondItem="4SD-l9-CIA" secondAttribute="bottom" constant="18" id="C1D-RX-Z1t"/>
+                                            <constraint firstItem="v0A-a5-AT8" firstAttribute="top" secondItem="IMt-DE-QA9" secondAttribute="top" constant="15" id="Cjc-XI-WWr"/>
                                             <constraint firstItem="IMt-DE-QA9" firstAttribute="trailing" secondItem="sgQ-Kb-5bF" secondAttribute="trailing" constant="16" id="Dvh-yG-E2F"/>
                                             <constraint firstItem="Zl4-3D-tYt" firstAttribute="leading" secondItem="IMt-DE-QA9" secondAttribute="leading" constant="16" id="Ejx-4F-0RM"/>
+                                            <constraint firstItem="v0A-a5-AT8" firstAttribute="leading" secondItem="IMt-DE-QA9" secondAttribute="leading" constant="16" id="HOB-o1-q4q"/>
                                             <constraint firstItem="fFa-eK-arR" firstAttribute="leading" secondItem="uua-I2-EFv" secondAttribute="trailing" constant="8" id="HRo-QC-OFa"/>
                                             <constraint firstItem="IMt-DE-QA9" firstAttribute="trailing" secondItem="VUg-HN-3dq" secondAttribute="trailing" constant="16" id="Kbv-aK-HNu"/>
                                             <constraint firstItem="sgQ-Kb-5bF" firstAttribute="leading" secondItem="IMt-DE-QA9" secondAttribute="leading" constant="16" id="NPs-AV-45T"/>
@@ -3758,6 +3771,7 @@
                         <outlet property="messageLabel" destination="Zl4-3D-tYt" id="XtC-db-24A"/>
                         <outlet property="nameLabel" destination="4SD-l9-CIA" id="aXy-vb-AyJ"/>
                         <outlet property="numberLabel" destination="6nh-Sl-xn2" id="kps-fG-d6l"/>
+                        <outlet property="share" destination="v0A-a5-AT8" id="w77-7s-kBh"/>
                         <outlet property="unlikelabe" destination="fFa-eK-arR" id="Rm2-WD-TuG"/>
                     </connections>
                 </viewController>
@@ -5992,6 +6006,7 @@
         <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <image name="port" width="32" height="32"/>
         <image name="round_settings_voice_black_48pt" width="48" height="48"/>
+        <image name="share" width="36" height="36"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="star.lefthalf.fill" catalog="system" width="128" height="116"/>
