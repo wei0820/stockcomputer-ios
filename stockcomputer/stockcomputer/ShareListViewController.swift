@@ -98,7 +98,10 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
         }
         
         actionButton.addItem(title: "發文規範", image: UIImage(named: "report_black")?.withRenderingMode(.alwaysTemplate)) { item in
-        
+        let controller = UIAlertController(title: "發文規範", message:"本討論區只提供分享,請勿發表帶風向,人身攻擊,招收會員,招收群組等 違規的文章 如發現違規文章 將刪除該文章", preferredStyle: .alert)
+          let okAction = UIAlertAction(title: "好的", style: .default,handler: nil)
+                    controller.addAction(okAction)
+          self.present(controller, animated: true, completion: nil)
             // do something
         }
         
