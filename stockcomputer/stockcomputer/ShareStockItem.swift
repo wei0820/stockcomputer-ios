@@ -19,8 +19,8 @@ struct ShareStockItem {
     var url_3 :String
     var uuid : String
     var date : String
-    var like :Int
-    var unlike :Int
+    var like :String
+    var unlike :String
     var usermessage :String
     var key : String
     
@@ -38,8 +38,8 @@ struct ShareStockItem {
         self.url_3 = snapshotValue["url_3"] as! String
         self.uuid = snapshotValue["uuid"] as! String
         self.date = snapshotValue["date"] as! String
-        self.like = snapshotValue["like"] as! Int
-        self.unlike = snapshotValue["unlike"] as! Int
+        self.like = snapshotValue["like"] as! String
+        self.unlike = snapshotValue["unlike"] as! String
         self.usermessage = snapshotValue["usermessage"] as! String
         self.key = snapshotValue["key"] as! String
 

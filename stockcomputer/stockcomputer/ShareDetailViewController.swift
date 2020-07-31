@@ -18,6 +18,10 @@ class ShareDetailViewController: MGoogleADViewController {
     var url_3 :String = ""
     var uuid : String = ""
     var date : String = ""
+    var key : String = ""
+    var  like : String  = ""
+    var unLike : String = ""
+    var usermessage : String = ""
     @IBOutlet weak var share: UIButton!
     
     @IBAction func sharebtn(_ sender: Any) {
@@ -36,11 +40,43 @@ class ShareDetailViewController: MGoogleADViewController {
         self.present(activityViewController, animated: true, completion: nil)
     }
     @IBAction func unlikebtn(_ sender: Any) {
+        print("Jack",unLike)
+//        FirebaseManager.DeleteShareData(id: key)
+        var uplike :Int =  Int(unLike)!  + 1
+        unlikelabe.text = String(uplike)
+        if(Int(unLike)! >= 10){
+            
+            let controller = UIAlertController(title: "爛文章檢舉提醒", message: "是否要將該文章刪除 ?", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "好的", style: .default) { (_) in
+                FirebaseManager.DeleteShareData(id: self.key)
+                self.dissmissView()
+            }
+            controller.addAction(okAction)
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+            controller.addAction(cancelAction)
+            present(controller, animated: true, completion: nil)
+            
+            
+            
+            
+        }else{
+            FirebaseManager.updateToFirebase(key: key, id: id, number: number, name: name, message: message, url: url, url_2: url_2, url_3: url_3, like: String(like), unlike: String(uplike) , usermessage: usermessage, date: date, uuid: uuid)
+            
+        }
+        
+
+        
     }
     
     @IBOutlet weak var unlikelabe: UILabel!
     
     @IBAction func likebtn(_ sender: Any) {
+        print("Jack",like)
+        var uplike :Int =  Int(like)!  + 1
+        likelabel.text = String(uplike)
+
+        FirebaseManager.updateToFirebase(key: key, id: id, number: number, name: name, message: message, url: url, url_2: url_2, url_3: url_3, like: String(uplike), unlike: String(unLike) , usermessage: usermessage, date: date, uuid: uuid)
+
 
     }
     
@@ -74,6 +110,9 @@ class ShareDetailViewController: MGoogleADViewController {
         setImage(photo: url, imgeview: imag)
         setImage(photo: url_2, imgeview: image_2)
         setImage(photo: url_3, imgeview: image_3)
+        
+        likelabel.text = like
+        unlikelabe.text = unLike
 
 
         

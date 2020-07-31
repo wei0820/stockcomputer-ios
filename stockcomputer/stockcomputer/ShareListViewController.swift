@@ -10,6 +10,8 @@ import UIKit
 import JJFloatingActionButton
 import CLImagePickerTool
 import FirebaseDatabase
+import Firebase
+
 
 class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var tableview: UITableView!
@@ -53,16 +55,18 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
         actionButton.addItem(title: "新增", image: UIImage(named: "create")?.withRenderingMode(.alwaysTemplate)) { item in
             
             if(self.checkIsMember() == false){
-                  let controller = UIAlertController(title: "您的身份為訪客", message:"建議正式登入避免資料消失,是否繼續操作", preferredStyle: .alert)
+                  let controller = UIAlertController(title: "您的身份為訪客", message:"建議正式登入避免資料消失,是否要正式登入", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "是", style: .default) { (_) in
-                    self.setJump(type: "addnews")
-
+                    self.setAlert()
+                    
                              }
               controller.addAction(okAction)
                 let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
                controller.addAction(cancelAction)
                 self.present(controller, animated: true, completion: nil)
             }else{
+                
+                self.setJump(type: "addnews")
                 
             }
 
@@ -171,6 +175,12 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
                 secondCV.url_2 =  shareview[index.row].url_2
                 secondCV.url_3 =  shareview[index.row].url_3
                 secondCV.date =  shareview[index.row].date
+                secondCV.key  = shareview[index.row].key
+                secondCV.like = shareview[index.row].like
+                secondCV.unLike = shareview[index.row].unlike
+                secondCV.uuid = shareview[index.row].uuid
+                secondCV.usermessage = shareview[index.row].usermessage
+                
                 
                 print("Jack","jump")
 
@@ -183,4 +193,33 @@ class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UI
         }
          
      }
+    func setAlert(){
+        let controller = UIAlertController(title: "訪客身份", message: "請先登入再使用", preferredStyle: .actionSheet)
+        let names = ["去登入"]
+        for name in names {
+            let user = Auth.auth().currentUser
+            
+            user?.delete { error in
+                if let error = error {
+                    // An error happened.
+                } else {
+                    // Account deleted.
+                }
+            }
+            self.userDefaults.set(nil, forKey: "userID")
+            
+            let action = UIAlertAction(title: name, style: .default) { (action) in
+                let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+                let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+                appDelegate.window?.rootViewController = HomeVc
+                
+            }
+            controller.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
+  
 }
