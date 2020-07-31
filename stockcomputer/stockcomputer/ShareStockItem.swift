@@ -25,9 +25,6 @@ struct ShareStockItem {
     var key : String
     
     init(snapshot: DataSnapshot) {
-        print(snapshot)
-        // 取出snapshot的值(JSON)
-        
         let snapshotValue: [String: AnyObject] = snapshot.value as! [String: AnyObject]
         self.id = snapshotValue["id"] as! String
         self.message = snapshotValue["message"] as! String
