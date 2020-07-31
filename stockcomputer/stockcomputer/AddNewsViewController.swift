@@ -28,8 +28,6 @@ class AddNewsViewController: MGoogleADViewController,UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        // superVC 当前的控制器 MaxImagesCount最多选择的照片数量
         responseTv.isEditable = false
     
         numbetTF.clearButtonMode = .whileEditing
@@ -198,7 +196,6 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
 
                             }
                          
-//                            print("Jack",downloadUrl.absoluteString)
                             
 
                           }
