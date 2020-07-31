@@ -598,7 +598,7 @@ class FirebaseManager {
     }
     
     // 我要報明牌
-    static  func  setShareStock(id:String,number:String,name:String,message:String,url:String,url_2:String,url_3:String,like:Int,unlike:Int,usermessage:String){
+    static  func  setShareStock(id:String,number:String,name:String,message:String,url:String,url_2:String,url_3:String,like:String,unlike:String,usermessage:String){
         let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child("ShareStock")
         let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
         let dateReviewReference = reference.child(childRef.key!)
@@ -676,7 +676,19 @@ class FirebaseManager {
         ]
     let childUpdates = ["/ShareStock/ShareStock/\(key)": post]
     Database.database().reference().updateChildValues(childUpdates)
-//
+    }
+    
+    static  func DeleteShareData(id: String){
+        // 刪除節點資料
+        
+        Database.database().reference().child("ShareStock").child("ShareStock").child(id as! String).removeValue { (error, ref) in
+            if error != nil{
+                print(error!)
+                return
+            }
+            print("remove data success...")
+            
+        }
     }
 }
 

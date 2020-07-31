@@ -18,6 +18,12 @@ class AddNewsViewController: MGoogleADViewController,UITextFieldDelegate{
     @IBOutlet weak var messageTV: UITextView!
     
     @IBOutlet weak var responseTv: UITextView!
+    
+    
+    @IBOutlet weak var add_btn: UIButton!
+    
+    
+    
     var photoarray: Array<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,7 @@ class AddNewsViewController: MGoogleADViewController,UITextFieldDelegate{
         
         numbetTF.delegate = self
         nameTF.delegate = self
+        add_btn.isHidden = true
 
         
   
@@ -77,15 +84,15 @@ class AddNewsViewController: MGoogleADViewController,UITextFieldDelegate{
                 setToast(s: "至少上傳一張照片")
 
             }else if(photoarray.count == 1){
-                FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2: "", url_3: "",like: 0,unlike: 0,usermessage: "")
+                FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2: "", url_3: "",like: "0",unlike: "0",usermessage: "")
 
 
             }else if(photoarray.count == 2){
-                FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2:photoarray[1], url_3: "",like: 0,unlike: 0,usermessage: "")
+                FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2:photoarray[1], url_3: "",like: "0",unlike: "0",usermessage: "")
 
 
             }else if(photoarray.count == 3){
-                     FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2:photoarray[1], url_3: photoarray[2],like: 0,unlike: 0,usermessage: "")
+                     FirebaseManager.setShareStock(id: useid, number: number, name: name, message: message, url: photoarray[0], url_2:photoarray[1], url_3: photoarray[2],like: "0",unlike: "0",usermessage: "")
 
             }
             
@@ -173,7 +180,6 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
                           if error != nil {
                               
                               // 若有接收到錯誤，我們就直接印在 Console 就好，在這邊就不另外做處理。
-                              print("Jack" ,(error!.localizedDescription))
                               return
                           }
                     
@@ -187,6 +193,8 @@ extension AddNewsViewController: UIImagePickerControllerDelegate, UINavigationCo
                             self.photoarray.append(downloadUrl.absoluteString)
                             if(self.photoarray.count != 0 ){
                                 self.responseTv.text = "已上傳圖片數量:" + String(self.photoarray.count)
+                                self.closeKeyBoard()
+                                self.add_btn.isHidden = false
 
                             }
                          

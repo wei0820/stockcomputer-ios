@@ -182,6 +182,15 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     func checkIsMember() ->Bool{
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
+            
+            if firebaseAuth.currentUser == nil {
+                         return false
+                       }
+            
+            if firebaseAuth.currentUser!.isAnonymous == nil {
+              return false
+            }
+            
             if(firebaseAuth.currentUser!.isAnonymous){
                 
                 return false
@@ -296,6 +305,10 @@ func getMemberDateList(){
         }
         
     }
+    
+}
+func logout(){
+   try! Auth.auth().signOut()
     
 }
 
