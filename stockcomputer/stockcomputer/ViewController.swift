@@ -322,7 +322,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
           }
     
     @objc func smallAction(sender : UITapGestureRecognizer) {
-        setToast(s: "下個版本將推出")
+        setJump(type: "warrrant")
             
           }
     @objc func shareAction(sender : UITapGestureRecognizer) {
