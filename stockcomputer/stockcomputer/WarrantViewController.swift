@@ -31,12 +31,15 @@ class WarrantViewController: MGoogleADViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        buyNumTf.text = "1"
+        sellNumTF.text = "1"
+        
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func close(_ sender: Any) {
+        setVibrate()
         dissmissView()
     }
     /*

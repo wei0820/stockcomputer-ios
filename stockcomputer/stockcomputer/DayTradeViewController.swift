@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UIPickerViewDataSource{
+class DayTradeViewController: MGoogleADViewController{
     
     @IBOutlet weak var title_label: UILabel!
     
@@ -34,20 +34,6 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         
     }
     @IBOutlet weak var percentage_label: UILabel!
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return info.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return info[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        var selectedValue = pickerView.selectedRow(inComponent: 0)
-        pirceout = price[selectedValue]
-    }
     var info = [ "沒折扣", "95折",
                  "9折","85折",
                  "8折", "79折","78折","77折","76折","75折","74折","73折","72折","71折",
@@ -78,6 +64,8 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
     var type = ""
     var formatter: DateFormatter! = nil
     
+    @IBOutlet weak var inputhandprice: UITextField!
+    
     @IBAction func close(_ sender: Any) {
         setVibrate()
         dissmissView()
@@ -86,8 +74,8 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         super.viewDidLoad()
         title = "現股當沖獲利計算"
         setScreenName(screenName: "現股當沖獲利計算", screenClassName: "DayTradeViewController")
-        buy_num.text = "1000"
-        sell_num.text = "1000"
+        buy_num.text = "1"
+        sell_num.text = "1"
         setKeyKeyboardType()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
           self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
@@ -103,6 +91,7 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         sell_price.keyboardType = UIKeyboardType.decimalPad
         buy_num.keyboardType = UIKeyboardType.decimalPad
         sell_num.keyboardType = UIKeyboardType.decimalPad
+        inputhandprice.keyboardType = .decimalPad
         
         
     }
@@ -112,26 +101,28 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         
         self.buy_num.resignFirstResponder()
         self.sell_num.resignFirstResponder()
+        self.inputhandprice.resignFirstResponder()
     }
     func clearText(){
         buy_price.text = ""
         sell_price.text = ""
         buy_num.text = ""
         sell_num.text = ""
+        inputhandprice.text = ""
     }
     func total(){
         setVibrate()
         var total = 0.0
         var total_buy = 0.0
         var total_sell = 0.0
-        if(buy_price.text?.count==0||buy_num.text?.count==0||sell_price.text?.count==0||sell_num.text?.count==0){
+        if(buy_price.text?.count==0||buy_num.text?.count==0||sell_price.text?.count==0||sell_num.text?.count==0 || inputhandprice.text?.count == 0){
             setDilog()
             return
         }
         
-        
-        total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)!
-        total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)!
+        pirceout = Double(inputhandprice.text!)! * 0.1
+        total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)! * 1000
+        total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)! * 1000
         total_buy_price.textColor = UIColor.red
         total_sell_price.textColor = UIColor.green
         if((total_buy * handlingFee * pirceout)<=20){
