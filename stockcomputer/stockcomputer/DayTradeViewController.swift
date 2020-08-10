@@ -91,7 +91,7 @@ class DayTradeViewController: MGoogleADViewController{
         sell_price.keyboardType = UIKeyboardType.decimalPad
         buy_num.keyboardType = UIKeyboardType.decimalPad
         sell_num.keyboardType = UIKeyboardType.decimalPad
-        inputhandprice.keyboardType = .decimalPad
+        inputhandprice.keyboardType = .numberPad
         
         
     }
