@@ -34,6 +34,7 @@ class DayTradeViewController: MGoogleADViewController{
         
     }
     @IBOutlet weak var percentage_label: UILabel!
+
     var info = [ "沒折扣", "95折",
                  "9折","85折",
                  "8折", "79折","78折","77折","76折","75折","74折","73折","72折","71折",
@@ -64,6 +65,7 @@ class DayTradeViewController: MGoogleADViewController{
     var type = ""
     var formatter: DateFormatter! = nil
     
+    
     @IBOutlet weak var inputhandprice: UITextField!
     
     @IBAction func close(_ sender: Any) {
@@ -73,6 +75,10 @@ class DayTradeViewController: MGoogleADViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "現股當沖獲利計算"
+        if(UserDefaults.standard.string(forKey: "handprice") != nil) {
+            inputhandprice.placeholder = UserDefaults.standard.string(forKey: "handprice") as! String
+            inputhandprice.text = UserDefaults.standard.string(forKey: "handprice") as! String
+        }
         setScreenName(screenName: "現股當沖獲利計算", screenClassName: "DayTradeViewController")
         buy_num.text = "1"
         sell_num.text = "1"
@@ -111,6 +117,7 @@ class DayTradeViewController: MGoogleADViewController{
         inputhandprice.text = ""
     }
     func total(){
+        
         setVibrate()
         var total = 0.0
         var total_buy = 0.0
@@ -119,8 +126,10 @@ class DayTradeViewController: MGoogleADViewController{
             setDilog()
             return
         }
-        
+     
         pirceout = Double(inputhandprice.text!)! * 0.1
+        UserDefaults.standard.set(inputhandprice.text!, forKey: "handprice")
+        
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)! * 1000
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)! * 1000
         total_buy_price.textColor = UIColor.red
