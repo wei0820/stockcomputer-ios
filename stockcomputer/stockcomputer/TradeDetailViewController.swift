@@ -67,7 +67,10 @@ class TradeDetailViewController:MGoogleADViewController{
         buy_num.text = "1"
         sell_num.text = "1"
         setKeyKeyboardType()
-  
+  if(UserDefaults.standard.string(forKey: "handprice") != nil) {
+          inputhandprice.placeholder = UserDefaults.standard.string(forKey: "handprice") as! String
+          inputhandprice.text = UserDefaults.standard.string(forKey: "handprice") as! String
+      }
         
       let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
               self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
@@ -120,6 +123,8 @@ class TradeDetailViewController:MGoogleADViewController{
         }
         
         pirceout = Double(buy_price.text!)! * 0.1
+        UserDefaults.standard.set(inputhandprice.text!, forKey: "handprice")
+
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)! * 1000
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)! * 1000
         total_buy_price.textColor = UIColor.red
