@@ -558,7 +558,7 @@
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 87;
+				CURRENT_PROJECT_VERSION = 88;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -571,7 +571,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 8.7;
+				MARKETING_VERSION = 8.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -587,7 +587,7 @@
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 87;
+				CURRENT_PROJECT_VERSION = 88;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -600,7 +600,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 8.7;
+				MARKETING_VERSION = 8.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

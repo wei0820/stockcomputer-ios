@@ -67,10 +67,11 @@ class TradeDetailViewController:MGoogleADViewController{
         buy_num.text = "1"
         sell_num.text = "1"
         setKeyKeyboardType()
-  if(UserDefaults.standard.string(forKey: "handprice") != nil) {
+        
+        if(UserDefaults.standard.string(forKey: "handprice") != nil) {
           inputhandprice.placeholder = UserDefaults.standard.string(forKey: "handprice") as! String
           inputhandprice.text = UserDefaults.standard.string(forKey: "handprice") as! String
-      }
+        }
         
       let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
               self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"

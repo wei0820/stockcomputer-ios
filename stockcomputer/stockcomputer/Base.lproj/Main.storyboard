@@ -261,7 +261,7 @@
                                     <constraint firstAttribute="width" constant="30" id="go8-9t-3Y0"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WH-Zw-qh0" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公告更新中。。。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WH-Zw-qh0" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                 <rect key="frame" x="54" y="70" width="304" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="NHB-Gw-maY"/>

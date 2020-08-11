@@ -26,7 +26,8 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     @IBOutlet weak var CurrentPrice: UIView!
     
     var ref: DatabaseReference!
-    
+    var strings = [String]()
+
     @IBOutlet weak var marqueeLabel: MarqueeLabel!
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -82,9 +83,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         marqueeLabel.fadeLength = 10.0
         marqueeLabel.leadingBuffer = 30.0
         marqueeLabel.trailingBuffer = 20.0
-        var strings = [String]()
-        strings = [FirebaseManager.getAnnouncementSting()]
-        marqueeLabel.text = strings[Int(arc4random_uniform(UInt32(strings.count)))]
+        
         if(checkIsMember()){
             getId()
             
@@ -99,8 +98,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
             
         }
 //        GetStockPriceManager.gettest()
-        print("Jack",checkIsMember())
-    
+        getStockcomuperAllDate()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -329,7 +327,19 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         setJump(type: "share")
 
           }
-    
+  func getStockcomuperAllDate(){
+        Database.database().reference().child("stockcomuper").child("stockcomuper" as! String).observe(.childAdded, with: {
+            (snapshot) in
+            // childAdded逐筆呈現
+            if let dictionaryData = snapshot.value as? [String: AnyObject]{
+                var announcement : String = dictionaryData["announcement"] as! String
+                self.strings = [announcement]
+                self.marqueeLabel.text = self.strings[Int(arc4random_uniform(UInt32(self.strings.count)))]
+
+            }
+            
+        }, withCancel: nil)
+    }
     
 
 }
