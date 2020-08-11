@@ -33,9 +33,14 @@ class WarrantViewController: MGoogleADViewController {
         super.viewDidLoad()
         buyNumTf.text = "1"
         sellNumTF.text = "1"
+        if(UserDefaults.standard.string(forKey: "handprice") != nil){
+            inputHandPrice.placeholder = UserDefaults.standard.string(forKey: "handprice") as! String
+            inputHandPrice.text = UserDefaults.standard.string(forKey: "handprice") as! String
+        }
         
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var inputHandPrice: UITextField!
     
 
     @IBAction func close(_ sender: Any) {
