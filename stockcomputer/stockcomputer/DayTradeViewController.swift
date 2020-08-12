@@ -134,6 +134,7 @@ class DayTradeViewController: MGoogleADViewController{
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)! * 1000
         total_buy_price.textColor = UIColor.red
         total_sell_price.textColor = UIColor.green
+        
         if((total_buy * handlingFee * pirceout)<=20){
             total_buy_price.text  = String(total_buy + 20)
             total_buy = (total_buy + 20)

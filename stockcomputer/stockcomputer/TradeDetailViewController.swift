@@ -124,6 +124,7 @@ class TradeDetailViewController:MGoogleADViewController{
         }
         
         pirceout = Double(buy_price.text!)! * 0.1
+
         UserDefaults.standard.set(inputhandprice.text!, forKey: "handprice")
 
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)! * 1000

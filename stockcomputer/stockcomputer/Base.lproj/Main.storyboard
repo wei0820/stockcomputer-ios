@@ -6194,7 +6194,7 @@
                                     <action selector="close:" destination="ffF-wu-K9w" eventType="touchUpInside" id="4Qa-u2-1cz"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRH-O3-SWe">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入券商手續費Ex: 6折 請輸入6, 免手續費則輸入0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRH-O3-SWe">
                                 <rect key="frame" x="16" y="273" width="343" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="ve1-bl-NrM"/>

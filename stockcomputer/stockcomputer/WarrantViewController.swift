@@ -28,6 +28,12 @@ class WarrantViewController: MGoogleADViewController {
     @IBOutlet weak var label_5: UILabel!
     
     @IBAction func cal(_ sender: Any) {
+        if(buypriceTF.text?.count == 0 || SellpricveTF.text?.count == 0 || buyNumTf.text?.count == 0 || sellNumTF.text?.count == 0 || inputHandPrice.text?.count == 0){
+            setToast(s: "請檢查是否哪邊尚未輸入!!")
+            
+        }else{
+            
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
