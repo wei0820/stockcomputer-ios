@@ -86,7 +86,7 @@ class TradeDetailViewController:MGoogleADViewController{
         sell_price.keyboardType = UIKeyboardType.decimalPad
         buy_num.keyboardType = UIKeyboardType.decimalPad
         sell_num.keyboardType = UIKeyboardType.decimalPad
-        inputhandprice.keyboardType = UIKeyboardType.numberPad
+        inputhandprice.keyboardType = UIKeyboardType.decimalPad
 
         
         
@@ -123,14 +123,16 @@ class TradeDetailViewController:MGoogleADViewController{
             return
         }
         
-        pirceout = Double(buy_price.text!)! * 0.1
-
+        pirceout = Double(inputhandprice.text!)!
         UserDefaults.standard.set(inputhandprice.text!, forKey: "handprice")
+        print("Jack",pirceout)
 
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)! * 1000
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)! * 1000
         total_buy_price.textColor = UIColor.red
         total_sell_price.textColor = UIColor.green
+        print("Jack",(total_buy * handlingFee * pirceout))
+
         if((total_buy * handlingFee * pirceout)<=20){
             total_buy_price.text  = String(total_buy + 20)
             total_buy = (total_buy + 20)

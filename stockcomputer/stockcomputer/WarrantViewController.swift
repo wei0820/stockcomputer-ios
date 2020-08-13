@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WarrantViewController: MGoogleADViewController {
+class WarrantViewController: MGoogleADViewController,UITextFieldDelegate {
     @IBOutlet weak var buypriceTF: UITextField!
     
     @IBOutlet weak var SellpricveTF: UITextField!
@@ -32,13 +32,44 @@ class WarrantViewController: MGoogleADViewController {
             setToast(s: "請檢查是否哪邊尚未輸入!!")
             
         }else{
+            var buuyhandprice :Double =  Double(buypriceTF.text!)! *  Double(buyNumTf.text!)! * 1000 * 0.001425 *  Double(inputHandPrice.text!)!
+             var sellhandprice :Double =  Double(SellpricveTF.text!)! *  Double(sellNumTF.text!)! * 1000 * 0.001425 *  Double(inputHandPrice.text!)!
+            if (buuyhandprice <= 20)  { buuyhandprice = 20.0 }
+            if (sellhandprice <= 20)  { sellhandprice = 20.0 }
+            label_3.text = String(buuyhandprice + sellhandprice)
+            
+            var buyproce :Double =  Double(buypriceTF.text!)! *  Double(buyNumTf.text!)! * 1000 + buuyhandprice
+        
+            
+            
+
+               
+            
+            
             
         }
+    }
+    func setView(){
+        buypriceTF.keyboardType = .decimalPad
+        SellpricveTF.keyboardType = .decimalPad
+        buyNumTf.keyboardType = .numberPad
+        sellNumTF.keyboardType = .numberPad
+        buypriceTF.delegate = self
+        SellpricveTF.delegate = self
+        buyNumTf.delegate = self
+        sellNumTF.delegate = self
+
+        
+
+        
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         buyNumTf.text = "1"
         sellNumTF.text = "1"
+        setView()
+        
         if(UserDefaults.standard.string(forKey: "handprice") != nil){
             inputHandPrice.placeholder = UserDefaults.standard.string(forKey: "handprice") as! String
             inputHandPrice.text = UserDefaults.standard.string(forKey: "handprice") as! String
@@ -62,5 +93,29 @@ class WarrantViewController: MGoogleADViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    //_ textField
+    // 開始進入編輯狀態
+        func textFieldDidBeginEditing(_ textField: UITextField){
+        }
+     
+        // 可能進入結束編輯狀態
+        func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+     
+            return true
+        }
+     
+        // 結束編輯狀態(意指完成輸入或離開焦點)
+        func textFieldDidEndEditing(_ textField: UITextField) {
+     
+                    }
+     
+        // 按下Return後會反應的事件
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            //利用此方式讓按下Return後會Toogle 鍵盤讓它消失
+            textField.resignFirstResponder()
+            return false
+        }
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         self.view.endEditing(true)
+     }
 }
