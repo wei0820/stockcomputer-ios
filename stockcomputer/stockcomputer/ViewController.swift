@@ -320,7 +320,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
           }
     
     @objc func smallAction(sender : UITapGestureRecognizer) {
-        setJump(type: "warrrant")
+//        setJump(type: "warrrant")
             
           }
     @objc func shareAction(sender : UITapGestureRecognizer) {

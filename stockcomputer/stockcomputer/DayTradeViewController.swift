@@ -129,12 +129,10 @@ class DayTradeViewController: MGoogleADViewController{
      
         pirceout = Double(inputhandprice.text!)!
         UserDefaults.standard.set(inputhandprice.text!, forKey: "handprice")
-        print("Jack",pirceout)
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)! * 1000
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)! * 1000
         total_buy_price.textColor = UIColor.red
         total_sell_price.textColor = UIColor.green
-        print("Jack",(total_buy * handlingFee * pirceout))
 
         if((total_buy * handlingFee * pirceout)<=20){
             total_buy_price.text  = String(total_buy + 20)
@@ -157,7 +155,7 @@ class DayTradeViewController: MGoogleADViewController{
         total = total_sell - total_buy
         label_profit.textColor = UIColor.white
         label_profit.backgroundColor = UIColor.red
-        label_profit.text = String(total)
+        label_profit.text = String(lround(total))
         percentage_label.textColor = UIColor.white
         percentage_label.backgroundColor = UIColor.red
         percentage_label.text = String(format: "%.2f",((total/total_buy) * 100 )) + "%"

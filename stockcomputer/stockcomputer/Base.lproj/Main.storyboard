@@ -896,7 +896,7 @@
                                     <action selector="close:" destination="kfq-22-Ojo" eventType="touchUpInside" id="0MA-wW-d35"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex: 6折 請輸入6, 免手續費則輸入0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nDU-aU-NVe">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex: 6折 請輸入0.6, 免手續費則輸入0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nDU-aU-NVe">
                                 <rect key="frame" x="16" y="288" width="346" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="346" id="SLr-wu-aRC"/>
@@ -2795,7 +2795,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex: 6折 請輸入6, 免手續費則輸入0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lUf-zg-CB0">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex: 6折 請輸入0.6 免手續費則輸入0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lUf-zg-CB0">
                                         <rect key="frame" x="22" y="277" width="337" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="337" id="Xeo-pt-khU"/>
