@@ -97,7 +97,7 @@ class DayTradeViewController: MGoogleADViewController{
         sell_price.keyboardType = UIKeyboardType.decimalPad
         buy_num.keyboardType = UIKeyboardType.decimalPad
         sell_num.keyboardType = UIKeyboardType.decimalPad
-        inputhandprice.keyboardType = .numberPad
+        inputhandprice.keyboardType = .decimalPad
         
         
     }
@@ -127,13 +127,13 @@ class DayTradeViewController: MGoogleADViewController{
             return
         }
      
-        pirceout = Double(inputhandprice.text!)! * 0.1
+        pirceout = Double(inputhandprice.text!)!
         UserDefaults.standard.set(inputhandprice.text!, forKey: "handprice")
-        
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)! * 1000
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)! * 1000
         total_buy_price.textColor = UIColor.red
         total_sell_price.textColor = UIColor.green
+
         if((total_buy * handlingFee * pirceout)<=20){
             total_buy_price.text  = String(total_buy + 20)
             total_buy = (total_buy + 20)
@@ -155,7 +155,7 @@ class DayTradeViewController: MGoogleADViewController{
         total = total_sell - total_buy
         label_profit.textColor = UIColor.white
         label_profit.backgroundColor = UIColor.red
-        label_profit.text = String(total)
+        label_profit.text = String(lround(total))
         percentage_label.textColor = UIColor.white
         percentage_label.backgroundColor = UIColor.red
         percentage_label.text = String(format: "%.2f",((total/total_buy) * 100 )) + "%"

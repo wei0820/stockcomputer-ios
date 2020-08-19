@@ -67,10 +67,11 @@ class TradeDetailViewController:MGoogleADViewController{
         buy_num.text = "1"
         sell_num.text = "1"
         setKeyKeyboardType()
-  if(UserDefaults.standard.string(forKey: "handprice") != nil) {
+        
+        if(UserDefaults.standard.string(forKey: "handprice") != nil) {
           inputhandprice.placeholder = UserDefaults.standard.string(forKey: "handprice") as! String
           inputhandprice.text = UserDefaults.standard.string(forKey: "handprice") as! String
-      }
+        }
         
       let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
               self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
@@ -85,7 +86,7 @@ class TradeDetailViewController:MGoogleADViewController{
         sell_price.keyboardType = UIKeyboardType.decimalPad
         buy_num.keyboardType = UIKeyboardType.decimalPad
         sell_num.keyboardType = UIKeyboardType.decimalPad
-        inputhandprice.keyboardType = UIKeyboardType.numberPad
+        inputhandprice.keyboardType = UIKeyboardType.decimalPad
 
         
         
@@ -122,13 +123,14 @@ class TradeDetailViewController:MGoogleADViewController{
             return
         }
         
-        pirceout = Double(buy_price.text!)! * 0.1
+        pirceout = Double(inputhandprice.text!)!
         UserDefaults.standard.set(inputhandprice.text!, forKey: "handprice")
 
         total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)! * 1000
         total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)! * 1000
         total_buy_price.textColor = UIColor.red
         total_sell_price.textColor = UIColor.green
+
         if((total_buy * handlingFee * pirceout)<=20){
             total_buy_price.text  = String(total_buy + 20)
             total_buy = (total_buy + 20)
@@ -150,7 +152,7 @@ class TradeDetailViewController:MGoogleADViewController{
         total = total_sell - total_buy
         label_profit.textColor = UIColor.white
         label_profit.backgroundColor = UIColor.red
-        label_profit.text = String(total)
+        label_profit.text = String(lround(total))
         percentage_label.textColor = UIColor.white
         percentage_label.backgroundColor = UIColor.red
         percentage_label.text = String(format: "%.2f",((total/total_buy) * 100 )) + "%"
