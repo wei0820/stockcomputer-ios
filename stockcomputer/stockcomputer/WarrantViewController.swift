@@ -34,11 +34,31 @@ class WarrantViewController: MGoogleADViewController,UITextFieldDelegate {
         }else{
             var buuyhandprice :Double =  Double(buypriceTF.text!)! *  Double(buyNumTf.text!)! * 1000 * 0.001425 *  Double(inputHandPrice.text!)!
              var sellhandprice :Double =  Double(SellpricveTF.text!)! *  Double(sellNumTF.text!)! * 1000 * 0.001425 *  Double(inputHandPrice.text!)!
+            var  tax : Double =  Double(buypriceTF.text!)! *  Double(buyNumTf.text!)! * 1000 * 0.001
             if (buuyhandprice <= 20)  { buuyhandprice = 20.0 }
             if (sellhandprice <= 20)  { sellhandprice = 20.0 }
-            label_3.text = String(buuyhandprice + sellhandprice)
+            label_3.text = String(lrint((buuyhandprice + sellhandprice)))
             
             var buyproce :Double =  Double(buypriceTF.text!)! *  Double(buyNumTf.text!)! * 1000 + buuyhandprice
+            var sellPrice : Double = Double(SellpricveTF.text!)! *  Double(sellNumTF.text!)! * 1000 + sellhandprice + tax
+            
+            Label_1.text = String(lrint(buyproce))
+            label_2.text = String(lrint(sellPrice))
+            Label_4.text = String((lrint(sellPrice) - lrint(buyproce)))
+            if((lrint(sellPrice) - lrint(buyproce))>=0){
+                         Label_4.textColor = UIColor.red
+                     }else{
+                         Label_4.textColor = UIColor.green
+
+                     }
+            label_5.text = String( (((sellPrice) - (buyproce)) / (buyproce)))
+            if((((sellPrice) - (buyproce)) / (buyproce))>=0){
+                label_5.textColor = UIColor.red
+            }else{
+                label_5.textColor = UIColor.green
+
+            }
+
         
             
             
