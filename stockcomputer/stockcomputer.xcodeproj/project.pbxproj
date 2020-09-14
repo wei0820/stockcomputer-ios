@@ -107,7 +107,7 @@
 		9F766B3A074084E1FE467A17 /* Pods-stockcomputer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.debug.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.debug.xcconfig"; sourceTree = "<group>"; };
 		A48412A590B2B1067F15F72A /* Pods-stockcomputer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.release.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.release.xcconfig"; sourceTree = "<group>"; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
-		B74F52FD220556330034DC5D /* stockcomputer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stockcomputer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B74F52FD220556330034DC5D /* 股市大贏家.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "股市大贏家.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74F5300220556340034DC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B74F5302220556340034DC5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B74F5305220556340034DC5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		B74F52FE220556330034DC5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B74F52FD220556330034DC5D /* stockcomputer.app */,
+				B74F52FD220556330034DC5D /* 股市大贏家.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 			);
 			name = stockcomputer;
 			productName = stockcomputer;
-			productReference = B74F52FD220556330034DC5D /* stockcomputer.app */;
+			productReference = B74F52FD220556330034DC5D /* 股市大贏家.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -558,7 +558,7 @@
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 90;
+				CURRENT_PROJECT_VERSION = 91;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -571,9 +571,9 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 9.0;
+				MARKETING_VERSION = 9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "股市大贏家";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -587,7 +587,7 @@
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 90;
+				CURRENT_PROJECT_VERSION = 91;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -600,9 +600,9 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 9.0;
+				MARKETING_VERSION = 9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "股市大贏家";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
