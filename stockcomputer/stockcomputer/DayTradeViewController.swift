@@ -160,7 +160,7 @@ class DayTradeViewController: MGoogleADViewController{
         percentage_label.backgroundColor = UIColor.red
         percentage_label.text = String(format: "%.2f",((total/total_buy) * 100 )) + "%"
         
-        
+        NotificationManager.CreateNotification(title: "現股當沖獲利計算", subtitle: "111", body: "1111111"+String(format: "%.2f",((total/total_buy) * 100 )) + "%")
     }
     
     func setDilog(){
