@@ -97,7 +97,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
             }
             
         }
-//        GetStockPriceManager.gettest()
         getStockcomuperAllDate()
         
     }

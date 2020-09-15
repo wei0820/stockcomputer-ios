@@ -830,4 +830,83 @@ class GetStockPriceManager{
                // an error occurred
            }
        }
+    
+    static  func getbuy(number: String) {
+        
+           guard let url = URL(string: "https://histock.tw/stock/mainprofit.aspx?no="+number ?? "") else {
+            
+            return
+               // an error occurred
+           }
+           
+           do {
+               
+               // content of url
+               let html = try String.init(contentsOf: url)
+               
+               // parse it into a Document
+               document = try SwiftSoup.parse(html)
+               // parse css query
+               do {
+                   
+                  //div>table#CPHB1_chipAnalysis1_gBuy.tbTable.tb-stock.tbChip>tbody
+                
+                   let elements: Elements = try document.select("div>table#CPHB1_chipAnalysis1_gBuy.tbTable.tb-stock.tbChip>tbody" ?? "")
+             //transform it into a local object (Item)
+
+                             for th in try elements.select("tr"){
+                                print("Jack",try th.text())
+                             }
+                             
+                
+                 
+               } catch let error {
+               }
+               
+               
+           } catch let error {
+               // an error occurred
+           }
+       }
+    
+    
+    
+    static  func getSell(number: String) {
+        
+           guard let url = URL(string: "https://histock.tw/stock/mainprofit.aspx?no="+number ?? "") else {
+            
+            return
+               // an error occurred
+           }
+           
+           do {
+               
+               // content of url
+               let html = try String.init(contentsOf: url)
+               
+               // parse it into a Document
+               document = try SwiftSoup.parse(html)
+               // parse css query
+               do {
+                   
+                  //div>table#CPHB1_chipAnalysis1_gBuy.tbTable.tb-stock.tbChip>tbody
+                
+                   let elements: Elements = try document.select("div>table#CPHB1_chipAnalysis1_gSell.tbTable.tb-stock.tbChip>tbody" ?? "")
+             //transform it into a local object (Item)
+
+                             for th in try elements.select("tr"){
+                                print("Jack",try th.text())
+                             }
+                             
+                
+                 
+               } catch let error {
+               }
+               
+               
+           } catch let error {
+               // an error occurred
+           }
+       }
+    
 }

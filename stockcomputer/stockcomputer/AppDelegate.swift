@@ -52,6 +52,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 //        window?.makeKeyAndVisible()
         Crashlytics.crashlytics()
         setupIAP()
+        
+        // 在程式一啟動即詢問使用者是否接受圖文(alert)、聲音(sound)、數字(badge)三種類型的通知
+           UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge, .carPlay], completionHandler: { (granted, error) in
+               if granted {
+                   print("允許")
+               } else {
+                   print("不允許")
+               }
+           })
+        UNUserNotificationCenter.current().delegate = self
 
         return true
     }
@@ -115,7 +125,9 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     print(userInfo)
 
     // Change this to your preferred presentation option
-    completionHandler([])
+//    completionHandler([])
+    completionHandler([.badge, .sound, .alert])
+
   }
 
   func userNotificationCenter(_ center: UNUserNotificationCenter,
