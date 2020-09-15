@@ -18,13 +18,9 @@ class NotificationManager{
         content.subtitle = subtitle
         content.body = body
         content.sound = UNNotificationSound.default
-        content.badge = 1
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         let request = UNNotificationRequest(identifier: "notification", content: content, trigger: nil)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
-                   print("成功建立通知...")
-               })
-        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
 
 
 

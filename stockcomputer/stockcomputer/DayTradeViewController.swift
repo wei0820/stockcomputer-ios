@@ -151,7 +151,6 @@ class DayTradeViewController: MGoogleADViewController{
             total_sell_price.text = String(total_sell - (total_sell * handlingFee * pirceout)-(total_sell * tax))
             total_sell = (total_sell - (total_sell * handlingFee * pirceout)-(total_sell * tax))
         }
-        
         total = total_sell - total_buy
         label_profit.textColor = UIColor.white
         label_profit.backgroundColor = UIColor.red
@@ -159,8 +158,15 @@ class DayTradeViewController: MGoogleADViewController{
         percentage_label.textColor = UIColor.white
         percentage_label.backgroundColor = UIColor.red
         percentage_label.text = String(format: "%.2f",((total/total_buy) * 100 )) + "%"
+        var subtitle :String = ""
+
+        if(lround(total) <= -1){
+            subtitle = "是虧損的！！"
+        }else{
+            subtitle = "是賺錢的！！"
+        }
         
-        NotificationManager.CreateNotification(title: "現股當沖獲利計算", subtitle: "111", body: "1111111"+String(format: "%.2f",((total/total_buy) * 100 )) + "%")
+        NotificationManager.CreateNotification(title: "今日做現股當沖", subtitle: subtitle, body: "獲利：" + String(lround(total)) + "\n" +  "獲利率:" + String(format: "%.2f",((total/total_buy) * 100 )) + "%")
     }
     
     func setDilog(){
