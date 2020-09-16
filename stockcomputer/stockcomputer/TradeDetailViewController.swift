@@ -157,6 +157,17 @@ class TradeDetailViewController:MGoogleADViewController{
         percentage_label.backgroundColor = UIColor.red
         percentage_label.text = String(format: "%.2f",((total/total_buy) * 100 )) + "%"
         
+        
+        
+        var subtitle :String = ""
+
+        if(lround(total) <= -1){
+            subtitle = "是虧損的！！"
+        }else{
+            subtitle = "是賺錢的！！"
+        }
+        
+        NotificationManager.CreateNotification(title: "今日做隔日沖", subtitle: subtitle, body: "獲利：" + String(lround(total)) + "\n" +  "獲利率:" + String(format: "%.2f",((total/total_buy) * 100 )) + "%")
     }
     
     

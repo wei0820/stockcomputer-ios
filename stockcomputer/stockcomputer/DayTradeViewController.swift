@@ -166,7 +166,7 @@ class DayTradeViewController: MGoogleADViewController{
             subtitle = "是賺錢的！！"
         }
         
-        NotificationManager.CreateNotification(title: "今日做現股當沖", subtitle: subtitle, body: "獲利：" + String(lround(total)) + "\n" +  "獲利率:" + String(format: "%.2f",((total/total_buy) * 100 )) + "%")
+        NotificationManager.CreateNotification(title: "今日做當沖", subtitle: subtitle, body: "獲利：" + String(lround(total)) + "\n" +  "獲利率:" + String(format: "%.2f",((total/total_buy) * 100 )) + "%")
     }
     
     func setDilog(){

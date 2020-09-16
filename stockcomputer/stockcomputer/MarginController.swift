@@ -83,6 +83,26 @@ class MarginController: MGoogleADViewController{
 
             }
             label_6.text = "預估收益:" + String(getMoney)
+            var subtitle :String = ""
+            
+            if(getMoney <= -1){
+                subtitle = "是虧損的！！"
+            }else{
+                subtitle = "是賺錢的！！"
+            }
+            
+            NotificationManager.CreateNotification(title: "今日做隔日沖", subtitle: subtitle, body: "獲利：" + String(getMoney))
+            
+
+
+
+            
+            
+            
+            
+            
+            
+            
             
         }else{
             
