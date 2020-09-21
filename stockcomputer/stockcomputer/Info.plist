@@ -63,6 +63,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+    <key>ITSAppUsesNonExemptEncryption</key><false/>
 	<key>NSCalendarsUsageDescription</key>
 	<string>需要你授權,才能使用此功能</string>
 	<key>NSCameraUsageDescription</key>
@@ -97,6 +98,8 @@
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string></string>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>

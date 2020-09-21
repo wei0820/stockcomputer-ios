@@ -11,7 +11,7 @@
         <!--List View Controller-->
         <scene sceneID="sWo-yc-lVE">
             <objects>
-                <viewController id="ugK-Rw-KJm" customClass="QAListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ugK-Rw-KJm" customClass="QAListViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QdG-WV-avO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="-4034" y="2799"/>
         </scene>
-        <!--股票獲利計算機-->
+        <!--股市大贏家-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,7 +354,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="股票獲利計算機" id="U2G-Nh-wvX">
+                    <navigationItem key="navigationItem" title="股市大贏家" id="U2G-Nh-wvX">
                         <barButtonItem key="backBarButtonItem" title="返回" id="M0A-yK-AUY"/>
                     </navigationItem>
                     <connections>
@@ -378,7 +378,7 @@
         <!--Calculate View Controller-->
         <scene sceneID="jWs-jJ-hrd">
             <objects>
-                <viewController storyboardIdentifier="ssfcal" id="kxW-MI-5er" customClass="SSFCalculateViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ssfcal" id="kxW-MI-5er" customClass="SSFCalculateViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VfT-h4-d7b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -407,7 +407,7 @@
         <!--Stock List View Controller-->
         <scene sceneID="o3U-YZ-TwW">
             <objects>
-                <viewController storyboardIdentifier="CurrentPrice" id="MFe-cx-siv" customClass="StockListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentPrice" id="MFe-cx-siv" customClass="StockListViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ScZ-RG-tdd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -483,7 +483,7 @@
         <!--Stock Detail View Controller-->
         <scene sceneID="lq8-Uv-TNc">
             <objects>
-                <viewController id="xMk-VA-2kB" customClass="StockDetailViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xMk-VA-2kB" customClass="StockDetailViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O32-yS-NCU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -533,7 +533,7 @@
         <!--Add News View Controller-->
         <scene sceneID="F6F-Z6-B0I">
             <objects>
-                <viewController storyboardIdentifier="addnews" modalPresentationStyle="fullScreen" id="xbG-Xr-Wrs" customClass="AddNewsViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addnews" modalPresentationStyle="fullScreen" id="xbG-Xr-Wrs" customClass="AddNewsViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jdp-g1-Q91">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -685,7 +685,7 @@
         <!--Day Trade View Controller-->
         <scene sceneID="ko4-cT-zs5">
             <objects>
-                <viewController storyboardIdentifier="DayTrade" modalPresentationStyle="fullScreen" id="kfq-22-Ojo" customClass="DayTradeViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DayTrade" modalPresentationStyle="fullScreen" id="kfq-22-Ojo" customClass="DayTradeViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vhd-op-D5J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -990,7 +990,7 @@
         <!--Member Center View Controller-->
         <scene sceneID="sGn-aJ-tHR">
             <objects>
-                <viewController storyboardIdentifier="member" id="fee-Li-V0a" customClass="MemberCenterViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="member" id="fee-Li-V0a" customClass="MemberCenterViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ylu-7c-bfG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1158,7 +1158,7 @@
         <!--Login View Controller-->
         <scene sceneID="WyT-0g-fws">
             <objects>
-                <viewController storyboardIdentifier="login" id="Gyw-T5-M3K" customClass="FBLoginViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="Gyw-T5-M3K" customClass="FBLoginViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zf5-0u-FoM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1265,7 +1265,7 @@
         <!--Option View Controller-->
         <scene sceneID="YRa-Ce-d2c">
             <objects>
-                <viewController id="mgy-mZ-t6u" customClass="OptionViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mgy-mZ-t6u" customClass="OptionViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S9j-7n-ptZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1526,7 +1526,7 @@
         <!--Distribution Controller-->
         <scene sceneID="Jfa-7B-HWw">
             <objects>
-                <viewController storyboardIdentifier="vc2" modalPresentationStyle="fullScreen" id="acF-Zl-rht" customClass="DistributionController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc2" modalPresentationStyle="fullScreen" id="acF-Zl-rht" customClass="DistributionController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bnx-E3-394">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1737,7 +1737,7 @@
         <!--Map View Controller-->
         <scene sceneID="AO3-1k-jI9">
             <objects>
-                <viewController id="OzU-QJ-mzC" customClass="MapViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OzU-QJ-mzC" customClass="MapViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mfp-OM-mug" customClass="MGLMapView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1776,7 +1776,7 @@
         <!--Hong Kong Controller-->
         <scene sceneID="JdM-7p-L0f">
             <objects>
-                <viewController storyboardIdentifier="vc1" modalPresentationStyle="fullScreen" id="N38-0L-QVR" customClass="HongKongController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc1" modalPresentationStyle="fullScreen" id="N38-0L-QVR" customClass="HongKongController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E5z-gF-Wjk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2048,7 +2048,7 @@
         <!--Margin Controller-->
         <scene sceneID="jVG-nY-n94">
             <objects>
-                <viewController storyboardIdentifier="margin" modalPresentationStyle="fullScreen" id="nJi-N6-8h6" customClass="MarginController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="margin" modalPresentationStyle="fullScreen" id="nJi-N6-8h6" customClass="MarginController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q3U-io-Vx6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2341,7 +2341,7 @@
         <!--Financing View Controller-->
         <scene sceneID="MCH-f3-X6p">
             <objects>
-                <viewController id="6Na-9M-h5t" customClass="FinancingViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Na-9M-h5t" customClass="FinancingViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wVB-dT-HKg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2606,7 +2606,7 @@
         <!--Trade Detail View Controller-->
         <scene sceneID="iD0-UU-EKH">
             <objects>
-                <viewController storyboardIdentifier="tomorrow" modalPresentationStyle="fullScreen" id="ddT-qF-bJQ" customClass="TradeDetailViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tomorrow" modalPresentationStyle="fullScreen" id="ddT-qF-bJQ" customClass="TradeDetailViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="no0-3j-yzX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2923,7 +2923,7 @@
         <!--Stock Number View Controller-->
         <scene sceneID="jkF-gP-nE4">
             <objects>
-                <viewController storyboardIdentifier="vc3" modalPresentationStyle="fullScreen" id="WhA-FN-yok" customClass="StockNumberViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc3" modalPresentationStyle="fullScreen" id="WhA-FN-yok" customClass="StockNumberViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8vd-tY-KfW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3211,7 +3211,7 @@
         <!--Sell And Put View Controller-->
         <scene sceneID="aLO-ql-27R">
             <objects>
-                <viewController storyboardIdentifier="sellput" modalPresentationStyle="fullScreen" id="tJk-8V-HAK" customClass="SellAndPutViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sellput" modalPresentationStyle="fullScreen" id="tJk-8V-HAK" customClass="SellAndPutViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cef-Mh-sL7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3493,7 +3493,7 @@
         <!--Share List View Controller-->
         <scene sceneID="bIG-UQ-v1p">
             <objects>
-                <viewController storyboardIdentifier="share" id="dIp-SO-evE" customClass="ShareListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="share" id="dIp-SO-evE" customClass="ShareListViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qRf-ow-PUs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3563,7 +3563,7 @@
         <!--Share Detail View Controller-->
         <scene sceneID="9ns-Fe-VNQ">
             <objects>
-                <viewController id="9Wt-lH-rJK" customClass="ShareDetailViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9Wt-lH-rJK" customClass="ShareDetailViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1c8-4O-J2G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3784,7 +3784,7 @@
         <!--Pro Fit View Controller-->
         <scene sceneID="VeH-oV-JFC">
             <objects>
-                <viewController id="cnH-rz-qdM" customClass="ProFitViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cnH-rz-qdM" customClass="ProFitViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kRG-3i-F5S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3800,7 +3800,7 @@
         <!--Other View Controller-->
         <scene sceneID="Lj3-Qx-iyd">
             <objects>
-                <viewController storyboardIdentifier="other" modalPresentationStyle="fullScreen" id="HsD-8U-3Zg" customClass="OtherViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="other" modalPresentationStyle="fullScreen" id="HsD-8U-3Zg" customClass="OtherViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vpW-sb-TDu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3963,7 +3963,7 @@
         <!--View Controller-->
         <scene sceneID="KcQ-HV-Rrt">
             <objects>
-                <viewController storyboardIdentifier="ssf" modalPresentationStyle="fullScreen" id="FBC-VD-VsC" customClass="SSFViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ssf" modalPresentationStyle="fullScreen" id="FBC-VD-VsC" customClass="SSFViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ikz-KG-o89">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4244,7 +4244,7 @@
         <!--View Controller-->
         <scene sceneID="Siu-CD-DOH">
             <objects>
-                <viewController storyboardIdentifier="iap" modalPresentationStyle="fullScreen" id="oIf-qe-ORW" customClass="IAPViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="iap" modalPresentationStyle="fullScreen" id="oIf-qe-ORW" customClass="IAPViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mcd-P1-DW6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4483,7 +4483,7 @@
         <!--Futures View Controller-->
         <scene sceneID="bP3-h7-a54">
             <objects>
-                <viewController storyboardIdentifier="futures" modalPresentationStyle="fullScreen" id="rLy-NF-HVe" customClass="FuturesViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="futures" modalPresentationStyle="fullScreen" id="rLy-NF-HVe" customClass="FuturesViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MGB-Hc-LVL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4793,7 +4793,7 @@
         <!--Foreign Investment View Controller-->
         <scene sceneID="dlB-RU-DT4">
             <objects>
-                <viewController storyboardIdentifier="view1" id="SIJ-s3-g8G" customClass="ForeignInvestmentViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view1" id="SIJ-s3-g8G" customClass="ForeignInvestmentViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ch-1F-DqQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4885,7 +4885,7 @@
         <!--Trust View Controller-->
         <scene sceneID="QgQ-NA-yoV">
             <objects>
-                <viewController storyboardIdentifier="view2" id="tkB-25-LBL" customClass="TrustViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view2" id="tkB-25-LBL" customClass="TrustViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0hj-4p-YDK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4978,7 +4978,7 @@
         <!--Broker View Controller-->
         <scene sceneID="j1Y-Ns-R17">
             <objects>
-                <viewController storyboardIdentifier="view4" id="qjq-P9-lQH" customClass="BrokerViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view4" id="qjq-P9-lQH" customClass="BrokerViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkf-jx-OA9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5070,7 +5070,7 @@
         <!--Self Employed View Controller-->
         <scene sceneID="ckK-NQ-Uaf">
             <objects>
-                <viewController storyboardIdentifier="view3" id="07Q-TW-l90" customClass="SelfEmployedViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view3" id="07Q-TW-l90" customClass="SelfEmployedViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rrT-RM-hvn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5162,7 +5162,7 @@
         <!--Quotes View Controller-->
         <scene sceneID="eQC-37-nCT">
             <objects>
-                <viewController storyboardIdentifier="view5" id="LV5-a7-OUE" customClass="QuotesViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view5" id="LV5-a7-OUE" customClass="QuotesViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GFN-dp-SXM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5255,7 +5255,7 @@
         <!--Select View Controller-->
         <scene sceneID="Oz6-Jh-MQ6">
             <objects>
-                <viewController storyboardIdentifier="news" id="01x-4p-eJS" customClass="SelectViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="news" id="01x-4p-eJS" customClass="SelectViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fx7-1c-Qqo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5457,7 +5457,7 @@
         <!--Three View Controller-->
         <scene sceneID="8tJ-aY-UdC">
             <objects>
-                <viewController storyboardIdentifier="three" id="AeI-4a-YwK" customClass="ThreeViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="three" id="AeI-4a-YwK" customClass="ThreeViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UcT-2I-sEe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5678,7 +5678,7 @@
         <!--Financing View Controller-->
         <scene sceneID="r4T-KH-zb2">
             <objects>
-                <viewController storyboardIdentifier="financing" modalPresentationStyle="fullScreen" id="1iG-2N-qRe" customClass="Financing_ViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="financing" modalPresentationStyle="fullScreen" id="1iG-2N-qRe" customClass="Financing_ViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OkR-iE-xLZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5992,7 +5992,7 @@
         <!--Warrant View Controller-->
         <scene sceneID="WIj-6I-hZL">
             <objects>
-                <viewController storyboardIdentifier="warrrant" modalPresentationStyle="fullScreen" id="ffF-wu-K9w" customClass="WarrantViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="warrrant" modalPresentationStyle="fullScreen" id="ffF-wu-K9w" customClass="WarrantViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YrD-x5-Sst">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
