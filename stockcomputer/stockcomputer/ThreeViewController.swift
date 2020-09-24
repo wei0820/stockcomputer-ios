@@ -83,15 +83,19 @@ class ThreeViewController: MGoogleADViewController {
 //                                 }
                     var text_1 = try elements.select("span").get(0).text()
                     var text_2 = try elements.select("span").get(1).text()
-                    var text_Double = Int(text_1)!
+                  
 
-                    small_1.text =  "多空比" + text_1 + text_2
-                    if(text_Double <= 0){
+                    small_1.text = text_1 + text_2
+                    if(text_1.contains("-")){
                         small_2.text = "散戶偏空,多數做空"
                         small_2.textColor = UIColor.green
+                        small_1.textColor = UIColor.green
+
                     }else{
                         small_2.text = "散戶偏多,多數做多"
                         small_2.textColor = UIColor.red
+                        small_1.textColor = UIColor.green
+
 
                     }
                     
