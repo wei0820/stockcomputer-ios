@@ -8,9 +8,8 @@
 
 import UIKit
 import Toaster
-import Kanna
-import Alamofire
 import JGProgressHUD
+import SwiftSoup
 
 class StockNumberViewController: MGoogleADViewController, UITextFieldDelegate {
     @IBOutlet weak var lab1: UILabel!
@@ -22,7 +21,8 @@ class StockNumberViewController: MGoogleADViewController, UITextFieldDelegate {
     @IBOutlet weak var lab5: UILabel!
     @IBOutlet weak var search: UITextField!
     var hud :JGProgressHUD?
-    
+     var document: Document = Document.init("")
+
     @IBAction func closeView(_ sender: Any) {
         dissmissView()
     }
@@ -41,8 +41,8 @@ class StockNumberViewController: MGoogleADViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     @IBAction func startSearch(_ sender: Any) {
-        SearchNumber(s: search.text!)
         search.resignFirstResponder()
+        getTest(number: search.text!)
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -53,59 +53,62 @@ class StockNumberViewController: MGoogleADViewController, UITextFieldDelegate {
         return true
     }
     
-    func SearchNumber(s:String){
-        if(s.isEmpty){
+    func getTest(number :String) {
+        if(number.isEmpty){
             Toast.init(text: "請輸入代號").show()
-        }else{
+        }else
+        {
             hud = JGProgressHUD(style: .dark)
-            hud?.textLabel.text = "Loading"
-            hud?.show(in: self.view)
-            Alamofire.request("https://www.sinotrade.com.tw/Stock/Stock_3_8_6?code="+s).responseString { response in
-                if let html = response.result.value {
-                    if let doc = try? Kanna.HTML(html: html, encoding: String.Encoding.utf8) {
-                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[1]") {
-                            self.lab1.text = rate.text!
-                            
-                        }
-                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[2]") {
-                            self.lab2.text = rate.text!
-                            
-                        }
-                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[3]") {
-                            self.lab3.text = rate.text!
-                            
-                        }
-                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[4]") {
-                            self.lab4.text = rate.text!
-                            
-                        }
-                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[5]") {
-                            self.lab5.text = String(Double(rate.text!)!) + "%"
-                            
-                        }
-                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[6]") {
-                            self.lab6.text = String(Double(rate.text!)!) + "%"
+             hud?.textLabel.text = "Loading"
+             hud?.show(in: self.view)
+                    
+                       guard let url = URL(string: "https://www.sinotrade.com.tw/Stock/Stock_3_8_6?code="+number ?? "") else {
                         
+                        return
+                           // an error occurred
+                       }
+                       
+                       do {
+                           
+                           // content of url
+                           let html = try String.init(contentsOf: url)
+                           
+                           // parse it into a Document
+                           document = try SwiftSoup.parse(html)
+                           // parse css query
+                           do {
+                               
+                              //div>table#CPHB1_chipAnalysis1_gBuy.tbTable.tb-stock.tbChip>tbody
                             
-                        }
-                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[7]") {
-                            self.lab7.text = rate.text!
+                               let elements: Elements = try document.select("tbody>tr.odd" ?? "")
+                         //transform it into a local object (Item)
+            //
+            //                             for th in try elements.select("td"){
+            //                                print("Jack",try th.text())
+            //                             }
+                            lab1.text =  try  elements.select("td").get(0).text()
+                            lab2.text =  try  elements.select("td").get(1).text()
+                            lab3.text =  try  elements.select("td").get(2).text()
+                            lab4.text =  try  elements.select("td").get(3).text()
+                            lab5.text =  try  elements.select("td").get(4).text()
+                            lab6.text =  try  elements.select("td").get(5).text()
+                            lab7.text =  try  elements.select("td").get(6).text()
+                            lab8.text =  try  elements.select("td").get(7).text()
+
                             
-                        }
-                        for rate in doc.xpath("//*[@id='content']/div[2]/table[2]/tbody/tr/td[8]") {
-                            self.lab8.text = rate.text!
-                            
-                        }
-                        
-                        
-                    }                         }
-            }
-            
-            hud?.dismiss(afterDelay: 3.0)
-            
+                             
+                           } catch let error {
+                           }
+                           
+                           
+                       } catch let error {
+                           // an error occurred
+                       }
         }
-        
-    }
+        hud?.dismiss(afterDelay: 3.0)
+
+
+       }
     /*
      // MARK: - Navigation
      
