@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import SwiftSoup
 
 class ThreeViewController: MGoogleADViewController {
     var array :Array<String> = []
      var array_futures :Array<String> = []
+    var array_Small :Array<String> = []
+
+     var document: Document = Document.init("")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         array = GetStockPriceManager.getThree()
+        array = GetStockPriceManager.getThree()
         array_futures = GetStockPriceManager.getOpenPosition()
         setThreeDate()
         setFuturesLabel()
+        getSmall()
 
         setScreenName(screenName: "三大法人買賣超", screenClassName: "ThreeViewController")
 
@@ -47,6 +52,64 @@ class ThreeViewController: MGoogleADViewController {
         }
     }
     
+    func getSmall(){
+
+            
+               guard let url = URL(string: "https://www.macromicro.me/charts/20069/tw-mtx-long-to-short-ratio-of-individual-player" ?? "") else {
+                
+                return
+                   // an error occurred
+               }
+               
+               do {
+                   
+                   // content of url
+                   let html = try String.init(contentsOf: url)
+                   
+                   // parse it into a Document
+                   document = try SwiftSoup.parse(html)
+                   // parse css query
+                   do {
+                       
+                      //div>table#CPHB1_chipAnalysis1_gBuy.tbTable.tb-stock.tbChip>tbody
+                    
+                       let elements: Elements = try document.select("div.stat-val" ?? "")
+                 //transform it into a local object (Item)
+//
+//                                 for th in try elements.select("span"){
+//                                    print("Jack",try th.text())
+//                                    array_Small.append(try th.text())
+//
+//                                 }
+                    var text_1 = try elements.select("span").get(0).text()
+                    var text_2 = try elements.select("span").get(1).text()
+                    var text_Double = Int(text_1)!
+
+                    small_1.text =  "多空比" + text_1 + text_2
+                    if(text_Double <= 0){
+                        small_2.text = "散戶偏空,多數做空"
+                        small_2.textColor = UIColor.green
+                    }else{
+                        small_2.text = "散戶偏多,多數做多"
+                        small_2.textColor = UIColor.red
+
+                    }
+                    
+         
+
+                                 
+                    
+                     
+                   } catch let error {
+                   }
+                   
+                   
+               } catch let error {
+                   // an error occurred
+               }
+           
+    }
+    
     @IBAction func close(_ sender: Any) {
         dissmissView()
     }
@@ -65,4 +128,10 @@ class ThreeViewController: MGoogleADViewController {
     @IBOutlet weak var futures_label_5: UILabel!
     @IBOutlet weak var futures_label_4: UILabel!
     @IBOutlet weak var futures_label_3: UILabel!
+    
+    
+    
+    @IBOutlet weak var small_1: UILabel!
+    
+    @IBOutlet weak var small_2: UILabel!
 }
