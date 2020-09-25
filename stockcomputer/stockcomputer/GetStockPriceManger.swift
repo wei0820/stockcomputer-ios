@@ -912,41 +912,5 @@ class GetStockPriceManager{
     
     
     
-    static  func getTest() {
-        
-           guard let url = URL(string: "https://www.macromicro.me/charts/20069/tw-mtx-long-to-short-ratio-of-individual-player" ?? "") else {
-            
-            return
-               // an error occurred
-           }
-           
-           do {
-               
-               // content of url
-               let html = try String.init(contentsOf: url)
-               
-               // parse it into a Document
-               document = try SwiftSoup.parse(html)
-               // parse css query
-               do {
-                   
-                  //div>table#CPHB1_chipAnalysis1_gBuy.tbTable.tb-stock.tbChip>tbody
-                
-                   let elements: Elements = try document.select("div.stat-val" ?? "")
-             //transform it into a local object (Item)
 
-                             for th in try elements.select("span"){
-                                print("Jack",try th.text())
-                             }
-                             
-                
-                 
-               } catch let error {
-               }
-               
-               
-           } catch let error {
-               // an error occurred
-           }
-       }
 }

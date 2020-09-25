@@ -98,7 +98,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
             
         }
         getStockcomuperAllDate()
-        GetStockPriceManager.getTest()
         
     }
     override func viewWillAppear(_ animated: Bool) {
