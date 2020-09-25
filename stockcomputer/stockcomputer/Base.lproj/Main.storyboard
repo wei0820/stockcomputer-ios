@@ -11,7 +11,7 @@
         <!--List View Controller-->
         <scene sceneID="sWo-yc-lVE">
             <objects>
-                <viewController id="ugK-Rw-KJm" customClass="QAListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ugK-Rw-KJm" customClass="QAListViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QdG-WV-avO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="-4034" y="2799"/>
         </scene>
-        <!--股票獲利計算機-->
+        <!--股市大贏家-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,7 +354,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="股票獲利計算機" id="U2G-Nh-wvX">
+                    <navigationItem key="navigationItem" title="股市大贏家" id="U2G-Nh-wvX">
                         <barButtonItem key="backBarButtonItem" title="返回" id="M0A-yK-AUY"/>
                     </navigationItem>
                     <connections>
@@ -378,7 +378,7 @@
         <!--Calculate View Controller-->
         <scene sceneID="jWs-jJ-hrd">
             <objects>
-                <viewController storyboardIdentifier="ssfcal" id="kxW-MI-5er" customClass="SSFCalculateViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ssfcal" id="kxW-MI-5er" customClass="SSFCalculateViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VfT-h4-d7b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -407,7 +407,7 @@
         <!--Stock List View Controller-->
         <scene sceneID="o3U-YZ-TwW">
             <objects>
-                <viewController storyboardIdentifier="CurrentPrice" id="MFe-cx-siv" customClass="StockListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentPrice" id="MFe-cx-siv" customClass="StockListViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ScZ-RG-tdd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -483,7 +483,7 @@
         <!--Stock Detail View Controller-->
         <scene sceneID="lq8-Uv-TNc">
             <objects>
-                <viewController id="xMk-VA-2kB" customClass="StockDetailViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xMk-VA-2kB" customClass="StockDetailViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O32-yS-NCU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -533,7 +533,7 @@
         <!--Add News View Controller-->
         <scene sceneID="F6F-Z6-B0I">
             <objects>
-                <viewController storyboardIdentifier="addnews" modalPresentationStyle="fullScreen" id="xbG-Xr-Wrs" customClass="AddNewsViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addnews" modalPresentationStyle="fullScreen" id="xbG-Xr-Wrs" customClass="AddNewsViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jdp-g1-Q91">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -685,7 +685,7 @@
         <!--Day Trade View Controller-->
         <scene sceneID="ko4-cT-zs5">
             <objects>
-                <viewController storyboardIdentifier="DayTrade" modalPresentationStyle="fullScreen" id="kfq-22-Ojo" customClass="DayTradeViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DayTrade" modalPresentationStyle="fullScreen" id="kfq-22-Ojo" customClass="DayTradeViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vhd-op-D5J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -990,7 +990,7 @@
         <!--Member Center View Controller-->
         <scene sceneID="sGn-aJ-tHR">
             <objects>
-                <viewController storyboardIdentifier="member" id="fee-Li-V0a" customClass="MemberCenterViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="member" id="fee-Li-V0a" customClass="MemberCenterViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ylu-7c-bfG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1158,7 +1158,7 @@
         <!--Login View Controller-->
         <scene sceneID="WyT-0g-fws">
             <objects>
-                <viewController storyboardIdentifier="login" id="Gyw-T5-M3K" customClass="FBLoginViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="Gyw-T5-M3K" customClass="FBLoginViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zf5-0u-FoM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1265,7 +1265,7 @@
         <!--Option View Controller-->
         <scene sceneID="YRa-Ce-d2c">
             <objects>
-                <viewController id="mgy-mZ-t6u" customClass="OptionViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mgy-mZ-t6u" customClass="OptionViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S9j-7n-ptZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1526,7 +1526,7 @@
         <!--Distribution Controller-->
         <scene sceneID="Jfa-7B-HWw">
             <objects>
-                <viewController storyboardIdentifier="vc2" modalPresentationStyle="fullScreen" id="acF-Zl-rht" customClass="DistributionController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc2" modalPresentationStyle="fullScreen" id="acF-Zl-rht" customClass="DistributionController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bnx-E3-394">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1737,7 +1737,7 @@
         <!--Map View Controller-->
         <scene sceneID="AO3-1k-jI9">
             <objects>
-                <viewController id="OzU-QJ-mzC" customClass="MapViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OzU-QJ-mzC" customClass="MapViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mfp-OM-mug" customClass="MGLMapView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1776,7 +1776,7 @@
         <!--Hong Kong Controller-->
         <scene sceneID="JdM-7p-L0f">
             <objects>
-                <viewController storyboardIdentifier="vc1" modalPresentationStyle="fullScreen" id="N38-0L-QVR" customClass="HongKongController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc1" modalPresentationStyle="fullScreen" id="N38-0L-QVR" customClass="HongKongController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E5z-gF-Wjk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2048,7 +2048,7 @@
         <!--Margin Controller-->
         <scene sceneID="jVG-nY-n94">
             <objects>
-                <viewController storyboardIdentifier="margin" modalPresentationStyle="fullScreen" id="nJi-N6-8h6" customClass="MarginController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="margin" modalPresentationStyle="fullScreen" id="nJi-N6-8h6" customClass="MarginController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q3U-io-Vx6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2341,7 +2341,7 @@
         <!--Financing View Controller-->
         <scene sceneID="MCH-f3-X6p">
             <objects>
-                <viewController id="6Na-9M-h5t" customClass="FinancingViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Na-9M-h5t" customClass="FinancingViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wVB-dT-HKg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2606,7 +2606,7 @@
         <!--Trade Detail View Controller-->
         <scene sceneID="iD0-UU-EKH">
             <objects>
-                <viewController storyboardIdentifier="tomorrow" modalPresentationStyle="fullScreen" id="ddT-qF-bJQ" customClass="TradeDetailViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tomorrow" modalPresentationStyle="fullScreen" id="ddT-qF-bJQ" customClass="TradeDetailViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="no0-3j-yzX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2923,7 +2923,7 @@
         <!--Stock Number View Controller-->
         <scene sceneID="jkF-gP-nE4">
             <objects>
-                <viewController storyboardIdentifier="vc3" modalPresentationStyle="fullScreen" id="WhA-FN-yok" customClass="StockNumberViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc3" modalPresentationStyle="fullScreen" id="WhA-FN-yok" customClass="StockNumberViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8vd-tY-KfW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3211,7 +3211,7 @@
         <!--Sell And Put View Controller-->
         <scene sceneID="aLO-ql-27R">
             <objects>
-                <viewController storyboardIdentifier="sellput" modalPresentationStyle="fullScreen" id="tJk-8V-HAK" customClass="SellAndPutViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sellput" modalPresentationStyle="fullScreen" id="tJk-8V-HAK" customClass="SellAndPutViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cef-Mh-sL7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3493,7 +3493,7 @@
         <!--Share List View Controller-->
         <scene sceneID="bIG-UQ-v1p">
             <objects>
-                <viewController storyboardIdentifier="share" id="dIp-SO-evE" customClass="ShareListViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="share" id="dIp-SO-evE" customClass="ShareListViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qRf-ow-PUs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3563,7 +3563,7 @@
         <!--Share Detail View Controller-->
         <scene sceneID="9ns-Fe-VNQ">
             <objects>
-                <viewController id="9Wt-lH-rJK" customClass="ShareDetailViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9Wt-lH-rJK" customClass="ShareDetailViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1c8-4O-J2G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3784,7 +3784,7 @@
         <!--Pro Fit View Controller-->
         <scene sceneID="VeH-oV-JFC">
             <objects>
-                <viewController id="cnH-rz-qdM" customClass="ProFitViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cnH-rz-qdM" customClass="ProFitViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kRG-3i-F5S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3800,7 +3800,7 @@
         <!--Other View Controller-->
         <scene sceneID="Lj3-Qx-iyd">
             <objects>
-                <viewController storyboardIdentifier="other" modalPresentationStyle="fullScreen" id="HsD-8U-3Zg" customClass="OtherViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="other" modalPresentationStyle="fullScreen" id="HsD-8U-3Zg" customClass="OtherViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vpW-sb-TDu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3874,35 +3874,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmO-GY-JTi">
-                                <rect key="frame" x="279" y="68" width="80" height="80"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="資券成數查詢" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuL-Wl-9bu">
-                                        <rect key="frame" x="8" y="8" width="64" height="64"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="YfU-zX-PoJ"/>
-                                            <constraint firstAttribute="width" constant="64" id="f9h-0S-B6L"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="3aD-pG-784"/>
-                                    <constraint firstAttribute="width" constant="80" id="AZY-x1-nED"/>
-                                    <constraint firstItem="JuL-Wl-9bu" firstAttribute="leading" secondItem="CmO-GY-JTi" secondAttribute="leading" constant="8" id="SUL-sr-NT1"/>
-                                    <constraint firstItem="JuL-Wl-9bu" firstAttribute="top" secondItem="CmO-GY-JTi" secondAttribute="top" constant="8" id="c1Q-QT-CQV"/>
-                                    <constraint firstAttribute="bottom" secondItem="JuL-Wl-9bu" secondAttribute="bottom" constant="8" id="ngR-a2-dJ3"/>
-                                    <constraint firstAttribute="trailing" secondItem="JuL-Wl-9bu" secondAttribute="trailing" constant="8" id="y2u-Dg-VGG"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJu-SU-t2l">
                                 <rect key="frame" x="16" y="201" width="80" height="80"/>
                                 <subviews>
@@ -3932,24 +3903,82 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuP-Nt-CMT">
+                                <rect key="frame" x="147" y="201" width="80" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黃金＆匯率即時查詢" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92M-IC-DfE">
+                                        <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="4Sw-eP-HhZ"/>
+                                            <constraint firstAttribute="height" constant="64" id="dQz-iC-Q4q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="92M-IC-DfE" secondAttribute="bottom" constant="8" id="6hc-59-lA4"/>
+                                    <constraint firstAttribute="width" constant="80" id="C5P-Hu-5Vu"/>
+                                    <constraint firstAttribute="trailing" secondItem="92M-IC-DfE" secondAttribute="trailing" constant="8" id="Czz-tZ-CAJ"/>
+                                    <constraint firstItem="92M-IC-DfE" firstAttribute="top" secondItem="FuP-Nt-CMT" secondAttribute="top" constant="8" id="L9r-bV-KO5"/>
+                                    <constraint firstItem="92M-IC-DfE" firstAttribute="leading" secondItem="FuP-Nt-CMT" secondAttribute="leading" constant="8" id="Scd-G6-1Iv"/>
+                                    <constraint firstAttribute="height" constant="80" id="XcL-UP-CC4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmO-GY-JTi">
+                                <rect key="frame" x="264" y="68" width="80" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="資券成數查詢" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuL-Wl-9bu">
+                                        <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="YfU-zX-PoJ"/>
+                                            <constraint firstAttribute="width" constant="64" id="f9h-0S-B6L"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="JuL-Wl-9bu" firstAttribute="top" secondItem="CmO-GY-JTi" secondAttribute="topMargin" id="4DD-Ux-rKb"/>
+                                    <constraint firstItem="JuL-Wl-9bu" firstAttribute="leading" secondItem="CmO-GY-JTi" secondAttribute="leadingMargin" id="QXT-oS-nuL"/>
+                                    <constraint firstAttribute="width" constant="80" id="fpU-JL-vlv"/>
+                                    <constraint firstAttribute="height" constant="80" id="mOO-CA-N25"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="XWu-Um-qcD" firstAttribute="leading" secondItem="qIs-9V-Kqw" secondAttribute="leading" constant="16" id="262-Mq-6gn"/>
-                            <constraint firstItem="CmO-GY-JTi" firstAttribute="top" secondItem="flR-5a-KnT" secondAttribute="bottom" constant="18" id="52K-Wc-Zma"/>
                             <constraint firstItem="SJu-SU-t2l" firstAttribute="leading" secondItem="qIs-9V-Kqw" secondAttribute="leading" constant="16" id="N4A-wO-Mgf"/>
                             <constraint firstItem="qIs-9V-Kqw" firstAttribute="trailing" secondItem="flR-5a-KnT" secondAttribute="trailing" constant="16" id="P4i-Ae-llF"/>
+                            <constraint firstItem="FuP-Nt-CMT" firstAttribute="top" secondItem="wTD-dS-GpB" secondAttribute="bottom" constant="53" id="Q4n-Qm-TQG"/>
                             <constraint firstItem="wTD-dS-GpB" firstAttribute="top" secondItem="qIs-9V-Kqw" secondAttribute="top" constant="68" id="awR-ra-ioF"/>
                             <constraint firstItem="XWu-Um-qcD" firstAttribute="top" secondItem="qIs-9V-Kqw" secondAttribute="top" constant="68" id="dUy-Iz-KMY"/>
                             <constraint firstItem="SJu-SU-t2l" firstAttribute="top" secondItem="XWu-Um-qcD" secondAttribute="bottom" constant="53" id="dlo-xw-UCM"/>
-                            <constraint firstItem="qIs-9V-Kqw" firstAttribute="trailing" secondItem="CmO-GY-JTi" secondAttribute="trailing" constant="16" id="q9S-ib-BtW"/>
+                            <constraint firstItem="CmO-GY-JTi" firstAttribute="top" secondItem="flR-5a-KnT" secondAttribute="bottom" constant="18" id="qrK-t3-Ftb"/>
+                            <constraint firstItem="CmO-GY-JTi" firstAttribute="leading" secondItem="wTD-dS-GpB" secondAttribute="trailing" constant="37" id="r6h-ce-f1Z"/>
                             <constraint firstItem="flR-5a-KnT" firstAttribute="top" secondItem="qIs-9V-Kqw" secondAttribute="top" constant="20" id="s2g-Hr-g6C"/>
-                            <constraint firstItem="CmO-GY-JTi" firstAttribute="leading" secondItem="wTD-dS-GpB" secondAttribute="trailing" constant="52" id="uHa-5V-0JY"/>
                             <constraint firstItem="wTD-dS-GpB" firstAttribute="leading" secondItem="XWu-Um-qcD" secondAttribute="trailing" constant="51" id="uTo-r9-eqf"/>
+                            <constraint firstItem="FuP-Nt-CMT" firstAttribute="leading" secondItem="SJu-SU-t2l" secondAttribute="trailing" constant="51" id="ukf-UU-CCW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qIs-9V-Kqw"/>
                     </view>
                     <connections>
+                        <outlet property="mGoldView" destination="FuP-Nt-CMT" id="caY-ds-7Dt"/>
                         <outlet property="mView1" destination="XWu-Um-qcD" id="Hl3-Qh-zIp"/>
                         <outlet property="mView2" destination="wTD-dS-GpB" id="6q5-c4-Ojk"/>
                         <outlet property="mView3" destination="CmO-GY-JTi" id="3H2-pO-gqm"/>
@@ -3960,10 +3989,111 @@
             </objects>
             <point key="canvasLocation" x="-2175.1999999999998" y="2383.3583208395803"/>
         </scene>
+        <!--Gold View Controller-->
+        <scene sceneID="aZU-mB-K2L">
+            <objects>
+                <viewController storyboardIdentifier="gold" id="SCu-rP-bIr" customClass="GoldViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SzQ-CY-W0G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXl-rN-aGB">
+                                <rect key="frame" x="16" y="104" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Klb-9a-UKA"/>
+                                    <constraint firstAttribute="width" constant="343" id="bWV-vg-rr5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黃金存摺即時價格" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bni-3J-xsV">
+                                <rect key="frame" x="16" y="48" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="DLn-If-rXU"/>
+                                    <constraint firstAttribute="width" constant="343" id="qcm-rJ-My6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="外幣匯率" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l60-DK-Hp4">
+                                <rect key="frame" x="16" y="206" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HhQ-2m-6se"/>
+                                    <constraint firstAttribute="width" constant="343" id="wL3-G6-TYG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M7V-8g-J1J">
+                                <rect key="frame" x="16" y="235" width="343" height="412"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="412" id="Dhb-zJ-dtz"/>
+                                    <constraint firstAttribute="width" constant="343" id="Shy-bc-yWz"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="8kN-Wg-JnY">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8kN-Wg-JnY" id="mfE-cF-ZxE">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SCu-rP-bIr" id="fHL-CK-m4V"/>
+                                    <outlet property="delegate" destination="SCu-rP-bIr" id="QdL-pU-QlL"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuQ-5b-bmW">
+                                <rect key="frame" x="16" y="155" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="En0-mG-KGM"/>
+                                    <constraint firstAttribute="width" constant="343" id="Tne-pn-B5W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zX6-ld-OOM" firstAttribute="trailing" secondItem="l60-DK-Hp4" secondAttribute="trailing" constant="16" id="6Vs-jw-W9y"/>
+                            <constraint firstItem="zX6-ld-OOM" firstAttribute="trailing" secondItem="M7V-8g-J1J" secondAttribute="trailing" constant="16" id="7ZP-IE-JPb"/>
+                            <constraint firstItem="wuQ-5b-bmW" firstAttribute="leading" secondItem="zX6-ld-OOM" secondAttribute="leading" constant="16" id="BQv-aU-on2"/>
+                            <constraint firstItem="l60-DK-Hp4" firstAttribute="leading" secondItem="zX6-ld-OOM" secondAttribute="leading" constant="16" id="D60-Sl-1uk"/>
+                            <constraint firstItem="mXl-rN-aGB" firstAttribute="leading" secondItem="zX6-ld-OOM" secondAttribute="leading" constant="16" id="P1A-YJ-LxG"/>
+                            <constraint firstItem="Bni-3J-xsV" firstAttribute="top" secondItem="zX6-ld-OOM" secondAttribute="top" constant="48" id="USf-NN-fnA"/>
+                            <constraint firstItem="M7V-8g-J1J" firstAttribute="leading" secondItem="zX6-ld-OOM" secondAttribute="leading" constant="16" id="Xgi-kL-0DV"/>
+                            <constraint firstItem="l60-DK-Hp4" firstAttribute="top" secondItem="wuQ-5b-bmW" secondAttribute="bottom" constant="30" id="Yry-Oz-C7x"/>
+                            <constraint firstItem="wuQ-5b-bmW" firstAttribute="top" secondItem="mXl-rN-aGB" secondAttribute="bottom" constant="30" id="bGh-yv-RgF"/>
+                            <constraint firstItem="zX6-ld-OOM" firstAttribute="trailing" secondItem="wuQ-5b-bmW" secondAttribute="trailing" constant="16" id="eWP-bc-tOP"/>
+                            <constraint firstItem="M7V-8g-J1J" firstAttribute="top" secondItem="l60-DK-Hp4" secondAttribute="bottom" constant="8" id="g6h-WK-oxV"/>
+                            <constraint firstItem="mXl-rN-aGB" firstAttribute="top" secondItem="Bni-3J-xsV" secondAttribute="bottom" constant="35" id="lZ2-IV-sbc"/>
+                            <constraint firstItem="Bni-3J-xsV" firstAttribute="leading" secondItem="zX6-ld-OOM" secondAttribute="leading" constant="16" id="sDn-HA-ERK"/>
+                            <constraint firstItem="zX6-ld-OOM" firstAttribute="trailing" secondItem="Bni-3J-xsV" secondAttribute="trailing" constant="16" id="ss5-zg-7vM"/>
+                            <constraint firstItem="zX6-ld-OOM" firstAttribute="trailing" secondItem="mXl-rN-aGB" secondAttribute="trailing" constant="16" id="yVI-3B-ETD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zX6-ld-OOM"/>
+                    </view>
+                    <connections>
+                        <outlet property="label_1" destination="mXl-rN-aGB" id="QHm-lk-hV3"/>
+                        <outlet property="label_2" destination="wuQ-5b-bmW" id="UnH-hb-Wli"/>
+                        <outlet property="tableview" destination="M7V-8g-J1J" id="EY7-Mz-6pa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUq-jg-GcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1344.8" y="2384.257871064468"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="KcQ-HV-Rrt">
             <objects>
-                <viewController storyboardIdentifier="ssf" modalPresentationStyle="fullScreen" id="FBC-VD-VsC" customClass="SSFViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ssf" modalPresentationStyle="fullScreen" id="FBC-VD-VsC" customClass="SSFViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ikz-KG-o89">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4239,12 +4369,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBe-n9-FZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1306.4000000000001" y="2286.2068965517242"/>
+            <point key="canvasLocation" x="-986" y="4028"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Siu-CD-DOH">
             <objects>
-                <viewController storyboardIdentifier="iap" modalPresentationStyle="fullScreen" id="oIf-qe-ORW" customClass="IAPViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="iap" modalPresentationStyle="fullScreen" id="oIf-qe-ORW" customClass="IAPViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mcd-P1-DW6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4483,7 +4613,7 @@
         <!--Futures View Controller-->
         <scene sceneID="bP3-h7-a54">
             <objects>
-                <viewController storyboardIdentifier="futures" modalPresentationStyle="fullScreen" id="rLy-NF-HVe" customClass="FuturesViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="futures" modalPresentationStyle="fullScreen" id="rLy-NF-HVe" customClass="FuturesViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MGB-Hc-LVL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4793,7 +4923,7 @@
         <!--Foreign Investment View Controller-->
         <scene sceneID="dlB-RU-DT4">
             <objects>
-                <viewController storyboardIdentifier="view1" id="SIJ-s3-g8G" customClass="ForeignInvestmentViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view1" id="SIJ-s3-g8G" customClass="ForeignInvestmentViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ch-1F-DqQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4885,7 +5015,7 @@
         <!--Trust View Controller-->
         <scene sceneID="QgQ-NA-yoV">
             <objects>
-                <viewController storyboardIdentifier="view2" id="tkB-25-LBL" customClass="TrustViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view2" id="tkB-25-LBL" customClass="TrustViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0hj-4p-YDK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4978,7 +5108,7 @@
         <!--Broker View Controller-->
         <scene sceneID="j1Y-Ns-R17">
             <objects>
-                <viewController storyboardIdentifier="view4" id="qjq-P9-lQH" customClass="BrokerViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view4" id="qjq-P9-lQH" customClass="BrokerViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkf-jx-OA9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5070,7 +5200,7 @@
         <!--Self Employed View Controller-->
         <scene sceneID="ckK-NQ-Uaf">
             <objects>
-                <viewController storyboardIdentifier="view3" id="07Q-TW-l90" customClass="SelfEmployedViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view3" id="07Q-TW-l90" customClass="SelfEmployedViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rrT-RM-hvn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5162,7 +5292,7 @@
         <!--Quotes View Controller-->
         <scene sceneID="eQC-37-nCT">
             <objects>
-                <viewController storyboardIdentifier="view5" id="LV5-a7-OUE" customClass="QuotesViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view5" id="LV5-a7-OUE" customClass="QuotesViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GFN-dp-SXM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5255,7 +5385,7 @@
         <!--Select View Controller-->
         <scene sceneID="Oz6-Jh-MQ6">
             <objects>
-                <viewController storyboardIdentifier="news" id="01x-4p-eJS" customClass="SelectViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="news" id="01x-4p-eJS" customClass="SelectViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fx7-1c-Qqo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5457,7 +5587,7 @@
         <!--Three View Controller-->
         <scene sceneID="8tJ-aY-UdC">
             <objects>
-                <viewController storyboardIdentifier="three" id="AeI-4a-YwK" customClass="ThreeViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="three" id="AeI-4a-YwK" customClass="ThreeViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UcT-2I-sEe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5645,14 +5775,62 @@
                                     <constraint firstItem="9Ag-eC-v2v" firstAttribute="leading" secondItem="nso-e1-ZWM" secondAttribute="leading" constant="8" id="xMG-Zg-xso"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVH-yW-CSI">
+                                <rect key="frame" x="190" y="323" width="169" height="242"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小台散戶多空比" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lq8-4L-HgN">
+                                        <rect key="frame" x="8" y="8" width="153" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="153" id="WKM-2v-Ong"/>
+                                            <constraint firstAttribute="height" constant="21" id="hxA-pj-icj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzJ-Qs-NjO">
+                                        <rect key="frame" x="8" y="170" width="153" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="IqT-nD-cm8"/>
+                                            <constraint firstAttribute="width" constant="153" id="zPG-Pm-RlG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe4-Tl-vT2">
+                                        <rect key="frame" x="8" y="91" width="153" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="153" id="1JB-Vl-vsT"/>
+                                            <constraint firstAttribute="height" constant="21" id="9fE-Rl-Dpb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="4dH-ow-axn"/>
+                                    <constraint firstItem="lq8-4L-HgN" firstAttribute="leading" secondItem="sVH-yW-CSI" secondAttribute="leadingMargin" id="Hy9-c5-Nvp"/>
+                                    <constraint firstItem="Qe4-Tl-vT2" firstAttribute="top" secondItem="lq8-4L-HgN" secondAttribute="bottom" constant="62" id="Jib-cC-wSl"/>
+                                    <constraint firstItem="lq8-4L-HgN" firstAttribute="leading" secondItem="yzJ-Qs-NjO" secondAttribute="leading" id="RuU-Xw-93h"/>
+                                    <constraint firstAttribute="height" constant="242" id="XMB-jU-YKZ"/>
+                                    <constraint firstItem="yzJ-Qs-NjO" firstAttribute="top" secondItem="Qe4-Tl-vT2" secondAttribute="bottom" constant="58" id="gzw-kZ-3w4"/>
+                                    <constraint firstItem="lq8-4L-HgN" firstAttribute="top" secondItem="sVH-yW-CSI" secondAttribute="topMargin" id="ppC-OU-gH9"/>
+                                    <constraint firstItem="lq8-4L-HgN" firstAttribute="leading" secondItem="Qe4-Tl-vT2" secondAttribute="leading" id="wex-gI-cax"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nso-e1-ZWM" firstAttribute="leading" secondItem="Ydz-Kh-HBR" secondAttribute="leading" constant="16" id="1TY-GH-gOq"/>
+                            <constraint firstItem="Ydz-Kh-HBR" firstAttribute="trailing" secondItem="sVH-yW-CSI" secondAttribute="trailing" constant="16" id="OcB-t0-gLb"/>
                             <constraint firstItem="qkD-F5-KZ4" firstAttribute="top" secondItem="Ydz-Kh-HBR" secondAttribute="top" constant="20" id="c3N-Ph-soc"/>
                             <constraint firstItem="nGc-IU-ZZT" firstAttribute="leading" secondItem="Ydz-Kh-HBR" secondAttribute="leading" constant="16" id="k0N-O7-HtW"/>
                             <constraint firstItem="nGc-IU-ZZT" firstAttribute="top" secondItem="qkD-F5-KZ4" secondAttribute="bottom" constant="9" id="loM-iV-k1Z"/>
                             <constraint firstItem="Ydz-Kh-HBR" firstAttribute="trailing" secondItem="qkD-F5-KZ4" secondAttribute="trailing" constant="16" id="lxX-8u-aEG"/>
+                            <constraint firstItem="sVH-yW-CSI" firstAttribute="top" secondItem="nGc-IU-ZZT" secondAttribute="bottom" constant="22" id="ox8-qo-XNh"/>
                             <constraint firstItem="Ydz-Kh-HBR" firstAttribute="trailing" secondItem="nGc-IU-ZZT" secondAttribute="trailing" constant="16" id="p00-Et-uYc"/>
                             <constraint firstItem="nso-e1-ZWM" firstAttribute="top" secondItem="nGc-IU-ZZT" secondAttribute="bottom" constant="22" id="s0f-ci-jH3"/>
                         </constraints>
@@ -5664,6 +5842,8 @@
                         <outlet property="futures_label_3" destination="xoy-V9-DyY" id="k11-1r-r45"/>
                         <outlet property="futures_label_4" destination="sg6-hA-BL6" id="Rsi-rN-y9k"/>
                         <outlet property="futures_label_5" destination="A6b-kH-4wV" id="CFf-Yl-WEq"/>
+                        <outlet property="small_1" destination="Qe4-Tl-vT2" id="fxX-w1-F57"/>
+                        <outlet property="small_2" destination="yzJ-Qs-NjO" id="W0T-7K-HCX"/>
                         <outlet property="three_label_1" destination="OGy-Y3-59r" id="ilU-y5-nel"/>
                         <outlet property="three_label_2" destination="BJQ-Zc-2fs" id="vvc-BT-ctS"/>
                         <outlet property="three_label_3" destination="pCs-KU-E8D" id="SdB-tb-edj"/>
@@ -5678,7 +5858,7 @@
         <!--Financing View Controller-->
         <scene sceneID="r4T-KH-zb2">
             <objects>
-                <viewController storyboardIdentifier="financing" modalPresentationStyle="fullScreen" id="1iG-2N-qRe" customClass="Financing_ViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="financing" modalPresentationStyle="fullScreen" id="1iG-2N-qRe" customClass="Financing_ViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OkR-iE-xLZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5992,7 +6172,7 @@
         <!--Warrant View Controller-->
         <scene sceneID="WIj-6I-hZL">
             <objects>
-                <viewController storyboardIdentifier="warrrant" modalPresentationStyle="fullScreen" id="ffF-wu-K9w" customClass="WarrantViewController" customModule="stockcomputer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="warrrant" modalPresentationStyle="fullScreen" id="ffF-wu-K9w" customClass="WarrantViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YrD-x5-Sst">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

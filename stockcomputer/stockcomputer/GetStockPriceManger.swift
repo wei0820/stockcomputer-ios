@@ -908,5 +908,9 @@ class GetStockPriceManager{
                // an error occurred
            }
        }
+  
     
+    
+    
+
 }

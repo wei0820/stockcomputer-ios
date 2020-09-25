@@ -21,14 +21,18 @@ class NotificationManager{
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         let request = UNNotificationRequest(identifier: "notification", content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-
-
-
-        
-
-        
-    
-        
     }
+    
+    static func CreateDateNotification(){
+        
+//        var dateComponents = DateComponents()
+//        dateComponents.
+//
+//
+//
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: <#T##DateComponents#>, repeats: <#T##Bool#>)
+    }
+    
+    
     
 }

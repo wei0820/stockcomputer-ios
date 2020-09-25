@@ -65,6 +65,23 @@ class Financing_ViewController: MGoogleADViewController {
             label_5.text = "損益:" + String(money)
          
             
+            if(money>0){
+                label_5.textColor = UIColor.red
+                
+            }else{
+                label_5.textColor = UIColor.green
+
+            }
+            var subtitle :String = ""
+            
+            
+            if(money <= -1){
+                subtitle = "是虧損的！！"
+            }else{
+                subtitle = "是賺錢的！！"
+            }
+            
+            NotificationManager.CreateNotification(title: "今日做隔日沖", subtitle: subtitle, body: "獲利：" + String(money))
         }
         
         
