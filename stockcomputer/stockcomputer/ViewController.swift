@@ -98,6 +98,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
             
         }
         getStockcomuperAllDate()
+        NotificationManager.CreaeWeekdayNotification()
         
     }
     override func viewWillAppear(_ animated: Bool) {

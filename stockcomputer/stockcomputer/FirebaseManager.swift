@@ -690,5 +690,21 @@ class FirebaseManager {
             
         }
     }
+    
+    
+    
+    static  func get(){
+        Database.database().reference().child("Notification").child("Notification" as! String).observe(.childAdded, with: {
+            (snapshot) in
+            // childAdded逐筆呈現
+            
+            if let dictionaryData = snapshot.value as? [String: AnyObject]{
+//            dictionaryData["id"] = id as String
+
+                
+            }
+            
+        }, withCancel: nil)
+    }
 }
 
