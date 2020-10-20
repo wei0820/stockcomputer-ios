@@ -22,6 +22,7 @@
 		8E48E4F023F3E48800384D25 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4EF23F3E48700384D25 /* FirebaseManager.swift */; };
 		8E48E4F223F3E4E000384D25 /* UiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4F123F3E4E000384D25 /* UiManager.swift */; };
 		8E48E4F423F3E66600384D25 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4F323F3E66600384D25 /* DateManager.swift */; };
+		8E517F5D253ED68D00F3F9B0 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E517F5C253ED68D00F3F9B0 /* ReportViewController.swift */; };
 		8E781F77248DD39A00F1224B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E781F76248DD39A00F1224B /* GoogleService-Info.plist */; };
 		8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122A23489A3B00795029 /* Base64Manager.swift */; };
 		8E87122D23489E7000795029 /* CamerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122C23489E7000795029 /* CamerManager.swift */; };
@@ -81,6 +82,7 @@
 		8E48E4EF23F3E48700384D25 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8E48E4F123F3E4E000384D25 /* UiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiManager.swift; sourceTree = "<group>"; };
 		8E48E4F323F3E66600384D25 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		8E517F5C253ED68D00F3F9B0 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		8E781F76248DD39A00F1224B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E87122A23489A3B00795029 /* Base64Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Manager.swift; sourceTree = "<group>"; };
 		8E87122C23489E7000795029 /* CamerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerManager.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				8ED62A0A24DD2E3500908253 /* WarrantViewController.swift */,
 				8E182A14250F48EA00CF4A3A /* NotificationManager.swift */,
 				8E182A1F251C966E00CF4A3A /* GoldViewController.swift */,
+				8E517F5C253ED68D00F3F9B0 /* ReportViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				8ED629F724C8079300908253 /* ShareDetailViewController.swift in Sources */,
 				B74F5301220556340034DC5D /* AppDelegate.swift in Sources */,
 				8ED642C62421F1E700260E25 /* ForeignInvestmentViewController.swift in Sources */,
+				8E517F5D253ED68D00F3F9B0 /* ReportViewController.swift in Sources */,
 				8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */,
 				B7E8C174226F015500792815 /* DistributionController.swift in Sources */,
 				8ED642CA242216C800260E25 /* SelfEmployedViewController.swift in Sources */,
@@ -566,7 +570,7 @@
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 93;
+				CURRENT_PROJECT_VERSION = 94;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -579,7 +583,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 9.3;
+				MARKETING_VERSION = 9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "股市大贏家";
 				SWIFT_VERSION = 4.2;
@@ -595,7 +599,7 @@
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 93;
+				CURRENT_PROJECT_VERSION = 94;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -608,7 +612,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 9.3;
+				MARKETING_VERSION = 9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
 				PRODUCT_NAME = "股市大贏家";
 				SWIFT_VERSION = 4.2;

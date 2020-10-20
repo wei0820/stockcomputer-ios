@@ -29,10 +29,14 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         setAdBanner()
         getAnnouncement()
         check()
+        
                 
     }
     override func viewWillAppear(_ animated: Bool) {
         check()
+        NotificationManager.CreaeWeekdayNotification()
+        NotificationManager.CreaeWeekdayofMonthNotification()
+
     }
     func setScreenName(screenName :String ,screenClassName :String){
         Firebase.Analytics.setScreenName(screenName, screenClass: screenClassName)
@@ -42,7 +46,6 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         if #available(iOS 13.0, *) {
             NotificationCenter.default.addObserver(forName: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil, queue: nil) { (notification: Notification) in
                 // Sign user in or out
-                print("Jack","Sign user in or out...")
             }
         } else {
             // Fallback on earlier versions

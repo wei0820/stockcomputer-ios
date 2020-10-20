@@ -33,7 +33,6 @@ class GoldViewController: MGoogleADViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         getGold()
         getGoldTitle()
-
         // Do any additional setup after loading the view.
     }
     

@@ -55,6 +55,7 @@
                                     <tabBarItem tag="1" title="當沖獲利試算" image="pencil" catalog="system" id="eGr-N4-H68"/>
                                     <tabBarItem tag="2" title="選擇權試算" image="pencil.circle" catalog="system" id="Hkp-Ks-Rqr"/>
                                     <tabBarItem tag="3" title="期貨獲利試算" image="pencil.circle.fill" catalog="system" id="kWB-s4-FK8"/>
+                                    <tabBarItem tag="5" title="權證獲利試算" image="rosette" catalog="system" id="Y0z-6e-SeV"/>
                                     <tabBarItem tag="4" title="個股期試算" image="pencil.slash" catalog="system" selectedImage="pencil.slash" id="7Q5-Ax-gAB"/>
                                 </items>
                                 <connections>
@@ -274,7 +275,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWJ-bT-HQi">
                                 <rect key="frame" x="197" y="433" width="75" height="75"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="權證獲利試算" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRP-Gn-oeK">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="股市損益紀錄" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRP-Gn-oeK">
                                         <rect key="frame" x="2" y="8" width="71" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="71" id="1DU-HI-C9t"/>
@@ -6494,6 +6495,7 @@
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <image name="port" width="32" height="32"/>
+        <image name="rosette" catalog="system" width="100" height="128"/>
         <image name="round_settings_voice_black_48pt" width="48" height="48"/>
         <image name="share" width="36" height="36"/>
         <image name="star" catalog="system" width="128" height="116"/>
