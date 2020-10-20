@@ -45,7 +45,7 @@ let center = UNUserNotificationCenter.current()
         center.add(request)
     }
         
-    static func CreaeWeekdayNotification(){
+    static func CreaeWeekdayofMonthNotification(){
         
     // 計算期指結算 日子
     let center = UNUserNotificationCenter.current()
@@ -77,4 +77,30 @@ let center = UNUserNotificationCenter.current()
         }
     
     
+    
+    
+    static func CreaeWeekdayNotification(){
+            
+        // 計算選擇權結算 日子
+        let center = UNUserNotificationCenter.current()
+
+          let content = UNMutableNotificationContent()
+                content.title = "周選擇結算"
+                content.body = "結算,波動大 請小心操作！！"
+                content.categoryIdentifier = "alarm"
+                content.sound = UNNotificationSound.default
+
+                var weekForMonthly = DateComponents()
+                weekForMonthly.weekday = 4 // 週三
+                weekForMonthly.hour =  08
+                weekForMonthly.minute = 00
+            
+
+            let trigger = UNCalendarNotificationTrigger(dateMatching: weekForMonthly, repeats:true)
+
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+                center.add(request)
+            }
+        
 }
