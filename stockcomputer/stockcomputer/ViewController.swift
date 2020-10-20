@@ -329,6 +329,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
           }
     
     @objc func smallAction(sender : UITapGestureRecognizer) {
+        setJump(type: "report")
             
           }
     @objc func shareAction(sender : UITapGestureRecognizer) {

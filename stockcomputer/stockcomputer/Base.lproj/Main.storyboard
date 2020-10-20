@@ -4372,6 +4372,21 @@
             </objects>
             <point key="canvasLocation" x="-986" y="4028"/>
         </scene>
+        <!--Report View Controller-->
+        <scene sceneID="KFn-RZ-gxd">
+            <objects>
+                <viewController storyboardIdentifier="report" id="krn-4B-bTv" customClass="ReportViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2SD-3q-d4F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nj3-Dn-WdW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HKM-6q-sAW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="319" y="3780"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="Siu-CD-DOH">
             <objects>
