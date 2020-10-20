@@ -62,6 +62,16 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
                                      "名稱": "個股期獲利試算"
                                  ])
             break
+        case 5:
+            setJump(type: "warrrant")
+            Firebase.Analytics.logEvent("選擇項目", parameters: [
+                                      "時間": DateManager.setDate(),
+                                      "名稱": "權證獲利試算"
+                                  ])
+            
+            
+            
+            break
             
         default:
             
@@ -319,7 +329,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
           }
     
     @objc func smallAction(sender : UITapGestureRecognizer) {
-        setJump(type: "warrrant")
             
           }
     @objc func shareAction(sender : UITapGestureRecognizer) {

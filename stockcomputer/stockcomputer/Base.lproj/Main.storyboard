@@ -55,6 +55,7 @@
                                     <tabBarItem tag="1" title="當沖獲利試算" image="pencil" catalog="system" id="eGr-N4-H68"/>
                                     <tabBarItem tag="2" title="選擇權試算" image="pencil.circle" catalog="system" id="Hkp-Ks-Rqr"/>
                                     <tabBarItem tag="3" title="期貨獲利試算" image="pencil.circle.fill" catalog="system" id="kWB-s4-FK8"/>
+                                    <tabBarItem tag="5" title="權證獲利試算" image="rosette" catalog="system" id="Y0z-6e-SeV"/>
                                     <tabBarItem tag="4" title="個股期試算" image="pencil.slash" catalog="system" selectedImage="pencil.slash" id="7Q5-Ax-gAB"/>
                                 </items>
                                 <connections>
@@ -6494,6 +6495,7 @@
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <image name="port" width="32" height="32"/>
+        <image name="rosette" catalog="system" width="100" height="128"/>
         <image name="round_settings_voice_black_48pt" width="48" height="48"/>
         <image name="share" width="36" height="36"/>
         <image name="star" catalog="system" width="128" height="116"/>
