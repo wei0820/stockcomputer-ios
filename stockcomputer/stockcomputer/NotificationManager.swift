@@ -23,28 +23,28 @@ class NotificationManager{
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
-    static func CreateDateNotification(){
-        
-let center = UNUserNotificationCenter.current()
-
-  let content = UNMutableNotificationContent()
-        content.title = "14"
-        content.body = "46"
-        content.categoryIdentifier = "alarm"
-        content.userInfo = ["customData": "fizzbuzz"]
-        content.sound = UNNotificationSound.default
-
-        var date = DateComponents()
-        date.month = 9
-        date.day = 30
-        date.hour = 14
-        date.minute = 46
-        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
-
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        center.add(request)
-    }
-        
+//    static func CreateDateNotification(){
+//        
+//let center = UNUserNotificationCenter.current()
+//
+//  let content = UNMutableNotificationContent()
+//        content.title = "14"
+//        content.body = "46"
+//        content.categoryIdentifier = "alarm"
+//        content.userInfo = ["customData": "fizzbuzz"]
+//        content.sound = UNNotificationSound.default
+//
+//        var date = DateComponents()
+//        date.month = 9
+//        date.day = 30
+//        date.hour = 14
+//        date.minute = 46
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+//
+//        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+//        center.add(request)
+//    }
+//        
     static func CreaeWeekdayofMonthNotification(){
         
     // 計算期指結算 日子
