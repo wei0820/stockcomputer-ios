@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>HTTPDNS_relesae.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>6B219AE10C051FC94EACB78C33BE3AB8D2281F0F</string>
+				<key>dateExpires</key>
+				<string>2020/12/26</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>FPPCDDK75Q.com.ios.lot.zhcpywl</string>
+				<key>aps-environment</key>
+				<string>development</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>FPPCDDK75Q</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>中華彩票.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>eff3a87d-e20e-4361-8e4d-17d7c96104a3</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: com.ios.lot.zhcpywl</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>FPPCDDK75Q</string>
+				<key>name</key>
+				<string>Yuanjie Zhang</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
