@@ -17,6 +17,7 @@ pod 'Firebase/Auth'
 pod 'Alamofire', '~> 4.0.0-beta.4'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
+pod 'Toaster'
 
 pod 'Kanna', '~> 4.0.0'
 pod 'Mapbox-iOS-SDK', '~> 5.4'
@@ -39,5 +40,6 @@ pod 'GoogleSignIn'
 pod 'Firebase/Messaging'
 pod 'Firebase/InAppMessaging'
 pod 'CLImagePickerTool'
+pod 'YouTubePlayer'
 
 end
