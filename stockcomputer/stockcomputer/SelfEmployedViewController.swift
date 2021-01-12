@@ -33,7 +33,8 @@ class SelfEmployedViewController: MGoogleADViewController , UITableViewDataSourc
         super.viewDidLoad()
         titlename.text = GetStockPriceManager.getEmployedTitle() + "自營商買超排行"
         getData()
-        
+        setScreenName(screenName: "自營商買超排行", screenClassName: "SelfEmployedViewController")
+
         // Do any additional setup after loading the view.
     }
     func getData(){
@@ -78,11 +79,15 @@ class SelfEmployedViewController: MGoogleADViewController , UITableViewDataSourc
         case 1:
             setToast(s: "自營商買超排行")
             titlename.text = GetStockPriceManager.getEmployedTitle() + "自營商買超排行"
+            setScreenName(screenName: "自營商買超排行", screenClassName: "SelfEmployedViewController")
+
             getData()
             break
         case 2:
             setToast(s: "自營商賣超排行")
             titlename.text = GetStockPriceManager.getEmployedTitle() + "自營商賣超排行"
+            setScreenName(screenName: "自營商賣超排行", screenClassName: "SelfEmployedViewController")
+
             getData_2()
             
             

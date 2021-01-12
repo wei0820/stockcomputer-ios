@@ -11,28 +11,35 @@
 		8E10DDB1234C5FE3006A46F2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */; };
 		8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB2234C6AC8006A46F2 /* MapManager.swift */; };
 		8E10DDB92359A955006A46F2 /* StockNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB82359A955006A46F2 /* StockNumberViewController.swift */; };
+		8E182A15250F48EA00CF4A3A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E182A14250F48EA00CF4A3A /* NotificationManager.swift */; };
+		8E182A20251C966F00CF4A3A /* GoldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E182A1F251C966E00CF4A3A /* GoldViewController.swift */; };
 		8E2765632474C6810024573B /* Financing ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2765622474C6810024573B /* Financing ViewController.swift */; };
 		8E276565247D18E20024573B /* IAPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E276564247D18E20024573B /* IAPViewController.swift */; };
 		8E2AB6D3238E1DA20079910F /* FuturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AB6D2238E1DA20079910F /* FuturesViewController.swift */; };
+		8E485E9024BE9EAF005E718E /* AddNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E485E8F24BE9EAF005E718E /* AddNewsViewController.swift */; };
 		8E48E4E823EBB2A500384D25 /* SellAndPutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4E723EBB2A500384D25 /* SellAndPutViewController.swift */; };
 		8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4E923F131CC00384D25 /* ShareListViewController.swift */; };
 		8E48E4F023F3E48800384D25 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4EF23F3E48700384D25 /* FirebaseManager.swift */; };
 		8E48E4F223F3E4E000384D25 /* UiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4F123F3E4E000384D25 /* UiManager.swift */; };
 		8E48E4F423F3E66600384D25 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48E4F323F3E66600384D25 /* DateManager.swift */; };
-		8E694FD423FA2DB50072511C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E694FD323FA2DB40072511C /* GoogleService-Info.plist */; };
+		8E517F5D253ED68D00F3F9B0 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E517F5C253ED68D00F3F9B0 /* ReportViewController.swift */; };
+		8E80C0692542B33C002A7C15 /* StockPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E80C0682542B33C002A7C15 /* StockPeriodViewController.swift */; };
 		8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122A23489A3B00795029 /* Base64Manager.swift */; };
 		8E87122D23489E7000795029 /* CamerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122C23489E7000795029 /* CamerManager.swift */; };
 		8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87122E234ADCE000795029 /* MemberCenterViewController.swift */; };
 		8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E871230234AFF1000795029 /* StoreKit.framework */; };
-		8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */; };
 		8E898F1E2462BDEC0072E3AA /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E898F1D2462BDEC0072E3AA /* OtherViewController.swift */; };
 		8E898F202463E37A0072E3AA /* SSFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E898F1F2463E37A0072E3AA /* SSFViewController.swift */; };
 		8EB01C992422197400A7E992 /* BrokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C982422197400A7E992 /* BrokerViewController.swift */; };
 		8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C9A242345F000A7E992 /* QuotesViewController.swift */; };
 		8EB01C9D242C87C100A7E992 /* ProFitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */; };
+		8EB8B6BF2484D5D500F14AEE /* IAPurchaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8B6BE2484D5D500F14AEE /* IAPurchaseViewControllerDelegate.swift */; };
 		8EBF7980236978F000E569C2 /* QAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF797F236978F000E569C2 /* QAListViewController.swift */; };
 		8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF7983236ACE8E00E569C2 /* TimerManager.swift */; };
 		8ED1CB4B244856570050B5A4 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED1CB4A244856570050B5A4 /* SelectViewController.swift */; };
+		8ED629F224C6C6DE00908253 /* ShareStockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED629F124C6C6DE00908253 /* ShareStockItem.swift */; };
+		8ED629F724C8079300908253 /* ShareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED629F624C8079300908253 /* ShareDetailViewController.swift */; };
+		8ED62A0B24DD2E3500908253 /* WarrantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED62A0A24DD2E3500908253 /* WarrantViewController.swift */; };
 		8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BB2420671300260E25 /* GetStockPriceManger.swift */; };
 		8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642BD242070EA00260E25 /* StockListViewController.swift */; };
 		8ED642C224209F1600260E25 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED642C124209F1600260E25 /* StockData.swift */; };
@@ -43,6 +50,7 @@
 		8EEE3E992469357100B1493E /* SSFCalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE3E982469357100B1493E /* SSFCalculateViewController.swift */; };
 		8EEE3E9B246BDCFC00B1493E /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE3E9A246BDCFB00B1493E /* ThreeViewController.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
+		B738625925AD786200B612F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B738625825AD786200B612F7 /* GoogleService-Info.plist */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
 		B74F5303220556340034DC5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5302220556340034DC5D /* ViewController.swift */; };
 		B74F5306220556340034DC5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74F5304220556340034DC5D /* Main.storyboard */; };
@@ -51,42 +59,48 @@
 		B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B769047722A663DE00E1B53F /* EveryDayController.swift */; };
 		B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F632205D27A00A674D6 /* TradeDetailViewController.swift */; };
 		B77B6F662205D53300A674D6 /* MarginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B6F652205D53300A674D6 /* MarginController.swift */; };
+		B7CF06CB11EB1F4AE60EC971 /* Pods_stockcomputer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F377183FF9FA30554DD880DA /* Pods_stockcomputer.framework */; };
 		B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E0A4612269998E00CF6005 /* HongKongController.swift */; };
 		B7E8C174226F015500792815 /* DistributionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C173226F015500792815 /* DistributionController.swift */; };
 		B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */; };
 		B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C1772270197900792815 /* FBLoginViewController.swift */; };
 		B7E8C17C2271B65E00792815 /* FirebaseWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C17B2271B65E00792815 /* FirebaseWorks.swift */; };
-		EFD7E662DE75B39649B23F14 /* Pods_stockcomputer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218BFBFCBC4C699D22C47723 /* Pods_stockcomputer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		218BFBFCBC4C699D22C47723 /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGoogleADViewController.swift; sourceTree = "<group>"; };
 		8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8E10DDB2234C6AC8006A46F2 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		8E10DDB82359A955006A46F2 /* StockNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockNumberViewController.swift; sourceTree = "<group>"; };
+		8E182A14250F48EA00CF4A3A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		8E182A1F251C966E00CF4A3A /* GoldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldViewController.swift; sourceTree = "<group>"; };
 		8E2765622474C6810024573B /* Financing ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Financing ViewController.swift"; sourceTree = "<group>"; };
 		8E276564247D18E20024573B /* IAPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViewController.swift; sourceTree = "<group>"; };
 		8E2AB6D2238E1DA20079910F /* FuturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuturesViewController.swift; sourceTree = "<group>"; };
+		8E485E8F24BE9EAF005E718E /* AddNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewController.swift; sourceTree = "<group>"; };
 		8E48E4E723EBB2A500384D25 /* SellAndPutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellAndPutViewController.swift; sourceTree = "<group>"; };
 		8E48E4E923F131CC00384D25 /* ShareListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareListViewController.swift; sourceTree = "<group>"; };
 		8E48E4EF23F3E48700384D25 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8E48E4F123F3E4E000384D25 /* UiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiManager.swift; sourceTree = "<group>"; };
 		8E48E4F323F3E66600384D25 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
-		8E694FD323FA2DB40072511C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8E517F5C253ED68D00F3F9B0 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		8E80C0682542B33C002A7C15 /* StockPeriodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPeriodViewController.swift; sourceTree = "<group>"; };
 		8E87122A23489A3B00795029 /* Base64Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Manager.swift; sourceTree = "<group>"; };
 		8E87122C23489E7000795029 /* CamerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerManager.swift; sourceTree = "<group>"; };
 		8E87122E234ADCE000795029 /* MemberCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCenterViewController.swift; sourceTree = "<group>"; };
 		8E871230234AFF1000795029 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8E898F1D2462BDEC0072E3AA /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		8E898F1F2463E37A0072E3AA /* SSFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSFViewController.swift; sourceTree = "<group>"; };
 		8EB01C982422197400A7E992 /* BrokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokerViewController.swift; sourceTree = "<group>"; };
 		8EB01C9A242345F000A7E992 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		8EB01C9C242C87C100A7E992 /* ProFitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFitViewController.swift; sourceTree = "<group>"; };
+		8EB8B6BE2484D5D500F14AEE /* IAPurchaseViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8EBF797F236978F000E569C2 /* QAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAListViewController.swift; sourceTree = "<group>"; };
 		8EBF7983236ACE8E00E569C2 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		8ED1CB4A244856570050B5A4 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		8ED629F124C6C6DE00908253 /* ShareStockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareStockItem.swift; sourceTree = "<group>"; };
+		8ED629F624C8079300908253 /* ShareDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDetailViewController.swift; sourceTree = "<group>"; };
+		8ED62A0A24DD2E3500908253 /* WarrantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarrantViewController.swift; sourceTree = "<group>"; };
 		8ED642BB2420671300260E25 /* GetStockPriceManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStockPriceManger.swift; sourceTree = "<group>"; };
 		8ED642BD242070EA00260E25 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
 		8ED642C124209F1600260E25 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
@@ -97,9 +111,11 @@
 		8EEE3E982469357100B1493E /* SSFCalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSFCalculateViewController.swift; sourceTree = "<group>"; };
 		8EEE3E9A246BDCFB00B1493E /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
 		8EF0005C23482F7D002ED120 /* MUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUIViewController.swift; sourceTree = "<group>"; };
+		9F766B3A074084E1FE467A17 /* Pods-stockcomputer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.debug.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.debug.xcconfig"; sourceTree = "<group>"; };
+		A48412A590B2B1067F15F72A /* Pods-stockcomputer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.release.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.release.xcconfig"; sourceTree = "<group>"; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
-		B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VponAdapter_iOS_b1ffc56_v1.1.4.a; sourceTree = "<group>"; };
-		B74F52FD220556330034DC5D /* stockcomputer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stockcomputer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B738625825AD786200B612F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B74F52FD220556330034DC5D /* 股市大贏家.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "股市大贏家.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74F5300220556340034DC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B74F5302220556340034DC5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B74F5305220556340034DC5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,8 +130,7 @@
 		B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyLaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7E8C1772270197900792815 /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		B7E8C17B2271B65E00792815 /* FirebaseWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorks.swift; sourceTree = "<group>"; };
-		CBF2F43D1DE2D7A247783C5F /* Pods-stockcomputer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.debug.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.debug.xcconfig"; sourceTree = "<group>"; };
-		DD66978C4FECC78B61F5CEF4 /* Pods-stockcomputer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.release.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.release.xcconfig"; sourceTree = "<group>"; };
+		F377183FF9FA30554DD880DA /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E871231234AFF1000795029 /* StoreKit.framework in Frameworks */,
-				EFD7E662DE75B39649B23F14 /* Pods_stockcomputer.framework in Frameworks */,
+				B7CF06CB11EB1F4AE60EC971 /* Pods_stockcomputer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +149,8 @@
 		35086B5ED06380A2DD1A4C73 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CBF2F43D1DE2D7A247783C5F /* Pods-stockcomputer.debug.xcconfig */,
-				DD66978C4FECC78B61F5CEF4 /* Pods-stockcomputer.release.xcconfig */,
+				9F766B3A074084E1FE467A17 /* Pods-stockcomputer.debug.xcconfig */,
+				A48412A590B2B1067F15F72A /* Pods-stockcomputer.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -144,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				8E871230234AFF1000795029 /* StoreKit.framework */,
-				218BFBFCBC4C699D22C47723 /* Pods_stockcomputer.framework */,
+				F377183FF9FA30554DD880DA /* Pods_stockcomputer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,6 +167,7 @@
 		B74F52F4220556330034DC5D = {
 			isa = PBXGroup;
 			children = (
+				8E80C0682542B33C002A7C15 /* StockPeriodViewController.swift */,
 				B74F52FF220556330034DC5D /* stockcomputer */,
 				B74F52FE220556330034DC5D /* Products */,
 				35086B5ED06380A2DD1A4C73 /* Pods */,
@@ -162,7 +178,7 @@
 		B74F52FE220556330034DC5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B74F52FD220556330034DC5D /* stockcomputer.app */,
+				B74F52FD220556330034DC5D /* 股市大贏家.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,9 +186,8 @@
 		B74F52FF220556330034DC5D /* stockcomputer */ = {
 			isa = PBXGroup;
 			children = (
-				8E694FD323FA2DB40072511C /* GoogleService-Info.plist */,
+				B738625825AD786200B612F7 /* GoogleService-Info.plist */,
 				B72FB7E2235203A800701A1C /* stockcomputer.entitlements */,
-				B730065A2349398C00EDD087 /* VponAdapter_iOS_b1ffc56_v1.1.4.a */,
 				B74F5300220556340034DC5D /* AppDelegate.swift */,
 				B74F5302220556340034DC5D /* ViewController.swift */,
 				B74F53122205AB280034DC5D /* DayTradeViewController.swift */,
@@ -191,7 +206,6 @@
 				8E87122A23489A3B00795029 /* Base64Manager.swift */,
 				8E87122C23489E7000795029 /* CamerManager.swift */,
 				8E87122E234ADCE000795029 /* MemberCenterViewController.swift */,
-				8E871232234B13B500795029 /* IAPurchaseViewControllerDelegate.swift */,
 				8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */,
 				8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */,
 				8E10DDB2234C6AC8006A46F2 /* MapManager.swift */,
@@ -221,6 +235,14 @@
 				8EEE3E9A246BDCFB00B1493E /* ThreeViewController.swift */,
 				8E2765622474C6810024573B /* Financing ViewController.swift */,
 				8E276564247D18E20024573B /* IAPViewController.swift */,
+				8EB8B6BE2484D5D500F14AEE /* IAPurchaseViewControllerDelegate.swift */,
+				8E485E8F24BE9EAF005E718E /* AddNewsViewController.swift */,
+				8ED629F124C6C6DE00908253 /* ShareStockItem.swift */,
+				8ED629F624C8079300908253 /* ShareDetailViewController.swift */,
+				8ED62A0A24DD2E3500908253 /* WarrantViewController.swift */,
+				8E182A14250F48EA00CF4A3A /* NotificationManager.swift */,
+				8E182A1F251C966E00CF4A3A /* GoldViewController.swift */,
+				8E517F5C253ED68D00F3F9B0 /* ReportViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -232,11 +254,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B74F530F220556350034DC5D /* Build configuration list for PBXNativeTarget "stockcomputer" */;
 			buildPhases = (
-				8E6AFE8E2772F91208A90C3B /* [CP] Check Pods Manifest.lock */,
+				774EAA4CCAE574C25F60EB38 /* [CP] Check Pods Manifest.lock */,
 				B74F52F9220556330034DC5D /* Sources */,
 				B74F52FA220556330034DC5D /* Frameworks */,
 				B74F52FB220556330034DC5D /* Resources */,
-				EB4374B6DE6EC74ECD3B096B /* [CP] Embed Pods Frameworks */,
+				6C9BFCCA14AAF821D63C0F6F /* [CP] Embed Pods Frameworks */,
+				474DACA0DB2D8DAEC9382D3D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,7 +267,7 @@
 			);
 			name = stockcomputer;
 			productName = stockcomputer;
-			productReference = B74F52FD220556330034DC5D /* stockcomputer.app */;
+			productReference = B74F52FD220556330034DC5D /* 股市大贏家.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +277,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = jackpan;
 				TargetAttributes = {
 					B74F52FC220556330034DC5D = {
@@ -286,7 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */,
-				8E694FD423FA2DB50072511C /* GoogleService-Info.plist in Resources */,
+				B738625925AD786200B612F7 /* GoogleService-Info.plist in Resources */,
 				B74F5308220556350034DC5D /* Assets.xcassets in Resources */,
 				B74F5306220556340034DC5D /* Main.storyboard in Resources */,
 			);
@@ -295,7 +318,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8E6AFE8E2772F91208A90C3B /* [CP] Check Pods Manifest.lock */ = {
+		474DACA0DB2D8DAEC9382D3D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-stockcomputer/Pods-stockcomputer-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-stockcomputer/Pods-stockcomputer-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-stockcomputer/Pods-stockcomputer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C9BFCCA14AAF821D63C0F6F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-stockcomputer/Pods-stockcomputer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-stockcomputer/Pods-stockcomputer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-stockcomputer/Pods-stockcomputer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		774EAA4CCAE574C25F60EB38 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -317,23 +374,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB4374B6DE6EC74ECD3B096B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-stockcomputer/Pods-stockcomputer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-stockcomputer/Pods-stockcomputer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-stockcomputer/Pods-stockcomputer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -341,14 +381,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB8B6BF2484D5D500F14AEE /* IAPurchaseViewControllerDelegate.swift in Sources */,
 				8ED642C42420C09500260E25 /* StockDetailViewController.swift in Sources */,
 				B7E0A4622269998E00CF6005 /* HongKongController.swift in Sources */,
 				8E48E4F023F3E48800384D25 /* FirebaseManager.swift in Sources */,
+				8ED62A0B24DD2E3500908253 /* WarrantViewController.swift in Sources */,
 				8E2AB6D3238E1DA20079910F /* FuturesViewController.swift in Sources */,
 				8EEE3E9B246BDCFC00B1493E /* ThreeViewController.swift in Sources */,
 				B769047822A663DE00E1B53F /* EveryDayController.swift in Sources */,
 				B77B6F642205D27A00A674D6 /* TradeDetailViewController.swift in Sources */,
 				8E276565247D18E20024573B /* IAPViewController.swift in Sources */,
+				8E182A20251C966F00CF4A3A /* GoldViewController.swift in Sources */,
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
 				8ED1CB4B244856570050B5A4 /* SelectViewController.swift in Sources */,
 				8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */,
@@ -359,6 +402,7 @@
 				8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */,
 				8E87122D23489E7000795029 /* CamerManager.swift in Sources */,
 				8EB01C992422197400A7E992 /* BrokerViewController.swift in Sources */,
+				8ED629F224C6C6DE00908253 /* ShareStockItem.swift in Sources */,
 				8E48E4E823EBB2A500384D25 /* SellAndPutViewController.swift in Sources */,
 				8EBF7984236ACE8E00E569C2 /* TimerManager.swift in Sources */,
 				8EEE3E992469357100B1493E /* SSFCalculateViewController.swift in Sources */,
@@ -372,19 +416,23 @@
 				B7E8C17C2271B65E00792815 /* FirebaseWorks.swift in Sources */,
 				8ED642C82422112E00260E25 /* TrustViewController.swift in Sources */,
 				B77B6F662205D53300A674D6 /* MarginController.swift in Sources */,
+				8E485E9024BE9EAF005E718E /* AddNewsViewController.swift in Sources */,
+				8E80C0692542B33C002A7C15 /* StockPeriodViewController.swift in Sources */,
 				B74F53132205AB280034DC5D /* DayTradeViewController.swift in Sources */,
 				8E898F1E2462BDEC0072E3AA /* OtherViewController.swift in Sources */,
+				8ED629F724C8079300908253 /* ShareDetailViewController.swift in Sources */,
 				B74F5301220556340034DC5D /* AppDelegate.swift in Sources */,
 				8ED642C62421F1E700260E25 /* ForeignInvestmentViewController.swift in Sources */,
+				8E517F5D253ED68D00F3F9B0 /* ReportViewController.swift in Sources */,
 				8ED642BE242070EA00260E25 /* StockListViewController.swift in Sources */,
 				B7E8C174226F015500792815 /* DistributionController.swift in Sources */,
 				8ED642CA242216C800260E25 /* SelfEmployedViewController.swift in Sources */,
 				8E87122B23489A3B00795029 /* Base64Manager.swift in Sources */,
 				8E87122F234ADCE000795029 /* MemberCenterViewController.swift in Sources */,
 				8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */,
+				8E182A15250F48EA00CF4A3A /* NotificationManager.swift in Sources */,
 				8E2765632474C6810024573B /* Financing ViewController.swift in Sources */,
 				8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */,
-				8E871233234B13B500795029 /* IAPurchaseViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -508,7 +556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -520,15 +568,16 @@
 		};
 		B74F5310220556350034DC5D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBF2F43D1DE2D7A247783C5F /* Pods-stockcomputer.debug.xcconfig */;
+			baseConfigurationReference = 9F766B3A074084E1FE467A17 /* Pods-stockcomputer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 68;
+				CURRENT_PROJECT_VERSION = 95;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,9 +587,9 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 6.8;
+				MARKETING_VERSION = 9.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "股市大贏家";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -548,15 +597,16 @@
 		};
 		B74F5311220556350034DC5D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD66978C4FECC78B61F5CEF4 /* Pods-stockcomputer.release.xcconfig */;
+			baseConfigurationReference = A48412A590B2B1067F15F72A /* Pods-stockcomputer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 68;
+				CURRENT_PROJECT_VERSION = 95;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -566,9 +616,9 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 6.8;
+				MARKETING_VERSION = 9.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackpan.stockcomputer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "股市大贏家";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

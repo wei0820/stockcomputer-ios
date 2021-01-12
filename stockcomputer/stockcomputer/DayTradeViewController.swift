@@ -7,7 +7,8 @@
 //
 
 import UIKit
-class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UIPickerViewDataSource{
+
+class DayTradeViewController: MGoogleADViewController{
     
     @IBOutlet weak var title_label: UILabel!
     
@@ -33,22 +34,28 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         
     }
     @IBOutlet weak var percentage_label: UILabel!
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
+
+    var info = [ "沒折扣", "95折",
+                 "9折","85折",
+                 "8折", "79折","78折","77折","76折","75折","74折","73折","72折","71折",
+                 "7折", "69折","68折","67折","66折","65折","64折","63折","62折","61折",
+                 "6折", "59折","58折","57折","56折","55折","54折","53折","52折","51折",
+                 "5折","49折","48折","47折","46折","45折","44折","43折","42折","41折",
+                 "4折","39折","38折","37折","36折","35折","34折","33折","32折","31折",
+                 "3折", "29折","28折","27折","26折","25折","24折","23折","22折","21折",
+                 "2折","19折","18折","17折","16折","15折","14折","13折","12折","11折",
+                 "1折","0.9折" ,"0.8折" ,"0.7折" ,"0.6折" ,"0.5折" ,"0.4折" ,"0.3折" ,"0.2折","0.1折" ,"免手續費"]
+    var price = [1,0.95,
+                 0.9,0.85,
+                 0.8,0.79,0.78,0.77,0.76,0.75,0.74,0.73,0.72,0.71,
+                 0.7,0.69,0.68,0.67,0.66,0.65,0.64,0.63,0.62,0.61,
+                 0.6,0.59,0.58,0.57,0.56,0.55,0.54,0.53,0.52,0.51,
+                 0.5,0.49,0.48,0.47,0.46,0.45,0.44,0.43,0.42,0.41,
+                 0.4,0.39,0.38,0.37,0.36,0.35,0.34,0.33,0.32,0.31,
+                 0.3,0.29,0.28,0.27,0.26,0.25,0.24,0.23,0.22,0.21,
+                 0.2,0.19,0.18,0.17,0.16,0.15,0.14,0.13,0.12,0.11,
+                 0.1,0.09,0.08,0.07,0.06,0.05,0.05,0.04,0.03,0.02,0.01,0]
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return info.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return info[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        var selectedValue = pickerView.selectedRow(inComponent: 0)
-        pirceout = price[selectedValue]
-    }
-    var info = [ "沒折扣", "95折","9折","85折","8折", "75折", "7折", "65折","6折", "55折", "5折","45折","4折","35折","3折", "28折","2折","15折","1折","0.5折" ,"免手續費"]
-    var price = [1,0.95,0.9,0.85,0.8,0.75,0.7,0.65,0.6,0.55,0.5,0.45,0.4,0.35,0.3,0.28,0.25,0.2,0.15,0.1,0.05,0]
     var pirceout = 1.0
     var total_buy = 0.0
     var total_sell = 0.0
@@ -58,14 +65,23 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
     var type = ""
     var formatter: DateFormatter! = nil
     
+    
+    @IBOutlet weak var inputhandprice: UITextField!
+    
     @IBAction func close(_ sender: Any) {
+        setVibrate()
         dissmissView()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "現股當沖獲利計算"
-        buy_num.text = "1000"
-        sell_num.text = "1000"
+        if(UserDefaults.standard.string(forKey: "handprice") != nil) {
+            inputhandprice.placeholder = UserDefaults.standard.string(forKey: "handprice") as! String
+            inputhandprice.text = UserDefaults.standard.string(forKey: "handprice") as! String
+        }
+        setScreenName(screenName: "現股當沖獲利計算", screenClassName: "DayTradeViewController")
+        buy_num.text = "1"
+        sell_num.text = "1"
         setKeyKeyboardType()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
           self.view.addGestureRecognizer(tap) // to Replace "TouchesBegan"
@@ -81,6 +97,7 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         sell_price.keyboardType = UIKeyboardType.decimalPad
         buy_num.keyboardType = UIKeyboardType.decimalPad
         sell_num.keyboardType = UIKeyboardType.decimalPad
+        inputhandprice.keyboardType = .decimalPad
         
         
     }
@@ -90,27 +107,33 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
         
         self.buy_num.resignFirstResponder()
         self.sell_num.resignFirstResponder()
+        self.inputhandprice.resignFirstResponder()
     }
     func clearText(){
         buy_price.text = ""
         sell_price.text = ""
         buy_num.text = ""
         sell_num.text = ""
+        inputhandprice.text = ""
     }
     func total(){
+        
+        setVibrate()
         var total = 0.0
         var total_buy = 0.0
         var total_sell = 0.0
-        if(buy_price.text?.count==0||buy_num.text?.count==0||sell_price.text?.count==0||sell_num.text?.count==0){
+        if(buy_price.text?.count==0||buy_num.text?.count==0||sell_price.text?.count==0||sell_num.text?.count==0 || inputhandprice.text?.count == 0){
             setDilog()
             return
         }
-        
-        
-        total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)!
-        total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)!
+     
+        pirceout = Double(inputhandprice.text!)!
+        UserDefaults.standard.set(inputhandprice.text!, forKey: "handprice")
+        total_buy =   Double(buy_price.text!)! * Double(buy_num.text!)! * 1000
+        total_sell =   Double(sell_price.text!)! * Double(sell_num.text!)! * 1000
         total_buy_price.textColor = UIColor.red
         total_sell_price.textColor = UIColor.green
+
         if((total_buy * handlingFee * pirceout)<=20){
             total_buy_price.text  = String(total_buy + 20)
             total_buy = (total_buy + 20)
@@ -128,16 +151,22 @@ class DayTradeViewController: MGoogleADViewController  ,UIPickerViewDelegate, UI
             total_sell_price.text = String(total_sell - (total_sell * handlingFee * pirceout)-(total_sell * tax))
             total_sell = (total_sell - (total_sell * handlingFee * pirceout)-(total_sell * tax))
         }
-        
         total = total_sell - total_buy
         label_profit.textColor = UIColor.white
         label_profit.backgroundColor = UIColor.red
-        label_profit.text = String(total)
+        label_profit.text = String(lround(total))
         percentage_label.textColor = UIColor.white
         percentage_label.backgroundColor = UIColor.red
         percentage_label.text = String(format: "%.2f",((total/total_buy) * 100 )) + "%"
+        var subtitle :String = ""
+
+        if(lround(total) <= -1){
+            subtitle = "是虧損的！！"
+        }else{
+            subtitle = "是賺錢的！！"
+        }
         
-        
+        NotificationManager.CreateNotification(title: "今日做當沖", subtitle: subtitle, body: "獲利：" + String(lround(total)) + "\n" +  "獲利率:" + String(format: "%.2f",((total/total_buy) * 100 )) + "%")
     }
     
     func setDilog(){

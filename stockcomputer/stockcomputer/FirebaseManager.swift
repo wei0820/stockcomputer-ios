@@ -98,12 +98,28 @@ class FirebaseManager {
             
             // childAdded逐筆呈現
             if let dictionaryData = snapshot.value as? [String: AnyObject]{
-                var id : String = dictionaryData["id"] as! String
-                var name : String = dictionaryData["name"] as! String
-                var lastlogintime : Int = dictionaryData["lastlogintime"] as! Int
+                var id : String = ""
+                var name : String = ""
+                var lastlogintime : Int = 0
                 var point : Int = dictionaryData["point"] as! Int
                 var watchadtime :Int = 0
                 var version :String = ""
+                if( dictionaryData["id"]  != nil){
+                    id =  dictionaryData["id"] as! String
+                             
+                         }
+                if( dictionaryData["name"]  != nil){
+                     name =  dictionaryData["name"] as! String
+                             
+                         }
+                if( dictionaryData["lastlogintime"]  != nil){
+                       lastlogintime =  dictionaryData["lastlogintime"] as! Int
+                             
+                         }
+                if( dictionaryData["watchadtime"]  != nil){
+                             watchadtime =  dictionaryData["watchadtime"] as! Int
+                             
+                         }
                 if( dictionaryData["watchadtime"]  != nil){
                     watchadtime =  dictionaryData["watchadtime"] as! Int
                     
@@ -172,7 +188,7 @@ class FirebaseManager {
         if(userDefaults.value(forKey: "point") != nil){
             return userDefaults.value(forKey: "point")! as! Int
         }
-        return 0
+        return 100
         
     }
     static func getUserWatchTime() ->Int{
@@ -477,6 +493,218 @@ class FirebaseManager {
             "http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg",
         ]
 
+    }
+    // 設定 事件
+    static func setAnalytics(title:String){
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemName: title,
+        ])
+    }
+    
+    static  func  setPhoneMember(id :String){
+        var point :Int = getUserPoint()
+        let reference: DatabaseReference! = Database.database().reference().child("MemberList").child(id as! String)
+        let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
+        let dateReviewReference = reference.child(id)
+        // 新增節點資料
+        var dateReview: [String : AnyObject] = [String : AnyObject]()
+        dateReview["id"] = id as AnyObject
+        dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
+        dateReview["point"] = point   as AnyObject
+        
+          if(getVersion().isEmpty){
+              let dictionary = Bundle.main.infoDictionary!
+              let app_version = dictionary["CFBundleShortVersionString"] as! String
+              dateReview["version"] = app_version  as AnyObject
+              
+          }else{
+              let dictionary = Bundle.main.infoDictionary!
+              let app_version = dictionary["CFBundleShortVersionString"] as! String
+              var userDouble :Double  = Double(getVersion()) as! Double
+              let newDouble  :Double  = Double(app_version)  as! Double
+        
+
+              if(userDouble < newDouble){
+
+                  dateReview["version"] = app_version  as AnyObject
+
+              }else{
+
+                  dateReview["version"] = getVersion()  as AnyObject
+
+              }
+              
+              
+          }
+        dateReviewReference.updateChildValues(dateReview) { (err, ref) in
+            if err != nil{
+                print("err： \(err!)")
+                return
+            }
+            
+            print(ref.description())
+        }
+        
+        
+    }
+    
+    //設定 庫存股票
+    static  func  setStockPrice(id :String,date :String){
+        var point :Int = getUserPoint()
+        let reference: DatabaseReference! = Database.database().reference().child("StockPrice").child(id as! String).child(date as! String)
+        let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
+        let dateReviewReference = reference.child(id)
+        // 新增節點資料
+        var dateReview: [String : AnyObject] = [String : AnyObject]()
+        dateReview["id"] = id as AnyObject
+        dateReview["lastlogintime"]  = getLastLoginTime() as AnyObject
+        dateReview["point"] = point   as AnyObject
+        
+          if(getVersion().isEmpty){
+              let dictionary = Bundle.main.infoDictionary!
+              let app_version = dictionary["CFBundleShortVersionString"] as! String
+              dateReview["version"] = app_version  as AnyObject
+              
+          }else{
+              let dictionary = Bundle.main.infoDictionary!
+              let app_version = dictionary["CFBundleShortVersionString"] as! String
+              var userDouble :Double  = Double(getVersion()) as! Double
+              let newDouble  :Double  = Double(app_version)  as! Double
+        
+
+              if(userDouble < newDouble){
+
+                  dateReview["version"] = app_version  as AnyObject
+
+              }else{
+
+                  dateReview["version"] = getVersion()  as AnyObject
+
+              }
+              
+              
+          }
+        dateReviewReference.updateChildValues(dateReview) { (err, ref) in
+            if err != nil{
+                print("err： \(err!)")
+                return
+            }
+            
+            print(ref.description())
+        }
+        
+        
+    }
+    
+    // 我要報明牌
+    static  func  setShareStock(id:String,number:String,name:String,message:String,url:String,url_2:String,url_3:String,like:String,unlike:String,usermessage:String){
+        let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child("ShareStock")
+        let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
+        let dateReviewReference = reference.child(childRef.key!)
+        // 新增節點資料
+        var dateReview: [String : AnyObject] = [String : AnyObject]()
+        dateReview["id"] = id as AnyObject
+        dateReview["number"]  = number as AnyObject
+        dateReview["name"]  = name as AnyObject
+        dateReview["message"]  = message as AnyObject
+        dateReview["url"]  = url as AnyObject
+        dateReview["url_2"]  = url_2 as AnyObject
+        dateReview["url_3"]  = url_3 as AnyObject
+        dateReview["uuid"]  = UiManager.getUUID() as AnyObject
+        dateReview["date"]  = DateManager.setDate() as AnyObject
+        dateReview["like"]  = like as AnyObject
+        dateReview["unlike"]  = unlike as AnyObject
+        dateReview["usermessage"]  = usermessage as AnyObject
+        dateReview["key"]  = childRef.key as AnyObject
+
+
+
+
+
+
+
+        
+        dateReviewReference.updateChildValues(dateReview) { (err, ref) in
+            if err != nil{
+                print("err： \(err!)")
+                return
+            }
+            
+            print(ref.description())
+        }
+        
+        
+    }
+    
+    
+     static  func getshareStockData(){
+        let reference: DatabaseReference! = Database.database().reference().child("ShareStock").child("ShareStock")
+            
+            reference.queryOrderedByKey().observe(.value, with: { snapshot in
+                if snapshot.childrenCount > 0 {
+                    
+                    for item in snapshot.children {
+                        let data = ShareStockItem(snapshot: item as! DataSnapshot)
+                    
+
+                        
+                    }
+                    
+                    
+                }
+                
+            })
+     }
+    static  func  updateToFirebase(key:String,id:String,number:String,name:String,message:String,
+                                   url :String,url_2:String,url_3:String,like:String,unlike:String,usermessage:String,date:String,uuid:String){
+
+        let post = [
+                "key":key,
+                "id" : id,
+                "number": number,
+                "name": name,
+                "date": date,
+                "message":message,
+                "url":url,
+                "url_2":url_2,
+                "url_3":url_3,
+                "uuid":uuid,
+                "like":like,
+                "unlike":unlike,
+                "usermessage":usermessage
+        ]
+    let childUpdates = ["/ShareStock/ShareStock/\(key)": post]
+    Database.database().reference().updateChildValues(childUpdates)
+    }
+    
+    static  func DeleteShareData(id: String){
+        // 刪除節點資料
+        
+        Database.database().reference().child("ShareStock").child("ShareStock").child(id as! String).removeValue { (error, ref) in
+            if error != nil{
+                print(error!)
+                return
+            }
+            print("remove data success...")
+            
+        }
+    }
+    
+    
+    
+    static  func get(){
+        Database.database().reference().child("Notification").child("Notification" as! String).observe(.childAdded, with: {
+            (snapshot) in
+            // childAdded逐筆呈現
+            
+            if let dictionaryData = snapshot.value as? [String: AnyObject]{
+//            dictionaryData["id"] = id as String
+
+                
+            }
+            
+        }, withCancel: nil)
     }
 }
 

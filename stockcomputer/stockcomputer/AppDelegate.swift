@@ -9,11 +9,12 @@
 import UIKit
 import GoogleMobileAds
 import Firebase
-import FacebookCore
 import UserNotifications
 import FirebaseCrashlytics
 import Instabug
 import SwiftyStoreKit
+import NotificationCenter
+import UserNotificationsUI
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -23,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         // Vpon SDK initialization
@@ -52,40 +51,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         Instabug.trackUserSteps = false
 //        window?.makeKeyAndVisible()
         Crashlytics.crashlytics()
+        setupIAP()
         
-        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-            for purchase in purchases {
-                switch purchase.transaction.transactionState {
-                case .purchased, .restored:
-                    if purchase.needsFinishTransaction {
-                        // Deliver content from server, then:
-                        SwiftyStoreKit.finishTransaction(purchase.transaction)
-                    }
-                    // Unlock content
-                case .failed, .purchasing, .deferred:
-                    break // do nothing
-                }
-            }
-        }
+        // 在程式一啟動即詢問使用者是否接受圖文(alert)、聲音(sound)、數字(badge)三種類型的通知
+           UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge, .carPlay], completionHandler: { (granted, error) in
+               if granted {
+                   print("允許")
+               } else {
+                   print("不允許")
+               }
+           })
+        UNUserNotificationCenter.current().delegate = self
+
         return true
     }
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return ApplicationDelegate.shared.application(
-            application,
-            open: url,
-            sourceApplication: sourceApplication,
-            annotation: annotation
-        )
-    }
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication,
-                     open url: URL,
-                     options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
-        return ApplicationDelegate.shared.application(application, open: url, options: options)
-    }
-    
+
     func applicationDidBecomeActive(_ application: UIApplication) {
-        AppEvents.activateApp()
     }
     func applicationReceivedRemoteMessage(_ remoteMessage: MessagingRemoteMessage) {
         print(remoteMessage.appData)
@@ -105,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             print("Message ID: \(messageID)")
         }
         
-        // Print full message.        
+        // Print full message.
         completionHandler(UIBackgroundFetchResult.newData)
     }
     // [END receive_message]
@@ -126,57 +107,93 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 // [START ios_10_message_handling]
 @available(iOS 10, *)
 extension AppDelegate : UNUserNotificationCenterDelegate {
-    
-    // Receive displayed notifications for iOS 10 devices.
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let userInfo = notification.request.content.userInfo
-        
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        completionHandler([])
+
+  // Receive displayed notifications for iOS 10 devices.
+  func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              willPresent notification: UNNotification,
+    withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    let userInfo = notification.request.content.userInfo
+
+    // With swizzling disabled you must let Messaging know about the message, for Analytics
+    // Messaging.messaging().appDidReceiveMessage(userInfo)
+    // Print message ID.
+    if let messageID = userInfo[gcmMessageIDKey] {
+      print("Message ID: \(messageID)")
     }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        
-        // Print full message.
-        completionHandler()
+
+    // Print full message.
+    print(userInfo)
+
+    // Change this to your preferred presentation option
+//    completionHandler([])
+    completionHandler([.badge, .sound, .alert])
+
+  }
+
+  func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              didReceive response: UNNotificationResponse,
+                              withCompletionHandler completionHandler: @escaping () -> Void) {
+    let userInfo = response.notification.request.content.userInfo
+    // Print message ID.
+    if let messageID = userInfo[gcmMessageIDKey] {
+      print("Message ID: \(messageID)")
     }
+
+    // Print full message.
+    print(userInfo)
+
+    completionHandler()
+  }
 }
 // [END ios_10_message_handling]
 
 extension AppDelegate : MessagingDelegate {
-    // [START refresh_token]
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
-        
-        let dataDict:[String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
-    }
-    // [END refresh_token]
-    // [START ios_10_data_message]
-    // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
-    // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
-    }
-    // [END ios_10_data_message]
+  // [START refresh_token]
+  func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+    print("Firebase registration token: \(fcmToken)")
     
+    let dataDict:[String: String] = ["token": fcmToken]
+    NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+    // TODO: If necessary send token to application server.
+    // Note: This callback is fired at each app startup and whenever a new token is generated.
+  }
+  // [END refresh_token]
+  // [START ios_10_data_message]
+  // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
+  // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
+  func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+    print("Received data message: \(remoteMessage.appData)")
+  }
+  // [END ios_10_data_message]
+}
+func setupIAP() {
 
+     SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
 
+         for purchase in purchases {
+             switch purchase.transaction.transactionState {
+             case .purchased, .restored:
+                 let downloads = purchase.transaction.downloads
+                 if !downloads.isEmpty {
+                     SwiftyStoreKit.start(downloads)
+                 } else if purchase.needsFinishTransaction {
+                     // Deliver content from server, then:
+                     SwiftyStoreKit.finishTransaction(purchase.transaction)
+                 }
+             case .failed, .purchasing, .deferred:
+                 break // do nothing
+             @unknown default:
+                 break // do nothing
+             }
+         }
+     }
+     
+     SwiftyStoreKit.updatedDownloadsHandler = { downloads in
+
+         // contentURL is not nil if downloadState == .finished
+         let contentURLs = downloads.compactMap { $0.contentURL }
+         if contentURLs.count == downloads.count {
+             SwiftyStoreKit.finishTransaction(downloads[0].transaction)
+         }
+     }
  }
-

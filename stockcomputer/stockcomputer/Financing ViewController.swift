@@ -19,15 +19,23 @@ class Financing_ViewController: MGoogleADViewController {
         buyNum.text = "1000"
         setDatePickerView()
         setUITextField()
+        setScreenName(screenName: "融資獲利試算", screenClassName: "Financing_ViewController")
+
 
         // Do any additional setup after loading the view.
     }
     @IBAction func cal(_ sender: Any) {
-        
-        if(buyMoney.text!.isEmpty && sellMoney.text!.isEmpty && loanMOney.text!.isEmpty){
+        setVibrate()
+
+        if(buyMoney.text!.isEmpty && sellMoney.text!.isEmpty){
             setToast(s: "請輸入數值")
             
         }else{
+            if(loanMOney.text!.isEmpty){
+                setToast(s: "請輸入融資成數")
+                return
+
+            }
             var  dayInt: Int  =  DateManager.distancesFrom(startDateStr!, to: EndDateStr!)
 
             var buyMoneyDoube :Double = Double(buyMoney.text!)!
@@ -37,10 +45,10 @@ class Financing_ViewController: MGoogleADViewController {
             var loandMoneyDoule : Double =  0.1 * Double(loanMOney.text!)!
             // 買入 應付金額
             // 融資金
+          
             var loanMoneyInt :Double = buyMoneyDoube * Double(sellNumInt) * loandMoneyDoule
             var handPrice : Double = buyMoneyDoube * Double(buyNumInt) * 0.001425
             var buyMoneyInt :Int = Int( buyMoneyDoube * Double(buyNumInt))  - Int(loanMoneyInt) + Int(handPrice)
-            print("Jack",buyMoneyInt)
             // 賣出
             var sellMoneyD :Double = sellMoneyDouble * Double(sellNumInt)
             var sellHandPrice : Double = sellMoneyD * 0.001425
@@ -56,11 +64,24 @@ class Financing_ViewController: MGoogleADViewController {
             label_4.text = "利息:" + String(Int(interest)) + "(共" + String(dayInt) + "天)"
             label_5.text = "損益:" + String(money)
          
-
             
+            if(money>0){
+                label_5.textColor = UIColor.red
+                
+            }else{
+                label_5.textColor = UIColor.green
 
-//
+            }
+            var subtitle :String = ""
             
+            
+            if(money <= -1){
+                subtitle = "是虧損的！！"
+            }else{
+                subtitle = "是賺錢的！！"
+            }
+            
+            NotificationManager.CreateNotification(title: "今日做隔日沖", subtitle: subtitle, body: "獲利：" + String(money))
         }
         
         
@@ -105,6 +126,8 @@ class Financing_ViewController: MGoogleADViewController {
     @IBOutlet weak var label_5: UILabel!
     
     @IBAction func closeview(_ sender: Any) {
+        setVibrate()
+
         dissmissView()
     }
     

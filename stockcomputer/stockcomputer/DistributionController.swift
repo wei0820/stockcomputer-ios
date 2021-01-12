@@ -52,7 +52,8 @@ class DistributionController: MGoogleADViewController ,UITextFieldDelegate  ,UII
     override func viewDidLoad() {
         super.viewDidLoad()
         setKeyKeyboardType()
- 
+        setScreenName(screenName: "除權除息試算", screenClassName: "DistributionController")
+
         }
 
     

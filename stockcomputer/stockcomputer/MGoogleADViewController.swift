@@ -13,6 +13,8 @@ import Toaster
 import Firebase
 import Instabug
 import SwiftyStoreKit
+import AuthenticationServices
+import AudioToolbox.AudioServices
 class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     var adBannerView: GADBannerView?
     let userDefaults = UserDefaults.standard
@@ -25,45 +27,29 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
             // Fallback on earlier versions
         }
         setAdBanner()
-        
-        if(checkRemoveAd()){
-            
-            adBannerView?.isHidden = true
-        }else{
-            adBannerView?.isHidden = false
-        }
         getAnnouncement()
-        
         check()
-
-
-
-    
         
-        
-        
+                
     }
     override func viewWillAppear(_ animated: Bool) {
         check()
-        print("jack","viewWillAppear")
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        print("jack","viewDidAppear")
-        check()
-
+        NotificationManager.CreaeWeekdayNotification()
+        NotificationManager.CreaeWeekdayofMonthNotification()
 
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        print("jack","viewWillDisappear")
-        check()
-
+    func setScreenName(screenName :String ,screenClassName :String){
+        Firebase.Analytics.setScreenName(screenName, screenClass: screenClassName)
 
     }
-    override func viewDidDisappear(_ animated: Bool) {
-        print("jack","viewDidDisappear")
-        check()
-
-
+    private func observeAppleIDSessionChanges() {
+        if #available(iOS 13.0, *) {
+            NotificationCenter.default.addObserver(forName: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil, queue: nil) { (notification: Notification) in
+                // Sign user in or out
+            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
     func check(){
 
@@ -78,22 +64,23 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
                 let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
                 switch purchaseResult {
                 case .purchased(let expiryDate, let items):
-                    print("jack","\(productIds) 有效期限  \(expiryDate)\n\(items)\n")
                     self.adBannerView?.isHidden = true
-                    self.userDefaults.set(false, forKey: "removeAd")
-
+                    Firebase.Analytics.logEvent("訂閱項目", parameters: [
+                                             "訂閱戶": "是",
+                                             "購買商品": items.description,
+                                         ])
                 case .expired(let expiryDate, let items):
-                    print("jack","\(productIds) 已經過期 \(expiryDate)\n\(items)\n")
                     self.adBannerView?.isHidden = false
-                    self.userDefaults.set(true, forKey: "removeAd")
-
-
+                    Firebase.Analytics.logEvent("訂閱項目", parameters: [
+                                                             "訂閱戶": "否",
+                                                             "購買商品": items.description,
+                                                         ])
                 case .notPurchased:
-                    print("jack","沒有購買 \(productIds)")
+                    Firebase.Analytics.logEvent("訂閱項目", parameters: [
+                                                             "有無訂閱": "否",
+                                                             "購買商品": "非訂閱戶",
+                                                         ])
                     self.adBannerView?.isHidden = false
-                    self.userDefaults.set(true, forKey: "removeAd")
-
-                    
 
                 }
             case .error(let error):
@@ -183,10 +170,30 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
         return (removeAd != nil)
         
     }
+    func getUserID() -> String{
+        var userID = userDefaults.value(forKey: "userID")
+        if userID != nil {
+            return userID as! String
+
+        }
+        return ""
+        
+    }
+    
+    
     
     func checkIsMember() ->Bool{
         let firebaseAuth = Auth.auth()
         if firebaseAuth != nil {
+            
+            if firebaseAuth.currentUser == nil {
+                         return false
+                       }
+            
+            if firebaseAuth.currentUser!.isAnonymous == nil {
+              return false
+            }
+            
             if(firebaseAuth.currentUser!.isAnonymous){
                 
                 return false
@@ -217,10 +224,17 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
     
     func setMemberAlert(){
         
-        let controller = UIAlertController(title: "提示", message:"您的身份為訪客 請先登入", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        controller.addAction(okAction)
-        present(controller, animated: true, completion: nil)
+        let controller = UIAlertController(title: "您的身份為訪客", message:"建議正式登入避免資料消失,是否繼續操作", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "是", style: .default) { (_) in
+                   }
+                   controller.addAction(okAction)
+                   let cancelAction = UIAlertAction(title: "否", style: .cancel, handler: nil)
+                   controller.addAction(cancelAction)
+                   present(controller, animated: true, completion: nil)
+    }
+    func setVibrate(){
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
     }
     
     func checkLoginTime () {
@@ -294,6 +308,10 @@ func getMemberDateList(){
         }
         
     }
+    
+}
+func logout(){
+   try! Auth.auth().signOut()
     
 }
 

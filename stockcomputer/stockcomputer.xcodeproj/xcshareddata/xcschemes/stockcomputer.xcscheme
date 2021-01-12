@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1110"
+   LastUpgradeVersion = "1150"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B74F52FC220556330034DC5D"
-               BuildableName = "stockcomputer.app"
+               BuildableName = "&#x80a1;&#x5e02;&#x5927;&#x8d0f;&#x5bb6;.app"
                BlueprintName = "stockcomputer"
                ReferencedContainer = "container:stockcomputer.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B74F52FC220556330034DC5D"
-            BuildableName = "stockcomputer.app"
+            BuildableName = "&#x80a1;&#x5e02;&#x5927;&#x8d0f;&#x5bb6;.app"
             BlueprintName = "stockcomputer"
             ReferencedContainer = "container:stockcomputer.xcodeproj">
          </BuildableReference>
@@ -68,7 +68,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B74F52FC220556330034DC5D"
-            BuildableName = "stockcomputer.app"
+            BuildableName = "&#x80a1;&#x5e02;&#x5927;&#x8d0f;&#x5bb6;.app"
             BlueprintName = "stockcomputer"
             ReferencedContainer = "container:stockcomputer.xcodeproj">
          </BuildableReference>

@@ -37,17 +37,21 @@ class OtherViewController: MGoogleADViewController {
         self.mView1.addGestureRecognizer(view1)
         
         let view2 = UITapGestureRecognizer(target: self, action:  #selector(self.view2Action))
-              self.mView2.addGestureRecognizer(view2)
+        self.mView2.addGestureRecognizer(view2)
               
         let view3 = UITapGestureRecognizer(target: self, action:  #selector(self.view3Action))
-              self.mView3.addGestureRecognizer(view3)
+        self.mView3.addGestureRecognizer(view3)
 
-              let v4 = UITapGestureRecognizer(target: self, action:  #selector(self.view4Action))
-                    self.view4.addGestureRecognizer(v4)
+       let v4 = UITapGestureRecognizer(target: self, action:  #selector(self.view4Action))
+        self.view4.addGestureRecognizer(v4)
+        
+        let gold = UITapGestureRecognizer(target: self, action:  #selector(self.goldViewAction))
+         self.mGoldView.addGestureRecognizer(gold)
         
 
         
     }
+    @IBOutlet weak var mGoldView: UIView!
     @IBOutlet weak var view4: UIView!
     @objc func view1Action(sender : UITapGestureRecognizer) {
           // Do what you want
@@ -67,6 +71,9 @@ class OtherViewController: MGoogleADViewController {
           setJump(type: "ssf")
       }
 
-    
+    @objc func goldViewAction(sender : UITapGestureRecognizer) {
+          // Do what you want
+          setJump(type: "gold")
+      }
    
 }

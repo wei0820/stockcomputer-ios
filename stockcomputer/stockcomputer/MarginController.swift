@@ -32,6 +32,7 @@ class MarginController: MGoogleADViewController{
     var startDateStr :Date? = nil
     var EndDateStr :Date? = nil
     @IBAction func cal_btn(_ sender: Any) {
+        setVibrate()
         if(!buyNum.text!.isEmpty && !sellNum.text!.isEmpty && !buyPrice.text!.isEmpty && !sellPrice.text!.isEmpty){
          
             
@@ -82,6 +83,26 @@ class MarginController: MGoogleADViewController{
 
             }
             label_6.text = "預估收益:" + String(getMoney)
+            var subtitle :String = ""
+            
+            if(getMoney <= -1){
+                subtitle = "是虧損的！！"
+            }else{
+                subtitle = "是賺錢的！！"
+            }
+            
+            NotificationManager.CreateNotification(title: "今日做隔日沖", subtitle: subtitle, body: "獲利：" + String(getMoney))
+            
+
+
+
+            
+            
+            
+            
+            
+            
+            
             
         }else{
             
@@ -100,7 +121,8 @@ class MarginController: MGoogleADViewController{
         buyNum.text = "1000"
         setDatePickerView()
         setUITextField()
-  
+        setScreenName(screenName: "融券獲利計算", screenClassName: "MarginController")
+
         
         
     }
@@ -205,6 +227,7 @@ class MarginController: MGoogleADViewController{
     
    
     @IBAction func closeView(_ sender: Any) {
+        setVibrate()
         dissmissView()
     }
 }
