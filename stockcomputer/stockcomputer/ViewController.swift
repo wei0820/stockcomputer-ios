@@ -226,27 +226,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         present(controller, animated: true, completion: nil)
     }
 
-    func getProductIdentifier(name : String){
-        switch name {
-        case "richman":
-            break
-        case "MenberPoint_1000":
-            FirebaseManager.addMemberBuyPoint(pont: 1000)
-            
-            //1000
-            break
-            
-        case "Member_Point_1000":
-            // 500
-            FirebaseManager.addMemberBuyPoint(pont: 500)
-            
-            break
-            
-        default:
-            break
-        }
-        
-    }
     func setUIAlert(title :String ,message :String){
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
