@@ -40,6 +40,6 @@ pod 'GoogleSignIn'
 pod 'Firebase/Messaging'
 pod 'Firebase/InAppMessaging'
 pod 'CLImagePickerTool'
-pod 'YouTubePlayer'
+pod 'YoutubePlayerView'
 
 end
