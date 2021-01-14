@@ -352,9 +352,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
 extension ViewController: YoutubePlayerViewDelegate {
     func playerViewDidBecomeReady(_ playerView: YoutubePlayerView) {
         print("Ready")
-        playerView.fetchPlayerState { (state) in
-            print("Fetch Player State: \(state)")
-        }
         playerView.play()
     }
     
