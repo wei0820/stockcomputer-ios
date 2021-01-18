@@ -140,8 +140,20 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
              "playsinline": 1,
              "origin": "https://youtube.com"
          ]
-        playerView.delegate = self as! YoutubePlayerViewDelegate
-         playerView.loadWithVideoId("USe-aFTJx8Q", with: playerVars)
+        Database.database().reference().child("youtubeid").child("youtubeid" as! String).observe(.childAdded, with: {
+              (snapshot) in
+              // childAdded逐筆呈現
+              if let dictionaryData = snapshot.value as? [String: AnyObject]{
+                  var announcement : String = dictionaryData["youtubeid"] as! String
+                self.playerView.delegate = self as! YoutubePlayerViewDelegate
+
+                self.playerView.loadWithVideoId(announcement, with: playerVars)
+
+
+                  
+              }
+              
+          }, withCancel: nil)
 
     }
 //    func setBannerView(){
@@ -376,4 +388,5 @@ extension ViewController: YoutubePlayerViewDelegate {
         view.backgroundColor = .red
         return view
     }
+  
 }
