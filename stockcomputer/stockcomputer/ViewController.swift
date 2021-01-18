@@ -141,7 +141,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
              "origin": "https://youtube.com"
          ]
         playerView.delegate = self as! YoutubePlayerViewDelegate
-         playerView.loadWithVideoId("BMSofOz-1Vg", with: playerVars)
+         playerView.loadWithVideoId("USe-aFTJx8Q", with: playerVars)
 
     }
 //    func setBannerView(){
@@ -327,7 +327,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
           }
     
     @objc func smallAction(sender : UITapGestureRecognizer) {
-        setJump(type: "report")
+//        setJump(type: "report")
             
           }
     @objc func shareAction(sender : UITapGestureRecognizer) {
