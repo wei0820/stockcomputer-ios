@@ -87,7 +87,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKO-hQ-6Qe" customClass="YoutubePlayerView" customModule="YoutubePlayerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKO-hQ-6Qe" userLabel="bannerView" customClass="LLCycleScrollView" customModule="LLCycleScrollView">
                                 <rect key="frame" x="16" y="197" width="343" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -370,11 +370,11 @@
                         <outlet property="CurrentPrice" destination="pdb-6i-wQb" id="qwc-AC-NWr"/>
                         <outlet property="FinancingView" destination="TUQ-xa-Xge" id="C8s-g4-zaE"/>
                         <outlet property="MarginView" destination="Mi3-Zi-dkV" id="IK5-iU-6vG"/>
+                        <outlet property="bannerView" destination="WKO-hQ-6Qe" id="lzh-uW-EWd"/>
                         <outlet property="mOtherView" destination="efI-v7-fis" id="5Qq-e9-bKx"/>
                         <outlet property="marqueeLabel" destination="9WH-Zw-qh0" id="wYl-1D-T2B"/>
                         <outlet property="newsView" destination="Xhb-4i-a5q" id="vd7-zU-pcO"/>
                         <outlet property="paymeView" destination="XRS-IH-QlZ" id="oZe-HY-NrO"/>
-                        <outlet property="playerView" destination="WKO-hQ-6Qe" id="qnf-AY-5Zn"/>
                         <outlet property="sharelist" destination="YKv-GH-xqZ" id="j3U-ue-vJD"/>
                         <outlet property="smallstock" destination="cWJ-bT-HQi" id="yKB-uo-S1t"/>
                         <outlet property="todayView" destination="xh4-93-Y5e" id="RkM-4E-8Lp"/>
@@ -1173,10 +1173,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QzW-ka-TUs">
-                                <rect key="frame" x="-112.5" y="-130" width="600" height="600"/>
+                                <rect key="frame" x="37.5" y="20" width="300" height="300"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-Fv-wTz">
-                                <rect key="frame" x="91" y="500" width="72" height="72"/>
+                                <rect key="frame" x="91" y="350" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="o9l-So-R1U"/>
                                     <constraint firstAttribute="width" constant="72" id="sjH-9z-QwJ"/>
@@ -1188,7 +1188,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-rK-uCh">
-                                <rect key="frame" x="223" y="506" width="60" height="60"/>
+                                <rect key="frame" x="223" y="356" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ssi-a1-484"/>
                                     <constraint firstAttribute="width" constant="60" id="UpF-LB-JfR"/>
@@ -1199,7 +1199,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入手機號碼(只開放台灣門號)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ity-vw-1Uo">
-                                <rect key="frame" x="16" y="605" width="214" height="34"/>
+                                <rect key="frame" x="16" y="455" width="214" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="bnN-l4-Omf"/>
                                     <constraint firstAttribute="width" constant="214" id="i1Y-3E-lbb"/>
@@ -1208,7 +1208,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="驗證碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B3s-ld-T6P">
-                                <rect key="frame" x="16" y="660" width="214" height="34"/>
+                                <rect key="frame" x="16" y="510" width="214" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="nUw-7s-ENH"/>
                                     <constraint firstAttribute="width" constant="214" id="xDY-VK-Yz6"/>
@@ -1217,7 +1217,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3d-LU-x6q">
-                                <rect key="frame" x="252" y="662" width="94" height="30"/>
+                                <rect key="frame" x="252" y="512" width="94" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8zL-gK-ljk"/>
                                     <constraint firstAttribute="width" constant="94" id="Wcq-7O-unb"/>
@@ -1228,7 +1228,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qo-HJ-Pbn">
-                                <rect key="frame" x="252" y="609" width="94" height="30"/>
+                                <rect key="frame" x="252" y="459" width="94" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6LW-XI-aMW"/>
                                     <constraint firstAttribute="width" constant="94" id="oGS-pl-bqj"/>

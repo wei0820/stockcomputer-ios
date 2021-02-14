@@ -12,7 +12,7 @@ import Firebase
 import Instabug
 import JGProgressHUD
 import MarqueeLabel
-//import LLCycleScrollView
+import LLCycleScrollView
 import YoutubePlayerView
 
 class ViewController: MGoogleADViewController,UITabBarDelegate{
@@ -21,7 +21,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     @IBOutlet weak var MarginView: UIView!
     @IBOutlet weak var newsView: UIView!
     @IBOutlet weak var paymeView: UIView!
-//    @IBOutlet weak var bannerView: LLCycleScrollView!
+    @IBOutlet weak var bannerView: LLCycleScrollView!
     @IBOutlet weak var mOtherView: UIView!
     
     @IBOutlet weak var todayView: UIView!
@@ -30,7 +30,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     var ref: DatabaseReference!
     var strings = [String]()
 
-    @IBOutlet weak var playerView: YoutubePlayerView!
+//    @IBOutlet weak var playerView: YoutubePlayerView!
     @IBOutlet weak var marqueeLabel: MarqueeLabel!
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -86,8 +86,8 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setBannerView()
-        setYt()
+        setBannerView()
+//        setYt()
         setUIView()
 //        setRightButton(s: "會員中心")
 //        setLeftButton(s: "簽到")
@@ -132,43 +132,43 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
 
         }
     }
-    func setYt(){
-
-   let playerVars: [String: Any] = [
-             "controls": 1,
-             "modestbranding": 1,
-             "playsinline": 1,
-             "origin": "https://youtube.com"
-         ]
-        Database.database().reference().child("youtubeid").child("youtubeid" as! String).observe(.childAdded, with: {
-              (snapshot) in
-              // childAdded逐筆呈現
-              if let dictionaryData = snapshot.value as? [String: AnyObject]{
-                  var announcement : String = dictionaryData["youtubeid"] as! String
-                self.playerView.delegate = self as! YoutubePlayerViewDelegate
-
-                self.playerView.loadWithVideoId(announcement, with: playerVars)
-
-
-                  
-              }
-              
-          }, withCancel: nil)
-
-    }
-//    func setBannerView(){
-//        self.bannerView.imagePaths = FirebaseManager.getPageArray()
-//        self.bannerView.imageViewContentMode = .scaleToFill
-//        self.bannerView.customPageControlStyle = .image
-//        self.bannerView.pageControlPosition = .center
-//        // 是否对url进行特殊字符处理
-//        self.bannerView.isAddingPercentEncodingForURLString = true
-//        self.bannerView.pageControlCurrentPageColor = .white
-//        bannerView.customPageControlInActiveTintColor = .white
+//    func setYt(){
+//
+//   let playerVars: [String: Any] = [
+//             "controls": 1,
+//             "modestbranding": 1,
+//             "playsinline": 1,
+//             "origin": "https://youtube.com"
+//         ]
+//        Database.database().reference().child("youtubeid").child("youtubeid" as! String).observe(.childAdded, with: {
+//              (snapshot) in
+//              // childAdded逐筆呈現
+//              if let dictionaryData = snapshot.value as? [String: AnyObject]{
+//                  var announcement : String = dictionaryData["youtubeid"] as! String
+//                self.playerView.delegate = self as! YoutubePlayerViewDelegate
+//
+//                self.playerView.loadWithVideoId(announcement, with: playerVars)
 //
 //
-//        // 2018-02-25 新增协议
+//
+//              }
+//
+//          }, withCancel: nil)
+//
 //    }
+    func setBannerView(){
+        self.bannerView.imagePaths = FirebaseManager.getPageArray()
+        self.bannerView.imageViewContentMode = .scaleToFill
+        self.bannerView.customPageControlStyle = .image
+        self.bannerView.pageControlPosition = .center
+        // 是否对url进行特殊字符处理
+        self.bannerView.isAddingPercentEncodingForURLString = true
+        self.bannerView.pageControlCurrentPageColor = .white
+        bannerView.customPageControlInActiveTintColor = .white
+
+
+        // 2018-02-25 新增协议
+    }
     
     func setLeftButton(s: String){
         // 導覽列右邊按鈕
