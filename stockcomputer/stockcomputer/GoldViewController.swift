@@ -151,14 +151,6 @@ class GoldViewController: MGoogleADViewController, UITableViewDataSource, UITabl
                     array.append(text_11)
                     array.append(text_12)
 
-
-
-                    
-
-          
-                                 
-                    
-                     
                    } catch let error {
                    }
                    

@@ -219,7 +219,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     @objc func setting() {
         
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-        let HomeVc = stroyboard.instantiateViewController(withIdentifier: "member")
+        let HomeVc = stroyboard.instantiateViewController(withIdentifier: "searchstockprice")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
         appDelegate.window?.rootViewController = HomeVc
         
