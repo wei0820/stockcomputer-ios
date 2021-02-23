@@ -8,12 +8,19 @@
 
 import UIKit
 
-class SearchStockPriceViewController: MGoogleADViewController {
+class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelegate{
     @IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var buyText: UITextField!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
+        searchText.delegate = self
+        buyText.delegate = self
+        searchText.keyboardType = .decimalPad
+        buyText.keyboardType = .decimalPad
+        
+
+
     }
     
     @IBAction func closeView(_ sender: Any) {
