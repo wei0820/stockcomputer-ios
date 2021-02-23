@@ -3514,6 +3514,9 @@
                                     <constraint firstAttribute="width" constant="30" id="vP5-z4-ulC"/>
                                 </constraints>
                                 <state key="normal" image="baseline_clear_black"/>
+                                <connections>
+                                    <action selector="closeView:" destination="75R-ae-l4S" eventType="touchUpInside" id="qLX-wF-c6b"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="輸入欲查詢股票代號" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED3-RK-btv">
                                 <rect key="frame" x="16" y="65" width="343" height="21"/>
@@ -3560,6 +3563,9 @@
                                     <constraint firstAttribute="height" constant="30" id="iTu-oE-tgU"/>
                                 </constraints>
                                 <state key="normal" title="開始試算"/>
+                                <connections>
+                                    <action selector="cal_button:" destination="75R-ae-l4S" eventType="touchUpInside" id="pui-yR-vPt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -3580,6 +3586,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U7E-aI-qkI"/>
                     </view>
+                    <connections>
+                        <outlet property="buyText" destination="17h-YJ-9Tf" id="jgd-HD-bkW"/>
+                        <outlet property="searchText" destination="ErK-H6-oRm" id="hIY-F8-D8H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGl-Nq-nd0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

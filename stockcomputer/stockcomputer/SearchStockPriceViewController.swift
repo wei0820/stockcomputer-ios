@@ -9,10 +9,17 @@
 import UIKit
 
 class SearchStockPriceViewController: MGoogleADViewController {
-
+    @IBOutlet weak var searchText: UITextField!
+    @IBOutlet weak var buyText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-
+    @IBAction func closeView(_ sender: Any) {
+        dissmissView()
+    }
+    
+    @IBAction func cal_button(_ sender: Any) {
+    }
 }
