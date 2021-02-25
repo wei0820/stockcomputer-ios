@@ -9,11 +9,13 @@
 import UIKit
 import SwiftSoup
 
+import JGProgressHUD
 
 class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelegate{
     @IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var buyText: UITextField!
     var document: Document = Document.init("")
+    var hud :JGProgressHUD?
 
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,7 +44,7 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
               for name in names {
                   let action = UIAlertAction(title: name, style: .default) { (action) in
                       if (name == "是"){
-                      
+                        self.getStockPrice(s: self.searchText.text!)
                           
                           
                           
@@ -79,6 +81,10 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
     
     
     func getStockPrice(s : String) {
+        
+        hud = JGProgressHUD(style: .dark)
+        hud?.textLabel.text = "試算中..."
+        hud?.show(in: self.view)
          
             guard let url = URL(string: "https://histock.tw/stock/" + s ?? "") else {
              
@@ -108,5 +114,7 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
             } catch let error {
                 // an error occurred
             }
+        hud?.dismiss(afterDelay: 3.0)
+
         }
 }
