@@ -3502,7 +3502,7 @@
         <!--Search Stock Price View Controller-->
         <scene sceneID="SPv-5P-obe">
             <objects>
-                <viewController storyboardIdentifier="searchstockprice" id="75R-ae-l4S" customClass="SearchStockPriceViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchstockprice" modalPresentationStyle="fullScreen" id="75R-ae-l4S" customClass="SearchStockPriceViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qNB-xM-RXd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

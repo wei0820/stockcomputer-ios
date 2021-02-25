@@ -27,7 +27,10 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
     }
     
     @IBAction func closeView(_ sender: Any) {
-        dissmissView()
+        let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+        let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+        appDelegate.window?.rootViewController = HomeVc
     }
     
     @IBAction func cal_button(_ sender: Any) {
