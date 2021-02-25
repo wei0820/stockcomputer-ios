@@ -37,6 +37,38 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
         
         if(!searchText.text!.isEmpty && !buyText.text!.isEmpty){
             
+              let controller = UIAlertController(title: "提示", message: "僅供參考ㄝ,投資人應獨立判斷,是否開始試算", preferredStyle: .actionSheet)
+              let names = [ "是", "否"]
+              for name in names {
+                  let action = UIAlertAction(title: name, style: .default) { (action) in
+                      if (name == "是"){
+                      
+                          
+                          
+                          
+                      }else{
+                          
+                      }
+                  }
+                  controller.addAction(action)
+              }
+              let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+              controller.addAction(cancelAction)
+              present(controller, animated: true, completion: nil)
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }else{
             setToast(s: "請檢查輸入是否有遺漏")
         }
