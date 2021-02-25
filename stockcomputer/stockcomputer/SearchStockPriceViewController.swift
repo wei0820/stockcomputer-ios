@@ -117,4 +117,21 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
         hud?.dismiss(afterDelay: 3.0)
 
         }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if searchText  == textField{
+            
+            
+                   guard let text = textField.text else{
+                       return true
+                   }
+            
+                   let textLength = text.characters.count + string.characters.count - range.length
+            
+                   return textLength<=4
+               }
+            return true
+        }
+    
 }
