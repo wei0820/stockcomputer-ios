@@ -31,6 +31,12 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
     }
     
     @IBAction func cal_button(_ sender: Any) {
+        
+        if(!searchText.text!.isEmpty && !buyText.text!.isEmpty){
+            
+        }else{
+            setToast(s: "請檢查輸入是否有遺漏")
+        }
     }
     
     
