@@ -112,11 +112,11 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
                     label_2.text = "融資斷頭價位約:" + String(format: "%.2f",text_int! * 0.72)
                         + "~" +
                             String(format: "%.2f",text_int! * 0.8)
-                    label_3.text = "融券斷頭價位約:" + String(format: "%.2f",text_int! * 1.2)
+                    label_3.text = "融券斷頭價位約:" + String(format: "%.2f",text_int! * 1.5)
                     label_4.text = "融資還有可以凹單空間約:" + String(format: "%.2f", (price_double! - (text_int! * 0.72)))  + "~" + String(format: "%.2f", (price_double! - (text_int! * 0.8)))
                     
                     
-                    label_5.text = "融券還有可以凹單空間約:" + String(format: "%.2f", ((text_int! * 1.2) - price_double!))
+                    label_5.text = "融券還有可以凹單空間約:" + String(format: "%.2f", ((text_int! * 1.5) - price_double!))
                        
                     
                     
