@@ -107,11 +107,13 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
                  let elements: Elements = try document.select("ul.priceinfo.mt10" ?? "")
                     var text_1 = try elements.select("li.deal>span").text()
                     var text_int = Double(buyText.text!)
+                    var price_double = Double(text_1)
                     label_1.text = "目前價位:" + text_1
                     label_2.text = "融資斷頭價位約:" + String(format: "%.2f",text_int! * 0.72)
                         + "~" +
                             String(format: "%.2f",text_int! * 0.8)
                     label_3.text = "融券斷頭價位約:" + String(format: "%.2f",text_int! * 1.2)
+                    label_5.text = "融券還有可以凹單空間約:" + String(format: "%.2f", ((text_int! * 1.2) - price_double!))
                        
                     
                     
@@ -150,4 +152,6 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
     
     @IBOutlet weak var label_3: UILabel!
     
+    @IBOutlet weak var label_4: UILabel!
+    @IBOutlet weak var label_5: UILabel!
 }
