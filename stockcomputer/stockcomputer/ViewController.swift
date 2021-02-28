@@ -90,7 +90,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
 //        setYt()
         setUIView()
         setRightButton(s: "斷頭查詢")
-        setLeftButton(s: "小型期貨計算")
+//        setLeftButton(s: "小型期貨計算")
         Firebase.Analytics.setScreenName("首頁", screenClass: "ViewController")
         marqueeLabel.type = .continuous
         marqueeLabel.speed = .duration(9)
