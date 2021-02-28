@@ -39,7 +39,7 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
         
         if(!searchText.text!.isEmpty && !buyText.text!.isEmpty){
             
-              let controller = UIAlertController(title: "提示", message: "僅供參考ㄝ,投資人應獨立判斷,是否開始試算", preferredStyle: .actionSheet)
+              let controller = UIAlertController(title: "提示", message: "僅供參考,投資人應獨立判斷,是否開始試算", preferredStyle: .actionSheet)
               let names = [ "是", "否"]
               for name in names {
                   let action = UIAlertAction(title: name, style: .default) { (action) in
@@ -106,7 +106,15 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
                  
                  let elements: Elements = try document.select("ul.priceinfo.mt10" ?? "")
                     var text_1 = try elements.select("li.deal>span").text()
-                    print("Jack",text_1)
+                    var text_int = Double(buyText.text!)
+                    label_1.text = "目前價位:" + text_1
+                    label_2.text = "融資斷頭價位約:" + String(format: "%.2f",text_int! * 0.72)
+                        + "~" +
+                            String(format: "%.2f",text_int! * 0.8)
+                    label_3.text = "融券斷頭價位約:" + String(format: "%.2f",text_int! * 1.2)
+                       
+                    
+                    
                 } catch let error {
                 }
                 
@@ -133,5 +141,13 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
                }
             return true
         }
+    
+    
+    @IBOutlet weak var label_1: UILabel!
+    
+    @IBOutlet weak var label_2: UILabel!
+    
+    
+    @IBOutlet weak var label_3: UILabel!
     
 }
