@@ -117,7 +117,14 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
                     
                     
                     label_5.text = "融券還有可以凹單空間約:" + String(format: "%.2f", ((text_int! * 1.5) - price_double!))
-                       
+                    
+                    self.searchText.resignFirstResponder()
+                    self.buyText.resignFirstResponder()
+                    
+                     buyText.text = ""
+                    
+                    searchText.text = ""
+
                     
                     
                 } catch let error {
