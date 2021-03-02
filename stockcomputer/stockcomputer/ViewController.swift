@@ -90,7 +90,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
 //        setYt()
         setUIView()
         setRightButton(s: "斷頭查詢")
-//        setLeftButton(s: "小型期貨計算")
+        setLeftButton(s: "小型期貨計算")
         Firebase.Analytics.setScreenName("首頁", screenClass: "ViewController")
         marqueeLabel.type = .continuous
         marqueeLabel.speed = .duration(9)
@@ -183,23 +183,30 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     }
     
     @objc func checkIn() {
-        if(self.checkIsMember()){
-            FirebaseManager.getMemberDate()
-            if(FirebaseManager.getUserId() != nil && FirebaseManager.getUserPoint() != nil){
-                if(FirebaseManager.getUserPoint() == 0){
-                    FirebaseManager.addMemberDateToFirebase(point: 100)
-                }else{
-                    var point : Int = FirebaseManager.getUserPoint()
-                    self.checkLoginTime()
-                    FirebaseManager.getMemberDate()
-                }
-                
-            }else{
-                FirebaseManager.addMemberDateToFirebase(point: 100)
-                FirebaseManager.getMemberDate()
-            }
-            
-        }
+//        if(self.checkIsMember()){
+//            FirebaseManager.getMemberDate()
+//            if(FirebaseManager.getUserId() != nil && FirebaseManager.getUserPoint() != nil){
+//                if(FirebaseManager.getUserPoint() == 0){
+//                    FirebaseManager.addMemberDateToFirebase(point: 100)
+//                }else{
+//                    var point : Int = FirebaseManager.getUserPoint()
+//                    self.checkLoginTime()
+//                    FirebaseManager.getMemberDate()
+//                }
+//
+//            }else{
+//                FirebaseManager.addMemberDateToFirebase(point: 100)
+//                FirebaseManager.getMemberDate()
+//            }
+//
+//        }
+        
+        
+        
+        let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+        let HomeVc = stroyboard.instantiateViewController(withIdentifier: "SmallFutures")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+        appDelegate.window?.rootViewController = HomeVc
         
     }
     
