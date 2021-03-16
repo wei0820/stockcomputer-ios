@@ -19,7 +19,7 @@ import Toaster
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
 
-class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding, UITextFieldDelegate {
+class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding, UITextFieldDelegate{
     
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var number: UITextField!
@@ -90,10 +90,6 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
                 
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            print("jack","user: \(appleIDCredential.user)")
-            print("jack","fullName: \(String(describing: appleIDCredential.fullName))")
-            print("jack","Email: \(String(describing: appleIDCredential.email))")
-            print("jack","realUserStatus: \(String(describing: appleIDCredential.realUserStatus))")
              guard let nonce = currentNonce else {
                 fatalError("Invalid state: A login callback was received, but no login request was sent.")
               }
@@ -234,9 +230,9 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
             let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
             let appDelegate = UIApplication.shared.delegate as! AppDelegate;
             appDelegate.window?.rootViewController = HomeVc
-            let id : String = userDefaults.value(forKey: "userID") as! String
-
-            self.checkCredentialState(withUserID: id)
+//            let id : String = userDefaults.value(forKey: "userID") as! String
+//
+//            self.checkCredentialState(withUserID: id)
             if ((userDefaults.value(forKey: "isAnonymous")) != nil){
                 var isAnonymous : Bool = userDefaults.value(forKey: "isAnonymous") as! Bool
 
@@ -248,10 +244,6 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
                 
             }
             
-        }else{
-
-     
-
         }
     
 }
@@ -313,4 +305,20 @@ class FBLoginViewController: UIViewController,ASAuthorizationControllerDelegate,
                    controller.addAction(okAction)
                    present(controller, animated: true, completion: nil)
     }
+    
+    @IBAction func appidLoginButton(_ sender: Any) {
+         let nonce = randomNonceString()
+            currentNonce = nonce
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            let request = appleIDProvider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+            request.nonce = sha256(nonce)
+
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = self
+            authorizationController.presentationContextProvider = self
+            authorizationController.performRequests()
+    }
+    
+    
 }

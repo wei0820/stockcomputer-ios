@@ -109,19 +109,19 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         marqueeLabel.leadingBuffer = 30.0
         marqueeLabel.trailingBuffer = 20.0
         
-        if(checkIsMember()){
-            getId()
-            
-            if(!FirebaseManager.getVersion().isEmpty){
-                var newVersion : Double = FirebaseManager.getNewVersion() as! Double
-                var userVersion : Double = Double(FirebaseManager.getVersion()) as! Double
-                if(userVersion < newVersion){
-                    setAlert(title: "版本過舊", message: "請您至 App Store 更新 ")
-                }
-                
-            }
-            
-        }
+//        if(checkIsMember()){
+//            getId()
+//
+//            if(!FirebaseManager.getVersion().isEmpty){
+//                var newVersion : Double = FirebaseManager.getNewVersion() as! Double
+//                var userVersion : Double = Double(FirebaseManager.getVersion()) as! Double
+//                if(userVersion < newVersion){
+//                    setAlert(title: "版本過舊", message: "請您至 App Store 更新 ")
+//                }
+//
+//            }
+//
+//        }
         getStockcomuperAllDate()
         
     
