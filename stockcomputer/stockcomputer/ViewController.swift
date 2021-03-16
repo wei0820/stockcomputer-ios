@@ -36,6 +36,12 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 1:
+            
+                
+            if(!checkIsMember()){
+                    setAlert()
+                    return
+                    }
             setJump(type: "DayTrade")
               Firebase.Analytics.logEvent("選擇項目", parameters: [
                 "時間": DateManager.setDate(),
@@ -51,7 +57,11 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         
             break
         case 3:
-            
+                
+            if(!checkIsMember()){
+                    setAlert()
+                    return
+                    }
             setJump(type: "futures")
             Firebase.Analytics.logEvent("選擇項目", parameters: [
                              "時間": DateManager.setDate(),
@@ -90,7 +100,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
 //        setYt()
         setUIView()
         setRightButton(s: "斷頭查詢")
-        setLeftButton(s: "小型期貨計算")
+//        setLeftButton(s: "小型期貨計算")
         Firebase.Analytics.setScreenName("首頁", screenClass: "ViewController")
         marqueeLabel.type = .continuous
         marqueeLabel.speed = .duration(9)
@@ -246,18 +256,20 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         let controller = UIAlertController(title: "訪客身份", message: "請先登入再使用", preferredStyle: .actionSheet)
         let names = ["去登入"]
         for name in names {
-            let user = Auth.auth().currentUser
-            
-            user?.delete { error in
-                if let error = error {
-                    // An error happened.
-                } else {
-                    // Account deleted.
-                }
-            }
-            self.userDefaults.set(nil, forKey: "userID")
+
             
             let action = UIAlertAction(title: name, style: .default) { (action) in
+                
+                let user = Auth.auth().currentUser
+                
+                user?.delete { error in
+                    if let error = error {
+                        // An error happened.
+                    } else {
+                        // Account deleted.
+                    }
+                }
+                self.userDefaults.set(nil, forKey: "userID")
                 let stroyboard = UIStoryboard(name: "Main", bundle: nil);
                 let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate;
@@ -341,9 +353,19 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
          setJump(type: "news")
       }
     @objc func tomorrowAction(sender : UITapGestureRecognizer) {
+            
+        if(!checkIsMember()){
+                setAlert()
+                return
+                }
        setJump(type: "tomorrow")
     }
     @objc func marginAction(sender : UITapGestureRecognizer) {
+            
+        if(!checkIsMember()){
+                setAlert()
+                return
+                }
         setJump(type: "margin")
      }
     
@@ -352,6 +374,11 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         }
     
     @objc func financingAction(sender : UITapGestureRecognizer) {
+            
+        if(!checkIsMember()){
+                setAlert()
+                return
+                }
              setJump(type: "financing")
           }
     
