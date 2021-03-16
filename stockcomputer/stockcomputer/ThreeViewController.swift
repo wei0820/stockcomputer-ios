@@ -16,6 +16,7 @@ class ThreeViewController: MGoogleADViewController {
 
      var document: Document = Document.init("")
 
+    @IBOutlet var shareView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         array = GetStockPriceManager.getThree()
@@ -25,6 +26,7 @@ class ThreeViewController: MGoogleADViewController {
         getSmall()
 
         setScreenName(screenName: "三大法人買賣超", screenClassName: "ThreeViewController")
+        
 
         // Do any additional setup after loading the view.
     }
@@ -116,6 +118,7 @@ class ThreeViewController: MGoogleADViewController {
     
     @IBAction func close(_ sender: Any) {
         dissmissView()
+//        self.share()
     }
     @IBOutlet weak var three_label_5: UILabel!
     @IBOutlet weak var three_label_4: UILabel!
@@ -138,4 +141,19 @@ class ThreeViewController: MGoogleADViewController {
     @IBOutlet weak var small_1: UILabel!
     
     @IBOutlet weak var small_2: UILabel!
+    
+    func share(){
+           let renderer = UIGraphicsImageRenderer(size: shareView.bounds.size)
+           let image = renderer.image(actions: { (context) in
+              shareView.drawHierarchy(in: shareView.bounds, afterScreenUpdates: true)
+        })
+           let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+           present(activityViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func sharebutton(_ sender: Any) {
+        self.share()
+    }
+    
+    
 }

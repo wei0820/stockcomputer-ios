@@ -6006,11 +6006,24 @@
                                     <constraint firstItem="lq8-4L-HgN" firstAttribute="leading" secondItem="Qe4-Tl-vT2" secondAttribute="leading" id="wex-gI-cax"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4h-o0-ULB">
+                                <rect key="frame" x="16" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="DZM-OL-D9m"/>
+                                    <constraint firstAttribute="height" constant="30" id="Tld-kw-Y0r"/>
+                                </constraints>
+                                <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="sharebutton:" destination="AeI-4a-YwK" eventType="touchUpInside" id="0H8-qY-x3X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nso-e1-ZWM" firstAttribute="leading" secondItem="Ydz-Kh-HBR" secondAttribute="leading" constant="16" id="1TY-GH-gOq"/>
+                            <constraint firstItem="n4h-o0-ULB" firstAttribute="top" secondItem="Ydz-Kh-HBR" secondAttribute="top" constant="20" id="7m1-xt-VBY"/>
                             <constraint firstItem="Ydz-Kh-HBR" firstAttribute="trailing" secondItem="sVH-yW-CSI" secondAttribute="trailing" constant="16" id="OcB-t0-gLb"/>
+                            <constraint firstItem="nGc-IU-ZZT" firstAttribute="top" secondItem="n4h-o0-ULB" secondAttribute="bottom" constant="9" id="X4F-V3-oUX"/>
                             <constraint firstItem="qkD-F5-KZ4" firstAttribute="top" secondItem="Ydz-Kh-HBR" secondAttribute="top" constant="20" id="c3N-Ph-soc"/>
                             <constraint firstItem="nGc-IU-ZZT" firstAttribute="leading" secondItem="Ydz-Kh-HBR" secondAttribute="leading" constant="16" id="k0N-O7-HtW"/>
                             <constraint firstItem="nGc-IU-ZZT" firstAttribute="top" secondItem="qkD-F5-KZ4" secondAttribute="bottom" constant="9" id="loM-iV-k1Z"/>
@@ -6018,6 +6031,7 @@
                             <constraint firstItem="sVH-yW-CSI" firstAttribute="top" secondItem="nGc-IU-ZZT" secondAttribute="bottom" constant="22" id="ox8-qo-XNh"/>
                             <constraint firstItem="Ydz-Kh-HBR" firstAttribute="trailing" secondItem="nGc-IU-ZZT" secondAttribute="trailing" constant="16" id="p00-Et-uYc"/>
                             <constraint firstItem="nso-e1-ZWM" firstAttribute="top" secondItem="nGc-IU-ZZT" secondAttribute="bottom" constant="22" id="s0f-ci-jH3"/>
+                            <constraint firstItem="n4h-o0-ULB" firstAttribute="leading" secondItem="Ydz-Kh-HBR" secondAttribute="leading" constant="16" id="tph-q8-poY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ydz-Kh-HBR"/>
                     </view>
@@ -6027,6 +6041,7 @@
                         <outlet property="futures_label_3" destination="xoy-V9-DyY" id="k11-1r-r45"/>
                         <outlet property="futures_label_4" destination="sg6-hA-BL6" id="Rsi-rN-y9k"/>
                         <outlet property="futures_label_5" destination="A6b-kH-4wV" id="CFf-Yl-WEq"/>
+                        <outlet property="shareView" destination="UcT-2I-sEe" id="LYy-DN-DJU"/>
                         <outlet property="small_1" destination="Qe4-Tl-vT2" id="fxX-w1-F57"/>
                         <outlet property="small_2" destination="yzJ-Qs-NjO" id="W0T-7K-HCX"/>
                         <outlet property="three_label_1" destination="OGy-Y3-59r" id="ilU-y5-nel"/>
@@ -7200,6 +7215,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="64" height="52"/>
         <image name="baseline_clear_black" width="72" height="72"/>
         <image name="bookmark" catalog="system" width="56" height="64"/>
         <image name="bookmark.fill" catalog="system" width="56" height="64"/>
