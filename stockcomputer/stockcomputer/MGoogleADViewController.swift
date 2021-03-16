@@ -188,7 +188,7 @@ class MGoogleADViewController: UIViewController,GADBannerViewDelegate{
             
             if firebaseAuth.currentUser == nil {
                          return false
-                       }
+                   }
             
             if firebaseAuth.currentUser!.isAnonymous == nil {
               return false

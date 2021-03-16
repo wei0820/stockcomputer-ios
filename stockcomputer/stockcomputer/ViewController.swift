@@ -114,6 +114,8 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         }
         getStockcomuperAllDate()
         
+    
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         if(checkIsMember()){
@@ -225,6 +227,14 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     }
     @objc func setting() {
         
+    if(!checkIsMember()){
+            setAlert()
+            return
+            }
+        Firebase.Analytics.logEvent("選擇項目", parameters: [
+                                  "時間": DateManager.setDate(),
+                                  "名稱": "斷頭試算"
+                              ])
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
         let HomeVc = stroyboard.instantiateViewController(withIdentifier: "searchstockprice")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
@@ -396,4 +406,6 @@ extension ViewController: YoutubePlayerViewDelegate {
         return view
     }
   
+    
+   
 }
