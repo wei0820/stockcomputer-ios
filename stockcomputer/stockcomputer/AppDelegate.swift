@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 //        let config = VpadnAdConfiguration.sharedInstance()
 //        config.logLevel = .default
 //        config.initializeSdk()
-        Messaging.messaging().delegate = self
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
@@ -45,6 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         }
         
         application.registerForRemoteNotifications()
+        
+        Messaging.messaging().delegate = self
+        
+ 
         
         Instabug.start(withToken: "30dabcbd12350ce99d5037e8fb70858f", invocationEvents: [.shake, .twoFingersSwipeLeft,.rightEdgePan,.floatingButton])
         Instabug.setLocale(.chineseTaiwan)
@@ -126,7 +129,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
 
     // Change this to your preferred presentation option
 //    completionHandler([])
-    completionHandler([.badge, .sound, .alert])
+    completionHandler([.sound, .alert])
+    
 
   }
 

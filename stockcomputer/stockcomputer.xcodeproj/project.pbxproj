@@ -51,7 +51,7 @@
 		8EEE3E9B246BDCFC00B1493E /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE3E9A246BDCFB00B1493E /* ThreeViewController.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
 		B70A0B5825DD449B00E8F5C7 /* SearchStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A0B5725DD449A00E8F5C7 /* SearchStockPriceViewController.swift */; };
-		B738625925AD786200B612F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B738625825AD786200B612F7 /* GoogleService-Info.plist */; };
+		B721B1B62600B84300422AB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B721B1B52600B84300422AB5 /* GoogleService-Info.plist */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
 		B74F5303220556340034DC5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5302220556340034DC5D /* ViewController.swift */; };
 		B74F5306220556340034DC5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74F5304220556340034DC5D /* Main.storyboard */; };
@@ -116,8 +116,8 @@
 		9F766B3A074084E1FE467A17 /* Pods-stockcomputer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.debug.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.debug.xcconfig"; sourceTree = "<group>"; };
 		A48412A590B2B1067F15F72A /* Pods-stockcomputer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.release.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.release.xcconfig"; sourceTree = "<group>"; };
 		B70A0B5725DD449A00E8F5C7 /* SearchStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStockPriceViewController.swift; sourceTree = "<group>"; };
+		B721B1B52600B84300422AB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
-		B738625825AD786200B612F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B74F52FD220556330034DC5D /* 股市大贏家.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "股市大贏家.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74F5300220556340034DC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B74F5302220556340034DC5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 		B74F52FF220556330034DC5D /* stockcomputer */ = {
 			isa = PBXGroup;
 			children = (
-				B738625825AD786200B612F7 /* GoogleService-Info.plist */,
+				B721B1B52600B84300422AB5 /* GoogleService-Info.plist */,
 				B72FB7E2235203A800701A1C /* stockcomputer.entitlements */,
 				B74F5300220556340034DC5D /* AppDelegate.swift */,
 				B74F5302220556340034DC5D /* ViewController.swift */,
@@ -315,7 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */,
-				B738625925AD786200B612F7 /* GoogleService-Info.plist in Resources */,
+				B721B1B62600B84300422AB5 /* GoogleService-Info.plist in Resources */,
 				B74F5308220556350034DC5D /* Assets.xcassets in Resources */,
 				B74F5306220556340034DC5D /* Main.storyboard in Resources */,
 			);
@@ -582,7 +582,7 @@
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 98;
+				CURRENT_PROJECT_VERSION = 97;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
@@ -596,7 +596,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 9.8;
+				MARKETING_VERSION = 9.7;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -803,7 +803,7 @@
 				CODE_SIGN_ENTITLEMENTS = stockcomputer/stockcomputer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 98;
+				CURRENT_PROJECT_VERSION = 97;
 				DEVELOPMENT_TEAM = 9SDG9LYLGC;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = stockcomputer/Info.plist;
@@ -817,7 +817,7 @@
 					"$(PROJECT_DIR)/stockcomputer",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 9.8;
+				MARKETING_VERSION = 9.7;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
