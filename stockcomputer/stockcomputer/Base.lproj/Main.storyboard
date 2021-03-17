@@ -6852,6 +6852,9 @@
                                     <constraint firstAttribute="width" constant="343" id="waA-FW-9qr"/>
                                 </constraints>
                                 <state key="normal" title="計算"/>
+                                <connections>
+                                    <action selector="cal_view:" destination="spp-ja-c7g" eventType="touchUpInside" id="2bc-aR-DF0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總損益" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mB-Ij-aNc">
                                 <rect key="frame" x="16" y="483" width="52" height="21"/>
@@ -6899,6 +6902,20 @@
                                     <constraint firstAttribute="width" constant="30" id="6kD-SJ-FMR"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="baseline_clear_black"/>
+                                <connections>
+                                    <action selector="closeView:" destination="spp-ja-c7g" eventType="touchUpInside" id="mY2-6G-mwg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-pR-lal">
+                                <rect key="frame" x="16" y="15" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nyx-fG-dOt"/>
+                                    <constraint firstAttribute="width" constant="30" id="zyv-yG-Ihl"/>
+                                </constraints>
+                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="search_button:" destination="spp-ja-c7g" eventType="touchUpInside" id="uhD-TY-5RD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -6913,6 +6930,7 @@
                             <constraint firstItem="B7S-QH-JSh" firstAttribute="leading" secondItem="sqW-Hj-tuE" secondAttribute="leading" constant="126" id="GUs-kn-rsy"/>
                             <constraint firstItem="Qc4-Vv-gLg" firstAttribute="leading" secondItem="sqW-Hj-tuE" secondAttribute="leading" constant="16" id="H1I-WX-wwd"/>
                             <constraint firstItem="W2j-dH-Cl6" firstAttribute="top" secondItem="fKR-sr-BPr" secondAttribute="bottom" constant="16" id="HLr-aw-53p"/>
+                            <constraint firstItem="cHx-pR-lal" firstAttribute="leading" secondItem="sqW-Hj-tuE" secondAttribute="leading" constant="16" id="I2l-ie-GH9"/>
                             <constraint firstItem="nQv-Vi-Zp8" firstAttribute="top" secondItem="sqW-Hj-tuE" secondAttribute="top" constant="87" id="L3h-gs-ThP"/>
                             <constraint firstItem="fKR-sr-BPr" firstAttribute="top" secondItem="sqW-Hj-tuE" secondAttribute="top" constant="87" id="Ldd-Rg-jFm"/>
                             <constraint firstItem="4hO-EW-qQp" firstAttribute="top" secondItem="TTA-hC-oUm" secondAttribute="bottom" constant="25" id="NUw-3E-IRU"/>
@@ -6926,6 +6944,7 @@
                             <constraint firstItem="8qk-ks-Us4" firstAttribute="top" secondItem="7mB-Ij-aNc" secondAttribute="bottom" constant="48" id="Yrx-bV-Y83"/>
                             <constraint firstItem="8qk-ks-Us4" firstAttribute="leading" secondItem="sqW-Hj-tuE" secondAttribute="leading" constant="16" id="aeQ-Ti-FaX"/>
                             <constraint firstItem="InJ-IU-RJo" firstAttribute="leading" secondItem="sqW-Hj-tuE" secondAttribute="leading" constant="16" id="axc-vd-7TS"/>
+                            <constraint firstItem="cHx-pR-lal" firstAttribute="top" secondItem="sqW-Hj-tuE" secondAttribute="top" constant="15" id="cfw-mB-RZx"/>
                             <constraint firstItem="4hO-EW-qQp" firstAttribute="leading" secondItem="sqW-Hj-tuE" secondAttribute="leading" constant="16" id="dOh-8B-XU1"/>
                             <constraint firstItem="7mB-Ij-aNc" firstAttribute="top" secondItem="Qc4-Vv-gLg" secondAttribute="bottom" constant="39" id="dc0-Dl-AO5"/>
                             <constraint firstItem="Mqj-iP-t2Z" firstAttribute="leading" secondItem="4hO-EW-qQp" secondAttribute="trailing" constant="120" id="dhp-21-3ra"/>
@@ -6937,6 +6956,7 @@
                             <constraint firstItem="pFx-hO-Zd0" firstAttribute="leading" secondItem="sqW-Hj-tuE" secondAttribute="leading" constant="16" id="hWG-yZ-hhg"/>
                             <constraint firstItem="biA-d6-vB4" firstAttribute="leading" secondItem="pFx-hO-Zd0" secondAttribute="trailing" constant="155" id="jzO-7u-iHN"/>
                             <constraint firstItem="TTA-hC-oUm" firstAttribute="top" secondItem="InJ-IU-RJo" secondAttribute="bottom" constant="27" id="lpf-Lq-6qJ"/>
+                            <constraint firstItem="nQv-Vi-Zp8" firstAttribute="top" secondItem="cHx-pR-lal" secondAttribute="bottom" constant="42" id="mH5-8x-DDL"/>
                             <constraint firstItem="5B7-ac-su7" firstAttribute="top" secondItem="wb0-HK-Ch6" secondAttribute="bottom" constant="27" id="nGm-cx-9RO"/>
                             <constraint firstItem="sqW-Hj-tuE" firstAttribute="trailing" secondItem="d3c-yU-QQ0" secondAttribute="trailing" constant="82" id="oKm-il-Hki"/>
                             <constraint firstItem="B7S-QH-JSh" firstAttribute="top" secondItem="sqW-Hj-tuE" secondAttribute="top" constant="20" id="pBD-JL-Tio"/>
@@ -7241,6 +7261,7 @@
         <image name="info.circle.fill" catalog="system" width="64" height="60"/>
         <image name="like" width="36" height="36"/>
         <image name="logo" width="300" height="300"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="outline_stay_primary_portrait_black_36pt_2x" width="72" height="72"/>
         <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="pencil.circle" catalog="system" width="64" height="60"/>
