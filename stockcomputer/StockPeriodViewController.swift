@@ -8,7 +8,28 @@
 
 import UIKit
 class StockPeriodViewController: MGoogleADViewController {
-
+    
+    @IBOutlet weak var buy_price_edt: UITextField!
+    
+    @IBOutlet weak var buy_num_tf: UITextField!
+    
+    @IBOutlet weak var sell_price_tf: UITextField!
+    
+    @IBOutlet weak var sell_num_tf: UITextField!
+    
+    @IBOutlet weak var buypirce_label: UILabel!
+    
+    @IBOutlet weak var sellprice_label: UILabel!
+    
+    @IBOutlet weak var handPrice_label: UILabel!
+    
+    @IBOutlet weak var periodPrice_Label: UILabel!
+    
+    
+    @IBOutlet var money_Label: UIView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

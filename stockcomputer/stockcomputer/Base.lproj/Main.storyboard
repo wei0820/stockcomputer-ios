@@ -6970,6 +6970,17 @@
                         <viewLayoutGuide key="safeArea" id="sqW-Hj-tuE"/>
                     </view>
                     <navigationItem key="navigationItem" id="sgQ-jR-MWX"/>
+                    <connections>
+                        <outlet property="buy_num_tf" destination="InJ-IU-RJo" id="2qt-dP-E4R"/>
+                        <outlet property="buy_price_edt" destination="DKB-5C-iiI" id="Tga-t9-TN2"/>
+                        <outlet property="buypirce_label" destination="5B7-ac-su7" id="bej-ma-e88"/>
+                        <outlet property="handPrice_label" destination="pFx-hO-Zd0" id="UgH-Uc-F8E"/>
+                        <outlet property="money_Label" destination="mzC-iY-DWf" id="oMq-PW-OQ6"/>
+                        <outlet property="periodPrice_Label" destination="HTs-3I-ae7" id="tSg-XR-5D3"/>
+                        <outlet property="sell_num_tf" destination="wb0-HK-Ch6" id="7zT-n0-QOl"/>
+                        <outlet property="sell_price_tf" destination="W2j-dH-Cl6" id="y37-hb-ErL"/>
+                        <outlet property="sellprice_label" destination="Mqj-iP-t2Z" id="LQX-NB-yep"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ceq-bb-Ryw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
