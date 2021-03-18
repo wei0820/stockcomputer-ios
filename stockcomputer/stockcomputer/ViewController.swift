@@ -83,8 +83,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
                                       "名稱": "權證獲利試算"
                                   ])
             
-            
-            
             break
             
         default:

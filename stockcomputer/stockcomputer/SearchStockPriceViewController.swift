@@ -45,11 +45,7 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
                   let action = UIAlertAction(title: name, style: .default) { (action) in
                       if (name == "是"){
                         self.getStockPrice(s: self.searchText.text!)
-                          
-                          
-                          
-                      }else{
-                          
+  
                       }
                   }
                   controller.addAction(action)
