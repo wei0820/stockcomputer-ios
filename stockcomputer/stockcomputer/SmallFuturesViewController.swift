@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SmallFuturesViewController: MGoogleADViewController {
+class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     @IBOutlet weak var buypriceLabel: UILabel!
     @IBOutlet weak var selPriceLabel: UILabel!
     @IBOutlet weak var handPrcie: UILabel!
@@ -41,6 +41,36 @@ class SmallFuturesViewController: MGoogleADViewController {
     func initTextField(){
         handPrice_TF.borderStyle = .roundedRect
         handPrice_TF.clearButtonMode = .whileEditing
+        handPrice_TF.keyboardType = .decimalPad
+        handPrice_TF.returnKeyType = .done
+        handPrice_TF.delegate = self
+        
+        
+        buyTF.borderStyle = .roundedRect
+         buyTF.clearButtonMode = .whileEditing
+         buyTF.keyboardType = .decimalPad
+         buyTF.returnKeyType = .done
+         buyTF.delegate = self
+        sellTF.borderStyle = .roundedRect
+        sellTF.clearButtonMode = .whileEditing
+        sellTF.keyboardType = .decimalPad
+        sellTF.returnKeyType = .done
+        sellTF.delegate = self
+        
+        sellnumTF.borderStyle = .roundedRect
+        sellnumTF.clearButtonMode = .whileEditing
+        sellnumTF.keyboardType = .decimalPad
+        sellnumTF.returnKeyType = .done
+        sellnumTF.delegate = self
+        
+        buynumTF.borderStyle = .roundedRect
+        buynumTF.clearButtonMode = .whileEditing
+        buynumTF.keyboardType = .decimalPad
+        buynumTF.returnKeyType = .done
+        buynumTF.delegate = self
+        
+
+        
         
         
     }
