@@ -18,8 +18,31 @@ class SmallFuturesViewController: MGoogleADViewController {
     @IBOutlet weak var buynumTF: UITextField!
     @IBOutlet weak var buyTF: UITextField!
     @IBOutlet weak var sellTF: UITextField!
+    
+    @IBOutlet weak var handPrice_TF: UITextField!
+    var myHandPriceDefaults :UserDefaults!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        myHandPriceDefaults = UserDefaults.standard
+        initTextField()
+        
+        if let handprice_small = myHandPriceDefaults.object(forKey: "handprice_small") as? String {
+            handPrice_TF.text = handprice_small
+        } else {
+  
+            handPrice_TF.placeholder = "請輸入手續費"
+        }
+        
+
+        
+
+    }
+    func initTextField(){
+        handPrice_TF.borderStyle = .roundedRect
+        handPrice_TF.clearButtonMode = .whileEditing
+        
+        
     }
 
     @IBAction func closeView(_ sender: Any) {
@@ -30,7 +53,16 @@ class SmallFuturesViewController: MGoogleADViewController {
     }
     
     @IBAction func cla_btn(_ sender: Any) {
+        
+        
+           myHandPriceDefaults.set(
+            handPrice_TF.text, forKey: "handprice_small")
+          myHandPriceDefaults.synchronize()
     }
     
+    @IBAction func searchButton(_ sender: Any) {
+        let url:URL?=URL.init(string: "https://www.taifex.com.tw/cht/5/stockMargining")
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
     
 }
