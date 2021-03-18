@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class StockPeriodViewController: MGoogleADViewController {
+class StockPeriodViewController: MGoogleADViewController ,UITextFieldDelegate{
     
     @IBOutlet weak var buy_price_edt: UITextField!
     
@@ -32,6 +32,17 @@ class StockPeriodViewController: MGoogleADViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        buy_price_edt.delegate = self
+        buy_num_tf.delegate = self
+        sell_price_tf.delegate = self
+        sell_num_tf.delegate = self
+        buy_price_edt.keyboardType = .decimalPad
+        buy_num_tf.keyboardType = .decimalPad
+        sell_price_tf.keyboardType = .decimalPad
+        sell_num_tf.delegate = self
+
+
+        
     }
     
     
@@ -50,5 +61,12 @@ class StockPeriodViewController: MGoogleADViewController {
     @IBAction func cal_view(_ sender: Any) {
     }
     
-
+    // 按空白處會隱藏編輯狀態
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

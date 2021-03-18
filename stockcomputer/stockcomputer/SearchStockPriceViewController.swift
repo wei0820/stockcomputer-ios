@@ -55,18 +55,6 @@ class SearchStockPriceViewController: MGoogleADViewController ,UITextFieldDelega
               present(controller, animated: true, completion: nil)
             
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         }else{
             setToast(s: "請檢查輸入是否有遺漏")
         }
