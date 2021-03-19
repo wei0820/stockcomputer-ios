@@ -15,6 +15,7 @@ import Instabug
 import SwiftyStoreKit
 import NotificationCenter
 import UserNotificationsUI
+import VpadnSDKAdKit
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -27,9 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         // Vpon SDK initialization
-//        let config = VpadnAdConfiguration.sharedInstance()
-//        config.logLevel = .default
-//        config.initializeSdk()
+        let config = VpadnAdConfiguration.sharedInstance()
+        config.logLevel = .default
+        config.initializeSdk()
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self

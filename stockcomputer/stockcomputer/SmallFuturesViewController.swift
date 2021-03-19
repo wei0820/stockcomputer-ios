@@ -83,11 +83,27 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     }
     
     @IBAction func cla_btn(_ sender: Any) {
-        
-        
-           myHandPriceDefaults.set(
+   
+        if(buyTF.text!.isEmpty || sellTF.text!.isEmpty || sellnumTF.text!.isEmpty || sellnumTF.text!.isEmpty  || handPrice_TF.text!.isEmpty){
+            setToast(s: "請檢查是否少輸入數值！")
+            
+        }else{
+            var buy : Double =  Double(buyTF.text!) as! Double
+             var buyNum : Int  = Int(buynumTF.text!) as! Int
+             var sell : Double =  Double(sellTF.text!) as! Double
+             var sellNum : Int  = Int(sellnumTF.text!) as! Int
+             var handPrice : Int = Int( handPrice_TF.text!) as! Int
+            
+            
+            
+            
+            
+            
+            myHandPriceDefaults.set(
             handPrice_TF.text, forKey: "handprice_small")
-          myHandPriceDefaults.synchronize()
+            myHandPriceDefaults.synchronize()
+        }
+      
     }
     
     @IBAction func searchButton(_ sender: Any) {
