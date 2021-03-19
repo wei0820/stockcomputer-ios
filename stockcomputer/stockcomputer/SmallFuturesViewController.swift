@@ -93,15 +93,14 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
              var sell : Double =  Double(sellTF.text!) as! Double
              var sellNum : Int  = Int(sellnumTF.text!) as! Int
              var handPrice : Int = Int( handPrice_TF.text!) as! Int
-            
-            
-            
-            
-            
-            
             myHandPriceDefaults.set(
             handPrice_TF.text, forKey: "handprice_small")
             myHandPriceDefaults.synchronize()
+            
+            var buyAndSellPrice  = lround((0.00002 * (100 * buy * Double(buyNum))) +  (0.00002 * (100 * sell * Double(sellNum))))
+            buysellPrice.text = String(buyAndSellPrice)
+            
+            
         }
       
     }
@@ -111,4 +110,41 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
                 UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     
+    
+    
+    @IBAction func searchMoney(_ sender: Any) {
+        let alertController = UIAlertController(title: "保證金查詢",
+                            message: "請先用左上角放大鏡查詢原始保證金適用比例", preferredStyle: .alert)
+        alertController.addTextField {
+            (textField: UITextField!) -> Void in
+            textField.placeholder = "股票價格"
+        }
+        alertController.addTextField {
+            (textField: UITextField!) -> Void in
+            textField.placeholder = "原始保證金適用比例"
+            textField.isSecureTextEntry = true
+        }
+        
+        alertController.addTextField {
+             (textField: UITextField!) -> Void in
+             textField.placeholder = "維持保證金適用比例"
+             textField.isSecureTextEntry = true
+         }
+        
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+            action in
+            //也可以用下标的形式获取textField let login = alertController.textFields![0]
+            let stockPrice = alertController.textFields!.first!
+            let original = alertController.textFields![1] as UITextField
+            let maintain = alertController.textFields![3] as UITextField
+
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        
+        
+        
+    }
 }
