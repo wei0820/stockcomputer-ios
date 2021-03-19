@@ -121,6 +121,7 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         }
         alertController.addTextField {
             (textField: UITextField!) -> Void in
+            
             textField.placeholder = "原始保證金適用比例"
             textField.isSecureTextEntry = true
         }
@@ -138,6 +139,8 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
             let stockPrice = alertController.textFields!.first!
             let original = alertController.textFields![1] as UITextField
             let maintain = alertController.textFields![3] as UITextField
+            
+            
 
         })
         alertController.addAction(cancelAction)
