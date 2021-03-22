@@ -1173,10 +1173,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QzW-ka-TUs">
-                                <rect key="frame" x="37.5" y="20" width="300" height="300"/>
+                                <rect key="frame" x="-112.5" y="-130" width="600" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQb-Fv-wTz">
-                                <rect key="frame" x="151" y="344" width="72" height="72"/>
+                                <rect key="frame" x="151" y="494" width="72" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="o9l-So-R1U"/>
                                     <constraint firstAttribute="width" constant="72" id="sjH-9z-QwJ"/>
@@ -1188,7 +1188,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-rK-uCh">
-                                <rect key="frame" x="269" y="356" width="60" height="60"/>
+                                <rect key="frame" x="269" y="506" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ssi-a1-484"/>
                                     <constraint firstAttribute="width" constant="60" id="UpF-LB-JfR"/>
@@ -1199,7 +1199,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入手機號碼(只開放台灣門號)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ity-vw-1Uo">
-                                <rect key="frame" x="16" y="455" width="214" height="34"/>
+                                <rect key="frame" x="16" y="605" width="214" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="bnN-l4-Omf"/>
                                     <constraint firstAttribute="width" constant="214" id="i1Y-3E-lbb"/>
@@ -1208,7 +1208,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="驗證碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B3s-ld-T6P">
-                                <rect key="frame" x="16" y="510" width="214" height="34"/>
+                                <rect key="frame" x="16" y="660" width="214" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="nUw-7s-ENH"/>
                                     <constraint firstAttribute="width" constant="214" id="xDY-VK-Yz6"/>
@@ -1217,7 +1217,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3d-LU-x6q">
-                                <rect key="frame" x="252" y="512" width="94" height="30"/>
+                                <rect key="frame" x="252" y="662" width="94" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8zL-gK-ljk"/>
                                     <constraint firstAttribute="width" constant="94" id="Wcq-7O-unb"/>
@@ -1228,7 +1228,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qo-HJ-Pbn">
-                                <rect key="frame" x="252" y="459" width="94" height="30"/>
+                                <rect key="frame" x="252" y="609" width="94" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6LW-XI-aMW"/>
                                     <constraint firstAttribute="width" constant="94" id="oGS-pl-bqj"/>
@@ -1239,7 +1239,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryy-yy-9zh">
-                                <rect key="frame" x="37" y="352" width="64" height="64"/>
+                                <rect key="frame" x="37" y="502" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="Uza-nx-LdV"/>
                                     <constraint firstAttribute="height" constant="64" id="zRD-BE-s2a"/>
@@ -7198,7 +7198,7 @@
                                     <constraint firstAttribute="width" constant="30" id="jhH-c6-a4i"/>
                                     <constraint firstAttribute="height" constant="30" id="kFc-32-7Wc"/>
                                 </constraints>
-                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <state key="normal" image="report_black"/>
                                 <connections>
                                     <action selector="searchButton:" destination="EVi-Bi-L5t" eventType="touchUpInside" id="Caf-lR-cTA"/>
                                 </connections>
@@ -7343,6 +7343,7 @@
         <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
         <image name="pencil.slash" catalog="system" width="64" height="56"/>
         <image name="port" width="32" height="32"/>
+        <image name="report_black" width="72" height="72"/>
         <image name="rosette" catalog="system" width="50" height="64"/>
         <image name="round_settings_voice_black_48pt" width="48" height="48"/>
         <image name="share" width="36" height="36"/>

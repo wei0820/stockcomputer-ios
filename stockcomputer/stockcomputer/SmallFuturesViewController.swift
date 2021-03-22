@@ -21,7 +21,7 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     
     @IBOutlet weak var handPrice_TF: UITextField!
     var myHandPriceDefaults :UserDefaults!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         myHandPriceDefaults = UserDefaults.standard
@@ -30,13 +30,13 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         if let handprice_small = myHandPriceDefaults.object(forKey: "handprice_small") as? String {
             handPrice_TF.text = handprice_small
         } else {
-  
+            
             handPrice_TF.placeholder = "請輸入手續費"
         }
         
-
         
-
+        
+        
     }
     func initTextField(){
         handPrice_TF.borderStyle = .roundedRect
@@ -47,10 +47,10 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         
         
         buyTF.borderStyle = .roundedRect
-         buyTF.clearButtonMode = .whileEditing
-         buyTF.keyboardType = .decimalPad
-         buyTF.returnKeyType = .done
-         buyTF.delegate = self
+        buyTF.clearButtonMode = .whileEditing
+        buyTF.keyboardType = .decimalPad
+        buyTF.returnKeyType = .done
+        buyTF.delegate = self
         sellTF.borderStyle = .roundedRect
         sellTF.clearButtonMode = .whileEditing
         sellTF.keyboardType = .decimalPad
@@ -69,12 +69,12 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         buynumTF.returnKeyType = .done
         buynumTF.delegate = self
         
-
+        
         
         
         
     }
-
+    
     @IBAction func closeView(_ sender: Any) {
         let stroyboard = UIStoryboard(name: "Main", bundle: nil);
         let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
@@ -83,18 +83,18 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     }
     
     @IBAction func cla_btn(_ sender: Any) {
-   
+        
         if(buyTF.text!.isEmpty || sellTF.text!.isEmpty || sellnumTF.text!.isEmpty || sellnumTF.text!.isEmpty  || handPrice_TF.text!.isEmpty){
             setToast(s: "請檢查是否少輸入數值！")
             
         }else{
             var buy : Double =  Double(buyTF.text!) as! Double
-             var buyNum : Int  = Int(buynumTF.text!) as! Int
-             var sell : Double =  Double(sellTF.text!) as! Double
-             var sellNum : Int  = Int(sellnumTF.text!) as! Int
-             var handPrice : Int = Int( handPrice_TF.text!) as! Int
+            var buyNum : Int  = Int(buynumTF.text!) as! Int
+            var sell : Double =  Double(sellTF.text!) as! Double
+            var sellNum : Int  = Int(sellnumTF.text!) as! Int
+            var handPrice : Int = Int( handPrice_TF.text!) as! Int
             myHandPriceDefaults.set(
-            handPrice_TF.text, forKey: "handprice_small")
+                handPrice_TF.text, forKey: "handprice_small")
             myHandPriceDefaults.synchronize()
             
             var buyAndSellPrice  = lround((0.00002 * (100 * buy * Double(buyNum))) +  (0.00002 * (100 * sell * Double(sellNum))))
@@ -102,19 +102,19 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
             
             
         }
-      
+        
     }
     
     @IBAction func searchButton(_ sender: Any) {
         let url:URL?=URL.init(string: "https://www.taifex.com.tw/cht/5/stockMargining")
-                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     
     
     
     @IBAction func searchMoney(_ sender: Any) {
         let alertController = UIAlertController(title: "保證金查詢",
-                            message: "請先用左上角放大鏡查詢原始保證金適用比例", preferredStyle: .alert)
+                                                message: "請先用左上角放大鏡查詢原始保證金適用比例", preferredStyle: .alert)
         alertController.addTextField {
             (textField: UITextField!) -> Void in
             textField.placeholder = "股票價格"
@@ -127,10 +127,10 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         }
         
         alertController.addTextField {
-             (textField: UITextField!) -> Void in
-             textField.placeholder = "維持保證金適用比例"
-             textField.isSecureTextEntry = true
-         }
+            (textField: UITextField!) -> Void in
+            textField.placeholder = "維持保證金適用比例"
+            textField.isSecureTextEntry = true
+        }
         
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         let okAction = UIAlertAction(title: "好的", style: .default, handler: {
@@ -138,10 +138,34 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
             //也可以用下标的形式获取textField let login = alertController.textFields![0]
             let stockPrice = alertController.textFields!.first!
             let original = alertController.textFields![1] as UITextField
-            let maintain = alertController.textFields![3] as UITextField
+            let maintain = alertController.textFields![2] as UITextField
+            
+            if(stockPrice.text!.isEmpty || original.text!.isEmpty || maintain.text!.isEmpty){
+                
+            }else{
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            let alert = UIAlertController(title: "提示", message: stockPrice.text!, preferredStyle: UIAlertController.Style.alert)
+                
+                // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                
+                // show the alert
+            self.present(alert, animated: true, completion: nil)
+                
+            }
             
             
-
+            
+            
         })
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
