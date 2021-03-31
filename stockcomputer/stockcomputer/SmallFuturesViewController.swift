@@ -118,18 +118,21 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         alertController.addTextField {
             (textField: UITextField!) -> Void in
             textField.placeholder = "股票價格"
+            textField.keyboardType = .decimalPad
         }
         alertController.addTextField {
             (textField: UITextField!) -> Void in
             
             textField.placeholder = "原始保證金適用比例"
-            textField.isSecureTextEntry = true
+            textField.keyboardType = .decimalPad
+
         }
         
         alertController.addTextField {
             (textField: UITextField!) -> Void in
             textField.placeholder = "維持保證金適用比例"
-            textField.isSecureTextEntry = true
+            textField.keyboardType = .decimalPad
+
         }
         
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
@@ -139,6 +142,8 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
             let stockPrice = alertController.textFields!.first!
             let original = alertController.textFields![1] as UITextField
             let maintain = alertController.textFields![2] as UITextField
+
+     
             
             if(stockPrice.text!.isEmpty || original.text!.isEmpty || maintain.text!.isEmpty){
                 
