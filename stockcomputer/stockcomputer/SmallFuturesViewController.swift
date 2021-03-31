@@ -174,4 +174,13 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
         
         
     }
+    
+    // 按空白處會隱藏編輯狀態
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
