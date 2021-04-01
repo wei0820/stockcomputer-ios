@@ -148,6 +148,12 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
             if(stockPrice.text!.isEmpty || original.text!.isEmpty || maintain.text!.isEmpty){
                 
             }else{
+                var stockPriceDouble : Double = Double(stockPrice.text!) as! Double
+                var originalDouble : Double =  Double(original.text!) as! Double
+                var maintainDouble : Double  = Double(maintain.text!) as! Double
+                
+                
+                
                 
                 
                 
