@@ -114,7 +114,7 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
     
     @IBAction func searchMoney(_ sender: Any) {
         let alertController = UIAlertController(title: "保證金查詢",
-                                                message: "請先用左上角放大鏡查詢原始保證金適用比例", preferredStyle: .alert)
+                                                message: "請先用左上角查詢原始保證金適用比例", preferredStyle: .alert)
         alertController.addTextField {
             (textField: UITextField!) -> Void in
             textField.placeholder = "股票價格"
