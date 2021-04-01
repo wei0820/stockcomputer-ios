@@ -154,6 +154,11 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
                 
                 
                 
+                var orinigalPrice : Int = lround(originalDouble * 0.01 * stockPriceDouble * 100)
+                var maintainPrice : Int = lround(maintainDouble * 0.01 * stockPriceDouble * 100)
+                
+                
+                var title : String = "期貨保證金:" + String(orinigalPrice) + "\n" + "維持保證金:" + String(maintainPrice)
                 
                 
                 
@@ -161,10 +166,7 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
                 
                 
                 
-                
-                
-                
-            let alert = UIAlertController(title: "提示", message: stockPrice.text!, preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "提示", message: title, preferredStyle: UIAlertController.Style.alert)
                 
                 // add an action (button)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
