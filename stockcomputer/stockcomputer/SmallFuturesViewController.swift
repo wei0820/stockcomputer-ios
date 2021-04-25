@@ -99,6 +99,13 @@ class SmallFuturesViewController: MGoogleADViewController ,UITextFieldDelegate{
             
             var buyAndSellPrice  = lround((0.00002 * (100 * buy * Double(buyNum))) +  (0.00002 * (100 * sell * Double(sellNum))))
             buysellPrice.text = String(buyAndSellPrice)
+            handPrcie.text = String(handPrice * 2)
+            var money : Int = lround(Double((Int(sell) * sellNum)  - (Int(buy) * buyNum))) * 100  - buyAndSellPrice - (handPrice * 2)
+
+
+
+            
+            TotalPrice.text = String(money)
             
             
         }
