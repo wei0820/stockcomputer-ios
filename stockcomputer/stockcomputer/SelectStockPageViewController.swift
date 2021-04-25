@@ -29,11 +29,26 @@ class SelectStockPageViewController: MGoogleADViewController , UITableViewDataSo
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            tableView.deselectRow(
                at: indexPath, animated: true)
-        name = itemName[indexPath.row]
-           performSegue(withIdentifier: "stockdetail", sender: nil)
+            name = itemName[indexPath.row]
+           performSegue(withIdentifier: "stockpagedetail", sender: nil)
 
 
        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "stockpagedetail"{
+            if let index = tableview.indexPathForSelectedRow{
+                let secondCV = segue.destination as! SelectStockPageDetailViewController
+                secondCV.detail = index.row
+                
+            }
+            
+            
+        }
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
