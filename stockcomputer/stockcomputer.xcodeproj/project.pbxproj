@@ -67,6 +67,7 @@
 		B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */; };
 		B7E8C1782270197900792815 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C1772270197900792815 /* FBLoginViewController.swift */; };
 		B7E8C17C2271B65E00792815 /* FirebaseWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8C17B2271B65E00792815 /* FirebaseWorks.swift */; };
+		B7EB963C26351B8A004A079C /* SelectStockPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB963B26351B8A004A079C /* SelectStockPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		B7E8C17522700BA100792815 /* MyLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyLaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7E8C1772270197900792815 /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		B7E8C17B2271B65E00792815 /* FirebaseWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorks.swift; sourceTree = "<group>"; };
+		B7EB963B26351B8A004A079C /* SelectStockPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStockPageViewController.swift; sourceTree = "<group>"; };
 		F377183FF9FA30554DD880DA /* Pods_stockcomputer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockcomputer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -249,6 +251,7 @@
 				8E517F5C253ED68D00F3F9B0 /* ReportViewController.swift */,
 				B70A0B5725DD449A00E8F5C7 /* SearchStockPriceViewController.swift */,
 				B7ABCA1025EE686B0094A078 /* SmallFuturesViewController.swift */,
+				B7EB963B26351B8A004A079C /* SelectStockPageViewController.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */,
 				8E182A15250F48EA00CF4A3A /* NotificationManager.swift in Sources */,
 				8E2765632474C6810024573B /* Financing ViewController.swift in Sources */,
+				B7EB963C26351B8A004A079C /* SelectStockPageViewController.swift in Sources */,
 				8EB01C9B242345F000A7E992 /* QuotesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
