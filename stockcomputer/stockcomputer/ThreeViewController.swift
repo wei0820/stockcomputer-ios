@@ -24,11 +24,7 @@ class ThreeViewController: MGoogleADViewController {
         setThreeDate()
         setFuturesLabel()
         getSmall()
-
         setScreenName(screenName: "三大法人買賣超", screenClassName: "ThreeViewController")
-        
-
-        // Do any additional setup after loading the view.
     }
     func setThreeDate(){
         if(array.count != 0){
@@ -96,16 +92,11 @@ class ThreeViewController: MGoogleADViewController {
                     }else{
                         small_2.text = "散戶偏多,多數做多"
                         small_2.textColor = UIColor.red
-                        small_1.textColor = UIColor.green
+                        small_1.textColor = UIColor.red
 
 
                     }
                     
-         
-
-                                 
-                    
-                     
                    } catch let error {
                    }
                    

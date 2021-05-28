@@ -13,9 +13,6 @@ var detail : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("Jack",detail)
-
         // Do any additional setup after loading the view.
     }
     
