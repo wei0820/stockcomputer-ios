@@ -16,6 +16,8 @@ import SwiftyStoreKit
 import NotificationCenter
 import UserNotificationsUI
 import VpadnSDKAdKit
+
+
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -43,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
-        
+ 
         application.registerForRemoteNotifications()
         
         Messaging.messaging().delegate = self
@@ -171,6 +173,8 @@ extension AppDelegate : MessagingDelegate {
   }
   // [END ios_10_data_message]
 }
+
+
 func setupIAP() {
 
      SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
@@ -202,3 +206,4 @@ func setupIAP() {
          }
      }
  }
+
