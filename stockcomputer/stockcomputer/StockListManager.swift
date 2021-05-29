@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 class StockListManger{
-    static  func getStockdividendlist(){
+    static  func getStockdividendlist() -> Array<StockDividendlistData>{
         Database.database().reference().child("stockdividendlist" as! String).observe(.childAdded, with: {
             (snapshot) in
             // childAdded逐筆呈現
