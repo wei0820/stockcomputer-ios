@@ -16,6 +16,7 @@ var detail : Int = 0
         print("Jack",detail)
         switch detail {
         case 0:
+            StockListManger.getStockdividendlist()
             break
         case 1:
             break
