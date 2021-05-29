@@ -18,12 +18,17 @@ class StockListManger{
                 var number : String = dictionaryData["代號"] as! String
                 var name : String = dictionaryData["名稱"] as! String
                 var deal : String = dictionaryData["成交"] as! String
-                var totaldividend : String = dictionaryData["合計股利"] as! String
                 var eps : String = dictionaryData["所屬EPS"] as! String
-                var date : String = dictionaryData["股價日期"] as! String
                 var year : String = dictionaryData["股利發放年度"] as! String
                 var money : String = dictionaryData["現金股利"] as! String
-
+                var stock : String = dictionaryData["股票股利"] as! String
+                var totaldividend : String = dictionaryData["合計股利"] as! String
+                var cashyield : String = dictionaryData["現金殖利率"] as! String
+                var stockyield : String = dictionaryData["股票殖利率"] as! String
+                var totalyieldrate : String = dictionaryData["合計殖利率"] as! String
+                var earningscouponrate : String = dictionaryData["盈餘配息率"] as! String
+                var earningsallotmentratio : String = dictionaryData["盈餘配股率"] as! String
+                var totalsurplusdistributionratio : String = dictionaryData["盈餘總分配率"] as! String
 
 
             }
