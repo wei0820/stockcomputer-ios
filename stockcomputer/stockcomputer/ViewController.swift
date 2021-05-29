@@ -121,7 +121,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
 //
 //        }
         getStockcomuperAllDate()
-        
+        StockListManger.getStockdividendlist()
     
         
     }

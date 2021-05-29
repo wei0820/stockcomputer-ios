@@ -36,7 +36,8 @@ var detail : Int = 0
         case 9:
             break
         default:
-            
+            break
+
         }
         
     }

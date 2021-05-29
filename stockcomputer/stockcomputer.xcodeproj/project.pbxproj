@@ -51,6 +51,7 @@
 		8EEE3E9B246BDCFC00B1493E /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE3E9A246BDCFB00B1493E /* ThreeViewController.swift */; };
 		8EF0005D23482F7D002ED120 /* MUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0005C23482F7D002ED120 /* MUIViewController.swift */; };
 		B70A0B5825DD449B00E8F5C7 /* SearchStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A0B5725DD449A00E8F5C7 /* SearchStockPriceViewController.swift */; };
+		B719AB9C26620CAC00CC6CB3 /* StockListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719AB9B26620CAC00CC6CB3 /* StockListManager.swift */; };
 		B721B1B62600B84300422AB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B721B1B52600B84300422AB5 /* GoogleService-Info.plist */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
 		B74F5303220556340034DC5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5302220556340034DC5D /* ViewController.swift */; };
@@ -118,6 +119,7 @@
 		9F766B3A074084E1FE467A17 /* Pods-stockcomputer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.debug.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.debug.xcconfig"; sourceTree = "<group>"; };
 		A48412A590B2B1067F15F72A /* Pods-stockcomputer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockcomputer.release.xcconfig"; path = "Target Support Files/Pods-stockcomputer/Pods-stockcomputer.release.xcconfig"; sourceTree = "<group>"; };
 		B70A0B5725DD449A00E8F5C7 /* SearchStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStockPriceViewController.swift; sourceTree = "<group>"; };
+		B719AB9B26620CAC00CC6CB3 /* StockListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListManager.swift; sourceTree = "<group>"; };
 		B721B1B52600B84300422AB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
 		B74F52FD220556330034DC5D /* 股市大贏家.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "股市大贏家.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,6 +257,7 @@
 				B7ABCA1025EE686B0094A078 /* SmallFuturesViewController.swift */,
 				B7EB963B26351B8A004A079C /* SelectStockPageViewController.swift */,
 				B7EB963D2635999F004A079C /* SelectStockPageDetailViewController.swift */,
+				B719AB9B26620CAC00CC6CB3 /* StockListManager.swift */,
 			);
 			path = stockcomputer;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				B74F5303220556340034DC5D /* ViewController.swift in Sources */,
 				8ED1CB4B244856570050B5A4 /* SelectViewController.swift in Sources */,
 				8E48E4EA23F131CC00384D25 /* ShareListViewController.swift in Sources */,
+				B719AB9C26620CAC00CC6CB3 /* StockListManager.swift in Sources */,
 				8ED642BC2420671300260E25 /* GetStockPriceManger.swift in Sources */,
 				8ED642C224209F1600260E25 /* StockData.swift in Sources */,
 				8EB01C9D242C87C100A7E992 /* ProFitViewController.swift in Sources */,
