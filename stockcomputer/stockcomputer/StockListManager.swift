@@ -20,8 +20,11 @@ class StockListManger{
                 var deal : String = dictionaryData["成交"] as! String
                 var totaldividend : String = dictionaryData["合計股利"] as! String
                 var eps : String = dictionaryData["所屬EPS"] as! String
+                var date : String = dictionaryData["股價日期"] as! String
+                var year : String = dictionaryData["股利發放年度"] as! String
+                var money : String = dictionaryData["現金股利"] as! String
 
-                print("StockListManger",name)
+
 
             }
             

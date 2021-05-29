@@ -9,5 +9,10 @@
 import Foundation
 
 class StockDividendlistData{
+    var rank : String = ""
+    var name : String = ""
+    var  number : String = ""
+    var deal  : String = ""
+
     
 }
