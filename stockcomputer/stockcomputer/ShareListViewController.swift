@@ -16,7 +16,7 @@ import Firebase
 class ShareListViewController: MGoogleADViewController , UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var tableview: UITableView!
     var shareview: [ShareStockItem] = [ShareStockItem]()
-          var imageArr = [UIImage]()
+    var imageArr = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "股票討論分享區"

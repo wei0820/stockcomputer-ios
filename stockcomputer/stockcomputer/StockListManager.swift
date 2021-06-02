@@ -10,6 +10,8 @@ import Foundation
 import Firebase
 class StockListManger{
     static  func getStockdividendlist() -> Array<StockDividendlistData>{
+        var StockDividendlistDataArray  = Array<StockDividendlistData>()
+        
         Database.database().reference().child("stockdividendlist" as! String).observe(.childAdded, with: {
             (snapshot) in
             // childAdded逐筆呈現
@@ -29,10 +31,13 @@ class StockListManger{
                 var earningscouponrate : String = dictionaryData["盈餘配息率"] as! String
                 var earningsallotmentratio : String = dictionaryData["盈餘配股率"] as! String
                 var totalsurplusdistributionratio : String = dictionaryData["盈餘總分配率"] as! String
-
+                
+                
 
             }
             
         }, withCancel: nil)
+        return StockDividendlistDataArray
     }
+    
 }

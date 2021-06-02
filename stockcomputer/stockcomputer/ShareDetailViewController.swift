@@ -32,15 +32,10 @@ class ShareDetailViewController: MGoogleADViewController {
         var sharePhoto_2 = URL(string: url_2)
         var sharePhoto_3 =  URL(string: url_3)
         var downloadUrl =  "下載連結:https://apps.apple.com/tw/app/%E8%82%A1%E7%A5%A8%E7%8D%B2%E5%88%A9%E8%A8%88%E7%AE%97%E6%A9%9F/id1459476279"
-
-
-        
-        
         let activityViewController = UIActivityViewController(activityItems: [shareNumber,shareName,shareMessage,sharePhoto,sharePhoto_2,sharePhoto_3,downloadUrl], applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
     }
     @IBAction func unlikebtn(_ sender: Any) {
-        print("Jack",unLike)
 //        FirebaseManager.DeleteShareData(id: key)
         var uplike :Int =  Int(unLike)!  + 1
         unlikelabe.text = String(uplike)
@@ -133,14 +128,5 @@ class ShareDetailViewController: MGoogleADViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
