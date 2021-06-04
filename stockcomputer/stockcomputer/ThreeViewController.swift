@@ -10,6 +10,7 @@ import UIKit
 import SwiftSoup
 
 class ThreeViewController: MGoogleADViewController {
+    @IBOutlet weak var putcallText: UILabel!
     var array :Array<String> = []
      var array_futures :Array<String> = []
     var array_Small :Array<String> = []
@@ -24,6 +25,7 @@ class ThreeViewController: MGoogleADViewController {
         setThreeDate()
         setFuturesLabel()
         getSmall()
+        getPutCall()
         setScreenName(screenName: "三大法人買賣超", screenClassName: "ThreeViewController")
     }
     func setThreeDate(){
@@ -51,8 +53,8 @@ class ThreeViewController: MGoogleADViewController {
     }
     
     func getSmall(){
-
-            
+//var text_1 = try elements.get(5).select("span.val").get(0).text()
+            //https://www.macromicro.me/collections/46/tw-stock-relative/348/tw-put-call-ratio
                guard let url = URL(string: "https://www.macromicro.me/charts/20069/tw-mtx-long-to-short-ratio-of-individual-player" ?? "") else {
                 
                 return
@@ -106,6 +108,43 @@ class ThreeViewController: MGoogleADViewController {
                }
            
     }
+    
+    
+    
+      func getPutCall(){
+                
+                   guard let url = URL(string: "https://www.macromicro.me/collections/18/tw-market-relative/348/tw-put-call-ratio" ?? "") else {
+                    
+                    return
+                       // an error occurred
+                   }
+                   
+                   do {
+                       
+                       // content of url
+                       let html = try String.init(contentsOf: url)
+                       
+                       // parse it into a Document
+                       document = try SwiftSoup.parse(html)
+                       // parse css query
+                       do {
+                           
+                          //div>table#CPHB1_chipAnalysis1_gBuy.tbTable.tb-stock.tbChip>tbody
+                        
+                           let elements: Elements = try document.select("div.stat-val" ?? "")
+                        var text_1 = try elements.get(5).select("span.val").get(0).text()
+                        
+                        putcallText.text = text_1
+                        
+                       } catch let error {
+                       }
+                       
+                       
+                   } catch let error {
+                       // an error occurred
+                   }
+               
+        }
     
     @IBAction func close(_ sender: Any) {
         dissmissView()
