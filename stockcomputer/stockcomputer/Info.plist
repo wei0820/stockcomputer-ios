@@ -81,14 +81,14 @@
 	<string>需要獲取個人照片進行編輯是否允許$(PRODUCT_NAME)獲取相冊權限？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>需要獲取個人照片進行編輯是否允許$(PRODUCT_NAME)獲取相冊權限？</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Your data will be used to deliver personalized ads to you.</string>
 	<key>Privacy – Camera Usage Description</key>
 	<string>是否允許$(PRODUCT_NAME)使用你的相機？</string>
 	<key>Privacy – Photo Library Usage Description</key>
 	<string>需要獲取個人照片進行編輯是否允許$(PRODUCT_NAME)獲取相冊權限？</string>
 	<key>Privacy — Tracking Usage Description</key>
 	<string>您的數據將用於向您投放個性化廣告</string>
-    <key>NSUserTrackingUsageDescription</key>
-    <string>Your data will be used to deliver personalized ads to you.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>MyLaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

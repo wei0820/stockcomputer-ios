@@ -23,13 +23,10 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     @IBOutlet weak var paymeView: UIView!
     @IBOutlet weak var bannerView: LLCycleScrollView!
     @IBOutlet weak var mOtherView: UIView!
-    
     @IBOutlet weak var todayView: UIView!
     @IBOutlet weak var CurrentPrice: UIView!
-
     var ref: DatabaseReference!
     var strings = [String]()
-
 //    @IBOutlet weak var playerView: YoutubePlayerView!
     @IBOutlet weak var marqueeLabel: MarqueeLabel!
     
@@ -380,7 +377,8 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
           }
     
     @objc func smallAction(sender : UITapGestureRecognizer) {
-        setJump(type: "select")
+        setToast(s: "下版本 開放使用")
+//        setJump(type: "select")
             
           }
     @objc func shareAction(sender : UITapGestureRecognizer) {

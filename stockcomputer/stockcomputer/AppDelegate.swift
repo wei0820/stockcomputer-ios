@@ -16,7 +16,7 @@ import SwiftyStoreKit
 import NotificationCenter
 import UserNotificationsUI
 import VpadnSDKAdKit
-
+import AppTrackingTransparency
 
 @UIApplicationMain
 
@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         // Override point for customization after application launch.
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-        
         // Vpon SDK initialization
         let config = VpadnAdConfiguration.sharedInstance()
         config.logLevel = .default
@@ -58,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 //        window?.makeKeyAndVisible()
         Crashlytics.crashlytics()
         setupIAP()
-        
+        requestTracking()
         // 在程式一啟動即詢問使用者是否接受圖文(alert)、聲音(sound)、數字(badge)三種類型的通知
            UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge, .carPlay], completionHandler: { (granted, error) in
                if granted {
@@ -69,9 +68,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
            })
         UNUserNotificationCenter.current().delegate = self
 
+
         return true
     }
-
+    func requestTracking() {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                switch status {
+                case .notDetermined:
+                    break
+                case .restricted:
+                    break
+                case .denied:
+                    break
+                case .authorized:
+                    break
+                @unknown default:
+                    break
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+      }
     func applicationDidBecomeActive(_ application: UIApplication) {
     }
     func applicationReceivedRemoteMessage(_ remoteMessage: MessagingRemoteMessage) {
@@ -205,5 +224,7 @@ func setupIAP() {
              SwiftyStoreKit.finishTransaction(downloads[0].transaction)
          }
      }
+    
+
  }
 
