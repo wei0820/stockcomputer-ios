@@ -66,8 +66,8 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
                          ])
             break
         case 4:
-//            setJump(type: "StockPeriod")
-            setToast(s: "即將上線")
+            setJump(type: "StockPeriod")
+//            setToast(s: "即將上線")
             Firebase.Analytics.logEvent("選擇項目", parameters: [
                                      "時間": DateManager.setDate(),
                                      "名稱": "個股期獲利試算"

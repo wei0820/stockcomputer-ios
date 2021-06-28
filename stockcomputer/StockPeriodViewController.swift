@@ -48,7 +48,7 @@ class StockPeriodViewController: MGoogleADViewController ,UITextFieldDelegate{
     
     
     @IBAction func search_button(_ sender: Any) {
-        let url:URL?=URL.init(string: "https://www.taifex.com.tw/cht/5/stockMargining")
+        let url:URL?=URL.init(string: "https://www.pfcf.com.tw/eventweb/top10/")
              UIApplication.shared.open(url!, options: [:], completionHandler: nil)
         
     }
