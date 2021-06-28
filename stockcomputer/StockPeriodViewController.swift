@@ -40,12 +40,17 @@ class StockPeriodViewController: MGoogleADViewController ,UITextFieldDelegate{
         buy_num_tf.keyboardType = .decimalPad
         sell_price_tf.keyboardType = .decimalPad
         sell_num_tf.delegate = self
+        
+        handPriceTextFeild.delegate = self
+        handPriceTextFeild.keyboardType = .decimalPad
 
 
         
     }
     
+    @IBOutlet weak var handPriceTextFeild: UITextField!
     
+  
     
     @IBAction func search_button(_ sender: Any) {
         let url:URL?=URL.init(string: "https://www.pfcf.com.tw/eventweb/top10/")
