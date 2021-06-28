@@ -25,6 +25,7 @@ class StockPeriodViewController: MGoogleADViewController ,UITextFieldDelegate{
     
     @IBOutlet weak var periodPrice_Label: UILabel!
     
+    @IBOutlet weak var totallabel: UILabel!
     
     @IBOutlet var money_Label: UIView!
     
@@ -41,8 +42,8 @@ class StockPeriodViewController: MGoogleADViewController ,UITextFieldDelegate{
         buy_price_edt.keyboardType = .decimalPad
         buy_num_tf.keyboardType = .decimalPad
         sell_price_tf.keyboardType = .decimalPad
+        sell_num_tf.keyboardType = .decimalPad
         sell_num_tf.delegate = self
-        
         handPriceTextFeild.delegate = self
         handPriceTextFeild.keyboardType = .decimalPad
         if(( userDefault.value(forKey: "stockperiodhandprice")) != nil){
@@ -76,10 +77,23 @@ class StockPeriodViewController: MGoogleADViewController ,UITextFieldDelegate{
     }
     
     @IBAction func cal_view(_ sender: Any) {
-        
-        userDefault.set(handPriceTextFeild.text!, forKey: "stockperiodhandprice")
-//        userDefault.value(forKey: "stockperiodhandprice") as! String
+        if(buy_num_tf.text!.isEmpty || buy_price_edt.text!.isEmpty || sell_price_tf.text!.isEmpty || sell_num_tf.text!.isEmpty ){
+            setToast(s: "請檢查是否少輸入數值")
+        }else{
+            userDefault.set(handPriceTextFeild.text!, forKey: "stockperiodhandprice")
+            var buyprice : Double = Double(buy_price_edt.text!)! * Double(buy_num_tf.text!)! * 2000
+            var sellprice : Double = Double(sell_price_tf.text!)! * Double(sell_num_tf.text!)! * 2000
+            var buyAndSellPrice = (buyprice * 0.00002 ) + (sellprice * 0.00002)
+            var allhandprice = Double(handPriceTextFeild.text!)! * 2
+            var total = sellprice - buyprice - buyAndSellPrice  - allhandprice
+            
+            buypirce_label.text = String(lround(buyprice))
+            sellprice_label.text = String(lround(sellprice))
+            totallabel.text = String(lround(total))
+            periodPrice_Label.text  = String(lround(buyAndSellPrice))
+ 
 
+        }
         
     }
     
