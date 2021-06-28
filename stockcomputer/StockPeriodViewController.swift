@@ -28,7 +28,9 @@ class StockPeriodViewController: MGoogleADViewController ,UITextFieldDelegate{
     
     @IBOutlet var money_Label: UIView!
     
-    
+    let userDefault = UserDefaults()
+    var handprice : String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +45,17 @@ class StockPeriodViewController: MGoogleADViewController ,UITextFieldDelegate{
         
         handPriceTextFeild.delegate = self
         handPriceTextFeild.keyboardType = .decimalPad
+        if(( userDefault.value(forKey: "stockperiodhandprice")) != nil){
+            handprice =  userDefault.value(forKey: "stockperiodhandprice") as! String
+            handPriceTextFeild.text = handprice
 
+        }else{
+            handprice =  "50"
+            userDefault.set(handprice, forKey: "stockperiodhandprice")
+            handPriceTextFeild.text = handprice
+
+        }
+       
 
         
     }
@@ -64,6 +76,11 @@ class StockPeriodViewController: MGoogleADViewController ,UITextFieldDelegate{
     }
     
     @IBAction func cal_view(_ sender: Any) {
+        
+        userDefault.set(handPriceTextFeild.text!, forKey: "stockperiodhandprice")
+//        userDefault.value(forKey: "stockperiodhandprice") as! String
+
+        
     }
     
     // 按空白處會隱藏編輯狀態
