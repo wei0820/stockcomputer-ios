@@ -96,6 +96,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         setUIView()
         setRightButton(s: "斷頭查詢")
         setLeftButton(s: "小型期貨計算")
+        getStockcomuperAllDate()
         Firebase.Analytics.setScreenName("首頁", screenClass: "ViewController")
         marqueeLabel.type = .continuous
         marqueeLabel.speed = .duration(9)
@@ -117,7 +118,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
 //            }
 //
 //        }
-        getStockcomuperAllDate()
     
         
     }
@@ -391,6 +391,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
             // childAdded逐筆呈現
             if let dictionaryData = snapshot.value as? [String: AnyObject]{
                 var announcement : String = dictionaryData["announcement"] as! String
+                print("Jack",announcement)
                 self.strings = [announcement]
                 self.marqueeLabel.text = self.strings[Int(arc4random_uniform(UInt32(self.strings.count)))]
 

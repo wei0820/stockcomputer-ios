@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0451EFE9274208CC00019B20 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0451EFE8274208CC00019B20 /* .gitignore */; };
+		0451EFEB274209F100019B20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0451EFEA274209F100019B20 /* GoogleService-Info.plist */; };
 		8E10DDAF234C3402006A46F2 /* MGoogleADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */; };
 		8E10DDB1234C5FE3006A46F2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */; };
 		8E10DDB3234C6AC8006A46F2 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E10DDB2234C6AC8006A46F2 /* MapManager.swift */; };
@@ -53,7 +55,6 @@
 		B70A0B5825DD449B00E8F5C7 /* SearchStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A0B5725DD449A00E8F5C7 /* SearchStockPriceViewController.swift */; };
 		B719AB9C26620CAC00CC6CB3 /* StockListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719AB9B26620CAC00CC6CB3 /* StockListManager.swift */; };
 		B719AB9F2662212C00CC6CB3 /* StockDividendlistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719AB9E2662212C00CC6CB3 /* StockDividendlistData.swift */; };
-		B721B1B62600B84300422AB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B721B1B52600B84300422AB5 /* GoogleService-Info.plist */; };
 		B74F5301220556340034DC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5300220556340034DC5D /* AppDelegate.swift */; };
 		B74F5303220556340034DC5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F5302220556340034DC5D /* ViewController.swift */; };
 		B74F5306220556340034DC5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74F5304220556340034DC5D /* Main.storyboard */; };
@@ -74,6 +75,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0451EFE8274208CC00019B20 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0451EFEA274209F100019B20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "stockcomputer/Data/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E10DDAE234C3402006A46F2 /* MGoogleADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGoogleADViewController.swift; sourceTree = "<group>"; };
 		8E10DDB0234C5FE3006A46F2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8E10DDB2234C6AC8006A46F2 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
@@ -122,7 +125,6 @@
 		B70A0B5725DD449A00E8F5C7 /* SearchStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStockPriceViewController.swift; sourceTree = "<group>"; };
 		B719AB9B26620CAC00CC6CB3 /* StockListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListManager.swift; sourceTree = "<group>"; };
 		B719AB9E2662212C00CC6CB3 /* StockDividendlistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDividendlistData.swift; sourceTree = "<group>"; };
-		B721B1B52600B84300422AB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B72FB7E2235203A800701A1C /* stockcomputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stockcomputer.entitlements; sourceTree = "<group>"; };
 		B74F52FD220556330034DC5D /* 股市大贏家.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "股市大贏家.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74F5300220556340034DC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,7 +189,9 @@
 		B74F52F4220556330034DC5D = {
 			isa = PBXGroup;
 			children = (
+				0451EFE8274208CC00019B20 /* .gitignore */,
 				8E80C0682542B33C002A7C15 /* StockPeriodViewController.swift */,
+				0451EFEA274209F100019B20 /* GoogleService-Info.plist */,
 				B74F52FF220556330034DC5D /* stockcomputer */,
 				B74F52FE220556330034DC5D /* Products */,
 				35086B5ED06380A2DD1A4C73 /* Pods */,
@@ -207,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				B719AB9D266220F500CC6CB3 /* Data */,
-				B721B1B52600B84300422AB5 /* GoogleService-Info.plist */,
 				B72FB7E2235203A800701A1C /* stockcomputer.entitlements */,
 				B74F5300220556340034DC5D /* AppDelegate.swift */,
 				B74F5302220556340034DC5D /* ViewController.swift */,
@@ -334,8 +337,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0451EFE9274208CC00019B20 /* .gitignore in Resources */,
 				B7E8C17622700BA100792815 /* MyLaunchScreen.storyboard in Resources */,
-				B721B1B62600B84300422AB5 /* GoogleService-Info.plist in Resources */,
+				0451EFEB274209F100019B20 /* GoogleService-Info.plist in Resources */,
 				B74F5308220556350034DC5D /* Assets.xcassets in Resources */,
 				B74F5306220556340034DC5D /* Main.storyboard in Resources */,
 			);

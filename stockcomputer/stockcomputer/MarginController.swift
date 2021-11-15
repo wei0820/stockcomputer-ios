@@ -93,17 +93,6 @@ class MarginController: MGoogleADViewController{
             
             NotificationManager.CreateNotification(title: "今日做隔日沖", subtitle: subtitle, body: "獲利：" + String(getMoney))
             
-
-
-
-            
-            
-            
-            
-            
-            
-            
-            
         }else{
             
             setToast(s: "請勿輸入空值")
@@ -193,8 +182,6 @@ class MarginController: MGoogleADViewController{
         
         
     }
-    
-    
     
     // UIPickerViewDataSource 必須實作的方法：UIPickerView 有幾列可以選擇
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

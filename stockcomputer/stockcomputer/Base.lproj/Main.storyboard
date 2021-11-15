@@ -6914,7 +6914,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTs-3I-ae7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTs-3I-ae7">
                                 <rect key="frame" x="223" y="423" width="136" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="136" id="CIo-gN-WXX"/>
@@ -6945,7 +6945,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dw-Uj-V4B">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dw-Uj-V4B">
                                 <rect key="frame" x="223" y="483" width="136" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3FK-p3-hD9"/>
@@ -7052,6 +7052,7 @@
                             <constraint firstItem="5B7-ac-su7" firstAttribute="leading" secondItem="TTA-hC-oUm" secondAttribute="trailing" constant="120" id="tHn-wz-c5r"/>
                             <constraint firstItem="d3c-yU-QQ0" firstAttribute="top" secondItem="W2j-dH-Cl6" secondAttribute="bottom" constant="17" id="vij-Zt-PCg"/>
                             <constraint firstItem="7mB-Ij-aNc" firstAttribute="leading" secondItem="sqW-Hj-tuE" secondAttribute="leading" constant="16" id="vsm-RV-7fi"/>
+                            <constraint firstItem="HTs-3I-ae7" firstAttribute="baseline" secondItem="Qc4-Vv-gLg" secondAttribute="baseline" id="w0L-dX-8hJ"/>
                             <constraint firstItem="Mqj-iP-t2Z" firstAttribute="top" secondItem="5B7-ac-su7" secondAttribute="bottom" constant="25" id="wJC-sr-HxU"/>
                             <constraint firstItem="HTs-3I-ae7" firstAttribute="leading" secondItem="Qc4-Vv-gLg" secondAttribute="trailing" constant="155" id="y3m-T7-aSt"/>
                             <constraint firstItem="sqW-Hj-tuE" firstAttribute="trailing" secondItem="k4v-dm-9st" secondAttribute="trailing" constant="55" id="yxO-EN-JHf"/>
@@ -7069,6 +7070,7 @@
                         <outlet property="sell_num_tf" destination="wb0-HK-Ch6" id="7zT-n0-QOl"/>
                         <outlet property="sell_price_tf" destination="W2j-dH-Cl6" id="y37-hb-ErL"/>
                         <outlet property="sellprice_label" destination="Mqj-iP-t2Z" id="LQX-NB-yep"/>
+                        <outlet property="totallabel" destination="4dw-Uj-V4B" id="qyo-tG-cC0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ceq-bb-Ryw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
