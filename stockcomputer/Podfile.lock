@@ -217,6 +217,7 @@ PODS:
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.11)
   - Protobuf (3.13.0)
+  - SideMenu (6.5.0)
   - Siren (5.5.0)
   - SwiftSoup (2.3.2)
   - SwiftyStoreKit (0.16.1)
@@ -255,6 +256,7 @@ DEPENDENCIES:
   - LLCycleScrollView
   - Mapbox-iOS-SDK (~> 5.4)
   - MarqueeLabel
+  - SideMenu
   - Siren
   - SwiftSoup
   - SwiftyStoreKit
@@ -312,6 +314,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Protobuf
+    - SideMenu
     - Siren
     - SwiftSoup
     - SwiftyStoreKit
@@ -378,6 +381,7 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   Siren: 5083b9ed37ce83e7e5dced736b97215e76d12d82
   SwiftSoup: f97bc4e988c7729d6457f9642f974c617a6e2510
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
@@ -385,6 +389,6 @@ SPEC CHECKSUMS:
   VpadnSDK: 6665a8c79f86d1dc9767e96205003923c96d9904
   YoutubePlayerView: 3870fc10f2db3f54156697757f44d304203bdc7e
 
-PODFILE CHECKSUM: 4167bd91dd17151e417fc139ae045960f15b3163
+PODFILE CHECKSUM: bd18212b60b2776d1df71e7aba0d43e82296e43f
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.11.2

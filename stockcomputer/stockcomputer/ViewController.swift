@@ -5,6 +5,7 @@
 //  Created by  JackPan on 2019/2/2.
 //  Copyright © 2019 jackpan. All rights reserved.
 //
+import SideMenu
 
 import UIKit
 import GoogleMobileAds
@@ -94,8 +95,8 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         setBannerView()
 //        setYt()
         setUIView()
-        setRightButton(s: "斷頭查詢")
-        setLeftButton(s: "小型期貨計算")
+//        setRightButton(s: "斷頭查詢")
+//        setLeftButton(s: "小型期貨計算")
         getStockcomuperAllDate()
         Firebase.Analytics.setScreenName("首頁", screenClass: "ViewController")
         marqueeLabel.type = .continuous
@@ -104,6 +105,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         marqueeLabel.fadeLength = 10.0
         marqueeLabel.leadingBuffer = 30.0
         marqueeLabel.trailingBuffer = 20.0
+        setupSideMenu() 
         
 //        if(checkIsMember()){
 //            getId()
@@ -429,6 +431,33 @@ extension ViewController: YoutubePlayerViewDelegate {
         return view
     }
   
+    private func setupSideMenu() {
+        // Define the menus
+        SideMenuManager.default.leftMenuNavigationController = storyboard?.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? SideMenuNavigationController
+        SideMenuManager.default.addPanGestureToPresent(toView: navigationController!.navigationBar)
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view)
     
+        
+        
+    }
    
 }
+extension ViewController: SideMenuNavigationControllerDelegate {
+    
+    func sideMenuWillAppear(menu: SideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appearing! (animated: \(animated))")
+    }
+    
+    func sideMenuDidAppear(menu: SideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appeared! (animated: \(animated))")
+    }
+    
+    func sideMenuWillDisappear(menu: SideMenuNavigationController, animated: Bool) {
+        print("SideMenu Disappearing! (animated: \(animated))")
+    }
+    
+    func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
+        print("SideMenu Disappeared! (animated: \(animated))")
+    }
+}
+
