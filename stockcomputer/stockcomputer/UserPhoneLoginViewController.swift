@@ -17,7 +17,7 @@ class UserPhoneLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        userPhoneNumber.keyboardType = .phonePad
+        userphoneText.keyboardType = .phonePad
 //        setupGradientBackground(button: getVerificationCode,title: "驗證")
 //        setupGradientBackground(button: sendButton,title: "送出")
 //        sendButton.isEnabled = false
@@ -28,6 +28,29 @@ class UserPhoneLoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func sendAction(_ sender: Any) {
+        
+        let verificationID :String = UserDefaults.standard.string(forKey: "authVerificationID")!
+        let verificationCode = verificationcodeText.text!
+        let credential = PhoneAuthProvider.provider().credential(
+                  withVerificationID: verificationID,
+                  verificationCode: verificationCode)
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+                  if let error = error {
+
+                      // ...
+                      return
+                  }
+            guard let user = authResult?.user else { return }
+            let uid = user.uid
+            let stroyboard = UIStoryboard(name: "Main", bundle: nil);
+            let HomeVc = stroyboard.instantiateViewController(withIdentifier: "home")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+            appDelegate.window?.rootViewController = HomeVc
+        }
+        
+        
+        
     }
     @IBAction func getVerificationCodeAction(_ sender: Any) {
 
@@ -41,13 +64,14 @@ class UserPhoneLoginViewController: UIViewController {
 
 
 
-        PhoneAuthProvider.provider().verifyPhoneNumber("+886911325323", uiDelegate: nil) { (verificationID, error) in
+        PhoneAuthProvider.provider().verifyPhoneNumber("+886" + phonenumber, uiDelegate: nil) { (verificationID, error) in
                     if let error = error {
 
                         print("Jack",error.localizedDescription)
 
                         return
                     }
+            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
             print("Jack",verificationID)
 
 
@@ -55,7 +79,7 @@ class UserPhoneLoginViewController: UIViewController {
                     // ...
                 }
                 Auth.auth().languageCode = "tw";
-
+           
         }
 //
     }
