@@ -7320,6 +7320,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutbutton:" destination="EiF-XW-3ci" eventType="touchUpInside" id="GVr-un-4nf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本:0.0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZc-DV-dzk">
                                 <rect key="frame" x="20" y="610" width="62.5" height="17"/>
@@ -7374,7 +7377,7 @@
         <!--User Login View Controller-->
         <scene sceneID="L9v-Bx-T0e">
             <objects>
-                <viewController id="xhe-fw-g3l" customClass="UserLoginViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userlogin" modalPresentationStyle="fullScreen" id="xhe-fw-g3l" customClass="UserLoginViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4A-IL-gJV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
