@@ -92,7 +92,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "實名制身份證"
+       
 
         setBannerView()
 //        setYt()
@@ -308,45 +308,38 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     func setUIView(){
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
         self.CurrentPrice.addGestureRecognizer(gesture)
-        
-        let payme = UITapGestureRecognizer(target: self, action:  #selector(self.paymeAction))
-        self.paymeView.addGestureRecognizer(payme)
-        
-        let news = UITapGestureRecognizer(target: self, action:  #selector(self.newsAction))
-        self.newsView.addGestureRecognizer(news)
-        
-        
-        let tomorrow = UITapGestureRecognizer(target: self, action:  #selector(self.tomorrowAction))
-        self.todayView.addGestureRecognizer(tomorrow)
-        
-        let margin = UITapGestureRecognizer(target: self, action:  #selector(self.marginAction))
-            self.MarginView.addGestureRecognizer(margin)
-        let other = UITapGestureRecognizer(target: self, action:  #selector(self.otherAction))
-                 self.mOtherView.addGestureRecognizer(other)
-        
-        let financing = UITapGestureRecognizer(target: self, action:  #selector(self.financingAction))
-        self.FinancingView.addGestureRecognizer(financing)
-        
-        let small = UITapGestureRecognizer(target: self, action:  #selector(self.smallAction))
-        self.smallstock.addGestureRecognizer(small)
-        
-        
-        let share = UITapGestureRecognizer(target: self, action:  #selector(self.shareAction))
-        self.sharelist.addGestureRecognizer(share)
-        
+
+
+//
+//        let news = UITapGestureRecognizer(target: self, action:  #selector(self.newsAction))
+//        self.newsView.addGestureRecognizer(news)
+//
+//
+//        let tomorrow = UITapGestureRecognizer(target: self, action:  #selector(self.tomorrowAction))
+//        self.todayView.addGestureRecognizer(tomorrow)
+//
+//        let margin = UITapGestureRecognizer(target: self, action:  #selector(self.marginAction))
+//            self.MarginView.addGestureRecognizer(margin)
+//        let other = UITapGestureRecognizer(target: self, action:  #selector(self.otherAction))
+//                 self.mOtherView.addGestureRecognizer(other)
+//
+//        let financing = UITapGestureRecognizer(target: self, action:  #selector(self.financingAction))
+//        self.FinancingView.addGestureRecognizer(financing)
+//
+//        let small = UITapGestureRecognizer(target: self, action:  #selector(self.smallAction))
+//        self.smallstock.addGestureRecognizer(small)
+//
+//
+//        let share = UITapGestureRecognizer(target: self, action:  #selector(self.shareAction))
+//        self.sharelist.addGestureRecognizer(share)
+
     }
     @objc func checkAction(sender : UITapGestureRecognizer) {
         // Do what you want
         setJump(type: "CurrentPrice")
     }
     
-    @objc func paymeAction(sender : UITapGestureRecognizer) {
 
-        setJump(type: "iap")
-
-    
-
-    }
     @objc func newsAction(sender : UITapGestureRecognizer) {
          setJump(type: "news")
       }
