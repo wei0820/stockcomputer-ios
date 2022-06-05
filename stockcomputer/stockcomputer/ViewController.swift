@@ -92,6 +92,8 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "實名制身份證"
+
         setBannerView()
 //        setYt()
         setUIView()
@@ -105,7 +107,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         marqueeLabel.fadeLength = 10.0
         marqueeLabel.leadingBuffer = 30.0
         marqueeLabel.trailingBuffer = 20.0
-        setupSideMenu() 
+        setupSideMenu()
         
 //        if(checkIsMember()){
 //            getId()

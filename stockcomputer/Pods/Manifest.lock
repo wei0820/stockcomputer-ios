@@ -4,31 +4,14 @@ PODS:
     - Google-Mobile-Ads-SDK (>= 7.47.0)
     - VpadnSDK (>= 5.1.7)
   - Alamofire (4.0.1)
-  - AppAuth (1.4.0):
-    - AppAuth/Core (= 1.4.0)
-    - AppAuth/ExternalUserAgent (= 1.4.0)
-  - AppAuth/Core (1.4.0)
-  - AppAuth/ExternalUserAgent (1.4.0)
+  - AppAuth (1.5.0):
+    - AppAuth/Core (= 1.5.0)
+    - AppAuth/ExternalUserAgent (= 1.5.0)
+  - AppAuth/Core (1.5.0)
+  - AppAuth/ExternalUserAgent (1.5.0):
+    - AppAuth/Core
   - CLImagePickerTool (3.1.3)
   - CVCalendar (1.6.2)
-  - FBSDKCoreKit (6.5.2):
-    - FBSDKCoreKit/Basics (= 6.5.2)
-    - FBSDKCoreKit/Core (= 6.5.2)
-  - FBSDKCoreKit/Basics (6.5.2)
-  - FBSDKCoreKit/Core (6.5.2):
-    - FBSDKCoreKit/Basics
-  - FBSDKCoreKit/Swift (6.5.2):
-    - FBSDKCoreKit/Core
-  - FBSDKLoginKit/Login (6.5.2):
-    - FBSDKCoreKit (~> 6.5.2)
-  - FBSDKLoginKit/Swift (6.5.2):
-    - FBSDKCoreKit/Swift (~> 6.5.2)
-    - FBSDKLoginKit/Login
-  - FBSDKShareKit/Share (6.5.2):
-    - FBSDKCoreKit (~> 6.5.2)
-  - FBSDKShareKit/Swift (6.5.2):
-    - FBSDKCoreKit/Swift (~> 6.5.2)
-    - FBSDKShareKit/Share
   - Firebase (6.34.0):
     - Firebase/Core (= 6.34.0)
   - Firebase/AdMob (6.34.0):
@@ -158,8 +141,8 @@ PODS:
     - nanopb (~> 1.30906.0)
   - GoogleDataTransport (7.5.1):
     - nanopb (~> 1.30906.0)
-  - GoogleSignIn (5.0.2):
-    - AppAuth (~> 1.2)
+  - GoogleSignIn (6.1.0):
+    - AppAuth (~> 1.4)
     - GTMAppAuth (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/Defines (2.2.2)
@@ -231,9 +214,6 @@ DEPENDENCIES:
   - Alamofire (~> 4.0.0-beta.4)
   - CLImagePickerTool
   - CVCalendar (~> 1.6.2)
-  - FBSDKCoreKit/Swift
-  - FBSDKLoginKit/Swift
-  - FBSDKShareKit/Swift
   - Firebase
   - Firebase/AdMob
   - Firebase/Analytics
@@ -271,9 +251,6 @@ SPEC REPOS:
     - AppAuth
     - CLImagePickerTool
     - CVCalendar
-    - FBSDKCoreKit
-    - FBSDKLoginKit
-    - FBSDKShareKit
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -335,12 +312,9 @@ SPEC CHECKSUMS:
   AAInfographics: 7e0fdd1afab38f77539364cbef8380b22110478d
   AdMobMediationAdapterVpadn: c6f0b985fb8c4ada61c68dbab0c2afd51ee97acd
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
   CLImagePickerTool: 2ef59c6524efd493571a0ee2bc42f445b4c5b2cb
   CVCalendar: 515092247b9c5059855643c2a2220f259bd5417f
-  FBSDKCoreKit: ada5c8a05188daefc9addb985c52b8a1b26da519
-  FBSDKLoginKit: caa165495afa29a12324cb2307fe6e5b33783142
-  FBSDKShareKit: d0538e2385480d8b2901468c80abcf22aeaf2abd
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseABTesting: 8a9d8df3acc2b43f4a22014ddf9f601bca6af699
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
@@ -362,7 +336,7 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 7d7074359c040f5add4e0963bf860e14690060d0
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
-  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
+  GoogleSignIn: c90b5bec45e780f54c6a8e1e3c182a86e3dda69d
   GoogleToolboxForMac: 800648f8b3127618c1b59c7f97684427630c5ea3
   GoogleUserMessagingPlatform: c85530d930ba509583aa5a6d50a10aca22cf8502
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
@@ -389,6 +363,6 @@ SPEC CHECKSUMS:
   VpadnSDK: 6665a8c79f86d1dc9767e96205003923c96d9904
   YoutubePlayerView: 3870fc10f2db3f54156697757f44d304203bdc7e
 
-PODFILE CHECKSUM: bd18212b60b2776d1df71e7aba0d43e82296e43f
+PODFILE CHECKSUM: e4c8aca091ced35266aaa6d7ba390cd68e89a1e2
 
 COCOAPODS: 1.11.2
