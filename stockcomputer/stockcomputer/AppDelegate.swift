@@ -17,7 +17,8 @@ import NotificationCenter
 import UserNotificationsUI
 import VpadnSDKAdKit
 import AppTrackingTransparency
-
+import FBSDKCoreKit
+import FBSDKLoginKit
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -68,7 +69,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
            })
         UNUserNotificationCenter.current().delegate = self
 
-
+        
+              ApplicationDelegate.shared.application(
+                       application,
+                       didFinishLaunchingWithOptions: launchOptions
+                   )
         return true
     }
     func requestTracking() {
@@ -126,6 +131,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
         // With swizzling disabled you must set the APNs token here.
         // Messaging.messaging().apnsToken = deviceToken
+    }
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+        
+    ) -> Bool {
+        
+
+        ApplicationDelegate.shared.application(
+            app,
+            open: url,
+            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
+        
     }
 }
 

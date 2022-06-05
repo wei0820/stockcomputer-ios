@@ -34,11 +34,19 @@
 				<string>com.googleusercontent.apps.778829796218-35kd9o6tsr6k5n2aubdbucibhfnl8dkf</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array/>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
 	<string>2032928387009597</string>
+    <key>FacebookClientToken</key>
+    <string>d38536a905f9dd56d1fd15e2ba5948b0</string>
 	<key>FacebookDisplayName</key>
 	<string>股票獲利計算機-ios</string>
 	<key>GADApplicationIdentifier</key>
