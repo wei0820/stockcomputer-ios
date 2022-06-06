@@ -4939,7 +4939,7 @@
             </objects>
             <point key="canvasLocation" x="-4694" y="3452"/>
         </scene>
-        <!--Foreign Investment View Controller-->
+        <!--外資-->
         <scene sceneID="dlB-RU-DT4">
             <objects>
                 <viewController storyboardIdentifier="view1" id="SIJ-s3-g8G" customClass="ForeignInvestmentViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
@@ -5021,6 +5021,7 @@
                             <constraint firstItem="Jhv-F4-345" firstAttribute="trailing" secondItem="dPh-Xa-PAt" secondAttribute="trailing" id="wDa-tk-jIr"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="外資" image="power.dotted" catalog="system" id="bEz-d2-xvO"/>
                     <navigationItem key="navigationItem" id="9De-bU-GxJ"/>
                     <connections>
                         <outlet property="tableview" destination="j7f-Nr-ZDa" id="e3j-oN-KnF"/>
@@ -5029,9 +5030,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dju-LU-YnA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2551.1999999999998" y="3823.5382308845578"/>
+            <point key="canvasLocation" x="-9030" y="4241"/>
         </scene>
-        <!--Trust View Controller-->
+        <!--投信-->
         <scene sceneID="QgQ-NA-yoV">
             <objects>
                 <viewController storyboardIdentifier="view2" id="tkB-25-LBL" customClass="TrustViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
@@ -5114,6 +5115,7 @@
                             <constraint firstItem="bx0-Tf-Z9o" firstAttribute="trailing" secondItem="Dts-n9-rT1" secondAttribute="trailing" id="pvQ-FW-FCM"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="投信" image="dot.arrowtriangles.up.right.down.left.circle" catalog="system" id="9uT-NT-jlP"/>
                     <navigationItem key="navigationItem" id="ESh-Zx-bSm"/>
                     <connections>
                         <outlet property="tableview" destination="y13-Zc-PER" id="G87-FF-l8e"/>
@@ -5122,9 +5124,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deJ-Tc-0hP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2959.1999999999998" y="4643.9280359820095"/>
+            <point key="canvasLocation" x="-8207" y="4241"/>
         </scene>
-        <!--Broker View Controller-->
+        <!--官股-->
         <scene sceneID="j1Y-Ns-R17">
             <objects>
                 <viewController storyboardIdentifier="view4" id="qjq-P9-lQH" customClass="BrokerViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
@@ -5206,6 +5208,7 @@
                             <constraint firstItem="Vsl-Zs-BBU" firstAttribute="leading" secondItem="NKH-QJ-Bbj" secondAttribute="leading" id="rxp-aB-VjO"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="官股" image="globe" catalog="system" id="y6k-WO-FJm"/>
                     <navigationItem key="navigationItem" id="zof-8w-bFf"/>
                     <connections>
                         <outlet property="tableview" destination="ANZ-eB-GeE" id="5Jm-OY-FNf"/>
@@ -5214,9 +5217,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6m-cs-rRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1807.2" y="5051.4242878560726"/>
+            <point key="canvasLocation" x="-6558" y="4241"/>
         </scene>
-        <!--Self Employed View Controller-->
+        <!--自營-->
         <scene sceneID="ckK-NQ-Uaf">
             <objects>
                 <viewController storyboardIdentifier="view3" id="07Q-TW-l90" customClass="SelfEmployedViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
@@ -5298,6 +5301,7 @@
                             <constraint firstItem="8U9-qC-yxi" firstAttribute="top" secondItem="EX8-cz-bFP" secondAttribute="top" constant="20" id="tLy-Vd-euY"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="自營" image="powersleep" catalog="system" id="dTY-gS-UN1"/>
                     <navigationItem key="navigationItem" id="GTG-Lt-oBG"/>
                     <connections>
                         <outlet property="tableview" destination="rGt-vG-RcZ" id="g7k-Zo-Hjb"/>
@@ -5306,9 +5310,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3I-ME-sv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1700" y="3990.8545727136434"/>
+            <point key="canvasLocation" x="-7359" y="4241"/>
         </scene>
-        <!--Quotes View Controller-->
+        <!--資券-->
         <scene sceneID="eQC-37-nCT">
             <objects>
                 <viewController storyboardIdentifier="view5" id="LV5-a7-OUE" customClass="QuotesViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
@@ -5391,6 +5395,7 @@
                             <constraint firstItem="LEq-i6-bSj" firstAttribute="leading" secondItem="mAS-y5-PAZ" secondAttribute="leading" constant="12" id="vPI-OZ-5Xj"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="資券" image="globe.asia.australia.fill" catalog="system" id="N9p-gz-1wf"/>
                     <navigationItem key="navigationItem" id="TAB-bb-f0k"/>
                     <connections>
                         <outlet property="tableview" destination="cHl-kc-BsL" id="lRw-MC-NuM"/>
@@ -5399,12 +5404,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewN-ca-KwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2959.1999999999998" y="5927.5862068965525"/>
+            <point key="canvasLocation" x="-5735" y="4241"/>
         </scene>
         <!--Select View Controller-->
         <scene sceneID="Oz6-Jh-MQ6">
             <objects>
-                <viewController storyboardIdentifier="news" id="01x-4p-eJS" customClass="SelectViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="01x-4p-eJS" customClass="SelectViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fx7-1c-Qqo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5603,10 +5608,31 @@
             </objects>
             <point key="canvasLocation" x="-4740" y="4210.3448275862074"/>
         </scene>
-        <!--Three View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="mxB-Ny-Ggi">
+            <objects>
+                <tabBarController storyboardIdentifier="news" id="DsF-UW-fEl" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V4R-44-184">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="SIJ-s3-g8G" kind="relationship" relationship="viewControllers" id="Vtw-qQ-jMJ"/>
+                        <segue destination="tkB-25-LBL" kind="relationship" relationship="viewControllers" id="Ade-ck-CCc"/>
+                        <segue destination="07Q-TW-l90" kind="relationship" relationship="viewControllers" id="KF6-un-nJ9"/>
+                        <segue destination="qjq-P9-lQH" kind="relationship" relationship="viewControllers" id="CTK-2Q-3Da"/>
+                        <segue destination="LV5-a7-OUE" kind="relationship" relationship="viewControllers" id="t7T-hN-rCh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbW-Du-Oi6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8100" y="3476"/>
+        </scene>
+        <!--籌碼-->
         <scene sceneID="8tJ-aY-UdC">
             <objects>
-                <viewController storyboardIdentifier="three" id="AeI-4a-YwK" customClass="ThreeViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="three" modalPresentationStyle="fullScreen" id="AeI-4a-YwK" customClass="ThreeViewController" customModule="股市大贏家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UcT-2I-sEe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5895,6 +5921,7 @@
                             <constraint firstItem="n4h-o0-ULB" firstAttribute="leading" secondItem="Ydz-Kh-HBR" secondAttribute="leading" constant="16" id="tph-q8-poY"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="籌碼" id="8wK-Re-qx6"/>
                     <connections>
                         <outlet property="futures_label_1" destination="vpV-xj-pBh" id="b4N-0O-zcM"/>
                         <outlet property="futures_label_2" destination="9Ag-eC-v2v" id="gLN-fa-Jg7"/>
@@ -5914,7 +5941,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKb-1W-7Ph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5594.3999999999996" y="4244.527736131934"/>
+            <point key="canvasLocation" x="-9810" y="4241"/>
         </scene>
         <!--Financing View Controller-->
         <scene sceneID="r4T-KH-zb2">
@@ -7129,7 +7156,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="POo-kw-Qc9">
-                                <rect key="frame" x="20" y="70" width="355" height="440"/>
+                                <rect key="frame" x="20" y="70" width="355" height="495"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEr-oI-XZi">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="55"/>
@@ -7237,8 +7264,29 @@
                                             <constraint firstItem="oYM-Io-ICo" firstAttribute="centerY" secondItem="fTX-eF-ZEO" secondAttribute="centerY" id="z4Q-Hw-SaX"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzr-lo-y4U">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fa4-ZA-wa6">
                                         <rect key="frame" x="0.0" y="275" width="355" height="55"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VKO-3Z-FuY">
+                                                <rect key="frame" x="0.0" y="13" width="22" height="20"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三大法人買賣超" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXW-xv-7gs">
+                                                <rect key="frame" x="36" y="15" width="100" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="VKO-3Z-FuY" firstAttribute="top" secondItem="Fa4-ZA-wa6" secondAttribute="top" constant="13.5" id="WfX-rU-eBT"/>
+                                            <constraint firstItem="VKO-3Z-FuY" firstAttribute="leading" secondItem="Fa4-ZA-wa6" secondAttribute="leading" id="duj-x2-YCa"/>
+                                            <constraint firstItem="VKO-3Z-FuY" firstAttribute="centerY" secondItem="zXW-xv-7gs" secondAttribute="centerY" id="ftE-z7-RAs"/>
+                                            <constraint firstItem="zXW-xv-7gs" firstAttribute="leading" secondItem="VKO-3Z-FuY" secondAttribute="trailing" constant="14" id="vjp-vF-x1j"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzr-lo-y4U">
+                                        <rect key="frame" x="0.0" y="330" width="355" height="55"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jqH-lq-wO3">
                                                 <rect key="frame" x="0.0" y="14" width="19.5" height="18.5"/>
@@ -7259,7 +7307,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stW-si-jnZ">
-                                        <rect key="frame" x="0.0" y="330" width="355" height="55"/>
+                                        <rect key="frame" x="0.0" y="385" width="355" height="55"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airtag.radiowaves.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-BA-ezP">
                                                 <rect key="frame" x="0.0" y="15" width="25.5" height="17"/>
@@ -7280,7 +7328,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52O-Ef-i9F">
-                                        <rect key="frame" x="0.0" y="385" width="355" height="55"/>
+                                        <rect key="frame" x="0.0" y="440" width="355" height="55"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FSy-kA-Gpg">
                                                 <rect key="frame" x="0.0" y="13" width="20" height="19.5"/>
@@ -7304,7 +7352,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3b-fP-qwp">
-                                <rect key="frame" x="20" y="526" width="73" height="32"/>
+                                <rect key="frame" x="20" y="581" width="73" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Vvg-Vo-rUq"/>
                                     <constraint firstAttribute="width" constant="73" id="f1t-V7-J9f"/>
@@ -7346,7 +7394,9 @@
                     <navigationItem key="navigationItem" id="DEL-Vq-suQ"/>
                     <connections>
                         <outlet property="logoutbtn" destination="P3b-fP-qwp" id="1YQ-aJ-kLZ"/>
+                        <outlet property="newView" destination="yzr-lo-y4U" id="qFN-Ej-p8q"/>
                         <outlet property="payView" destination="52O-Ef-i9F" id="BJ6-1K-33b"/>
+                        <outlet property="threeView" destination="Fa4-ZA-wa6" id="Jdf-fr-aPf"/>
                         <outlet property="versionLabel" destination="QZc-DV-dzk" id="kUo-W6-zyN"/>
                     </connections>
                 </viewController>
@@ -7703,8 +7753,11 @@
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
         <image name="checkmark.seal.fill" catalog="system" width="128" height="128"/>
         <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="dot.arrowtriangles.up.right.down.left.circle" catalog="system" width="128" height="121"/>
         <image name="dot.circle.and.hand.point.up.left.fill" catalog="system" width="128" height="107"/>
         <image name="flag.fill" catalog="system" width="128" height="121"/>
+        <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="globe.asia.australia.fill" catalog="system" width="128" height="121"/>
         <image name="icon_apple_40" width="40" height="40"/>
         <image name="icon_fb_40" width="40" height="40"/>
         <image name="icon_google_40" width="40" height="40"/>
@@ -7724,6 +7777,8 @@
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <image name="port" width="32" height="32"/>
+        <image name="power.dotted" catalog="system" width="128" height="124"/>
+        <image name="powersleep" catalog="system" width="128" height="128"/>
         <image name="report_black" width="72" height="72"/>
         <image name="rosette" catalog="system" width="106" height="128"/>
         <image name="round_settings_voice_black_48pt" width="48" height="48"/>

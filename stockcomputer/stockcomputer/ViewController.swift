@@ -163,7 +163,7 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
 //
 //              }
 //
-//          }, withCancel: nil)
+//          }, withCancel: nil)news
 //
 //    }
     func setBannerView(){
