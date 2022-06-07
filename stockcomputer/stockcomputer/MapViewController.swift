@@ -65,25 +65,6 @@ class MapViewController: UIViewController,MGLMapViewDelegate{
      // Pass the selected object to the new view controller.
      }
      */
-    func setRightButton(s: String){
-        // 導覽列右邊按鈕
-        
-        let rightButton = UIBarButtonItem(
-            title:s,
-            style:.plain,
-            target:self,
-            action:#selector(ViewController.setting))
-        // 加到導覽列中
-        self.navigationItem.rightBarButtonItem = rightButton
-        
-    }
-    @objc func setting() {
-        
-        //            setData()
-        
-        
-        
-    }
     func setData(){
         let controller = UIAlertController(title: "加入", message: "請輸入您要推薦的營業員資料", preferredStyle: .alert)
         controller.addTextField { (textField) in

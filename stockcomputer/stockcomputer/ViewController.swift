@@ -17,14 +17,9 @@ import LLCycleScrollView
 import YoutubePlayerView
 
 class ViewController: MGoogleADViewController,UITabBarDelegate{
-    
-    @IBOutlet weak var FinancingView: UIView!
-    @IBOutlet weak var MarginView: UIView!
-    @IBOutlet weak var newsView: UIView!
-    @IBOutlet weak var paymeView: UIView!
+
     @IBOutlet weak var bannerView: LLCycleScrollView!
-    @IBOutlet weak var mOtherView: UIView!
-    @IBOutlet weak var todayView: UIView!
+
     @IBOutlet weak var CurrentPrice: UIView!
     var ref: DatabaseReference!
     var strings = [String]()
@@ -37,7 +32,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
             
                 
             if(!checkIsMember()){
-                    setAlert()
                     return
                     }
             setJump(type: "DayTrade")
@@ -57,7 +51,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         case 3:
                 
             if(!checkIsMember()){
-                    setAlert()
                     return
                     }
             setJump(type: "futures")
@@ -68,7 +61,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
             break
         case 4:
             setJump(type: "StockPeriod")
-//            setToast(s: "即將上線")
             Firebase.Analytics.logEvent("選擇項目", parameters: [
                                      "時間": DateManager.setDate(),
                                      "名稱": "個股期獲利試算"
@@ -97,8 +89,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         setBannerView()
 //        setYt()
         setUIView()
-//        setRightButton(s: "斷頭查詢")
-//        setLeftButton(s: "小型期貨計算")
         getStockcomuperAllDate()
         Firebase.Analytics.setScreenName("首頁", screenClass: "ViewController")
         marqueeLabel.type = .continuous
@@ -180,106 +170,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         // 2018-02-25 新增协议
     }
     
-    func setLeftButton(s: String){
-        // 導覽列右邊按鈕
-        
-        let rightButton = UIBarButtonItem(
-            title:s,
-            style:.plain,
-            target:self,
-            action:#selector(ViewController.checkIn))
-        // 加到導覽列中
-        self.navigationItem.rightBarButtonItem = rightButton
-    }
-    
-    @objc func checkIn() {
-//        if(self.checkIsMember()){
-//            FirebaseManager.getMemberDate()
-//            if(FirebaseManager.getUserId() != nil && FirebaseManager.getUserPoint() != nil){
-//                if(FirebaseManager.getUserPoint() == 0){
-//                    FirebaseManager.addMemberDateToFirebase(point: 100)
-//                }else{
-//                    var point : Int = FirebaseManager.getUserPoint()
-//                    self.checkLoginTime()
-//                    FirebaseManager.getMemberDate()
-//                }
-//
-//            }else{
-//                FirebaseManager.addMemberDateToFirebase(point: 100)
-//                FirebaseManager.getMemberDate()
-//            }
-//
-//        }
-        
-        
-        
-        let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-        let HomeVc = stroyboard.instantiateViewController(withIdentifier: "SmallFutures")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-        appDelegate.window?.rootViewController = HomeVc
-        
-    }
-    
-    
-    
-    func setRightButton(s: String){
-        // 導覽列右邊按鈕
-        
-        let LeftButton = UIBarButtonItem(
-            title:s,
-            style:.plain,
-            target:self,
-            action:#selector(ViewController.setting))
-        // 加到導覽列中
-        self.navigationItem.leftBarButtonItem = LeftButton
-    }
-    @objc func setting() {
-        
-    if(!checkIsMember()){
-            setAlert()
-            return
-            }
-        Firebase.Analytics.logEvent("選擇項目", parameters: [
-                                  "時間": DateManager.setDate(),
-                                  "名稱": "斷頭試算"
-                              ])
-        let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-        let HomeVc = stroyboard.instantiateViewController(withIdentifier: "searchstockprice")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-        appDelegate.window?.rootViewController = HomeVc
-        
-    } 
-    
-    func setAlert(){
-        let controller = UIAlertController(title: "訪客身份", message: "請先登入再使用", preferredStyle: .actionSheet)
-        let names = ["去登入"]
-        for name in names {
-
-            
-            let action = UIAlertAction(title: name, style: .default) { (action) in
-                
-                let user = Auth.auth().currentUser
-                
-                user?.delete { error in
-                    if let error = error {
-                        // An error happened.
-                    } else {
-                        // Account deleted.
-                    }
-                }
-                self.userDefaults.set(nil, forKey: "userID")
-                let stroyboard = UIStoryboard(name: "Main", bundle: nil);
-                let HomeVc = stroyboard.instantiateViewController(withIdentifier: "login")
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-                appDelegate.window?.rootViewController = HomeVc
-                
-            }
-            controller.addAction(action)
-        }
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        controller.addAction(cancelAction)
-        present(controller, animated: true, completion: nil)
-    }
 
     func setUIAlert(title :String ,message :String){
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -302,36 +192,10 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         controller.addAction(okAction)
         present(controller, animated: true, completion: nil)
     }
-    @IBOutlet weak var smallstock: UIView!
     
-    @IBOutlet weak var sharelist: UIView!
     func setUIView(){
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
         self.CurrentPrice.addGestureRecognizer(gesture)
-
-
-//
-//        let news = UITapGestureRecognizer(target: self, action:  #selector(self.newsAction))
-//        self.newsView.addGestureRecognizer(news)
-//
-//
-//        let tomorrow = UITapGestureRecognizer(target: self, action:  #selector(self.tomorrowAction))
-//        self.todayView.addGestureRecognizer(tomorrow)
-//
-//        let margin = UITapGestureRecognizer(target: self, action:  #selector(self.marginAction))
-//            self.MarginView.addGestureRecognizer(margin)
-//        let other = UITapGestureRecognizer(target: self, action:  #selector(self.otherAction))
-//                 self.mOtherView.addGestureRecognizer(other)
-//
-//        let financing = UITapGestureRecognizer(target: self, action:  #selector(self.financingAction))
-//        self.FinancingView.addGestureRecognizer(financing)
-//
-//        let small = UITapGestureRecognizer(target: self, action:  #selector(self.smallAction))
-//        self.smallstock.addGestureRecognizer(small)
-//
-//
-//        let share = UITapGestureRecognizer(target: self, action:  #selector(self.shareAction))
-//        self.sharelist.addGestureRecognizer(share)
 
     }
     @objc func checkAction(sender : UITapGestureRecognizer) {
@@ -339,49 +203,6 @@ class ViewController: MGoogleADViewController,UITabBarDelegate{
         setJump(type: "CurrentPrice")
     }
     
-
-    @objc func newsAction(sender : UITapGestureRecognizer) {
-         setJump(type: "news")
-      }
-    @objc func tomorrowAction(sender : UITapGestureRecognizer) {
-            
-        if(!checkIsMember()){
-                setAlert()
-                return
-                }
-       setJump(type: "tomorrow")
-    }
-    @objc func marginAction(sender : UITapGestureRecognizer) {
-            
-        if(!checkIsMember()){
-                setAlert()
-                return
-                }
-        setJump(type: "margin")
-     }
-    
-    @objc func otherAction(sender : UITapGestureRecognizer) {
-           setJump(type: "other")
-        }
-    
-    @objc func financingAction(sender : UITapGestureRecognizer) {
-            
-        if(!checkIsMember()){
-                setAlert()
-                return
-                }
-             setJump(type: "financing")
-          }
-    
-    @objc func smallAction(sender : UITapGestureRecognizer) {
-        setToast(s: "下版本 開放使用")
-//        setJump(type: "select")
-            
-          }
-    @objc func shareAction(sender : UITapGestureRecognizer) {
-        setJump(type: "share")
-
-          }
   func getStockcomuperAllDate(){
         Database.database().reference().child("stockcomuper").child("stockcomuper" as! String).observe(.childAdded, with: {
             (snapshot) in
