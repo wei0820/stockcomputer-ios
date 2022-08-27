@@ -41,5 +41,7 @@ pod 'Firebase/Messaging'
 pod 'Firebase/InAppMessaging'
 pod 'CLImagePickerTool'
 pod 'YoutubePlayerView'
+   pod 'RxSwift', '6.5.0'
+    pod 'RxCocoa', '6.5.0'
 pod 'SideMenu'
 end

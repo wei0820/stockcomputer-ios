@@ -18,6 +18,7 @@ class GetStockPriceManager{
     static var array = Array<StockData>()
     static var array_foreigninvestment = Array<String>()
     static var array_three = Array<String>()
+    static var array_three_total = Array<String>()
 
     static  func get() -> Array<StockData> {
         
@@ -749,10 +750,10 @@ class GetStockPriceManager{
        }
     
     
-    static  func getOpenPosition() -> Array<String> {
+static  func getOpenPosition() -> Array<String> {
         var title  = ""
         array_three.removeAll()
-           guard let url = URL(string: "https://histock.tw/stock/three.aspx" ?? "") else {
+           guard let url = URL(string: "https://histock.tw/futures/mainfutures.aspx" ?? "") else {
             
             return array_three
                // an error occurred
@@ -772,11 +773,20 @@ class GetStockPriceManager{
                    // firn css selector
                    //
                    //div.grid-body.p7.mb10>ul.stock-list>li
-                   let elements: Elements = try document.select("div.grid-item.ml10>div.grid-body.p5>table.gvTB>tbody" ?? "")
-                let n = try elements.select("tr").get(1)
+                   //div.grid-item.ml10>div.grid-body.p5>table.gvTB>tbody
+                   let elements: Elements = try document.select("div.grid-body.m10>table.tb-stock.tb-option>tbody" ?? "")
+                let n = try elements.select("tr.alt-row").get(0)
                 for th in try n.select("td") {
                     title = try th.text()
-                    array_three.append(title)
+                    
+                    if(!title.isEmpty){
+                        print("getOpenPosition",title)
+
+                        array_three.append(title)
+
+                        
+                    }
+                    
                 }
                 
                  
@@ -909,6 +919,59 @@ class GetStockPriceManager{
            }
        }
   
+    
+    
+    static  func getOpenPositionTotal() -> Array<String> {
+            var title  = ""
+        array_three_total.removeAll()
+               guard let url = URL(string: "https://histock.tw/stock/three.aspx" ?? "") else {
+                
+                return array_three
+                   // an error occurred
+               }
+               
+               do {
+                   
+                   // content of url
+                   let html = try String.init(contentsOf: url)
+                   
+                   // parse it into a Document
+                   document = try SwiftSoup.parse(html)
+                   // parse css query
+                   do {
+                       
+                       //empty old items
+                       // firn css selector
+                       //
+                       //div.grid-body.p7.mb10>ul.stock-list>li
+                       //
+                       let elements: Elements = try document.select("div.grid-item.ml10>div.grid-body.p5>table.gvTB>tbody" ?? "")
+                    let n = try elements.select("tr").get(1)
+                    for th in try n.select("td") {
+                        title = try th.text()
+                        
+                        if(!title.isEmpty){
+                            print("getOpenPositionTotal",title)
+
+                            array_three_total.append(title)
+
+                            
+                        }
+                        
+                    }
+                    
+                     
+                   } catch let error {
+                   }
+                   
+                   
+               } catch let error {
+                   // an error occurred
+               }
+            return array_three_total
+           }
+        
+    
     
     
     
